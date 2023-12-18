@@ -1,0 +1,1563 @@
+<html><head><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"><title>PP-Module for MDM Agent</title><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script><script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+            extensions: ["tex2jax.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            showMathMenu: false,
+            tex2jax: {
+              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+              displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+              processEscapes: true
+            },
+            styles: {
+
+                ".MathJax_Display": {
+                "text-align": "left !important",
+                margin:       "0em 0em !important"
+            }}
+            });
+        </script><script type="text/javascript">// 
+
+// Called on page load to parse URL parameters and perform actions on them.
+function init(){
+    if(getQueryVariable("expand") == "on"){
+      expand();
+    }
+    fixAbbrs();
+}
+
+
+function fixAbbrs(){
+    var aa;
+    var brk_els = document.getElementsByClassName("dyn-abbr");
+    //
+    for(aa=0; aa!=brk_els.length; aa++){
+        var abbr = brk_els[aa].firstElementChild.getAttribute("href").substring(1);
+        var el = document.getElementById("long_"+abbr)
+        if (el==null) {
+             console.log("Could not find 'long_abbr_'"+abbr);
+             continue;
+        }
+        var abbr_def = el.textContent;
+        brk_els[aa].setAttribute("title", abbr_def);
+    }
+}
+// // 
+const AMPERSAND=String.fromCharCode(38);
+
+// Pass a URL variable to this function and it will return its value
+function getQueryVariable(variable)
+{
+    var query = window.location.search.substring(1);
+    var vars = query.split(AMPERSAND);
+    for (var i=0;i!=vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == variable){return pair[1];}
+    }
+    return(false);
+}
+
+
+//    Expands all evaluation activities
+function expand(){
+    var ap = document.getElementsByClassName('activity_pane');
+    for (var ii = 0; ii!=ap.length; ii++) {
+        ap[ii].classList.remove('hide');
+    }
+}
+
+// Function to expand and contract a given div
+function toggle(descendent) {
+    var cl = descendent.parentNode.parentNode.classList;
+    if (cl.contains('hide')){
+      cl.remove('hide');
+    }
+    else{
+      cl.add('hide');
+    }
+}
+
+// Expands targets if they are hidden
+function showTarget(id){
+    var element = document.getElementById(id);
+    while (element != document.body.rootNode ){
+	element.classList.remove("hide");
+	element = element.parentElement;
+    }
+}
+
+
+// </script><style type="text/css">
+    #toc a{
+        display: block;
+    }
+
+    svg{
+      width: 100%;
+    }
+
+    a[id^="ajq_"]{
+        color:black;
+    }
+
+    
+    body{
+       max-width: 900px;
+       margin: auto;
+    }
+    #toc span{
+       margin-left: 20px;
+    }
+    .assignable-content{
+      font-style: italic;
+    }
+    .selectable-content{
+      font-style: italic;
+    }
+    .not-selectable-content{
+      font-style: italic;
+      text-decoration: line-through;
+    }
+    .refinement{
+      font-weight: bold;
+    }
+    div.eacategory{
+      font-style: italic;
+      font-weight: bold;
+    }
+    .activity_pane .toggler::after, .activity_pane .toggler{
+       display: inline-block;
+       height: auto;
+       content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8A\
+       AAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAQOFAAEDhQGl\
+       VDz+AAAAB3RJTUUH4gIXFDM7fhmr1wAAAfRJREFUKM+dkk9I02EYxz/P+25uurWR\
+       tTkzI4NGl4jQgkq71K1DhnTQIDolRAQFQYSHTtGhU4e6eujQofBSFLOg0C4RUSjh\
+       FnmqTTdKpj/mfv/eX4cUpmRYn9vz8v3w8D7PA/AWGADCbI4QcAb4AnAF8IBJEdX+\
+       N0tEda40C4AHADviW1LFvpOX6+FwtAacVzqkGiWtwxo4F21OuPu7+yvxRNoDEhpY\
+       cpzavkQyc7D76FCk+vN7j7VU6RdR4xAsikjGGP9FKrN3sPfEpajv2i2zhckR4JUG\
+       UCr0erFavLkn2ytd2WPxcFOsZb74+SIQA0YPHBqIdB8Z6tChJv1m/N4P33OGAUsD\
+       BIFxPNcOkq07jyeSbbo1tTu2q6vHEqU7D/ddSKcz2ZQJjBSmx925b9NjwEMAafha\
+       eyQa/3Dq7O0243sCIEoRGAOA59nm5dM7OHVruzH+AkDjYEp23RrLT+U8Ub+fV0UR\
+       oVyaMfVa9fqquF5GKX3ja2FCuc6yWbMipYNP755UgEdr8o2FMf5ivVYdKRfzRkRW\
+       RfJTOc+2rWdAcUN5hdGP7x8viGgAXLvGbGFCKxW6tj74J3nOqVvP89M5V6kQ86UZ\
+       f7lWvWWMt7Sp41VKb21uSfqnB++6kWi8BLTzL4ioq7H4tgC4z3/QAZSBxEaBXygN\
+       v+jeFnAPAAAAAElFTkSuQmCC');
+       max-width: 15px;
+    }
+
+    a.definition{
+      color: inherit;
+      text-decoration: inherit;
+    }
+      
+    a {
+      text-decoration: none;
+      word-wrap: break-word;
+    }
+    a.abbr:link{
+      color:black;
+      text-decoration:none;
+    }
+    a.abbr:visited{
+      color:black;
+      text-decoration:none;
+    }
+    a.abbr:hover{
+      color:blue;
+      text-decoration:none;
+    }
+    a.abbr:hover:visited{
+      color:purple;
+      text-decoration:none;
+    }
+    a.abbr:active{
+      color:red;
+      text-decoration:none;
+    }
+    .note-header{
+      font-weight: bold;
+    }
+    .note p:first-child{
+      display: inline;
+    }
+
+    .indent{ margin-left:2em; }
+
+    /* Tooltip container */
+    .tooltipped {
+       position: relative;
+       display: inline-block;
+       border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    }
+
+    /* Tooltip text */
+    .tooltiptext {
+       visibility: hidden;
+       width: 120px;
+       background-color: black;
+       color: #fff;
+       text-align: center;
+       padding: 5px 0;
+       border-radius: 6px;
+
+       /* Position the tooltip text - see examples below! */
+       position: absolute;
+       z-index: 1;
+   }
+
+   /* Show the tooltip text when you mouse over the tooltip container */
+   .tooltipped:hover .tooltiptext {
+       visibility: visible;
+   }
+   tr.major-row{
+       border-top-style: double;
+   }
+   tr.major-row td:first-child{
+       border-right-style: ridge;
+       background-color: white;
+   } 
+   table.mfs td{
+       text-align: center;
+   }
+   table.mfs td:first-child{
+       text-align: left;
+       white-space: nowrap;
+   }
+  .table-caption, caption{
+       text-align: center;
+       font-weight: bold;
+   }
+   table{
+       margin:auto;
+       margin-top:1em;
+       border-collapse:collapse; /*border: 1px solid black;*/
+   }
+   td{
+       text-align:left;
+       padding:8px 8px;
+   }
+   th{
+       padding:8px 8px;
+   }
+   thead tr td{
+       text-align: center;
+       font-style: oblique;
+       font-weight: bold;
+   }
+   tr.header{
+       border-bottom:3px solid gray;
+       padding:8px 8px;
+       text-align:left;
+       font-weight:bold; /*font-size: 90%; font-family: verdana, arial, helvetica, sans-serif; */
+   }
+   table tr:nth-child(2n+2){
+       background-color:#F4F4F4;
+   }
+
+   .dependent{
+       border: 1px solid gray;
+       border-radius: 1px
+   }
+   .dependent-content{
+       margin-left: 25px;
+       font-style: italic;
+   }
+
+   .uc_table_or td, .uc_table_or tr {
+       vertical-align: middle;
+       border: 1px solid black;
+       background-color: white;
+   }
+
+   .uc_not, .uc_mf, .uc_sel, .uc_guide{
+       text-indent: 10px;
+   }
+   .uc_sel > a{ 
+       font-style: italic;
+   }
+
+   .uc_not_sel, .uc_sel.uc_mf, uc_assign.uc_mf{
+       text-indent: 20px;
+   }
+
+
+   .uc_table_or tr td.or_cell{
+      white-space: nowrap;
+      border-radius: 0.6em 0 0 0.6em;
+      background-color: black;
+      color: white;
+   }
+
+   .uc_table_and, .uc_table_or {
+       width: 100%;
+       background-color: white;
+   }
+   .uc_guidance{
+       display: table;
+       background-color: gray;
+   }  
+   div.uc_inc_fcomp{
+       display: list-item;
+       list-style-type: disc;
+       list-style-position: inside;
+       }
+
+   div.validationguidelines_label{
+        padding-top: 10px;
+   }
+	
+   .evidence, .test-obj { font-style: normal; font-size: 90%;}
+   
+   
+	table.classic {
+    	width: 100%;
+    	background-color: white;
+    	border-collapse: collapse;
+    	border-width: 2px;
+  		border-color: gray;
+  		border-style: solid;
+  		color: black;
+		font-size: small;
+	}
+    table.classic th {
+  		background-color: lightgray;   
+	}
+    table.classic th:empty{
+	    background-color: white;
+		border-top: none;
+		border-left: none;
+	}
+	table.classic td, table.classic th {
+  		border-width: 2px;
+  		border-color: gray;
+  		border-style: solid;
+  		padding: 5px;
+	}
+
+   
+    .comp .description{
+        padding-bottom: 20px;
+        display: block;
+    }    
+   
+   
+          .figure{
+              font-weight:bold;
+          }
+          h1{
+              page-break-before:always;
+              text-align:left;
+              font-size:200%;
+              margin-top:2em;
+              margin-bottom:2em;
+              font-family:verdana, arial, helvetica, sans-serif;
+              margin-bottom:1.0em;
+          }
+          h1.title{
+              text-align:center;
+          }
+          h2{
+              font-size:125%;
+              border-bottom:solid 1px gray;
+              margin-bottom:1.0em;
+              margin-top:2em;
+              margin-bottom:0.75em;
+              font-family:verdana, arial, helvetica, sans-serif;
+          }
+          h3{
+              font-size:110%;
+              margin-bottom:0.25em;
+              font-family:verdana, arial, helvetica, sans-serif;
+          }
+          h4{
+              margin-left:0%;
+              font-size:100%;
+              margin-bottom:0.75em;
+              font-family:verdana, arial, helvetica, sans-serif;
+          }
+          h5,
+          h6{
+              margin-left:6%;
+              font-size:90%;
+              margin-bottom:0.5em;
+              font-family:verdana, arial, helvetica, sans-serif;
+          }
+          p{
+              margin-bottom:0.6em;
+              margin-top:0.2em;
+          }
+          pre{
+              margin-bottom:0.5em;
+              margin-top:0.25em;
+              margin-left:3%;
+              font-family:monospace;
+              font-size:90%;
+          }
+          ul{
+              margin-bottom:0.5em;
+              margin-top:0.25em;
+          }
+          td{
+              vertical-align:top;
+          }
+          dl{
+              margin-bottom:0.5em;
+              margin-top:0.25em;
+          }
+          dt{
+              margin-top:0.7em;
+              font-weight:bold;
+              font-family:verdana, arial, helvetica, sans-serif;
+          }
+
+          a.linkref{
+              font-family:verdana, arial, helvetica, sans-serif;
+              font-size:90%;
+          }
+
+          *.simpleText{
+              margin-left:10%;
+          }
+          *.propertyText{
+              margin-left:10%;
+              margin-top:0.2em;
+              margin-bottom:0.2em
+          }
+          *.toc{
+              background:#FFFFFF;
+          }
+          *.toc2{
+              background:#FFFFFF;
+          }
+	  .choicelabel{
+	    font-weight: bold;
+	  }
+          div.comp{
+              margin-left:8%;
+              margin-top:1em;
+              margin-bottom:1em;
+          }
+          div.element{
+              margin-bottom:1em;
+          }
+          div.appnote{
+              margin-left:0%;
+              margin-top:1em;
+          }
+          .comment{
+              background-color:beige;
+              color:green;
+          }
+
+          div.subaact{
+              margin-left:0%;
+              margin-top:1em;
+          }
+          .subaact-header{
+              font-weight: bold;
+          }
+
+          div.activity_pane_body{
+              font-style:italic;
+              margin-left:0%;
+              margin-top:1em;
+              margin-bottom:1em;
+              padding:1em;
+              border:2px solid #888888;
+              border-radius:3px;
+              display:block;
+              margin-left:0%;
+              margin-top:1em;
+              margin-bottom:1em;
+              box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+          }
+          div.optional-appendicies{
+              display:none;
+          }
+
+          div.statustag{
+              margin-left:0%;
+              margin-top:1em;
+              margin-bottom:1em;
+              padding: 0.6em;
+              border:2px solid #888888;
+              border-radius:3px;
+          }
+
+          div.toc{
+              margin-left:8%;
+              margin-bottom:4em;
+              padding-bottom:0.75em;
+              padding-top:1em;
+              padding-left:2em;
+              padding-right:2em;
+          }
+          span.SOlist{
+              font-size:90%;
+              font-family:verdana, arial, helvetica, sans-serif;
+          }
+          h2.toc{
+              border-bottom:none;
+              margin-left:0%;
+              margin-top:0em;
+          }
+          p.toc{
+              margin-left:2em;
+              margin-bottom:0.2em;
+              margin-top:0.5em;
+          }
+          p.toc2{
+              margin-left:5em;
+              margin-bottom:0.1em;
+              margin-top:0.1em;
+          }
+          div.center{
+              display:block;
+              margin-left:auto;
+              margin-right:auto;
+              text-align:center;
+              }
+          div.ea{
+	      padding-bottom:10px;
+          }
+	      
+          div.figure{
+              display:block;
+              margin-left:auto;
+              margin-right:auto;
+              text-align:center;
+              margin-top:1em;
+          }
+          div.activity_pane_header{
+              display:table-cell;
+              vertical-align:middle;
+              padding-top:10px;
+          }
+          span.activity_pane_label{
+              vertical-align:middle;
+              color:black;
+              text-decoration:none;
+              font-size:100%;
+              font-weight:bold; /*font-family: verdana, arial, helvetica, sans-serif; */
+          }
+          .dyn-abbr a, .dyn-abbr a:active, .dyn-abbr a:visited{
+              background-color: inherit;
+              color: inherit;
+              text-decoration: inherit;;
+          }
+
+          @media screen{
+              *.reqid{
+                  float:left;
+                  font-size:90%;
+                  font-family:verdana, arial, helvetica, sans-serif;
+                  margin-right:1em;
+              }
+              *.req{
+                  margin-left:0%;
+                  margin-top:1em;
+                  margin-bottom:1em;
+              }
+              *.reqdesc{
+                  margin-left:20%;
+              }
+
+              .activity_pane.hide .toggler::after, .activity_pane.hide .toggler{
+	          content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8A\
+		  AAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAQOFAAEDhQGl\
+		  VDz+AAAAB3RJTUUH4gIXFC4BR3keeQAAAfZJREFUKM+d0k1PE1EUBuB37h2nQ+30\
+		  w5YObR0FhIppqBgWuDCaSBQjiQZNTIxLfoAkBHXh2vg7xID+ABPXBl3UdAMaN1CR\
+		  j5ZijZ22DKW9d44LP1KMROvZnMU5z+KcvBzAAgADwCdV1RzXlYQ26tYhrYM6u/qX\
+		  ATwCcKodrAOYv3z9IV28OuP6/NHPAGYZ45G/QQ5AAFjNbyzdTA2NewcGx7xeI5wu\
+		  FZenQOQQuasHncN/9IJo1sn+unkpbqVFIJhgydQo13VjDKCJSnnLBJAHUPoTBoA3\
+		  uzvlfiNgDhn+KMiVCB6xYCZSoaPHz5wrba/cbuztpBWFvQLI+R2DSGZqleKNuJX2\
+		  cVVjAIExDo/uV7pPjGhSNntrleI9+n7Ox33Y549Wq/ZWTyh8rNcfjPlaZ4xzZvUM\
+		  ezrNvnJ+fXFCiL2k2rpQq2wnAqH4tYjZFyZq/Y8CKZoim51z1nIZQ4jGNIC5fZhz\
+		  7fHA4JVuj26AyIWiMDSbdTi1L/T29RO7ahdfKgqbInJLANCKZ6Kx5J24dVowztW6\
+		  Y+8WNt91FNYXc4WN988BzAL4QOT+Aj/x8GFf+MHI+UlI2cBS9kVlLZfxSFdMS9GY\
+		  V1WtKETDPShhz85emLRHx++TETBLAJ4qCov8c7ajsZMr/5PtBQB3AXSpqsbagd8A\
+		  O+HMRUtPNsQAAAAASUVORK5CYII=');
+              }
+
+              .activity_pane.hide .activity_pane_body{
+                  display:none;
+              }
+              div.statustag{
+                  box-shadow:4px 4px 3px #888888;
+              }
+          }
+
+
+          @media print{
+              *.reqid{
+                  font-size:90%;
+                  font-family:verdana, arial, helvetica, sans-serif;
+              }
+              *.req{
+                  margin-left:0%;
+                  margin-top:1em;
+                  margin-bottom:1em;
+              }
+              *.reqdesc{
+                  margin-left:20%;
+              }
+              div.activity_pane_body{
+                  padding:1em;
+                  border:2px solid #888888;
+                  border-radius:3px;
+                  display:block;
+              }
+
+	            img[src="images/collapsed.png"] { display:none;}
+
+          }
+    </style></head><body onLoad="init()"><h1 class="title" style="page-break-before:auto;">PP-Module for MDM Agent</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"><br>
+      Version: 1.1<br>2023-12-11<br><b>National Information Assurance Partnership</b><br></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2019-03-01</td><td> Initial publication as
+        PP-Module<a id="period_0" href="#period_0">. </a></td></tr>
+<tr><td>1.1</td><td>2023-12-11</td><td>
+        Added GPOS PP base and incorporated NIAP Technical Decisions<a id="period_1" href="#period_1">. </a>      </td></tr>
+</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#targets" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecase" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#securityPolicy" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_TOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#rationale" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#mdf_mod_fcs" style="text-indent:30px">5.0.0.1<span>Cryptographic Support (FCS)</span></a><a href="#mdf_mod_ftp" style="text-indent:30px">5.0.0.2<span>Trusted Path/Channels (FTP)</span></a><a href="#mdm_mod_fcs" style="text-indent:30px">5.0.0.3<span>Cryptographic Support (FCS)</span></a><a href="#man_fau" style="text-indent:20px">5.0.1<span>Security Audit (FAU)</span></a><a href="#man_fia" style="text-indent:20px">5.0.2<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">5.0.3<span>Security Management (FMT)</span></a><a href="#obj_fau" style="text-indent:20px">5.0.4<span>Security Audit (FAU)</span></a><a href="#obj_fpt" style="text-indent:20px">5.0.5<span>Protection of the TSF (FPT)</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix A - <span>Implicitly Satisfied Requirements</span></a></div>
+  
+  
+    
+      1.1
+      National Information Assurance Partnership
+      2023-12-11
+      Mobile Device Management; MDM; MDM Agents
+    
+  
+  
+    
+      1.0
+      2019-03-01
+       Initial publication as
+        PP-Module<a id="period_2" href="#period_2">. </a>
+    
+    
+      1.1
+      2023-12-11
+      
+        Added GPOS PP base and incorporated NIAP Technical Decisions<a id="period_3" href="#period_3">. </a>      
+    
+  
+  <h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
+    <h2 class="indexable" data-level="2" id="overview">1.1 Overview</h2> The scope of the MDM Agent PP-Module is to describe the security functionality of a Mobile Device Management (MDM) Agent 
+      in terms of [CC] and to define functional and assurance requirements for such products<a id="period_4" href="#period_4">. </a>
+      This PP-Module is intended for use with the following Base-PPs: <ul>
+        <li>Protection Profile for Mobile Device Management (MDM PP), Version 4.0</li>
+        <li>Protection Profile for Mobile Device Fundamentals (MDF PP), Version 3.3</li>
+        <li>Protection Profile for General Purpose Operating Systems (GPOS PP), Version 4.3</li>
+      </ul>
+      <br> These Base-PPs are valid because a MDM Agent is
+      either a 3rd party application manufactured by the MDM Server vendor or is a
+      native application deployed on a mobile device<a id="period_5" href="#period_5">. </a>
+
+      <div class="no-link"><h2 id="glossary" class="indexable" data-level="2">1.2 Terms</h2>
+The following sections list Common Criteria and technology terms used in this document<a id="period_6" href="#period_6">. </a>    <h3 id="cc-terms" class="indexable" data-level="3">1.2.1 Common Criteria Terms</h3><table><tr><td><div id="Assurance">Assurance</div></td><td>Grounds for confidence that a TOE meets the SFRs <a href="#bibCC">[CC]</a><a id="period_7" href="#period_7">. </a></td></tr>
+<tr><td><div id="Base_Protection_Profile">Base Protection Profile (Base-PP)</div></td><td>Protection Profile used as a basis to build a PP-Configuration<a id="period_8" href="#period_8">. </a></td></tr>
+<tr><td><div id="Collaborative_Protection_Profile">Collaborative Protection Profile (cPP)</div></td><td>A Protection Profile developed by
+    international technical communities and approved by multiple schemes<a id="period_9" href="#period_9">. </a></td></tr>
+<tr><td><div id="Common_Criteria">Common Criteria (CC)</div></td><td>Common Criteria for Information Technology Security Evaluation (International Standard ISO/IEC 15408)<a id="period_10" href="#period_10">. </a></td></tr>
+<tr><td><div id="Common_Criteria_Testing_Laboratory">Common Criteria Testing Laboratory</div></td><td>
+      Within the context of the Common Criteria Evaluation and Validation Scheme (CCEVS), an IT security evaluation facility
+      accredited by the National Voluntary Laboratory Accreditation Program (NVLAP) and approved by the NIAP Validation Body to conduct Common Criteria-based evaluations<a id="period_11" href="#period_11">. </a>    </td></tr>
+<tr><td><div id="Common_Evaluation_Methodology">Common Evaluation Methodology (CEM)</div></td><td>Common Evaluation Methodology for Information Technology Security Evaluation<a id="period_12" href="#period_12">. </a></td></tr>
+<tr><td><div id="Distributed_TOE">Distributed TOE</div></td><td>A TOE composed of multiple components operating as a logical whole<a id="period_13" href="#period_13">. </a></td></tr>
+<tr><td><div id="Extended_Package">Extended Package (EP)</div></td><td>A deprecated document form for collecting SFRs that implement a particular protocol, technology,
+	    or functionality<a id="period_14" href="#period_14">. </a>See Functional Packages<a id="period_15" href="#period_15">. </a></td></tr>
+<tr><td><div id="Functional_Package">Functional Package (FP)</div></td><td>A document that collects SFRs for a particular protocol, technology,
+	    or functionality<a id="period_16" href="#period_16">. </a></td></tr>
+<tr><td><div id="Operational_Environment">Operational Environment (OE)</div></td><td>Hardware and software that are outside the TOE boundary that support the TOE functionality and security policy<a id="period_17" href="#period_17">. </a></td></tr>
+<tr><td><div id="Protection_Profile">Protection Profile (PP)</div></td><td>An implementation-independent set of security requirements for a category of products<a id="period_18" href="#period_18">. </a></td></tr>
+<tr><td><div id="Protection_Profile_Configuration">Protection Profile Configuration (PP-Configuration)</div></td><td>A comprehensive set of security requirements for a product type that consists of at least one Base-PP and at least one PP-Module<a id="period_19" href="#period_19">. </a></td></tr>
+<tr><td><div id="Protection_Profile_Module">Protection Profile Module (PP-Module)</div></td><td>An implementation-independent statement of security needs for a TOE type complementary to one or more Base-PPs<a id="period_20" href="#period_20">. </a></td></tr>
+<tr><td><div id="Security_Assurance_Requirement">Security Assurance Requirement (SAR)</div></td><td>A requirement to assure the security of the TOE<a id="period_21" href="#period_21">. </a></td></tr>
+<tr><td><div id="Security_Functional_Requirement">Security Functional Requirement (SFR)</div></td><td>A requirement for security enforcement by the TOE<a id="period_22" href="#period_22">. </a></td></tr>
+<tr><td><div id="Security_Target">Security Target (ST)</div></td><td>A set of implementation-dependent security requirements for a specific product<a id="period_23" href="#period_23">. </a></td></tr>
+<tr><td><div id="Target_of_Evaluation">Target of Evaluation (TOE)</div></td><td>The product under evaluation<a id="period_24" href="#period_24">. </a></td></tr>
+<tr><td><div id="TOE_Security_Functionality">TOE Security Functionality (TSF)</div></td><td>The security functionality of the product under evaluation<a id="period_25" href="#period_25">. </a></td></tr>
+<tr><td><div id="TOE_Summary_Specification">TOE Summary Specification (TSS)</div></td><td>A description of how a TOE satisfies the SFRs in an ST<a id="period_26" href="#period_26">. </a></td></tr>
+</table><h3 id="tech-terms" class="indexable" data-level="3">1.2.2 Technical Terms</h3><table style="width: 100%"><tr><td><div id="Administrator">Administrator</div></td><td>The person who is responsible for management activities, including setting
+            the policy that is applied by the enterprise on the mobile device<a id="period_27" href="#period_27">. </a></td></tr>
+<tr><td><div id="Enrolled_State">Enrolled State</div></td><td>The state in which a mobile device is managed by a policy from an MDM<a id="period_28" href="#period_28">. </a></td></tr>
+<tr><td><div id="Mobile_Application_Store">Mobile Application Store (MAS)</div></td><td>Mobile Application Store</td></tr>
+<tr><td><div id="Mobile_Device_Management">Mobile Device Management (MDM)</div></td><td>Mobile Device Management</td></tr>
+<tr><td><div id="Mobile_Device_User">Mobile Device User</div></td><td>The person who uses and is held responsible for a mobile device<a id="period_29" href="#period_29">. </a></td></tr>
+<tr><td><div id="Operating_System">Operating System</div></td><td>
+	      Software which runs at the highest privilege level and can directly control
+              hardware resources<a id="period_30" href="#period_30">. </a>Modern mobile devices typically have at least two primary
+              operating systems: one which runs on the cellular baseband processor and one which
+              runs on the application processor<a id="period_31" href="#period_31">. </a>The platform of the application processor handles
+              most user interaction and provides the execution environment for apps<a id="period_32" href="#period_32">. </a>The platform of
+              the cellular baseband processor handles communications with the cellular network and
+              may control other peripherals<a id="period_33" href="#period_33">. </a>The term OS, without context, may be assumed to refer
+              to the platform of the application</td></tr>
+<tr><td><div id="Unenrolled_State">Unenrolled State</div></td><td>
+		The state in which a mobile device is not managed by an MDM system<a id="period_34" href="#period_34">. </a>	      </td></tr>
+<tr><td><div id="User">User</div></td><td>See Mobile Device User<a id="period_35" href="#period_35">. </a></td></tr>
+</table></div>
+
+    <h2 class="indexable" data-level="2" id="targets">1.3 Compliant Targets of Evaluation</h2> 
+      The MDM system
+      consists of two primary components: the MDM Server software and the MDM Agent<a id="period_36" href="#period_36">. </a>This PP-Module specifically addresses the MDM Agent<a id="period_37" href="#period_37">. </a>
+      The MDM Agent establishes a secure connection back
+      to the MDM Server, from which it receives policies to enforce on the mobile
+      device<a id="period_38" href="#period_38">. </a>Optionally, the MDM Agent interacts with the Mobile Application
+      Store (MAS) Server to download and install enterprise-hosted applications<a id="period_39" href="#period_39">. </a><br><br> A
+      compliant MDM Agent is installed on a mobile device as an application
+      (supplied by the developer of the MDM Server software) or is part of the
+      mobile device's OS.This PP-Module builds on either the MDF PP or the MDM PP<a id="period_40" href="#period_40">. </a>A TOE
+      that claims conformance to this PP-Module must also claim conformance to one
+      of those PPs as its Base-PP<a id="period_41" href="#period_41">. </a>A compliant TOE is obligated
+      to implement the functionality required in the Base-PP along with the
+      additional functionality defined in this PP-Module in order to mitigate the
+      threats that are defined by this PP-Module<a id="period_42" href="#period_42">. </a><br><br> This PP-Module shall build on the MDF PP if the 
+      TOE is a native part of a mobile operating system<a id="period_43" href="#period_43">. </a>The TOE for
+      this PP-Module combined with the MDF PP is the mobile
+      device itself plus the MDM Agent<a id="period_44" href="#period_44">. </a>If the MDM Agent is part
+      of the mobile device&#8217;s OS, the MDM Agent may present multiple interfaces for
+      configuring the mobile device, such as a local interface and a remote interface<a id="period_45" href="#period_45">. </a>Agents
+      conforming to this PP-Module must at least offer an interface with a trusted
+      channel that serves as one piece of an MDM system<a id="period_46" href="#period_46">. </a>Conformant MDM Agents may also offer other interfaces, and the configuration aspects of
+      these additional interfaces are in scope of this PP-Module<a id="period_47" href="#period_47">. </a><br><br> 
+      This PP-Module shall build on the MDM Server PP if the TOE is a third-party application that is provided with
+      an MDM Server and installed on a mobile device by the user after acquiring
+      the mobile device<a id="period_48" href="#period_48">. </a>The distributed TOE for this PP-Module
+      combined with the MDM Server PP is the entire MDM environment, which includes both the MDM Server and the
+        MDM Agent<a id="period_49" href="#period_49">. </a>Even though the mobile device itself is not part of the TOE, it is expected to be evaluated against the MDF PP so that
+      its baseline security capabilities can be assumed to be present<a id="period_50" href="#period_50">. </a>
+      
+      <h3 class="indexable" data-level="3" id="TOEboundary">1.3.1 TOE Boundary</h3> Figure 1 shows a high-level example of the PP-Module
+        TOE boundary and its Operational Environment<a id="period_51" href="#period_51">. </a>As stated above, the MDM Agent may either be provided as part of the mobile device itself (shown in
+        red) or distributed as a third-party application from the developer of the MDM Server software (shown in blue)<a id="period_52" href="#period_52">. </a><br><br>
+        <div class="figure" id="figure-toe"><img id="toe" src="images/MDMagentoperatingenvironment.jpg" width="" height=""><br><span class="ctr" data-myid="toe" data-counter-type="ct-figure">Figure <span class="counter">1</span></span>:
+      MDM Agent Operating Environment</div><br> 
+        The MDM
+        Agent must closely interact with or be part of the mobile device&#8217;s platform in order to
+        establish policies and to perform queries about device status<a id="period_53" href="#period_53">. </a>The mobile device, in turn,
+        has its own security requirements specified in the MDF PP<a id="period_54" href="#period_54">. </a>
+        
+    
+    <h2 class="indexable" data-level="2" id="usecase">1.4 Use Cases</h2> This PP-Module defines 4 use cases:<br><br>
+      <dl><dt id="usecase1"> [USE CASE 1] Enterprise-owned device for general-purpose enterprise use</dt><dd><span class="description"> An Enterprise-owned device for general-purpose business use is commonly
+            called Corporately Owned, Personally Enabled (COPE)<a id="period_55" href="#period_55">. </a>This use case entails a significant
+            degree of Enterprise control over configuration and software inventory<a id="period_56" href="#period_56">. </a>Enterprise
+            administrators use an MDM product to establish policies on the mobile
+            devices prior to user issuance<a id="period_57" href="#period_57">. </a>Users may use Internet connectivity to browse the web or
+            access corporate mail or run Enterprise applications, but this connectivity may be under
+            significant control of the Enterprise<a id="period_58" href="#period_58">. </a>The user may also be expected to store data and
+            use applications for personal, non-enterprise use<a id="period_59" href="#period_59">. </a>The Enterprise administrator uses the
+              MDM product to deploy security policies and query mobile device
+            status<a id="period_60" href="#period_60">. </a>The MDM may issue commands for remediation actions<a id="period_61" href="#period_61">. </a>          </span></dd><dt id="usecase2"> [USE CASE 2] Enterprise-owned device for specialized, high-security use</dt><dd><span class="description">An Enterprise-owned device with intentionally limited network connectivity,
+            tightly controlled configuration, and limited software inventory is appropriate for
+            specialized, high-security use cases<a id="period_62" href="#period_62">. </a>As in the previous use case, the MDM product is used 
+            to establish such policies on mobile devices prior to
+            issuance to users<a id="period_63" href="#period_63">. </a>The device may not be permitted connectivity to any external
+            peripherals<a id="period_64" href="#period_64">. </a>It may only be able to communicate via its Wi-Fi or cellular radios with
+            the Enterprise-run network, which may not even permit connectivity to the Internet<a id="period_65" href="#period_65">. </a>Use
+            of the device may require compliance with usage policies that are more restrictive than
+            those in any general-purpose use case, yet may mitigate risks to highly sensitive
+            information<a id="period_66" href="#period_66">. </a>Based upon the operation environment and the acceptable risk level of the
+            enterprise, those security functional requirements outlined in Section 5
+            of this PP-Module along with the selections in the Use Case 2 template defined
+            in  are sufficient for the high-security use case<a id="period_67" href="#period_67">. </a>          </span></dd><dt id="usecase3"> [USE CASE 3] Personally owned device for personal and enterprise use</dt><dd><span class="description">A personally owned device, which is used, for both personal activities and
+            enterprise data is commonly called Bring Your Own Device (BYOD)<a id="period_68" href="#period_68">. </a>The device may be
+            provisioned for access to enterprise resources after significant personal usage has
+            occurred<a id="period_69" href="#period_69">. </a>Unlike in the enterprise-owned cases, the enterprise is limited in what
+            security policies it can enforce because the user purchased the device primarily for
+            personal use and is unlikely to accept policies that limit the functionality of the
+            device<a id="period_70" href="#period_70">. </a><br><br> However, because the Enterprise allows the user full (or
+            nearly full) access to the Enterprise network, the Enterprise will require certain
+            security policies, for example a password or screen lock policy, and health reporting,
+            such as the integrity of the mobile device system software, before allowing access<a id="period_71" href="#period_71">. </a>The
+            administrator of the MDM can establish remediation actions, such as
+            wipe of the Enterprise data, for non-compliant devices<a id="period_72" href="#period_72">. </a>These controls could potentially
+            be enforced by a separation mechanism built-in to the device itself to distinguish
+            between enterprise and personal activities, or by a third-party application that
+            provides access to enterprise resources and leverages security capabilities provided by
+            the mobile device<a id="period_73" href="#period_73">. </a>Based upon the Operational Environment and the acceptable risk level
+            of the enterprise, those security functional requirements outlined in Section 5 of this PP-Module 
+            along with the selections in the Use Case 3
+            template defined in  are sufficient for the secure
+            implementation of this BYOD use case<a id="period_74" href="#period_74">. </a></span></dd><dt id="usecase4"> [USE CASE 4] Personally owned device for personal and limited enterprise use</dt><dd><span class="description">A personally owned device may also be given access to limited enterprise
+            services such as enterprise email<a id="period_75" href="#period_75">. </a>Because the user does not have full access to the
+            enterprise or enterprise data, the enterprise may not need to enforce any security
+            policies on the device<a id="period_76" href="#period_76">. </a>However, the enterprise may want secure email and web browsing
+            with assurance that the services being provided to those clients by the mobile device
+            are not compromised<a id="period_77" href="#period_77">. </a>Based upon the Operational Environment and the acceptable risk
+            level of the enterprise, those security functional requirements outlined in Section 5 of this PP-Module are sufficient for the secure
+            implementation of this BYOD use case<a id="period_78" href="#period_78">. </a></span></dd></dl>
+    
+  
+  <h1 class="indexable" data-level="1" id="Conformance_Claims">2 Conformance Claims</h1>
+    <dl><dt class="cclaim,defined" id="Conformance Statement">Conformance Statement</dt><dd><span class="description"> This PP-Module inherits exact conformance as required from
+          the specified Base-PP and as defined in the CC and
+            CEM addenda for Exact Conformance, Selection-Based SFRs, and Optional
+          SFRs (dated May 2017)<a id="period_79" href="#period_79">. </a><br><br> The following PPs and PP-Modules are allowed to
+          be specified in a PP-Configuration with this PP-Module<a id="period_80" href="#period_80">. </a><ul>
+            <li>collaborative PP-Module for Biometric enrollment and verification - for unlocking the device, Version 1.1</li>
+            <li>PP-Module for Bluetooh, Version 1.0</li>
+            <li>PP-Module for VPN Client, Version 2.4</li>
+            <li>PP-Module for Wireless LAN Clients, Version 1.0</li>
+          </ul>
+        </span></dd><dt class="cclaim,defined" id="CC Conformance Claims">CC Conformance Claims</dt><dd><span class="description">This PP-Module is conformant to Parts 2 (extended) and 3
+          (conformant) of Common Criteria Version 3.1, Release 5 [CC]<a id="period_81" href="#period_81">. </a>        </span></dd><dt class="cclaim,defined" id="PP Claim">PP Claim</dt><dd><span class="description">
+          <p>
+            This PP-Module does not claim conformance to any other Protection Profile<a id="period_82" href="#period_82">. </a>          </p>
+        </span></dd><dt class="cclaim,defined" id="Package Claim">Package Claim</dt><dd><span class="description">
+        <ul>
+        <li>This PP-Module is Functional Package for TLS Version 1.1 Conformant<a id="period_83" href="#period_83">. </a></li>
+        <li>This PP-Module is Functional Package for TLS Version 2.0 Conformant<a id="period_84" href="#period_84">. </a></li>
+        </ul>
+        </span></dd></dl>
+  
+  <h1 class="indexable" data-level="1" id="Security_Problem_Definition">3 Security Problem Definition</h1>
+    <h2 class="indexable" data-level="2" id="Threats">3.1 Threats</h2> The following threats are specific to MDM Agents, and represents an addition to those identified in the Base-PPs<a id="period_85" href="#period_85">. </a>
+      
+      <dl><dt class="threat,defined" id="T.MALICIOUS_APPS">T.MALICIOUS_APPS</dt><dd><span class="description">
+	    FILL IN
+	  </span></dd><dt class="threat,defined" id="T.BACKUP">T.BACKUP</dt><dd><span class="description"> An attacker may try to target backups of data or credentials and exfiltrate
+            data<a id="period_86" href="#period_86">. </a>Since the backup is stored on either a personal computer or end user&#8217;s backup
+            repository, it&#8217;s not likely the enterprise would detect compromise<a id="period_87" href="#period_87">. </a></span></dd><dt class="threat,defined" id="T.NETWORK_ATTACK">T.NETWORK_ATTACK</dt><dd><span class="description">FILL IN</span></dd><dt class="threat,defined" id="T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</dt><dd><span class="description">FILL IN</span></dd><dt class="threat,defined" id="T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</dt><dd><span class="description"> FILL IN </span></dd></dl>
+    
+    <h2 class="indexable" data-level="2" id="Assumptions">3.2 Assumptions</h2>
+These assumptions are made on the Operational Environment (OE) in order to be able to ensure that the
+security functionality specified in the PP-Module can be provided by the TOE<a id="period_88" href="#period_88">. </a>If the TOE is placed in an OE that does not meet these assumptions, the TOE may no longer be able to
+provide all of its security functionality<a id="period_89" href="#period_89">. </a>      
+      <dl><dt class="assumption,defined" id="A.CONNECTIVITY">A.CONNECTIVITY</dt><dd><span class="description">The TOE relies on network connectivity to carry out its
+            management activities<a id="period_90" href="#period_90">. </a>The TOE will robustly handle instances when
+            connectivity is unavailable or unreliable<a id="period_91" href="#period_91">. </a></span></dd><dt class="assumption,defined" id="A.PLATFORM">A.PLATFORM</dt><dd><span class="description">The MDM Agent relies upon mobile platform and hardware evaluated against the
+            MDF PP and assured to provide policy enforcement as well as cryptographic services and
+            data protection<a id="period_92" href="#period_92">. </a>The mobile platform provides trusted updates and software integrity
+            verification of the MDM Agent<a id="period_93" href="#period_93">. </a></span></dd><dt class="assumption,defined" id="A.PROPER_ADMIN">A.PROPER_ADMIN</dt><dd><span class="description">One or more competent, trusted personnel who are not careless, willfully
+            negligent, or hostile, are assigned and authorized as the TOE
+            Administrators, and do so using and abiding by guidance documentation<a id="period_94" href="#period_94">. </a></span></dd><dt class="assumption,defined" id="A.PROPER_USER">A.PROPER_USER</dt><dd><span class="description"> Mobile device users are not willfully negligent or hostile, and use the
+            device within compliance of a reasonable Enterprise security policy<a id="period_95" href="#period_95">. </a></span></dd></dl>
+    
+    <h2 class="indexable" data-level="2" id="securityPolicy">3.3 Organizational Security Policies</h2><p>An organization deploying the TOE is
+      expected to satisfy the organizational security policy listed below in addition to all
+      organizational security policies defined by the claimed Base-PP<a id="period_96" href="#period_96">. </a></p>
+      <dl><dt class="OSP,defined" id="P.ACCOUNTABILITY">P.ACCOUNTABILITY</dt><dd><span class="description">Personnel operating the TOE shall be accountable for their
+            actions within the TOE<a id="period_97" href="#period_97">. </a></span></dd><dt class="OSP,defined" id="P.ADMIN">P.ADMIN</dt><dd><span class="description">The configuration of the mobile device security functions must adhere to the
+            Enterprise security policy<a id="period_98" href="#period_98">. </a></span></dd><dt class="OSP,defined" id="P.DEVICE_ENROLL">P.DEVICE_ENROLL</dt><dd><span class="description">A mobile device must be enrolled for a specific user by the administrator of
+            the MDM prior to being used in the Enterprise network by the user<a id="period_99" href="#period_99">. </a></span></dd><dt class="OSP,defined" id="P.NOTIFY">P.NOTIFY</dt><dd><span class="description">The mobile user must immediately notify the administrator if a mobile device
+            is lost or stolen so that the administrator may apply remediation actions via the MDM system<a id="period_100" href="#period_100">. </a></span></dd></dl>
+    
+    
+  <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>
+    <h2 class="indexable" data-level="2" id="Security_Objectives_for_the_TOE">4.1 Security Objectives for the TOE</h2>
+      <dl><dt class="SO,defined" id="O.ACCOUNTABILITY">O.ACCOUNTABILITY</dt><dd><span class="description">The TOE must provide logging facilities, which record
+            management actions undertaken by its administrators<a id="period_101" href="#period_101">. </a></span></dd><dt class="SO,defined" id="O.APPLY_POLICY">O.APPLY_POLICY</dt><dd><span class="description">The TOE must facilitate configuration and enforcement of
+            enterprise security policies on mobile devices via interaction with the mobile OS and
+            the MDM Server<a id="period_102" href="#period_102">. </a>This will include the initial enrollment of the device
+            into management, through its entire lifecycle, including policy updates and its possible
+            unenrollment from management services<a id="period_103" href="#period_103">. </a></span></dd><dt class="SO,defined" id="O.DATA_PROTECTION_TRANSIT">O.DATA_PROTECTION_TRANSIT</dt><dd><span class="description">Data exchanged between the MDM Server and the MDM Agent must be protected from being monitored, accessed, or altered<a id="period_104" href="#period_104">. </a></span></dd><dt class="SO,defined" id="O.STORAGE">O.STORAGE</dt><dd><span class="description"> To address the issue of loss of confidentiality of user data in the event of
+            loss of a mobile device (T.PHYSICAL), conformant TOEs will use
+            platform provide key storage<a id="period_105" href="#period_105">. </a>The TOE is expected to protect its
+            persistent secrets and private keys<a id="period_106" href="#period_106">. </a></span></dd></dl>
+    
+    <h2 class="indexable" data-level="2" id="objectivesEnvironment">4.2 Security Objectives for the Operational Environment</h2>
+The OE of the TOE implements technical and procedural measures to assist the TOE in correctly providing its security functionality (which is defined by the security objectives for the TOE)<a id="period_107" href="#period_107">. </a>The security objectives for the OE consist of a set of statements describing the goals that the OE should achieve<a id="period_108" href="#period_108">. </a>This section defines the security objectives that are to be addressed by the IT domain or by non-technical or procedural means<a id="period_109" href="#period_109">. </a>The assumptions identified in Section 3 are incorporated as security objectives for the environment<a id="period_110" href="#period_110">. </a>      
+      <dl><dt class="SOE,defined" id="OE.DATA_PROPER_ADMIN">OE.DATA_PROPER_ADMIN</dt><dd><span class="description">TOE Administrators are trusted to follow and apply all administrator guidance
+            in a trusted manner<a id="period_111" href="#period_111">. </a></span></dd><dt class="SOE,defined" id="OE.DATA_PROPER_USER">OE.DATA_PROPER_USER</dt><dd><span class="description">Users of the mobile device are trained to securely use the mobile device and
+            apply all guidance in a trusted manner<a id="period_112" href="#period_112">. </a></span></dd><dt class="SOE,defined" id="OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</dt><dd><span class="description">The Enterprise IT infrastructure provides security for a network that is
+            available to the TOE and mobile devices that prevents unauthorized
+            access<a id="period_113" href="#period_113">. </a></span></dd><dt class="SOE,defined" id="OE.MOBILE_DEVICE_PLATFORM">OE.MOBILE_DEVICE_PLATFORM</dt><dd><span class="description">The MDM Agent relies upon the trustworthy mobile platform
+            and hardware to provide policy enforcement as well as cryptographic services and data
+            protection<a id="period_114" href="#period_114">. </a>The mobile platform provides trusted updates and software integrity
+            verification of the MDM Agent<a id="period_115" href="#period_115">. </a></span></dd><dt class="SOE,defined" id="OE.WIRELESS_NETWORK">OE.WIRELESS_NETWORK</dt><dd><span class="description">A wireless network will be available to the mobile devices<a id="period_116" href="#period_116">. </a></span></dd></dl>
+    
+    <h2 id="rationale" class="indexable,h2" data-level="2">4.3 Security Objectives Rationale</h2>   
+    This section describes how the assumptions, threats, and organizational 
+    security policies map to the security objectives<a id="period_117" href="#period_117">. </a>    <table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Threat, Assumption, or OSP</td><td>Security Objectives</td><td>Rationale</td></tr><tr class="major-row"><td rowspan="2"><a href="#T.MALICIOUS_APPS">T.MALICIOUS_&#8203;APPS</a></td><td><a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_&#8203;PROTECTION_&#8203;TRANSIT</a></td><td>The threat <a href="#T.MALICIOUS_APPS">T.MALICIOUS_APPS</a> is countered by <a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_PROTECTION_TRANSIT</a> as this
+              provides the capability to protect app loading/updates against malicious insertion
+              from the network<a id="period_118" href="#period_118">. </a></td></tr><tr><td><a href="#O.APPLY_POLICY">O.APPLY_&#8203;POLICY</a></td><td>The threat <a href="#T.MALICIOUS_APPS">T.MALICIOUS_APPS</a> is countered by <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a> as this provides
+              policy preventing loading of unapproved apps into the TOE<a id="period_119" href="#period_119">. </a></td></tr><tr class="major-row"><td rowspan="2"><a href="#T.BACKUP">T.BACKUP</a></td><td><a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_&#8203;PROTECTION_&#8203;TRANSIT</a></td><td>The threat <a href="#T.BACKUP">T.BACKUP</a> is countered by <a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_PROTECTION_TRANSIT</a> as this
+              provides the capability to communicate using one (or more) standard protocols as a
+              means to maintain the confidentiality of data that are transmitted between the Agent
+              and other entities<a id="period_120" href="#period_120">. </a></td></tr><tr><td><a href="#O.APPLY_POLICY">O.APPLY_&#8203;POLICY</a></td><td>The threat <a href="#T.BACKUP">T.BACKUP</a> is countered by <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a> as this provides policy to
+              enforce that backups be stored only in secure, protected locations<a id="period_121" href="#period_121">. </a></td></tr><tr class="major-row"><td rowspan="3"><a href="#T.NETWORK_ATTACK">T.NETWORK_&#8203;ATTACK</a></td><td><a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_&#8203;PROTECTION_&#8203;TRANSIT</a></td><td>The threat <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> is countered by <a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_PROTECTION_TRANSIT</a> as this
+              provides the capability to communicate using one (or more) standard protocols as a
+              means to maintain the confidentiality of data that are transmitted between the Agent
+              and other entities<a id="period_122" href="#period_122">. </a></td></tr><tr><td><a href="#O.APPLY_POLICY">O.APPLY_&#8203;POLICY</a></td><td>The threat <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> is countered by <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a> as this provides a
+              secure configuration of the Agent to protect data that it processes<a id="period_123" href="#period_123">. </a></td></tr><tr><td><a href="#OE.IT_ENTERPRISE">OE.IT_&#8203;ENTERPRISE</a></td><td>The threat <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> is countered by <a href="#OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</a> by reducing the network exposure of the
+              mobile device<a id="period_124" href="#period_124">. </a></td></tr><tr class="major-row"><td rowspan="3"><a href="#T.NETWORK_EAVESDROP">T.NETWORK_&#8203;EAVESDROP</a></td><td><a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_&#8203;PROTECTION_&#8203;TRANSIT</a></td><td>The threat <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> is countered by <a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_PROTECTION_TRANSIT</a> as
+              this provides the capability to communicate using one (or more) standard protocols as
+              a means to maintain the confidentiality of data that are transmitted between the Agent
+              and other entities<a id="period_125" href="#period_125">. </a></td></tr><tr><td><a href="#O.APPLY_POLICY">O.APPLY_&#8203;POLICY</a></td><td>The threat <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> is countered by <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a> as this
+              provides a secure configuration of the Agent to protect data that it
+              processes<a id="period_126" href="#period_126">. </a></td></tr><tr><td><a href="#OE.IT_ENTERPRISE">OE.IT_&#8203;ENTERPRISE</a></td><td>
+              The threat <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> is countered by <a href="#OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</a> by reducing the network exposure of the
+              mobile device<a id="period_127" href="#period_127">. </a> 
+            </td></tr><tr class="major-row"><td rowspan="3"><a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_&#8203;ACCESS</a></td><td><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a></td><td>The threat <a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a> is countered by <a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a> as this
+              provides the capability to log attempts by unauthorized personnel to access data, and
+              to log any access to the data or the device, as well as changes to the device during
+              the time when it is not under the control of an authorized user<a id="period_128" href="#period_128">. </a></td></tr><tr><td><a href="#O.APPLY_POLICY">O.APPLY_&#8203;POLICY</a></td><td>The threat <a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a> is countered by <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a> as this provides
+              a secure configuration of the Agent to protect data that it processes<a id="period_129" href="#period_129">. </a></td></tr><tr><td><a href="#O.STORAGE">O.STORAGE</a></td><td>The threat <a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a> is countered by <a href="#O.STORAGE">O.STORAGE</a> as this provides the capability to encrypt all user and enterprise data and authentication keys to ensure the confidentiality of data that it stores<a id="period_130" href="#period_130">. </a></td></tr><tr class="major-row"><td rowspan="1"><a href="#A.CONNECTIVITY">A.CONNECTIVITY</a></td><td><a href="#OE.WIRELESS_NETWORK">OE.WIRELESS_&#8203;NETWORK</a></td><td>The Operational Environment objective <a href="#OE.WIRELESS_NETWORK">OE.WIRELESS_NETWORK</a> is realized through
+              <a href="#A.CONNECTIVITY">A.CONNECTIVITY</a><a id="period_131" href="#period_131">. </a></td></tr><tr class="major-row"><td rowspan="1"><a href="#A.PLATFORM">A.PLATFORM</a></td><td><a href="#OE.MOBILE_DEVICE_PLATFORM">OE.MOBILE_&#8203;DEVICE_&#8203;PLATFORM</a></td><td>The Operational Environment objective <a href="#OE.MOBILE_DEVICE_PLATFORM">OE.MOBILE_DEVICE_PLATFORM</a> is realized
+              through <a href="#A.PLATFORM">A.PLATFORM</a><a id="period_132" href="#period_132">. </a></td></tr><tr class="major-row"><td rowspan="1"><a href="#A.PROPER_ADMIN">A.PROPER_&#8203;ADMIN</a></td><td><a href="#OE.DATA_PROPER_ADMIN">OE.DATA_&#8203;PROPER_&#8203;ADMIN</a></td><td>The Operational Environment objective <a href="#OE.DATA_PROPER_ADMIN">OE.DATA_PROPER_ADMIN</a> is realized
+              through <a href="#A.PROPER_ADMIN">A.PROPER_ADMIN</a><a id="period_133" href="#period_133">. </a></td></tr><tr class="major-row"><td rowspan="1"><a href="#A.PROPER_USER">A.PROPER_&#8203;USER</a></td><td><a href="#OE.DATA_PROPER_USER">OE.DATA_&#8203;PROPER_&#8203;USER</a></td><td>The Operational Environment objective <a href="#OE.DATA_PROPER_USER">OE.DATA_PROPER_USER</a> is realized through
+              <a href="#A.PROPER_USER">A.PROPER_USER</a><a id="period_134" href="#period_134">. </a></td></tr><tr class="major-row"><td rowspan="1"><a href="#P.ACCOUNTABILITY">P.ACCOUNTABILITY</a></td><td><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a></td><td><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a> provides logging of personnel actions in order to provide
+              accountability of all personnel actions within the TOE<a id="period_135" href="#period_135">. </a></td></tr><tr class="major-row"><td rowspan="1"><a href="#P.ADMIN">P.ADMIN</a></td><td><a href="#O.APPLY_POLICY">O.APPLY_&#8203;POLICY</a></td><td>The TOE adheres to the Enterprise security policy through
+              the application of <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a><a id="period_136" href="#period_136">. </a></td></tr><tr class="major-row"><td rowspan="1"><a href="#P.DEVICE_ENROLL">P.DEVICE_&#8203;ENROLL</a></td><td><a href="#O.APPLY_POLICY">O.APPLY_&#8203;POLICY</a></td><td>The TOE enrolls mobile devices for specific users with
+              policy through the application of <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a><a id="period_137" href="#period_137">. </a></td></tr><tr class="major-row"><td rowspan="1"><a href="#P.NOTIFY">P.NOTIFY</a></td><td><a href="#O.APPLY_POLICY">O.APPLY_&#8203;POLICY</a></td><td>The TOE provides the capability for the administrator to
+              apply remediation actions via the MDM system through policy, which
+              is applied through <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a><a id="period_138" href="#period_138">. </a></td></tr></table>
+  
+  <h1 class="indexable" data-level="1" id="Security_Requirements">5 Security Requirements</h1>
+    
+      
+        https://github.com/commoncriteria/mobile-device
+        release-3.3
+      
+      https://www.niap-ccevs.org/Profile/Info.cfm?PPID=468&amp;id=468
+    
+      
+      
+      
+        <h4 id="mdf_mod_fcs" class="indexable" data-level="4">5.0.0.1 Cryptographic Support (FCS)</h4>
+          
+          <div class="comp" id="FCS_STG_EXT.4"><h4>FCS_STG_EXT.4 Cryptographic Key Storage</h4>
+            
+            
+            
+            
+            
+            <div class="element"><div class="reqid" id="FCS_STG_EXT.4.1"><a href="#FCS_STG_EXT.4.1" class="abbr">FCS_STG_EXT.4.1</a></div><div class="reqdesc">The MDM Agent shall use the platform provided key storage for
+                all persistent secret and private keys<a id="period_139" href="#period_139">. </a><div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">This requirement ensures that persistent secrets
+                (credentials, secret keys, authentication token) and private keys are stored securely when not in use by
+                the mobile platform<a id="period_140" href="#period_140">. </a></span></div></div></div>
+            
+          </div>
+        
+        <h4 id="mdf_mod_ftp" class="indexable" data-level="4">5.0.0.2 Trusted Path/Channels (FTP)</h4>
+          <div class="comp" id="FTP_ITC_EXT.1/MDFCHANNEL"><h4>FTP_ITC_EXT.1/MDFCHANNEL Trusted Channel Communication</h4>
+            
+            <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.1/MDFCHANNEL"><a href="#FTP_ITC_EXT.1.1/MDFCHANNEL" class="abbr">FTP_ITC_EXT.1.1/MDFCHANNEL</a></div><div class="reqdesc"><b>Refinement:</b> The TSF shall use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_1">mutually authenticated TLS client as defined in the Package for
+                    Transport Layer Security</span></li><li style=""><span class="selectable-content" id="_s_2">mutually authenticated DTLS client as defined in the Package for
+                    Transport Layer Security</span></li><li style=""><span class="selectable-content" id="_s_3">HTTPS</span></li></ul>] to provide a communication channel between itself and another trusted
+                IT product that is logically distinct from other communication channels, provides
+                assured identification of its end points, protects channel data from disclosure, and
+                detects modification of the channel data<a id="period_141" href="#period_141">. </a><div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note"> The intent of this requirement is to protect the
+                communications channel between MDM Server and Agent, post
+                enrollment<a id="period_142" href="#period_142">. </a><a href="#FTP_TRP.1/MDFENROLL">FTP_TRP.1/MDFENROLL</a> is to protect the communications
+                channel between MDM Server and Agent during enrollment<a id="period_143" href="#period_143">. </a>                <br><br> This requirement is to ensure that the transmission of any audit
+                logs, mobile device information data (software version, hardware model, and
+                application versions), and configuration data collected by the MDM
+                Agent and sent from the MDM Agent to the MDM
+                Server, when commanded, or at configurable intervals, is properly protected<a id="period_144" href="#period_144">. </a>This
+                trusted channel also protects any commands and policies sent by the MDM Server to the MDM Agent<a id="period_145" href="#period_145">. </a>
+                Either the MDM Agent or the MDM Server is able to initiate the
+                connection<a id="period_146" href="#period_146">. </a>                <br><br> 
+                This requirement is iterated from the MDF PP to indicate the protocols that the MDM Agent can use for a trusted
+                channel<a id="period_147" href="#period_147">. </a>The mobile device is required to perform the mandated cryptographic
+                protocols as in the Base-PP for communication channels mandated in
+                the MDF PP<a id="period_148" href="#period_148">. </a>The ST author must select one of
+                TLS, DTLS, or HTTPS in order to establish and maintain a trusted channel between the
+                  MDM Agent and the MDM Server<a id="period_149" href="#period_149">. </a>Only TLS, DTLS,
+                or HTTPS are acceptable for this trusted channel<a id="period_150" href="#period_150">. </a><br><br> Since this
+                requirement is only for the case when the PP-Module builds on MDF
+                PP and in this case it is expected that the MDM Agent will be a
+                native part of the mobile operating system, it is expected that the MDM Agent will utilize the mobile device's implementation of the
+                selected protocols<a id="period_151" href="#period_151">. </a>HTTPS (FCS_HTTPS_EXT.1) and TLS (FCS_TLSC_EXT.1) are already
+                mandatory for a MDF ST<a id="period_152" href="#period_152">. </a>If "TLS" or "DTLS" is selected the following selections from
+                the TLS Functional Package must be made: <ul>
+                  <li>FCS_TLS_EXT.1: <ul>
+                      <li>either TLS or DTLS is selected depending on the selection made in
+                        FTP_ITC_EXT.1.1</li>
+                      <li>client must be selected</li>
+                    </ul>
+                  </li>
+                  <li>FCS_TLSC_EXT.1.1: <ul>
+                      <li>The cipher suites selected must correspond with the algorithms and
+                        hash functions allowed in FCS_COP.1 from the MDF PP<a id="period_153" href="#period_153">. </a></li>
+                      <li>mutual authentication must be selected</li>
+                    </ul>
+                  </li>
+                </ul> Protocol, RBG, Certificate validation, algorithm, and similar services may
+                be met with platform provided services<a id="period_154" href="#period_154">. </a><br><br>
+              </span></div></div></div>
+            <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.2/MDFCHANNEL"><a href="#FTP_ITC_EXT.1.2/MDFCHANNEL" class="abbr">FTP_ITC_EXT.1.2/MDFCHANNEL</a></div><div class="reqdesc"><b>Refinement:</b> The TSF shall permit the TSF and the MDM
+                Server and [<b>selection</b>: <span class="selectable-content" id="_s_4">MAS Server</span>,  <span class="selectable-content" id="_s_5">no other IT entities</span> ] to initiate communication via the trusted channel<a id="period_155" href="#period_155">. </a><div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note"> For all other use cases, the mobile device initiates the
+                communication; however, for MDM Agents, the MDM
+                Server may also initiate communication<a id="period_156" href="#period_156">. </a></span></div></div></div>
+            <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.3/MDFCHANNEL"><a href="#FTP_ITC_EXT.1.3/MDFCHANNEL" class="abbr">FTP_ITC_EXT.1.3/MDFCHANNEL</a></div><div class="reqdesc"><b>Refinement:</b> The TSF shall initiate communication via the trusted channel for all
+                communication between the MDM Agent and the MDM Server and [<b>selection</b>: <span class="selectable-content" id="_s_6">all communication between the MAS Server and the MDM
+                    Agent</span>,  <span class="selectable-content" id="_s_7">no other communication</span> ]
+              <div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note"> This element is iterated from the MDF PP;
+                it is expected that the mobile device will initiate the trusted channel between the MDM
+                Agent and the MDM Server for administrative communication and may initiate other
+                trusted channels to other trusted IT entities for other uses<a id="period_157" href="#period_157">. </a></span></div></div></div>
+          </div>
+          <div class="comp" id="FTP_TRP.1/MDFENROLL"><h4>FTP_TRP.1/MDFENROLL Trusted Path (for Enrollment)</h4>
+            
+            <div class="element"><div class="reqid" id="FTP_TRP.1.1/MDFENROLL"><a href="#FTP_TRP.1.1/MDFENROLL" class="abbr">FTP_TRP.1.1/MDFENROLL</a></div><div class="reqdesc"><b>Refinement:</b> The TSF shall use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="TRP_TLS_2">TLS client as defined in the Package for Transport Layer Security</span></li><li style=""><span class="selectable-content" id="TRP_HTTPS_2">HTTPS</span></li></ul>] to provide a trusted communication path between itself and another
+                trusted IT product that is logically distinct from other communication paths and
+                provides assured identification of its endpoints and protection of the communicated
+                data from disclosure and detection of modification of the communicated data from
+                [<i>modification, disclosure</i>]<a id="period_158" href="#period_158">. </a></div></div>
+            <div class="element"><div class="reqid" id="FTP_TRP.1.2/MDFENROLL"><a href="#FTP_TRP.1.2/MDFENROLL" class="abbr">FTP_TRP.1.2/MDFENROLL</a></div><div class="reqdesc"><b>Refinement:</b> The TSF shall permit MD users to initiate communication via the trusted path<a id="period_159" href="#period_159">. </a>              </div></div>
+            <div class="element"><div class="reqid" id="FTP_TRP.1.3/MDFENROLL"><a href="#FTP_TRP.1.3/MDFENROLL" class="abbr">FTP_TRP.1.3/MDFENROLL</a></div><div class="reqdesc"><b>Refinement:</b> The TSF shall require the use of the trusted path for [<i>[all MD user actions]</i>]<a id="period_160" href="#period_160">. </a>
+              <div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note"> This requirement ensures that authorized MD users initiate
+                all communication with the TOE via a trusted path, and that all
+                communications with the TOE by MD users is performed over this
+                path<a id="period_161" href="#period_161">. </a>The purpose of this connection is for enrollment by the MD user<a id="period_162" href="#period_162">. </a>                <br><br> The ST author chooses the mechanism or
+                mechanisms supported by the TOE<a id="period_163" href="#period_163">. </a>The data passed in this trusted
+                communication channel are encrypted as defined by the protocol selected<a id="period_164" href="#period_164">. </a>                <br><br> Since this requirement is only for the case when the PP-Module builds on MDF PP and in this case it is expected that the
+                  MDM Agent will be a native part of the mobile operating system,
+                it is expected that the MDM Agent will utilize the mobile device's
+                implementation of the selected protocols<a id="period_165" href="#period_165">. </a>HTTPS (FCS_HTTPS_EXT.1) and TLS
+                (FCS_TLSC_EXT.1) are already mandatory for a MDF ST<a id="period_166" href="#period_166">. </a>If "TLS" or "DTLS" is selected
+                the following selections from the TLS Functional Package must be made: 
+                
+                <ul>
+                  <li>FCS_TLS_EXT.1: <ul>
+                      <li>TLS must be selected</li>
+                      <li>client must be selected</li>
+                    </ul>
+                  </li>
+                  <li>FCS_TLSC_EXT.1.1: <ul>
+                      <li>The cipher suites selected must correspond with the algorithms and
+                        hash functions allowed in FCS_COP.1 from the MDF PP<a id="period_167" href="#period_167">. </a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </span></div></div></div>
+          </div>
+        
+      
+       When this PP-Module is used to extend the MDF PP, the TOE type for
+        the overall TOE is still a mobile device<a id="period_168" href="#period_168">. </a>The TOE boundary is simply extended to include the
+          MDM Agent application that runs on the mobile device<a id="period_169" href="#period_169">. </a>      
+      
+      
+      This threat protects user data from unauthorized logical access<a id="period_170" href="#period_170">. </a>An
+        attacker would attempt to exploit this threat by first exploiting the T.PHYSICAL, T.FLAWAPP,
+        or T.PERSISTENT threats defined in the Base-PP against the mobile device
+        as a whole, and then using the device itself as an attack vector against any backup data
+        stored on the TOE<a id="period_171" href="#period_171">. </a>      
+      This assumption expects that networking services will be available for the TOE to use<a id="period_172" href="#period_172">. </a>
+        This is consistent with the Base-PP because the TOE is installed on a mobile device defined by the 
+        Base-PP that provides networking services through various radios<a id="period_173" href="#period_173">. </a>      This assumption expects that the TOE&#8217;s underlying hardware platform is validated against the MDF PP<a id="period_174" href="#period_174">. </a>
+        This is consistent with the Base-PP by definition because the mobile device is within the TOE boundary and evaluated against the MDF PP<a id="period_175" href="#period_175">. </a>      	
+        This assumption expects that the TOE administrator is trusted and competent in configuring the TSF<a id="period_176" href="#period_176">. </a>
+        This assumption is consistent with the A.CONFIG assumption in the Base-PP which expects the TSF to be configured correctly 
+        regardless of the subject performing the configuration<a id="period_177" href="#period_177">. </a>      	
+        This assumption expects that the TOE user is not willfully negligent or hostile in using the TSF<a id="period_178" href="#period_178">. </a>
+        This assumption is consistent with the A.CONFIG assumption in the Base-PP which expects the TSF 
+        to be configured correctly regardless of the subject performing the configuration as well as the 
+        A.NOTIFY and A.PRECAUTION assumptions which define baseline expectations for the user&#8217;s level of responsibility<a id="period_179" href="#period_179">. </a>      
+      The Base-PP does not define any OSPs so any OSPs defined by the PP-Module 
+        will not conflict with the Base-PP by definition<a id="period_180" href="#period_180">. </a>      The Base-PP does not define any OSPs so any OSPs defined by the PP-Module 
+        will not conflict with the Base-PP by definition<a id="period_181" href="#period_181">. </a>      The Base-PP does not define any OSPs so any OSPs defined by the PP-Module 
+        will not conflict with the Base-PP by definition<a id="period_182" href="#period_182">. </a>      The Base-PP does not define any OSPs so any OSPs defined by the PP-Module 
+        will not conflict with the Base-PP by definition<a id="period_183" href="#period_183">. </a>      
+      
+       The Base-PP provides an objective,
+        O.INTEGRITY, that ensures that the integrity of the mobile device is maintained<a id="period_184" href="#period_184">. </a>This
+        objective assists in the implementation of O.INTEGRITY by providing records of
+        administrative activity, which would include actions that could cause the integrity of the
+        mobile device to be lost<a id="period_185" href="#period_185">. </a>       This objective supports the implementation of the O.CONFIG
+        objective defined in the Base-PP by specifying an additional method by
+        which the TSF may be configured<a id="period_186" href="#period_186">. </a>       This objective extends the Base-PP&#8217;s O.COMMS objective by ensuring that the communications related to MDM
+        Agent functionality are secured in the same manner as other sensitive data transmitted
+        to/from the mobile device<a id="period_187" href="#period_187">. </a>       This objective extends the Base-PP&#8217;s <a href="#O.STORAGE">O.STORAGE</a>
+        objective by ensuring that the mobile device&#8217;s data-at-rest protection mechanisms can also
+        be used to secure the MDM Agent and related data<a id="period_188" href="#period_188">. </a>       This objective extends the Base-PP&#8217;s
+        OE.CONFIG objective by expecting that TOE administrators act appropriately when installing
+        or configuring the MDM Agent<a id="period_189" href="#period_189">. </a>       This objective extends the Base-PP&#8217;s
+        OE.NOTIFY and OE.PRECAUTION objectives by setting reasonable expectations for user security
+        behavior<a id="period_190" href="#period_190">. </a>       This objective helps mitigate the T.EAVESDROP and T.NETWORK
+        threats defined by the Base-PP by reducing the network exposure of the
+        mobile device<a id="period_191" href="#period_191">. </a>This does not conflict with the Base-PP because the Base-PP does not set specific expectations for the level of security that the
+        enterprise provides, but all use cases from the Base-PP set expectations
+        that the mobile device is used for some enterprise purposes so it is reasonable to expect
+        the enterprise have security controls in place to protect these functions<a id="period_192" href="#period_192">. </a>
+       This objective is suitable because the MDM Agent can reasonably expect the device it has been deployed on to be
+        secure<a id="period_193" href="#period_193">. </a>       This objective is suitable because while the Base-PP does not associate any availability metrics with wireless
+        communications, the mobile device will always provide the ability to access a wireless
+        network<a id="period_194" href="#period_194">. </a>       This SFR requires the MDM Agent to use a
+        trusted channel defined by FTP_ITC_EXT.1 in the Base-PP to transmit data
+        about its own behavior to the Operational Environment<a id="period_195" href="#period_195">. </a>       The Base-PP defines FAU_GEN.1; this PP-Module defines a second iteration to use the same audit mechanism to
+        generate audit records for the MDM Agent&#8217;s behavior<a id="period_196" href="#period_196">. </a>It may alternatively
+        allow the TSF to generate its own audit trail, which does not impede the MDF from enforcing
+        its own security functionality<a id="period_197" href="#period_197">. </a>       The Base-PP defines FAU_SEL.1; this PP-Module defines a second iteration to use the same audit mechanism to select
+        the auditable events to be generated by the MDM Agent<a id="period_198" href="#period_198">. </a>Note that the Base-PP does not mandate this requirement so it is possible that only the
+          MDM Agent portion of the TOE may implement it<a id="period_199" href="#period_199">. </a>In this case, the SFR
+        provides a selection for the MDM Agent to implement its own mechanism to
+        perform this function rather than a platform-provided one<a id="period_200" href="#period_200">. </a>       This SFR requires the MDM Agent to record data
+        that it receives from the Operational Environment<a id="period_201" href="#period_201">. </a>It does not need to use any functionality
+        defined in the Base-PP to do this, and doing this does not prevent the
+        enforcement of any security requirements from the Base-PP<a id="period_202" href="#period_202">. </a>
+       This SFR requires the MDM Agent to use a
+        digital signature algorithm to validate data that it receives from the Operational
+        Environment<a id="period_203" href="#period_203">. </a>To do this, the MDM Agent will use the functionality defined
+        by the Base-PP in FCS_COP.1/SIGN<a id="period_204" href="#period_204">. </a>       This SFR defines the ability of the MDM Agent
+        to interact with the mobile device to execute the management functions defined by
+        FMT_MOF_EXT.1 in the Base-PP<a id="period_205" href="#period_205">. </a>The Base-PP specifically
+        indicates in FMT_MOF_EXT.1.2 that some management functions may be performed via
+        MDM<a id="period_206" href="#period_206">. </a>       This SFR defines the functions performed by the MDM Agent when unenrolled from an MDM<a id="period_207" href="#period_207">. </a>The Base-PP defines 
+        unenrollment actions in FMT_SMF_EXT.2, and goes on to note
+        that these actions may be performed &#8220;perhaps via an MDM agent,&#8221; so this is
+        expected behavior<a id="period_208" href="#period_208">. </a>
+       This SFR defines the ability of the MDM Agent
+        to store generated audit data in the audit storage provided by the mobile device<a id="period_209" href="#period_209">. </a>The Base-PP defines the capability for 
+        audit storage in FAU_STG.1<a id="period_210" href="#period_210">. </a>       This SFR defines the ability of the MDM Agent
+        to maintain information about its last successful connection with the environmental MDM Server 
+        (i.e., the last successful invocation of the trusted channel for
+        that interface, as defined in FTP_ITC_EXT.1 of the Base-PP)<a id="period_211" href="#period_211">. </a>It does not
+        need to use any functionality defined in the Base-PP to do this, and doing
+        this does not prevent the enforcement of any security requirements from the Base-PP<a id="period_212" href="#period_212">. </a>    
+    
+      
+        https://github.com/commoncriteria/mdm
+        v4.0
+      
+      https://www.niap-ccevs.org/Profile/Info.cfm?PPID=428&amp;id=428
+    
+      
+      
+      
+        <h4 id="mdm_mod_fcs" class="indexable" data-level="4">5.0.0.3 Cryptographic Support (FCS)</h4>
+          <div class="comp" id="FCS_STG_EXT.1/MDMKEYS"><h4>FCS_STG_EXT.1/MDMKEYS Cryptographic Key Storage</h4>
+            
+            
+            <div class="element"><div class="reqid" id="FCS_STG_EXT.1.1/MDMKEYS"><a href="#FCS_STG_EXT.1.1/MDMKEYS" class="abbr">FCS_STG_EXT.1.1/MDMKEYS</a></div><div class="reqdesc"><b>Refinement:</b> The MDM Agent shall use the [<i>platform-provided key storage</i>] for all persistent
+                secret and private keys<a id="period_213" href="#period_213">. </a><div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note"> This requirement ensures that persistent secrets
+                (credentials, secret keys) and private keys are stored securely when not in use by
+                the mobile platform<a id="period_214" href="#period_214">. </a><br><br>
+              </span></div></div></div>
+            
+          </div>
+        
+
+      
+       When this PP-Module is used to extend the MDM
+        PP, the TOE type for the overall TOE is still mobile device management<a id="period_215" href="#period_215">. </a>The TOE boundary is
+        simply extended to include the MDM Agent(s) that reside on individual
+        mobile devices and support the management functionality that the MDM
+        Server component implements<a id="period_216" href="#period_216">. </a>      
+      
+      
+       This threat protects user data from unauthorized logical access<a id="period_217" href="#period_217">. </a>If
+        the backup data is stored outside the MDM or the mobile device that it protects, then there
+        is no conflict with the MDM PP since it is a different security boundary<a id="period_218" href="#period_218">. </a>If the backup data
+        is stored either on the MDM or on the protected device, an attacker would attempt to exploit
+        this threat by first exploiting any of the threats that the MDM PP defines
+        (<a href="#T.MALICIOUS_APPS">T.MALICIOUS_APPS</a>, <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a>, <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a>, <a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a>) depending on
+        where and how the backup data is stored, and then use successful exploitation of one of
+        these threats to attempt to access the backup data itself<a id="period_219" href="#period_219">. </a>      
+      This assumption expects that networking services will be available for the TOE to use<a id="period_220" href="#period_220">. </a>
+        This is consistent with the Base-PP because the portion of the TOE defined by the Base-PP runs on a 
+        general-purpose operating system or specialized network appliance<a id="period_221" href="#period_221">. </a>
+        The Base-PP does not make any assumptions about the environmental functionality that this PP-Module relies on, 
+        so there is nothing in this PP-Module that would contradict it<a id="period_222" href="#period_222">. </a>      This assumption expects that the TOE&#8217;s underlying hardware platform is validated against the MDF PP<a id="period_223" href="#period_223">. </a>
+        This is consistent with the Base-PP because the portion of the TOE defined by the Base-PP runs on a general-purpose operating system or 
+        specialized network appliance<a id="period_224" href="#period_224">. </a>The Base-PP does not make any assumptions about the environmental functionality that this PP-Module relies on, 
+        so there is nothing in this PP-Module that would contradict it<a id="period_225" href="#period_225">. </a>      	
+        The Base-PP defines an <a href="#A.PROPER_ADMIN">A.PROPER_ADMIN</a> assumption that is identical to the one defined by the PP-Module<a id="period_226" href="#period_226">. </a>
+        The PP-Module just extends it to the entire TOE boundary rather than just the MDM Server<a id="period_227" href="#period_227">. </a>      	
+        The Base-PP defines an <a href="#A.PROPER_USER">A.PROPER_USER</a> assumption that is identical to the one defined by the PP-Module<a id="period_228" href="#period_228">. </a>
+        The PP-Module just extends it to the entire TOE boundary rather than just the MDM Server<a id="period_229" href="#period_229">. </a>      
+      The Base-PP defines a <a href="#P.ACCOUNTABILITY">P.ACCOUNTABILITY</a> OSP that is identical to the one defined by the PP-Module<a id="period_230" href="#period_230">. </a>
+        The PP-Module just extends it to the entire TOE boundary rather than just the MDM Server<a id="period_231" href="#period_231">. </a>      The Base-PP defines a <a href="#P.ADMIN">P.ADMIN</a> OSP that is identical to the one defined by the PP-Module<a id="period_232" href="#period_232">. </a>
+        The PP-Module just extends it to the entire TOE boundary rather than just the MDM Server<a id="period_233" href="#period_233">. </a>      	
+        The Base-PP defines a <a href="#P.DEVICE_ENROLL">P.DEVICE_ENROLL</a> OSP that is identical to the one defined by the PP-Module<a id="period_234" href="#period_234">. </a>
+        The PP-Module just extends it to the entire TOE boundary rather than just the MDM Server<a id="period_235" href="#period_235">. </a>      The Base-PP defines a <a href="#P.NOTIFY">P.NOTIFY</a> OSP that is identical to the one defined by the PP-Module<a id="period_236" href="#period_236">. </a>
+        The PP-Module just extends it to the entire TOE boundary rather than just the MDM Server<a id="period_237" href="#period_237">. </a>      
+      
+       The MDM PP contains this same objective with the same
+        purpose<a id="period_238" href="#period_238">. </a>       The MDM PP contains this same objective with the same purpose<a id="period_239" href="#period_239">. </a>
+       The MDM PP contains this same objective with the same
+        purpose<a id="period_240" href="#period_240">. </a>
+       This objective requires the MDM Agent to use platform key storage to
+        protect secret and private key data<a id="period_241" href="#period_241">. </a>The MDM PP defines a requirement for key storage
+        (FCS_STG_EXT.1) that allows the MDM Agent to satisfy this objective<a id="period_242" href="#period_242">. </a>
+       The MDM PP contains this same objective with the same
+        purpose<a id="period_243" href="#period_243">. </a>
+       The MDM PP contains this same objective with the same
+        purpose<a id="period_244" href="#period_244">. </a>
+       The MDM PP contains this same objective with the same purpose<a id="period_245" href="#period_245">. </a>
+       The MDM PP contains this same objective with the same
+        purpose<a id="period_246" href="#period_246">. </a>
+       The MDM PP contains this same objective with the same
+        purpose<a id="period_247" href="#period_247">. </a>
+       This SFR provides the alerts that are received by the 
+        MDM Server as per FAU_ALT_EXT.1 in the Base-PP<a id="period_248" href="#period_248">. </a>       This SFR requires the MDM Agent to generate audit records of its
+        behavior<a id="period_249" href="#period_249">. </a>The mechanism by which it does this is not relevant to the MDM Server portion of
+        the TOE as they reside on different platforms<a id="period_250" href="#period_250">. </a>       The Base-PP defines FAU_SEL.1 as an optional SFR
+        to limit the audit events that are generated by the TSF<a id="period_251" href="#period_251">. </a>This PP-Module
+        adds another iteration that requires the MDM Agent to include this
+        capability by default<a id="period_252" href="#period_252">. </a>       This SFR provides information during agent enrollment that is
+        required by the MDM Server to meet the FIA_ENR_EXT.1 requirement defined
+        by the Base-PP<a id="period_253" href="#period_253">. </a>       The Base-PP defines an SFR (FMT_POL_EXT.1) that
+        requires the MDM Server to provide digitally signed policies and policy
+        updates to the MDM Agent<a id="period_254" href="#period_254">. </a><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a> completes this transaction by
+        requiring the MDM Agent to accept only signed policies and policy
+        updates<a id="period_255" href="#period_255">. </a>       This SFR requires the MDM Agent to interact
+        with the underlying mobile device platform to enforce management functions that are
+        configured by the MDM Server (FMT_SMF.1(1) in the Base-PP)<a id="period_256" href="#period_256">. </a>       This SFR requires the TSF to define its behavior upon
+        unenrollment from management<a id="period_257" href="#period_257">. </a>Unenrollment from management is a management function that is
+        specified in the Base-PP<a id="period_258" href="#period_258">. </a>       This SFR defines the ability of the MDM Agent
+        to store generated audit data in the audit storage provided by the mobile device<a id="period_259" href="#period_259">. </a>This does
+        not impact the Base-PP since it resides on a different platform from the
+          MDM Agent<a id="period_260" href="#period_260">. </a>
+       This SFR defines the ability of the MDM Agent
+        to maintain information about its last successful connection with the environmental 
+          MDM Server (i.e., the last successful invocation of the trusted channel for
+        that interface, as defined in FPT_ITT.1(2) of the Base-PP)<a id="period_261" href="#period_261">. </a>It does not
+        otherwise impact the Base-PP since it describes behavior that occurs local
+        to the MDM Agent during a period where it is not interacting with the
+          MDM Server<a id="period_262" href="#period_262">. </a>
+    
+    
+      <h3 id="man_fau" class="indexable" data-level="3">5.0.1 Security Audit (FAU)</h3>
+        
+        <div class="comp" id="FAU_ALT_EXT.2"><h4>FAU_ALT_EXT.2 Agent Alerts</h4>
+          
+          
+          
+          
+          
+          <div class="element"><div class="reqid" id="FAU_ALT_EXT.2.1"><a href="#FAU_ALT_EXT.2.1" class="abbr">FAU_ALT_EXT.2.1</a></div><div class="reqdesc">The MDM Agent shall provide an alert via the trusted channel to
+              the MDM Server in the event of any of the following audit events: <ul>
+                <li>successful application of policies to a mobile device,</li>
+                <li>
+                  [<b>selection</b>: <span class="selectable-content" id="_s_10">receiving</span>,  <span class="selectable-content" id="_s_11">generating</span> ] periodic reachability events, </li>
+                <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_12">change in enrollment state</span></li><li style=""><span class="selectable-content" id="_s_13">failure to install an application from the MAS Server</span></li><li style=""><span class="selectable-content" id="_s_14">failure to update an application from the MAS Server</span></li><li style=""><span class="selectable-content" id="_s_15">[<b>assignment</b>: 
+     <span class="assignable-content">other events</span>]</span></li><li style=""><span class="selectable-content" id="_s_16">no other events</span></li></ul>]<a id="period_263" href="#period_263">. </a></li>
+              </ul>
+            <div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note"> The trusted channel is defined in FPT_ITT.1(2) of the Base-PP if the TOE claims the MDM PP and 
+              <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a> in this PP-Module if the TOE claims the 
+              MDF PP<a id="period_264" href="#period_264">. </a>&#8220;Alert&#8221; in this requirement could be as simple as an audit record or
+              a notification<a id="period_265" href="#period_265">. </a>If any prior alerts exist in the queue, per <a href="#FAU_ALT_EXT.2.2">FAU_ALT_EXT.2.2</a>, those
+              alerts must be sent when the trusted channel is available<a id="period_266" href="#period_266">. </a><br><br> This
+              requirement is to ensure that the MDM Agent must notify the 
+                MDM Server whenever one of the events listed above occurs<a id="period_267" href="#period_267">. </a>Lack of
+              receipt of a successful policy installation indicates the failure of the policy
+              installation<a id="period_268" href="#period_268">. </a><br><br> The periodic reachability events ensure that either
+              the MDM Agent responds to MDM Server polls to
+              determine device network reachability, or the MDM Agent can be
+              configured to regularly notify the Server that it is reachable<a id="period_269" href="#period_269">. </a>The ST
+              author must select &#8220;receiving&#8221; in the first case and &#8220;generating&#8221; in the second<a id="period_270" href="#period_270">. </a>              The corresponding requirement for the MDM Server is FAU_NET_EXT.1 in
+              the MDM
+              PP<a id="period_271" href="#period_271">. </a><br><br> The ST author must either
+              assign further events or select the &#8220;no other events&#8221; option<a id="period_272" href="#period_272">. </a>Note that alerts may
+              take time to reach the MDM Server, or not arrive, due to poor
+              connectivity<a id="period_273" href="#period_273">. </a><br><br>
+            </span></div></div></div>
+          <div class="element"><div class="reqid" id="FAU_ALT_EXT.2.2"><a href="#FAU_ALT_EXT.2.2" class="abbr">FAU_ALT_EXT.2.2</a></div><div class="reqdesc">The MDM Agent shall queue alerts if the trusted channel is not available<a id="period_274" href="#period_274">. </a><div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">If the trusted channel is not available, alerts must be queued<a id="period_275" href="#period_275">. </a>When the trusted channel becomes available, the queued alerts must be sent<a id="period_276" href="#period_276">. </a><br><br>
+            </span></div></div></div>
+          
+        </div>
+        <div class="comp" id="FAU_GEN.1/AGENT"><h4>FAU_GEN.1/AGENT Audit Data Generation</h4>
+          
+          <div class="element"><div class="reqid" id="FAU_GEN.1.1/AGENT"><a href="#FAU_GEN.1.1/AGENT" class="abbr">FAU_GEN.1.1/AGENT</a></div><div class="reqdesc"><b>Refinement:</b> The MDM Agent shall [<b>selection</b>: <span class="selectable-content" id="_s_17">invoke platform-provided functionality</span>,  <span class="selectable-content" id="_s_18">implement functionality</span> ] to generate an MDM Agent audit record of the
+              following auditable events: <ol type="a">
+                <li>Startup and shutdown of the MDM Agent;</li>
+                <li>All auditable events for [<i>not specified</i>] level of audit; and</li>
+                <li>[<i>MDM policy updated, any modification commanded by the 
+                  MDM Server, specifically defined auditable events listed in 
+                  Table 2, and [<b>selection</b>: <span class="selectable-content" id="_s_19">[<b>assignment</b>: 
+     <span class="assignable-content">other events</span>]</span>,  <span class="selectable-content" id="_s_20">no other events</span> ]</i>]<a id="period_277" href="#period_277">. </a></li>
+              </ol>
+            <div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note"> This requirement outlines the information to be included in
+              the MDM Agent&#8217;s audit records<a id="period_278" href="#period_278">. </a>The ST author can
+              include other auditable events directly in the Auditable Events table in
+              <a href="#FAU_GEN.1.1/AGENT">FAU_GEN.1.1/AGENT</a>; they are not limited to the list presented<a id="period_279" href="#period_279">. </a><br><br>
+              MDM policy update must minimally indicate that an update to policy
+              occurred<a id="period_280" href="#period_280">. </a>The event record need not contain the differences between the prior policy
+              and the new policy; optionally, the specific change(s) to policy that were included in
+              that update may be detailed<a id="period_281" href="#period_281">. </a>All updates to policy should trigger this alert<a id="period_282" href="#period_282">. </a>              Modifications commanded by the MDM Server are those commands listed
+              in FMT_SMF.1.1<a id="period_283" href="#period_283">. </a><br><br> The selection for the <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a> auditable event
+              in the Auditable Events table corresponds to the selection in <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a><a id="period_284" href="#period_284">. </a>If &#8220;apply
+              remediation actions&#8221; is selected in <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>, then the ST
+              author selects &#8220;attempt to unenroll&#8221; in <a href="#FAU_GEN.1.1/AGENT">FAU_GEN.1.1/AGENT</a> Auditable Events table for
+              <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>; otherwise, "none" is selected<a id="period_285" href="#period_285">. </a>              
+            </span></div></div></div>
+          <div class="element"><div class="reqid" id="FAU_GEN.1.2/AGENT"><a href="#FAU_GEN.1.2/AGENT" class="abbr">FAU_GEN.1.2/AGENT</a></div><div class="reqdesc"><b>Refinement:</b> The [<b>selection</b>: <span class="selectable-content" id="_s_21">TSF</span>,  <span class="selectable-content" id="_s_22">TOE platform</span> ] shall record within each MDM Agent audit record at
+              least the following information: <ol type="a">
+                <li>Date and time of the event, type of event, subject identity, (if relevant) the outcome 
+                  (success or failure) of the event, and additional information in Table 2; and</li>         
+                <li>For each audit event type, based on the auditable event definitions of the functional components 
+                  included in the PP-Module/ST, [<b>assignment</b>: 
+     <span class="assignable-content">other audit relevant information</span>]<a id="period_286" href="#period_286">. </a></li>
+              </ol>
+            <div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">All audits must contain at least the information mentioned in
+              <a href="#FAU_GEN.1.2/AGENT">FAU_GEN.1.2/AGENT</a>, but may contain more information which can be assigned<a id="period_287" href="#period_287">. </a>The ST author must identify in the TSS which information
+              of the audit record that is performed by the MDM Agent and that
+              which is performed by the MDM Agent&#8217;s platform<a id="period_288" href="#period_288">. </a><br><br>
+            </span></div></div></div>
+          
+        </div>
+        <div class="comp" id="FAU_SEL.1/AGENT"><h4>FAU_SEL.1/AGENT Security Audit Event Selection</h4>
+          
+          <div class="element"><div class="reqid" id="FAU_SEL.1.1/AGENT"><a href="#FAU_SEL.1.1/AGENT" class="abbr">FAU_SEL.1.1/AGENT</a></div><div class="reqdesc"><b>Refinement:</b> The TSF shall [<b>selection</b>: <span class="selectable-content" id="_s_23">invoke platform-provided functionality</span>,  <span class="selectable-content" id="_s_24">implement functionality</span> ] to select the set of events to be audited from the set of all auditable
+              events based on the following attributes: <ol type="a">
+                <li>[<i>event type</i>]</li>
+                <li>[<i>success of auditable security events, failure of auditable security events, 
+                  [<b>assignment</b>: 
+     <span class="assignable-content">other attributes</span>]</i>]<a id="period_289" href="#period_289">. </a></li>
+              </ol><div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">The intent of this requirement is to identify all criteria that
+              can be selected to trigger an audit event<a id="period_290" href="#period_290">. </a>For the ST author, the
+              assignment is used to list any additional criteria or &#8220;no other attributes&#8221;<a id="period_291" href="#period_291">. </a>This selection may be
+              configured by the MDM Server<a id="period_292" href="#period_292">. </a><br><br>
+            </span></div></div></div>
+          
+        </div>
+      
+      <h3 id="man_fia" class="indexable" data-level="3">5.0.2 Identification and Authentication (FIA)</h3>
+        
+        <div class="comp" id="FIA_ENR_EXT.2"><h4>FIA_ENR_EXT.2 Agent Enrollment of Mobile Device into Management</h4>
+          
+          
+          
+          
+          
+          <div class="element"><div class="reqid" id="FIA_ENR_EXT.2.1"><a href="#FIA_ENR_EXT.2.1" class="abbr">FIA_ENR_EXT.2.1</a></div><div class="reqdesc">The MDM Agent shall record the reference identifier of the
+                MDM Server during the enrollment process<a id="period_293" href="#period_293">. </a><div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">The reference identifier of the MDM Server
+              may be the Distinguished Name, Domain Name, and/or the IP address of the 
+                MDM Server<a id="period_294" href="#period_294">. </a>This requirement allows the specification of the information
+              to be to be used to establish a network connection and the reference identifier for
+              authenticating the trusted channel between the MDM Server and 
+                MDM Agent, as defined in the MDM PP<a id="period_295" href="#period_295">. </a><br><br>
+            </span></div></div></div>
+          
+        </div>
+      
+      <h3 id="man_fmt" class="indexable" data-level="3">5.0.3 Security Management (FMT)</h3>
+        
+        <div class="comp" id="FMT_POL_EXT.2"><h4>FMT_POL_EXT.2 Agent Trusted Policy Update</h4>
+          
+          
+          
+          
+          
+          <div class="element"><div class="reqid" id="FMT_POL_EXT.2.1"><a href="#FMT_POL_EXT.2.1" class="abbr">FMT_POL_EXT.2.1</a></div><div class="reqdesc">The MDM Agent shall only accept policies and policy updates
+              that are digitally signed by a private key that has been authorized for policy updates
+              by the MDM Server<a id="period_296" href="#period_296">. </a><div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">The intent of this requirement is to cryptographically tie the
+              policies to the enterprise that mandated the policy, not to protect the policies in
+              transit, as this is addressed by other SFRs (the MDM Base-PP SFR FPT_ITT.1(2) or the Additional SFRs
+              <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a> or FTP_ITC_EXT.1/OSCHANNEL, depending on the Base-PP being claimed)<a id="period_297" href="#period_297">. </a>
+              This is especially critical for
+              users who connect to multiple enterprises<a id="period_298" href="#period_298">. </a><br><br> Policies must be
+              digitally signed by the enterprise using the algorithms in
+              FCS_COP.1(3) in the MDM PP<a id="period_299" href="#period_299">. </a><br><br>
+              The signing private key is associated with a certificate or raw public key used by the agent to verify the signature on the policy<a id="period_300" href="#period_300">. </a>            </span></div></div></div>
+          <div class="element"><div class="reqid" id="FMT_POL_EXT.2.2"><a href="#FMT_POL_EXT.2.2" class="abbr">FMT_POL_EXT.2.2</a></div><div class="reqdesc">The MDM Agent shall not install policies if the signature check fails<a id="period_301" href="#period_301">. </a></div></div>
+          
+        </div>
+        
+        <div class="comp" id="FMT_SMF_EXT.4"><h4>FMT_SMF_EXT.4 Specification of Management Functions</h4>
+          
+          
+          
+          
+          
+          
+          <div class="element"><div class="reqid" id="FMT_SMF_EXT.4.1"><a href="#FMT_SMF_EXT.4.1" class="abbr">FMT_SMF_EXT.4.1</a></div><div class="reqdesc">The MDM Agent shall be capable of interacting with the platform
+              to perform the following functions: <ul>
+                <li>[<b>selection</b>: <span class="selectable-content" id="_s_25">Import the certificates to be used for authentication of MDM
+                    Agent communications</span>,  <span class="selectable-content" id="_s_26">Import the server public key</span> ],</li>
+                <li>[<b>selection</b>: <span class="selectable-content" id="_s_27">administrator-provided management functions in MDF PP</span>,  <span class="selectable-content" id="_s_28">administrator-provided device management functions in MDM PP</span> ]</li>
+                <li>[<b>selection</b>: <span class="selectable-content" id="_s_29">[<b>assignment</b>: 
+     <span class="assignable-content">additional functions</span>]</span>,  <span class="selectable-content" id="_s_30"> no additional functions</span> ]<a id="period_302" href="#period_302">. </a></li>
+              </ul>
+            <div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note"> This requirement captures all the configuration functionality
+              in the MDM Agent to configure the underlying mobile device with the
+              configuration policies sent from the MDM Server to the Agent<a id="period_303" href="#period_303">. </a>The
+                ST author selects the Base-PP (MDF PP or MDM PP) as the source of the management functions<a id="period_304" href="#period_304">. </a><br><br> The
+              administrator-provided management functions in MDF PP are specified
+              in Column 4 of Table 5 in MDF PP and in FPT_TUD_EXT.1 (for version
+              queries)<a id="period_305" href="#period_305">. </a>The administrator-provided device management functions in MDM
+              PP are specified in FMT_SMF.1.1(1); the functions in the selection
+              of FMT_SMF.1.1(1) in the MDM
+              PP are required to correspond to the functions available on the
+              platforms supported by the MDM Agent<a id="period_306" href="#period_306">. </a><br><br> The 
+                ST author can add more commands and configuration policies by completing
+              the assignment statement; the mobile device must support these additional commands or
+              configuration policies<a id="period_307" href="#period_307">. </a><br><br> The agent must configure the platform based
+              on the commands and configuration policies received from the MDM
+              Server<a id="period_308" href="#period_308">. </a>The ST author must not claim any functionality not provided
+              by the supported mobile device(s)<a id="period_309" href="#period_309">. </a>All selections and assignments performed by the
+                ST author in this requirement should match the selections and
+              assignments of the validated mobile device ST<a id="period_310" href="#period_310">. </a><br><br>
+            </span></div></div></div>
+          <div class="element"><div class="reqid" id="FMT_SMF_EXT.4.2"><a href="#FMT_SMF_EXT.4.2" class="abbr">FMT_SMF_EXT.4.2</a></div><div class="reqdesc">The MDM Agent shall be capable of performing the following
+              functions: <ul>
+                <li>Enroll in management</li>
+                <li>Configure whether users can unenroll from management</li>
+                <li>
+                  [<b>selection</b>: <span class="selectable-content" id="_s_31">configure periodicity of reachability events</span>,  <span class="selectable-content" id="_s_32">[<b>assignment</b>: 
+     <span class="assignable-content">other management functions</span>]</span>,  <span class="selectable-content" id="_s_33">no other functions</span> ]<a id="period_311" href="#period_311">. </a></li>
+              </ul><div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note"> This requirement captures all of the configuration in the
+                MDM Agent for configuration of itself<a id="period_312" href="#period_312">. </a><br><br> If the
+                MDM Agent is a part of the mobile device, enrollment is a single
+              function both of the Agent and of the mobile device
+              (<a href="#FMT_SMF_EXT.4.1">FMT_SMF_EXT.4.1</a>)<a id="period_313" href="#period_313">. </a><br><br> If the MDM Agent is an
+              application developed separately from the mobile device, the MDM
+              Agent performs the function &#8220;enroll the mobile device in management&#8221; (per
+              <a href="#FMT_SMF_EXT.4.1">FMT_SMF_EXT.4.1</a>) by registering itself to the mobile device as a device administrator<a id="period_314" href="#period_314">. </a>              The Agent itself is enrolled in management by configuring the MDM
+              Server to which the Agent answers<a id="period_315" href="#period_315">. </a><br><br> If the MDM
+              Agent does not support unenrollment prevention, remediation actions should be applied
+              upon unenrollment (per <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>)<a id="period_316" href="#period_316">. </a><br><br> If the Agent generates
+              periodic reachability events in <a href="#FAU_ALT_EXT.2.1">FAU_ALT_EXT.2.1</a> and the periodicity of these events is
+              configurable, &#8220;configure periodicity of reachability events&#8221; must be
+              selected<a id="period_317" href="#period_317">. </a><br><br>
+            </span></div></div></div>
+          
+        </div>
+        
+        <div class="comp" id="FMT_UNR_EXT.1"><h4>FMT_UNR_EXT.1 User Unenrollment Prevention</h4>
+          
+          
+          
+          
+          
+          <div class="element"><div class="reqid" id="FMT_UNR_EXT.1.1"><a href="#FMT_UNR_EXT.1.1" class="abbr">FMT_UNR_EXT.1.1</a></div><div class="reqdesc">The MDM Agent shall provide a mechanism to enforce the
+              following behavior upon an attempt to unenroll the mobile device from management: [<b>selection</b>: <span class="selectable-content" id="_s_34">prevent the unenrollment from occurring</span>,  <span class="selectable-content" id="_s_35">apply remediation actions</span> ]<a id="period_318" href="#period_318">. </a>            <div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">Unenrolling is the action of transitioning from the enrolled
+              state to the unenrolled state<a id="period_319" href="#period_319">. </a>If preventing the user from unenrolling is
+              configurable, administrators configure whether users are allowed to unenroll through
+              the MDM Server<a id="period_320" href="#period_320">. </a><br><br> For those configurations where
+              unenrollment is allowed, for example a BYOD usage, the MDF PP describes remediation
+              actions performed upon unenrollment, such as wiping enterprise data, in
+              FMT_SMF_EXT.2.1; however, the MDM Agent is limited to those actions
+              supported by the mobile device on which the Agent is operating<a id="period_321" href="#period_321">. </a><br><br>
+            </span></div></div></div>
+          
+        </div>
+      
+    
+    
+    
+    
+      <h3 id="obj_fau" class="indexable" data-level="3">5.0.4 Security Audit (FAU)</h3>
+        
+        <div class="comp" id="FAU_STG_EXT.3"><h4>FAU_STG_EXT.3 Security Audit Event Storage</h4>
+          
+          
+          
+          
+          
+          
+          <div class="element"><div class="reqid" id="FAU_STG_EXT.3.1"><a href="#FAU_STG_EXT.3.1" class="abbr">FAU_STG_EXT.3.1</a></div><div class="reqdesc">The MDM Agent shall store MDM audit records in the platform-provided audit storage<a id="period_322" href="#period_322">. </a><div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note"><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a> should only be included in the ST
+              for MDM Agent platforms (i.e., mobile devices) that conform to MDF PP version 3 or later<a id="period_323" href="#period_323">. </a><br><br>
+            </span></div></div></div>
+          
+        </div>
+      
+      <h3 id="obj_fpt" class="indexable" data-level="3">5.0.5 Protection of the TSF (FPT)</h3>
+        
+        <div class="comp" id="FPT_NET_EXT.1"><h4>FPT_NET_EXT.1 Network Reachability</h4>
+          
+          
+          
+          
+          
+          <div class="element"><div class="reqid" id="FPT_NET_EXT.1.1"><a href="#FPT_NET_EXT.1.1" class="abbr">FPT_NET_EXT.1.1</a></div><div class="reqdesc">The TSF shall detect when a configurable [<b>selection</b>: <span class="selectable-content" id="_s_36">positive integer of missed reachability events occur</span>,  <span class="selectable-content" id="_s_37">time limit is exceeded</span> ] related to the last successful connection with the server has been
+              reached<a id="period_324" href="#period_324">. </a><div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note"> This requirement is to enable the Agent to determine if it has
+              been out of connectivity with the Server for too long<a id="period_325" href="#period_325">. </a>The configuration of the number
+              of allowed missed reachability events or time limit since last successful connection
+              with the server is handled in Server configuration policy of the Agent (the first selection of
+              function 56 in FMT_SMF.1.1(1) within the MDM PP)<a id="period_326" href="#period_326">. </a>If the first selection of FMT_SMF.1.1(1) function 56 is included in the ST,
+              then <a href="#FPT_NET_EXT.1.1">FPT_NET_EXT.1.1</a> must be included in the ST<a id="period_327" href="#period_327">. </a><br><br> If the Agent has been out of connectivity with the server for
+              too long than the remediation actions specified in the second selection of function 56 must occur<a id="period_328" href="#period_328">. </a>For
+              example if the Agent has not synced with the server in the allowed amount of time that
+              the Agent must wipe the device without requiring a command from the
+              Server<a id="period_329" href="#period_329">. </a><br><br>
+            </span></div></div></div>
+          
+        </div>
+      
+    
+    
+  
+  <h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix A -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
+	successfully evaluated against this PP-Module<a id="period_330" href="#period_330">. </a>These requirements are not featured
+	explicitly as SFRs and should not be included in the ST<a id="period_331" href="#period_331">. </a>They are not included as 
+	standalone SFRs because it would increase the time, cost, and complexity of evaluation<a id="period_332" href="#period_332">. </a>	This approach is permitted by <a href="#bibCC">[CC]</a> Part 1, 8.2 Dependencies between components<a id="period_333" href="#period_333">. </a></p><p>This information benefits systems engineering activities which call for inclusion of particular
+	security controls<a id="period_334" href="#period_334">. </a>Evaluation against the PP-Module provides evidence that these controls are present 
+	and have been evaluated<a id="period_335" href="#period_335">. </a></p> 
+    <table>
+      <tr>
+        <th>Requirement</th>
+        <th>Rationale for Satisfaction</th>
+      </tr>
+      <tr>
+        <td>FMT_MTD.1 - Management of TSF Data</td>
+        <td>
+          FAU_SEL.1 has a dependency on FMT_MTD.1 because the configuration settings that determine what events are audited is considered to be TSF data<a id="period_336" href="#period_336">. </a>
+          While FAU_SEL.1 determines the extent to which the TOE&#8217;s audit function is configured, 
+          it relies on FMT_MTD.1 to determine the administrative roles that are permitted to manipulate this data<a id="period_337" href="#period_337">. </a>          <br><br>
+          This is not applicable to the PP-Module because there is no management interface for a TOE user to interact with; instead, 
+          all management functions are initiated by an MDM Server and performed by the MDM Agent which has sufficient privileges on the 
+          underlying device to do this<a id="period_338" href="#period_338">. </a>
+          In this case, <a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a> and FMT_POL_EXT.1 are sufficient to validate that the source of the policy data is 
+          identified and authenticated before the policy change is accepted<a id="period_339" href="#period_339">. </a>
+          It is not necessary to define a management role associated with this function because the MDM Server does not need to assume a &#8216;role&#8217; on the 
+          TOE to communicate policy data; it is sufficient for the TSF to determine the policy is genuine<a id="period_340" href="#period_340">. </a>        </td>
+      </tr>
+      <tr>FPT_STM.1 - Reliable Time Stamps</tr>
+      <td>
+        No matter what Base-PP is claimed for the TOE, the MDM Agent itself will be installed on a device<a id="period_341" href="#period_341">. </a>
+        If the underlying device is part of the TOE, the dependency is satisfied by FPT_STM.1 if the MDF PP is the Base-PP,
+        FPT_STM.1 is implicitly satisifed per Appendix D of the GPOS PP if that is the Base-PP<a id="period_342" href="#period_342">. </a>
+        If the device is not part of the TOE (i.e<a id="period_343" href="#period_343">. </a>because the Base-PP is the MDM PP), 
+        a reliable time source can still be assumed because all mobile devices must include some method to update time data from a cellular carrier network, 
+        and can also reasonably be assumed to include a method to update network time if it is instead connected to a network via WLAN radio 
+        (such as when in airplane mode) and general-purpose operating systems are also assumed to have network time interfaces<a id="period_344" href="#period_344">. </a>      </td>
+    </table>
+  
+
+
+  
+    <tr><td><span id="bibCC"> [CC] </span></td><td>Common Criteria for Information Technology Security Evaluation - <ul><li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R5.pdf">Part
+                1: Introduction and General Model</a>, CCMB-2017-04-001, Version 3.1 Revision 5,
+              April 2017<a id="period_345" href="#period_345">. </a></li><li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R5.pdf">Part
+                2: Security Functional Components</a>, CCMB-2017-04-002, Version 3.1 Revision 5,
+              April 2017<a id="period_346" href="#period_346">. </a></li><li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R5.pdf">Part
+                3: Security Assurance Components</a>, CCMB-2017-04-003, Version 3.1 Revision 5,
+              April 2017<a id="period_347" href="#period_347">. </a></li></ul></td></tr>
+  
+  
+    
+      
+      
+      
+
+</body></html>
