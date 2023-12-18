@@ -17,6 +17,7 @@ output/mdm-agent-release-linkable.html: TUD
 output/mdm-agent-release-linkable.html: Unenrolling
 output/mdm-agent-release-linkable.html: Unenrollment
 output/mdm-agent-release-linkable.html: Wi
+output/mdm-agent-release-linkable.html: exfiltrate
 output/mdm-agent-release-linkable.html: lifecycle
 output/mdm-agent-release-linkable.html: preconfigured
 output/mdm-agent-release-linkable.html: satisifed
@@ -40,6 +41,7 @@ output/mdm-agent-release.html: TUD
 output/mdm-agent-release.html: Unenrolling
 output/mdm-agent-release.html: Unenrollment
 output/mdm-agent-release.html: Wi
+output/mdm-agent-release.html: exfiltrate
 output/mdm-agent-release.html: lifecycle
 output/mdm-agent-release.html: role’
 output/mdm-agent-release.html: satisifed
@@ -84,6 +86,7 @@ output/mdm-agent.html: Unenrolling
 output/mdm-agent.html: Unenrollment
 output/mdm-agent.html: Wi
 output/mdm-agent.html: actions’
+output/mdm-agent.html: exfiltrate
 output/mdm-agent.html: lifecycle
 output/mdm-agent.html: occurring’
 output/mdm-agent.html: preconfigured
