@@ -1,0 +1,4 @@
+* https://commoncriteria.github.io/mdm-agent/Release-1.0/mdm-agent-sd.html.pdf[mdm-agent-sd.html.pdf]
+* https://commoncriteria.github.io/mdm-agent/Release-1.0/mdm-agent.html.pdf[mdm-agent.html.pdf]
+* https://commoncriteria.github.io/mdm-agent/Release-1.0/mdm-agent-release.html.pdf[mdm-agent-release.html.pdf]
+* https://commoncriteria.github.io/mdm-agent/Release-1.0/mdm-agent-release-linkable.html.pdf[mdm-agent-release-linkable.html.pdf]
