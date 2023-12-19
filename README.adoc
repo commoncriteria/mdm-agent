@@ -38,7 +38,7 @@ image::https://raw.githubusercontent.com/commoncriteria/mdm-agent/gh-pages/Relea
 image::https://raw.githubusercontent.com/commoncriteria/mdm-agent/gh-pages/Release-1.0/pdf_count.svg[PDF Count]
 |===
 
-=== Draft Versions
+### Draft Versions
 
 * https://commoncriteria.github.io/mdm-agent/master/mdm-agent-release.html[Master branch] (html)
 * https://commoncriteria.github.io/pp/mdm-agent/master/mdm-agent-release.pdf[Master branch] (pdf)
