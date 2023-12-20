@@ -1847,6 +1847,7 @@
     <impl-dep-sfrs/>
   </sec:Security_Requirements>
   <appendix title="Implicitly Satisfied Requirements" id="satisfiedreqs"> 
+    <h:div class="table-caption"><ctr ctr-type="Table" id="implicit-sfrs">: Implicitly Satisfied Requirements</ctr></h:div>
     <h:table>
       <h:tr>
         <h:th>Requirement</h:th>
