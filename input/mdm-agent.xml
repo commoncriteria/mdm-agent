@@ -65,6 +65,11 @@ Behavior means it's a new EXT component and we have to make that chart.
       </subject>
     </entry>
   </RevisionHistory>
+  
+  <pp-preferences>
+    <using-cc2022/>
+  </pp-preferences>
+  
   <sec:Introduction>
     <section id="overview" title="Overview"> The scope of the MDM Agent PP-Module is to describe the security functionality of a Mobile Device Management (MDM) Agent 
       in terms of [CC] and to define functional and assurance requirements for such products. 
