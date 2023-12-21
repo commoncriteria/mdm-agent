@@ -596,7 +596,7 @@
                   persistent secrets and private keys. </TSS>
               </aactivity>
             </f-element>
-            <audit-event/>
+            <audit-event table="tab-at-mdf-addnl"/>
           </f-component>
         </sec:mdf_mod_fcs>
         <sec:mdf_mod_ftp title="Trusted Path/Channels (FTP)">
@@ -712,15 +712,15 @@
                 </Tests>
               </aactivity>
             </f-element>
-            <audit-event>
+            <audit-event table="tab-at-mdf-addnl">
               <audit-event-descr>Initiation of the trusted channel.</audit-event-descr>
               <audit-event-info>No additional information.</audit-event-info>
             </audit-event>
-            <audit-event>
+            <audit-event table="tab-at-mdf-addnl">
               <audit-event-descr>Termination of the trusted channel.</audit-event-descr>
               <audit-event-info>No additional information.</audit-event-info>
             </audit-event>
-            <audit-event>
+            <audit-event table="tab-at-mdf-addnl">
               <audit-event-descr>Failure of the trusted channel functions.</audit-event-descr>
               <audit-event-info>No additional information.</audit-event-info>
             </audit-event>
@@ -809,6 +809,18 @@
                 </Tests>
               </aactivity>
             </f-element>
+            <audit-event table="tab-at-mdf-addnl">
+              <audit-event-descr>Initiation of the trusted path.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+            <audit-event table="tab-at-mdf-addnl">
+              <audit-event-descr>Termination of the trusted path.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+            <audit-event table="tab-at-mdf-addnl">
+              <audit-event-descr>Failure of the trusted path functions.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
           </f-component>
         </sec:mdf_mod_ftp>
       </additional-sfrs>
@@ -974,7 +986,7 @@
                 </TSS>
               </aactivity>
             </f-element>
-            <audit-event/>
+            <audit-event table="tab-at-mdm-addnl"/>
           </f-component>
         </sec:mdm_mod_fcs>
 <!--        <subsection id="fpt" title="Protection of the TSF (FPT)">
