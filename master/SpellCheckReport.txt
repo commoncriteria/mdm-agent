@@ -11,7 +11,6 @@ output/mdm-agent-release-linkable.html: ITT
 output/mdm-agent-release-linkable.html: MOF
 output/mdm-agent-release-linkable.html: MTD
 output/mdm-agent-release-linkable.html: Managment
-output/mdm-agent-release-linkable.html: Novemeber
 output/mdm-agent-release-linkable.html: OSCHANNEL
 output/mdm-agent-release-linkable.html: OSENROLL
 output/mdm-agent-release-linkable.html: STM
@@ -38,7 +37,6 @@ output/mdm-agent-release.html: Fi
 output/mdm-agent-release.html: ITT
 output/mdm-agent-release.html: MOF
 output/mdm-agent-release.html: MTD
-output/mdm-agent-release.html: Novemeber
 output/mdm-agent-release.html: OSCHANNEL
 output/mdm-agent-release.html: OSENROLL
 output/mdm-agent-release.html: STM
@@ -84,7 +82,6 @@ output/mdm-agent.html: ITT
 output/mdm-agent.html: MOF
 output/mdm-agent.html: MTD
 output/mdm-agent.html: Managment
-output/mdm-agent.html: Novemeber
 output/mdm-agent.html: OSCHANNEL
 output/mdm-agent.html: OSENROLL
 output/mdm-agent.html: STM
