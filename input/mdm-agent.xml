@@ -580,7 +580,7 @@ Behavior means it's a new EXT component and we have to make that chart.
     </section>
   </sec:Security_Objectives>
   <sec:Security_Requirements title="Security Requirements">
-    <base-pp id="bpp-mdf">
+    <base-pp id="bpp-mdf" name="Mobile Device Fundamentals" short="MDF">
       <git>
         <url>https://github.com/commoncriteria/mobile-device</url>
         <branch>release-3.3</branch>
@@ -606,6 +606,12 @@ Behavior means it's a new EXT component and we have to make that chart.
       </app-unmod-sfrs>-->
       <modified-sfrs/>
       <additional-sfrs>
+        
+        <!-- Audit table for Additional SFRs -->
+        <section id="sec-at-mdf-addnl" title="Auditable Events for MDF PP Additional SFRs">
+          <audit-table id="at-mdf-addnl" table="tab-at-mdf-addnl" title="Auditable Events for MDF PP Additional SFRs"/>
+        </section>
+        
         <sec:mdf_mod_fcs title="Cryptographic Support (FCS)">
           <ext-comp-def fam-id="FCS_STG_EXT" title="Trusted Channel">
             <mod-def> This family is defined in both the MDF and the MDM Base-PPs. This PP-Module augments the extended family by adding one additional component, FCS_STG_EXT.4. This new component and its impact on the extended family’s component leveling are shown below; reference the MDF or MDM PP for all other definitions for this family. </mod-def>
@@ -750,6 +756,18 @@ Behavior means it's a new EXT component and we have to make that chart.
                 </Tests>
               </aactivity>
             </f-element>
+            <audit-event>
+              <audit-event-descr>Initiation of the trusted channel.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+            <audit-event>
+              <audit-event-descr>Termination of the trusted channel.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+            <audit-event>
+              <audit-event-descr>Failure of the trusted channel functions.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
           </f-component>
           <f-component cc-id="ftp_trp.1" name="Trusted Path (for Enrollment)" iteration="MDFENROLL">
             <consistency-rationale>This SFR uses the trusted channel protocols defined by the Base-PP in FTP_ITC_EXT.1 to facilitate a trusted path that the 
@@ -761,8 +779,9 @@ Behavior means it's a new EXT component and we have to make that chart.
               <title><h:b>Refinement:</h:b> The TSF shall use <selectables linebreak="yes">
                   <selectable id="TRP_TLS_2">TLS client as defined in the Package for Transport Layer Security</selectable>
                   <selectable id="TRP_HTTPS_2">HTTPS</selectable>
-                </selectables> to provide a trusted communication path between itself and another
-                trusted IT product that is logically distinct from other communication paths and
+                </selectables> to provide a trusted communication path between itself and
+                <h:b>an MDM server</h:b>
+                that is logically distinct from other communication paths and
                 provides assured identification of its endpoints and protection of the communicated
                 data from disclosure and detection of modification of the communicated data from
                 [<h:i>modification, disclosure</h:i>]. </title>
@@ -772,12 +791,11 @@ Behavior means it's a new EXT component and we have to make that chart.
               </title>
             </f-element>
             <f-element>
-              <title><h:b>Refinement:</h:b> The TSF shall require the use of the trusted path for [<h:i>[all MD user actions]</h:i>]. 
+              <title><h:b>Refinement:</h:b> The TSF shall require the use of the trusted path for [<h:i>[MDM enrollment]</h:i>]. 
               </title>
-              <note role="application"> This requirement ensures that authorized MD users initiate
-                all communication with the TOE via a trusted path, and that all
-                communications with the TOE by MD users is performed over this
-                path. The purpose of this connection is for enrollment by the MD user.
+              <note role="application">This requirement ensures that a trusted connection is used for initial enrollment to an MDM;
+                security of ongoing MDM server communications after enrollment is
+                implemented through FTP_ITC_EXT.1/MDFCHANNEL.
                 <h:br/><h:br/> The ST author chooses the mechanism or
                 mechanisms supported by the TOE. The data passed in this trusted
                 communication channel are encrypted as defined by the protocol selected.
@@ -945,7 +963,7 @@ Behavior means it's a new EXT component and we have to make that chart.
         need to use any functionality defined in the Base-PP to do this, and doing
         this does not prevent the enforcement of any security requirements from the Base-PP.</con-mod>
     </base-pp>
-    <base-pp id="bpp-mdm">
+    <base-pp id="bpp-mdm" name="Mobile Device Management" short="MDM">
       <git>
         <url>https://github.com/commoncriteria/mdm</url>
         <branch>v4.0</branch>
@@ -970,6 +988,12 @@ Behavior means it's a new EXT component and we have to make that chart.
       </app-unmod-sfrs>-->
       <modified-sfrs/>
       <additional-sfrs>
+        
+        <!-- Audit table for Additional SFRs -->
+        <section id="sec-at-mdm-addnl" title="Auditable Events for MDM PP Additional SFRs">
+          <audit-table id="at-mdm-addnl" table="tab-at-mdm-addnl" title="Auditable Events for MDM PP Additional SFRs"/>
+        </section>
+        
         <sec:mdm_mod_fcs title="Cryptographic Support (FCS)">
           <f-component cc-id="fcs_stg_ext.1" name="Cryptographic Key Storage" iteration="MDMKEYS">
             <!-- Removed notnew=y from f-component -->
@@ -1260,9 +1284,10 @@ Behavior means it's a new EXT component and we have to make that chart.
                 </selectables>.</h:li>
               </h:ul>
             </title>
-            <note role="application"> The trusted channel is defined in FPT_ITT.1(2) of the Base-PP if the TOE claims the MDM PP and 
+            <note role="application"> The trusted channel is defined in FPT_ITT.1(2) of the Base-PP if the TOE claims the MDM PP,  
               FTP_ITC_EXT.1/MDFCHANNEL in this PP-Module if the TOE claims the 
-              MDF PP. “Alert” in this requirement could be as simple as an audit record or
+              MDF PP, and FTP_ITC_EXT.1/OSCHANNEL in this PP-Module if the TOE claims the GPOS PP. 
+              “Alert” in this requirement could be as simple as an audit record or
               a notification. If any prior alerts exist in the queue, per FAU_ALT_EXT.2.2, those
               alerts must be sent when the trusted channel is available.<h:br/><h:br/> This
               requirement is to ensure that the MDM Agent must notify the 
@@ -1319,7 +1344,7 @@ Behavior means it's a new EXT component and we have to make that chart.
                 <h:li>All auditable events for [<h:i>not specified</h:i>] level of audit; and</h:li>
                 <h:li>[<h:i>MDM policy updated, any modification commanded by the 
                   MDM Server, specifically defined auditable events listed in 
-                  Table 2, and <selectables>
+                  <xref to="at-man-audit"/>, and <selectables>
                   <selectable><assignable>other events</assignable></selectable>
                   <selectable>no other events</selectable>
                 </selectables></h:i>].</h:li>
@@ -1417,7 +1442,7 @@ Behavior means it's a new EXT component and we have to make that chart.
               </selectables> shall record within each MDM Agent audit record at
               least the following information: <h:ol type="a">
                 <h:li>Date and time of the event, type of event, subject identity, (if relevant) the outcome 
-                  (success or failure) of the event, and additional information in Table 2; and</h:li>         
+                  (success or failure) of the event, and additional information in <xref to="at-man-audit"/>; and</h:li>         
                 <h:li>For each audit event type, based on the auditable event definitions of the functional components 
                   included in the PP-Module/ST, <assignable>other audit relevant information</assignable>.</h:li>
               </h:ol>
@@ -1495,7 +1520,7 @@ Behavior means it's a new EXT component and we have to make that chart.
             </aactivity>
           </f-element>
           <audit-event>
-            <audit-event-descr>All modifications to the audi tconfiguration that occur while the audit collection functions are operating.</audit-event-descr>
+            <audit-event-descr>All modifications to the audit configuration that occur while the audit collection functions are operating.</audit-event-descr>
             <audit-event-info>No additional information.</audit-event-info>
           </audit-event>
         </f-component>
@@ -1581,7 +1606,7 @@ Behavior means it's a new EXT component and we have to make that chart.
               by the MDM Server. </title>
             <note role="application">The intent of this requirement is to cryptographically tie the
               policies to the enterprise that mandated the policy, not to protect the policies in
-              transit, as this is addressed by other SFRs (the MDM Base-PP SFR FPT_ITT.1(2) or the Additional SFR
+              transit, as this is addressed by other SFRs (FPT_ITT.1(2) in the MDM PP or the Additional SFR
               FTP_ITC_EXT.1/MDFCHANNEL or FTP_ITC_EXT.1/OSCHANNEL, depending on the claimed Base-PP). 
               This is especially critical for
               users who connect to multiple enterprises.<h:br/><h:br/> Policies must be
@@ -1789,7 +1814,7 @@ Behavior means it's a new EXT component and we have to make that chart.
             </aactivity>
           </f-element>
           <audit-event type="optional">
-            <audit-event-descr>Attempt to unenroll.</audit-event-descr>
+            <audit-event-descr>Attempt to unenroll</audit-event-descr>
             <audit-event-info>No additional information</audit-event-info>
           </audit-event>
         </f-component>
