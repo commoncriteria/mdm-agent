@@ -305,7 +305,7 @@
         </span></a><a href="#sec-at-mdm-addnl" style="text-indent:30px">2.2.2.1<span>Auditable Events for MDM PP Additional SFRs</span></a><a href="#mdm_mod_fcs" style="text-indent:30px">2.2.2.2<span>Cryptographic Support (FCS)</span></a><a href="#aa-bpp-gpos" style="text-indent:10px">2.3<span>
     Protection Profile for General Purpose Operating Systems</span></a><a href="#qq-sfrs-bpp-gpos-Modified" style="text-indent:20px">2.3.1<span>Modified SFRs
         </span></a><a href="#gpos_mod_fcs" style="text-indent:30px">2.3.1.1<span>Cryptographic Support (FCS)</span></a><a href="#qq-sfrs-bpp-gpos-Additional" style="text-indent:20px">2.3.2<span>Additional SFRs
-        </span></a><a href="#sec-at-gpos-addnl" style="text-indent:30px">2.3.2.1<span>Auditable Events for GPOS PP Additional SFRs</span></a><a href="#gpos_add_ftp" style="text-indent:30px">2.3.2.2<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">2.4<span>TOE SFR Evaluation Activities</span></a><a href="#man_fau" style="text-indent:20px">2.4.1<span>Security Audit (FAU)</span></a><a href="#man_fia" style="text-indent:20px">2.4.2<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">2.4.3<span>Security Management (FMT)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.5<span>Evaluation Activities for Optional SFRs</span></a><a href="#sel-sfrs" style="text-indent:10px">2.6<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#obj-sfrs" style="text-indent:10px">2.7<span>Evaluation Activities for Objective SFRs</span></a><a href="#obj_fau" style="text-indent:20px">2.7.1<span>Security Audit (FAU)</span></a><a href="#obj_fpt" style="text-indent:20px">2.7.2<span>Protection of the TSF (FPT)</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.8<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
+        </span></a><a href="#sec-at-gpos-addnl" style="text-indent:30px">2.3.2.1<span>Auditable Events for GPOS PP Additional SFRs</span></a><a href="#gpos_add_ftp" style="text-indent:30px">2.3.2.2<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">2.4<span>TOE SFR Evaluation Activities</span></a><a href="#man_fau" style="text-indent:20px">2.4.1<span>Security Audit (FAU)</span></a><a href="#man_fia" style="text-indent:20px">2.4.2<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">2.4.3<span>Security Management (FMT)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.5<span>Evaluation Activities for Optional SFRs</span></a><a href="#sel-sfrs" style="text-indent:10px">2.6<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#obj-sfrs" style="text-indent:10px">2.7<span>Evaluation Activities for Objective SFRs</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.8<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#ib_fau" style="text-indent:20px">2.8.1<span>Security Audit (FAU)</span></a><a href="#ib_fpt" style="text-indent:20px">2.8.2<span>Protection of the TSF (FPT)</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
     PP-Module for MDM Agent is
     to describe the security functionality of 
     MDM Agent
@@ -583,7 +583,7 @@ The following sections list Common Criteria and technology terms used in this do
                   </ul></span> 
                     <br/>
                     Further evaluation activities are associated with the specific protocols.<br/><br/>
-                </div></span></div><div class="comp" id=""><h4>FTP_TRP.1/MDFENROLL Trusted Path (for Enrollment)</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_TRP.1/MDFENROLL</div>
+                </div></span></div><div class="comp" id=""><h4>FTP_TRP.1/OSENROLL Trusted Path (for Enrollment)</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_TRP.1/OSENROLL</div>
                 
                 
                 
@@ -599,19 +599,19 @@ The following sections list Common Criteria and technology terms used in this do
                 </div><div class="eacategory">Tests</div><div class="ea">For each MDM Agent/platform listed as supported in the
                     ST: <br/><br/>
                   <span class="testlist-"><ul>
-                    <li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FTP_TRP.1/MDFENROLL:1</a>:
+                    <li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FTP_TRP.1/OSENROLL:1</a>:
       The evaluators shall ensure that communications using each specified (in
                       the operational guidance) enrollment method is tested during the course of the
                       evaluation, setting up the connections as described in the operational
                       guidance and ensuring that communication is successful.
                     </li>
-                    <li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FTP_TRP.1/MDFENROLL:2</a>:
+                    <li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FTP_TRP.1/OSENROLL:2</a>:
       For each method of enrollment supported, the evaluator shall follow the
                       operational guidance to ensure that there is no available interface that can
                       be used by a remote user to establish enrollment sessions without invoking the
                       trusted path.
                     </li>
-                    <li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FTP_TRP.1/MDFENROLL:3</a>:
+                    <li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FTP_TRP.1/OSENROLL:3</a>:
       The evaluator shall ensure, for each method enrollment, the channel data
                       is not sent in plaintext.
                     </li>
@@ -770,12 +770,12 @@ The following sections list Common Criteria and technology terms used in this do
       If ‘apply remediation actions’ is selected: If any configuration allows the user to unenroll, the evaluator shall configure the Agent to allow user unenrollment, attempt to unenroll, and verify that the remediation actions are applied.
                   </li>
                 </ul></span>
-              </div></span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.5 Evaluation Activities for Optional SFRs</h2>The PP-Module does not define any optional requirements.<h2 class="indexable" data-level="1" id="sel-sfrs">2.6 Evaluation Activities for Selection-Based SFRs</h2>The PP-Module does not define any selection-based requirements.<h2 class="indexable" data-level="1" id="obj-sfrs">2.7 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="obj_fau">2.7.1 Security Audit (FAU)</h2><div class="comp" id="FAU-STG-EXT-3"><h4>FAU_STG_EXT.3 Security Audit Event Storage</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_STG_EXT.3</div>
+              </div></span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.5 Evaluation Activities for Optional SFRs</h2>The PP-Module does not define any optional requirements.<h2 class="indexable" data-level="1" id="sel-sfrs">2.6 Evaluation Activities for Selection-Based SFRs</h2>The PP-Module does not define any selection-based requirements.<h2 class="indexable" data-level="1" id="obj-sfrs">2.7 Evaluation Activities for Objective SFRs</h2>The PP-Module does not define any objective requirements.<h2 class="indexable" data-level="1" id="impl-sfrs-">2.8 Evaluation Activities for Implementation-dependent SFRs</h2><h2 class="indexable" data-level="2" id="ib_fau">2.8.1 Security Audit (FAU)</h2><div class="comp" id="FAU-STG-EXT-3"><h4>FAU_STG_EXT.3 Security Audit Event Storage</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_STG_EXT.3</div>
               
             <div class="eacategory">TSS</div><div class="ea">The evaluator shall verify that the TSS description of the
                 audit records indicates how the records are stored. The evaluator shall verify that
                 the Agent calls a platform-provided API to store audit records.<br/><br/>
-              </div></span></div><h2 class="indexable" data-level="2" id="obj_fpt">2.7.2 Protection of the TSF (FPT)</h2><div class="comp" id="FPT-NET-EXT-1"><h4>FPT_NET_EXT.1 Network Reachability</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_NET_EXT.1</div>
+              </div></span></div><h2 class="indexable" data-level="2" id="ib_fpt">2.8.2 Protection of the TSF (FPT)</h2><div class="comp" id="FPT-NET-EXT-1"><h4>FPT_NET_EXT.1 Network Reachability</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_NET_EXT.1</div>
               
               
               
@@ -793,7 +793,7 @@ The following sections list Common Criteria and technology terms used in this do
                 FMT_SMF.1.1(1) function 56 within the Mobile Device Managment PP. The device shall be placed in airplane mode to prevent
                 connectivity with the Server. The evaluator shall verify that after the configured
                 time, the remediation actions selected in function 56 occur.<br/><br/>
-              </div></span></div><h2 class="indexable" data-level="1" id="impl-sfrs-">2.8 Evaluation Activities for Implementation-dependent SFRs</h2>The PP-Module does not define any implementation-dependent requirements.<h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><p>The PP-Module does not define any SARs beyond those defined within the
+              </div></span></div><h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><p>The PP-Module does not define any SARs beyond those defined within the
     
 	base-PP to which it must claim conformance.
 	It is important to note that a TOE that is evaluated against the PP-Module is
