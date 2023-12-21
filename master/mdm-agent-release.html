@@ -635,12 +635,12 @@ function showTarget(id){
 <tr><td>1.1</td><td>2023-12-11</td><td>
         Added <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base and incorporated NIAP Technical Decisions.
       </td></tr>
-</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#targets" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecase" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#securityPolicy" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_TOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#rationale" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-mdf" style="text-indent:10px">5.1<span>MDM Agent PP
+</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#targets" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecase" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#securityPolicy" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_TOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#rationale" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-mdf" style="text-indent:10px">5.1<span>MDF PP
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-bpp-mdf" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#addsfr-bpp-mdf" style="text-indent:20px">5.1.2<span> Additional SFRs</span></a><a href="#mdf_mod_fcs" style="text-indent:30px">5.1.2.1<span>Cryptographic Support (FCS)</span></a><a href="#mdf_mod_ftp" style="text-indent:30px">5.1.2.2<span>Trusted Path/Channels (FTP)</span></a><a href="#secreq-bpp-mdm" style="text-indent:10px">5.2<span>MDM PP
+    </span></a><a href="#modsfr-bpp-mdf" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#addsfr-bpp-mdf" style="text-indent:20px">5.1.2<span> Additional SFRs</span></a><a href="#sec-at-mdf-addnl" style="text-indent:20px">5.1.3<span>Auditable Events for MDF PP Additional SFRs</span></a><a href="#mdf_mod_fcs" style="text-indent:30px">5.1.3.1<span>Cryptographic Support (FCS)</span></a><a href="#mdf_mod_ftp" style="text-indent:30px">5.1.3.2<span>Trusted Path/Channels (FTP)</span></a><a href="#secreq-bpp-mdm" style="text-indent:10px">5.2<span>MDM PP
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.2.1<span> Modified SFRs </span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.2.2<span> Additional SFRs</span></a><a href="#mdm_mod_fcs" style="text-indent:30px">5.2.2.1<span>Cryptographic Support (FCS)</span></a><a href="#man-sfrs" style="text-indent:10px">5.3<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.3.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#man_fau" style="text-indent:20px">5.3.2<span>Security Audit (FAU)</span></a><a href="#man_fia" style="text-indent:20px">5.3.3<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">5.3.4<span>Security Management (FMT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.4<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-mdf" style="text-indent:10px">6.1<span>
-    Protection Profile for MDM Agent</span></a><a href="#contoe-bpp-mdf" style="text-indent:20px">6.1.1<span>
+    </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.2.1<span> Modified SFRs </span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.2.2<span> Additional SFRs</span></a><a href="#sec-at-mdm-addnl" style="text-indent:20px">5.2.3<span>Auditable Events for MDM PP Additional SFRs</span></a><a href="#mdm_mod_fcs" style="text-indent:30px">5.2.3.1<span>Cryptographic Support (FCS)</span></a><a href="#man-sfrs" style="text-indent:10px">5.3<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.3.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#man_fau" style="text-indent:20px">5.3.2<span>Security Audit (FAU)</span></a><a href="#man_fia" style="text-indent:20px">5.3.3<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">5.3.4<span>Security Management (FMT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.4<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-mdf" style="text-indent:10px">6.1<span>
+    Protection Profile for Mobile Device Fundamentals</span></a><a href="#contoe-bpp-mdf" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-bpp-mdf" style="text-indent:20px">6.1.2<span>
 	Consistency of Security Problem Definition
@@ -649,7 +649,7 @@ function showTarget(id){
       </span></a><a href="#conreq-bpp-mdf" style="text-indent:20px">6.1.4<span>
 	Consistency of Requirements
       </span></a><a href="#conrat-bpp-mdm" style="text-indent:10px">6.2<span>
-    Protection Profile for MDM Agent</span></a><a href="#contoe-bpp-mdm" style="text-indent:20px">6.2.1<span>
+    Protection Profile for Mobile Device Management</span></a><a href="#contoe-bpp-mdm" style="text-indent:20px">6.2.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-bpp-mdm" style="text-indent:20px">6.2.2<span>
 	Consistency of Security Problem Definition
@@ -957,23 +957,29 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             suggesting the purpose of the operation, e.g. "/EXAMPLE1."
        </li>
      </ul>
-   <h2 id="secreq-bpp-mdf" class="indexable" data-level="2">5.1 MDM Agent PP
+   <h2 id="secreq-bpp-mdf" class="indexable" data-level="2">5.1 MDF PP
        Security Functional Requirements Direction
     </h2>
-      In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>,
+      In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>,
       the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to rely on some of the security functions implemented by the
       <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
-      as a whole and evaluated against the  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
+      as a whole and evaluated against the  <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
       The following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>
-      defined in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in addition to what is mandated by <a class="dynref" href="#man-sfrs">Section 5.3 TOE Security Functional Requirements</a>.
+      defined in the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in addition to what is mandated by <a class="dynref" href="#man-sfrs">Section 5.3 TOE Security Functional Requirements</a>.
     <h3 id="modsfr-bpp-mdf" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
-      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify any <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> defined by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
+      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify any <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> defined by the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
     <h3 id="addsfr-bpp-mdf" class="indexable" data-level="3">5.1.2  Additional SFRs</h3>
       This section defines additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that must be added to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary in order to implement
-	  the functionality in any <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> where the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is 
+	  the functionality in any <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> where the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is 
 	  claimed as the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
       
-        <h4 id="mdf_mod_fcs" class="indexable" data-level="4">5.1.2.1 Cryptographic Support (FCS)</h4>
+        
+        
+        <h3 class="indexable" data-level="3" id="sec-at-mdf-addnl">5.1.3 Auditable Events for MDF PP Additional SFRs</h3>
+          <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-mdf-addnl" data-counter-type="ct-Table" id="at-mdf-addnl">Table <span class="counter">2</span></span>: Auditable Events for <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr></table>
+        
+        
+        <h4 id="mdf_mod_fcs" class="indexable" data-level="4">5.1.3.1 Cryptographic Support (FCS)</h4>
           
           <div class="comp" id="FCS_STG_EXT.4"><h4>FCS_STG_EXT.4 Cryptographic Key Storage</h4>
             
@@ -990,7 +996,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             
           </div>
         
-        <h4 id="mdf_mod_ftp" class="indexable" data-level="4">5.1.2.2 Trusted Path/Channels (FTP)</h4>
+        <h4 id="mdf_mod_ftp" class="indexable" data-level="4">5.1.3.2 Trusted Path/Channels (FTP)</h4>
           <div class="comp" id="FTP_ITC_EXT.1/MDFCHANNEL"><h4>FTP_ITC_EXT.1/MDFCHANNEL Trusted Channel Communication</h4>
             
             <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.1/MDFCHANNEL"><a href="#FTP_ITC_EXT.1.1/MDFCHANNEL" class="abbr">FTP_ITC_EXT.1.1/MDFCHANNEL</a></div><div class="reqdesc"><b>Refinement:</b> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_1">mutually authenticated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client as defined in the Package for
@@ -1056,23 +1062,26 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 it is expected that the mobile device will initiate the trusted channel between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
                 Agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server for administrative communication and may initiate other
                 trusted channels to other trusted IT entities for other uses.</span></div></div></div>
+            
+            
+            
           </div>
           <div class="comp" id="FTP_TRP.1/MDFENROLL"><h4>FTP_TRP.1/MDFENROLL Trusted Path (for Enrollment)</h4>
             
-            <div class="element"><div class="reqid" id="FTP_TRP.1.1/MDFENROLL"><a href="#FTP_TRP.1.1/MDFENROLL" class="abbr">FTP_TRP.1.1/MDFENROLL</a></div><div class="reqdesc"><b>Refinement:</b> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="TRP_TLS_2"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client as defined in the Package for Transport Layer Security</span></li><li style=""><span class="selectable-content" id="TRP_HTTPS_2"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span></li></ul>] to provide a trusted communication path between itself and another
-                trusted IT product that is logically distinct from other communication paths and
+            <div class="element"><div class="reqid" id="FTP_TRP.1.1/MDFENROLL"><a href="#FTP_TRP.1.1/MDFENROLL" class="abbr">FTP_TRP.1.1/MDFENROLL</a></div><div class="reqdesc"><b>Refinement:</b> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="TRP_TLS_2"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client as defined in the Package for Transport Layer Security</span></li><li style=""><span class="selectable-content" id="TRP_HTTPS_2"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span></li></ul>] to provide a trusted communication path between itself and
+                <b>an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server</b>
+                that is logically distinct from other communication paths and
                 provides assured identification of its endpoints and protection of the communicated
                 data from disclosure and detection of modification of the communicated data from
                 [<i>modification, disclosure</i>]. </div></div>
             <div class="element"><div class="reqid" id="FTP_TRP.1.2/MDFENROLL"><a href="#FTP_TRP.1.2/MDFENROLL" class="abbr">FTP_TRP.1.2/MDFENROLL</a></div><div class="reqdesc"><b>Refinement:</b> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> users to initiate communication via the trusted path.
               </div></div>
-            <div class="element"><div class="reqid" id="FTP_TRP.1.3/MDFENROLL"><a href="#FTP_TRP.1.3/MDFENROLL" class="abbr">FTP_TRP.1.3/MDFENROLL</a></div><div class="reqdesc"><b>Refinement:</b> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require the use of the trusted path for [<i>[all <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> user actions]</i>]. 
+            <div class="element"><div class="reqid" id="FTP_TRP.1.3/MDFENROLL"><a href="#FTP_TRP.1.3/MDFENROLL" class="abbr">FTP_TRP.1.3/MDFENROLL</a></div><div class="reqdesc"><b>Refinement:</b> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require the use of the trusted path for [<i>[<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> enrollment]</i>]. 
               <div class="appnote"><span class="note-header">Application
       Note:
-    </span><span class="note"> This requirement ensures that authorized <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> users initiate
-                all communication with the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> via a trusted path, and that all
-                communications with the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> by <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> users is performed over this
-                path. The purpose of this connection is for enrollment by the <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> user.
+    </span><span class="note">This requirement ensures that a trusted connection is used for initial enrollment to an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>;
+                security of ongoing <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server communications after enrollment is
+                implemented through <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a>.
                 <br/><br/> The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author chooses the mechanism or
                 mechanisms supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The data passed in this trusted
                 communication channel are encrypted as defined by the protocol selected.
@@ -1114,7 +1123,13 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	  the functionality in any <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> where the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is 
 	  claimed as the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
       
-        <h4 id="mdm_mod_fcs" class="indexable" data-level="4">5.2.2.1 Cryptographic Support (FCS)</h4>
+        
+        
+        <h3 class="indexable" data-level="3" id="sec-at-mdm-addnl">5.2.3 Auditable Events for MDM PP Additional SFRs</h3>
+          <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-mdm-addnl" data-counter-type="ct-Table" id="at-mdm-addnl">Table <span class="counter">3</span></span>: Auditable Events for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr></table>
+        
+        
+        <h4 id="mdm_mod_fcs" class="indexable" data-level="4">5.2.3.1 Cryptographic Support (FCS)</h4>
           <div class="comp" id="FCS_STG_EXT.1/MDMKEYS"><h4>FCS_STG_EXT.1/MDMKEYS Cryptographic Key Storage</h4>
             
             
@@ -1142,7 +1157,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           if the incorporating <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_cPP">cPP</a></abbr>, or <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> supports audit event reporting through FAU_GEN.1,
           and if all other criteria in the incorporating <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are met.
         </p>
-        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-man-audit" data-counter-type="ct-Table" id="at-man-audit">Table <span class="counter">2</span></span>: Auditable Events for Mandatory Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FAU_ALT_EXT.2"><td rowspan="2"><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_ALT_EXT.2#"><td></td></tr><tr data-sortkey="FAU_ALT_EXT.2.7"><td>Success or failure of sending alert.</td><td>No additional information.</td></tr><tr data-sortkey="FAU_GEN.1/AGENT"><td rowspan="2"><a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_GEN.1/AGENT#"><td></td></tr><tr data-sortkey="FAU_GEN.1/AGENT.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FAU_SEL.1/AGENT"><td rowspan="2"><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_SEL.1/AGENT#"><td></td></tr><tr data-sortkey="FAU_SEL.1/AGENT.2"><td>All modifications to the audi tconfiguration that occur while the audit collection functions are operating.</td><td>No additional information.</td></tr><tr data-sortkey="FIA_ENR_EXT.2"><td rowspan="2"><a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_ENR_EXT.2#"><td></td></tr><tr data-sortkey="FIA_ENR_EXT.2.6"><td>Enrollment in management.</td><td>Reference identifier of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server.</td></tr><tr data-sortkey="FMT_POL_EXT.2"><td rowspan="2"><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_POL_EXT.2#"><td></td></tr><tr data-sortkey="FMT_POL_EXT.2.7"><td>Failure of policy validation.</td><td>Reason for failure of validation.</td></tr><tr data-sortkey="FMT_SMF_EXT.4"><td rowspan="2"><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_SMF_EXT.4#"><td></td></tr><tr data-sortkey="FMT_SMF_EXT.4.7"><td>Outcome (success or failure) of function.</td><td>No additional information.</td></tr><tr data-sortkey="FMT_UNR_EXT.1"><td rowspan="2"><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_UNR_EXT.1#"><td></td></tr><tr data-sortkey="FMT_UNR_EXT.1.6"><td><b>[selection: </b><i>Attempt to unenroll., None</i><b>]</b></td><td>No additional information</td></tr></table>
+        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-man-audit" data-counter-type="ct-Table" id="at-man-audit">Table <span class="counter">4</span></span>: Auditable Events for Mandatory Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FAU_ALT_EXT.2"><td rowspan="2"><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_ALT_EXT.2#"><td></td></tr><tr data-sortkey="FAU_ALT_EXT.2.7"><td>Success or failure of sending alert.</td><td>No additional information.</td></tr><tr data-sortkey="FAU_GEN.1/AGENT"><td rowspan="2"><a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_GEN.1/AGENT#"><td></td></tr><tr data-sortkey="FAU_GEN.1/AGENT.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FAU_SEL.1/AGENT"><td rowspan="2"><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_SEL.1/AGENT#"><td></td></tr><tr data-sortkey="FAU_SEL.1/AGENT.2"><td>All modifications to the audit configuration that occur while the audit collection functions are operating.</td><td>No additional information.</td></tr><tr data-sortkey="FIA_ENR_EXT.2"><td rowspan="2"><a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_ENR_EXT.2#"><td></td></tr><tr data-sortkey="FIA_ENR_EXT.2.6"><td>Enrollment in management.</td><td>Reference identifier of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server.</td></tr><tr data-sortkey="FMT_POL_EXT.2"><td rowspan="2"><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_POL_EXT.2#"><td></td></tr><tr data-sortkey="FMT_POL_EXT.2.7"><td>Failure of policy validation.</td><td>Reason for failure of validation.</td></tr><tr data-sortkey="FMT_SMF_EXT.4"><td rowspan="2"><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_SMF_EXT.4#"><td></td></tr><tr data-sortkey="FMT_SMF_EXT.4.7"><td>Outcome (success or failure) of function.</td><td>No additional information.</td></tr><tr data-sortkey="FMT_UNR_EXT.1"><td rowspan="2"><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_UNR_EXT.1#"><td></td></tr><tr data-sortkey="FMT_UNR_EXT.1.6"><td><b>[selection: </b><i>Attempt to unenroll, None</i><b>]</b></td><td>No additional information</td></tr></table>
       
       
       <h3 id="man_fau" class="indexable" data-level="3">5.3.2 Security Audit (FAU)</h3>
@@ -1163,9 +1178,10 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               </ul>
             <div class="appnote"><span class="note-header">Application
       Note:
-    </span><span class="note"> The trusted channel is defined in FPT_ITT.1(2) of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> claims the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and 
+    </span><span class="note"> The trusted channel is defined in FPT_ITT.1(2) of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> claims the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>,  
               <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a> in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> claims the 
-              <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. “Alert” in this requirement could be as simple as an audit record or
+              <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and FTP_ITC_EXT.1/OSCHANNEL in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> claims the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. 
+              “Alert” in this requirement could be as simple as an audit record or
               a notification. If any prior alerts exist in the queue, per <a href="#FAU_ALT_EXT.2.2">FAU_ALT_EXT.2.2</a>, those
               alerts must be sent when the trusted channel is available.<br/><br/> This
               requirement is to ensure that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent must notify the 
@@ -1197,7 +1213,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 <li>All auditable events for [<i>not specified</i>] level of audit; and</li>
                 <li>[<i><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policy updated, any modification commanded by the 
                   <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server, specifically defined auditable events listed in 
-                  Table 2, and [<b>selection</b>: <span class="selectable-content" id="_s_19">[<b>assignment</b>: 
+                  <a onclick="showTarget('at-man-audit')" href="#at-man-audit" class="at-man-audit-ref">Table  <span class="counter">4</span></a>, and [<b>selection</b>: <span class="selectable-content" id="_s_19">[<b>assignment</b>: 
      <span class="assignable-content">other events</span>]</span>,  <span class="selectable-content" id="_s_20">no other events</span> ]</i>].</li>
               </ol>
             <div class="appnote"><span class="note-header">Application
@@ -1221,7 +1237,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           <div class="element"><div class="reqid" id="FAU_GEN.1.2/AGENT"><a href="#FAU_GEN.1.2/AGENT" class="abbr">FAU_GEN.1.2/AGENT</a></div><div class="reqdesc"><b>Refinement:</b> The [<b>selection</b>: <span class="selectable-content" id="_s_21"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>,  <span class="selectable-content" id="_s_22"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span> ] shall record within each <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent audit record at
               least the following information: <ol type="a">
                 <li>Date and time of the event, type of event, subject identity, (if relevant) the outcome 
-                  (success or failure) of the event, and additional information in Table 2; and</li>         
+                  (success or failure) of the event, and additional information in <a onclick="showTarget('at-man-audit')" href="#at-man-audit" class="at-man-audit-ref">Table  <span class="counter">4</span></a>; and</li>         
                 <li>For each audit event type, based on the auditable event definitions of the functional components 
                   included in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<b>assignment</b>: 
      <span class="assignable-content">other audit relevant information</span>].</li>
@@ -1288,7 +1304,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
       Note:
     </span><span class="note">The intent of this requirement is to cryptographically tie the
               policies to the enterprise that mandated the policy, not to protect the policies in
-              transit, as this is addressed by other <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> (the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> FPT_ITT.1(2) or the Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>
+              transit, as this is addressed by other <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> (FPT_ITT.1(2) in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> or the Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>
               <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a> or FTP_ITC_EXT.1/OSCHANNEL, depending on the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>). 
               This is especially critical for
               users who connect to multiple enterprises.<br/><br/> Policies must be
@@ -1388,7 +1404,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         </div>
       
     <h2 id="obj-req-map" class="indexable" data-level="2">5.4 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each security objective for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
-    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to meet and achieve the security objectives:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">3</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Objective</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="4"><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a><br/></td><td><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a> to support this objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to generate alerts back to an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server 
+    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to meet and achieve the security objectives:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">5</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Objective</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="4"><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a><br/></td><td><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a> to support this objective by requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to generate alerts back to an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server 
             when security-relevant events occur.</td></tr>
 <tr><td><a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a> to support this objective by defining the security-relevant events 
             for which the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must generate audit records.</td></tr>
@@ -1439,7 +1455,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 <tr><td>FCS_STO_EXT.1 (if <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines the FCS_STO_EXT.1 requirement for protection of sensitive data, which can include user data or keys used to
             protect user data.</td></tr>
 </table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-bpp-mdf" class="indexable" data-level="2">6.1 
-    Protection Profile for MDM Agent</h2><h3 id="contoe-bpp-mdf" class="indexable" data-level="3">6.1.1 
+    Protection Profile for Mobile Device Fundamentals</h2><h3 id="contoe-bpp-mdf" class="indexable" data-level="3">6.1.1 
 	Consistency of TOE Type
       </h3> When this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for
         the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a mobile device. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include the
@@ -1466,7 +1482,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         will not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition.</td></tr></table><h3 id="conobj-bpp-mdf" class="indexable" data-level="3">6.1.3 
 	Consistency of Objectives
       </h3><p>
-	  The objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> are consistent with the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> based on the following rationale:
+	  The objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> are consistent with the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> based on the following rationale:
       <table><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> provides an objective,
         O.INTEGRITY, that ensures that the integrity of the mobile device is maintained. This
         objective assists in the implementation of O.INTEGRITY by providing records of
@@ -1478,7 +1494,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         to/from the mobile device.</td></tr><tr><td><a href="#O.STORAGE">O.STORAGE</a></td><td> This objective extends the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>’s <a href="#O.STORAGE">O.STORAGE</a>
         objective by ensuring that the mobile device’s data-at-rest protection mechanisms can also
         be used to secure the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and related data.</td></tr></table></p><p>
-	  The objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> are consistent with the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> based on the following rationale:
+	  The objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> are consistent with the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> based on the following rationale:
       <table><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#OE.DATA_PROPER_ADMIN">OE.DATA_PROPER_ADMIN</a></td><td> This objective extends the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>’s
         <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.CONFIG objective by expecting that <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administrators act appropriately when installing
         or configuring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent.</td></tr><tr><td><a href="#OE.DATA_PROPER_USER">OE.DATA_PROPER_USER</a></td><td> This objective extends the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>’s
@@ -1495,10 +1511,10 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	Consistency of Requirements
       </h3>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
-      <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that are needed to support
+      <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that are needed to support
       <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent functionality.
       This is considered to be consistent because the functionality provided by the
-      <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose.
+      <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose.
       
             The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies new <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are used entirely to provide
             functionality for
@@ -1506,10 +1522,10 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         
           The rationale for why this does not conflict with the claims
       defined by the
-      <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
+      <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
       <table><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
 	    This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify any requirements when the
-	    <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the base.
+	    <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the base.
 	  </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to use
               functionality defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in FCS_CKM_EXT.1. </td></tr><tr><td><a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines FTP_ITC_EXT.1 to define the secure protocols used for trusted channel communications. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to specify a subset of these protocols that may be used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent communications in particular. </td></tr><tr><td><a href="#FTP_TRP.1/MDFENROLL">FTP_TRP.1/MDFENROLL</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> uses the trusted channel protocols defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in FTP_ITC_EXT.1 to facilitate a trusted path that the 
               <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can use to enroll the mobile device it runs on into
@@ -1522,7 +1538,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	    </td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Selection-based requirements.
 	    </td></tr></tr></table><h2 id="conrat-bpp-mdm" class="indexable" data-level="2">6.2 
-    Protection Profile for MDM Agent</h2><h3 id="contoe-bpp-mdm" class="indexable" data-level="3">6.2.1 
+    Protection Profile for Mobile Device Management</h2><h3 id="contoe-bpp-mdm" class="indexable" data-level="3">6.2.1 
 	Consistency of TOE Type
       </h3> When this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
         <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still mobile device management. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is
@@ -1651,7 +1667,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 
 	All extended components specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are listed in this table:
 
-<table class="sort_kids_"><caption data-sortkey="#0"><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">4</span></span>: Extended Component Definitions</b></caption><tr data-sortkey="#1"><th>Functional Class</th><th>Functional Components</th></tr><tr data-sortkey="Cryptographic Support (FCS)"><td>Cryptographic Support (FCS)</td><td>FCS_STG_EXT Trusted Channel<br/></td></tr><tr data-sortkey="Identification and Authentication (FIA)"><td>Identification and Authentication (FIA)</td><td>FIA_ENR_EXT Enrollment<br/></td></tr><tr data-sortkey="Protection of the TSF (FPT)"><td>Protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> (FPT)</td><td>FPT_NET_EXT Network Reachability<br/></td></tr><tr data-sortkey="Security Audit (FAU)"><td>Security Audit (FAU)</td><td>FAU_ALT_EXT <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Alerts<br/>FAU_STG_EXT Protected Audit Event Storage<br/></td></tr><tr data-sortkey="Security Management (FMT)"><td>Security Management (FMT)</td><td>FMT_POL_EXT Trusted Policy Update<br/>FMT_SMF_EXT Specification of Management Functions<br/>FMT_UNR_EXT Unenrollment<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><span class="sort_kids_"><span data-sortkey="Cryptographic Support (FCS)"><h3 id="ext-comp-FCS" class="indexable" data-level="3">C.2.1 Cryptographic Support (FCS)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+<table class="sort_kids_"><caption data-sortkey="#0"><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">6</span></span>: Extended Component Definitions</b></caption><tr data-sortkey="#1"><th>Functional Class</th><th>Functional Components</th></tr><tr data-sortkey="Cryptographic Support (FCS)"><td>Cryptographic Support (FCS)</td><td>FCS_STG_EXT Trusted Channel<br/></td></tr><tr data-sortkey="Identification and Authentication (FIA)"><td>Identification and Authentication (FIA)</td><td>FIA_ENR_EXT Enrollment<br/></td></tr><tr data-sortkey="Protection of the TSF (FPT)"><td>Protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> (FPT)</td><td>FPT_NET_EXT Network Reachability<br/></td></tr><tr data-sortkey="Security Audit (FAU)"><td>Security Audit (FAU)</td><td>FAU_ALT_EXT <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Alerts<br/>FAU_STG_EXT Protected Audit Event Storage<br/></td></tr><tr data-sortkey="Security Management (FMT)"><td>Security Management (FMT)</td><td>FMT_POL_EXT Trusted Policy Update<br/>FMT_SMF_EXT Specification of Management Functions<br/>FMT_UNR_EXT Unenrollment<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><span class="sort_kids_"><span data-sortkey="Cryptographic Support (FCS)"><h3 id="ext-comp-FCS" class="indexable" data-level="3">C.2.1 Cryptographic Support (FCS)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FCS class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FCS_STG_EXT" class="indexable" data-level="4">C.2.1.1 FCS_STG_EXT Trusted Channel</h3><div style="margin-left: 1em;"> This family is defined in both the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> augments the extended family by adding one additional component, <a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a>. This new component and its impact on the extended family’s component leveling are shown below; reference the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> for all other definitions for this family. <p><a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a>,
              Cryptographic Key Storage,
@@ -1782,7 +1798,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 			This approach is permitted by <a href="#bibCC">[CC]</a> Part 1, 8.3 Dependencies between components.</p><p>This information benefits systems engineering activities which call for inclusion of particular
 			security controls. Evaluation against the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> provides evidence that these controls are present 
 			and have been evaluated.</p> 
-    <div class="table-caption"><span class="ctr" data-myid="implicit-sfrs" data-counter-type="ct-Table" id="implicit-sfrs">Table <span class="counter">5</span>: Implicitly Satisfied Requirements</span></div>
+    <div class="table-caption"><span class="ctr" data-myid="implicit-sfrs" data-counter-type="ct-Table" id="implicit-sfrs">Table <span class="counter">7</span>: Implicitly Satisfied Requirements</span></div>
     <table>
       <tr>
         <th>Requirement</th>
