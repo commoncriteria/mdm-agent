@@ -11,10 +11,8 @@ output/mdm-agent-release-linkable.html: ITT
 output/mdm-agent-release-linkable.html: MOF
 output/mdm-agent-release-linkable.html: MTD
 output/mdm-agent-release-linkable.html: Managment
-output/mdm-agent-release-linkable.html: OSCHANNEL
 output/mdm-agent-release-linkable.html: OSENROLL
 output/mdm-agent-release-linkable.html: STM
-output/mdm-agent-release-linkable.html: STO
 output/mdm-agent-release-linkable.html: TUD
 output/mdm-agent-release-linkable.html: Unenrolling
 output/mdm-agent-release-linkable.html: Unenrollment
@@ -23,6 +21,7 @@ output/mdm-agent-release-linkable.html: exfiltrate
 output/mdm-agent-release-linkable.html: lifecycle
 output/mdm-agent-release-linkable.html: preconfigured
 output/mdm-agent-release-linkable.html: satisifed
+output/mdm-agent-release-linkable.html: senstiive
 output/mdm-agent-release-linkable.html: unenroll
 output/mdm-agent-release-linkable.html: unenrolling
 output/mdm-agent-release-linkable.html: unenrollment
@@ -37,10 +36,8 @@ output/mdm-agent-release.html: Fi
 output/mdm-agent-release.html: ITT
 output/mdm-agent-release.html: MOF
 output/mdm-agent-release.html: MTD
-output/mdm-agent-release.html: OSCHANNEL
 output/mdm-agent-release.html: OSENROLL
 output/mdm-agent-release.html: STM
-output/mdm-agent-release.html: STO
 output/mdm-agent-release.html: TUD
 output/mdm-agent-release.html: Unenrolling
 output/mdm-agent-release.html: Unenrollment
@@ -49,6 +46,7 @@ output/mdm-agent-release.html: exfiltrate
 output/mdm-agent-release.html: lifecycle
 output/mdm-agent-release.html: role’
 output/mdm-agent-release.html: satisifed
+output/mdm-agent-release.html: senstiive
 output/mdm-agent-release.html: unenroll
 output/mdm-agent-release.html: unenrolling
 output/mdm-agent-release.html: unenrollment
@@ -58,7 +56,6 @@ output/mdm-agent-sd.html: CEM
 output/mdm-agent-sd.html: DNs
 output/mdm-agent-sd.html: ITT
 output/mdm-agent-sd.html: Managment
-output/mdm-agent-sd.html: OSCHANNEL
 output/mdm-agent-sd.html: Unenrollment
 output/mdm-agent-sd.html: actions’
 output/mdm-agent-sd.html: evaluator’s
@@ -82,10 +79,8 @@ output/mdm-agent.html: ITT
 output/mdm-agent.html: MOF
 output/mdm-agent.html: MTD
 output/mdm-agent.html: Managment
-output/mdm-agent.html: OSCHANNEL
 output/mdm-agent.html: OSENROLL
 output/mdm-agent.html: STM
-output/mdm-agent.html: STO
 output/mdm-agent.html: TUD
 output/mdm-agent.html: Unenrolling
 output/mdm-agent.html: Unenrollment
@@ -97,6 +92,7 @@ output/mdm-agent.html: occurring’
 output/mdm-agent.html: preconfigured
 output/mdm-agent.html: role’
 output/mdm-agent.html: satisifed
+output/mdm-agent.html: senstiive
 output/mdm-agent.html: unenroll
 output/mdm-agent.html: unenrolling
 output/mdm-agent.html: unenrollment

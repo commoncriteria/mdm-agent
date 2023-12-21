@@ -302,7 +302,10 @@
         </span></a><a href="#sec-at-mdf-addnl" style="text-indent:30px">2.1.2.1<span>Auditable Events for MDF PP Additional SFRs</span></a><a href="#mdf_mod_fcs" style="text-indent:30px">2.1.2.2<span>Cryptographic Support (FCS)</span></a><a href="#mdf_mod_ftp" style="text-indent:30px">2.1.2.3<span>Trusted Path/Channels (FTP)</span></a><a href="#aa-bpp-mdm" style="text-indent:10px">2.2<span>
     Protection Profile for Mobile Device Management</span></a><a href="#qq-sfrs-bpp-mdm-Modified" style="text-indent:20px">2.2.1<span>Modified SFRs
         </span></a><a href="#qq-sfrs-bpp-mdm-Additional" style="text-indent:20px">2.2.2<span>Additional SFRs
-        </span></a><a href="#sec-at-mdm-addnl" style="text-indent:30px">2.2.2.1<span>Auditable Events for MDM PP Additional SFRs</span></a><a href="#mdm_mod_fcs" style="text-indent:30px">2.2.2.2<span>Cryptographic Support (FCS)</span></a><a href="#man-sfrs" style="text-indent:10px">2.3<span>TOE SFR Evaluation Activities</span></a><a href="#man_fau" style="text-indent:20px">2.3.1<span>Security Audit (FAU)</span></a><a href="#man_fia" style="text-indent:20px">2.3.2<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">2.3.3<span>Security Management (FMT)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.4<span>Evaluation Activities for Optional SFRs</span></a><a href="#sel-sfrs" style="text-indent:10px">2.5<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#obj-sfrs" style="text-indent:10px">2.6<span>Evaluation Activities for Objective SFRs</span></a><a href="#obj_fau" style="text-indent:20px">2.6.1<span>Security Audit (FAU)</span></a><a href="#obj_fpt" style="text-indent:20px">2.6.2<span>Protection of the TSF (FPT)</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.7<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
+        </span></a><a href="#sec-at-mdm-addnl" style="text-indent:30px">2.2.2.1<span>Auditable Events for MDM PP Additional SFRs</span></a><a href="#mdm_mod_fcs" style="text-indent:30px">2.2.2.2<span>Cryptographic Support (FCS)</span></a><a href="#aa-bpp-gpos" style="text-indent:10px">2.3<span>
+    Protection Profile for General Purpose Operating Systems</span></a><a href="#qq-sfrs-bpp-gpos-Modified" style="text-indent:20px">2.3.1<span>Modified SFRs
+        </span></a><a href="#gpos_mod_fcs" style="text-indent:30px">2.3.1.1<span>Cryptographic Support (FCS)</span></a><a href="#qq-sfrs-bpp-gpos-Additional" style="text-indent:20px">2.3.2<span>Additional SFRs
+        </span></a><a href="#sec-at-gpos-addnl" style="text-indent:30px">2.3.2.1<span>Auditable Events for GPOS PP Additional SFRs</span></a><a href="#gpos_add_ftp" style="text-indent:30px">2.3.2.2<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">2.4<span>TOE SFR Evaluation Activities</span></a><a href="#man_fau" style="text-indent:20px">2.4.1<span>Security Audit (FAU)</span></a><a href="#man_fia" style="text-indent:20px">2.4.2<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">2.4.3<span>Security Management (FMT)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.5<span>Evaluation Activities for Optional SFRs</span></a><a href="#sel-sfrs" style="text-indent:10px">2.6<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#obj-sfrs" style="text-indent:10px">2.7<span>Evaluation Activities for Objective SFRs</span></a><a href="#obj_fau" style="text-indent:20px">2.7.1<span>Security Audit (FAU)</span></a><a href="#obj_fpt" style="text-indent:20px">2.7.2<span>Protection of the TSF (FPT)</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.8<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
     PP-Module for MDM Agent is
     to describe the security functionality of 
     MDM Agent
@@ -311,7 +314,7 @@
 
     
     The PP-Module is intended for use with the following Base-PPs:
-        <ul><li><a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=468&amp;id=468">Mobile Device Fundamentals, version 3.3</a></li><li><a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=428&amp;id=428">Mobile Device Management, version 4.0</a></li></ul><br/>
+        <ul><li><a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=468&amp;id=468">Mobile Device Fundamentals, version 3.3</a></li><li><a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=428&amp;id=428">Mobile Device Management, version 4.0</a></li><li><a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=469&amp;id=469">General Purpose Operating Systems, version 4.3</a></li></ul><br/>
     This SD is mandatory for evaluations of TOEs that claim conformance to a PP-Configuration that includes the PP-Module for :
     <ul><li>MDM Agent, Version 1.1</li></ul>
     As such it defines Evaluation Activities for the functionality described in the PP-Module as well as any impacts to the Evaluation Activities to the Base-PP(s) it modifies.
@@ -526,7 +529,97 @@ The following sections list Common Criteria and technology terms used in this do
                   persistent secrets and private keys.<br/><br/>
                 </div></span></div>
 
-      <h2 class="indexable" data-level="1" id="man-sfrs">2.3 TOE SFR Evaluation Activities</h2><h2 class="indexable" data-level="2" id="man_fau">2.3.1 Security Audit (FAU)</h2><div class="comp" id="FAU-ALT-EXT-2"><h4>FAU_ALT_EXT.2 Agent Alerts</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_ALT_EXT.2</div>
+      <h2 class="indexable" data-level="1" id="aa-bpp-gpos">2.3 
+    Protection Profile for General Purpose Operating Systems</h2>
+      The EAs defined in this section are only applicable in cases where the TOE claims conformance
+      to a PP-Configuration that includes the GPOS PP.
+     <h3 class="indexable" data-level="2" id="qq-sfrs-bpp-gpos-Modified">2.3.1 Modified SFRs
+        </h3>
+        <h3 class="indexable" data-level="3" id="gpos_mod_fcs">2.3.1.1 Cryptographic Support (FCS)</h3><div class="comp" id=""><h4>FCS_STO_EXT.1 Storage of Sensitive Data</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_STO_EXT.1</div>
+              There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed
+                aside from ensuring that the EAs are applied to any sensitive data that relates to the MDM Agent portion of the TOE.
+              </span></div>
+      <h3 class="indexable" data-level="2" id="qq-sfrs-bpp-gpos-Additional">2.3.2 Additional SFRs
+        </h3>
+        
+        
+        <h3 class="indexable" data-level="3" id="sec-at-gpos-addnl">2.3.2.1 Auditable Events for GPOS PP Additional SFRs</h3>
+        
+        
+        
+        <h3 class="indexable" data-level="3" id="gpos_add_ftp">2.3.2.2 Trusted Path/Channels (FTP)</h3><div class="comp" id=""><h4>FTP_ITC_EXT.1/OSCHANNEL Trusted Channel Communication</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_ITC_EXT.1/OSCHANNEL</div>
+                
+                
+                
+              <div class="eacategory">TSS</div><div class="ea">The evaluator shall examine the TSS to determine that the
+                  methods of Agent-Server communication are indicated, along with how those
+                  communications are protected. The evaluator shall also confirm that all protocols
+                  listed in the TSS in support of remote TOE
+                  administration are consistent with those specified in the requirement, and are
+                  included in the requirements in the ST.<br/><br/>
+                </div><div class="eacategory">Guidance</div><div class="ea"> The evaluator shall confirm that the operational guidance contains
+                  instructions for configuring the communication channel between the MDM Agent and
+                  the MDM Server and conditionally, the MAS Server for each supported
+                  method.<br/><br/>
+                </div><div class="eacategory">Tests</div><div class="ea">For each supported identifier type (excluding DNs), the evaluator shall
+                  repeat the following tests:<br/><br/>
+                  <span class="testlist-"><ul>
+                    <li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FTP_ITC_EXT.1/OSCHANNEL:1</a>:
+      The evaluators shall ensure that communications using each specified (in
+                      the operational guidance) Agent-Server communication method is tested during
+                      the course of the evaluation, setting up the connections as described in the
+                      operational guidance and ensuring that communication is
+                      successful.
+                    </li>
+                    <li class="test-"><a id="_t_8" class="defined" href="#_t_8">Test FTP_ITC_EXT.1/OSCHANNEL:2</a>:
+      The evaluator shall ensure, for each method of Agent-Server communication,
+                      the channel data is not sent in plaintext.
+                    </li>
+                    <li class="test-"><a id="_t_9" class="defined" href="#_t_9">Test FTP_ITC_EXT.1/OSCHANNEL:3</a>:
+      The evaluator shall ensure, for each communication channel with the MDM
+                      Server, that a protocol analyzer identifies the traffic as the protocol under
+                      testing.
+                    </li>
+                  </ul></span> 
+                    <br/>
+                    Further evaluation activities are associated with the specific protocols.<br/><br/>
+                </div></span></div><div class="comp" id=""><h4>FTP_TRP.1/MDFENROLL Trusted Path (for Enrollment)</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_TRP.1/MDFENROLL</div>
+                
+                
+                
+              <div class="eacategory">TSS</div><div class="ea">The evaluator shall examine the TSS to determine that the
+                  methods of remote enrollment are indicated, along with how those communications
+                  are protected. The evaluator shall also confirm that all protocols listed in the
+                    TSS in support of enrollment are consistent with those
+                  specified in the requirement, and are included in the requirements in the ST.
+                  <br/><br/>
+                </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall confirm that the operational guidance contains
+                  instructions for establishing the enrollment sessions for each supported
+                  method.<br/><br/>
+                </div><div class="eacategory">Tests</div><div class="ea">For each MDM Agent/platform listed as supported in the
+                    ST: <br/><br/>
+                  <span class="testlist-"><ul>
+                    <li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FTP_TRP.1/MDFENROLL:1</a>:
+      The evaluators shall ensure that communications using each specified (in
+                      the operational guidance) enrollment method is tested during the course of the
+                      evaluation, setting up the connections as described in the operational
+                      guidance and ensuring that communication is successful.
+                    </li>
+                    <li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FTP_TRP.1/MDFENROLL:2</a>:
+      For each method of enrollment supported, the evaluator shall follow the
+                      operational guidance to ensure that there is no available interface that can
+                      be used by a remote user to establish enrollment sessions without invoking the
+                      trusted path.
+                    </li>
+                    <li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FTP_TRP.1/MDFENROLL:3</a>:
+      The evaluator shall ensure, for each method enrollment, the channel data
+                      is not sent in plaintext.
+                    </li>
+                  </ul></span> 
+                    <br/>
+                    Further evaluation activities are associated with the specific protocols.<br/><br/>
+                </div></span></div>
+      <h2 class="indexable" data-level="1" id="man-sfrs">2.4 TOE SFR Evaluation Activities</h2><h2 class="indexable" data-level="2" id="man_fau">2.4.1 Security Audit (FAU)</h2><div class="comp" id="FAU-ALT-EXT-2"><h4>FAU_ALT_EXT.2 Agent Alerts</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_ALT_EXT.2</div>
               
               
             <div class="eacategory">TSS</div><div class="ea">                  
@@ -536,13 +629,13 @@ The following sections list Common Criteria and technology terms used in this do
                   The evaluator shall ensure that the TSS describes under what circumstances, if any, the alert may not be generated (e.g., the device is powered off or disconnected from the trusted channel), how alerts are queued, and the maximum amount of storage for queued messages.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                   <span class="testlist-"><ul>
-                      <li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FAU_ALT_EXT.2:1</a>:
+                      <li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FAU_ALT_EXT.2:1</a>:
       The evaluator shall perform a policy update from the test environment MDM server. The evaluator shall verify the MDM Agent accepts the update, makes the configured changes, and reports the success of the policy update back to the MDM Server.</li>
-                      <li class="test-"><a id="_t_8" class="defined" href="#_t_8">Test FAU_ALT_EXT.2:2</a>:
+                      <li class="test-"><a id="_t_14" class="defined" href="#_t_14">Test FAU_ALT_EXT.2:2</a>:
       The evaluator shall perform each of the actions listed in FAU_ALT_EXT.2.1 and verify that the alert does in fact reach the MDM Server.</li>
-                      <li class="test-"><a id="_t_9" class="defined" href="#_t_9">Test FAU_ALT_EXT.2:3</a>:
+                      <li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FAU_ALT_EXT.2:3</a>:
       The evaluator shall configure the MDM Agent to perform a network reachability test, both with and without such connectivity and ensure that results reflect each.</li>
-                      <li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FAU_ALT_EXT.2:4</a>:
+                      <li class="test-"><a id="_t_16" class="defined" href="#_t_16">Test FAU_ALT_EXT.2:4</a>:
       The evaluator shall remove network connectivity from the MDM Agent and generate an alert/event as defined in FAU_ALT_EXT.2.1. The evaluator shall restore network connectivity to the MDM Agent and verify that the alert generated while the TOE was disconnected is sent by the MDM Agent upon re-establishment of the connectivity.</li>
                   </ul></span>
               </div></span></div><div class="comp" id="FAU-GEN-1-AGENT"><h4>FAU_GEN.1/AGENT Audit Data Generation</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_GEN.1/AGENT</div>
@@ -576,13 +669,13 @@ The following sections list Common Criteria and technology terms used in this do
                 enforced.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FAU_SEL.1/AGENT:1</a>:
+                  <li class="test-"><a id="_t_17" class="defined" href="#_t_17">Test FAU_SEL.1/AGENT:1</a>:
       For each attribute listed in the requirement, the evaluator shall devise a
                     test to show that selecting the attribute causes only audit events with that
                     attribute (or those that are always recorded, as identified in the
                     administrative guidance) to be recorded.
                   </li>
-                  <li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FAU_SEL.1/AGENT:2</a>:
+                  <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FAU_SEL.1/AGENT:2</a>:
       [conditional]: If the TSF supports specification of more complex audit
                     pre-selection criteria (e.g., multiple attributes, logical expressions using
                     attributes) then the evaluator shall devise tests showing that this capability
@@ -591,7 +684,7 @@ The following sections list Common Criteria and technology terms used in this do
                     exercise the capability.
                   </li>
                 </ul></span>
-              </div></span></div><h2 class="indexable" data-level="2" id="man_fia">2.3.2 Identification and Authentication (FIA)</h2><div class="comp" id="FIA-ENR-EXT-2"><h4>FIA_ENR_EXT.2 Agent Enrollment of Mobile Device into Management</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_ENR_EXT.2</div>
+              </div></span></div><h2 class="indexable" data-level="2" id="man_fia">2.4.2 Identification and Authentication (FIA)</h2><div class="comp" id="FIA-ENR-EXT-2"><h4>FIA_ENR_EXT.2 Agent Enrollment of Mobile Device into Management</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_ENR_EXT.2</div>
               
               
               
@@ -609,7 +702,7 @@ The following sections list Common Criteria and technology terms used in this do
                 and in conjunction with other evaluation activities verify that the 
                   MDM Agent can connect to the MDM Server and validate
                 the MDM Server’s certificate.<br/><br/>
-              </div></span></div><h2 class="indexable" data-level="2" id="man_fmt">2.3.3 Security Management (FMT)</h2><div class="comp" id="FMT-POL-EXT-2"><h4>FMT_POL_EXT.2 Agent Trusted Policy Update</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_POL_EXT.2</div>
+              </div></span></div><h2 class="indexable" data-level="2" id="man_fmt">2.4.3 Security Management (FMT)</h2><div class="comp" id="FMT-POL-EXT-2"><h4>FMT_POL_EXT.2 Agent Trusted Policy Update</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_POL_EXT.2</div>
                 
               
             <div class="eacategory">TSS</div><div class="ea">
@@ -617,9 +710,9 @@ The following sections list Common Criteria and technology terms used in this do
                 </div><div class="eacategory">Tests</div><div class="ea"> 
                   This evaluation activity is performed in conjunction with the evaluation activity for FIA_X509_EXT.1 and FIA_X509_EXT.2 as defined in the Base-PPs.<br/><br/>
                   <span class="testlist-"><ul>
-                      <li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FMT_POL_EXT.2:1</a>:
+                      <li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FMT_POL_EXT.2:1</a>:
       The evaluator shall perform a policy update from an available configuration interface (such as through a test MDM Server). The evaluator shall verify the update is signed and is provided to the MDM Agent. The evaluator shall verify the MDM Agent accepts the digitally signed policy.</li>
-                      <li class="test-"><a id="_t_14" class="defined" href="#_t_14">Test FMT_POL_EXT.2:2</a>:
+                      <li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FMT_POL_EXT.2:2</a>:
       The evaluator shall perform a policy update from an available configuration interface (such as through a test MDM Server). The evaluator shall provide an unsigned and an incorrectly signed policy to the MDM Agent. The evaluator shall verify the MDM Agent does not accept the digitally signed policy.</li>
                   </ul></span>            
               </div></span></div><div class="comp" id="FMT-SMF-EXT-4"><h4>FMT_SMF_EXT.4 Specification of Management Functions</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF_EXT.4</div>
@@ -640,21 +733,21 @@ The following sections list Common Criteria and technology terms used in this do
                   If the MDM Agent supports multiple interfaces for configuration (for example, both remote configuration and local configuration), the AGD guidance makes clear whether some functions are restricted to certain interfaces.<br/><br/>                
               </div><div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                    <li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FMT_SMF_EXT.4:1</a>:
+                    <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FMT_SMF_EXT.4:1</a>:
       In conjunction with the evaluation activities in the Base-PP, the evaluator shall attempt to configure each 
                       administrator-provided management function and shall verify that the mobile device executes the commands and enforces the policies.</li>
-                  <li class="test-"><a id="_t_16" class="defined" href="#_t_16">Test FMT_SMF_EXT.4:2</a>:
+                  <li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FMT_SMF_EXT.4:2</a>:
       [conditional: if "import the certificates to be used for authentication of MDM Agent communications" is selected in FMT_SMF_EXT.4.1, then] 
                     The evaluator shall configure the MDM Agent authentication certificate in accordance with the configuration guidance. 
                     The evaluator shall verify that the MDM Agent uses this certificate in performing the tests for the MDM PP SFR FPT_ITT.1(2) 
                     (if the MDM PP is the Base-PP),
                     the Additional SFR FTP_ITC_EXT.1/MDFCHANNEL (if the MDF PP is the Base-PP),
                     or the Additional SFR FTP_ITC_EXT.1/OSCHANNEL (if the GPOS PP is the Base-PP).</li>
-                    <li class="test-"><a id="_t_17" class="defined" href="#_t_17">Test FMT_SMF_EXT.4:3</a>:
+                    <li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FMT_SMF_EXT.4:3</a>:
       In conjunction with other evaluation activities, the evaluator shall attempt to enroll the MDM Agent in management with each interface identified in the TSS, and verify that the MDM Agent can manage the device and communicate with the MDM Server.</li>
-                    <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FMT_SMF_EXT.4:4</a>:
+                    <li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FMT_SMF_EXT.4:4</a>:
       [conditional] In conjunction with the evaluation activity for FAU_ALT_EXT.2.1, the evaluator shall configure the periodicity for reachability events for several configured time periods and shall verify that the MDM Server receives alerts on that schedule.</li>
-                  <li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FMT_SMF_EXT.4:5</a>:
+                  <li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FMT_SMF_EXT.4:5</a>:
       [conditional] The evaluator shall design and perform tests to demonstrate that the assigned function may be configured and that the intended behavior of the function is enacted by the mobile device.</li>
                 </ul></span>
               </div></span></div><div class="comp" id="FMT-UNR-EXT-1"><h4>FMT_UNR_EXT.1 User Unenrollment Prevention</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_UNR_EXT.1</div>
@@ -670,19 +763,19 @@ The following sections list Common Criteria and technology terms used in this do
                 also describes the actions that unenroll the Agent.<br/><br/>
               </div><div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FMT_UNR_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FMT_UNR_EXT.1:1</a>:
       If ‘prevent the unenrollment from occurring’ is selected: The evaluator shall configure the Agent according to the administrative guidance for each available configuration interface, shall attempt to unenroll the device, and shall verify that the attempt fails.
                   </li>
-                  <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FMT_UNR_EXT.1:2</a>:
+                  <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FMT_UNR_EXT.1:2</a>:
       If ‘apply remediation actions’ is selected: If any configuration allows the user to unenroll, the evaluator shall configure the Agent to allow user unenrollment, attempt to unenroll, and verify that the remediation actions are applied.
                   </li>
                 </ul></span>
-              </div></span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.4 Evaluation Activities for Optional SFRs</h2>The PP-Module does not define any optional requirements.<h2 class="indexable" data-level="1" id="sel-sfrs">2.5 Evaluation Activities for Selection-Based SFRs</h2>The PP-Module does not define any selection-based requirements.<h2 class="indexable" data-level="1" id="obj-sfrs">2.6 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="obj_fau">2.6.1 Security Audit (FAU)</h2><div class="comp" id="FAU-STG-EXT-3"><h4>FAU_STG_EXT.3 Security Audit Event Storage</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_STG_EXT.3</div>
+              </div></span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.5 Evaluation Activities for Optional SFRs</h2>The PP-Module does not define any optional requirements.<h2 class="indexable" data-level="1" id="sel-sfrs">2.6 Evaluation Activities for Selection-Based SFRs</h2>The PP-Module does not define any selection-based requirements.<h2 class="indexable" data-level="1" id="obj-sfrs">2.7 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="obj_fau">2.7.1 Security Audit (FAU)</h2><div class="comp" id="FAU-STG-EXT-3"><h4>FAU_STG_EXT.3 Security Audit Event Storage</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_STG_EXT.3</div>
               
             <div class="eacategory">TSS</div><div class="ea">The evaluator shall verify that the TSS description of the
                 audit records indicates how the records are stored. The evaluator shall verify that
                 the Agent calls a platform-provided API to store audit records.<br/><br/>
-              </div></span></div><h2 class="indexable" data-level="2" id="obj_fpt">2.6.2 Protection of the TSF (FPT)</h2><div class="comp" id="FPT-NET-EXT-1"><h4>FPT_NET_EXT.1 Network Reachability</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_NET_EXT.1</div>
+              </div></span></div><h2 class="indexable" data-level="2" id="obj_fpt">2.7.2 Protection of the TSF (FPT)</h2><div class="comp" id="FPT-NET-EXT-1"><h4>FPT_NET_EXT.1 Network Reachability</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_NET_EXT.1</div>
               
               
               
@@ -700,7 +793,7 @@ The following sections list Common Criteria and technology terms used in this do
                 FMT_SMF.1.1(1) function 56 within the Mobile Device Managment PP. The device shall be placed in airplane mode to prevent
                 connectivity with the Server. The evaluator shall verify that after the configured
                 time, the remediation actions selected in function 56 occur.<br/><br/>
-              </div></span></div><h2 class="indexable" data-level="1" id="impl-sfrs-">2.7 Evaluation Activities for Implementation-dependent SFRs</h2>The PP-Module does not define any implementation-dependent requirements.<h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><p>The PP-Module does not define any SARs beyond those defined within the
+              </div></span></div><h2 class="indexable" data-level="1" id="impl-sfrs-">2.8 Evaluation Activities for Implementation-dependent SFRs</h2>The PP-Module does not define any implementation-dependent requirements.<h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><p>The PP-Module does not define any SARs beyond those defined within the
     
 	base-PP to which it must claim conformance.
 	It is important to note that a TOE that is evaluated against the PP-Module is
