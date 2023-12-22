@@ -236,16 +236,15 @@ Behavior means it's a new EXT component and we have to make that chart.
       <implements>
         <feature id="has-auditing" title="Platform Auditing">
           <description>If the TOE is deployed on a mobile device or general-purpose operating system platform (i.e. the TOE does not use 
-            the MDM PP as its Base-PP), it is expected to rely on the underlying platform for secure storage of its audit records and 
-            FAU_STG_EXT.3 must be claimed.</description>
+            the MDM PP as its Base-PP), it is expected to rely on the underlying platform for secure storage of its audit records.</description>
         </feature>
         <feature id="supports-reachability" title="Supports Network Reachability Thresholds">
-          <description>An MDM Agent may support the ability to determine if it has been out of connectivity with an MDM server for too long.
+          <description>An MDM Agent may support the ability to determine if it has been out of connectivity with an MDM Server for too long.
             The configuration of the number of allowed missed reachability events or time limit since last successful connection
             with the server is handled in the server's configuration policy of the MDM Agent (the first selection of
-            function 56 in FMT_SMF.1.1(1) within the MDM PP). The TOE must claim FPT_NET_EXT.1 if either it claims the MDM PP as its 
-            Base-PP and management function 56 is claimed, or if the TOE's operational environment includes an MDM server that was separately validated against
-            the MDM PP and that server's ST claims management function 56.</description>
+            function 56 in FMT_SMF.1.1(1) within the MDM PP). This feature applies if either the TOE claims the MDM PP as its 
+            Base-PP and management function 56 is claimed, or if the TOE's operational environment includes an MDM Server that was separately validated against
+            the MDM PP and that MDM Server's ST claims management function 56.</description>
         </feature>
       </implements>
     </section>
@@ -783,7 +782,7 @@ Behavior means it's a new EXT component and we have to make that chart.
                   <selectable id="TRP_TLS_2">TLS client as defined in the Package for Transport Layer Security</selectable>
                   <selectable id="TRP_HTTPS_2">HTTPS</selectable>
                 </selectables> to provide a trusted communication path between itself and
-                <h:b>an MDM server</h:b>
+                <h:b>an MDM Server</h:b>
                 that is logically distinct from other communication paths and
                 provides assured identification of its endpoints and protection of the communicated
                 data from disclosure and detection of modification of the communicated data from
@@ -797,7 +796,7 @@ Behavior means it's a new EXT component and we have to make that chart.
               <title>The TSF shall require the use of the trusted path for [<h:i>[MDM enrollment]</h:i>]. 
               </title>
               <note role="application">This requirement ensures that a trusted connection is used for initial enrollment to an MDM;
-                security of ongoing MDM server communications after enrollment is
+                security of ongoing MDM Server communications after enrollment is
                 implemented through FTP_ITC_EXT.1/MDFCHANNEL.
                 <h:br/><h:br/> The ST author chooses the mechanism or
                 mechanisms supported by the TOE. The data passed in this trusted
@@ -966,7 +965,7 @@ Behavior means it's a new EXT component and we have to make that chart.
         MDM.</con-mod>
       <con-mod ref="fmt-unr-ext-1"> This SFR defines the functions performed by the MDM Agent when unenrolled from an MDM. The Base-PP defines 
         unenrollment actions in FMT_SMF_EXT.2, and goes on to note
-        that these actions may be performed “perhaps via an MDM agent,” so this is
+        that these actions may be performed “perhaps via an MDM Agent,” so this is
         expected behavior. </con-mod>
       <con-mod ref="fau-stg-ext-3"> This SFR defines the ability of the MDM Agent
         to store generated audit data in the audit storage provided by the mobile device. The Base-PP defines the capability for 
@@ -1077,14 +1076,14 @@ Behavior means it's a new EXT component and we have to make that chart.
                 sent by the MDM Server to the MDM Agent. Either
                 the MDM Agent or the MDM Server is able to
                 initiate the connection.<h:br/><h:br/> This requirement is iterated from the
-                  Base-PP to indicate the protocols that the MDM agent can use for
+                  Base-PP to indicate the protocols that the MDM Agent can use for
                 a trusted channel. Since this requirement is only for the case when the <abbr
                   linkend="PP-Module"/> builds on MDM PP and in this case it is
                 expected that the MDM Agent will be a third party application
                 provided by the MDM Server, it is acceptable for the <abbr
                   linkend="MDM"/> Agent to utilize the protocol implementations from the mobile
                 device. If that is the case then "invoke platform-provided functionality" must be
-                selected. If the MDM agent implements the protocol itself, then
+                selected. If the MDM Agent implements the protocol itself, then
                 "implement functionality" must be selected.<h:br/><h:br/> If "HTTPS" is selected
                 the appropriate selection-based SFRs from <appref linkend="sel-based"/> of <abbr
                   linkend="MDM"/> PP must be included in the ST, if not already
@@ -1401,7 +1400,7 @@ Behavior means it's a new EXT component and we have to make that chart.
               management. The GPOS PP already defines an iteration of this SFR for trusted administration, so this
               SFR is iterated to illustrate that this trusted path is used for a distinct function.</consistency-rationale>
             <f-element>
-              <title>The TSF shall provide a communication path between itself and <h:b>a</h:b> [<h:i>remote</h:i>] <h:b>MDM server</h:b> that is 
+              <title>The TSF shall provide a communication path between itself and <h:b>a</h:b> [<h:i>remote</h:i>] <h:b>MDM Server</h:b> that is 
                 logically distinct from other communication paths
                 and provides assured identification of its endpoints and protection of the
                 communicated data from [<h:i>modification, disclosure</h:i>].
@@ -1417,7 +1416,7 @@ Behavior means it's a new EXT component and we have to make that chart.
               <title>The TSF shall require the use of the trusted path for [<h:i>[MDM enrollment]</h:i>]. 
               </title>
               <note role="application">This requirement ensures that a trusted connection is used for initial enrollment to an MDM;
-                security of ongoing MDM server communications after enrollment is
+                security of ongoing MDM Server communications after enrollment is
                 implemented through FTP_ITC_EXT.1/OSCHANNEL.
                 <h:br/><h:br/> Since this requirement is only for the case when the PP-Module builds on GPOS PP, and in this case it is expected that the
                   MDM Agent will be a native part of the operating system,
@@ -1473,9 +1472,9 @@ Behavior means it's a new EXT component and we have to make that chart.
           </f-component>
         </sec:gpos_add_ftp>
       </additional-sfrs>
-      <con-toe> When this PP-Module is used to extend the MDF PP, the TOE type for
-        the overall TOE is still a mobile device. The TOE boundary is simply extended to include the
-          MDM Agent application that runs on the mobile device.</con-toe>
+      <con-toe> When this PP-Module is used to extend the GPOS PP, the TOE type for
+        the overall TOE is still a general purpose operating system. The TOE boundary is simply extended to include the
+          MDM Agent application that runs on the operating system.</con-toe>
       <con-sec-prob/>
       <con-obj/>
       <con-op-en/>
@@ -1668,7 +1667,7 @@ Behavior means it's a new EXT component and we have to make that chart.
               </TSS>
               <Tests>
                   <testlist>
-                      <test>The evaluator shall perform a policy update from the test environment MDM server. The evaluator shall verify the MDM Agent accepts the update, makes the configured changes, and reports the success of the policy update back to the MDM Server.</test>
+                      <test>The evaluator shall perform a policy update from the test environment MDM Server. The evaluator shall verify the MDM Agent accepts the update, makes the configured changes, and reports the success of the policy update back to the MDM Server.</test>
                       <test>The evaluator shall perform each of the actions listed in FAU_ALT_EXT.2.1 and verify that the alert does in fact reach the MDM Server.</test>
                       <test>The evaluator shall configure the MDM Agent to perform a network reachability test, both with and without such connectivity and ensure that results reflect each.</test>
                       <test>The evaluator shall remove network connectivity from the MDM Agent and generate an alert/event as defined in FAU_ALT_EXT.2.1. The evaluator shall restore network connectivity to the MDM Agent and verify that the alert generated while the TOE was disconnected is sent by the MDM Agent upon re-establishment of the connectivity.</test>
@@ -1693,16 +1692,22 @@ Behavior means it's a new EXT component and we have to make that chart.
                 <h:li>All auditable events for [<h:i>not specified</h:i>] level of audit; and</h:li>
                 <h:li>[<h:i>MDM policy updated, any modification commanded by the 
                   MDM Server, specifically defined auditable events listed in 
-                  <xref to="at-man-audit"/>, and <selectables>
+                  <xref to="at-man-audit"/> and <selectables>
+                    <selectable><xref to="at-mdf-addnl"/></selectable>
+                    <selectable><xref to="at-mdm-addnl"/></selectable>
+                    <selectable><xref to="at-gpos-addnl"/></selectable>
+                    <selectable><xref to="at-feat-based"/></selectable>
+                    <selectable>no other tables</selectable></selectables>, 
+                  and <selectables>
                   <selectable><assignable>other events</assignable></selectable>
                   <selectable>no other events</selectable>
                 </selectables></h:i>].</h:li>
               </h:ol>
             </title>
             <note role="application"> This requirement outlines the information to be included in
-              the MDM Agent’s audit records. The ST author can
-              include other auditable events directly in the Auditable Events table in
-              FAU_GEN.1.1/AGENT; they are not limited to the list presented.<h:br/><h:br/>
+              the MDM Agent’s audit records. For each claimed SFR, any corresponding auditable events must be claimed.
+              The auditable events are included in different tables because SFRs depend on the claimed Base-PP or supported TOE implementation;
+              the ST author selects all tables that contain an SFR that the TOE claims.<h:br/><h:br/>
               MDM policy update must minimally indicate that an update to policy
               occurred. The event record need not contain the differences between the prior policy
               and the new policy; optionally, the specific change(s) to policy that were included in
@@ -1791,7 +1796,13 @@ Behavior means it's a new EXT component and we have to make that chart.
               </selectables> shall record within each MDM Agent audit record at
               least the following information: <h:ol type="a">
                 <h:li>Date and time of the event, type of event, subject identity, (if relevant) the outcome 
-                  (success or failure) of the event, and additional information in <xref to="at-man-audit"/>; and</h:li>         
+                  (success or failure) of the event, and additional information in 
+                  <xref to="at-man-audit"/> and <selectables>
+                    <selectable><xref to="at-mdf-addnl"/></selectable>
+                    <selectable><xref to="at-mdm-addnl"/></selectable>
+                    <selectable><xref to="at-gpos-addnl"/></selectable>
+                    <selectable><xref to="at-feat-based"/></selectable>
+                    <selectable>no other tables</selectable></selectables>; and</h:li>         
                 <h:li>For each audit event type, based on the auditable event definitions of the functional components 
                   included in the PP-Module/ST, <assignable>other audit relevant information</assignable>.</h:li>
               </h:ol>
@@ -1907,7 +1918,7 @@ Behavior means it's a new EXT component and we have to make that chart.
               <TSS>The evaluator shall examine the TSS to verify that it describes
                 which types of reference identifiers are acceptable and how the identifier is
                 specified (e.g. preconfigured in the MDM Agent, by the user, by
-                the MDM server, in a policy).<h:br/><h:br/>
+                the MDM Server, in a policy).<h:br/><h:br/>
               </TSS>
               <Guidance>The evaluator shall examine the operational guidance to verify that it
                 describes how to configure reference identifier of the MDM
@@ -1916,7 +1927,7 @@ Behavior means it's a new EXT component and we have to make that chart.
                 Server.<h:br/><h:br/>
               </Guidance>
               <Tests>The evaluator shall follow the operational guidance to establish the reference
-                identifier of the MDM server on the MDM Agent
+                identifier of the MDM Server on the MDM Agent
                 and in conjunction with other evaluation activities verify that the 
                   MDM Agent can connect to the MDM Server and validate
                 the MDM Server’s certificate.<h:br/><h:br/>
@@ -1925,7 +1936,7 @@ Behavior means it's a new EXT component and we have to make that chart.
           </f-element>
           <audit-event>
             <audit-event-descr>Enrollment in management.</audit-event-descr>
-            <audit-event-info>Reference identifier of the MDM server.</audit-event-info>
+            <audit-event-info>Reference identifier of the MDM Server.</audit-event-info>
           </audit-event>
         </f-component>
       </sec:man_fia>
@@ -2236,17 +2247,6 @@ Behavior means it's a new EXT component and we have to make that chart.
               <selectable>time limit is exceeded</selectable>
             </selectables> related to the last successful connection with the server has been
               reached. </title>
-            <note role="application"> This requirement is to enable the Agent to determine if it has
-              been out of connectivity with the Server for too long. The configuration of the number
-              of allowed missed reachability events or time limit since last successful connection
-              with the server is handled in Server configuration policy of the Agent (the first selection of
-              function 56 in FMT_SMF.1.1(1) within the MDM PP). If the first selection of FMT_SMF.1.1(1) function 56 is included in the ST,
-              then FPT_NET_EXT.1.1 must be included in the ST.<h:br/><h:br/> If the Agent has been out of connectivity with the server for
-              too long than the remediation actions specified in the second selection of function 56 must occur. For
-              example if the Agent has not synced with the server in the allowed amount of time that
-              the Agent must wipe the device without requiring a command from the
-              Server.<h:br/><h:br/>
-            </note>
             <aactivity>
               <TSS> The evaluator shall verify that the TSS contains a description
                 of how the Agent determines how long it has been since the last successful
@@ -2268,7 +2268,7 @@ Behavior means it's a new EXT component and we have to make that chart.
             </aactivity>
           </f-element>
           <audit-event table="feat-based">
-            <audit-event-descr>MDM server connection reaching or exceeding unavailability threshold.</audit-event-descr>
+            <audit-event-descr>MDM Server connection reaching or exceeding unavailability threshold.</audit-event-descr>
             <audit-event-info>No additional information.</audit-event-info>
           </audit-event>
         </f-component>
