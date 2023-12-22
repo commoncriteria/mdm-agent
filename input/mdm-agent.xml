@@ -130,7 +130,7 @@ Behavior means it's a new EXT component and we have to make that chart.
       The MDM system
       consists of two primary components: the MDM Server software and the MDM Agent. This PP-Module specifically addresses the MDM Agent. 
       The MDM Agent establishes a secure connection back
-      to the MDM Server, from which it receives policies to enforce on the mobile
+      to the MDM Server, from which it receives policies to enforce on the 
       device. Optionally, the MDM Agent interacts with the Mobile Application
       Store (MAS) Server to download and install enterprise-hosted applications.
       <h:br/><h:br/> 
@@ -170,7 +170,8 @@ Behavior means it's a new EXT component and we have to make that chart.
       OS as a whole. However, if it does provide any such interfaces, the configuration aspects of these additional interfaces are in scope of this PP-Module.
       
       <section title="TOE Boundary" id="TOEboundary"> Figure 1 shows a high-level example of the PP-Module
-        TOE boundary and its Operational Environment. As stated above, the MDM Agent may either be provided as part of the mobile device itself (shown in
+        TOE boundary and its Operational Environment where the TOE runs on a mobile device. A use case where the TOE runs on a general purpose OS
+        is identical aside from the specific type of device on which it runs. As stated above, the MDM Agent may either be provided as part of the device itself (shown in
         red) or distributed as a third-party application from the developer of the MDM Server software (shown in blue).<h:br/><h:br/>
         <figure entity="images/MDMagentoperatingenvironment.jpg"
           title="MDM Agent Operating Environment" id="toe"/><h:br/> 
@@ -439,7 +440,7 @@ Behavior means it's a new EXT component and we have to make that chart.
           </objective-refer>
         </OSP>
         <OSP name="P.ADMIN">
-          <description>The configuration of the mobile device security functions must adhere to the
+          <description>The configuration of the device's security functions must adhere to the
             Enterprise security policy. </description>
           <objective-refer ref="O.APPLY_POLICY">
             <rationale>The TOE adheres to the Enterprise security policy through
@@ -447,7 +448,7 @@ Behavior means it's a new EXT component and we have to make that chart.
           </objective-refer>
         </OSP>
         <OSP name="P.DEVICE_ENROLL">
-          <description>A mobile device must be enrolled for a specific user by the administrator of
+          <description>A device must be enrolled for a specific user by the administrator of
             the MDM prior to being used in the Enterprise network by the user. </description>
           <objective-refer ref="O.APPLY_POLICY">
             <rationale>The TOE enrolls mobile devices for specific users with
@@ -455,7 +456,7 @@ Behavior means it's a new EXT component and we have to make that chart.
           </objective-refer>
         </OSP>
         <OSP name="P.NOTIFY">
-          <description>The mobile user must immediately notify the administrator if a mobile device
+          <description>The user must immediately notify the administrator if a device
             is lost or stolen so that the administrator may apply remediation actions via the MDM system. </description>
           <objective-refer ref="O.APPLY_POLICY">
             <rationale>The TOE provides the capability for the administrator to
@@ -486,7 +487,7 @@ Behavior means it's a new EXT component and we have to make that chart.
         </SO>
         <SO name="O.APPLY_POLICY">
           <description>The TOE must facilitate configuration and enforcement of
-            enterprise security policies on mobile devices via interaction with the mobile OS and
+            enterprise security policies on devices via interaction between the OS and
             the MDM Server. This will include the initial enrollment of the device
             into management, through its entire lifecycle, including policy updates and its possible
             unenrollment from management services. </description>
@@ -543,7 +544,7 @@ Behavior means it's a new EXT component and we have to make that chart.
           <rationale>The PP-Module includes FTP_ITC_EXT.1/OSCHANNEL to support this objective because when the TOE runs on a general-purpose operating system, 
             the operating system must have a way to ensure that MDM Server communications are protected.</rationale>
           <addressed-by>FTP_TRP.1/OSENROLL (if GPOS is Base-PP)</addressed-by>
-          <rationale>The PP-Module includes FTP_ITC_EXT.1/MDFCHANNEL to support this objective because when the TOE is a mobile device, 
+          <rationale>The PP-Module includes FTP_TRP.1/OSCHANNEL to support this objective because when the TOE is a general purpose OS, 
             it must have a way to ensure that MDM Server enrollment communications are protected.</rationale>
           <addressed-by>FPT_NET_EXT.1 (objective)</addressed-by>
           <rationale>The PP-Module includes FPT_NET_EXT.1 to support this objective by optionally requiring the TSF to detect when a sustained 
@@ -1503,8 +1504,8 @@ Behavior means it's a new EXT component and we have to make that chart.
       <con-mod ref="A.CONNECTIVITY">This assumption expects that networking services will be available for the TOE to use. 
         This is consistent with the Base-PP because the Base-PP defines mandatory requirements for a general-purpose operating system
         that have network connectivity as a prerequisite.</con-mod>
-      <con-mod ref="A.PLATFORM">This assumption expects that the TOE’s underlying hardware platform is validated against the MDF PP. 
-        This is consistent with the Base-PP by definition because the mobile device is within the TOE boundary and evaluated against the MDF PP.</con-mod>
+      <con-mod ref="A.PLATFORM">This assumption expects that the TOE’s underlying platform is sutfficiently trusted. 
+        This is consistent with the Base-PP by definition because the OS is within the TOE boundary and evaluated against the GPOS PP.</con-mod>
       <con-mod ref="A.PROPER_ADMIN">	
         This assumption expects that the TOE administrator is trusted and competent in configuring the TSF. 
         This assumption is consistent with the A.CONFIG assumption in the Base-PP which expects the TSF to be configured correctly 
@@ -1633,7 +1634,7 @@ Behavior means it's a new EXT component and we have to make that chart.
           <f-element>
             <title>The MDM Agent shall provide an alert via the trusted channel to
               the MDM Server in the event of any of the following audit events: <h:ul>
-                <h:li>successful application of policies to a mobile device,</h:li>
+                <h:li>successful application of MDM policies,</h:li>
                 <h:li>
                   <selectables>
                     <selectable>receiving</selectable>
@@ -2066,20 +2067,20 @@ Behavior means it's a new EXT component and we have to make that chart.
               The administrator-provided management functions in the GPOS PP are specified in FMT_SMF_EXT.1.
               <h:br/><h:br/> The 
                 ST author can add more commands and configuration policies by completing
-              the assignment statement; the mobile device must support these additional commands or
+              the assignment statement; the device must support these additional commands or
               configuration policies.<h:br/><h:br/> The agent must configure the platform based
               on the commands and configuration policies received from the MDM
               Server. The ST author must not claim any functionality not provided
-              by the supported mobile device(s). All selections and assignments performed by the
+              by the supported device. All selections and assignments performed by the
                 ST author in this requirement should match the selections and
-              assignments of the validated mobile device ST.<h:br/><h:br/>
+              assignments of the validated mobile device or general purpose operating system ST.<h:br/><h:br/>
             </note>           
           </f-element>
           <f-element>
             <title>The MDM Agent shall be capable of performing the following
               functions: <h:ul>
-                <h:li>Enroll in management</h:li>
-                <h:li>Configure whether users can unenroll from management</h:li>
+                <h:li>enroll in management</h:li>
+                <h:li>configure whether users can unenroll from management</h:li>
                 <h:li>
                   <selectables>
                     <selectable>configure periodicity of reachability events</selectable>
@@ -2090,11 +2091,10 @@ Behavior means it's a new EXT component and we have to make that chart.
             <note role="application"> This requirement captures all of the configuration in the
                 MDM Agent for configuration of itself.<h:br/><h:br/> If the
                 MDM Agent is a part of the mobile device, enrollment is a single
-              function both of the Agent and of the mobile device
+              function both of the Agent and of the device
               (FMT_SMF_EXT.4.1).<h:br/><h:br/> If the MDM Agent is an
-              application developed separately from the mobile device, the MDM
-              Agent performs the function “enroll the mobile device in management” (per
-              FMT_SMF_EXT.4.1) by registering itself to the mobile device as a device administrator.
+              application developed separately from the mobile device or operating system, the MDM
+              Agent performs the function “enroll in management” by registering itself to the mobile device or OS as a administrator.
               The Agent itself is enrolled in management by configuring the MDM
               Server to which the Agent answers.<h:br/><h:br/> If the MDM
               Agent does not support unenrollment prevention, remediation actions should be applied
@@ -2142,7 +2142,7 @@ Behavior means it's a new EXT component and we have to make that chart.
         </f-component>
         <ext-comp-def title="Unenrollment" fam-id="FMT_UNR_EXT">
           <fam-behavior> Components in this family define requirements for TSF behavior when a user
-            attempts to unenroll the TOE from mobile device management.</fam-behavior>
+            attempts to unenroll the TOE from an MDM.</fam-behavior>
         </ext-comp-def>
         <f-component cc-id="fmt_unr_ext.1" id="fmt-unr-ext-1" name="User Unenrollment Prevention">
           <consistency-rationale/>
@@ -2158,7 +2158,7 @@ Behavior means it's a new EXT component and we have to make that chart.
             FMT_MOF_EXT.1 Management of Functions Behavior] </dependencies>
           <f-element>
             <title>The MDM Agent shall provide a mechanism to enforce the
-              following behavior upon an attempt to unenroll the mobile device from management: <selectables>
+              following behavior upon an attempt to unenroll the device from management: <selectables>
                 <selectable>prevent the unenrollment from occurring</selectable>
                 <selectable>apply remediation actions</selectable>
               </selectables>.
@@ -2329,7 +2329,7 @@ Behavior means it's a new EXT component and we have to make that chart.
         If the device is not part of the TOE (i.e. because the Base-PP is the MDM PP), 
         a reliable time source can still be assumed because all mobile devices must include some method to update time data from a cellular carrier network, 
         and can also reasonably be assumed to include a method to update network time if it is instead connected to a network via WLAN radio 
-        (such as when in airplane mode) and general-purpose operating systems are also assumed to have network time interfaces.
+        (such as when in airplane mode), and all general purpose operating systems are assumed to have access to a reliable hardware clock or network time interface.
       </h:td>
       </h:tr>
     </h:table>
