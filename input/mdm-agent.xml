@@ -81,18 +81,18 @@ Behavior means it's a new EXT component and we have to make that chart.
         <h:li>Protection Profile for General Purpose Operating Systems (GPOS PP), Version 4.3</h:li>
       </h:ul>
       <h:br/> These Base-PPs are valid because a MDM Agent is
-      either a 3rd party application manufactured by the MDM Server vendor or is a
-      native application deployed on a mobile device. </section>
+      either a third-party application manufactured by the MDM Server vendor or is a
+      native application deployed on a mobile device or general purpose OS. </section>
 
       <tech-terms>
             <term full="Administrator">The person who is responsible for management activities, including setting
-            the policy that is applied by the enterprise on the mobile device.</term>
+            the policy that is applied by the enterprise on the device.</term>
 	    <term abbr="API" full="Application Programming Interface"/>
 	    <term abbr="BYOD" full="Bring Your Own Device"/>
 	    <term abbr="COPE" full="Corporately Owned, Personally Enabled"/>
 	    <term abbr="DN" full="Distinguished Name"/>
 	    <term abbr="DTLS" full="Datagram Transport Layer Security"/>
-            <term full="Enrolled State">The state in which a mobile device is managed by a policy from an MDM.</term>
+            <term full="Enrolled State">The state in which a device is managed by a policy from an MDM.</term>
 	    <term abbr="GPOS" full="General Purpose Operating System"/>
 	    <term abbr="HTTPS" full="HyperText Transfer Protocol Secure"/>
 	    <term abbr="IP" full="Internet Protocol"/>
@@ -104,19 +104,22 @@ Behavior means it's a new EXT component and we have to make that chart.
 	    <term abbr="MDF" full="Mobile Device Fundamentals"/>
             <term full="Operating System">
 	      Software which runs at the highest privilege level and can directly control
-              hardware resources. Modern mobile devices typically have at least two primary
+              hardware resources. These include mobile device operating systems and general purpose operating systems.
+              Mobile device operating systems have general purpose functionality but are typically integrated more tightly with purpose-built
+              mobile hardware and limit a user's ability to interact with the operating system.
+              Modern mobile devices typically have at least two primary
               operating systems: one which runs on the cellular baseband processor and one which
               runs on the application processor. The platform of the application processor handles
               most user interaction and provides the execution environment for apps. The platform of
               the cellular baseband processor handles communications with the cellular network and
               may control other peripherals. The term OS, without context, may be assumed to refer
-              to the platform of the application</term>
+              to the platform of the application.</term>
 	      <term abbr="RBG" full="Random Bit Generation"/>
 	      <term abbr="SD" full="Supporting Document"/>
 	      <term abbr="ST" full="Security Target"/>
 	      <term abbr="TLS" full="Transport Layer Security"/>
               <term full="Unenrolled State">
-		The state in which a mobile device is not managed by an MDM system.
+		The state in which a device is not managed by an MDM system.
 	      </term>
               <term full="User">See Mobile Device User.</term>
 	      <term abbr="VPN" full="Virtual Private Network"/>
@@ -129,15 +132,19 @@ Behavior means it's a new EXT component and we have to make that chart.
       The MDM Agent establishes a secure connection back
       to the MDM Server, from which it receives policies to enforce on the mobile
       device. Optionally, the MDM Agent interacts with the Mobile Application
-      Store (MAS) Server to download and install enterprise-hosted applications.<h:br/><h:br/> A
-      compliant MDM Agent is installed on a mobile device as an application
-      (supplied by the developer of the MDM Server software) or is part of the
-      mobile device's OS.This PP-Module builds on either the MDF PP or the MDM PP. A TOE
+      Store (MAS) Server to download and install enterprise-hosted applications.
+      <h:br/><h:br/> 
+      A
+      compliant MDM Agent is installed on a device as an application
+      (supplied by the developer of the MDM Server software) or is part of a mobile device or general purpose OS.
+      This PP-Module builds on the MDF PP, the MDM PP, or the GPOS PP. A TOE
       that claims conformance to this PP-Module must also claim conformance to one
       of those PPs as its Base-PP. A compliant TOE is obligated
-      to implement the functionality required in the Base-PP along with the
+      to implement the functionality required by the Base-PP along with the
       additional functionality defined in this PP-Module in order to mitigate the
-      threats that are defined by this PP-Module.<h:br/><h:br/> This PP-Module shall build on the MDF PP if the 
+      threats that are defined by this PP-Module.
+      <h:br/><h:br/> 
+      This PP-Module shall build on the MDF PP if the 
       TOE is a native part of a mobile operating system. The TOE for
       this PP-Module combined with the MDF PP is the mobile
       device itself plus the MDM Agent. If the MDM Agent is part
@@ -145,13 +152,22 @@ Behavior means it's a new EXT component and we have to make that chart.
       configuring the mobile device, such as a local interface and a remote interface. Agents
       conforming to this PP-Module must at least offer an interface with a trusted
       channel that serves as one piece of an MDM system. Conformant MDM Agents may also offer other interfaces, and the configuration aspects of
-      these additional interfaces are in scope of this PP-Module.<h:br/><h:br/> 
+      these additional interfaces are in scope of this PP-Module.
+      <h:br/><h:br/> 
       This PP-Module shall build on the MDM Server PP if the TOE is a third-party application that is provided with
-      an MDM Server and installed on a mobile device by the user after acquiring
-      the mobile device. The distributed TOE for this PP-Module
+      an MDM Server and installed on a device by the user after acquiring
+      the device. The distributed TOE for this PP-Module
       combined with the MDM Server PP is the entire MDM environment, which includes both the MDM Server and the
-        MDM Agent. Even though the mobile device itself is not part of the TOE, it is expected to be evaluated against the MDF PP so that
-      its baseline security capabilities can be assumed to be present. 
+        MDM Agent. Even though the device itself is not part of the TOE, it is expected to be evaluated against the MDF or GPOS PP so that
+      its baseline security capabilities can be assumed to be present. If the TOE conforms to the GPOS PP, evaluating the hardware platform against
+      the Protection Profile for General Purpose Computing Platforms (GPCP PP) may also be considered so that assurance of the underlying platform hardware
+      can be obtained.
+      <h:br/><h:br/>
+      This PP-Module shall build on the GPOS PP if the TOE is a native part of a general purpose non-mobile operating system.
+      The TOE for this PP-Module combined with the GPOS PP is the operating system itself plus the MDM Agent. If the MDM Agent is part of 
+      the OS, the MDM Agent may present multiple interfaces for configuring the OS, such as a local interface and a remote interface. 
+      The MDM Agent does not need to provide a dedicated management interface that is separate from the means by which Administrators interact with the 
+      OS as a whole. However, if it does provide any such interfaces, the configuration aspects of these additional interfaces are in scope of this PP-Module.
       
       <section title="TOE Boundary" id="TOEboundary"> Figure 1 shows a high-level example of the PP-Module
         TOE boundary and its Operational Environment. As stated above, the MDM Agent may either be provided as part of the mobile device itself (shown in
@@ -159,9 +175,9 @@ Behavior means it's a new EXT component and we have to make that chart.
         <figure entity="images/MDMagentoperatingenvironment.jpg"
           title="MDM Agent Operating Environment" id="toe"/><h:br/> 
         The MDM
-        Agent must closely interact with or be part of the mobile device’s platform in order to
-        establish policies and to perform queries about device status. The mobile device, in turn,
-        has its own security requirements specified in the MDF PP. 
+        Agent must closely interact with or be part of the mobile device or OS platform in order to
+        establish policies and to perform queries about device status. The mobile device and OS platform, in turn,
+        have their own security requirements specified in the MDF PP and GPOS PP, respectively. 
         </section>
     </section>
     <section title="Use Cases" id="usecase"> This PP-Module defines 4 use cases:<h:br/><h:br/>
@@ -170,12 +186,12 @@ Behavior means it's a new EXT component and we have to make that chart.
           <description> An Enterprise-owned device for general-purpose business use is commonly
             called Corporately Owned, Personally Enabled (COPE). This use case entails a significant
             degree of Enterprise control over configuration and software inventory. Enterprise
-            administrators use an MDM product to establish policies on the mobile
+            administrators use an MDM product to establish policies on the 
             devices prior to user issuance. Users may use Internet connectivity to browse the web or
             access corporate mail or run Enterprise applications, but this connectivity may be under
             significant control of the Enterprise. The user may also be expected to store data and
             use applications for personal, non-enterprise use. The Enterprise administrator uses the
-              MDM product to deploy security policies and query mobile device
+              MDM product to deploy security policies and query device
             status. The MDM may issue commands for remediation actions.
           </description>
         </usecase>
@@ -183,7 +199,7 @@ Behavior means it's a new EXT component and we have to make that chart.
           <description>An Enterprise-owned device with intentionally limited network connectivity,
             tightly controlled configuration, and limited software inventory is appropriate for
             specialized, high-security use cases. As in the previous use case, the MDM product is used 
-            to establish such policies on mobile devices prior to
+            to establish such policies on devices prior to
             issuance to users. The device may not be permitted connectivity to any external
             peripherals. It may only be able to communicate via its Wi-Fi or cellular radios with
             the Enterprise-run network, which may not even permit connectivity to the Internet. Use
@@ -205,13 +221,13 @@ Behavior means it's a new EXT component and we have to make that chart.
             device.<h:br/><h:br/> However, because the Enterprise allows the user full (or
             nearly full) access to the Enterprise network, the Enterprise will require certain
             security policies, for example a password or screen lock policy, and health reporting,
-            such as the integrity of the mobile device system software, before allowing access. The
+            such as the integrity of the system software, before allowing access. The
             administrator of the MDM can establish remediation actions, such as
             wipe of the Enterprise data, for non-compliant devices. These controls could potentially
             be enforced by a separation mechanism built-in to the device itself to distinguish
             between enterprise and personal activities, or by a third-party application that
             provides access to enterprise resources and leverages security capabilities provided by
-            the mobile device. Based upon the Operational Environment and the acceptable risk level
+            the device. Based upon the Operational Environment and the acceptable risk level
             of the enterprise, those security functional requirements outlined in Section 5 of this PP-Module 
             along with the selections in the Use Case 3
             template defined in <!-- <xref to="use-case"/> --> are sufficient for the secure
@@ -223,7 +239,7 @@ Behavior means it's a new EXT component and we have to make that chart.
             services such as enterprise email. Because the user does not have full access to the
             enterprise or enterprise data, the enterprise may not need to enforce any security
             policies on the device. However, the enterprise may want secure email and web browsing
-            with assurance that the services being provided to those clients by the mobile device
+            with assurance that the services being provided to those clients by the device
             are not compromised. Based upon the Operational Environment and the acceptable risk
             level of the enterprise, those security functional requirements outlined in Section 5 of this PP-Module are sufficient for the secure
             implementation of this BYOD use case.</description>
@@ -2028,6 +2044,7 @@ Behavior means it's a new EXT component and we have to make that chart.
                 <h:li><selectables>
                     <selectable>administrator-provided management functions in MDF PP</selectable>
                     <selectable>administrator-provided device management functions in MDM PP</selectable>
+                  <selectable>administrator-provided device management functions in GPOS PP</selectable>
                   </selectables></h:li>
                 <h:li><selectables>
                     <selectable><assignable>additional functions</assignable></selectable>
@@ -2038,14 +2055,16 @@ Behavior means it's a new EXT component and we have to make that chart.
             <note role="application"> This requirement captures all the configuration functionality
               in the MDM Agent to configure the underlying mobile device with the
               configuration policies sent from the MDM Server to the Agent. The
-                ST author selects the Base-PP (MDF PP or MDM PP) as the source of the management functions.<h:br/><h:br/> The
-              administrator-provided management functions in MDF PP are specified
+                ST author selects the Base-PP (MDF PP, MDM PP, or GPOS PP) as the source of the management functions.<h:br/><h:br/> The
+              administrator-provided management functions in the MDF PP are specified
               in Column 4 of Table 5 in MDF PP and in FPT_TUD_EXT.1 (for version
-              queries). The administrator-provided device management functions in MDM
-              PP are specified in FMT_SMF.1.1(1); the functions in the selection
-              of FMT_SMF.1.1(1) in the MDM
+              queries). The administrator-provided device management functions in the MDM
+              PP are specified in FMT_SMF.1(1); the functions in the selection
+              of FMT_SMF.1(1) in the MDM
               PP are required to correspond to the functions available on the
-              platforms supported by the MDM Agent.<h:br/><h:br/> The 
+              platforms supported by the MDM Agent. 
+              The administrator-provided management functions in the GPOS PP are specified in FMT_SMF_EXT.1.
+              <h:br/><h:br/> The 
                 ST author can add more commands and configuration policies by completing
               the assignment statement; the mobile device must support these additional commands or
               configuration policies.<h:br/><h:br/> The agent must configure the platform based
@@ -2150,8 +2169,10 @@ Behavior means it's a new EXT component and we have to make that chart.
               the MDM Server.<h:br/><h:br/> For those configurations where
               unenrollment is allowed, for example a BYOD usage, the MDF PP describes remediation
               actions performed upon unenrollment, such as wiping enterprise data, in
-              FMT_SMF_EXT.2.1; however, the MDM Agent is limited to those actions
-              supported by the mobile device on which the Agent is operating.<h:br/><h:br/>
+              FMT_SMF_EXT.2.1. The GPOS PP does not explicitly describe the case of unenrollment but 
+              a general purpose operating system has interfaces that an MDM Agent can invoke to perform 
+              the desired unenrollment functionality. The MDM Agent is limited to those actions
+              supported by the device on which the Agent is operating. <h:br/><h:br/>
             </note>
             <aactivity>
               <TSS> The evaluator shall ensure that the TSS describes the
