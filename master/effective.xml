@@ -2046,10 +2046,10 @@
               </h:ul></title>
             <note role="application"> This requirement captures all of the configuration in the
                 MDM Agent for configuration of itself.<h:br/><h:br/> If the
-                MDM Agent is a part of the mobile device, enrollment is a single
+                MDM Agent is part of a mobile device, enrollment is a single
               function both of the Agent and of the device
               (FMT_SMF_EXT.4.1).<h:br/><h:br/> If the MDM Agent is an
-              application developed separately from the mobile device or operating system, the MDM
+              application developed separately from a mobile device or operating system, the MDM
               Agent performs the function “enroll in management” by registering itself to the mobile device or OS as a administrator.
               The Agent itself is enrolled in management by configuring the MDM
               Server to which the Agent answers.<h:br/><h:br/> If the MDM
