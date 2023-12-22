@@ -829,15 +829,14 @@ The following sections list Common Criteria and technology terms used in this do
     <h2 class="indexable" data-level="2" id="sec-features">1.5 Implementation-Dependent Features</h2>
       If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements the following features, then the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> associated with the features must be claimed.
       <h3 class="indexable" data-level="3" id="has-auditing">1.5.1 Platform Auditing</h3><span class="description">If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is deployed on a mobile device or general-purpose operating system platform (i.e. the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> does not use 
-            the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> as its <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), it is expected to rely on the underlying platform for secure storage of its audit records and 
-            <a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a> must be claimed.</span><br/><p>
+            the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> as its <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), it is expected to rely on the underlying platform for secure storage of its audit records.</span><br/><p>
 	  If this feature is implemented by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the following requirements must be claimed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>:
-            <ul><li><b><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></b></li></ul></p><h3 class="indexable" data-level="3" id="supports-reachability">1.5.2 Supports Network Reachability Thresholds</h3><span class="description">An <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent may support the ability to determine if it has been out of connectivity with an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server for too long.
+            <ul><li><b><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></b></li></ul></p><h3 class="indexable" data-level="3" id="supports-reachability">1.5.2 Supports Network Reachability Thresholds</h3><span class="description">An <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent may support the ability to determine if it has been out of connectivity with an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server for too long.
             The configuration of the number of allowed missed reachability events or time limit since last successful connection
             with the server is handled in the server's configuration policy of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent (the first selection of
-            function 56 in FMT_SMF.1.1(1) within the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>). The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must claim <a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a> if either it claims the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> as its 
-            <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and management function 56 is claimed, or if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s operational environment includes an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server that was separately validated against
-            the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and that server's <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> claims management function 56.</span><br/><p>
+            function 56 in FMT_SMF.1.1(1) within the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>). This feature applies if either the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> claims the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> as its 
+            <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and management function 56 is claimed, or if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s operational environment includes an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server that was separately validated against
+            the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and that <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server's <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> claims management function 56.</span><br/><p>
 	  If this feature is implemented by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the following requirements must be claimed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>:
             <ul><li><b><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a></b></li></ul></p>
     
@@ -1094,7 +1093,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           <div class="comp" id="FTP_TRP.1/MDFENROLL"><h4>FTP_TRP.1/MDFENROLL Trusted Path (for Enrollment)</h4>
             
             <div class="element"><div class="reqid" id="FTP_TRP.1.1/MDFENROLL"><a href="#FTP_TRP.1.1/MDFENROLL" class="abbr">FTP_TRP.1.1/MDFENROLL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="TRP_TLS_2"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client as defined in the Package for Transport Layer Security</span></li><li style=""><span class="selectable-content" id="TRP_HTTPS_2"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span></li></ul>] to provide a trusted communication path between itself and
-                <b>an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server</b>
+                <b>an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server</b>
                 that is logically distinct from other communication paths and
                 provides assured identification of its endpoints and protection of the communicated
                 data from disclosure and detection of modification of the communicated data from
@@ -1105,7 +1104,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">This requirement ensures that a trusted connection is used for initial enrollment to an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>;
-                security of ongoing <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server communications after enrollment is
+                security of ongoing <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server communications after enrollment is
                 implemented through <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a>.
                 <br/><br/> The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author chooses the mechanism or
                 mechanisms supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The data passed in this trusted
@@ -1272,7 +1271,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           </div>
           <div class="comp" id="FTP_TRP.1/OSENROLL"><h4>FTP_TRP.1/OSENROLL Trusted Path (for Enrollment)</h4>
             
-            <div class="element"><div class="reqid" id="FTP_TRP.1.1/OSENROLL"><a href="#FTP_TRP.1.1/OSENROLL" class="abbr">FTP_TRP.1.1/OSENROLL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication path between itself and <b>a</b> [<i>remote</i>] <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server</b> that is 
+            <div class="element"><div class="reqid" id="FTP_TRP.1.1/OSENROLL"><a href="#FTP_TRP.1.1/OSENROLL" class="abbr">FTP_TRP.1.1/OSENROLL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication path between itself and <b>a</b> [<i>remote</i>] <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server</b> that is 
                 logically distinct from other communication paths
                 and provides assured identification of its endpoints and protection of the
                 communicated data from [<i>modification, disclosure</i>].
@@ -1283,7 +1282,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">This requirement ensures that a trusted connection is used for initial enrollment to an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>;
-                security of ongoing <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server communications after enrollment is
+                security of ongoing <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server communications after enrollment is
                 implemented through <a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a>.
                 <br/><br/> Since this requirement is only for the case when the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and in this case it is expected that the
                   <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a native part of the operating system,
@@ -1308,7 +1307,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           if the incorporating <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_cPP">cPP</a></abbr>, or <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> supports audit event reporting through FAU_GEN.1,
           and if all other criteria in the incorporating <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are met.
         </p>
-        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-man-audit" data-counter-type="ct-Table" id="at-man-audit">Table <span class="counter">5</span></span>: Auditable Events for Mandatory Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FAU_ALT_EXT.2"><td rowspan="2"><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_ALT_EXT.2#"><td></td></tr><tr data-sortkey="FAU_ALT_EXT.2.7"><td>Success or failure of sending alert.</td><td>No additional information.</td></tr><tr data-sortkey="FAU_GEN.1/AGENT"><td rowspan="2"><a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_GEN.1/AGENT#"><td></td></tr><tr data-sortkey="FAU_GEN.1/AGENT.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FAU_SEL.1/AGENT"><td rowspan="2"><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_SEL.1/AGENT#"><td></td></tr><tr data-sortkey="FAU_SEL.1/AGENT.2"><td>All modifications to the audit configuration that occur while the audit collection functions are operating.</td><td>No additional information.</td></tr><tr data-sortkey="FIA_ENR_EXT.2"><td rowspan="2"><a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_ENR_EXT.2#"><td></td></tr><tr data-sortkey="FIA_ENR_EXT.2.6"><td>Enrollment in management.</td><td>Reference identifier of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server.</td></tr><tr data-sortkey="FMT_POL_EXT.2"><td rowspan="2"><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_POL_EXT.2#"><td></td></tr><tr data-sortkey="FMT_POL_EXT.2.7"><td>Failure of policy validation.</td><td>Reason for failure of validation.</td></tr><tr data-sortkey="FMT_SMF_EXT.4"><td rowspan="2"><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_SMF_EXT.4#"><td></td></tr><tr data-sortkey="FMT_SMF_EXT.4.7"><td>Outcome (success or failure) of function.</td><td>No additional information.</td></tr><tr data-sortkey="FMT_UNR_EXT.1"><td rowspan="2"><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_UNR_EXT.1#"><td></td></tr><tr data-sortkey="FMT_UNR_EXT.1.6"><td><b>[selection: </b><i>Attempt to unenroll, None</i><b>]</b></td><td>No additional information</td></tr></table>
+        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-man-audit" data-counter-type="ct-Table" id="at-man-audit">Table <span class="counter">5</span></span>: Auditable Events for Mandatory Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FAU_ALT_EXT.2"><td rowspan="2"><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_ALT_EXT.2#"><td></td></tr><tr data-sortkey="FAU_ALT_EXT.2.7"><td>Success or failure of sending alert.</td><td>No additional information.</td></tr><tr data-sortkey="FAU_GEN.1/AGENT"><td rowspan="2"><a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_GEN.1/AGENT#"><td></td></tr><tr data-sortkey="FAU_GEN.1/AGENT.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FAU_SEL.1/AGENT"><td rowspan="2"><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_SEL.1/AGENT#"><td></td></tr><tr data-sortkey="FAU_SEL.1/AGENT.2"><td>All modifications to the audit configuration that occur while the audit collection functions are operating.</td><td>No additional information.</td></tr><tr data-sortkey="FIA_ENR_EXT.2"><td rowspan="2"><a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_ENR_EXT.2#"><td></td></tr><tr data-sortkey="FIA_ENR_EXT.2.6"><td>Enrollment in management.</td><td>Reference identifier of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.</td></tr><tr data-sortkey="FMT_POL_EXT.2"><td rowspan="2"><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_POL_EXT.2#"><td></td></tr><tr data-sortkey="FMT_POL_EXT.2.7"><td>Failure of policy validation.</td><td>Reason for failure of validation.</td></tr><tr data-sortkey="FMT_SMF_EXT.4"><td rowspan="2"><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_SMF_EXT.4#"><td></td></tr><tr data-sortkey="FMT_SMF_EXT.4.7"><td>Outcome (success or failure) of function.</td><td>No additional information.</td></tr><tr data-sortkey="FMT_UNR_EXT.1"><td rowspan="2"><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_UNR_EXT.1#"><td></td></tr><tr data-sortkey="FMT_UNR_EXT.1.6"><td><b>[selection: </b><i>Attempt to unenroll, None</i><b>]</b></td><td>No additional information</td></tr></table>
       
       
       <h3 id="man_fau" class="indexable" data-level="3">5.4.2 Security Audit (FAU)</h3>
@@ -1364,15 +1363,16 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 <li>All auditable events for [<i>not specified</i>] level of audit; and</li>
                 <li>[<i><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policy updated, any modification commanded by the 
                   <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server, specifically defined auditable events listed in 
-                  <a onclick="showTarget('at-man-audit')" href="#at-man-audit" class="at-man-audit-ref">Table  <span class="counter">5</span></a>, and [<b>selection</b>: <span class="selectable-content" id="_s_29">[<b>assignment</b>: 
-     <span class="assignable-content">other events</span>]</span>,  <span class="selectable-content" id="_s_30">no other events</span> ]</i>].</li>
+                  <a onclick="showTarget('at-man-audit')" href="#at-man-audit" class="at-man-audit-ref">Table  <span class="counter">5</span></a> and [<b>selection</b>: <span class="selectable-content" id="_s_29"><a onclick="showTarget('at-mdf-addnl')" href="#at-mdf-addnl" class="at-mdf-addnl-ref">Table  <span class="counter">2</span></a></span>,  <span class="selectable-content" id="_s_30"><a onclick="showTarget('at-mdm-addnl')" href="#at-mdm-addnl" class="at-mdm-addnl-ref">Table  <span class="counter">3</span></a></span>,  <span class="selectable-content" id="_s_31"><a onclick="showTarget('at-gpos-addnl')" href="#at-gpos-addnl" class="at-gpos-addnl-ref">Table  <span class="counter">4</span></a></span>,  <span class="selectable-content" id="_s_32"><a onclick="showTarget('at-feat-based')" href="#at-feat-based" class="at-feat-based-ref">Table  <span class="counter">7</span></a></span>,  <span class="selectable-content" id="_s_33">no other tables</span> ], 
+                  and [<b>selection</b>: <span class="selectable-content" id="_s_34">[<b>assignment</b>: 
+     <span class="assignable-content">other events</span>]</span>,  <span class="selectable-content" id="_s_35">no other events</span> ]</i>].</li>
               </ol>
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> This requirement outlines the information to be included in
-              the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent’s audit records. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author can
-              include other auditable events directly in the Auditable Events table in
-              <a href="#FAU_GEN.1.1/AGENT">FAU_GEN.1.1/AGENT</a>; they are not limited to the list presented.<br/><br/>
+              the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent’s audit records. For each claimed <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, any corresponding auditable events must be claimed.
+              The auditable events are included in different tables because <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> depend on the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> or supported <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implementation;
+              the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author selects all tables that contain an <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> claims.<br/><br/>
               <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policy update must minimally indicate that an update to policy
               occurred. The event record need not contain the differences between the prior policy
               and the new policy; optionally, the specific change(s) to policy that were included in
@@ -1385,10 +1385,11 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>; otherwise, "none" is selected.
               
             </span></div></div></div>
-          <div class="element"><div class="reqid" id="FAU_GEN.1.2/AGENT"><a href="#FAU_GEN.1.2/AGENT" class="abbr">FAU_GEN.1.2/AGENT</a></div><div class="reqdesc">The [<b>selection</b>: <span class="selectable-content" id="_s_31"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>,  <span class="selectable-content" id="_s_32"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span> ] shall record within each <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent audit record at
+          <div class="element"><div class="reqid" id="FAU_GEN.1.2/AGENT"><a href="#FAU_GEN.1.2/AGENT" class="abbr">FAU_GEN.1.2/AGENT</a></div><div class="reqdesc">The [<b>selection</b>: <span class="selectable-content" id="_s_36"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>,  <span class="selectable-content" id="_s_37"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span> ] shall record within each <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent audit record at
               least the following information: <ol type="a">
                 <li>Date and time of the event, type of event, subject identity, (if relevant) the outcome 
-                  (success or failure) of the event, and additional information in <a onclick="showTarget('at-man-audit')" href="#at-man-audit" class="at-man-audit-ref">Table  <span class="counter">5</span></a>; and</li>         
+                  (success or failure) of the event, and additional information in 
+                  <a onclick="showTarget('at-man-audit')" href="#at-man-audit" class="at-man-audit-ref">Table  <span class="counter">5</span></a> and [<b>selection</b>: <span class="selectable-content" id="_s_38"><a onclick="showTarget('at-mdf-addnl')" href="#at-mdf-addnl" class="at-mdf-addnl-ref">Table  <span class="counter">2</span></a></span>,  <span class="selectable-content" id="_s_39"><a onclick="showTarget('at-mdm-addnl')" href="#at-mdm-addnl" class="at-mdm-addnl-ref">Table  <span class="counter">3</span></a></span>,  <span class="selectable-content" id="_s_40"><a onclick="showTarget('at-gpos-addnl')" href="#at-gpos-addnl" class="at-gpos-addnl-ref">Table  <span class="counter">4</span></a></span>,  <span class="selectable-content" id="_s_41"><a onclick="showTarget('at-feat-based')" href="#at-feat-based" class="at-feat-based-ref">Table  <span class="counter">7</span></a></span>,  <span class="selectable-content" id="_s_42">no other tables</span> ]; and</li>         
                 <li>For each audit event type, based on the auditable event definitions of the functional components 
                   included in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<b>assignment</b>: 
      <span class="assignable-content">other audit relevant information</span>].</li>
@@ -1404,7 +1405,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         </div>
         <div class="comp" id="FAU_SEL.1/AGENT"><h4>FAU_SEL.1/AGENT Security Audit Event Selection</h4>
           
-          <div class="element"><div class="reqid" id="FAU_SEL.1.1/AGENT"><a href="#FAU_SEL.1.1/AGENT" class="abbr">FAU_SEL.1.1/AGENT</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_33">invoke platform-provided functionality</span>,  <span class="selectable-content" id="_s_34">implement functionality</span> ] to select the set of events to be audited from the set of all auditable
+          <div class="element"><div class="reqid" id="FAU_SEL.1.1/AGENT"><a href="#FAU_SEL.1.1/AGENT" class="abbr">FAU_SEL.1.1/AGENT</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_43">invoke platform-provided functionality</span>,  <span class="selectable-content" id="_s_44">implement functionality</span> ] to select the set of events to be audited from the set of all auditable
               events based on the following attributes: <ol type="a">
                 <li>[<i>event type</i>]</li>
                 <li>[<i>success of auditable security events, failure of auditable security events, 
@@ -1476,11 +1477,11 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           
           <div class="element"><div class="reqid" id="FMT_SMF_EXT.4.1"><a href="#FMT_SMF_EXT.4.1" class="abbr">FMT_SMF_EXT.4.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall be capable of interacting with the platform
               to perform the following functions: <ul>
-                <li>[<b>selection</b>: <span class="selectable-content" id="_s_35">import the certificates to be used for authentication of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                    Agent communications</span>,  <span class="selectable-content" id="_s_36">import the server public key</span> ],</li>
-                <li>[<b>selection</b>: <span class="selectable-content" id="_s_37">administrator-provided management functions in <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>,  <span class="selectable-content" id="_s_38">administrator-provided device management functions in <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span> ]</li>
-                <li>[<b>selection</b>: <span class="selectable-content" id="_s_39">[<b>assignment</b>: 
-     <span class="assignable-content">additional functions</span>]</span>,  <span class="selectable-content" id="_s_40"> no additional functions</span> ].</li>
+                <li>[<b>selection</b>: <span class="selectable-content" id="_s_45">import the certificates to be used for authentication of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                    Agent communications</span>,  <span class="selectable-content" id="_s_46">import the server public key</span> ],</li>
+                <li>[<b>selection</b>: <span class="selectable-content" id="_s_47">administrator-provided management functions in <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>,  <span class="selectable-content" id="_s_48">administrator-provided device management functions in <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span> ]</li>
+                <li>[<b>selection</b>: <span class="selectable-content" id="_s_49">[<b>assignment</b>: 
+     <span class="assignable-content">additional functions</span>]</span>,  <span class="selectable-content" id="_s_50"> no additional functions</span> ].</li>
               </ul>
             <div class="appnote"><span class="note-header">Application
       Note:
@@ -1509,8 +1510,8 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 <li>Enroll in management</li>
                 <li>Configure whether users can unenroll from management</li>
                 <li>
-                  [<b>selection</b>: <span class="selectable-content" id="_s_41">configure periodicity of reachability events</span>,  <span class="selectable-content" id="_s_42">[<b>assignment</b>: 
-     <span class="assignable-content">other management functions</span>]</span>,  <span class="selectable-content" id="_s_43">no other functions</span> ].</li>
+                  [<b>selection</b>: <span class="selectable-content" id="_s_51">configure periodicity of reachability events</span>,  <span class="selectable-content" id="_s_52">[<b>assignment</b>: 
+     <span class="assignable-content">other management functions</span>]</span>,  <span class="selectable-content" id="_s_53">no other functions</span> ].</li>
               </ul><div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> This requirement captures all of the configuration in the
@@ -1539,7 +1540,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           
           
           <div class="element"><div class="reqid" id="FMT_UNR_EXT.1.1"><a href="#FMT_UNR_EXT.1.1" class="abbr">FMT_UNR_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall provide a mechanism to enforce the
-              following behavior upon an attempt to unenroll the mobile device from management: [<b>selection</b>: <span class="selectable-content" id="_s_44">prevent the unenrollment from occurring</span>,  <span class="selectable-content" id="_s_45">apply remediation actions</span> ].
+              following behavior upon an attempt to unenroll the mobile device from management: [<b>selection</b>: <span class="selectable-content" id="_s_54">prevent the unenrollment from occurring</span>,  <span class="selectable-content" id="_s_55">apply remediation actions</span> ].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">Unenrolling is the action of transitioning from the enrolled
@@ -1703,7 +1704,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         indicates in FMT_MOF_EXT.1.2 that some management functions may be performed via
         <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>.</td></tr><tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the functions performed by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent when unenrolled from an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines 
         unenrollment actions in FMT_SMF_EXT.2, and goes on to note
-        that these actions may be performed “perhaps via an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent,” so this is
+        that these actions may be performed “perhaps via an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent,” so this is
         expected behavior. </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements.
 	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
@@ -1817,9 +1818,9 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	    </td></tr></tr></table><h2 id="conrat-bpp-gpos" class="indexable" data-level="2">6.3 
     Protection Profile for General Purpose Operating Systems</h2><h3 id="contoe-bpp-gpos" class="indexable" data-level="3">6.3.1 
 	Consistency of TOE Type
-      </h3> When this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for
-        the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a mobile device. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include the
-          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent application that runs on the mobile device.<h3 id="consecprob-bpp-gpos" class="indexable" data-level="3">6.3.2 
+      </h3> When this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for
+        the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a general purpose operating system. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include the
+          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent application that runs on the operating system.<h3 id="consecprob-bpp-gpos" class="indexable" data-level="3">6.3.2 
 	Consistency of Security Problem Definition
       </h3><table><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th></tr><tr><td><a href="#T.MALICIOUS_APPS">T.MALICIOUS_APPS</a></td><td></td></tr><tr><td><a href="#T.BACKUP">T.BACKUP</a></td><td>This threat protects user data from unauthorized logical access. An
         attacker would attempt to exploit this threat by first exploiting the <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a>, T.LOCAL_ATTACK, or T.LIMITED_PHYSICAL_ACCESS
@@ -1927,7 +1928,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
     </h2>
       
       <h3 class="indexable" data-level="3" id="sib-audit-table">A.3.1 Auditable Events for Implementation-Dependent SFRs</h3>
-        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-feat-based" data-counter-type="ct-Table" id="at-feat-based">Table <span class="counter">7</span></span>: Auditable Events for Implementation-dependent Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FAU_STG_EXT.3"><td rowspan="2"><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_STG_EXT.3#"><td></td></tr><tr data-sortkey="FAU_STG_EXT.3.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FPT_NET_EXT.1"><td rowspan="2"><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPT_NET_EXT.1#"><td></td></tr><tr data-sortkey="FPT_NET_EXT.1.7"><td><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server connection reaching or exceeding unavailability threshold.</td><td>No additional information.</td></tr></table>
+        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-feat-based" data-counter-type="ct-Table" id="at-feat-based">Table <span class="counter">7</span></span>: Auditable Events for Implementation-dependent Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FAU_STG_EXT.3"><td rowspan="2"><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_STG_EXT.3#"><td></td></tr><tr data-sortkey="FAU_STG_EXT.3.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FPT_NET_EXT.1"><td rowspan="2"><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPT_NET_EXT.1#"><td></td></tr><tr data-sortkey="FPT_NET_EXT.1.7"><td><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server connection reaching or exceeding unavailability threshold.</td><td>No additional information.</td></tr></table>
       
       
       <h3 id="ib_fau" class="indexable" data-level="3">A.3.2 Security Audit (FAU)</h3>
@@ -1953,20 +1954,8 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           
           
           
-          <div class="element"><div class="reqid" id="FPT_NET_EXT.1.1"><a href="#FPT_NET_EXT.1.1" class="abbr">FPT_NET_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect when a configurable [<b>selection</b>: <span class="selectable-content" id="_s_46">positive integer of missed reachability events occur</span>,  <span class="selectable-content" id="_s_47">time limit is exceeded</span> ] related to the last successful connection with the server has been
-              reached. <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note"> This requirement is to enable the Agent to determine if it has
-              been out of connectivity with the Server for too long. The configuration of the number
-              of allowed missed reachability events or time limit since last successful connection
-              with the server is handled in Server configuration policy of the Agent (the first selection of
-              function 56 in FMT_SMF.1.1(1) within the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>). If the first selection of FMT_SMF.1.1(1) function 56 is included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>,
-              then <a href="#FPT_NET_EXT.1.1">FPT_NET_EXT.1.1</a> must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/> If the Agent has been out of connectivity with the server for
-              too long than the remediation actions specified in the second selection of function 56 must occur. For
-              example if the Agent has not synced with the server in the allowed amount of time that
-              the Agent must wipe the device without requiring a command from the
-              Server.<br/><br/>
-            </span></div></div></div>
+          <div class="element"><div class="reqid" id="FPT_NET_EXT.1.1"><a href="#FPT_NET_EXT.1.1" class="abbr">FPT_NET_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect when a configurable [<b>selection</b>: <span class="selectable-content" id="_s_56">positive integer of missed reachability events occur</span>,  <span class="selectable-content" id="_s_57">time limit is exceeded</span> ] related to the last successful connection with the server has been
+              reached. </div></div>
           
         </div>
       
@@ -2012,7 +2001,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           </p><h4>Audit: FPT_NET_EXT.1</h4><p>The following actions should be auditable if FAU_GEN Security audit data generation
             is included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>:<ul>
               <li>Minimal: Reaching/exceeding unreachability threshold.</li></ul>
-          </p><h4>FPT_NET_EXT.1 Network Reachability</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FPT_STM.1 Reliable Time Stamps</td></tr></table><h4 id="ext-comp-FPT_NET_EXT.1.1">FPT_NET_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect when a configurable [<b>selection</b>: <span class="selectable-content" id="_s_46">positive integer of missed reachability events occur</span>,  <span class="selectable-content" id="_s_47">time limit is exceeded</span> ] related to the last successful connection with the server has been
+          </p><h4>FPT_NET_EXT.1 Network Reachability</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FPT_STM.1 Reliable Time Stamps</td></tr></table><h4 id="ext-comp-FPT_NET_EXT.1.1">FPT_NET_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect when a configurable [<b>selection</b>: <span class="selectable-content" id="_s_56">positive integer of missed reachability events occur</span>,  <span class="selectable-content" id="_s_57">time limit is exceeded</span> ] related to the last successful connection with the server has been
               reached. </div></div></span><span data-sortkey="Security Audit (FAU)"><h3 id="ext-comp-FAU" class="indexable" data-level="3">C.2.4 Security Audit (FAU)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FAU class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FAU_ALT_EXT" class="indexable" data-level="4">C.2.4.1 FAU_ALT_EXT MDM Alerts</h3><div style="margin-left: 1em;"> This family is defined in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
@@ -2080,19 +2069,19 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             </ul>
           </p><h4>FMT_SMF_EXT.4 Specification of Management Functions</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FCS_CKM.1 Cryptographic Key Generation</td></tr></table><h4 id="ext-comp-FMT_SMF_EXT.4.1">FMT_SMF_EXT.4.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall be capable of interacting with the platform
               to perform the following functions: <ul>
-                <li>[<b>selection</b>: <span class="selectable-content" id="_s_35">import the certificates to be used for authentication of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                    Agent communications</span>,  <span class="selectable-content" id="_s_36">import the server public key</span> ],</li>
-                <li>[<b>selection</b>: <span class="selectable-content" id="_s_37">administrator-provided management functions in <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>,  <span class="selectable-content" id="_s_38">administrator-provided device management functions in <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span> ]</li>
-                <li>[<b>selection</b>: <span class="selectable-content" id="_s_39">[<b>assignment</b>: 
-     <span class="assignable-content">additional functions</span>]</span>,  <span class="selectable-content" id="_s_40"> no additional functions</span> ].</li>
+                <li>[<b>selection</b>: <span class="selectable-content" id="_s_45">import the certificates to be used for authentication of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                    Agent communications</span>,  <span class="selectable-content" id="_s_46">import the server public key</span> ],</li>
+                <li>[<b>selection</b>: <span class="selectable-content" id="_s_47">administrator-provided management functions in <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>,  <span class="selectable-content" id="_s_48">administrator-provided device management functions in <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span> ]</li>
+                <li>[<b>selection</b>: <span class="selectable-content" id="_s_49">[<b>assignment</b>: 
+     <span class="assignable-content">additional functions</span>]</span>,  <span class="selectable-content" id="_s_50"> no additional functions</span> ].</li>
               </ul>
             <h4 id="ext-comp-FMT_SMF_EXT.4.2">FMT_SMF_EXT.4.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall be capable of performing the following
               functions: <ul>
                 <li>Enroll in management</li>
                 <li>Configure whether users can unenroll from management</li>
                 <li>
-                  [<b>selection</b>: <span class="selectable-content" id="_s_41">configure periodicity of reachability events</span>,  <span class="selectable-content" id="_s_42">[<b>assignment</b>: 
-     <span class="assignable-content">other management functions</span>]</span>,  <span class="selectable-content" id="_s_43">no other functions</span> ].</li>
+                  [<b>selection</b>: <span class="selectable-content" id="_s_51">configure periodicity of reachability events</span>,  <span class="selectable-content" id="_s_52">[<b>assignment</b>: 
+     <span class="assignable-content">other management functions</span>]</span>,  <span class="selectable-content" id="_s_53">no other functions</span> ].</li>
               </ul></div></div><h3 id="ext-comp-FMT_UNR_EXT" class="indexable" data-level="4">C.2.5.3 FMT_UNR_EXT Unenrollment</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div> Components in this family define requirements for <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> behavior when a user
             attempts to unenroll the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from mobile device management.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FMT_UNR_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>,
              User Unenrollment Prevention,
@@ -2103,7 +2092,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             </ul>
           </p><h4>FMT_UNR_EXT.1 User Unenrollment Prevention</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td> [FIA_ENR_EXT.1 Enrollment of Mobile Device into Management; or<br/>
             FMT_MOF_EXT.1 Management of Functions Behavior] </td></tr></table><h4 id="ext-comp-FMT_UNR_EXT.1.1">FMT_UNR_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall provide a mechanism to enforce the
-              following behavior upon an attempt to unenroll the mobile device from management: [<b>selection</b>: <span class="selectable-content" id="_s_44">prevent the unenrollment from occurring</span>,  <span class="selectable-content" id="_s_45">apply remediation actions</span> ].
+              following behavior upon an attempt to unenroll the mobile device from management: [<b>selection</b>: <span class="selectable-content" id="_s_54">prevent the unenrollment from occurring</span>,  <span class="selectable-content" id="_s_55">apply remediation actions</span> ].
             </div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
 			successfully evaluated against this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. These requirements are not featured
 			explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. They are not included as 
