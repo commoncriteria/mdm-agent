@@ -1752,15 +1752,15 @@
               </selectables> shall record within each MDM Agent audit record at
               least the following information: <h:ol type="a">
                 <h:li>Date and time of the event, type of event, subject identity, (if relevant) the outcome 
-                  (success or failure) of the event, and additional information in 
+                  (success or failure) of the event<h:b>, and additional information in 
                   <xref to="at-man-audit"/> and <selectables>
                     <selectable><xref to="at-mdf-addnl"/></selectable>
                     <selectable><xref to="at-mdm-addnl"/></selectable>
                     <selectable><xref to="at-gpos-addnl"/></selectable>
                     <selectable><xref to="at-feat-based"/></selectable>
-                    <selectable>no other tables</selectable></selectables>; and</h:li>         
+                    <selectable>no other tables</selectable></selectables>; and</h:b></h:li>         
                 <h:li>For each audit event type, based on the auditable event definitions of the functional components 
-                  included in the PP-Module/ST, <assignable>other audit relevant information</assignable>.</h:li>
+                  included in the PP<h:b>-Module</h:b>/ST, <assignable>other audit relevant information</assignable>.</h:li>
               </h:ol>
             </title>
             <note role="application">All audits must contain at least the information mentioned in
