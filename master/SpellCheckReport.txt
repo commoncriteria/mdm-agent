@@ -22,6 +22,7 @@ output/mdm-agent-release-linkable.html: exfiltrate
 output/mdm-agent-release-linkable.html: lifecycle
 output/mdm-agent-release-linkable.html: preconfigured
 output/mdm-agent-release-linkable.html: satisifed
+output/mdm-agent-release-linkable.html: sutfficiently
 output/mdm-agent-release-linkable.html: unenroll
 output/mdm-agent-release-linkable.html: unenrolling
 output/mdm-agent-release-linkable.html: unenrollment
@@ -47,6 +48,7 @@ output/mdm-agent-release.html: exfiltrate
 output/mdm-agent-release.html: lifecycle
 output/mdm-agent-release.html: role’
 output/mdm-agent-release.html: satisifed
+output/mdm-agent-release.html: sutfficiently
 output/mdm-agent-release.html: unenroll
 output/mdm-agent-release.html: unenrolling
 output/mdm-agent-release.html: unenrollment
@@ -93,6 +95,7 @@ output/mdm-agent.html: occurring’
 output/mdm-agent.html: preconfigured
 output/mdm-agent.html: role’
 output/mdm-agent.html: satisifed
+output/mdm-agent.html: sutfficiently
 output/mdm-agent.html: unenroll
 output/mdm-agent.html: unenrolling
 output/mdm-agent.html: unenrollment

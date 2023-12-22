@@ -739,7 +739,7 @@ The following sections list Common Criteria and technology terms used in this do
       The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> system
       consists of two primary components: the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server software and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> specifically addresses the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. 
       The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent establishes a secure connection back
-      to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server, from which it receives policies to enforce on the mobile
+      to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server, from which it receives policies to enforce on the 
       device. Optionally, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent interacts with the Mobile Application
       Store (<abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr>) Server to download and install enterprise-hosted applications.
       <br/><br/> 
@@ -779,7 +779,8 @@ The following sections list Common Criteria and technology terms used in this do
       OS as a whole. However, if it does provide any such interfaces, the configuration aspects of these additional interfaces are in scope of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
       
       <h3 class="indexable" data-level="3" id="TOEboundary">1.3.1 TOE Boundary</h3> Figure 1 shows a high-level example of the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
-        <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary and its Operational Environment. As stated above, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent may either be provided as part of the mobile device itself (shown in
+        <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary and its Operational Environment where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> runs on a mobile device. A use case where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> runs on a general purpose OS
+        is identical aside from the specific type of device on which it runs. As stated above, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent may either be provided as part of the device itself (shown in
         red) or distributed as a third-party application from the developer of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server software (shown in blue).<br/><br/>
         <div class="figure" id="figure-toe"><img id="toe" src="images/MDMagentoperatingenvironment.jpg" width="" height=""></img><br/><span class="ctr" data-myid="toe" data-counter-type="ct-figure">Figure <span class="counter">1</span></span>:
       <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent Operating Environment</div><br/> 
@@ -906,16 +907,16 @@ provide all of its security functionality.
       expected to satisfy the organizational security policy listed below in addition to all
       organizational security policies defined by the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. </p>
       <dl><dt class="OSP defined" id="P.ACCOUNTABILITY">P.ACCOUNTABILITY</dt><dd><span class="description">Personnel operating the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be accountable for their
-            actions within the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. </span></dd><dt class="OSP defined" id="P.ADMIN">P.ADMIN</dt><dd><span class="description">The configuration of the mobile device security functions must adhere to the
-            Enterprise security policy. </span></dd><dt class="OSP defined" id="P.DEVICE_ENROLL">P.DEVICE_ENROLL</dt><dd><span class="description">A mobile device must be enrolled for a specific user by the administrator of
-            the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> prior to being used in the Enterprise network by the user. </span></dd><dt class="OSP defined" id="P.NOTIFY">P.NOTIFY</dt><dd><span class="description">The mobile user must immediately notify the administrator if a mobile device
+            actions within the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. </span></dd><dt class="OSP defined" id="P.ADMIN">P.ADMIN</dt><dd><span class="description">The configuration of the device's security functions must adhere to the
+            Enterprise security policy. </span></dd><dt class="OSP defined" id="P.DEVICE_ENROLL">P.DEVICE_ENROLL</dt><dd><span class="description">A device must be enrolled for a specific user by the administrator of
+            the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> prior to being used in the Enterprise network by the user. </span></dd><dt class="OSP defined" id="P.NOTIFY">P.NOTIFY</dt><dd><span class="description">The user must immediately notify the administrator if a device
             is lost or stolen so that the administrator may apply remediation actions via the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> system. </span></dd></dl>
     
     <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>
     <h2 class="indexable" data-level="2" id="Security_Objectives_for_the_TOE">4.1 Security Objectives for the TOE</h2>
       <dl><dt class="SO defined" id="O.ACCOUNTABILITY">O.ACCOUNTABILITY</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must provide logging facilities, which record
             management actions undertaken by its administrators. </span></dd><dt class="SO defined" id="O.APPLY_POLICY">O.APPLY_POLICY</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must facilitate configuration and enforcement of
-            enterprise security policies on mobile devices via interaction with the mobile OS and
+            enterprise security policies on devices via interaction between the OS and
             the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server. This will include the initial enrollment of the device
             into management, through its entire lifecycle, including policy updates and its possible
             unenrollment from management services. </span></dd><dt class="SO defined" id="O.DATA_PROTECTION_TRANSIT">O.DATA_PROTECTION_TRANSIT</dt><dd><span class="description">Data exchanged between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent must be protected from being monitored, accessed, or altered. </span></dd><dt class="SO defined" id="O.STORAGE">O.STORAGE</dt><dd><span class="description"> To address the issue of loss of confidentiality of user data in the event of
@@ -1336,7 +1337,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           
           <div class="element"><div class="reqid" id="FAU_ALT_EXT.2.1"><a href="#FAU_ALT_EXT.2.1" class="abbr">FAU_ALT_EXT.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall provide an alert via the trusted channel to
               the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server in the event of any of the following audit events: <ul>
-                <li>successful application of policies to a mobile device,</li>
+                <li>successful application of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policies,</li>
                 <li>
                   [<b>selection</b>: <span class="selectable-content" id="_s_20">receiving</span>,  <span class="selectable-content" id="_s_21">generating</span> ] periodic reachability events, </li>
                 <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_22">change in enrollment state</span></li><li style=""><span class="selectable-content" id="_s_23">failure to install an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_24">failure to update an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_25">[<b>assignment</b>: 
@@ -1515,18 +1516,18 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               The administrator-provided management functions in the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are specified in FMT_SMF_EXT.1.
               <br/><br/> The 
                 <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author can add more commands and configuration policies by completing
-              the assignment statement; the mobile device must support these additional commands or
+              the assignment statement; the device must support these additional commands or
               configuration policies.<br/><br/> The agent must configure the platform based
               on the commands and configuration policies received from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
               Server. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must not claim any functionality not provided
-              by the supported mobile device(s). All selections and assignments performed by the
+              by the supported device. All selections and assignments performed by the
                 <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author in this requirement should match the selections and
-              assignments of the validated mobile device <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/>
+              assignments of the validated mobile device or general purpose operating system <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/>
             </span></div></div></div>
           <div class="element"><div class="reqid" id="FMT_SMF_EXT.4.2"><a href="#FMT_SMF_EXT.4.2" class="abbr">FMT_SMF_EXT.4.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall be capable of performing the following
               functions: <ul>
-                <li>Enroll in management</li>
-                <li>Configure whether users can unenroll from management</li>
+                <li>enroll in management</li>
+                <li>configure whether users can unenroll from management</li>
                 <li>
                   [<b>selection</b>: <span class="selectable-content" id="_s_52">configure periodicity of reachability events</span>,  <span class="selectable-content" id="_s_53">[<b>assignment</b>: 
      <span class="assignable-content">other management functions</span>]</span>,  <span class="selectable-content" id="_s_54">no other functions</span> ].</li>
@@ -1535,11 +1536,10 @@ The assumptions identified in Section 3 are incorporated as security objectives 
     </span><span class="note"> This requirement captures all of the configuration in the
                 <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent for configuration of itself.<br/><br/> If the
                 <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is a part of the mobile device, enrollment is a single
-              function both of the Agent and of the mobile device
+              function both of the Agent and of the device
               (<a href="#FMT_SMF_EXT.4.1">FMT_SMF_EXT.4.1</a>).<br/><br/> If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is an
-              application developed separately from the mobile device, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-              Agent performs the function “enroll the mobile device in management” (per
-              <a href="#FMT_SMF_EXT.4.1">FMT_SMF_EXT.4.1</a>) by registering itself to the mobile device as a device administrator.
+              application developed separately from the mobile device or operating system, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+              Agent performs the function “enroll in management” by registering itself to the mobile device or OS as a administrator.
               The Agent itself is enrolled in management by configuring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
               Server to which the Agent answers.<br/><br/> If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
               Agent does not support unenrollment prevention, remediation actions should be applied
@@ -1558,7 +1558,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           
           
           <div class="element"><div class="reqid" id="FMT_UNR_EXT.1.1"><a href="#FMT_UNR_EXT.1.1" class="abbr">FMT_UNR_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall provide a mechanism to enforce the
-              following behavior upon an attempt to unenroll the mobile device from management: [<b>selection</b>: <span class="selectable-content" id="_s_55">prevent the unenrollment from occurring</span>,  <span class="selectable-content" id="_s_56">apply remediation actions</span> ].
+              following behavior upon an attempt to unenroll the device from management: [<b>selection</b>: <span class="selectable-content" id="_s_55">prevent the unenrollment from occurring</span>,  <span class="selectable-content" id="_s_56">apply remediation actions</span> ].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">Unenrolling is the action of transitioning from the enrolled
@@ -1616,7 +1616,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent components of the distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td></tr>
 <tr><td><a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a> (if <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a> to support this objective because when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> runs on a general-purpose operating system, 
             the operating system must have a way to ensure that <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server communications are protected.</td></tr>
-<tr><td><a href="#FTP_TRP.1/OSENROLL">FTP_TRP.1/OSENROLL</a> (if <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a> to support this objective because when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a mobile device, 
+<tr><td><a href="#FTP_TRP.1/OSENROLL">FTP_TRP.1/OSENROLL</a> (if <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes FTP_TRP.1/OSCHANNEL to support this objective because when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a general purpose OS, 
             it must have a way to ensure that <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server enrollment communications are protected.</td></tr>
 <tr><td><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a> (objective)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a> to support this objective by optionally requiring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to detect when a sustained 
             communications outage with the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server has occurred as a possible indicator of communications issues.</td></tr>
@@ -1848,8 +1848,8 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         as a whole, and then using the access gained from that attack as an attack vector against any backup data
         stored on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td></tr><tr><td><a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a></td><td></td></tr><tr><td><a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a></td><td></td></tr><tr><td><a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a></td><td></td></tr><tr><td><a href="#A.CONNECTIVITY">A.CONNECTIVITY</a></td><td>This assumption expects that networking services will be available for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use. 
         This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines mandatory requirements for a general-purpose operating system
-        that have network connectivity as a prerequisite.</td></tr><tr><td><a href="#A.PLATFORM">A.PLATFORM</a></td><td>This assumption expects that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s underlying hardware platform is validated against the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. 
-        This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition because the mobile device is within the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary and evaluated against the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr><tr><td><a href="#A.PROPER_ADMIN">A.PROPER_ADMIN</a></td><td>	
+        that have network connectivity as a prerequisite.</td></tr><tr><td><a href="#A.PLATFORM">A.PLATFORM</a></td><td>This assumption expects that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s underlying platform is sutfficiently trusted. 
+        This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition because the OS is within the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary and evaluated against the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr><tr><td><a href="#A.PROPER_ADMIN">A.PROPER_ADMIN</a></td><td>	
         This assumption expects that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administrator is trusted and competent in configuring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. 
         This assumption is consistent with the A.CONFIG assumption in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> which expects the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to be configured correctly 
         regardless of the subject performing the configuration.</td></tr><tr><td><a href="#A.PROPER_USER">A.PROPER_USER</a></td><td>	
@@ -2043,7 +2043,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           </p><h4>FAU_ALT_EXT.2 Agent Alerts</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td> FAU_ALT_EXT.1 Server Alerts<br/> [FPT_ITT.1 Basic Internal <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Data
             Transfer Protection; or<br/> FTP_ITC.1 Inter-TSF Trusted Channel] </td></tr></table><h4 id="ext-comp-FAU_ALT_EXT.2.1">FAU_ALT_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall provide an alert via the trusted channel to
               the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server in the event of any of the following audit events: <ul>
-                <li>successful application of policies to a mobile device,</li>
+                <li>successful application of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policies,</li>
                 <li>
                   [<b>selection</b>: <span class="selectable-content" id="_s_20">receiving</span>,  <span class="selectable-content" id="_s_21">generating</span> ] periodic reachability events, </li>
                 <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_22">change in enrollment state</span></li><li style=""><span class="selectable-content" id="_s_23">failure to install an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_24">failure to update an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_25">[<b>assignment</b>: 
@@ -2097,13 +2097,13 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               </ul>
             <h4 id="ext-comp-FMT_SMF_EXT.4.2">FMT_SMF_EXT.4.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall be capable of performing the following
               functions: <ul>
-                <li>Enroll in management</li>
-                <li>Configure whether users can unenroll from management</li>
+                <li>enroll in management</li>
+                <li>configure whether users can unenroll from management</li>
                 <li>
                   [<b>selection</b>: <span class="selectable-content" id="_s_52">configure periodicity of reachability events</span>,  <span class="selectable-content" id="_s_53">[<b>assignment</b>: 
      <span class="assignable-content">other management functions</span>]</span>,  <span class="selectable-content" id="_s_54">no other functions</span> ].</li>
               </ul></div></div><h3 id="ext-comp-FMT_UNR_EXT" class="indexable" data-level="4">C.2.5.3 FMT_UNR_EXT Unenrollment</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div> Components in this family define requirements for <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> behavior when a user
-            attempts to unenroll the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from mobile device management.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FMT_UNR_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>,
+            attempts to unenroll the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FMT_UNR_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>,
              User Unenrollment Prevention,
               requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> either to prevent unenrollment entirely or to take some
             corrective action in the event that an unenrollment is initiated.</p><h4>Management: FMT_UNR_EXT.1</h4><p>There are no management functions foreseen.</p><h4>Audit: FMT_UNR_EXT.1</h4><p>The following actions should be auditable if FAU_GEN Security audit data generation
@@ -2112,7 +2112,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             </ul>
           </p><h4>FMT_UNR_EXT.1 User Unenrollment Prevention</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td> [FIA_ENR_EXT.1 Enrollment of Mobile Device into Management; or<br/>
             FMT_MOF_EXT.1 Management of Functions Behavior] </td></tr></table><h4 id="ext-comp-FMT_UNR_EXT.1.1">FMT_UNR_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall provide a mechanism to enforce the
-              following behavior upon an attempt to unenroll the mobile device from management: [<b>selection</b>: <span class="selectable-content" id="_s_55">prevent the unenrollment from occurring</span>,  <span class="selectable-content" id="_s_56">apply remediation actions</span> ].
+              following behavior upon an attempt to unenroll the device from management: [<b>selection</b>: <span class="selectable-content" id="_s_55">prevent the unenrollment from occurring</span>,  <span class="selectable-content" id="_s_56">apply remediation actions</span> ].
             </div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
 			successfully evaluated against this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. These requirements are not featured
 			explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. They are not included as 
@@ -2151,7 +2151,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         If the device is not part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (i.e. because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> is the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), 
         a reliable time source can still be assumed because all mobile devices must include some method to update time data from a cellular carrier network, 
         and can also reasonably be assumed to include a method to update network time if it is instead connected to a network via WLAN radio 
-        (such as when in airplane mode) and general-purpose operating systems are also assumed to have network time interfaces.
+        (such as when in airplane mode), and all general purpose operating systems are assumed to have access to a reliable hardware clock or network time interface.
       </td>
       </tr>
     </table>
