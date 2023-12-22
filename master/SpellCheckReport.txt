@@ -8,6 +8,7 @@ output/mdm-agent-release-linkable.html: DTLSS
 output/mdm-agent-release-linkable.html: FDP
 output/mdm-agent-release-linkable.html: FLAWAPP
 output/mdm-agent-release-linkable.html: Fi
+output/mdm-agent-release-linkable.html: GPCP
 output/mdm-agent-release-linkable.html: ITT
 output/mdm-agent-release-linkable.html: MOF
 output/mdm-agent-release-linkable.html: MTD
@@ -33,6 +34,7 @@ output/mdm-agent-release.html: DTLSS
 output/mdm-agent-release.html: FDP
 output/mdm-agent-release.html: FLAWAPP
 output/mdm-agent-release.html: Fi
+output/mdm-agent-release.html: GPCP
 output/mdm-agent-release.html: ITT
 output/mdm-agent-release.html: MOF
 output/mdm-agent-release.html: MTD
@@ -74,6 +76,7 @@ output/mdm-agent.html: DTLSS
 output/mdm-agent.html: FDP
 output/mdm-agent.html: FLAWAPP
 output/mdm-agent.html: Fi
+output/mdm-agent.html: GPCP
 output/mdm-agent.html: ITT
 output/mdm-agent.html: MOF
 output/mdm-agent.html: MTD
