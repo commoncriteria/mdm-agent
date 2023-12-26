@@ -206,11 +206,12 @@ Behavior means it's a new EXT component and we have to make that chart.
             the Enterprise-run network, which may not even permit connectivity to the Internet. Use
             of the device may require compliance with usage policies that are more restrictive than
             those in any general-purpose use case, yet may mitigate risks to highly sensitive
-            information. Based upon the operation environment and the acceptable risk level of the
-            enterprise, those security functional requirements outlined in Section 5
-            of this PP-Module along with the selections in the Use Case 2 template defined
-            in <!-- <xref to="use-case"/> --> are sufficient for the high-security use case.
+            information.
           </description>
+          <config>
+            <ref-id>change-in-enrollment-state</ref-id>
+            <ref-id>prevent-unenrollment</ref-id>
+          </config>
         </usecase>
         <usecase title="Personally owned device for personal and enterprise use" id="usecase3">
           <description>A personally owned device, which is used, for both personal activities and
@@ -228,11 +229,11 @@ Behavior means it's a new EXT component and we have to make that chart.
             be enforced by a separation mechanism built-in to the device itself to distinguish
             between enterprise and personal activities, or by a third-party application that
             provides access to enterprise resources and leverages security capabilities provided by
-            the device. Based upon the Operational Environment and the acceptable risk level
-            of the enterprise, those security functional requirements outlined in Section 5 of this PP-Module 
-            along with the selections in the Use Case 3
-            template defined in <!-- <xref to="use-case"/> --> are sufficient for the secure
-            implementation of this BYOD use case.</description>
+            the device.
+          </description>
+          <config>
+            <ref-id>apply-remediation</ref-id>
+          </config>
         </usecase>
         <usecase title="Personally owned device for personal and limited enterprise use"
           id="usecase4">
@@ -1641,7 +1642,7 @@ Behavior means it's a new EXT component and we have to make that chart.
                     <selectable>generating</selectable>
                   </selectables> periodic reachability events, </h:li>
                 <h:li><selectables linebreak="yes">
-                  <selectable>change in enrollment state</selectable>
+                  <selectable id="change-in-enrollment-state">change in enrollment state</selectable>
                   <selectable>failure to install an application from the MAS Server</selectable>
                   <selectable>failure to update an application from the MAS Server</selectable>
                   <selectable><assignable>other events</assignable></selectable>
@@ -2159,8 +2160,8 @@ Behavior means it's a new EXT component and we have to make that chart.
           <f-element>
             <title>The MDM Agent shall provide a mechanism to enforce the
               following behavior upon an attempt to unenroll the device from management: <selectables>
-                <selectable>prevent the unenrollment from occurring</selectable>
-                <selectable>apply remediation actions</selectable>
+                <selectable id="prevent-unenrollment">prevent the unenrollment from occurring</selectable>
+                <selectable id="apply-remediation">apply remediation actions</selectable>
               </selectables>.
             </title>
             <note role="application">Unenrolling is the action of transitioning from the enrolled
@@ -2399,6 +2400,30 @@ Behavior means it's a new EXT component and we have to make that chart.
   -->
   <bibliography>
     <cc-entry/>
+    <entry id="bibCEM">
+      <tag>CEM</tag>
+      <description>
+        Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2012-09-004, Version 3.1 Revision 4, September 2012
+      </description>
+    </entry>
+    <entry id="bibGPOS">
+      <tag>CEM</tag>
+      <description>
+        Protection Profile for General Purpose Operating Systems, Version 4.3, March 2023
+      </description>
+    </entry>
+    <entry id="bibMDF">
+      <tag>CEM</tag>
+      <description>
+        Protection Profile for Mobile Device Fundamentals, Version 3.3, March 2023
+      </description>
+    </entry>
+    <entry id="bibMDM">
+      <tag>CEM</tag>
+      <description>
+        Protection Profile for Mobile Device Management, Version 4.0, March 2019
+      </description>
+    </entry>
   </bibliography>
   
     <!-- ToDo: Are these really the only acronyms?-->
