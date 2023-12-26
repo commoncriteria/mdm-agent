@@ -1,6 +1,5 @@
 output/mdm-agent-release-linkable.html: AGD
 output/mdm-agent-release-linkable.html: Bluetooh
-output/mdm-agent-release-linkable.html: CEM
 output/mdm-agent-release-linkable.html: CONFIG
 output/mdm-agent-release-linkable.html: DNs
 output/mdm-agent-release-linkable.html: DTLSC
@@ -28,7 +27,6 @@ output/mdm-agent-release-linkable.html: unenrolling
 output/mdm-agent-release-linkable.html: unenrollment
 output/mdm-agent-release-linkable.html: unreachability
 output/mdm-agent-release.html: Bluetooh
-output/mdm-agent-release.html: CEM
 output/mdm-agent-release.html: CONFIG
 output/mdm-agent-release.html: DTLSC
 output/mdm-agent-release.html: DTLSS
@@ -54,7 +52,6 @@ output/mdm-agent-release.html: unenrolling
 output/mdm-agent-release.html: unenrollment
 output/mdm-agent-release.html: unreachability
 output/mdm-agent-sd.html: AGD
-output/mdm-agent-sd.html: CEM
 output/mdm-agent-sd.html: DNs
 output/mdm-agent-sd.html: ITT
 output/mdm-agent-sd.html: Managment
@@ -70,7 +67,6 @@ output/mdm-agent-sd.html: unenrolling
 output/mdm-agent-sd.html: unenrollment
 output/mdm-agent.html: AGD
 output/mdm-agent.html: Bluetooh
-output/mdm-agent.html: CEM
 output/mdm-agent.html: CONFIG
 output/mdm-agent.html: DNs
 output/mdm-agent.html: DTLSC

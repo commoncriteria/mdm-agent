@@ -638,13 +638,13 @@ function showTarget(id){
 </table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#targets" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecase" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-features" style="text-indent:10px">1.5<span>Implementation-Dependent Features</span></a><a href="#has-auditing" style="text-indent:20px">1.5.1<span>Platform Auditing</span></a><a href="#supports-reachability" style="text-indent:20px">1.5.2<span>Supports Network Reachability Thresholds</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#securityPolicy" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_TOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#rationale" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-mdf" style="text-indent:10px">5.1<span>
     Protection Profile for Mobile Device Fundamentals
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-bpp-mdf" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#addsfr-bpp-mdf" style="text-indent:20px">5.1.2<span> Additional SFRs</span></a><a href="#sec-at-mdf-addnl" style="text-indent:20px">5.1.3<span>Auditable Events for MDF PP Additional SFRs</span></a><a href="#mdf_mod_fcs" style="text-indent:30px">5.1.3.1<span>Cryptographic Support (FCS)</span></a><a href="#mdf_mod_ftp" style="text-indent:30px">5.1.3.2<span>Trusted Path/Channels (FTP)</span></a><a href="#secreq-bpp-mdm" style="text-indent:10px">5.2<span>
+    </span></a><a href="#modsfr-bpp-mdf" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#addsfr-bpp-mdf" style="text-indent:20px">5.1.2<span> Additional SFRs</span></a><a href="#sec-at-mdf-addnl" style="text-indent:30px">5.1.2.1<span>Auditable Events for MDF PP Additional SFRs</span></a><a href="#mdf_mod_fcs" style="text-indent:30px">5.1.2.2<span>Cryptographic Support (FCS)</span></a><a href="#mdf_mod_ftp" style="text-indent:30px">5.1.2.3<span>Trusted Path/Channels (FTP)</span></a><a href="#secreq-bpp-mdm" style="text-indent:10px">5.2<span>
     Protection Profile for Mobile Device Management
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.2.1<span> Modified SFRs </span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.2.2<span> Additional SFRs</span></a><a href="#sec-at-mdm-addnl" style="text-indent:20px">5.2.3<span>Auditable Events for MDM PP Additional SFRs</span></a><a href="#mdm_mod_fcs" style="text-indent:30px">5.2.3.1<span>Cryptographic Support (FCS)</span></a><a href="#secreq-bpp-gpos" style="text-indent:10px">5.3<span>
+    </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.2.1<span> Modified SFRs </span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.2.2<span> Additional SFRs</span></a><a href="#sec-at-mdm-addnl" style="text-indent:30px">5.2.2.1<span>Auditable Events for MDM PP Additional SFRs</span></a><a href="#mdm_mod_fcs" style="text-indent:30px">5.2.2.2<span>Cryptographic Support (FCS)</span></a><a href="#secreq-bpp-gpos" style="text-indent:10px">5.3<span>
     Protection Profile for General Purpose Operating Systems
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-bpp-gpos" style="text-indent:20px">5.3.1<span> Modified SFRs </span></a><a href="#gpos_mod_fcs" style="text-indent:30px">5.3.1.1<span>Cryptographic Support (FCS)</span></a><a href="#addsfr-bpp-gpos" style="text-indent:20px">5.3.2<span> Additional SFRs</span></a><a href="#sec-at-gpos-addnl" style="text-indent:20px">5.3.3<span>Auditable Events for GPOS PP Additional SFRs</span></a><a href="#gpos_add_ftp" style="text-indent:30px">5.3.3.1<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.4<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.4.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#man_fau" style="text-indent:20px">5.4.2<span>Security Audit (FAU)</span></a><a href="#man_fia" style="text-indent:20px">5.4.3<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">5.4.4<span>Security Management (FMT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.5<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-mdf" style="text-indent:10px">6.1<span>
+    </span></a><a href="#modsfr-bpp-gpos" style="text-indent:20px">5.3.1<span> Modified SFRs </span></a><a href="#gpos_mod_fcs" style="text-indent:30px">5.3.1.1<span>Cryptographic Support (FCS)</span></a><a href="#addsfr-bpp-gpos" style="text-indent:20px">5.3.2<span> Additional SFRs</span></a><a href="#sec-at-gpos-addnl" style="text-indent:30px">5.3.2.1<span>Auditable Events for GPOS PP Additional SFRs</span></a><a href="#gpos_add_ftp" style="text-indent:30px">5.3.2.2<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.4<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.4.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#man_fau" style="text-indent:20px">5.4.2<span>Security Audit (FAU)</span></a><a href="#man_fia" style="text-indent:20px">5.4.3<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">5.4.4<span>Security Management (FMT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.5<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-mdf" style="text-indent:10px">6.1<span>
     Protection Profile for Mobile Device Fundamentals</span></a><a href="#contoe-bpp-mdf" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-bpp-mdf" style="text-indent:20px">6.1.2<span>
@@ -813,11 +813,10 @@ The following sections list Common Criteria and technology terms used in this do
             the Enterprise-run network, which may not even permit connectivity to the Internet. Use
             of the device may require compliance with usage policies that are more restrictive than
             those in any general-purpose use case, yet may mitigate risks to highly sensitive
-            information. Based upon the operation environment and the acceptable risk level of the
-            enterprise, those security functional requirements outlined in Section 5
-            of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> along with the selections in the Use Case 2 template defined
-            in  are sufficient for the high-security use case.
-          </span></dd><dt id="usecase3"> [USE CASE 3] Personally owned device for personal and enterprise use</dt><dd><span class="description">A personally owned device, which is used, for both personal activities and
+            information.
+          </span><p>
+            For changes to included <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, selections, and assignments required for this use case, see <a href="#appendix-usecase2" class="dynref"></a>.
+          </p></dd><dt id="usecase3"> [USE CASE 3] Personally owned device for personal and enterprise use</dt><dd><span class="description">A personally owned device, which is used, for both personal activities and
             enterprise data is commonly called Bring Your Own Device (<abbr class="dyn-abbr"><a href="#abbr_BYOD">BYOD</a></abbr>). The device may be
             provisioned for access to enterprise resources after significant personal usage has
             occurred. Unlike in the enterprise-owned cases, the enterprise is limited in what
@@ -832,11 +831,10 @@ The following sections list Common Criteria and technology terms used in this do
             be enforced by a separation mechanism built-in to the device itself to distinguish
             between enterprise and personal activities, or by a third-party application that
             provides access to enterprise resources and leverages security capabilities provided by
-            the device. Based upon the Operational Environment and the acceptable risk level
-            of the enterprise, those security functional requirements outlined in Section 5 of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> 
-            along with the selections in the Use Case 3
-            template defined in  are sufficient for the secure
-            implementation of this <abbr class="dyn-abbr"><a href="#abbr_BYOD">BYOD</a></abbr> use case.</span></dd><dt id="usecase4"> [USE CASE 4] Personally owned device for personal and limited enterprise use</dt><dd><span class="description">A personally owned device may also be given access to limited enterprise
+            the device.
+          </span><p>
+            For changes to included <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, selections, and assignments required for this use case, see <a href="#appendix-usecase3" class="dynref"></a>.
+          </p></dd><dt id="usecase4"> [USE CASE 4] Personally owned device for personal and limited enterprise use</dt><dd><span class="description">A personally owned device may also be given access to limited enterprise
             services such as enterprise email. Because the user does not have full access to the
             enterprise or enterprise data, the enterprise may not need to enforce any security
             policies on the device. However, the enterprise may want secure email and web browsing
@@ -1020,11 +1018,11 @@ The assumptions identified in Section 3 are incorporated as security objectives 
       
         
         
-        <h3 class="indexable" data-level="3" id="sec-at-mdf-addnl">5.1.3 Auditable Events for MDF PP Additional SFRs</h3>
+        <h4 class="indexable" data-level="4" id="sec-at-mdf-addnl">5.1.2.1 Auditable Events for MDF PP Additional SFRs</h4>
           <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-mdf-addnl" data-counter-type="ct-Table" id="at-mdf-addnl">Table <span class="counter">2</span></span>: Auditable Events for <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FCS_STG_EXT.4"><td rowspan="2"><a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FCS_STG_EXT.4#"><td></td></tr><tr data-sortkey="FCS_STG_EXT.4.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FTP_ITC_EXT.1/MDFCHANNEL"><td rowspan="4"><a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTP_ITC_EXT.1/MDFCHANNEL#"><td></td></tr><tr data-sortkey="FTP_ITC_EXT.1/MDFCHANNEL.4"><td>Initiation of the trusted channel.</td><td>No additional information.</td></tr><tr data-sortkey="FTP_ITC_EXT.1/MDFCHANNEL.5"><td>Termination of the trusted channel.</td><td>No additional information.</td></tr><tr data-sortkey="FTP_ITC_EXT.1/MDFCHANNEL.6"><td>Failure of the trusted channel functions.</td><td>No additional information.</td></tr><tr data-sortkey="FTP_TRP.1/MDFENROLL"><td rowspan="4"><a href="#FTP_TRP.1/MDFENROLL">FTP_TRP.1/MDFENROLL</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTP_TRP.1/MDFENROLL#"><td></td></tr><tr data-sortkey="FTP_TRP.1/MDFENROLL.4"><td>Initiation of the trusted path.</td><td>No additional information.</td></tr><tr data-sortkey="FTP_TRP.1/MDFENROLL.5"><td>Termination of the trusted path.</td><td>No additional information.</td></tr><tr data-sortkey="FTP_TRP.1/MDFENROLL.6"><td>Failure of the trusted path functions.</td><td>No additional information.</td></tr></table>
         
         
-        <h4 id="mdf_mod_fcs" class="indexable" data-level="4">5.1.3.1 Cryptographic Support (FCS)</h4>
+        <h4 id="mdf_mod_fcs" class="indexable" data-level="4">5.1.2.2 Cryptographic Support (FCS)</h4>
           
           <div class="comp" id="FCS_STG_EXT.4"><h4>FCS_STG_EXT.4 Cryptographic Key Storage</h4>
             
@@ -1041,7 +1039,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             
           </div>
         
-        <h4 id="mdf_mod_ftp" class="indexable" data-level="4">5.1.3.2 Trusted Path/Channels (FTP)</h4>
+        <h4 id="mdf_mod_ftp" class="indexable" data-level="4">5.1.2.3 Trusted Path/Channels (FTP)</h4>
           <div class="comp" id="FTP_ITC_EXT.1/MDFCHANNEL"><h4>FTP_ITC_EXT.1/MDFCHANNEL Trusted Channel Communication</h4>
             
             <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.1/MDFCHANNEL"><a href="#FTP_ITC_EXT.1.1/MDFCHANNEL" class="abbr">FTP_ITC_EXT.1.1/MDFCHANNEL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_1">mutually authenticated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client as defined in the Package for
@@ -1174,11 +1172,11 @@ The assumptions identified in Section 3 are incorporated as security objectives 
       
         
         
-        <h3 class="indexable" data-level="3" id="sec-at-mdm-addnl">5.2.3 Auditable Events for MDM PP Additional SFRs</h3>
+        <h4 class="indexable" data-level="4" id="sec-at-mdm-addnl">5.2.2.1 Auditable Events for MDM PP Additional SFRs</h4>
           <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-mdm-addnl" data-counter-type="ct-Table" id="at-mdm-addnl">Table <span class="counter">3</span></span>: Auditable Events for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FCS_STG_EXT.1/MDMKEYS"><td rowspan="2"><a href="#FCS_STG_EXT.1/MDMKEYS">FCS_STG_EXT.1/MDMKEYS</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FCS_STG_EXT.1/MDMKEYS#"><td></td></tr><tr data-sortkey="FCS_STG_EXT.1/MDMKEYS.1"><td>No events specified</td><td>N/A</td></tr></table>
         
         
-        <h4 id="mdm_mod_fcs" class="indexable" data-level="4">5.2.3.1 Cryptographic Support (FCS)</h4>
+        <h4 id="mdm_mod_fcs" class="indexable" data-level="4">5.2.2.2 Cryptographic Support (FCS)</h4>
           <div class="comp" id="FCS_STG_EXT.1/MDMKEYS"><h4>FCS_STG_EXT.1/MDMKEYS Cryptographic Key Storage</h4>
             
             
@@ -1225,13 +1223,13 @@ The assumptions identified in Section 3 are incorporated as security objectives 
       
         
         
-        <h3 class="indexable" data-level="3" id="sec-at-gpos-addnl">5.3.3 Auditable Events for GPOS PP Additional SFRs</h3>
+        <h4 class="indexable" data-level="4" id="sec-at-gpos-addnl">5.3.2.1 Auditable Events for GPOS PP Additional SFRs</h4>
           <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-gpos-addnl" data-counter-type="ct-Table" id="at-gpos-addnl">Table <span class="counter">4</span></span>: Auditable Events for <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FTP_ITC_EXT.1/OSCHANNEL"><td rowspan="4"><a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTP_ITC_EXT.1/OSCHANNEL#"><td></td></tr><tr data-sortkey="FTP_ITC_EXT.1/OSCHANNEL.2"><td>Initiation of the trusted channel.</td><td>No additional information.</td></tr><tr data-sortkey="FTP_ITC_EXT.1/OSCHANNEL.3"><td>Termination of the trusted channel.</td><td>No additional information.</td></tr><tr data-sortkey="FTP_ITC_EXT.1/OSCHANNEL.4"><td>Failure of the trusted channel functions.</td><td>No additional information.</td></tr><tr data-sortkey="FTP_TRP.1/OSENROLL"><td rowspan="4"><a href="#FTP_TRP.1/OSENROLL">FTP_TRP.1/OSENROLL</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTP_TRP.1/OSENROLL#"><td></td></tr><tr data-sortkey="FTP_TRP.1/OSENROLL.4"><td>Initiation of the trusted path.</td><td>No additional information.</td></tr><tr data-sortkey="FTP_TRP.1/OSENROLL.5"><td>Termination of the trusted path.</td><td>No additional information.</td></tr><tr data-sortkey="FTP_TRP.1/OSENROLL.6"><td>Failure of the trusted path functions.</td><td>No additional information.</td></tr></table>
         
         
         
         
-        <h4 id="gpos_add_ftp" class="indexable" data-level="4">5.3.3.1 Trusted Path/Channels (FTP)</h4>
+        <h4 id="gpos_add_ftp" class="indexable" data-level="4">5.3.2.2 Trusted Path/Channels (FTP)</h4>
           <div class="comp" id="FTP_ITC_EXT.1/OSCHANNEL"><h4>FTP_ITC_EXT.1/OSCHANNEL Trusted Channel Communication</h4>
             
             <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.1/OSCHANNEL"><a href="#FTP_ITC_EXT.1.1/OSCHANNEL" class="abbr">FTP_ITC_EXT.1.1/OSCHANNEL</a></div><div class="reqdesc">The OS shall use 
@@ -1346,7 +1344,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 <li>successful application of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policies,</li>
                 <li>
                   [<b>selection</b>: <span class="selectable-content" id="_s_20">receiving</span>,  <span class="selectable-content" id="_s_21">generating</span> ] periodic reachability events, </li>
-                <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_22">change in enrollment state</span></li><li style=""><span class="selectable-content" id="_s_23">failure to install an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_24">failure to update an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_25">[<b>assignment</b>: 
+                <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="change-in-enrollment-state">change in enrollment state</span></li><li style=""><span class="selectable-content" id="_s_23">failure to install an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_24">failure to update an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_25">[<b>assignment</b>: 
      <span class="assignable-content">other events</span>]</span></li><li style=""><span class="selectable-content" id="_s_26">no other events</span></li></ul>].</li>
               </ul>
             <div class="appnote"><span class="note-header">Application
@@ -1564,7 +1562,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
           
           
           <div class="element"><div class="reqid" id="FMT_UNR_EXT.1.1"><a href="#FMT_UNR_EXT.1.1" class="abbr">FMT_UNR_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall provide a mechanism to enforce the
-              following behavior upon an attempt to unenroll the device from management: [<b>selection</b>: <span class="selectable-content" id="_s_55">prevent the unenrollment from occurring</span>,  <span class="selectable-content" id="_s_56">apply remediation actions</span> ].
+              following behavior upon an attempt to unenroll the device from management: [<b>selection</b>: <span class="selectable-content" id="prevent-unenrollment">prevent the unenrollment from occurring</span>,  <span class="selectable-content" id="apply-remediation">apply remediation actions</span> ].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">Unenrolling is the action of transitioning from the enrolled
@@ -2064,7 +2062,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                 <li>successful application of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policies,</li>
                 <li>
                   [<b>selection</b>: <span class="selectable-content" id="_s_20">receiving</span>,  <span class="selectable-content" id="_s_21">generating</span> ] periodic reachability events, </li>
-                <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_22">change in enrollment state</span></li><li style=""><span class="selectable-content" id="_s_23">failure to install an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_24">failure to update an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_25">[<b>assignment</b>: 
+                <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="change-in-enrollment-state">change in enrollment state</span></li><li style=""><span class="selectable-content" id="_s_23">failure to install an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_24">failure to update an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_25">[<b>assignment</b>: 
      <span class="assignable-content">other events</span>]</span></li><li style=""><span class="selectable-content" id="_s_26">no other events</span></li></ul>].</li>
               </ul>
             <h4 id="ext-comp-FAU_ALT_EXT.2.2">FAU_ALT_EXT.2.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall queue alerts if the trusted channel is not available.</div></div><h3 id="ext-comp-FAU_STG_EXT" class="indexable" data-level="4">C.2.4.2 FAU_STG_EXT Protected Audit Event Storage</h3><div style="margin-left: 1em;">This family is defined in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
@@ -2130,7 +2128,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             </ul>
           </p><h4>FMT_UNR_EXT.1 User Unenrollment Prevention</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td> [FIA_ENR_EXT.1 Enrollment of Mobile Device into Management; or<br/>
             FMT_MOF_EXT.1 Management of Functions Behavior] </td></tr></table><h4 id="ext-comp-FMT_UNR_EXT.1.1">FMT_UNR_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall provide a mechanism to enforce the
-              following behavior upon an attempt to unenroll the device from management: [<b>selection</b>: <span class="selectable-content" id="_s_55">prevent the unenrollment from occurring</span>,  <span class="selectable-content" id="_s_56">apply remediation actions</span> ].
+              following behavior upon an attempt to unenroll the device from management: [<b>selection</b>: <span class="selectable-content" id="prevent-unenrollment">prevent the unenrollment from occurring</span>,  <span class="selectable-content" id="apply-remediation">apply remediation actions</span> ].
             </div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
 			successfully evaluated against this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. These requirements are not featured
 			explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. They are not included as 
@@ -2173,7 +2171,8 @@ The assumptions identified in Section 3 are incorporated as security objectives 
       </td>
       </tr>
     </table>
-  <h1 id="acronyms" class="indexable" data-level="A">Appendix E -  Acronyms</h1><table><tr class="header"><th>Acronym</th><th>Meaning</th></tr><tr><td><span class="term" id="abbr_API"><abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr></span></td><td><span id="long_abbr_API">Application Programming Interface</span></td></tr>
+  <h1 id="acronyms" class="indexable" data-level="A">Appendix E -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">22</span></span>: Acronyms
+		</caption><tr class="header"><th>Acronym</th><th>Meaning</th></tr><tr><td><span class="term" id="abbr_API"><abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr></span></td><td><span id="long_abbr_API">Application Programming Interface</span></td></tr>
 <tr><td><span class="term" id="abbr_Base-PP" data-plural="Base-PPs"><abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></span></td><td><span id="long_abbr_Base-PP">Base Protection Profile</span></td></tr>
 <tr><td><span class="term" id="abbr_BYOD"><abbr class="dyn-abbr"><a href="#abbr_BYOD">BYOD</a></abbr></span></td><td><span id="long_abbr_BYOD">Bring Your Own Device</span></td></tr>
 <tr><td><span class="term" id="abbr_CC"><abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr></span></td><td><span id="long_abbr_CC">Common Criteria</span></td></tr>
@@ -2219,4 +2218,12 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R5.pdf">Part
                 3: Security Assurance Components</a>, CCMB-2017-04-003, Version 3.1 Revision 5,
               April 2017.</li>
-          </ul></span></td></tr></table></body></html>
+          </ul></span></td></tr><tr><td><span id="bibCEM">[<abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr>]</span></td><td><span class="description">
+        Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2012-09-004, Version 3.1 Revision 4, September 2012
+      </span></td></tr><tr><td><span id="bibGPOS">[<abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr>]</span></td><td><span class="description">
+        Protection Profile for General Purpose Operating Systems, Version 4.3, March 2023
+      </span></td></tr><tr><td><span id="bibMDF">[<abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr>]</span></td><td><span class="description">
+        Protection Profile for Mobile Device Fundamentals, Version 3.3, March 2023
+      </span></td></tr><tr><td><span id="bibMDM">[<abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr>]</span></td><td><span class="description">
+        Protection Profile for Mobile Device Management, Version 4.0, March 2019
+      </span></td></tr></table></body></html>
