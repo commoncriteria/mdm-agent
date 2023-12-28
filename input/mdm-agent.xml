@@ -2336,6 +2336,8 @@ Behavior means it's a new EXT component and we have to make that chart.
     </h:table>
   </appendix>
 
+<appendix title="Use Case Templates" id="appdx-use-case-templates"/>
+
 <!-- 
   <appendix id="use-case" title="Use Case Templates"> The following use case templates list those
     selections, assignments, and objective requirements that best support the use cases identified
