@@ -1024,28 +1024,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         
         <h4 id="mdf_mod_fcs" class="indexable" data-level="4">5.1.2.2 Cryptographic Support (FCS)</h4>
           
-          <div class="comp" id="FCS_STG_EXT.4"><h4>FCS_STG_EXT.4 Cryptographic Key Storage</h4>
-            
-            
-            
-            
-            
-            <div class="element"><div class="reqid" id="FCS_STG_EXT.4.1"><a href="#FCS_STG_EXT.4.1" class="abbr">FCS_STG_EXT.4.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall use the platform provided key storage for
-                all persistent secret and private keys.<div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">This requirement ensures that persistent secrets
-                (credentials, secret keys, authentication tokens) and private keys are stored securely when not in use by
-                the mobile platform. </span></div></div></div>
-            
-          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a></div>
-                
-              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"> The evaluator will verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists each persistent
-                  secret (credential, secret keys, authentication tokens) and private key needed to meet the requirements in
-                  the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. For each of these items, the evaluator will confirm that
-                  the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists for what purpose it is used, and, for each
-                  platform listed as supported in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, how it is stored. The
-                  evaluator shall verify that the Agent calls a platform-provided <abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr> to store
-                  persistent secrets and private keys. </div></div></div></div>
+          
         
           
           <div class="comp" id="FCS_STG_EXT.4"><h4>FCS_STG_EXT.4 Cryptographic Key Storage</h4>
@@ -1072,189 +1051,8 @@ The assumptions identified in Section 3 are incorporated as security objectives 
                   persistent secrets and private keys. </div></div></div></div>
         
         <h4 id="mdf_mod_ftp" class="indexable" data-level="4">5.1.2.3 Trusted Path/Channels (FTP)</h4>
-          <div class="comp" id="FTP_ITC_EXT.1/MDFCHANNEL"><h4>FTP_ITC_EXT.1/MDFCHANNEL Trusted Channel Communication</h4>
-            
-            <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.1/MDFCHANNEL"><a href="#FTP_ITC_EXT.1.1/MDFCHANNEL" class="abbr">FTP_ITC_EXT.1.1/MDFCHANNEL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_1">mutually authenticated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client as defined in the Package for
-                    Transport Layer Security</span></li><li style=""><span class="selectable-content" id="_s_2">mutually authenticated <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> client as defined in the Package for
-                    Transport Layer Security</span></li><li style=""><span class="selectable-content" id="_s_3"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span></li></ul>] to provide a communication channel between itself and another trusted
-                IT product that is logically distinct from other communication channels, provides
-                assured identification of its end points, protects channel data from disclosure, and
-                detects modification of the channel data.<div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note"> The intent of this requirement is to protect the
-                communications channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and Agent, post
-                enrollment. <a href="#FTP_TRP.1/MDFENROLL">FTP_TRP.1/MDFENROLL</a> is to protect the communications
-                channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and Agent during enrollment.
-                <br/><br/> This requirement is to ensure that the transmission of any audit
-                logs, mobile device information data (software version, hardware model, and
-                application versions), and configuration data collected by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                Agent and sent from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                Server, when commanded, or at configurable intervals, is properly protected. This
-                trusted channel also protects any commands and policies sent by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. 
-                Either the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent or the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server is able to initiate the
-                connection.
-                <br/><br/> 
-                This requirement is iterated from the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to indicate the protocols that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can use for a trusted
-                channel. The mobile device is required to perform the mandated cryptographic
-                protocols as in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> for communication channels mandated in
-                the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must select one of
-                <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr>, or <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> in order to establish and maintain a trusted channel between the
-                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server. Only <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr>,
-                or <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> are acceptable for this trusted channel.<br/><br/> Since this
-                requirement is only for the case when the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr>
-                <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and in this case it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a
-                native part of the mobile operating system, it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will utilize the mobile device's implementation of the
-                selected protocols. <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> (FCS_HTTPS_EXT.1) and <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> (FCS_TLSC_EXT.1) are already
-                mandatory for a <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. If "<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>" or "<abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr>" is selected the following selections from
-                the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Functional Package must be made: <ul>
-                  <li>FCS_TLS_EXT.1: <ul>
-                      <li>either <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> is selected depending on the selection made in
-                        <a href="#FTP_ITC_EXT.1.1/MDFCHANNEL">FTP_ITC_EXT.1.1/MDFCHANNEL</a></li>
-                      <li>client must be selected</li>
-                    </ul>
-                  </li>
-                  <li>FCS_TLSC_EXT.1.1: <ul>
-                      <li>The cipher suites selected must correspond with the algorithms and
-                        hash functions allowed in FCS_COP.1 from the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</li>
-                      <li>mutual authentication must be selected</li>
-                    </ul>
-                  </li>
-                </ul> Protocol, <abbr class="dyn-abbr"><a href="#abbr_RBG">RBG</a></abbr>, certificate validation, algorithm, and similar services may
-                be met with platform provided services. <br/><br/>
-              </span></div></div></div>
-            <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.2/MDFCHANNEL"><a href="#FTP_ITC_EXT.1.2/MDFCHANNEL" class="abbr">FTP_ITC_EXT.1.2/MDFCHANNEL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                Server and [<b>selection</b>: <span class="selectable-content" id="_s_4"><abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span>,  <span class="selectable-content" id="_s_5">no other IT entities</span> ] to initiate communication via the trusted channel.<div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note"> For all other use cases, the mobile device initiates the
-                communication; however, for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                Server may also initiate communication.</span></div></div></div>
-            <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.3/MDFCHANNEL"><a href="#FTP_ITC_EXT.1.3/MDFCHANNEL" class="abbr">FTP_ITC_EXT.1.3/MDFCHANNEL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall initiate communication via the trusted channel for all
-                communication between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and [<b>selection</b>: <span class="selectable-content" id="_s_6">all communication between the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                    Agent</span>,  <span class="selectable-content" id="_s_7">no other communication</span> ]
-              <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note"> This element is iterated from the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>;
-                it is expected that the mobile device will initiate the trusted channel between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                Agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server for administrative communication and may initiate other
-                trusted channels to other trusted IT entities for other uses.</span></div></div></div>
-            
-            
-            
-          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a></div>
-                
-                
-                
-              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that the
-                  methods of Agent-Server communication are indicated, along with how those
-                  communications are protected. The evaluator shall also confirm that all protocols
-                  listed in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> in support of remote <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-                  administration are consistent with those specified in the requirement, and are
-                  included in the requirements in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/>
-                </div><div class="eacategory">Guidance</div><div class="ea"> The evaluator shall confirm that the operational guidance contains
-                  instructions for configuring the communication channel between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and
-                  the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and conditionally, the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server for each supported
-                  method.<br/><br/>
-                </div><div class="eacategory">Tests</div><div class="ea">For each supported identifier type (excluding DNs), the evaluator shall
-                  repeat the following tests:<br/><br/>
-                  <span class="testlist-"><ul>
-                    <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FTP_ITC_EXT.1/MDFCHANNEL:1</a>:
-      The evaluators shall ensure that communications using each specified (in
-                      the operational guidance) Agent-Server communication method is tested during
-                      the course of the evaluation, setting up the connections as described in the
-                      operational guidance and ensuring that communication is
-                      successful.
-                    </li>
-                    <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FTP_ITC_EXT.1/MDFCHANNEL:2</a>:
-      The evaluator shall ensure, for each method of Agent-Server communication,
-                      the channel data is not sent in plaintext.
-                    </li>
-                    <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FTP_ITC_EXT.1/MDFCHANNEL:3</a>:
-      The evaluator shall ensure, for each communication channel with the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                      Server, that a protocol analyzer identifies the traffic as the protocol under
-                      testing.
-                    </li>
-                  </ul></span> 
-                    <br/>
-                    Further evaluation activities are associated with the specific protocols.<br/><br/>
-                </div></div></div></div>
-          <div class="comp" id="FTP_TRP.1/MDFENROLL"><h4>FTP_TRP.1/MDFENROLL Trusted Path (for Enrollment)</h4>
-            
-            <div class="element"><div class="reqid" id="FTP_TRP.1.1/MDFENROLL"><a href="#FTP_TRP.1.1/MDFENROLL" class="abbr">FTP_TRP.1.1/MDFENROLL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="TRP_TLS_2"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client as defined in the Package for Transport Layer Security</span></li><li style=""><span class="selectable-content" id="TRP_HTTPS_2"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span></li></ul>] to provide a trusted communication path between itself and
-                <b>an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server</b>
-                that is logically distinct from other communication paths and
-                provides assured identification of its endpoints and protection of the communicated
-                data from disclosure and detection of modification of the communicated data from
-                [<i>modification, disclosure</i>]. </div></div>
-            <div class="element"><div class="reqid" id="FTP_TRP.1.2/MDFENROLL"><a href="#FTP_TRP.1.2/MDFENROLL" class="abbr">FTP_TRP.1.2/MDFENROLL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> users to initiate communication via the trusted path.
-              </div></div>
-            <div class="element"><div class="reqid" id="FTP_TRP.1.3/MDFENROLL"><a href="#FTP_TRP.1.3/MDFENROLL" class="abbr">FTP_TRP.1.3/MDFENROLL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require the use of the trusted path for [<i>[<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> enrollment]</i>]. 
-              <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">This requirement ensures that a trusted connection is used for initial enrollment to an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>;
-                security of ongoing <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server communications after enrollment is
-                implemented through <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a>.
-                <br/><br/> The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author chooses the mechanism or
-                mechanisms supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The data passed in this trusted
-                communication channel are encrypted as defined by the protocol selected.
-                <br/><br/> Since this requirement is only for the case when the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and in this case it is expected that the
-                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a native part of the mobile operating system,
-                it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will utilize the mobile device's
-                implementation of the selected protocols. <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> (FCS_HTTPS_EXT.1) and <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>
-                (FCS_TLSC_EXT.1) are already mandatory for a <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. If "<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>" or "<abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr>" is selected
-                the following selections from the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Functional Package must be made: 
-                
-                <ul>
-                  <li>FCS_TLS_EXT.1: <ul>
-                      <li><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> must be selected</li>
-                      <li>client must be selected</li>
-                    </ul>
-                  </li>
-                  <li>FCS_TLSC_EXT.1.1: <ul>
-                      <li>The cipher suites selected must correspond with the algorithms and
-                        hash functions allowed in FCS_COP.1 from the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</li>
-                    </ul>
-                  </li>
-                </ul>
-              </span></div></div></div>
-            
-            
-            
-          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_TRP.1/MDFENROLL">FTP_TRP.1/MDFENROLL</a></div>
-                
-                
-                
-              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that the
-                  methods of remote enrollment are indicated, along with how those communications
-                  are protected. The evaluator shall also confirm that all protocols listed in the
-                    <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> in support of enrollment are consistent with those
-                  specified in the requirement, and are included in the requirements in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
-                  <br/><br/>
-                </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall confirm that the operational guidance contains
-                  instructions for establishing the enrollment sessions for each supported
-                  method.<br/><br/>
-                </div><div class="eacategory">Tests</div><div class="ea">For each <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent/platform listed as supported in the
-                    <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>: <br/><br/>
-                  <span class="testlist-"><ul>
-                    <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FTP_TRP.1/MDFENROLL:1</a>:
-      The evaluators shall ensure that communications using each specified (in
-                      the operational guidance) enrollment method is tested during the course of the
-                      evaluation, setting up the connections as described in the operational
-                      guidance and ensuring that communication is successful.
-                    </li>
-                    <li class="test-"><a id="_t_5" class="defined" href="#_t_5">Test FTP_TRP.1/MDFENROLL:2</a>:
-      For each method of enrollment supported, the evaluator shall follow the
-                      operational guidance to ensure that there is no available interface that can
-                      be used by a remote user to establish enrollment sessions without invoking the
-                      trusted path.
-                    </li>
-                    <li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FTP_TRP.1/MDFENROLL:3</a>:
-      The evaluator shall ensure, for each method enrollment, the channel data
-                      is not sent in plaintext.
-                    </li>
-                  </ul></span> 
-                    <br/>
-                    Further evaluation activities are associated with the specific protocols.<br/><br/>
-                </div></div></div></div>
+          
+          
         
           <div class="comp" id="FTP_ITC_EXT.1/MDFCHANNEL"><h4>FTP_ITC_EXT.1/MDFCHANNEL Trusted Channel Communication</h4>
             
@@ -1464,27 +1262,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         
         
         <h4 id="mdm_mod_fcs" class="indexable" data-level="4">5.2.2.2 Cryptographic Support (FCS)</h4>
-          <div class="comp" id="FCS_STG_EXT.1/MDMKEYS"><h4>FCS_STG_EXT.1/MDMKEYS Cryptographic Key Storage</h4>
-            
-            
-            <div class="element"><div class="reqid" id="FCS_STG_EXT.1.1/MDMKEYS"><a href="#FCS_STG_EXT.1.1/MDMKEYS" class="abbr">FCS_STG_EXT.1.1/MDMKEYS</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall use the [<i>platform-provided key storage</i>] for all persistent
-                secret and private keys.<div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note"> This requirement ensures that persistent secrets
-                (credentials, secret keys) and private keys are stored securely when not in use by
-                the mobile platform.<br/><br/>
-              </span></div></div></div>
-            
-          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FCS_STG_EXT.1/MDMKEYS">FCS_STG_EXT.1/MDMKEYS</a></div>
-                
-              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"> The evaluator will verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists each persistent
-                  secret (credential, secret key) and private key needed to meet the requirements in
-                  the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. For each of these items, the evaluator will confirm that
-                  the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists for what purpose it is used, and, for each
-                  platform listed as supported in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, how it is stored. The
-                  evaluator shall verify that the Agent calls a platform-provided <abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr> to store
-                  persistent secrets and private keys.<br/><br/>
-                </div></div></div></div>
+          
         
           <div class="comp" id="FCS_STG_EXT.1/MDMKEYS"><h4>FCS_STG_EXT.1/MDMKEYS Cryptographic Key Storage</h4>
             
@@ -1551,161 +1329,8 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         
         
         <h4 id="gpos_add_ftp" class="indexable" data-level="4">5.3.2.2 Trusted Path/Channels (FTP)</h4>
-          <div class="comp" id="FTP_ITC_EXT.1/OSCHANNEL"><h4>FTP_ITC_EXT.1/OSCHANNEL Trusted Channel Communication</h4>
-            
-            <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.1/OSCHANNEL"><a href="#FTP_ITC_EXT.1.1/OSCHANNEL" class="abbr">FTP_ITC_EXT.1.1/OSCHANNEL</a></div><div class="reqdesc">The OS shall use 
-                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_10"><b>mutually authenticated</b> <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> as conforming to the
-                    Functional Package for Transport Layer Security (<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>), version
-                    <b>[<b>selection</b>: <span class="selectable-content" id="_s_11">1.1</span>,  <span class="selectable-content" id="_s_12">2.0</span> ]</b> as a [<i>client</i>]</span></li><li style=""><span class="selectable-content" id="_s_13"><b>mutually authenticated</b> <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> as conforming to the
-                    Functional Package for Transport Layer Security (<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>), version
-                    <b>[<b>selection</b>: <span class="selectable-content" id="_s_14">1.1</span>,  <span class="selectable-content" id="_s_15">2.0</span> ]</b> as a [<i>client</i>]</span></li></ul>]
-                to provide a trusted communication channel between itself and authorized IT
-                entities supporting the following capabilities: [<i>[<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server communications, 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_16"><abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server communications</span>,  <span class="selectable-content" id="_s_17">no other communications</span> ]]</i>]
-                that is logically distinct from other communication channels and provides
-                assured identification of its end points and protection of the channel data from
-                disclosure and detection of modification of the channel data.
-              <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note"> The intent of this requirement is to protect the
-                communications channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and Agent, post
-                enrollment. <a href="#FTP_TRP.1/OSENROLL">FTP_TRP.1/OSENROLL</a> is to protect the communications
-                channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and Agent during enrollment.
-                <br/><br/> 
-                This requirement is to ensure that the transmission of any audit
-                logs, system data (hardware, software, or application), and configuration data collected by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                Agent and sent from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                Server, when commanded, or at configurable intervals, is properly protected. This
-                trusted channel also protects any commands and policies sent by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. 
-                Either the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent or the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server is able to initiate the
-                connection.
-                <br/><br/> 
-                This requirement is iterated from the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to indicate the protocols that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can use for a trusted
-                channel. The operating system is required to perform the mandated cryptographic
-                protocols as in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> for communication channels mandated in
-                the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must select one of
-                <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> in order to establish and maintain a trusted channel between the
-                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server. Only <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> are acceptable for this trusted channel.<br/><br/> 
-                Since this
-                requirement is only for the case when the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>
-                <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and in this case it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a
-                native part of the operating system, it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will utilize the operating system's implementation of the
-                selected protocols. Depending on whether "<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>" or "<abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr>" is selected, the following selections from
-                the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Functional Package must be made: <ul>
-                  <li>FCS_TLS_EXT.1: <ul>
-                      <li>either <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> is selected depending on the selection made in
-                        <a href="#FTP_ITC_EXT.1.1/OSCHANNEL">FTP_ITC_EXT.1.1/OSCHANNEL</a></li>
-                      <li>client must be selected</li>
-                    </ul>
-                  </li>
-                  <li>FCS_TLSC_EXT.1.1: <ul>
-                      <li>The cipher suites selected must correspond with the algorithms and
-                        hash functions allowed in FCS_COP.1 from the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</li>
-                      <li>mutual authentication must be selected</li>
-                    </ul>
-                  </li>
-                </ul> Protocol, <abbr class="dyn-abbr"><a href="#abbr_RBG">RBG</a></abbr>, certificate validation, algorithm, and similar services may
-                be met with platform provided services. <br/><br/>
-              </span></div></div></div>
-            
-            
-            
-          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a></div>
-                
-                
-                
-              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that the
-                  methods of Agent-Server communication are indicated, along with how those
-                  communications are protected. The evaluator shall also confirm that all protocols
-                  listed in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> in support of remote <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-                  administration are consistent with those specified in the requirement, and are
-                  included in the requirements in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/>
-                </div><div class="eacategory">Guidance</div><div class="ea"> The evaluator shall confirm that the operational guidance contains
-                  instructions for configuring the communication channel between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and
-                  the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and conditionally, the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server for each supported
-                  method.<br/><br/>
-                </div><div class="eacategory">Tests</div><div class="ea">For each supported identifier type (excluding DNs), the evaluator shall
-                  repeat the following tests:<br/><br/>
-                  <span class="testlist-"><ul>
-                    <li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FTP_ITC_EXT.1/OSCHANNEL:1</a>:
-      The evaluators shall ensure that communications using each specified (in
-                      the operational guidance) Agent-Server communication method is tested during
-                      the course of the evaluation, setting up the connections as described in the
-                      operational guidance and ensuring that communication is
-                      successful.
-                    </li>
-                    <li class="test-"><a id="_t_8" class="defined" href="#_t_8">Test FTP_ITC_EXT.1/OSCHANNEL:2</a>:
-      The evaluator shall ensure, for each method of Agent-Server communication,
-                      the channel data is not sent in plaintext.
-                    </li>
-                    <li class="test-"><a id="_t_9" class="defined" href="#_t_9">Test FTP_ITC_EXT.1/OSCHANNEL:3</a>:
-      The evaluator shall ensure, for each communication channel with the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                      Server, that a protocol analyzer identifies the traffic as the protocol under
-                      testing.
-                    </li>
-                  </ul></span> 
-                    <br/>
-                    Further evaluation activities are associated with the specific protocols.<br/><br/>
-                </div></div></div></div>
-          <div class="comp" id="FTP_TRP.1/OSENROLL"><h4>FTP_TRP.1/OSENROLL Trusted Path (for Enrollment)</h4>
-            
-            <div class="element"><div class="reqid" id="FTP_TRP.1.1/OSENROLL"><a href="#FTP_TRP.1.1/OSENROLL" class="abbr">FTP_TRP.1.1/OSENROLL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication path between itself and <b>a</b> [<i>remote</i>] <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server</b> that is 
-                logically distinct from other communication paths
-                and provides assured identification of its endpoints and protection of the
-                communicated data from [<i>modification, disclosure</i>].
-              </div></div>
-            <div class="element"><div class="reqid" id="FTP_TRP.1.2/OSENROLL"><a href="#FTP_TRP.1.2/OSENROLL" class="abbr">FTP_TRP.1.2/OSENROLL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [<b>selection</b>: <span class="selectable-content" id="_s_18">local</span>,  <span class="selectable-content" id="_s_19">remote</span> ] users to initiate communication via the trusted path.
-              </div></div>
-            <div class="element"><div class="reqid" id="FTP_TRP.1.3/OSENROLL"><a href="#FTP_TRP.1.3/OSENROLL" class="abbr">FTP_TRP.1.3/OSENROLL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require the use of the trusted path for [<i>[<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> enrollment]</i>]. 
-              <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">This requirement ensures that a trusted connection is used for initial enrollment to an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>;
-                security of ongoing <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server communications after enrollment is
-                implemented through <a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a>.
-                <br/><br/> Since this requirement is only for the case when the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and in this case it is expected that the
-                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a native part of the operating system,
-                it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will utilize the operating system's
-                implementation of a trusted protocol defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> FTP_ITC_EXT.1 for this trusted path.
-              </span></div></div></div>
-            
-            
-            
-          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_TRP.1/OSENROLL">FTP_TRP.1/OSENROLL</a></div>
-                
-                
-                
-              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that the
-                  methods of remote enrollment are indicated, along with how those communications
-                  are protected. The evaluator shall also confirm that all protocols listed in the
-                    <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> in support of enrollment are consistent with those
-                  specified in the requirement, and are included in the requirements in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
-                  <br/><br/>
-                </div><div class="eacategory">Guidance</div><div class="ea">The evaluator shall confirm that the operational guidance contains
-                  instructions for establishing the enrollment sessions for each supported
-                  method.<br/><br/>
-                </div><div class="eacategory">Tests</div><div class="ea">For each <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent/platform listed as supported in the
-                    <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>: <br/><br/>
-                  <span class="testlist-"><ul>
-                    <li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FTP_TRP.1/OSENROLL:1</a>:
-      The evaluators shall ensure that communications using each specified (in
-                      the operational guidance) enrollment method is tested during the course of the
-                      evaluation, setting up the connections as described in the operational
-                      guidance and ensuring that communication is successful.
-                    </li>
-                    <li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FTP_TRP.1/OSENROLL:2</a>:
-      For each method of enrollment supported, the evaluator shall follow the
-                      operational guidance to ensure that there is no available interface that can
-                      be used by a remote user to establish enrollment sessions without invoking the
-                      trusted path.
-                    </li>
-                    <li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FTP_TRP.1/OSENROLL:3</a>:
-      The evaluator shall ensure, for each method enrollment, the channel data
-                      is not sent in plaintext.
-                    </li>
-                  </ul></span> 
-                    <br/>
-                    Further evaluation activities are associated with the specific protocols.<br/><br/>
-                </div></div></div></div>
+          
+          
         
           <div class="comp" id="FTP_ITC_EXT.1/OSCHANNEL"><h4>FTP_ITC_EXT.1/OSCHANNEL Trusted Channel Communication</h4>
             
@@ -2668,22 +2293,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
       
       <h3 id="ib_fau" class="indexable" data-level="3">A.3.2 Security Audit (FAU)</h3>
         
-        <div class="comp" id="FAU_STG_EXT.3"><h4>FAU_STG_EXT.3 Security Audit Event Storage</h4><div class="statustag"><b><i>This component must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements any of the following features:</i></b><br/><ul><li><b><i><a href="#has-auditing">Platform Auditing</a></i></b></li></ul></div>
-          
-          
-          
-          
-          
-          
-          
-          <div class="element"><div class="reqid" id="FAU_STG_EXT.3.1"><a href="#FAU_STG_EXT.3.1" class="abbr">FAU_STG_EXT.3.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall store <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> audit records in the platform-provided audit storage. </div></div>
-          
-        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></div>
-              
-            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> description of the
-                audit records indicates how the records are stored. The evaluator shall verify that
-                the Agent calls a platform-provided <abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr> to store audit records.<br/><br/>
-              </div></div></div></div>
+        
       
         
         <div class="comp" id="FAU_STG_EXT.3"><h4>FAU_STG_EXT.3 Security Audit Event Storage</h4><div class="statustag"><b><i>This component must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements any of the following features:</i></b><br/><ul><li><b><i><a href="#has-auditing">Platform Auditing</a></i></b></li></ul></div>
@@ -2705,35 +2315,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
       
       <h3 id="ib_fpt" class="indexable" data-level="3">A.3.3 Protection of the TSF (FPT)</h3>
         
-        <div class="comp" id="FPT_NET_EXT.1"><h4>FPT_NET_EXT.1 Network Reachability</h4><div class="statustag"><b><i>This component must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements any of the following features:</i></b><br/><ul><li><b><i><a href="#supports-reachability">Supports Network Reachability Thresholds</a></i></b></li></ul></div>
-          
-          
-          
-          
-          
-          
-          <div class="element"><div class="reqid" id="FPT_NET_EXT.1.1"><a href="#FPT_NET_EXT.1.1" class="abbr">FPT_NET_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect when a configurable [<b>selection</b>: <span class="selectable-content" id="_s_57">positive integer of missed reachability events occur</span>,  <span class="selectable-content" id="_s_58">time limit is exceeded</span> ] related to the last successful connection with the server has been
-              reached. </div></div>
-          
-        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a></div>
-              
-              
-              
-            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"> The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> contains a description
-                of how the Agent determines how long it has been since the last successful
-                connection with the Server (i.e., total number of missed reachability events or
-                time). If total number of missed reachability events is selected, the evaluator
-                shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> contains a description of how often the
-                reachability events are sent.<br/><br/>
-              </div><div class="eacategory">Guidance</div><div class="ea"> The evaluator shall verify that the AGD guidance instructs the
-                administrator, if needed, how to configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to detect when
-                the time since last successful connection with the server has been
-                reached.<br/><br/>
-              </div><div class="eacategory">Tests</div><div class="ea"> The evaluator shall configure the Server configuration policy of the Agent per
-                FMT_SMF.1.1(1) function 56 within the Mobile Device Managment <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. The device shall be placed in airplane mode to prevent
-                connectivity with the Server. The evaluator shall verify that after the configured
-                time, the remediation actions selected in function 56 occur.<br/><br/>
-              </div></div></div></div>
+        
       
         
         <div class="comp" id="FPT_NET_EXT.1"><h4>FPT_NET_EXT.1 Network Reachability</h4><div class="statustag"><b><i>This component must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements any of the following features:</i></b><br/><ul><li><b><i><a href="#supports-reachability">Supports Network Reachability Thresholds</a></i></b></li></ul></div>
