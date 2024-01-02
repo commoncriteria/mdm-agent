@@ -85,6 +85,7 @@ Behavior means it's a new EXT component and we have to make that chart.
       native application deployed on a mobile device or general purpose OS. </section>
 
       <tech-terms>
+        <suppress>TSF Interface</suppress>
             <term full="Administrator">The person who is responsible for management activities, including setting
             the policy that is applied by the enterprise on the device.</term>
 	    <term abbr="API" full="Application Programming Interface"/>
