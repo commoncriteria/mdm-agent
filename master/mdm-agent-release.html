@@ -777,7 +777,7 @@ The following sections list Common Criteria and technology terms used in this do
       <br/><br/>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> shall build on the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a native part of a non-mobile <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>.
       The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> for this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> combined with the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the operating system itself plus the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is part of 
-      the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent may present multiple interfaces for configuring the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, such as a local interface and a remote interface. 
+      the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent may present multiple interfaces for configuring the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, such as a local and remote interface. 
       The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent does not need to provide a dedicated management interface that is separate from the means by which administrators interact with the 
       <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> as a whole. However, if it does provide any such interfaces, the configuration aspects of these additional interfaces are in scope of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
       
@@ -794,23 +794,23 @@ The following sections list Common Criteria and technology terms used in this do
         
     
     <h2 class="indexable" data-level="2" id="usecase">1.4 Use Cases</h2> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines four use cases:<br/><br/>
-      <dl><dt id="usecase1"> [USE CASE 1] Enterprise-owned device for general-purpose enterprise use</dt><dd><span class="description"> An Enterprise-owned device for general-purpose business use is commonly
+      <dl><dt id="usecase1"> [USE CASE 1] Enterprise-owned device for general-purpose enterprise use</dt><dd><span class="description"> An enterprise-owned device for general-purpose business use is commonly
             called Corporately Owned, Personally Enabled. This use case entails a significant
-            degree of Enterprise control over configuration and software inventory. Enterprise
+            degree of enterprise control over configuration and software inventory. enterprise
             administrators use an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> product to establish policies on the 
             devices prior to user issuance. Users may use internet connectivity to browse the web, 
-            access corporate mail, or run Enterprise applications, but this connectivity may be under
-            significant control of the Enterprise. The user may also be expected to store data and
-            use applications for personal, non-enterprise use. The Enterprise administrator uses the
+            access corporate mail, or run enterprise applications, but this connectivity may be under
+            significant control of the enterprise. The user may also be expected to store data and
+            use applications for personal, non-enterprise use. The enterprise administrator uses the
               <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> product to deploy security policies and query device
             status. The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> may issue commands for remediation actions.
-          </span></dd><dt id="usecase2"> [USE CASE 2] Enterprise-owned device for specialized, high-security use</dt><dd><span class="description">An Enterprise-owned device with intentionally limited network connectivity,
+          </span></dd><dt id="usecase2"> [USE CASE 2] Enterprise-owned device for specialized, high-security use</dt><dd><span class="description">An enterprise-owned device with intentionally limited network connectivity,
             tightly controlled configuration, and limited software inventory is appropriate for
             specialized, high-security use cases. As in the previous use case, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> product is used 
             to establish such policies on devices prior to
             issuance to users. The device may not be permitted connectivity to any external
             peripherals. It may only be able to communicate via its Wi-Fi or cellular radios with
-            the Enterprise-run network, which may not even permit connectivity to the internet. Use
+            the enterprise-run network, which may not even permit connectivity to the internet. Use
             of the device may require compliance with usage policies that are more restrictive than
             those in any general-purpose use case, yet may mitigate risks to highly sensitive
             information.
@@ -822,12 +822,12 @@ The following sections list Common Criteria and technology terms used in this do
             occurred. Unlike in the enterprise-owned cases, the enterprise is limited in what
             security policies it can enforce because the user purchased the device primarily for
             personal use and is unlikely to accept policies that limit the functionality of the
-            device.<br/><br/> However, because the Enterprise allows the user full (or
-            nearly full) access to the Enterprise network, the Enterprise will require certain
+            device.<br/><br/> However, because the enterprise allows the user full (or
+            nearly full) access to the enterprise network, the enterprise will require certain
             security policies, for example a password or screen lock policy, and health reporting,
             such as the integrity of the system software, before allowing access. The
-            administrator of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> can establish remediation actions such as
-            wiping Enterprise data for non-compliant devices. These controls could potentially
+            administrator of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> can establish remediation actions, such as
+            wiping enterprise data for non-compliant devices. These controls could potentially
             be enforced by a separation mechanism built-in to the device itself to distinguish
             between enterprise and personal activities, or by a third-party application that
             provides access to enterprise resources and leverages security capabilities provided by
@@ -916,13 +916,13 @@ provide all of its security functionality.
             data protection, trusted updates, and software integrity verification of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. </span></dd><dt class="assumption defined" id="A.PROPER_ADMIN">A.PROPER_ADMIN</dt><dd><span class="description">One or more competent, trusted personnel who are not careless, willfully
             negligent, or hostile, are assigned and authorized as the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
             administrators, and do so using and abiding by guidance documentation. </span></dd><dt class="assumption defined" id="A.PROPER_USER">A.PROPER_USER</dt><dd><span class="description">Users are not willfully negligent or hostile, and use the
-            device within compliance of a reasonable Enterprise security policy. </span></dd></dl>
+            device within compliance of a reasonable enterprise security policy. </span></dd></dl>
     
     <h2 class="indexable" data-level="2" id="securityPolicy">3.3 Organizational Security Policies</h2>
       <dl><dt class="OSP defined" id="P.ACCOUNTABILITY">P.ACCOUNTABILITY</dt><dd><span class="description">Personnel operating the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall be accountable for their
             actions within the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. </span></dd><dt class="OSP defined" id="P.ADMIN">P.ADMIN</dt><dd><span class="description">The configuration of the device's security functions must adhere to the
-            Enterprise security policy. </span></dd><dt class="OSP defined" id="P.DEVICE_ENROLL">P.DEVICE_ENROLL</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> administrator must enroll a device for a specific user prior to it 
-            being used in the Enterprise network. </span></dd><dt class="OSP defined" id="P.NOTIFY">P.NOTIFY</dt><dd><span class="description">The user must immediately notify the administrator if a device
+            enterprise security policy. </span></dd><dt class="OSP defined" id="P.DEVICE_ENROLL">P.DEVICE_ENROLL</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> administrator must enroll a device for a specific user prior to it 
+            being used in the enterprise network. </span></dd><dt class="OSP defined" id="P.NOTIFY">P.NOTIFY</dt><dd><span class="description">The user must immediately notify the administrator if a device
             is lost or stolen so that the administrator may apply remediation actions via the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> system. </span></dd></dl>
     
     <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>
@@ -945,7 +945,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
       
       <dl><dt class="SOE defined" id="OE.DATA_PROPER_ADMIN">OE.DATA_PROPER_ADMIN</dt><dd><span class="description"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administrators are trusted to follow and apply all administrator guidance
             in a trusted manner. </span></dd><dt class="SOE defined" id="OE.DATA_PROPER_USER">OE.DATA_PROPER_USER</dt><dd><span class="description">Device users are trained to securely use the device running the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and
-            apply all guidance in a trusted manner. </span></dd><dt class="SOE defined" id="OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</dt><dd><span class="description">The Enterprise IT infrastructure provides security for a network that is
+            apply all guidance in a trusted manner. </span></dd><dt class="SOE defined" id="OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</dt><dd><span class="description">The enterprise IT infrastructure provides security for a network that is
             available to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and the device on which it runs that prevents unauthorized
             access. </span></dd><dt class="SOE defined" id="OE.DEVICE_PLATFORM">OE.DEVICE_PLATFORM</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent relies upon the trusted platform
             and hardware to provide policy enforcement as well as cryptographic services and data
@@ -982,7 +982,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               through <a href="#A.PLATFORM">A.PLATFORM</a>. </td></tr><tr class="major-row"><td rowspan="1"><a href="#A.PROPER_ADMIN">A.PROPER_​ADMIN</a></td><td><a href="#OE.DATA_PROPER_ADMIN">OE.DATA_​PROPER_​ADMIN</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> objective <a href="#OE.DATA_PROPER_ADMIN">OE.DATA_PROPER_ADMIN</a> is realized
               through <a href="#A.PROPER_ADMIN">A.PROPER_ADMIN</a>. </td></tr><tr class="major-row"><td rowspan="1"><a href="#A.PROPER_USER">A.PROPER_​USER</a></td><td><a href="#OE.DATA_PROPER_USER">OE.DATA_​PROPER_​USER</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> objective <a href="#OE.DATA_PROPER_USER">OE.DATA_PROPER_USER</a> is realized through
               <a href="#A.PROPER_USER">A.PROPER_USER</a>. </td></tr><tr class="major-row"><td rowspan="1"><a href="#P.ACCOUNTABILITY">P.ACCOUNTABILITY</a></td><td><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a></td><td><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a> provides logging of personnel actions to provide
-              accountability for these actions. </td></tr><tr class="major-row"><td rowspan="1"><a href="#P.ADMIN">P.ADMIN</a></td><td><a href="#O.APPLY_POLICY">O.APPLY_​POLICY</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> adheres to the Enterprise security policy through
+              accountability for these actions. </td></tr><tr class="major-row"><td rowspan="1"><a href="#P.ADMIN">P.ADMIN</a></td><td><a href="#O.APPLY_POLICY">O.APPLY_​POLICY</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> adheres to the enterprise security policy through
               the application of <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a>. </td></tr><tr class="major-row"><td rowspan="1"><a href="#P.DEVICE_ENROLL">P.DEVICE_​ENROLL</a></td><td><a href="#O.APPLY_POLICY">O.APPLY_​POLICY</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> enrolls mobile devices for specific users with
               policy through the application of <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a>. </td></tr><tr class="major-row"><td rowspan="1"><a href="#P.NOTIFY">P.NOTIFY</a></td><td><a href="#O.APPLY_POLICY">O.APPLY_​POLICY</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> provides the capability for the administrator to
               apply remediation actions via the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> system through policy, which
@@ -1435,7 +1435,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               installation.<br/><br/> The periodic reachability events ensure that either
               the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent responds to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server polls to
               determine device network reachability, or the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can be
-              configured to regularly notify the Server that it is reachable. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>
+              configured to regularly notify the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server that it is reachable. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>
               author must select “receiving” in the first case and “generating” in the second.
               The corresponding requirement for the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server is FAU_NET_EXT.1 in
               the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
@@ -1452,7 +1452,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         </div>
         <div class="comp" id="FAU_GEN.1/AGENT"><h4>FAU_GEN.1/AGENT Audit Data Generation</h4>
           
-          <div class="element"><div class="reqid" id="FAU_GEN.1.1/AGENT"><a href="#FAU_GEN.1.1/AGENT" class="abbr">FAU_GEN.1.1/AGENT</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent</b> shall [<b>selection</b>: <span class="selectable-content" id="_s_27">invoke platform-provided functionality</span>,  <span class="selectable-content" id="_s_28">implement functionality</span> ] to generate an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent audit record of the
+          <div class="element"><div class="reqid" id="FAU_GEN.1.1/AGENT"><a href="#FAU_GEN.1.1/AGENT" class="abbr">FAU_GEN.1.1/AGENT</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent</b> shall <b>[<b>selection</b>: <span class="selectable-content" id="_s_27">invoke platform-provided functionality</span>,  <span class="selectable-content" id="_s_28">implement functionality</span> ]</b> to generate an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent audit record of the
               following auditable events: <ol type="a">
                 <li>Startup and shutdown of the <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent</b>;</li>
                 <li>All auditable events for the [<i>not specified</i>] level of audit; and</li>
@@ -1707,7 +1707,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 <tr class="major-row"><td rowspan="3"><a href="#O.STORAGE">O.STORAGE</a><br/></td><td><a href="#FCS_STG_EXT.1/MDMKEYS">FCS_STG_EXT.1/MDMKEYS</a> (if <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FCS_STG_EXT.1/MDMKEYS">FCS_STG_EXT.1/MDMKEYS</a> to support this objective because when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server with <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent capability, 
             it ensures that <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent key data is stored securely.</td></tr>
 <tr><td><a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a> (if <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a> to support this objective because when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a mobile device, 
-            ensures that <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent key data is stored securely.</td></tr>
+            it ensures that <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent key data is stored securely.</td></tr>
 <tr><td><a href="#FCS_STO_EXT.1">FCS_STO_EXT.1</a> (if <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> is <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines the <a href="#FCS_STO_EXT.1">FCS_STO_EXT.1</a> requirement for protection of sensitive data, which can include user data or keys used to
             protect user data.</td></tr>
 </table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-bpp-mdf" class="indexable" data-level="2">6.1 
@@ -1787,7 +1787,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	    This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify any requirements when the
 	    <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the base.
 	  </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to use
-              functionality defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in FCS_CKM_EXT.1. </td></tr><tr><td><a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> to define the secure protocols used for trusted channel communications. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to specify a subset of these protocols that may be used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent communications in particular. </td></tr><tr><td><a href="#FTP_TRP.1/MDFENROLL">FTP_TRP.1/MDFENROLL</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> uses the trusted channel protocols defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> to facilitate a trusted path that the 
+              functionality defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in FCS_CKM_EXT.1. </td></tr><tr><td><a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> to define the secure protocols used for trusted channel communications. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to specify a subset of these protocols that may be used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent communications in particular. </td></tr><tr><td><a href="#FTP_TRP.1/MDFENROLL">FTP_TRP.1/MDFENROLL</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> uses the trusted channel protocols defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> to facilitate a trusted path that the 
               <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can use to enroll the mobile device it runs on into
               management. Even though the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define FTP_TRP.1, the
               requirement was given an iteration label for consistency with the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
@@ -1796,7 +1796,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         about its own behavior to the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.</td></tr><tr><td><a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes FAU_GEN.1; this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to use the same audit mechanism to
         generate audit records for the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent’s behavior. It may alternatively
         allow the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to generate its own audit trail, which does not impede the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> from enforcing
-        its own security functionality.</td></tr><tr><td><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines FAU_SEL.1; this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to use the same audit mechanism to select
+        its own security functionality.</td></tr><tr><td><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes FAU_SEL.1; this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to use the same audit mechanism to select
         the auditable events to be generated by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. Note that the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not mandate this requirement so it is possible that only the
           <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may implement it. In this case, the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>
         provides a selection for the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to implement its own mechanism to
@@ -1804,8 +1804,8 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         that it receives from the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>. It does not need to use any functionality
         defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to do this, and doing this does not prevent the
         enforcement of any security requirements from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. </td></tr><tr><td><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to use a
-        digital signature algorithm to validate data that it receives from the Operational
-        Environment. To do this, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the functionality defined
+        digital signature algorithm to validate data that it receives from the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>. 
+        To do this, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the functionality defined
         by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in FCS_COP.1/SIGN.</td></tr><tr><td><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
         to interact with the mobile device to execute the management functions defined by
         FMT_MOF_EXT.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> specifically
@@ -1902,12 +1902,12 @@ The assumptions identified in Section 3 are incorporated as security objectives 
               of platform key storage for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents. </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> provides the alerts that are received by the 
         <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server as per FAU_ALT_EXT.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td><a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to generate audit records of its
         behavior. The mechanism by which it does this is not relevant to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server portion of
-        the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as they reside on different platforms.</td></tr><tr><td><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines FAU_SEL.1 as an optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>
+        the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as they reside on different platforms.</td></tr><tr><td><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes FAU_SEL.1 as an optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>
         to limit the audit events that are generated by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
         adds another iteration that requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to include this
         capability by default.</td></tr><tr><td><a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> provides information during <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent enrollment that is
         required by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server to meet the FIA_ENR_EXT.1 requirement defined
-        by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines an <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> (FMT_POL_EXT.1) that
+        by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes an <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> (FMT_POL_EXT.1) that
         requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server to provide digitally signed policies and policy
         updates to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. <a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a> completes this transaction by
         requiring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to accept only signed policies and policy
@@ -1943,7 +1943,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         threats defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> against the operating system
         as a whole, and then using the access gained from that attack as an attack vector against any backup data
         stored on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td></tr><tr><td><a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a></td><td></td></tr><tr><td><a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a></td><td></td></tr><tr><td><a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a></td><td></td></tr><tr><td><a href="#A.CONNECTIVITY">A.CONNECTIVITY</a></td><td>This assumption expects that networking services will be available for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use. 
-        This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines mandatory requirements for a <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>
+        This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes mandatory requirements for a <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>
         that have network connectivity as a prerequisite.</td></tr><tr><td><a href="#A.PLATFORM">A.PLATFORM</a></td><td>This assumption expects that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s underlying platform is sufficiently trusted. 
         This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition because the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> is within the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary and evaluated against the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr><tr><td><a href="#A.PROPER_ADMIN">A.PROPER_ADMIN</a></td><td>	
         The <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> contains this same assumption with the same purpose.</td></tr><tr><td><a href="#A.PROPER_USER">A.PROPER_USER</a></td><td>	
@@ -1974,7 +1974,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         behavior.</td></tr><tr><td><a href="#OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</a></td><td> This objective helps mitigate the <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> and <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a>
         threats defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by reducing the network exposure of the
         operating system. This does not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not set specific expectations for the level of security that the
-        enterprise provides, but all use cases from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> set expectations
+        enterprise provides. However, all use cases from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> set expectations
         that the operating system is used for some enterprise purposes so it is reasonable to expect
         the enterprise have security controls in place to protect these functions. </td></tr><tr><td><a href="#OE.DEVICE_PLATFORM">OE.DEVICE_PLATFORM</a></td><td>This extends the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PLATFORM objective from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to cover that the underlying platform of the
         <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is trusted.</td></tr><tr><td><a href="#OE.WIRELESS_NETWORK">OE.WIRELESS_NETWORK</a></td><td> This objective is suitable because while the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any availability metrics for wireless
@@ -2000,7 +2000,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
       <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">18</span></span>: Consistency of Requirements (<abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_STO_EXT.1">FCS_STO_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not change this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>; it only notes that the concept of "sensitive data" may be expanded
-              to include any sensitive data created or used by the portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> described by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> to define the secure protocols used for trusted channel communications. 
+              to include any sensitive data created or used by the portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> described by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> to define the secure protocols used for trusted channel communications. 
               This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to specify a subset of these protocols that may be used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent communications in particular. </td></tr><tr><td><a href="#FTP_TRP.1/OSENROLL">FTP_TRP.1/OSENROLL</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> uses the trusted channel protocols defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> to facilitate a trusted path that the 
               <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can use to enroll the operating system it runs on into
               management. The <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> already defines an iteration of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for trusted administration, so this
@@ -2015,8 +2015,8 @@ The assumptions identified in Section 3 are incorporated as security objectives 
         that it receives from the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>. It does not need to use any functionality
         defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to do this, and doing this does not prevent the
         enforcement of any security requirements from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. </td></tr><tr><td><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to use a
-        digital signature algorithm to validate data that it receives from the Operational
-        Environment. To do this, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the functionality defined
+        digital signature algorithm to validate data that it receives from the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>. 
+        To do this, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the functionality defined
         by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in FCS_COP.1/SIGN.</td></tr><tr><td><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
         to interact with the underlying operating system to execute the management functions defined by
         FMT_MOF_EXT.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not preclude administration being performed in this manner.</td></tr><tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the functions performed by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent when unenrolled from an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>

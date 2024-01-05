@@ -22,7 +22,6 @@ output/mdm-agent-release-linkable.html: unenroll
 output/mdm-agent-release-linkable.html: unenrolling
 output/mdm-agent-release-linkable.html: unenrollment
 output/mdm-agent-release-linkable.html: unreachability
-output/mdm-agent-release-linkable.html: verifythat
 output/mdm-agent-release.html: CONFIG
 output/mdm-agent-release.html: DTLSC
 output/mdm-agent-release.html: DTLSS
@@ -57,7 +56,6 @@ output/mdm-agent-sd.html: preconfigured
 output/mdm-agent-sd.html: unenroll
 output/mdm-agent-sd.html: unenrolling
 output/mdm-agent-sd.html: unenrollment
-output/mdm-agent-sd.html: verifythat
 output/mdm-agent.html: AGD
 output/mdm-agent.html: CONFIG
 output/mdm-agent.html: DNs
@@ -85,4 +83,3 @@ output/mdm-agent.html: unenroll
 output/mdm-agent.html: unenrolling
 output/mdm-agent.html: unenrollment
 output/mdm-agent.html: unreachability
-output/mdm-agent.html: verifythat
