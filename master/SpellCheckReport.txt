@@ -23,6 +23,7 @@ output/mdm-agent-release-linkable.html: unenrolling
 output/mdm-agent-release-linkable.html: unenrollment
 output/mdm-agent-release-linkable.html: unreachability
 output/mdm-agent-release.html: CONFIG
+output/mdm-agent-release.html: DNs
 output/mdm-agent-release.html: DTLSC
 output/mdm-agent-release.html: DTLSS
 output/mdm-agent-release.html: FDP

@@ -1017,7 +1017,386 @@ The assumptions identified in Section 3 are incorporated as security objectives 
     </h2>
       In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>,
       the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to rely on some of the security functions implemented by the
-      <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+
+      
+      https://www.niap-ccevs.org/Profile/Info.cfm?PPID=468&amp;id=468
+   
+      
+      
+        
+        
+        
+          
+        
+        
+        
+          
+             This family is defined in both the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> augments the extended family by adding one additional component, <a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a>. This new component and its impact on the extended family’s component leveling are shown below; reference the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> for all other definitions for this family. 
+          
+          
+             This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to use
+              functionality defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in FCS_CKM_EXT.1. 
+             requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to define a specific location for its key
+              storage.
+            There are no management functions foreseen.
+            There are no auditable events foreseen.
+            FCS_CKM.1 Cryptographic Key Generation
+            
+              The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall use the platform provided key storage for
+                all persistent secret and private keys.
+              This requirement ensures that persistent secrets
+                (credentials, secret keys, authentication tokens) and private keys are stored securely when not in use by
+                the mobile platform. 
+              
+                 
+                  The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists each persistent
+                  secret (credential, secret keys, authentication tokens) and private keys needed to meet the requirements in
+                  the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. For each of these items, the evaluator shall confirm that
+                  the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists for what purpose it is used, and, for each
+                  platform listed as supported in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, how it is stored. The
+                  evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent calls a platform-provided <abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr> to store
+                  persistent secrets and private keys. 
+                  
+                
+                
+                  There are no guidance EAs for this component.
+                
+                
+                  There are no test EAs for this component.
+                
+              
+            
+            
+          
+        
+        
+          
+             The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> to define the secure protocols used for trusted channel communications. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to specify a subset of these protocols that may be used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent communications in particular. 
+            
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use 
+                  mutually authenticated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> in accordance with [the Package for
+                    Transport Layer Security]
+                mutually authenticated <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> in accordance with the Package for
+                  Transport Layer Security
+                <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>
+                 and [no other protocols] to provide a communication channel between itself and another trusted
+                IT product that is logically distinct from other communication channels, provides
+                assured identification of its end points, protects channel data from disclosure, and
+                detects modification of the channel data.
+               The intent of this requirement is to protect the
+                communications channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent, post
+                enrollment. <a href="#FTP_TRP.1/MDFENROLL">FTP_TRP.1/MDFENROLL</a> is to protect the communications
+                channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent during enrollment.
+                 This requirement is to ensure that the transmission of any audit
+                logs, mobile device information data (software version, hardware model, and
+                application versions), and configuration data collected by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                Agent and sent from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                Server, when commanded, or at configurable intervals, is properly protected. This
+                trusted channel also protects any commands and policies sent by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. 
+                Either the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent or the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server is able to initiate the
+                connection.
+                 
+                This requirement is iterated from the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to indicate the protocols that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can use for a trusted
+                channel. The mobile device is required to perform the mandated cryptographic
+                protocols as in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> for communication channels mandated in
+                the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must select one of
+                <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr>, or <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> in order to establish and maintain a trusted channel between the
+                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server. Only <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr>,
+                or <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> are acceptable for this trusted channel. Since this
+                requirement is only for the case when the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr>
+                <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and in this case it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a
+                native part of the mobile operating system, it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the mobile device's implementation of the
+                selected protocols. <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> (FCS_HTTPS_EXT.1) and <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> (FCS_TLSC_EXT.1) are already
+                mandatory for an <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. If "<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>" or "<abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr>" is selected, the following selections from
+                the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Functional Package must be made: 
+                  FCS_TLS_EXT.1: 
+                      Either <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> is selected depending on the selection made in
+                        .
+                      Client must be selected.
+                    
+                  
+                  FCS_TLSC_EXT.1.1: 
+                      The cipher suites selected must correspond with the algorithms and
+                        hash functions allowed in FCS_COP.1 from the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
+                      Mutual authentication must be selected.
+                    
+                  
+                 Protocol, RBG, certificate validation, algorithm, and similar services may
+                be met with platform provided services. 
+              
+            
+            
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                Server and 
+                  <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server
+                  no other IT entities
+                 to initiate communication via the trusted channel.
+               For all other use cases, the mobile device initiates the
+                communication; however, for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                Server may also initiate communication.
+            
+            
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall initiate communication via the trusted channel for all
+                communication between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and 
+                  all communication between the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                    Agent
+                  no other communication
+                .
+              
+               This element is iterated from the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>;
+                it is expected that the mobile device will initiate the trusted channel between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                Agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server for administrative communication and may initiate other
+                trusted channels to other trusted IT entities for other uses.
+              
+                The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that the
+                  methods of communication between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server (and <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server, if claimed) are indicated, along with how those
+                  communications are protected. The evaluator shall also confirm that all protocols
+                  listed in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> in support of remote <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+                  administration are consistent with those specified in the requirement, and are
+                  included in the requirements in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
+                
+                 The evaluator shall confirm that the operational guidance contains
+                  instructions for configuring the communication channel between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and
+                  the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and conditionally, the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server for each supported
+                  method.
+                
+                For each supported identifier type (excluding Distinguished Names [DNs], the evaluator shall
+                  repeat the following tests:
+                  
+                    The evaluator shall ensure that communications using each method that is specified in the operational guidance is tested during
+                      the course of the evaluation, connections are set up as described in the operational guidance, and that communication is successful.
+                    
+                    The evaluator shall ensure, for each method of communication between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server (and <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server, if claimed),
+                      the channel data is not sent in plaintext.
+                    
+                    The evaluator shall ensure, for each communication channel with the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                      Server (and <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server, if claimed), that a protocol analyzer identifies the traffic as the protocol under
+                      testing.
+                    
+                   
+                    
+                    Further evaluation activities are associated with the specific protocols.
+                
+              
+            
+            
+              Initiation of the trusted channel.
+              No additional information.
+            
+            
+              Termination of the trusted channel.
+              No additional information.
+            
+            
+              Failure of the trusted channel functions.
+              No additional information.
+            
+          
+          
+            This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> uses the trusted channel protocols defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> to facilitate a trusted path that the 
+              <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can use to enroll the mobile device it runs on into
+              management. Even though the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define FTP_TRP.1, the
+              requirement was given an iteration label for consistency with the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+              Server requirement of the same name. 
+            
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use 
+                  <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client as defined in the Package for Transport Layer Security
+                  <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr>
+               to provide a trusted communication path between itself and
+                an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server
+                that is logically distinct from other communication paths and
+                provides assured identification of its endpoints and protection of the communicated
+                data from 
+                [modification, disclosure]. 
+            
+            
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [local users] to initiate communication via the trusted path.
+              
+            
+            
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require the use of the trusted path for [[<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> enrollment]]. 
+              
+              This requirement ensures that a trusted connection is used for initial enrollment to an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>;
+                security of ongoing <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server communications after enrollment is
+                implemented through <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a>.
+                 The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author chooses the mechanism or
+                mechanisms supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The data passed in this trusted
+                communication channel are encrypted as defined by the protocol selected.
+                 Since this requirement is only for the case when the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and in this case it is expected that the
+                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a native part of the mobile operating system,
+                it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the mobile device's
+                implementation of the selected protocols. <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> (FCS_HTTPS_EXT.1) and <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>
+                (FCS_TLSC_EXT.1) are already mandatory for an <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. If "<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>" or "<abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr>" is selected,
+                the following selections from the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Functional Package must be made: 
+                
+                
+                  FCS_TLS_EXT.1: 
+                      <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> must be selected.
+                      Client must be selected.
+                    
+                  
+                  FCS_TLSC_EXT.1.1: 
+                      The cipher suites selected must correspond with the algorithms and
+                        hash functions allowed in FCS_COP.1 from the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
+                    
+                  
+                
+              
+              
+                The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that the
+                  methods of remote enrollment are indicated, along with how those communications
+                  are protected. The evaluator shall also confirm that all protocols listed in the
+                    <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> in support of enrollment are consistent with those
+                  specified in the requirement, and are included in the requirements in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
+                  
+                
+                The evaluator shall confirm that the operational guidance contains
+                  instructions for establishing the enrollment sessions for each supported
+                  method.
+                
+                For each enrollment method that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> claims: 
+                  
+                    The evaluator shall ensure that communications using each specified (in
+                      the operational guidance) enrollment method is tested during the course of the
+                      evaluation, setting up the connections as described in the operational
+                      guidance, and ensuring that communication is successful.
+                    
+                    For each method of enrollment supported, the evaluator shall follow the
+                      operational guidance to ensure that there is no available interface that can
+                      be used by a remote user to establish enrollment sessions without invoking the
+                      trusted path.
+                    
+                    The evaluator shall ensure, for each method of enrollment, the channel data
+                      is not sent in plaintext.
+                    
+                   
+                    
+                    Further evaluation activities are associated with the specific protocols.
+                
+              
+            
+            
+              Initiation of the trusted path.
+              No additional information.
+            
+            
+              Termination of the trusted path.
+              No additional information.
+            
+            
+              Failure of the trusted path functions.
+              No additional information.
+            
+          
+        
+      
+       When this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for
+        the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a mobile device. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include the
+          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent application that runs on the mobile device.
+      
+      
+      
+      This threat protects user data from unauthorized logical access. An
+        attacker would attempt to exploit this threat by first exploiting the <a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a>, T.MALICIOUS_APP,
+        or T.PERSISTENT_PRESENCE threats defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> against the mobile device
+        as a whole, and then using the device itself as an attack vector against any backup data
+        stored on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+      
+      This assumption expects that networking services will be available for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use. 
+        This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is installed on a mobile device defined by the 
+        <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> that provides networking services through various radios.
+      This assumption expects that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s underlying platform is trustworthy. 
+        This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition because a mobile device is within the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary and is evaluated against the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
+      	
+        This assumption expects that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administrator is trusted and competent in configuring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. 
+        This assumption is consistent with the A.CONFIG assumption in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> which expects the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to be configured correctly 
+        regardless of the subject performing the configuration.
+      	
+        This assumption expects that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> user is not willfully negligent or hostile in using the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. 
+        This assumption is consistent with the A.CONFIG assumption in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> which expects the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> 
+        to be configured correctly regardless of the subject performing the configuration as well as the 
+        A.NOTIFY and A.PRECAUTION assumptions which define baseline expectations for the user’s level of responsibility.
+      
+      The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any OSPs so any OSPs defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> 
+        will not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition.
+      The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any OSPs so any OSPs defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> 
+        will not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition.
+      The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any OSPs so any OSPs defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> 
+        will not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition.
+      The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any OSPs so any OSPs defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> 
+        will not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition.
+      
+      
+       The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> provides an objective,
+        O.INTEGRITY, that ensures that the integrity of the mobile device is maintained. This
+        objective assists in the implementation of O.INTEGRITY by providing records of
+        administrative activity, which would include actions that could cause the integrity of the
+        mobile device to be lost.
+       This objective supports the implementation of the O.CONFIG
+        objective defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by specifying an additional method by
+        which the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> may be configured.
+       This objective extends the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>’s O.PROTECTED_COMMS objective by ensuring that the communications related to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+        Agent functionality are secured in the same manner as other sensitive data transmitted
+        to and from the mobile device.
+       This objective extends the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>’s <a href="#O.STORAGE">O.STORAGE</a>
+        objective by ensuring that the mobile device’s data-at-rest protection mechanisms can also
+        be used to secure the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and related data.
+       This objective extends the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>’s
+        <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.CONFIG objective by expecting that <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administrators act appropriately when installing
+        or configuring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent.
+       This objective extends the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>’s
+        <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.NOTIFY and <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PRECAUTION objectives by setting reasonable expectations for user security
+        behavior.
+       This objective helps mitigate the <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> and <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a>
+        threats defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by reducing the network exposure of the
+        mobile device. This does not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not set specific expectations for the level of security that the
+        enterprise provides. However, all use cases from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> set expectations
+        that the mobile device is used for some enterprise purposes so it is reasonable to expect
+        the enterprise have security controls in place to protect these functions. 
+       This objective is suitable because the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can reasonably expect the device it has been deployed on to be
+        secure.
+       This objective is suitable because while the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any availability metrics for wireless
+        communications, the mobile device will always provide the ability to access a wireless
+        network.
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to use a
+        trusted channel defined by <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to transmit data
+        about its own behavior to the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.
+       The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes FAU_GEN.1; this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to use the same audit mechanism to
+        generate audit records for the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent’s behavior. It may alternatively
+        allow the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to generate its own audit trail, which does not impede the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> from enforcing
+        its own security functionality.
+       The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes FAU_SEL.1; this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to use the same audit mechanism to select
+        the auditable events to be generated by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. Note that the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not mandate this requirement so it is possible that only the
+          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may implement it. In this case, the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>
+        provides a selection for the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to implement its own mechanism to
+        perform this function rather than a platform-provided one.
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to record data
+        that it receives from the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>. It does not need to use any functionality
+        defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to do this, and doing this does not prevent the
+        enforcement of any security requirements from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. 
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to use a
+        digital signature algorithm to validate data that it receives from the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>. 
+        To do this, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the functionality defined
+        by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in FCS_COP.1/SIGN.
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+        to interact with the mobile device to execute the management functions defined by
+        FMT_MOF_EXT.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> specifically
+        indicates in FMT_MOF_EXT.1.2 that some management functions may be performed via
+        <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>.
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the functions performed by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent when unenrolled from an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines 
+        unenrollment actions in FMT_SMF_EXT.2, and goes on to note
+        that these actions may be performed “perhaps via an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent,” so this is
+        expected behavior. 
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+        to store generated audit data in the audit storage provided by the mobile device. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines the capability for 
+        audit storage in FAU_STG.1.
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+        to maintain information about its last successful connection with the environmental <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server 
+        (i.e., the last successful invocation of the trusted channel for
+        that interface, as defined in <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>). It does not
+        need to use any functionality defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to do this, and doing
+        this does not prevent the enforcement of any security requirements from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
+    
       as a whole and evaluated against the  <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
       The following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>
       defined in the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in addition to what is mandated by <a class="dynref" href="#man-sfrs">Section 5.4 TOE Security Functional Requirements</a>.
@@ -1261,7 +1640,228 @@ The assumptions identified in Section 3 are incorporated as security objectives 
     </h2>
       In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>,
       the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to rely on some of the security functions implemented by the
-      <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+
+      
+      https://www.niap-ccevs.org/Profile/Info.cfm?PPID=428&amp;id=428
+    
+      
+      
+        
+        
+          
+          
+            There is no modification to this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, but it is mandatory for a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because
+              it must always be claimed when an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> includes an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent as part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+            
+              
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> but is mandatory when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> also requires 
+                FPT_ITT.1(2) to be claimed for internal communications between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent portions of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, and since this channel
+                requires the use of mutually-authenticated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> for data-in-transit protection, the associated X.509 validation requirement must be claimed.
+                
+                note that the app note for FPT_ITT.1(2) in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> references FIA_X509_EXT.1(1) as something that should be claimed
+                  when FPT_ITT.1(2) is claimed, but that seems to be a typo because FIA_X509_EXT.1(1) is already a mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> in that <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>; it is assumed
+                  FIA_X509_EXT.1(2) was intended, both because of that context and because of the app note for FIA_X509_EXT.1(2) itself.
+              
+              
+                There is no change to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> EAs for this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed.
+              
+            
+            
+          
+          
+        
+        
+        
+          
+          
+            There is no modification to this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, but it is mandatory for a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because
+              it must always be claimed when an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> includes an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent as part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+            
+              
+                This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is selection-based in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> but is mandatory when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed. Per <a href="#FTP_ITC_EXT.1.1">FTP_ITC_EXT.1.1</a> in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>,
+                when the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is internal to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, FPT_ITT.1(2) must be claimed.
+              
+              
+                This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires that communications between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent portions of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> are secured in the manner specified
+                by FPT_ITT.1(2) in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not require that this channel be established in a specific manner beyond 
+                this function using one of the methods specified in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>; a registration channel over an untrusted network, a registration channel 
+                over an environmentally protected network, or registration without the use of a registration channel is permitted. Depending on the method used,
+                the appropriate <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> claims must be made.
+                
+              
+              
+                There is no change to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> EAs for this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed.
+              
+            
+            
+          
+        
+        
+        
+        
+          
+          
+            This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified in a way that accommodates an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent, which is part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary
+              when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed.
+            
+              
+                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication channel between itself and [an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent that is internal to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>] 
+                that is logically distinct from other communication channels, as specified in [FPT_ITT.1(2)].
+              
+              
+                This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to select that an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is internal to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary includes both 
+                an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent by definition when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed. As noted above, the fact that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> includes both <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server
+                and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent components means that FPT_ITT.1(2) from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> must also be claimed, as this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the channel used for secure
+                communications between these two components.
+              
+              
+                There is no change to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> EAs for this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed.
+              
+            
+            
+          
+          
+        
+        
+      
+      
+        
+        
+        
+          
+        
+        
+        
+          
+            
+             The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to define a
+              method of key storage. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates it to specify the use
+              of platform key storage for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents. 
+            
+              The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent portion of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use the [platform-provided key storage] for all persistent
+                secret and private keys.
+               This requirement ensures that persistent secrets
+                (credentials, secret keys) and private keys are stored securely when not in use by
+                the mobile platform.
+              
+              
+                 
+                  The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists each persistent
+                  secret (credential, secret key) and private key needed to meet the requirements in
+                  the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. For each of these items, the evaluator shall confirm that
+                  the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists for what purpose it is used, and, for each
+                  platform listed as supported in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, how it is stored. The
+                  evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent calls a platform-provided <abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr> to store
+                  persistent secrets and private keys.
+                
+                
+                  There are no guidance EAs for this component.
+                
+                
+                  There are no test EAs for this component.
+                
+              
+            
+            
+          
+        
+
+      
+       When this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+        <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still mobile device management. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is
+        simply extended to include the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents that reside on individual
+        mobile devices and support the management functionality that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+        Server component implements.
+      
+      
+      
+       This threat protects user data from unauthorized logical access. If
+        the backup data is stored outside the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> or the mobile device that it protects, then there
+        is no conflict with the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> since it is a different security boundary. If the backup data
+        is stored either on the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> or on the protected device, an attacker would attempt to exploit
+        this threat by first exploiting any of the threats that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines
+        (<a href="#T.MALICIOUS_APPS">T.MALICIOUS_APPS</a>, <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a>, <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a>, <a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a>), depending on
+        where and how the backup data is stored, and then use successful exploitation of one of
+        these threats to attempt to access the backup data itself.
+      
+      This assumption expects that networking services will be available for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use. 
+        This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> runs on a 
+        <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> or specialized network appliance. 
+        The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not make any assumptions about the environmental functionality that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> relies on, 
+        so there is nothing in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> that would contradict it.
+      This assumption expects that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s underlying hardware platform is appropriately secure. 
+        This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> runs on a <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> or 
+        specialized network appliance. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not make any assumptions about the environmental functionality that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> relies on, 
+        so there is nothing in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> that would contradict it.
+      	
+        The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines an <a href="#A.PROPER_ADMIN">A.PROPER_ADMIN</a> assumption that is identical to the one defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
+        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.
+      	
+        The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines an <a href="#A.PROPER_USER">A.PROPER_USER</a> assumption that is identical to the one defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
+        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.
+      
+      The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines a <a href="#P.ACCOUNTABILITY">P.ACCOUNTABILITY</a> OSP that is identical to the one defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
+        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.
+      The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines a <a href="#P.ADMIN">P.ADMIN</a> OSP that is identical to the one defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
+        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.
+      	
+        The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines a <a href="#P.DEVICE_ENROLL">P.DEVICE_ENROLL</a> OSP that is identical to the one defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
+        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.
+      The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines a <a href="#P.NOTIFY">P.NOTIFY</a> OSP that is identical to the one defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
+        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.
+      
+      
+       The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> contains this same objective with the same
+        purpose.
+       The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> contains this same objective with the same purpose. 
+       The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> contains this same objective with the same
+        purpose. 
+       This objective requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to use platform key storage to
+        protect secret and private key data. The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines a requirement for key storage
+        (FCS_STG_EXT.1) that allows the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to satisfy this objective. 
+       The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> contains an objective named <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_ADMIN with the same
+        purpose. 
+       The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> contains an objective named <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_USER with the same
+        purpose. 
+       The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> contains this same objective with the same purpose. 
+      The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> environmental security objectives only relate to the security of the platform on which the 
+      <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is running. This objective extends the scope of the trusted platform to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent devices.
+      The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> contains this same objective with the same purpose.
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> provides the alerts that are received by the 
+        <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server as per FAU_ALT_EXT.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to generate audit records of its
+        behavior. The mechanism by which it does this is not relevant to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server portion of
+        the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as they reside on different platforms.
+       The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes FAU_SEL.1 as an optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>
+        to limit the audit events that are generated by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
+        adds another iteration that requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to include this
+        capability by default.
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> provides information during <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent enrollment that is
+        required by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server to meet the FIA_ENR_EXT.1 requirement defined
+        by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
+       The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes an <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> (FMT_POL_EXT.1) that
+        requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server to provide digitally signed policies and policy
+        updates to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. <a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a> completes this transaction by
+        requiring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to accept only signed policies and policy
+        updates.
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to interact
+        with the underlying mobile device platform to enforce management functions that are
+        configured by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server (FMT_SMF.1(1) in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>).
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to define its behavior upon
+        unenrollment from management. Unenrollment from management is a management function that is
+        specified in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+        to store generated audit data in the audit storage provided by the mobile device. This does
+        not impact the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> since it resides on a different platform from the
+          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. 
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+        to maintain information about its last successful connection with the environmental 
+          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server (i.e., the last successful invocation of the trusted channel for
+        that interface, as defined in FPT_ITT.1(2) of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>). It does not
+        otherwise impact the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> since it describes behavior that occurs local
+        to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent during a period where it is not interacting with the
+          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server. 
+    
       as a whole and evaluated against the  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
       The following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>
       defined in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in addition to what is mandated by <a class="dynref" href="#man-sfrs">Section 5.4 TOE Security Functional Requirements</a>.
@@ -1385,7 +1985,326 @@ The assumptions identified in Section 3 are incorporated as security objectives 
     </h2>
       In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>,
       the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to rely on some of the security functions implemented by the
-      <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+
+      
+      https://www.niap-ccevs.org/Profile/Info.cfm?PPID=469&amp;id=469
+   
+      
+        
+          
+            The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not change this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>; it only notes that the concept of "sensitive data" may be expanded
+              to include any sensitive data created or used by the portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> described by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
+            
+              The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> shall implement functionality to encrypt sensitive data
+                including any data used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent functionality
+                stored in non-volatile storage and provide interfaces to applications to invoke this
+                functionality.
+              
+              There is no change to this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> beyond ensuring that it also applies to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+              
+              There is no change to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> EAs for this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed
+                aside from ensuring that the EAs are applied to any sensitive data that relates to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+              
+            
+          
+        
+      
+      
+        
+        
+        
+          
+        
+        
+        
+        
+        
+          
+             The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> to define the secure protocols used for trusted channel communications. 
+              This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to specify a subset of these protocols that may be used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent communications in particular. 
+            
+              The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> shall use 
+                
+                  mutually authenticated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> as conforming to the
+                    Functional Package for Transport Layer Security (<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>), version
+                    
+                      1.1
+                      2.0 as a [client]
+                  mutually authenticated <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> as conforming to the
+                    Functional Package for Transport Layer Security (<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>), version
+                    
+                      1.1
+                      2.0 as a [client]
+                
+                to provide a trusted communication channel between itself and authorized IT
+                entities supporting the following capabilities: [[<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server communications, 
+                  
+                    <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server communications
+                    no other communications]]
+                that is logically distinct from other communication channels and provides
+                assured identification of its end points and protection of the channel data from
+                disclosure and detection of modification of the channel data.
+              
+               The intent of this requirement is to protect the
+                communications channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and Agent, post
+                enrollment. <a href="#FTP_TRP.1/OSENROLL">FTP_TRP.1/OSENROLL</a> is to protect the communications
+                channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and Agent during enrollment.
+                 
+                This requirement is to ensure that the transmission of any audit
+                logs, system data (hardware, software, or application), and configuration data collected by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                Agent and sent from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                Server, when commanded, or at configurable intervals, is properly protected. This
+                trusted channel also protects any commands and policies sent by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. 
+                Either the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent or the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server is able to initiate the
+                connection.
+                 
+                This requirement is iterated from the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to indicate the protocols that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can use for a trusted
+                channel. The operating system is required to perform the mandated cryptographic
+                protocols as in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> for communication channels mandated in
+                the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must select one of
+                <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> in order to establish and maintain a trusted channel between the
+                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server. Only <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> are acceptable for this trusted channel. 
+                Since this
+                requirement is only for the case when the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>
+                <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and in this case it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a
+                native part of the operating system, it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the operating system's implementation of the
+                selected protocols. Depending on whether "<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>" or "<abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr>" is selected, the following selections from
+                the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Functional Package must be made: 
+                  FCS_TLS_EXT.1: 
+                      Either <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> is selected depending on the selection made in
+                        .
+                      Client must be selected.
+                    
+                  
+                  FCS_TLSC_EXT.1.1: 
+                      The cipher suites selected must correspond with the algorithms and
+                        hash functions allowed in FCS_COP.1 from the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
+                      Mutual authentication must be selected.
+                    
+                  
+                 Protocol, RBG, certificate validation, algorithm, and similar services may
+                be met with platform provided services. 
+              
+            
+              
+                The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that the
+                  methods of communication between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server (and <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server, if claimed) are indicated, along with how those
+                  communications are protected. The evaluator shall also confirm that all protocols
+                  listed in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> in support of remote <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+                  administration are consistent with those specified in the requirement, and are
+                  included in the requirements in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
+                
+                 The evaluator shall confirm that the operational guidance contains
+                  instructions for configuring the communication channel between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and
+                  the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and conditionally, the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server for each supported
+                  method.
+                
+                For each supported identifier type (excluding DNs), the evaluator shall
+                  repeat the following tests:
+                  
+                    The evaluator shall ensure that communications using each specified (in
+                      the operational guidance) communication method between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server (and <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server, if claimed) is tested during
+                      the course of the evaluation, connections are set up as described in the operational guidance, and that communication is successful.
+                    
+                    The evaluator shall ensure, for each method of communication between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server (and <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server, if claimed),
+                      the channel data is not sent in plaintext.
+                    
+                    The evaluator shall ensure, for each communication channel between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server
+                      (and <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server, if claimed), that a protocol analyzer identifies the traffic as the protocol under
+                      testing.
+                    
+                   
+                    
+                    Further evaluation activities are associated with the specific protocols.
+                
+              
+            
+            
+              Initiation of the trusted channel.
+              No additional information.
+            
+            
+              Termination of the trusted channel.
+              No additional information.
+            
+            
+              Failure of the trusted channel functions.
+              No additional information.
+            
+          
+          
+            This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> uses the trusted channel protocols defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> to facilitate a trusted path that the 
+              <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can use to enroll the operating system it runs on into
+              management. The <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> already defines an iteration of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for trusted administration, so this
+              <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is iterated to illustrate that this trusted path is used for a distinct function.
+            
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication path between itself and a [remote] <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server that is 
+                logically distinct from other communication paths
+                and provides assured identification of its endpoints and protection of the
+                communicated data from [modification, disclosure].
+              
+            
+            
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit 
+                local users
+                remote users to initiate communication via the trusted path.
+              
+            
+            
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require the use of the trusted path for [[<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> enrollment]]. 
+              
+              This requirement ensures that a trusted connection is used for initial enrollment to an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>;
+                security of ongoing <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server communications after enrollment is
+                implemented through <a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a>.
+                 Since this requirement is only for the case when the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and in this case it is expected that the
+                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a native part of the operating system,
+                it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the operating system's
+                implementation of a trusted protocol defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> for this trusted path.
+              
+              
+                The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that the
+                  methods of remote enrollment are indicated, along with how those communications
+                  are protected. The evaluator shall also confirm that all protocols listed in the
+                    <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> in support of enrollment are consistent with those
+                  specified in the requirement, and are included in the requirements in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
+                  
+                
+                The evaluator shall confirm that the operational guidance contains
+                  instructions for establishing the enrollment sessions for each supported
+                  method.
+                
+                For each enrollment method that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> claims: 
+                  
+                    The evaluator shall ensure that communications using each specified (in
+                      the operational guidance) enrollment method is tested during the course of the evaluation, 
+                      connections are set up as described in the operational guidance, and that communication is successful.
+                    
+                    For each method of enrollment supported, the evaluator shall follow the
+                      operational guidance to ensure that there is no available interface that can
+                      be used by a remote user to establish enrollment sessions without invoking the
+                      trusted path.
+                    
+                    The evaluator shall ensure, for each method of enrollment, the channel data
+                      is not sent in plaintext.
+                    
+                   
+                    
+                    Further evaluation activities are associated with the specific protocols.
+                
+              
+            
+            
+              Initiation of the trusted path.
+              No additional information.
+            
+            
+              Termination of the trusted path.
+              No additional information.
+            
+            
+              Failure of the trusted path functions.
+              No additional information.
+            
+          
+        
+      
+       When this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for
+        the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include the
+          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent application that runs on that <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> platform.
+      
+      
+      
+      This threat protects user data from unauthorized logical access. An
+        attacker would attempt to exploit this threat by first exploiting the <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a>, T.LOCAL_ATTACK, or T.LIMITED_PHYSICAL_ACCESS
+        threats defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> against the operating system
+        as a whole, and then using the access gained from that attack as an attack vector against any backup data
+        stored on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+      
+      This assumption expects that networking services will be available for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use. 
+        This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes mandatory requirements for a <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>
+        that have network connectivity as a prerequisite.
+      This assumption expects that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s underlying platform is sufficiently trusted. 
+        This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition because the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> is within the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary and evaluated against the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
+      	
+        The <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> contains this same assumption with the same purpose.
+      	
+        The <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> contains this same assumption with the same purpose.
+      
+      The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any OSPs so any OSPs defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> 
+        will not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition.
+      The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any OSPs so any OSPs defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> 
+        will not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition.
+      The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any OSPs so any OSPs defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> 
+        will not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition.
+      The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any OSPs so any OSPs defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> 
+        will not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition.
+      
+      
+      The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines an objective
+        of the same name that serves the same purpose. The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>'s objective extends the scope of the objective to the 
+        <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent capability of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+      This objective supports the implementation of the O.MANAGEMENT
+        objective defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by specifying an additional method by
+        which the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> may be configured.
+      This objective extends the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>’s O.PROTECTED_COMMS objective by ensuring that the communications related to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+        Agent functionality are secured in the same manner as other sensitive data transmitted
+        to and from the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>.
+      This objective extends the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>’s O.PROTECTED_STORAGE
+        objective by ensuring that the operating system's data-at-rest protection mechanisms can also
+        be used to secure the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and related data.
+      This objective extends the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>’s
+        <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_ADMIN objective by expecting that <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administrators act appropriately when installing
+        or configuring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent.
+       This objective extends the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>’s
+        <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_USER objective by setting reasonable expectations for user security
+        behavior.
+        
+       This objective helps mitigate the <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> and <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a>
+        threats defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by reducing the network exposure of the
+        operating system. This does not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not set specific expectations for the level of security that the
+        enterprise provides. However, all use cases from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> set expectations
+        that the operating system is used for some enterprise purposes so it is reasonable to expect
+        the enterprise have security controls in place to protect these functions. 
+      This extends the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PLATFORM objective from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to cover that the underlying platform of the
+        <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is trusted.
+       This objective is suitable because while the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any availability metrics for wireless
+        communications, it can be extended by a <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for WLAN client capabilities, so support for wireless communications is a reasonable
+        expectation for a <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>.
+        
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to use a
+        trusted channel defined by <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to transmit data
+        about its own behavior to the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.
+      The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines FAU_GEN.1; this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to use the same audit mechanism to
+        generate audit records for the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent’s behavior. It may alternatively
+        allow the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to generate its own audit trail, which does not impede the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> from enforcing
+        its own security functionality.
+      This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to have the ability to limit the auditable events it generates
+        for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent functionality. Since this applies exclusively to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent functionality, it does not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> events
+        which must always be audited.
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to record data
+        that it receives from the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>. It does not need to use any functionality
+        defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to do this, and doing this does not prevent the
+        enforcement of any security requirements from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. 
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to use a
+        digital signature algorithm to validate data that it receives from the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>. 
+        To do this, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the functionality defined
+        by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in FCS_COP.1/SIGN.
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+        to interact with the underlying operating system to execute the management functions defined by
+        FMT_MOF_EXT.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not preclude administration being performed in this manner.
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the functions performed by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent when unenrolled from an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>
+        defines FMT_SMF_EXT.1 which allows for assigned management functions to be specified. This can include unenrollment behavior as defined 
+        by <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>. 
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+        to store generated audit data in platform-provided audit storage. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> defines the capability for 
+        audit storage in FDP_ACF_EXT.1.
+       This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+        to maintain information about its last successful connection with the environmental <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server 
+        (i.e., the last successful invocation of the trusted channel for
+        that interface, as defined in <a href="#FTP_ITC_EXT.1">FTP_ITC_EXT.1</a> of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>). It does not
+        need to use any functionality defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to do this, and doing
+        this does not prevent the enforcement of any security requirements from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
+    
       as a whole and evaluated against the  <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
       The following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>
       defined in the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in addition to what is mandated by <a class="dynref" href="#man-sfrs">Section 5.4 TOE Security Functional Requirements</a>.
