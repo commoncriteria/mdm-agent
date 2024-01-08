@@ -587,11 +587,10 @@
   </sec:Security_Objectives>
   <sec:Security_Requirements title="Security Requirements">
     <base-pp id="bpp-mdf" name="Mobile Device Fundamentals" short="MDF" product="mobile device" version="3.3">
-      <!-- 
       <git>
         <url>https://github.com/commoncriteria/mobile-device</url>
         <branch>release-3.3</branch>
-      </git> -->
+      </git>
       <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=468&amp;id=468</url>
    
       <modified-sfrs/>
@@ -971,12 +970,10 @@
         this does not prevent the enforcement of any security requirements from the Base-PP.</con-mod>
     </base-pp>
     <base-pp id="bpp-mdm" name="Mobile Device Management" short="MDM" product="MDM Server" version="4.0">
-      <!-- 
       <git>
         <url>https://github.com/commoncriteria/mdm</url>
         <branch>v4.0</branch>
       </git>
-      -->
       <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=428&amp;id=428</url>
     
       <!--   <app-unmod-sfrs> 
@@ -1319,12 +1316,11 @@
         to the MDM Agent during a period where it is not interacting with the
           MDM Server. </con-mod>
     </base-pp>
-      <base-pp id="bpp-gpos" name="General Purpose Operating Systems" short="GPOS" product="operating system" version="4.3">
-      <!-- 
+      <base-pp id="bpp-gpos" name="General Purpose Operating Systems" short="GPOS" product="operating system" version="4.3"> 
       <git>
         <url>https://github.com/commoncriteria/operatingsystem</url>
         <branch>release-4.3</branch>
-      </git> -->
+      </git>
       <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=469&amp;id=469</url>
    
       <modified-sfrs>
