@@ -1754,7 +1754,7 @@
             <title>The <h:b>MDM Agent</h:b> shall <h:b><selectables>
                 <selectable>invoke platform-provided functionality</selectable>
                 <selectable>implement functionality</selectable>
-            </selectables></h:b> to generate an MDM Agent audit record of the
+            </selectables></h:b> to generate an audit record of the
               following auditable events: <h:ol type="a">
                 <h:li>Startup and shutdown of the <h:b>MDM Agent</h:b>;</h:li>
                 <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit; and</h:li>
