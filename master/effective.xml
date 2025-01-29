@@ -2,9 +2,9 @@
   
   <PPReference>
     <ReferenceTable>
-      <PPVersion>1.1</PPVersion>
+      <PPVersion>1.2</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2023-12-11</PPPubDate>
+      <PPPubDate>2025-01-31</PPPubDate>
       <Keywords>Mobile Device Management; MDM; MDM Agents</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -22,13 +22,30 @@
         Added GPOS PP base and incorporated NIAP Technical Decisions.
       </subject>
     </entry>
+    <entry>
+      <version>1.2</version>
+      <date>2025-01-31</date>
+      <subject>
+        Converted to CC:2022 and incorporated NIAP Technical Decisions.
+      </subject>
+    </entry>
   </RevisionHistory>
   
-  <release-notes><h:h3>TDs Applied</h:h3></release-notes><!-- uncomment when module is swithced over to CC:2022 
-  <pp-preferences>
-    <using-cc2022/>
-  </pp-preferences>
-   -->
+  
+  <release-notes><h:h3>TDs Applied</h:h3></release-notes><include-pkg id="pkg-tls">
+    <git>
+      <url>https://github.com/commoncriteria/tls</url>
+      <branch>master</branch>
+    </git>
+    <url>https://www.niap-ccevs.org/static_html/protection-profile/439/-439-/index.html</url>
+  </include-pkg>
+  <include-pkg id="pkg-x509">
+    <git>
+      <url>https://github.com/commoncriteria/X509</url>
+      <branch>master</branch>
+    </git>
+    <url>https://www.niap-ccevs.org/protectionprofiles/511</url>
+  </include-pkg>
   
   <sec:Introduction>
     <section id="overview" title="Overview"> The scope of the MDM Agent Protection Profile Module (PP-Module) is to describe the security functionality of a Mobile Device Management (MDM) Agent 
@@ -216,40 +233,33 @@
     </section>
     
   </sec:Introduction>
+ 
+  
+  
   <sec:Conformance_Claims boilerplate="no">
-    <cclaims>
-      <cclaim name="Conformance Statement">
-        <description> This PP-Module inherits exact conformance as required from
-          the specified Base-PP and as defined in the CC and
-            CEM addenda for Exact Conformance, Selection-Based SFRs, and Optional
-          SFRs (dated May 2017).<h:br/><h:br/> The following PPs and PP-Modules are allowed to
-          be specified in a PP-Configuration with this PP-Module. <h:ul>
-            <h:li>collaborative PP-Module for Biometric enrollment and verification - for unlocking the device, Version 1.1</h:li>
-            <h:li>PP-Module for Bluetooth, Version 1.0</h:li>
-            <h:li>PP-Module for VPN Client, Version 2.4</h:li>
-            <h:li>PP-Module for Wireless LAN Clients, Version 1.0</h:li>
-          </h:ul>
-        </description>
-      </cclaim>
-      <cclaim name="CC Conformance Claims">
-        <description>This PP is conformant to Parts 2 (extended) and 3 (extended) of Common Criteria Version 3.1, Release 5.</description>
-      </cclaim>
-      <cclaim name="PP Claim">
-        <description>
-          <h:p>
-            This PP-Module does not claim conformance to any PP.
-          </h:p>
-        </description>
-      </cclaim>
-      <cclaim name="Package Claim">
-        <description>
-        <h:ul>
-        <h:li>This PP-Module is Functional Package for TLS Version 1.1 Conformant.</h:li>
-        <h:li>This PP-Module is Functional Package for TLS Version 2.0 Conformant.</h:li>
-        </h:ul>
-        </description>
-      </cclaim>
-    </cclaims>
+    <!-- The new CClaimsInfo construct -->
+    <CClaimsInfo cc-version="cc-2022r1" cc-approach="direct-rationale">
+      <cc-st-conf>exact</cc-st-conf>       
+      <cc-pt2-conf>extended</cc-pt2-conf>
+      <cc-pt3-conf>extended</cc-pt3-conf>
+      <cc-pp-conf/>
+      <cc-pp-config-with> 
+        <PP-cc-ref>Protection Profile for General Purpose Operating Systems, Version 4.3</PP-cc-ref>
+        <PP-cc-ref>Protection Profile for Mobile Device Fundamentals, Version 3.3</PP-cc-ref>
+        <PP-cc-ref>Protection Profile for Mobile Device Management, Version 4.0</PP-cc-ref>
+        <Mod-cc-ref>PP-Module for Virtual Private Network (VPN) Clients, version 2.6</Mod-cc-ref>  
+        <Mod-cc-ref>PP-Module for Bluetooth, version 1.1</Mod-cc-ref>
+        <Mod-cc-ref>cPP-Module for Biometric Enrolment and Verification, version 1.1</Mod-cc-ref>  
+        <Mod-cc-ref>cPP-Module for Wireless LAN Clients, version 1.1</Mod-cc-ref>
+      </cc-pp-config-with>
+      <cc-pkg-claim>
+        <FP-cc-ref conf="conformant">Functional Package for Transport Layer Security Version 2.1</FP-cc-ref>
+        <FP-cc-ref conf="conformant">Functional Package for X.509 Version 1.0</FP-cc-ref>
+        <AP-cc-ref conf="conformant">Assurance Package for Flaw Remediation Version 1.0</AP-cc-ref>
+      </cc-pkg-claim>
+    </CClaimsInfo>
+    
+    
   </sec:Conformance_Claims>
   <sec:Security_Problem_Definition>
     <sec:Threats> The following threats are specific to MDM Agents, and represents an addition to those identified in the Base-PPs. 
@@ -263,6 +273,14 @@
 	    it should stay or if it's unneeded because the threat it was meant to have be mitigated by TOE objectives can instead be inherited from the 
 	    supported Base-PPs.</comment>
 	  </description>
+          
+          
+          
+          
+          
+          
+          
+          
           <objective-refer ref="O.DATA_PROTECTION_TRANSIT">
             <rationale>The threat T.MALICIOUS_APPS is countered by O.DATA_PROTECTION_TRANSIT as this
               provides the capability to protect app loading and updates against malicious insertion
@@ -586,12 +604,12 @@
     </section>
   </sec:Security_Objectives>
   <sec:Security_Requirements title="Security Requirements">
-    <base-pp id="bpp-mdf" name="Mobile Device Fundamentals" short="MDF" product="mobile device" version="3.3">
+    <base-pp id="bpp-mdf" name="Mobile Device Fundamentals" product="Mobile Device" short="MDF" version="3.3">
       <git>
         <url>https://github.com/commoncriteria/mobile-device</url>
         <branch>release-3.3</branch>
       </git>
-      <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=468&amp;id=468</url>
+      <url>https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%203.3%20PP/index.html</url>
    
       <modified-sfrs/>
       <additional-sfrs>
@@ -646,11 +664,9 @@
             <consistency-rationale> The Base-PP includes FTP_ITC_EXT.1 to define the secure protocols used for trusted channel communications. This PP-Module iterates the SFR to specify a subset of these protocols that may be used for MDM Agent communications in particular. </consistency-rationale>
             <f-element id="mut-chan-type">
               <title>The TSF shall use <selectables linebreak="yes">
-                  <selectable>mutually authenticated TLS in accordance with [the Package for
-                    Transport Layer Security]</selectable>
-                <selectable><h:b>mutually authenticated DTLS in accordance with the Package for
-                  Transport Layer Security</h:b></selectable>
-                <selectable><h:b>HTTPS</h:b></selectable>
+                <selectable><h:b>mutually authenticated</h:b> TLS in accordance with [<h:i><xref to="pkg-tls"/></h:i>]</selectable>
+                <selectable><h:b>mutually authenticated</h:b> DTLS in accordance [<h:i><xref to="pkg-tls"/></h:i>]</selectable>
+                <selectable>HTTPS</selectable>
                 </selectables> and [<h:i>no other protocols</h:i>] to provide a communication channel between itself and another trusted
                 IT product that is logically distinct from other communication channels, provides
                 assured identification of its end points, protects channel data from disclosure, and
@@ -680,7 +696,7 @@
                 native part of the mobile operating system, it is expected that the MDM Agent will use the mobile device's implementation of the
                 selected protocols. HTTPS (FCS_HTTPS_EXT.1) and TLS (FCS_TLSC_EXT.1) are already
                 mandatory for an MDF ST. If "TLS" or "DTLS" is selected, the following selections from
-                the TLS Functional Package must be made: <h:ul>
+                <xref to="pkg-tls"/> must be made: <h:ul>
                   <h:li>FCS_TLS_EXT.1: <h:ul>
                       <h:li>Either TLS or DTLS is selected depending on the selection made in
                         <xref to="mut-chan-type"/>.</h:li>
@@ -798,8 +814,8 @@
                   MDM Agent will be a native part of the mobile operating system,
                 it is expected that the MDM Agent will use the mobile device's
                 implementation of the selected protocols. HTTPS (FCS_HTTPS_EXT.1) and TLS
-                (FCS_TLSC_EXT.1) are already mandatory for an MDF ST. If "TLS" or "DTLS" is selected,
-                the following selections from the TLS Functional Package must be made: <!-- TODO: What is their implementation of HTTPS evaluated against?? -->
+                (FCS_TLSC_EXT.1) are already mandatory for an MDF ST. If "TLS" is selected,
+                the following selections from <xref to="pkg-tls"/> must be made: <!-- TODO: What is their implementation of HTTPS evaluated against?? -->
                 <!--  If "implement functionality to use HTTPS" is selected-->
                 <h:ul>
                   <h:li>FCS_TLS_EXT.1: <h:ul>
@@ -961,7 +977,7 @@
         expected behavior. </con-mod>
       <con-mod ref="fau-stg-ext-3"> This SFR defines the ability of the MDM Agent
         to store generated audit data in the audit storage provided by the mobile device. The Base-PP defines the capability for 
-        audit storage in FAU_STG.1.</con-mod>
+        audit storage in FAU_STG.2.</con-mod>
       <con-mod ref="fpt-net-ext-1"> This SFR defines the ability of the MDM Agent
         to maintain information about its last successful connection with the environmental MDM Server 
         (i.e., the last successful invocation of the trusted channel for
@@ -972,42 +988,21 @@
     <base-pp id="bpp-mdm" name="Mobile Device Management" short="MDM" product="MDM Server" version="4.0">
       <git>
         <url>https://github.com/commoncriteria/mdm</url>
-        <branch>v4.0</branch>
+        <branch>master</branch>
       </git>
-      <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=428&amp;id=428</url>
-    
-      <!--   <app-unmod-sfrs> 
-        The SFRs listed in this section are defined in the MDM PP and relevant to the secure operation of the MDM Agent. While testing the TOE, it is necessary to ensure these SFRs are tested specifically in conjunction with the MDM Agent portion of the TOE. The ST author may complete all selections and assignments in these SFRs without any additional restrictions.
-        <h:ul>
-          <h:li>FCS_CKM.1</h:li>
-          <h:li>FCS_CKM.2</h:li>
-          <h:li>FCS_CKM_EXT.4</h:li>
-          <h:li>FCS_COP.1(*)</h:li>
-          <h:li>FCS_RBG_EXT.1</h:li>
-          <h:li>FIA_X509_EXT.1</h:li>
-          <h:li>FIA_X509_EXT.2</h:li>
-          <h:li>FIA_X509_EXT.3</h:li>
-          <h:li>FIA_X509_EXT.4</h:li>
-          <h:li>FCS_DTLS_EXT.1</h:li>
-          <h:li>FCS_HTTPS_EXT.1</h:li>
-        </h:ul>
-      </app-unmod-sfrs>-->
+      <url>https://www.niap-ccevs.org/static_html/protection-profile/428/-428-/index.html</url>
+     
+
       <modified-sfrs>
         
         <section title="Identification and Authentication (FIA)" id="mdm-m-fia">
           
-          <f-component cc-id="fia_x509_ext.1" iteration="2" id="mdm-fia-x509-ext-1-2" name=" X.509 Certificate Validation">
+          <f-component cc-id="fia_x509_ext.1" iteration="CERTVAL_SEL" id="mdm-fia-x509-ext-1-2" name=" X.509 Certificate Validation">
             <consistency-rationale>There is no modification to this SFR, but it is mandatory for a TOE that conforms to this PP-Module because
               it must always be claimed when an MDM includes an MDM Agent as part of the TOE.</consistency-rationale>
             <f-element id="mdm-fia-x509-ext-1-2e1">
               <title>
-                This SFR is selection-based in the Base-PP but is mandatory when this PP-Module is claimed. This PP-Module also requires 
-                FPT_ITT.1(2) to be claimed for internal communications between the MDM Server and MDM Agent portions of the TOE, and since this channel
-                requires the use of mutually-authenticated TLS or DTLS for data-in-transit protection, the associated X.509 validation requirement must be claimed.
-                
-                <comment>note that the app note for FPT_ITT.1(2) in the MDM PP references FIA_X509_EXT.1(1) as something that should be claimed
-                  when FPT_ITT.1(2) is claimed, but that seems to be a typo because FIA_X509_EXT.1(1) is already a mandatory SFR in that PP; it is assumed
-                  FIA_X509_EXT.1(2) was intended, both because of that context and because of the app note for FIA_X509_EXT.1(2) itself.</comment>
+                <comment>This selection-based SFR becomes mandatory when used with this PP-Module because mutually-authenticated TLS or DTLS must be used to support communications between the MDM Agent and MDM Server.</comment>
               </title>
               <aactivity>
                 <no-tests>There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed.</no-tests>
@@ -1020,13 +1015,13 @@
         
         <section title="Protection of the TSF (FPT)" id="mdm-m-fpt">
           
-          <f-component cc-id="fpt_itt.1" iteration="2" id="mdm-fpt-itt-1-2" name="Internal TOE TSF Data Transfer (MDM Agent)">
+          <f-component cc-id="fpt_itt.1" iteration="INTER_XFER_AGENT" id="mdm-fpt-itt-1-2" name="Internal TOE TSF Data Transfer (MDM Agent)">
             <consistency-rationale>There is no modification to this SFR, but it is mandatory for a TOE that conforms to this PP-Module because
               it must always be claimed when an MDM includes an MDM Agent as part of the TOE.</consistency-rationale>
             <f-element id="mdm-fpt-itt-1-2e1">
+              
               <title>
-                This SFR is selection-based in the Base-PP but is mandatory when this PP-Module is claimed. Per FTP_ITC_EXT.1.1 in the MDM PP,
-                when the MDM Agent is internal to the TOE, FPT_ITT.1(2) must be claimed.
+                <comment>This selection-based SFR becomes mandatory when used with this PP-Module because mutually-authenticated TLS or DTLS must be used to support communications between the MDM Agent and MDM Server.</comment>
               </title>
               <note role="Application">
                 This PP-Module requires that communications between the MDM Server and MDM Agent portions of the TOE are secured in the manner specified
@@ -1085,7 +1080,7 @@
               method of key storage. This PP-Module iterates it to specify the use
               of platform key storage for MDM Agents. </consistency-rationale>
             <f-element>
-              <title>The <h:b>MDM Agent portion of the</h:b> TSF shall use the [<h:i>platform-provided key storage</h:i>] for all persistent
+              <title>The <h:b>MDM Agent portion of the</h:b> TSF shall use [<h:i>platform-provided key storage</h:i>] for all persistent
                 secret and private keys.</title>
               <note role="application"> This requirement ensures that persistent secrets
                 (credentials, secret keys) and private keys are stored securely when not in use by
@@ -1316,12 +1311,12 @@
         to the MDM Agent during a period where it is not interacting with the
           MDM Server. </con-mod>
     </base-pp>
-      <base-pp id="bpp-gpos" name="General Purpose Operating Systems" short="GPOS" product="operating system" version="4.3"> 
+    <base-pp id="bpp-gpos" name="General Purpose Operating System" product="Operating System" short="GPOS" version="4.3">
       <git>
         <url>https://github.com/commoncriteria/operatingsystem</url>
         <branch>release-4.3</branch>
       </git>
-      <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=469&amp;id=469</url>
+      <url>https://www.niap-ccevs.org/static_html/protection-profile/469/OS%204.3%20PP/index.html</url>
    
       <modified-sfrs>
         <sec:gpos_mod_fcs title="Cryptographic Support (FCS)">
@@ -1359,16 +1354,8 @@
             <f-element id="gpos-mut-chan-type">
               <title>The OS shall use 
                 <selectables>
-                  <selectable><h:b>mutually authenticated</h:b> TLS as conforming to the
-                    Functional Package for Transport Layer Security (TLS), version
-                    <h:b><selectables>
-                      <selectable>1.1</selectable>
-                      <selectable>2.0</selectable></selectables></h:b> as a [<h:i>client</h:i>]</selectable>
-                  <selectable><h:b>mutually authenticated</h:b> DTLS as conforming to the
-                    Functional Package for Transport Layer Security (TLS), version
-                    <h:b><selectables>
-                      <selectable>1.1</selectable>
-                      <selectable>2.0</selectable></selectables></h:b> as a [<h:i>client</h:i>]</selectable>
+                  <selectable><h:b>mutually authenticated</h:b> TLS as conforming to <xref to="pkg-tls"/> as a [<h:i>client</h:i>]</selectable>
+                  <selectable><h:b>mutually authenticated</h:b> DTLS as conforming to <xref to="pkg-tls"/> as a [<h:i>client</h:i>]</selectable>
                 </selectables>
                 to provide a trusted communication channel between itself and authorized IT
                 entities supporting the following capabilities: [<h:i>[MDM Server communications, 
@@ -1403,7 +1390,7 @@
                 PP, and in this case it is expected that the MDM Agent will be a
                 native part of the operating system, it is expected that the MDM Agent will use the operating system's implementation of the
                 selected protocols. Depending on whether "TLS" or "DTLS" is selected, the following selections from
-                the TLS Functional Package must be made: <h:ul>
+                the <xref to="pkg-tls"/> must be made: <h:ul>
                   <h:li>FCS_TLS_EXT.1: <h:ul>
                       <h:li>Either TLS or DTLS is selected depending on the selection made in
                         <xref to="gpos-mut-chan-type"/>.</h:li>
@@ -1754,7 +1741,7 @@
             <title>The <h:b>MDM Agent</h:b> shall <h:b><selectables>
                 <selectable>invoke platform-provided functionality</selectable>
                 <selectable>implement functionality</selectable>
-            </selectables></h:b> to generate an audit record of the
+            </selectables></h:b> to generate audit data of the
               following auditable events: <h:ol type="a">
                 <h:li>Startup and shutdown of the <h:b>MDM Agent</h:b>;</h:li>
                 <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit; and</h:li>
@@ -1861,7 +1848,7 @@
             <title>The <selectables>
                 <selectable>TSF</selectable>
                 <selectable>TOE platform</selectable>
-            </selectables> shall record within each <h:b>MDM Agent</h:b> audit record at
+            </selectables> shall record within the <h:b>MDM Agent</h:b> audit data at
               least the following information: <h:ol type="a">
                 <h:li>Date and time of the event, type of event, subject identity (if relevant), the outcome 
                   (success or failure) of the event<h:b>, and additional information in 
@@ -2466,35 +2453,21 @@
   -->
   <bibliography>
     <cc-entry/>
-    <entry id="bibCEM">
-      <tag>CEM</tag>
-      <description>
-        Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2012-09-004, Version 3.1 Revision 4, September 2012
-      </description>
-    </entry>
     <entry id="bibGPOS">
       <tag>GPOS PP</tag>
-      <description>
-        Protection Profile for General Purpose Operating Systems, Version 4.3, September 27, 2022
-      </description>
-    </entry>
+      <description><h:a href="https://www.niap-ccevs.org/static_html/protection-profile/469/OS%204.3%20PP/index.html">Protection Profile for General Purpose Operating Systems, Version 4.3</h:a>, September 27, 2022</description>
+    </entry>      
     <entry id="bibMDF">
       <tag>MDF PP</tag>
-      <description>
-        Protection Profile for Mobile Device Fundamentals, Version 3.3, September 12, 2022
-      </description>
+      <description><h:a href="https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%203.3%20PP/index.html">Protection Profile for Mobile Device Fundamentals, Version 3.3</h:a>, Version 3.3, September 12, 2022</description>
     </entry>
     <entry id="bibMDM">
       <tag>MDM PP</tag>
       <description>
-        Protection Profile for Mobile Device Management, Version 4.0, April 25, 2019
+        <h:a href="https://www.niap-ccevs.org/static_html/protection-profile/428/-428-/index.html">Protection Profile for Mobile Device Management, Version 4.0, April 25, 2019</h:a>
       </description>
     </entry>
   </bibliography>
-  
-    <!-- ToDo: Are these really the only acronyms?-->
-      <!-- <term abbr="TOE" full="Target of Evaluation"/> -->
-      <!-- <term abbr="TSF" full="TOE Summary Functionality"/> -->
-      <!-- <term abbr="TSS" full="TOE Security Specification"/> -->
+
 
 </Module>

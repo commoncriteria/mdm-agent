@@ -1,8 +1,9 @@
 output/mdm-agent-release-linkable.html: AGD
+output/mdm-agent-release-linkable.html: CEM
+output/mdm-agent-release-linkable.html: CERTVAL
 output/mdm-agent-release-linkable.html: CONFIG
 output/mdm-agent-release-linkable.html: DNs
-output/mdm-agent-release-linkable.html: DTLSC
-output/mdm-agent-release-linkable.html: DTLSS
+output/mdm-agent-release-linkable.html: Enrolment
 output/mdm-agent-release-linkable.html: FDP
 output/mdm-agent-release-linkable.html: Fi
 output/mdm-agent-release-linkable.html: GPCP
@@ -14,6 +15,7 @@ output/mdm-agent-release-linkable.html: TUD
 output/mdm-agent-release-linkable.html: Unenrolling
 output/mdm-agent-release-linkable.html: Unenrollment
 output/mdm-agent-release-linkable.html: Wi
+output/mdm-agent-release-linkable.html: XFER
 output/mdm-agent-release-linkable.html: exfiltrate
 output/mdm-agent-release-linkable.html: lifecycle
 output/mdm-agent-release-linkable.html: netwrok
@@ -22,9 +24,10 @@ output/mdm-agent-release-linkable.html: unenroll
 output/mdm-agent-release-linkable.html: unenrolling
 output/mdm-agent-release-linkable.html: unenrollment
 output/mdm-agent-release-linkable.html: unreachability
+output/mdm-agent-release.html: CEM
+output/mdm-agent-release.html: CERTVAL
 output/mdm-agent-release.html: CONFIG
-output/mdm-agent-release.html: DTLSC
-output/mdm-agent-release.html: DTLSS
+output/mdm-agent-release.html: Enrolment
 output/mdm-agent-release.html: FDP
 output/mdm-agent-release.html: Fi
 output/mdm-agent-release.html: GPCP
@@ -36,6 +39,7 @@ output/mdm-agent-release.html: TUD
 output/mdm-agent-release.html: Unenrolling
 output/mdm-agent-release.html: Unenrollment
 output/mdm-agent-release.html: Wi
+output/mdm-agent-release.html: XFER
 output/mdm-agent-release.html: exfiltrate
 output/mdm-agent-release.html: lifecycle
 output/mdm-agent-release.html: role’
@@ -44,8 +48,11 @@ output/mdm-agent-release.html: unenrolling
 output/mdm-agent-release.html: unenrollment
 output/mdm-agent-release.html: unreachability
 output/mdm-agent-sd.html: AGD
+output/mdm-agent-sd.html: CEM
+output/mdm-agent-sd.html: CERTVAL
 output/mdm-agent-sd.html: DNs
 output/mdm-agent-sd.html: Unenrollment
+output/mdm-agent-sd.html: XFER
 output/mdm-agent-sd.html: actions’
 output/mdm-agent-sd.html: evaluator’s
 output/mdm-agent-sd.html: fail’
@@ -57,10 +64,11 @@ output/mdm-agent-sd.html: unenroll
 output/mdm-agent-sd.html: unenrolling
 output/mdm-agent-sd.html: unenrollment
 output/mdm-agent.html: AGD
+output/mdm-agent.html: CEM
+output/mdm-agent.html: CERTVAL
 output/mdm-agent.html: CONFIG
 output/mdm-agent.html: DNs
-output/mdm-agent.html: DTLSC
-output/mdm-agent.html: DTLSS
+output/mdm-agent.html: Enrolment
 output/mdm-agent.html: FDP
 output/mdm-agent.html: Fi
 output/mdm-agent.html: GPCP
@@ -72,6 +80,7 @@ output/mdm-agent.html: TUD
 output/mdm-agent.html: Unenrolling
 output/mdm-agent.html: Unenrollment
 output/mdm-agent.html: Wi
+output/mdm-agent.html: XFER
 output/mdm-agent.html: actions’
 output/mdm-agent.html: exfiltrate
 output/mdm-agent.html: lifecycle
