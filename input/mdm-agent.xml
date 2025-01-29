@@ -738,21 +738,7 @@
       <con-mod ref="P.NOTIFY">The Base-PP does not define any OSPs so any OSPs defined by the PP-Module 
         will not conflict with the Base-PP by definition.</con-mod>
       
-      
-      <con-mod ref="O.ACCOUNTABILITY"> The Base-PP provides an objective,
-        O.INTEGRITY, that ensures that the integrity of the mobile device is maintained. This
-        objective assists in the implementation of O.INTEGRITY by providing records of
-        administrative activity, which would include actions that could cause the integrity of the
-        mobile device to be lost.</con-mod>
-      <con-mod ref="O.APPLY_POLICY"> This objective supports the implementation of the O.CONFIG
-        objective defined in the Base-PP by specifying an additional method by
-        which the TSF may be configured.</con-mod>
-      <con-mod ref="O.DATA_PROTECTION_TRANSIT"> This objective extends the Base-PP’s O.PROTECTED_COMMS objective by ensuring that the communications related to MDM
-        Agent functionality are secured in the same manner as other sensitive data transmitted
-        to and from the mobile device.</con-mod>
-      <con-mod ref="O.STORAGE"> This objective extends the Base-PP’s O.STORAGE
-        objective by ensuring that the mobile device’s data-at-rest protection mechanisms can also
-        be used to secure the MDM Agent and related data.</con-mod>
+     
       <con-mod ref="OE.DATA_PROPER_ADMIN"> This objective extends the Base-PP’s
         OE.CONFIG objective by expecting that TOE administrators act appropriately when installing
         or configuring the MDM Agent.</con-mod>
@@ -976,16 +962,7 @@
         The PP-Module just extends it to the entire TOE boundary rather than just the MDM Server.</con-mod>
       <con-mod ref="P.NOTIFY">The Base-PP defines a P.NOTIFY OSP that is identical to the one defined by the PP-Module. 
         The PP-Module just extends it to the entire TOE boundary rather than just the MDM Server.</con-mod>
-      
-      
-      <con-mod ref="O.ACCOUNTABILITY"> The MDM PP contains this same objective with the same
-        purpose.</con-mod>
-      <con-mod ref="O.APPLY_POLICY"> The MDM PP contains this same objective with the same purpose. </con-mod>
-      <con-mod ref="O.DATA_PROTECTION_TRANSIT"> The MDM PP contains this same objective with the same
-        purpose. </con-mod>
-      <con-mod ref="O.STORAGE"> This objective requires the MDM Agent to use platform key storage to
-        protect secret and private key data. The MDM PP defines a requirement for key storage
-        (FCS_STG_EXT.1) that allows the MDM Agent to satisfy this objective. </con-mod>
+    
       <con-mod ref="OE.DATA_PROPER_ADMIN"> The MDM PP contains an objective named OE.PROPER_ADMIN with the same
         purpose. </con-mod>
       <con-mod ref="OE.DATA_PROPER_USER"> The MDM PP contains an objective named OE.PROPER_USER with the same
@@ -1279,18 +1256,6 @@
         will not conflict with the Base-PP by definition.</con-mod>
       
       
-      <con-mod ref="O.ACCOUNTABILITY">The Base-PP defines an objective
-        of the same name that serves the same purpose. The PP-Module's objective extends the scope of the objective to the 
-        MDM Agent capability of the TOE.</con-mod>
-      <con-mod ref="O.APPLY_POLICY">This objective supports the implementation of the O.MANAGEMENT
-        objective defined in the Base-PP by specifying an additional method by
-        which the TSF may be configured.</con-mod>
-      <con-mod ref="O.DATA_PROTECTION_TRANSIT">This objective extends the Base-PP’s O.PROTECTED_COMMS objective by ensuring that the communications related to MDM
-        Agent functionality are secured in the same manner as other sensitive data transmitted
-        to and from the OS.</con-mod>
-      <con-mod ref="O.STORAGE">This objective extends the Base-PP’s O.PROTECTED_STORAGE
-        objective by ensuring that the operating system's data-at-rest protection mechanisms can also
-        be used to secure the MDM Agent and related data.</con-mod>
       <con-mod ref="OE.DATA_PROPER_ADMIN">This objective extends the Base-PP’s
         OE.PROPER_ADMIN objective by expecting that TOE administrators act appropriately when installing
         or configuring the MDM Agent.</con-mod>
