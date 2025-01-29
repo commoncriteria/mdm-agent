@@ -694,11 +694,12 @@
       <con-sec-prob/>
       <con-obj/>
       <con-op-en/>
-      <con-mod ref="T.BACKUP">This threat protects user data from unauthorized logical access. An
-        attacker would attempt to exploit this threat by first exploiting the T.PHYSICAL_ACCESS, T.MALICIOUS_APP,
-        or T.PERSISTENT_PRESENCE threats defined in the Base-PP against the mobile device
-        as a whole, and then using the device itself as an attack vector against any backup data
-        stored on the TOE.</con-mod>
+      <con-mod ref="T.INSECURE_MDM_COMMUNICATIONS">This threat exploits network connectivity, consistent with T.NETWORK_EAVESDROP and T.NETWORK_ATTACK threats defined in the Base-PP.
+      </con-mod>
+      <con-mod ref="T.MISUSED_DEVICE">This threat exploits issues with local device configuration, consistent with T.PHYSICAL_ACCESS and T.MALICIOUS_APP threats defined in the Base-PP.
+      </con-mod>
+      <con-mod ref="T.UNAUTHORIZED_POLICY_SOURCE">This threat exploits malicious configuration which is a mechanism by which the T.PERSISTENT_PRESENCE threat defined in the Base-PP can be realized.</con-mod>
+        
       
       <con-mod ref="A.CONNECTIVITY">This assumption expects that networking services will be available for the TOE to use. 
         This is consistent with the Base-PP because the TOE is installed on a mobile device defined by the 
@@ -914,14 +915,11 @@
       <con-sec-prob/>
       <con-obj/>
       <con-op-en/>
-      <con-mod ref="T.BACKUP"> This threat protects user data from unauthorized logical access. If
-        the backup data is stored outside the MDM or the mobile device that it protects, then there
-        is no conflict with the MDM PP since it is a different security boundary. If the backup data
-        is stored either on the MDM or on the protected device, an attacker would attempt to exploit
-        this threat by first exploiting any of the threats that the MDM PP defines
-        (T.MALICIOUS_APPS, T.NETWORK_ATTACK, T.NETWORK_EAVESDROP, T.PHYSICAL_ACCESS), depending on
-        where and how the backup data is stored, and then use successful exploitation of one of
-        these threats to attempt to access the backup data itself.</con-mod>
+      <con-mod ref="T.INSECURE_MDM_COMMUNICATIONS">This threat exploits network connectivity, consistent with T.NETWORK_EAVESDROP and T.NETWORK_ATTACK threats defined in the Base-PP.
+      </con-mod>
+      <con-mod ref="T.MISUSED_DEVICE">This threat exploits issues with configuration of the managed device, consistent with the T.MALICIOUS_APPS threat defined in the Base-PP.
+      </con-mod>
+      <con-mod ref="T.UNAUTHORIZED_POLICY_SOURCE">This threat exploits impersonation of a legitimate policy source, which is consistent with the T.NETWORK_ATTACK threat defined in the Base-PP.</con-mod>
       
       <con-mod ref="A.CONNECTIVITY">This assumption expects that networking services will be available for the TOE to use. 
         This is consistent with the Base-PP because the portion of the TOE defined by the Base-PP runs on a 
@@ -1216,11 +1214,11 @@
       <con-sec-prob/>
       <con-obj/>
       <con-op-en/>
-      <con-mod ref="T.BACKUP">This threat protects user data from unauthorized logical access. An
-        attacker would attempt to exploit this threat by first exploiting the T.NETWORK_ATTACK, T.LOCAL_ATTACK, or T.LIMITED_PHYSICAL_ACCESS
-        threats defined in the Base-PP against the operating system
-        as a whole, and then using the access gained from that attack as an attack vector against any backup data
-        stored on the TOE.</con-mod>
+      <con-mod ref="T.INSECURE_MDM_COMMUNICATIONS">This threat exploits network connectivity, consistent with T.NETWORK_EAVESDROP and T.NETWORK_ATTACK threats defined in the Base-PP.
+      </con-mod>
+      <con-mod ref="T.MISUSED_DEVICE">This threat exploits issues with local device configuration, consistent with the T.LOCAL_ATTACK threat defined in the Base-PP.
+      </con-mod>
+      <con-mod ref="T.UNAUTHORIZED_POLICY_SOURCE">This threat exploits malicious configuration which can enable a local attack, consistent with the T.LOCAL_ATTACK threat defined in the Base-PP can be realized.</con-mod>
       
       <con-mod ref="A.CONNECTIVITY">This assumption expects that networking services will be available for the TOE to use. 
         This is consistent with the Base-PP because the Base-PP includes mandatory requirements for a GPOS
