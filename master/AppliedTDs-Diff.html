@@ -20,16 +20,6 @@
         <div id="commmentbox-">
             <a href="#Comment-1-">Comment: Comment-1-</a>
             <br>
-            <a href="#Comment-2-">Comment: Comment-2-</a>
-            <br>
-            <a href="#Comment-3-">Comment: Comment-3-</a>
-            <br>
-            <a href="#Comment-4-">Comment: Comment-4-</a>
-            <br>
-            <a href="#Comment-5-">Comment: Comment-5-</a>
-            <br>
-            <a href="#Comment-6-">Comment: Comment-6-</a>
-            <br>
         </div>
         <h1 class="title" style="page-break-before:auto;">PP-Module for MDM Agent</h1>
         <h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1>
@@ -63,7 +53,7 @@
         </h3>
         <h2>Contents</h2>
         <div class="toc" id="toc">
-            <a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#targets" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecase" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-features" style="text-indent:10px">1.5<span>Implementation-Dependent Features</span></a><a href="#has-auditing" style="text-indent:20px">1.5.1<span>Platform Auditing</span></a><a href="#supports-reachability" style="text-indent:20px">1.5.2<span>Supports Network Reachability Thresholds</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#securityPolicy" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#Security_Objectives_for_the_TOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#rationale" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-mdf" style="text-indent:10px">5.1<span> Protection Profile for Mobile Device Fundamentals Security Functional Requirements Direction </span></a><a href="#modsfr-bpp-mdf" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#addsfr-bpp-mdf" style="text-indent:20px">5.1.2<span> Additional SFRs</span></a><a href="#sec-at-mdf-addnl" style="text-indent:30px">5.1.2.1<span>Auditable Events for MDF PP Additional SFRs</span></a><a href="#mdf_mod_fcs" style="text-indent:30px">5.1.2.2<span>Cryptographic Support (FCS)</span></a><a href="#mdf_mod_ftp" style="text-indent:30px">5.1.2.3<span>Trusted Path/Channels (FTP)</span></a><a href="#secreq-bpp-mdm" style="text-indent:10px">5.2<span> Protection Profile for Mobile Device Management Security Functional Requirements Direction </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.2.1<span> Modified SFRs </span></a><a href="#mdm-m-fia" style="text-indent:30px">5.2.1.1<span>Identification and Authentication (FIA)</span></a><a href="#mdm-m-fpt" style="text-indent:30px">5.2.1.2<span>Protection of the TSF (FPT)</span></a><a href="#mdm-m-ftp" style="text-indent:30px">5.2.1.3<span>Trusted Path/Channels (FTP)</span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.2.2<span> Additional SFRs</span></a><a href="#sec-at-mdm-addnl" style="text-indent:30px">5.2.2.1<span>Auditable Events for MDM PP Additional SFRs</span></a><a href="#mdm_mod_fcs" style="text-indent:30px">5.2.2.2<span>Cryptographic Support (FCS)</span></a><a href="#secreq-bpp-gpos" style="text-indent:10px">5.3<span> Protection Profile for General Purpose Operating System Security Functional Requirements Direction </span></a><a href="#modsfr-bpp-gpos" style="text-indent:20px">5.3.1<span> Modified SFRs </span></a><a href="#gpos_mod_fcs" style="text-indent:30px">5.3.1.1<span>Cryptographic Support (FCS)</span></a><a href="#addsfr-bpp-gpos" style="text-indent:20px">5.3.2<span> Additional SFRs</span></a><a href="#sec-at-gpos-addnl" style="text-indent:30px">5.3.2.1<span>Auditable Events for GPOS PP Additional SFRs</span></a><a href="#gpos_add_ftp" style="text-indent:30px">5.3.2.2<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.4<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.4.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#man_fau" style="text-indent:20px">5.4.2<span>Security Audit (FAU)</span></a><a href="#man_fia" style="text-indent:20px">5.4.3<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">5.4.4<span>Security Management (FMT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.5<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-mdf" style="text-indent:10px">6.1<span> Protection Profile for Mobile Device Fundamentals</span></a><a href="#contoe-bpp-mdf" style="text-indent:20px">6.1.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-mdf" style="text-indent:20px">6.1.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-mdf" style="text-indent:20px">6.1.3<span> Consistency of OE Objectives </span></a><a href="#conreq-bpp-mdf" style="text-indent:20px">6.1.4<span> Consistency of Requirements </span></a><a href="#conrat-bpp-mdm" style="text-indent:10px">6.2<span> Protection Profile for Mobile Device Management</span></a><a href="#contoe-bpp-mdm" style="text-indent:20px">6.2.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-mdm" style="text-indent:20px">6.2.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-mdm" style="text-indent:20px">6.2.3<span> Consistency of OE Objectives </span></a><a href="#conreq-bpp-mdm" style="text-indent:20px">6.2.4<span> Consistency of Requirements </span></a><a href="#conrat-bpp-gpos" style="text-indent:10px">6.3<span> Protection Profile for General Purpose Operating System</span></a><a href="#contoe-bpp-gpos" style="text-indent:20px">6.3.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-gpos" style="text-indent:20px">6.3.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-gpos" style="text-indent:20px">6.3.3<span> Consistency of OE Objectives </span></a><a href="#conreq-bpp-gpos" style="text-indent:20px">6.3.4<span> Consistency of Requirements </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements </span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements </span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-dependent Requirements </span></a><a href="#sib-audit-table" style="text-indent:20px">A.3.1<span>Auditable Events for Implementation-Dependent SFRs</span></a><a href="#ib_fau" style="text-indent:20px">A.3.2<span>Security Audit (FAU)</span></a><a href="#ib_fpt" style="text-indent:20px">A.3.3<span>Protection of the TSF (FPT)</span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements </span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">C.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_STG_EXT" style="text-indent:30px">C.2.1.1<span>FCS_STG_EXT Trusted Channel</span></a><a href="#ext-comp-FIA" style="text-indent:20px">C.2.2<span>Identification and Authentication (FIA)</span></a><a href="#ext-comp-FIA_ENR_EXT" style="text-indent:30px">C.2.2.1<span>FIA_ENR_EXT Enrollment</span></a><a href="#ext-comp-FPT" style="text-indent:20px">C.2.3<span>Protection of the TSF (FPT)</span></a><a href="#ext-comp-FPT_NET_EXT" style="text-indent:30px">C.2.3.1<span>FPT_NET_EXT Network Reachability</span></a><a href="#ext-comp-FAU" style="text-indent:20px">C.2.4<span>Security Audit (FAU)</span></a><a href="#ext-comp-FAU_ALT_EXT" style="text-indent:30px">C.2.4.1<span>FAU_ALT_EXT MDM Alerts</span></a><a href="#ext-comp-FAU_STG_EXT" style="text-indent:30px">C.2.4.2<span>FAU_STG_EXT Protected Audit Event Storage</span></a><a href="#ext-comp-FMT" style="text-indent:20px">C.2.5<span>Security Management (FMT)</span></a><a href="#ext-comp-FMT_POL_EXT" style="text-indent:30px">C.2.5.1<span>FMT_POL_EXT Trusted Policy Update</span></a><a href="#ext-comp-FMT_SMF_EXT" style="text-indent:30px">C.2.5.2<span>FMT_SMF_EXT Specification of Management Functions</span></a><a href="#ext-comp-FMT_UNR_EXT" style="text-indent:30px">C.2.5.3<span>FMT_UNR_EXT Unenrollment</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#appdx-use-case-templates" style="text-indent:0px">Appendix E - <span>Use Case Templates</span></a><a href="#appendix-usecase1" style="text-indent:10px">E.1<span>Enterprise-owned device for general-purpose enterprise use</span></a><a href="#appendix-usecase2" style="text-indent:10px">E.2<span>Enterprise-owned device for specialized, high-security use</span></a><a href="#appendix-usecase3" style="text-indent:10px">E.3<span>Personally owned device for personal and enterprise use</span></a><a href="#appendix-usecase4" style="text-indent:10px">E.4<span>Personally owned device for personal and limited enterprise use</span></a><a href="#acronyms" style="text-indent:0px">Appendix F - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix G - <span>Bibliography</span></a>
+            <a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#overview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#targets" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#usecase" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-features" style="text-indent:10px">1.5<span>Implementation-Dependent Features</span></a><a href="#has-auditing" style="text-indent:20px">1.5.1<span>Platform Auditing</span></a><a href="#supports-reachability" style="text-indent:20px">1.5.2<span>Supports Network Reachability Thresholds</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Problem_Definition" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#securityPolicy" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#objectivesEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#rationale" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-bpp-mdf" style="text-indent:10px">5.1<span> Protection Profile for Mobile Device Fundamentals Security Functional Requirements Direction </span></a><a href="#modsfr-bpp-mdf" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#addsfr-bpp-mdf" style="text-indent:20px">5.1.2<span> Additional SFRs</span></a><a href="#sec-at-mdf-addnl" style="text-indent:30px">5.1.2.1<span>Auditable Events for MDF PP Additional SFRs</span></a><a href="#mdf_mod_fcs" style="text-indent:30px">5.1.2.2<span>Cryptographic Support (FCS)</span></a><a href="#mdf_mod_ftp" style="text-indent:30px">5.1.2.3<span>Trusted Path/Channels (FTP)</span></a><a href="#secreq-bpp-mdm" style="text-indent:10px">5.2<span> Protection Profile for Mobile Device Management Security Functional Requirements Direction </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.2.1<span> Modified SFRs </span></a><a href="#mdm-m-fpt" style="text-indent:30px">5.2.1.1<span>Protection of the TSF (FPT)</span></a><a href="#mdm-m-ftp" style="text-indent:30px">5.2.1.2<span>Trusted Path/Channels (FTP)</span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.2.2<span> Additional SFRs</span></a><a href="#sec-at-mdm-addnl" style="text-indent:30px">5.2.2.1<span>Auditable Events for MDM PP Additional SFRs</span></a><a href="#mdm_mod_fcs" style="text-indent:30px">5.2.2.2<span>Cryptographic Support (FCS)</span></a><a href="#secreq-bpp-gpos" style="text-indent:10px">5.3<span> Protection Profile for General Purpose Operating System Security Functional Requirements Direction </span></a><a href="#modsfr-bpp-gpos" style="text-indent:20px">5.3.1<span> Modified SFRs </span></a><a href="#gpos_mod_fcs" style="text-indent:30px">5.3.1.1<span>Cryptographic Support (FCS)</span></a><a href="#addsfr-bpp-gpos" style="text-indent:20px">5.3.2<span> Additional SFRs</span></a><a href="#sec-at-gpos-addnl" style="text-indent:30px">5.3.2.1<span>Auditable Events for GPOS PP Additional SFRs</span></a><a href="#gpos_add_ftp" style="text-indent:30px">5.3.2.2<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.4<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.4.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#man_fau" style="text-indent:20px">5.4.2<span>Security Audit (FAU)</span></a><a href="#man_fia" style="text-indent:20px">5.4.3<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">5.4.4<span>Security Management (FMT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.5<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-mdf" style="text-indent:10px">6.1<span> Protection Profile for Mobile Device Fundamentals</span></a><a href="#contoe-bpp-mdf" style="text-indent:20px">6.1.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-mdf" style="text-indent:20px">6.1.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-mdf" style="text-indent:20px">6.1.3<span> Consistency of OE Objectives </span></a><a href="#conreq-bpp-mdf" style="text-indent:20px">6.1.4<span> Consistency of Requirements </span></a><a href="#conrat-bpp-mdm" style="text-indent:10px">6.2<span> Protection Profile for Mobile Device Management</span></a><a href="#contoe-bpp-mdm" style="text-indent:20px">6.2.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-mdm" style="text-indent:20px">6.2.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-mdm" style="text-indent:20px">6.2.3<span> Consistency of OE Objectives </span></a><a href="#conreq-bpp-mdm" style="text-indent:20px">6.2.4<span> Consistency of Requirements </span></a><a href="#conrat-bpp-gpos" style="text-indent:10px">6.3<span> Protection Profile for General Purpose Operating System</span></a><a href="#contoe-bpp-gpos" style="text-indent:20px">6.3.1<span> Consistency of TOE Type </span></a><a href="#consecprob-bpp-gpos" style="text-indent:20px">6.3.2<span> Consistency of Security Problem Definition </span></a><a href="#conobj-bpp-gpos" style="text-indent:20px">6.3.3<span> Consistency of OE Objectives </span></a><a href="#conreq-bpp-gpos" style="text-indent:20px">6.3.4<span> Consistency of Requirements </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements </span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements </span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-dependent Requirements </span></a><a href="#sib-audit-table" style="text-indent:20px">A.3.1<span>Auditable Events for Implementation-Dependent SFRs</span></a><a href="#ib_fau" style="text-indent:20px">A.3.2<span>Security Audit (FAU)</span></a><a href="#ib_fpt" style="text-indent:20px">A.3.3<span>Protection of the TSF (FPT)</span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements </span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">C.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_STG_EXT" style="text-indent:30px">C.2.1.1<span>FCS_STG_EXT Trusted Channel</span></a><a href="#ext-comp-FIA" style="text-indent:20px">C.2.2<span>Identification and Authentication (FIA)</span></a><a href="#ext-comp-FIA_ENR_EXT" style="text-indent:30px">C.2.2.1<span>FIA_ENR_EXT Enrollment</span></a><a href="#ext-comp-FPT" style="text-indent:20px">C.2.3<span>Protection of the TSF (FPT)</span></a><a href="#ext-comp-FPT_NET_EXT" style="text-indent:30px">C.2.3.1<span>FPT_NET_EXT Network Reachability</span></a><a href="#ext-comp-FAU" style="text-indent:20px">C.2.4<span>Security Audit (FAU)</span></a><a href="#ext-comp-FAU_ALT_EXT" style="text-indent:30px">C.2.4.1<span>FAU_ALT_EXT MDM Alerts</span></a><a href="#ext-comp-FAU_STG_EXT" style="text-indent:30px">C.2.4.2<span>FAU_STG_EXT Protected Audit Event Storage</span></a><a href="#ext-comp-FMT" style="text-indent:20px">C.2.5<span>Security Management (FMT)</span></a><a href="#ext-comp-FMT_POL_EXT" style="text-indent:30px">C.2.5.1<span>FMT_POL_EXT Trusted Policy Update</span></a><a href="#ext-comp-FMT_SMF_EXT" style="text-indent:30px">C.2.5.2<span>FMT_SMF_EXT Specification of Management Functions</span></a><a href="#ext-comp-FMT_UNR_EXT" style="text-indent:30px">C.2.5.3<span>FMT_UNR_EXT Unenrollment</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#appdx-use-case-templates" style="text-indent:0px">Appendix E - <span>Use Case Templates</span></a><a href="#appendix-usecase1" style="text-indent:10px">E.1<span>Enterprise-owned device for general-purpose enterprise use</span></a><a href="#appendix-usecase2" style="text-indent:10px">E.2<span>Enterprise-owned device for specialized, high-security use</span></a><a href="#appendix-usecase3" style="text-indent:10px">E.3<span>Personally owned device for personal and enterprise use</span></a><a href="#appendix-usecase4" style="text-indent:10px">E.4<span>Personally owned device for personal and limited enterprise use</span></a><a href="#acronyms" style="text-indent:0px">Appendix F - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix G - <span>Bibliography</span></a>
         </div>
         <h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
         <h2 class="indexable" data-level="2" id="overview">1.1 Overview</h2>
@@ -376,25 +366,17 @@
         <h2 class="indexable" data-level="2" id="Threats">3.1 Threats</h2>
          The following threats are specific to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents, and represents an addition to those identified in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>. 
         <dl>
-            <dt class="threat defined" id="T.MALICIOUS_APPS">T.MALICIOUS_APPS</dt>
+            <dt class="threat defined" id="T.INSECURE_MDM_COMMUNICATIONS">T.INSECURE_MDM_COMMUNICATIONS</dt>
             <dd>
-                <span class="description"> <span style="" class="comment " id="Comment-1-">This was added in Github and was not present in the previously published version of this Module. NIAP guidance is needed as to whether it should stay or if it's unneeded because the threat it was meant to have be mitigated by <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> objectives can instead be inherited from the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>.</span> </span>
+                <span class="description"> A malicious user or process may inspect network communications between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent and an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server to illicitly determine, modify, or prevent these communications in such a way that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent fails to enforce the intended policy. </span>
             </dd>
-            <dt class="threat defined" id="T.BACKUP">T.BACKUP</dt>
+            <dt class="threat defined" id="T.MISUSED_DEVICE">T.MISUSED_DEVICE</dt>
             <dd>
-                <span class="description"> An attacker may try to target backups of data or credentials and exfiltrate data. Since the backup is stored on either a personal computer or end user&rsquo;s backup repository, it is unlikely the enterprise would detect compromise.</span>
+                <span class="description"> A malicious or careless user may operate a mobile device in such a way that it compromises the security of the device, its data, or its user. </span>
             </dd>
-            <dt class="threat defined" id="T.NETWORK_ATTACK">T.NETWORK_ATTACK</dt>
+            <dt class="threat defined" id="T.UNAUTHORIZED_POLICY_SOURCE">T.UNAUTHORIZED_POLICY_SOURCE</dt>
             <dd>
-                <span class="description"> <span style="" class="comment " id="Comment-2-">This was added in Github and was not present in the previously published version of this Module. NIAP guidance is needed as to whether it should stay or if it's unneeded because the threat it was meant to have be mitigated by <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> objectives can instead be inherited from the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>.</span> </span>
-            </dd>
-            <dt class="threat defined" id="T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</dt>
-            <dd>
-                <span class="description"> <span style="" class="comment " id="Comment-3-">This was added in Github and was not present in the previously published version of this Module. NIAP guidance is needed as to whether it should stay or if it's unneeded because the threat it was meant to have be mitigated by <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> objectives can instead be inherited from the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>.</span> </span>
-            </dd>
-            <dt class="threat defined" id="T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</dt>
-            <dd>
-                <span class="description"> <span style="" class="comment " id="Comment-4-">This was added in Github and was not present in the previously published version of this Module. NIAP guidance is needed as to whether it should stay or if it's unneeded because the threat it was meant to have be mitigated by <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> objectives can instead be inherited from the supported <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>.</span> </span>
+                <span class="description"> A malicious user or process can send illegitimate policy data to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in an attempt to cause it to enter an insecure or unknown state. </span>
             </dd>
         </dl>
          
@@ -441,28 +423,7 @@
         </dl>
          
         <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>
-        <h2 class="indexable" data-level="2" id="Security_Objectives_for_the_TOE">4.1 Security Objectives for the TOE</h2>
-         
-        <dl>
-            <dt class="SO defined" id="O.ACCOUNTABILITY">O.ACCOUNTABILITY</dt>
-            <dd>
-                <span class="description">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must provide logging facilities that record management actions undertaken by its administrators. </span>
-            </dd>
-            <dt class="SO defined" id="O.APPLY_POLICY">O.APPLY_POLICY</dt>
-            <dd>
-                <span class="description">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must facilitate configuration and enforcement of enterprise security policies on devices via interaction between the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server. This includes the initial enrollment of the device into management, through its entire lifecycle, including policy updates and its possible unenrollment from management services. </span>
-            </dd>
-            <dt class="SO defined" id="O.DATA_PROTECTION_TRANSIT">O.DATA_PROTECTION_TRANSIT</dt>
-            <dd>
-                <span class="description">Data exchanged between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent must be protected from being monitored, accessed, or altered. </span>
-            </dd>
-            <dt class="SO defined" id="O.STORAGE">O.STORAGE</dt>
-            <dd>
-                <span class="description"> To address the issue of loss of confidentiality of user data in the event of loss of a device (T.PHYSICAL), conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> will use platform-provided key storage. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to protect its persistent secrets and private keys. </span>
-            </dd>
-        </dl>
-         
-        <h2 class="indexable" data-level="2" id="objectivesEnvironment">4.2 Security Objectives for the Operational Environment</h2>
+        <h2 class="indexable" data-level="2" id="objectivesEnvironment">4.1 Security Objectives for the Operational Environment</h2>
          The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements technical and procedural measures to assist the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in correctly providing its security functionality (which is defined by the security objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>). The security objectives for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> consist of a set of statements describing the goals that the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> should achieve. This section defines the security objectives that are to be addressed by the IT domain or by non-technical or procedural means. The assumptions identified in Section 3 are incorporated as security objectives for the environment. 
         <dl>
             <dt class="SOE defined" id="OE.DATA_PROPER_ADMIN">OE.DATA_PROPER_ADMIN</dt>
@@ -487,7 +448,7 @@
             </dd>
         </dl>
          
-        <h2 id="rationale" class="indexable,h2" data-level="2">4.3 Security Objectives Rationale</h2>
+        <h2 id="rationale" class="indexable,h2" data-level="2">4.2 Security Objectives Rationale</h2>
          This section describes how the assumptions and organizational security policies map to operational environment security objectives. 
         <table>
             <caption>
@@ -495,45 +456,6 @@
             </caption>
             <tr class="header">
                 <td>Assumption or OSP</td><td>Security Objectives</td><td>Rationale</td>
-            </tr>
-            <tr class="major-row">
-                <td rowspan="2"><a href="#T.MALICIOUS_APPS">T.MALICIOUS_​APPS</a></td><td><a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_​PROTECTION_​TRANSIT</a></td><td>The threat <a href="#T.MALICIOUS_APPS">T.MALICIOUS_APPS</a> is countered by <a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_PROTECTION_TRANSIT</a> as this provides the capability to protect app loading and updates against malicious insertion from the network.</td>
-            </tr>
-            <tr>
-                <td><a href="#O.APPLY_POLICY">O.APPLY_​POLICY</a></td><td>The threat <a href="#T.MALICIOUS_APPS">T.MALICIOUS_APPS</a> is countered by <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a> as this provides a policy preventing loading of unapproved applications into the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td>
-            </tr>
-            <tr class="major-row">
-                <td rowspan="2"><a href="#T.BACKUP">T.BACKUP</a></td><td><a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_​PROTECTION_​TRANSIT</a></td><td>The threat <a href="#T.BACKUP">T.BACKUP</a> is countered by <a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_PROTECTION_TRANSIT</a> as this provides the capability to communicate using one (or more) standard protocols as a means to maintain the confidentiality of data that are transmitted between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and other entities.</td>
-            </tr>
-            <tr>
-                <td><a href="#O.APPLY_POLICY">O.APPLY_​POLICY</a></td><td>The threat <a href="#T.BACKUP">T.BACKUP</a> is countered by <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a> as this provides a policy that enforces storage of backups only in secure, protected locations.</td>
-            </tr>
-            <tr class="major-row">
-                <td rowspan="3"><a href="#T.NETWORK_ATTACK">T.NETWORK_​ATTACK</a></td><td><a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_​PROTECTION_​TRANSIT</a></td><td>The threat <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> is countered by <a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_PROTECTION_TRANSIT</a> as this provides the capability to communicate using one (or more) standard protocols as a means to maintain the confidentiality of data that are transmitted between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and other entities.</td>
-            </tr>
-            <tr>
-                <td><a href="#O.APPLY_POLICY">O.APPLY_​POLICY</a></td><td>The threat <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> is countered by <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a> as this provides a secure configuration of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to protect data that it processes.</td>
-            </tr>
-            <tr>
-                <td><a href="#OE.IT_ENTERPRISE">OE.IT_​ENTERPRISE</a></td><td>The threat <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> is countered by <a href="#OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</a> by reducing the network exposure of the device.</td>
-            </tr>
-            <tr class="major-row">
-                <td rowspan="3"><a href="#T.NETWORK_EAVESDROP">T.NETWORK_​EAVESDROP</a></td><td><a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_​PROTECTION_​TRANSIT</a></td><td>The threat <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> is countered by <a href="#O.DATA_PROTECTION_TRANSIT">O.DATA_PROTECTION_TRANSIT</a> as this provides the capability to communicate using one (or more) standard protocols as a means to maintain the confidentiality of data that are transmitted between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and other entities.</td>
-            </tr>
-            <tr>
-                <td><a href="#O.APPLY_POLICY">O.APPLY_​POLICY</a></td><td>The threat <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> is countered by <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a> as this provides a secure configuration of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to protect data that it processes.</td>
-            </tr>
-            <tr>
-                <td><a href="#OE.IT_ENTERPRISE">OE.IT_​ENTERPRISE</a></td><td> The threat <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> is countered by <a href="#OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</a> by reducing the network exposure of the device. </td>
-            </tr>
-            <tr class="major-row">
-                <td rowspan="3"><a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_​ACCESS</a></td><td><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a></td><td>The threat <a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a> is countered by <a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a> as this provides the capability to log attempts by unauthorized personnel to access data, and to log any access or changes to the device or its data during the time when it is not under the control of an authorized user.</td>
-            </tr>
-            <tr>
-                <td><a href="#O.APPLY_POLICY">O.APPLY_​POLICY</a></td><td>The threat <a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a> is countered by <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a> as this provides a secure configuration of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to protect data that it processes.</td>
-            </tr>
-            <tr>
-                <td><a href="#O.STORAGE">O.STORAGE</a></td><td>The threat <a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a> is countered by <a href="#O.STORAGE">O.STORAGE</a> as this provides the capability to encrypt all user and enterprise data and authentication keys to ensure the confidentiality of data that it stores.</td>
             </tr>
             <tr class="major-row">
                 <td rowspan="1"><a href="#A.CONNECTIVITY">A.CONNECTIVITY</a></td><td><a href="#OE.WIRELESS_NETWORK">OE.WIRELESS_​NETWORK</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> objective <a href="#OE.WIRELESS_NETWORK">OE.WIRELESS_NETWORK</a> is realized through <a href="#A.CONNECTIVITY">A.CONNECTIVITY</a>. </td>
@@ -548,16 +470,16 @@
                 <td rowspan="1"><a href="#A.PROPER_USER">A.PROPER_​USER</a></td><td><a href="#OE.DATA_PROPER_USER">OE.DATA_​PROPER_​USER</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> objective <a href="#OE.DATA_PROPER_USER">OE.DATA_PROPER_USER</a> is realized through <a href="#A.PROPER_USER">A.PROPER_USER</a>. </td>
             </tr>
             <tr class="major-row">
-                <td rowspan="1"><a href="#P.ACCOUNTABILITY">P.ACCOUNTABILITY</a></td><td><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a></td><td><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a> provides logging of personnel actions to provide accountability for these actions. </td>
+                <td rowspan="1"><a href="#P.ACCOUNTABILITY">P.ACCOUNTABILITY</a></td><td>O.ACCOUNTABILITY</td><td>O.ACCOUNTABILITY provides logging of personnel actions to provide accountability for these actions. </td>
             </tr>
             <tr class="major-row">
-                <td rowspan="1"><a href="#P.ADMIN">P.ADMIN</a></td><td><a href="#O.APPLY_POLICY">O.APPLY_​POLICY</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> adheres to the enterprise security policy through the application of <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a>. </td>
+                <td rowspan="1"><a href="#P.ADMIN">P.ADMIN</a></td><td>O.APPLY_​POLICY</td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> adheres to the enterprise security policy through the application of O.APPLY_POLICY. </td>
             </tr>
             <tr class="major-row">
-                <td rowspan="1"><a href="#P.DEVICE_ENROLL">P.DEVICE_​ENROLL</a></td><td><a href="#O.APPLY_POLICY">O.APPLY_​POLICY</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> enrolls mobile devices for specific users with policy through the application of <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a>. </td>
+                <td rowspan="1"><a href="#P.DEVICE_ENROLL">P.DEVICE_​ENROLL</a></td><td>O.APPLY_​POLICY</td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> enrolls mobile devices for specific users with policy through the application of O.APPLY_POLICY. </td>
             </tr>
             <tr class="major-row">
-                <td rowspan="1"><a href="#P.NOTIFY">P.NOTIFY</a></td><td><a href="#O.APPLY_POLICY">O.APPLY_​POLICY</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> provides the capability for the administrator to apply remediation actions via the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> system through policy, which is applied through <a href="#O.APPLY_POLICY">O.APPLY_POLICY</a>. </td>
+                <td rowspan="1"><a href="#P.NOTIFY">P.NOTIFY</a></td><td>O.APPLY_​POLICY</td><td>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> provides the capability for the administrator to apply remediation actions via the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> system through policy, which is applied through O.APPLY_POLICY. </td>
             </tr>
         </table>
         <h1 id="Security_Requirements" class="indexable" data-level="1">5 Security Requirements</h1>
@@ -796,19 +718,7 @@
          In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to rely on some of the security functions implemented by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server as a whole and evaluated against the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. The following sections describe any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> defined in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in addition to what is mandated by <a class="dynref" href="#man-sfrs">Section 5.4 TOE Security Functional Requirements</a>. 
         <h3 id="modsfr-bpp-mdm" class="indexable" data-level="3">5.2.1 Modified SFRs </h3>
          The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
-        <h4 id="mdm-m-fia" class="indexable" data-level="4">5.2.1.1 Identification and Authentication (FIA)</h4>
-        <div class="comp" id="FIA_X509_EXT.1/CERTVAL_SEL">
-            <h4>FIA_X509_EXT.1/CERTVAL_SEL X.509 Certificate Validation</h4>
-            <div class="element">
-                <div class="reqid" id="FIA_X509_EXT.1.1/CERTVAL_SEL">
-                    <a href="#FIA_X509_EXT.1.1/CERTVAL_SEL" class="abbr">FIA_X509_EXT.1.1/CERTVAL_SEL</a>
-                </div>
-                <div class="reqdesc">
-                     <span style="" class="comment " id="Comment-5-">This selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> becomes mandatory when used with this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because mutually-authenticated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> must be used to support communications between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.</span> 
-                </div>
-            </div>
-        </div>
-        <h4 id="mdm-m-fpt" class="indexable" data-level="4">5.2.1.2 Protection of the TSF (FPT)</h4>
+        <h4 id="mdm-m-fpt" class="indexable" data-level="4">5.2.1.1 Protection of the TSF (FPT)</h4>
         <div class="comp" id="FPT_ITT.1/INTER_XFER_AGENT">
             <h4>FPT_ITT.1/INTER_XFER_AGENT Internal TOE TSF Data Transfer (MDM Agent)</h4>
             <div class="element">
@@ -816,14 +726,14 @@
                     <a href="#FPT_ITT.1.1/INTER_XFER_AGENT" class="abbr">FPT_ITT.1.1/INTER_XFER_AGENT</a>
                 </div>
                 <div class="reqdesc">
-                     <span style="" class="comment " id="Comment-6-">This selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> becomes mandatory when used with this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because mutually-authenticated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> must be used to support communications between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.</span> 
+                     <span style="" class="comment " id="Comment-1-">This selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> becomes mandatory when used with this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because mutually-authenticated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> must be used to support communications between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.</span> 
                     <div class="appnote">
-                        <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires that communications between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent portions of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> are secured in the manner specified by FPT_ITT.1(2) in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not require that this channel be established in a specific manner beyond this function using one of the methods specified in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>; a registration channel over an untrusted network, a registration channel over an environmentally protected network, or registration without the use of a registration channel is permitted. Depending on the method used, the appropriate <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> claims must be made. </span>
+                        <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires that communications between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent portions of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> are secured in the manner specified by <a href="#FPT_ITT.1/INTER_XFER_AGENT">FPT_ITT.1/INTER_XFER_AGENT</a> in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not require that this channel be established in a specific manner beyond this function using one of the methods specified in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>; a registration channel over an untrusted network, a registration channel over an environmentally protected network, or registration without the use of a registration channel is permitted. Depending on the method used, the appropriate <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> claims must be made. </span>
                     </div>
                 </div>
             </div>
         </div>
-        <h4 id="mdm-m-ftp" class="indexable" data-level="4">5.2.1.3 Trusted Path/Channels (FTP)</h4>
+        <h4 id="mdm-m-ftp" class="indexable" data-level="4">5.2.1.2 Trusted Path/Channels (FTP)</h4>
         <div class="comp" id="FTP_ITC_EXT.1">
             <h4>FTP_ITC_EXT.1 Trusted Channel</h4>
             <div class="element">
@@ -831,9 +741,9 @@
                     <a href="#FTP_ITC_EXT.1.1" class="abbr">FTP_ITC_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication channel between itself and [<i>an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent that is internal to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></i>] that is logically distinct from other communication channels, as specified in [<i>FPT_ITT.1(2)</i>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication channel between itself and [<i>an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent that is internal to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></i>] that is logically distinct from other communication channels, as specified in [<i><a href="#FPT_ITT.1/INTER_XFER_AGENT">FPT_ITT.1/INTER_XFER_AGENT</a></i>]. 
                     <div class="appnote">
-                        <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to select that an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is internal to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary includes both an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent by definition when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed. As noted above, the fact that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> includes both <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent components means that FPT_ITT.1(2) from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> must also be claimed, as this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the channel used for secure communications between these two components. </span>
+                        <span class="note-header">Application Note: </span><span class="note"> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to select that an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is internal to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary includes both an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent by definition when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed. As noted above, the fact that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> includes both <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent components means that <a href="#FPT_ITT.1/INTER_XFER_AGENT">FPT_ITT.1/INTER_XFER_AGENT</a> from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> must also be claimed, as this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the channel used for secure communications between these two components. </span>
                     </div>
                 </div>
             </div>
@@ -1390,6 +1300,57 @@
                 <tr>
                     <th>Threat</th><th>Addressed by</th><th>Rationale</th>
                 </tr>
+                <tr class="major-row">
+                    <td rowspan="4"><a href="#T.INSECURE_MDM_COMMUNICATIONS">T.INSECURE_​MDM_​COMMUNICATIONS</a>
+                        <br>
+                    </td><td><a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a> (additional to <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server for transmission of policies.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FTP_TRP.1/MDFENROLL">FTP_TRP.1/MDFENROLL</a> (additional to <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server for enrollment into management.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a> (additional to <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server for transmission of policies.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FTP_TRP.1/OSENROLL">FTP_TRP.1/OSENROLL</a> (additional to <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server for enrollment into management.</td>
+                </tr>
+                <tr class="major-row">
+                    <td rowspan="6"><a href="#T.MISUSED_DEVICE">T.MISUSED_​DEVICE</a>
+                        <br>
+                    </td><td><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td>Mitigates the threat of a misused device by causing the generation of alerts based on the usage of the device.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a></td><td>Mitigates the threat of a misused device by generating audit events regarding the use and behavior of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td>Mitigates the threat of a misused device by allowing the activity that triggers audit events for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent behavior.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td>Mitigates the threat of a misused device by preventing the unenrollment of the device from management or by taking some other security-relevant action if unenrollment is performed.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a> (implementation-dependent)</td><td>Mitigates the threat of a misused device by tracking when the device has lost contact with the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server as a basis for triggering automatic fail-safe beahvior.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a> (implementation-dependent)</td><td>Mitigates the threat of a misused device by using trusted platform storage to protect against destruction of evidence related to misuse.</td>
+                </tr>
+                <tr class="major-row">
+                    <td rowspan="5"><a href="#T.UNAUTHORIZED_POLICY_SOURCE">T.UNAUTHORIZED_​POLICY_​SOURCE</a>
+                        <br>
+                    </td><td><a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a> (additional to <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>Mitigates the threat of an unauthorized policy source by preventing substitution of the valid policy source.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FCS_STG_EXT.1/MDMKEYS">FCS_STG_EXT.1/MDMKEYS</a> (additional to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>Mitigates the threat of an unauthorized policy source by preventing substitution of the valid policy source.</td>
+                </tr>
+                <tr>
+                    <td>FIA_ENR_EXT.1</td><td>Mitigates the threat of an unauthorized policy source by recording the identifier of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server that it enrolled to.</td>
+                </tr>
+                <tr>
+                    <td>FMT_POL_EXT.1</td><td>Mitigates the threat of an unauthorized policy source by applying only policies that are digitally signed by an authorized source.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td>Mitigates the threat of an unauthorized policy source by requiring authorization by the underlying platform to manage the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td>
+                </tr>
             </table>
         </p>
         <h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1>
@@ -1405,19 +1366,13 @@
                 <th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th>
             </tr>
             <tr>
-                <td><a href="#T.MALICIOUS_APPS">T.MALICIOUS_APPS</a></td><td></td>
+                <td><a href="#T.INSECURE_MDM_COMMUNICATIONS">T.INSECURE_MDM_COMMUNICATIONS</a></td><td></td>
             </tr>
             <tr>
-                <td><a href="#T.BACKUP">T.BACKUP</a></td><td>This threat protects user data from unauthorized logical access. An attacker would attempt to exploit this threat by first exploiting the <a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a>, T.MALICIOUS_APP, or T.PERSISTENT_PRESENCE threats defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> against the mobile device as a whole, and then using the device itself as an attack vector against any backup data stored on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td>
+                <td><a href="#T.MISUSED_DEVICE">T.MISUSED_DEVICE</a></td><td></td>
             </tr>
             <tr>
-                <td><a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a></td><td></td>
-            </tr>
-            <tr>
-                <td><a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a></td><td></td>
-            </tr>
-            <tr>
-                <td><a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a></td><td></td>
+                <td><a href="#T.UNAUTHORIZED_POLICY_SOURCE">T.UNAUTHORIZED_POLICY_SOURCE</a></td><td></td>
             </tr>
             <tr>
                 <td><a href="#A.CONNECTIVITY">A.CONNECTIVITY</a></td><td>This assumption expects that networking services will be available for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use. This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is installed on a mobile device defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> that provides networking services through various radios.</td>
@@ -1460,7 +1415,7 @@
                     <td><a href="#OE.DATA_PROPER_USER">OE.DATA_PROPER_USER</a></td><td> This objective extends the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>&rsquo;s <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.NOTIFY and <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PRECAUTION objectives by setting reasonable expectations for user security behavior.</td>
                 </tr>
                 <tr>
-                    <td><a href="#OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</a></td><td> This objective helps mitigate the <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> and <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> threats defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by reducing the network exposure of the mobile device. This does not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not set specific expectations for the level of security that the enterprise provides. However, all use cases from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> set expectations that the mobile device is used for some enterprise purposes so it is reasonable to expect the enterprise have security controls in place to protect these functions. </td>
+                    <td><a href="#OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</a></td><td> This objective helps mitigate the T.NETWORK_EAVESDROP and T.NETWORK_ATTACK threats defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by reducing the network exposure of the mobile device. This does not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not set specific expectations for the level of security that the enterprise provides. However, all use cases from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> set expectations that the mobile device is used for some enterprise purposes so it is reasonable to expect the enterprise have security controls in place to protect these functions. </td>
                 </tr>
                 <tr>
                     <td><a href="#OE.DEVICE_PLATFORM">OE.DEVICE_PLATFORM</a></td><td> This objective is suitable because the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can reasonably expect the device it has been deployed on to be secure.</td>
@@ -1561,19 +1516,13 @@
                 <th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th>
             </tr>
             <tr>
-                <td><a href="#T.MALICIOUS_APPS">T.MALICIOUS_APPS</a></td><td></td>
+                <td><a href="#T.INSECURE_MDM_COMMUNICATIONS">T.INSECURE_MDM_COMMUNICATIONS</a></td><td></td>
             </tr>
             <tr>
-                <td><a href="#T.BACKUP">T.BACKUP</a></td><td> This threat protects user data from unauthorized logical access. If the backup data is stored outside the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> or the mobile device that it protects, then there is no conflict with the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> since it is a different security boundary. If the backup data is stored either on the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> or on the protected device, an attacker would attempt to exploit this threat by first exploiting any of the threats that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines (<a href="#T.MALICIOUS_APPS">T.MALICIOUS_APPS</a>, <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a>, <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a>, <a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a>), depending on where and how the backup data is stored, and then use successful exploitation of one of these threats to attempt to access the backup data itself.</td>
+                <td><a href="#T.MISUSED_DEVICE">T.MISUSED_DEVICE</a></td><td></td>
             </tr>
             <tr>
-                <td><a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a></td><td></td>
-            </tr>
-            <tr>
-                <td><a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a></td><td></td>
-            </tr>
-            <tr>
-                <td><a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a></td><td></td>
+                <td><a href="#T.UNAUTHORIZED_POLICY_SOURCE">T.UNAUTHORIZED_POLICY_SOURCE</a></td><td></td>
             </tr>
             <tr>
                 <td><a href="#A.CONNECTIVITY">A.CONNECTIVITY</a></td><td>This assumption expects that networking services will be available for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use. This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> runs on a <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> or specialized network appliance. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not make any assumptions about the environmental functionality that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> relies on, so there is nothing in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> that would contradict it.</td>
@@ -1637,9 +1586,6 @@
             </tr>
             <tr>
                 <th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th>
-            </tr>
-            <tr>
-                <td><a href="#FIA_X509_EXT.1/CERTVAL_SEL">FIA_X509_EXT.1/CERTVAL_SEL</a></td><td>There is no modification to this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, but it is mandatory for a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because it must always be claimed when an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> includes an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent as part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td>
             </tr>
             <tr>
                 <td><a href="#FPT_ITT.1/INTER_XFER_AGENT">FPT_ITT.1/INTER_XFER_AGENT</a></td><td>There is no modification to this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, but it is mandatory for a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because it must always be claimed when an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> includes an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent as part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td>
@@ -1717,19 +1663,13 @@
                 <th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th>
             </tr>
             <tr>
-                <td><a href="#T.MALICIOUS_APPS">T.MALICIOUS_APPS</a></td><td></td>
+                <td><a href="#T.INSECURE_MDM_COMMUNICATIONS">T.INSECURE_MDM_COMMUNICATIONS</a></td><td></td>
             </tr>
             <tr>
-                <td><a href="#T.BACKUP">T.BACKUP</a></td><td>This threat protects user data from unauthorized logical access. An attacker would attempt to exploit this threat by first exploiting the <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a>, T.LOCAL_ATTACK, or T.LIMITED_PHYSICAL_ACCESS threats defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> against the operating system as a whole, and then using the access gained from that attack as an attack vector against any backup data stored on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td>
+                <td><a href="#T.MISUSED_DEVICE">T.MISUSED_DEVICE</a></td><td></td>
             </tr>
             <tr>
-                <td><a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a></td><td></td>
-            </tr>
-            <tr>
-                <td><a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a></td><td></td>
-            </tr>
-            <tr>
-                <td><a href="#T.PHYSICAL_ACCESS">T.PHYSICAL_ACCESS</a></td><td></td>
+                <td><a href="#T.UNAUTHORIZED_POLICY_SOURCE">T.UNAUTHORIZED_POLICY_SOURCE</a></td><td></td>
             </tr>
             <tr>
                 <td><a href="#A.CONNECTIVITY">A.CONNECTIVITY</a></td><td>This assumption expects that networking services will be available for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use. This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes mandatory requirements for a <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> that have network connectivity as a prerequisite.</td>
@@ -1772,7 +1712,7 @@
                     <td><a href="#OE.DATA_PROPER_USER">OE.DATA_PROPER_USER</a></td><td> This objective extends the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>&rsquo;s <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_USER objective by setting reasonable expectations for user security behavior.</td>
                 </tr>
                 <tr>
-                    <td><a href="#OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</a></td><td> This objective helps mitigate the <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> and <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> threats defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by reducing the network exposure of the operating system. This does not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not set specific expectations for the level of security that the enterprise provides. However, all use cases from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> set expectations that the operating system is used for some enterprise purposes so it is reasonable to expect the enterprise have security controls in place to protect these functions. </td>
+                    <td><a href="#OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</a></td><td> This objective helps mitigate the T.NETWORK_EAVESDROP and T.NETWORK_ATTACK threats defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by reducing the network exposure of the operating system. This does not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not set specific expectations for the level of security that the enterprise provides. However, all use cases from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> set expectations that the operating system is used for some enterprise purposes so it is reasonable to expect the enterprise have security controls in place to protect these functions. </td>
                 </tr>
                 <tr>
                     <td><a href="#OE.DEVICE_PLATFORM">OE.DEVICE_PLATFORM</a></td><td>This extends the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PLATFORM objective from the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to cover that the underlying platform of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is trusted.</td>
