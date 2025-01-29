@@ -239,7 +239,7 @@
           <description>An MDM Agent may support the ability to determine if it has been out of connectivity with an MDM Server for too long.
             The configuration of the number of allowed missed reachability events or time limit since last successful connection
             with the MDM Server is handled in the MDM Server's configuration policy of the MDM Agent (the first selection of
-            function 56 in FMT_SMF.1.1(1) within the MDM PP). This feature applies if either the TOE claims the MDM PP as its 
+            function 56 in FMT_SMF.1.1/SERVER_CONF_AGENT within the MDM PP). This feature applies if either the TOE claims the MDM PP as its 
             Base-PP and management function 56 is claimed, or if the TOE's OE includes an MDM Server that was separately validated against
             the MDM PP and that MDM Server's ST claims management function 56.</description>
         </feature>
@@ -301,7 +301,7 @@
           <addressed-by>FAU_GEN.1/AGENT</addressed-by><rationale>Mitigates the threat of a misused device by generating audit events regarding the use and behavior of the MDM agent.</rationale>
           <addressed-by>FAU_SEL.1/AGENT</addressed-by><rationale>Mitigates the threat of a misused device by allowing the activity that triggers audit events for MDM agent behavior.</rationale>
           <addressed-by>FMT_UNR_EXT.1</addressed-by><rationale>Mitigates the threat of a misused device by preventing the unenrollment of the device from management or by taking some other security-relevant action if unenrollment is performed.</rationale>
-          <addressed-by>FPT_NET_EXT.1 (implementation-dependent)</addressed-by><rationale>Mitigates the threat of a misused device by tracking when the device has lost contact with the MDM server as a basis for triggering automatic fail-safe beahvior.</rationale>
+          <addressed-by>FPT_NET_EXT.1 (implementation-dependent)</addressed-by><rationale>Mitigates the threat of a misused device by tracking when the device has lost contact with the MDM server as a basis for triggering automatic fail-safe behavior.</rationale>
           <addressed-by>FAU_STG_EXT.3 (implementation-dependent)</addressed-by><rationale>Mitigates the threat of a misused device by using trusted platform storage to protect against destruction of evidence related to misuse.</rationale>
         </threat>
         
@@ -362,34 +362,29 @@
         <OSP name="P.ACCOUNTABILITY">
           <description>Personnel operating the TOE shall be accountable for their
             actions within the TOE. </description>
-          <objective-refer ref="O.ACCOUNTABILITY">
-            <rationale>O.ACCOUNTABILITY provides logging of personnel actions to provide
-              accountability for these actions. </rationale>
+          <objective-refer ref="OE.DEVICE_PLATFORM">
+            <rationale>The use of a trusted device platform will include the necessary mechanisms to record user actions.</rationale>
           </objective-refer>
         </OSP>
         <OSP name="P.ADMIN">
           <description>The configuration of the device's security functions must adhere to the
             enterprise security policy. </description>
-          <objective-refer ref="O.APPLY_POLICY">
-            <rationale>The TOE adheres to the enterprise security policy through
-              the application of O.APPLY_POLICY. </rationale>
+          <objective-refer ref="OE.DATA_PROPER_ADMIN">
+            <rationale>An environment that empowers only trusted administrators will satisfy the policy that the device is configured correctly.</rationale>
           </objective-refer>
         </OSP>
         <OSP name="P.DEVICE_ENROLL">
           <description>The MDM administrator must enroll a device for a specific user prior to it 
             being used in the enterprise network. </description>
-          <objective-refer ref="O.APPLY_POLICY">
-            <rationale>The TOE enrolls mobile devices for specific users with
-              policy through the application of O.APPLY_POLICY. </rationale>
+          <objective-refer ref="OE.DATA_PROPER_ADMIN">
+            <rationale>An environment that empowers only trusted administrators will satisfy the policy that the device is enrolled into management.</rationale>
           </objective-refer>
         </OSP>
         <OSP name="P.NOTIFY">
           <description>The user must immediately notify the administrator if a device
             is lost or stolen so that the administrator may apply remediation actions via the MDM system. </description>
-          <objective-refer ref="O.APPLY_POLICY">
-            <rationale>The TOE provides the capability for the administrator to
-              apply remediation actions via the MDM system through policy, which
-              is applied through O.APPLY_POLICY. </rationale>
+          <objective-refer ref="OE.DATA_PROPER_USER">
+            <rationale>An environment with trained and trusted users can be expected to adhere to this policy.</rationale>
           </objective-refer>
         </OSP>
       </OSPs>
@@ -937,114 +932,7 @@
             <audit-event table="tab-at-mdm-addnl"/>
           </f-component>
         </sec:mdm_mod_fcs>
-<!--        <subsection id="fpt" title="Protection of the TSF (FPT)">
-          <f-component name="Internal TOE TSF Data Transfer" id="FPT_ITT.1(2)">
-            <consistency-rationale>The Base-PP defines this SFR for secure data
-              transfer between distributed TOE components. This PP-Module makes
-              this functionality mandatory (since the TOE will include both the <abbr linkend="MDM"
-              /> Server and distributed MDM Agents) and also eliminates IPsec as a
-              supported protocol since commercially-available MDM Agents do not
-              use this to communicate with MDM Servers. </consistency-rationale>
-            <f-element id="FPT_ITT.1.1(2)">
-              <title><h:b>Refinement:</h:b> The TSF shall <selectables>
-                  <selectable>invoke platform-provided functionality to use <selectables
-                      linebreak="yes">
-                      <selectable>mutually authenticated TLS</selectable>
-                      <selectable>HTTPS</selectable>
-                      <selectable>mutually authenticated DTLS</selectable>
-                    </selectables>
-                  </selectable>
-                  <selectable>implement functionality to use <selectables linebreak="yes">
-                      <selectable>mutually authenticated TLS as defined in the Package for Transport
-                        Layer Security</selectable>
-                      <selectable>HTTPS</selectable>
-                      <selectable>mutually authenticated DTLS as defined in the Package for
-                        Transport Layer Security</selectable>
-                    </selectables></selectable>
-                </selectables> to protect all data from [<h:i>disclosure, modification</h:i>] when it is
-                transferred between separate parts of the TOE. </title>
-              <note role="application"> The intent of this requirement is to protect the
-                communications channel between MDM Server and Agent, post
-                enrollment. <linkref linkend="FTP_TRP.1(2)"/> from the Base-PP is
-                to protect the communications channel between MDM Server and Agent
-                during enrollment. <h:br/><h:br/> This requirement is to ensure that the
-                transmission of any audit logs, mobile device information data (software version,
-                hardware model, and application versions), and configuration data collected by the
-                  MDM Agent and sent from the MDM Agent to the
-                  MDM Server, when commanded, or at configurable intervals, is
-                properly protected. This trusted channel also protects any commands and policies
-                sent by the MDM Server to the MDM Agent. Either
-                the MDM Agent or the MDM Server is able to
-                initiate the connection.<h:br/><h:br/> This requirement is iterated from the
-                  Base-PP to indicate the protocols that the MDM Agent can use for
-                a trusted channel. Since this requirement is only for the case when the <abbr
-                  linkend="PP-Module"/> builds on MDM PP and in this case it is
-                expected that the MDM Agent will be a third party application
-                provided by the MDM Server, it is acceptable for the <abbr
-                  linkend="MDM"/> Agent to utilize the protocol implementations from the mobile
-                device. If that is the case then "invoke platform-provided functionality" must be
-                selected. If the MDM Agent implements the protocol itself, then
-                "implement functionality" must be selected.<h:br/><h:br/> If "HTTPS" is selected
-                the appropriate selection-based SFRs from <appref linkend="sel-based"/> of <abbr
-                  linkend="MDM"/> PP must be included in the ST, if not already
-                present.<h:br/><h:br/> If "implement functionality to use mutually authenticated
-                TLS as defined in the Package for Transport Layer Security" or "implement
-                functionality to use mutually authenticated DTLS as defined in the Package for
-                Transport Layer Security" is selected the TLS Functional Package must be included in
-                the ST, with the following selections made: <h:ul>
-                  <h:li>FCS_TLS_EXT.1: <h:ul>
-                      <h:li>either TLS or DTLS is selected depending on the selection made in
-                        FPT_ITT.1.1</h:li>
-                      <h:li>either client or server is selected as appropriate</h:li>
-                    </h:ul>
-                  </h:li>
-                  <h:li>FCS_TLSC_EXT.1.1 or FCS_TLSS_EXT.1.1 (as appropriate): <h:ul>
-                      <h:li>The cipher suites selected must correspond with the algorithms and
-                        hash functions allowed in FCS_COP.1 from the MDM PP.</h:li>
-                      <h:li>mutual authentication must be selected</h:li>
-                    </h:ul>
-                  </h:li>
-                </h:ul> Protocol, RBG, Certificate validation, algorithm, and similar services may
-                be met with platform provided services. <h:br/><h:br/>
-              </note>
-              <aactivity>
-                <TSS>The evaluator shall examine the TSS to determine that the
-                  methods and protocols used to protect distributed TOE components
-                  are described. The evaluator shall also confirm that all protocols listed in the
-                    TSS in support of TOE administration are
-                  consistent with those specified in the requirement, and are included in the
-                  requirements in the ST.<h:br/><h:br/> If "invoke
-                  platform-provided functionality" is selected, the evaluator shall examine the
-                    TSS of the MDM Server's ST
-                  to verify that it describes (for each supported platform) how this functionality
-                  is invoked (it should be noted that this may be through a mechanism that is not
-                  implemented by the MDM Server; nonetheless, that mechanism will
-                  be identified in the TSS as part of this evaluation
-                  activity).<h:br/><h:br/>
-                </TSS>
-                <Guidance>The evaluator shall confirm that the operational guidance contains
-                  instructions for establishing the communication paths for each supported
-                  method.<h:br/><h:br/>
-                </Guidance>
-                <Tests>
-                  <testlist>
-                    <test>The evaluators shall ensure that communications using each specified (in
-                      the operational guidance) communication method is tested during the course of
-                      the evaluation, setting up the connections as described in the operational
-                      guidance and ensuring that communication is successful.
-                    </test>
-                    <test>The evaluator shall ensure, for each method of communication, the channel
-                      data is not sent in plaintext.
-                    </test>
-                  </testlist> 
-                    <h:br/>
-                    Further evaluation activities are associated with the specific protocols.<h:br/><h:br/>
-                </Tests>
-              </aactivity>
-            </f-element>
-          </f-component>
-       </subsection>
--->
+
       </additional-sfrs>
       <con-toe> When this PP-Module is used to extend the MDM
         PP, the TOE type for the overall TOE is still mobile device management. The TOE boundary is
@@ -1125,7 +1013,7 @@
         updates.</con-mod>
       <con-mod ref="fmt-smf-ext-4"> This SFR requires the MDM Agent to interact
         with the underlying mobile device platform to enforce management functions that are
-        configured by the MDM Server (FMT_SMF.1(1) in the Base-PP).</con-mod>
+        configured by the MDM Server (FMT_SMF.1/SERVER_CONF_AGENT in the Base-PP).</con-mod>
       <con-mod ref="fmt-unr-ext-1"> This SFR requires the TSF to define its behavior upon
         unenrollment from management. Unenrollment from management is a management function that is
         specified in the Base-PP.</con-mod>
@@ -1136,7 +1024,7 @@
       <con-mod ref="fpt-net-ext-1"> This SFR defines the ability of the MDM Agent
         to maintain information about its last successful connection with the environmental 
           MDM Server (i.e., the last successful invocation of the trusted channel for
-        that interface, as defined in FPT_ITT.1(2) of the Base-PP). It does not
+        that interface, as defined in FPT_ITT.1/INTER_XFER_AGENT of the Base-PP). It does not
         otherwise impact the Base-PP since it describes behavior that occurs local
         to the MDM Agent during a period where it is not interacting with the
           MDM Server. </con-mod>
@@ -1514,7 +1402,7 @@
                 </selectables>.</h:li>
               </h:ul>
             </title>
-            <note role="application"> The trusted channel is defined in FPT_ITT.1(2) of the Base-PP if the TOE claims the MDM PP,  
+            <note role="application"> The trusted channel is defined in FPT_ITT.1/INTER_XFER_AGENT of the Base-PP if the TOE claims the MDM PP,  
               FTP_ITC_EXT.1/MDFCHANNEL in this PP-Module if the TOE claims the 
               MDF PP, and FTP_ITC_EXT.1/OSCHANNEL in this PP-Module if the TOE claims the GPOS PP. 
               “Alert” in this requirement could be as simple as an audit record or
@@ -1855,12 +1743,12 @@
               by the MDM Server. </title>
             <note role="application">The intent of this requirement is to cryptographically tie the
               policies to the enterprise that mandated the policy, not to protect the policies in
-              transit, as this is addressed by other SFRs (FPT_ITT.1(2) in the MDM PP or the Additional SFR
+              transit, as this is addressed by other SFRs (FPT_ITT.1/INTER_XFER_AGENT in the MDM PP or the Additional SFR
               FTP_ITC_EXT.1/MDFCHANNEL or FTP_ITC_EXT.1/OSCHANNEL, depending on the claimed Base-PP). 
               This is especially critical for
               users who connect to multiple enterprises.<h:br/><h:br/> Policies must be
               digitally signed by the enterprise using the algorithms in
-              FCS_COP.1(3) in the MDM PP.<h:br/><h:br/>
+              FCS_COP.1/SIGN_ALG in the MDM PP.<h:br/><h:br/>
               The signing private key is associated with a certificate or raw public key used by the MDM Agent to verify the signature on the policy.
             </note>           
           </f-element>
@@ -1935,8 +1823,8 @@
               administrator-provided management functions in the MDF PP are specified
               in the "Admin Only" column of Table 7 in MDF PP and in FPT_TUD_EXT.1 (for version
               queries). The administrator-provided device management functions in the MDM
-              PP are specified in FMT_SMF.1(1); the functions in the selection
-              of FMT_SMF.1(1) in the MDM
+              PP are specified in FMT_SMF.1/SERVER_CONF_AGENT; the functions in the selection
+              of FMT_SMF.1/SERVER_CONF_AGENT in the MDM
               PP are required to correspond to the functions available on the
               platforms supported by the MDM Agent. 
               The administrator-provided management functions in the GPOS PP are specified in FMT_SMF_EXT.1.
@@ -1999,7 +1887,7 @@
                       administrator-provided management function and shall verify that the mobile device executes the commands and enforces the policies.</test>
                   <test>[conditional: if "import the certificates to be used for authentication of MDM Agent communications" is selected in FMT_SMF_EXT.4.1, then] 
                     The evaluator shall configure the MDM Agent authentication certificate in accordance with the configuration guidance. 
-                    The evaluator shall verify that the MDM Agent uses this certificate in performing the tests for the MDM PP SFR FPT_ITT.1(2) 
+                    The evaluator shall verify that the MDM Agent uses this certificate in performing the tests for the MDM PP SFR FPT_ITT.1/INTER_XFER_AGENT 
                     (if the MDM PP is the Base-PP),
                     the Additional SFR FTP_ITC_EXT.1/MDFCHANNEL (if the MDF PP is the Base-PP),
                     or the Additional SFR FTP_ITC_EXT.1/OSCHANNEL (if the GPOS PP is the Base-PP).</test>
@@ -2163,8 +2051,8 @@
                 reached.<h:br/><h:br/>
               </Guidance>
               <Tests> The evaluator shall configure the MDM Server configuration policy of the MDM Agent per
-                FMT_SMF.1.1(1), function 56 in the MDM PP. The device shall be placed in airplane mode or otherwise have its 
-                netwrok capabilities disabled to prevent
+                FMT_SMF.1.1/SERVER_CONF_AGENT, function 56 in the MDM PP. The device shall be placed in airplane mode or otherwise have its 
+                network capabilities disabled to prevent
                 connectivity with the MDM Server. The evaluator shall verify that after the configured
                 time, the remediation actions selected in function 56 occur.<h:br/><h:br/>
               </Tests>
