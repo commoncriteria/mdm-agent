@@ -281,108 +281,41 @@
         For these threats do not include a <description> or <consistency-rationale> section. If a <description> section is included then the threat is listed in Section 3.1. 
         If no description is listed, then threat is only listed in section 4.3 (not in 3.1 or 6) -->
       <threats>
-        <threat name="T.MALICIOUS_APPS">
-	  <description>
-	    <comment>This was added in Github and was not present in the previously published version of this Module. NIAP guidance is needed as to whether
-	    it should stay or if it's unneeded because the threat it was meant to have be mitigated by TOE objectives can instead be inherited from the 
-	    supported Base-PPs.</comment>
-	  </description>
-          
-          
-          
-          
-          
-          
-          
-          
-          <objective-refer ref="O.DATA_PROTECTION_TRANSIT">
-            <rationale>The threat T.MALICIOUS_APPS is countered by O.DATA_PROTECTION_TRANSIT as this
-              provides the capability to protect app loading and updates against malicious insertion
-              from the network.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.APPLY_POLICY">
-            <rationale>The threat T.MALICIOUS_APPS is countered by O.APPLY_POLICY as this provides a
-              policy preventing loading of unapproved applications into the TOE.</rationale>
-          </objective-refer>
-        </threat>
-        <threat name="T.BACKUP">
-          <description> An attacker may try to target backups of data or credentials and exfiltrate
-            data. Since the backup is stored on either a personal computer or end user’s backup
-            repository, it is unlikely the enterprise would detect compromise.</description>
-          <objective-refer ref="O.DATA_PROTECTION_TRANSIT">
-            <rationale>The threat T.BACKUP is countered by O.DATA_PROTECTION_TRANSIT as this
-              provides the capability to communicate using one (or more) standard protocols as a
-              means to maintain the confidentiality of data that are transmitted between the MDM Agent
-              and other entities.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.APPLY_POLICY">
-            <rationale>The threat T.BACKUP is countered by O.APPLY_POLICY as this provides a policy that
-              enforces storage of backups only in secure, protected locations.</rationale>
-          </objective-refer>
-        </threat>
-        <threat name="T.NETWORK_ATTACK">
+  
+        <threat name="T.INSECURE_MDM_COMMUNICATIONS">
           <description>
-            <comment>This was added in Github and was not present in the previously published version of this Module. NIAP guidance is needed as to whether
-              it should stay or if it's unneeded because the threat it was meant to have be mitigated by TOE objectives can instead be inherited from the 
-              supported Base-PPs.</comment>
+            A malicious user or process may inspect network communications between the MDM agent and an MDM server to illicitly determine, modify, or prevent these communications in such a way that the MDM agent fails to enforce the intended policy.
           </description>
-          <objective-refer ref="O.DATA_PROTECTION_TRANSIT">
-            <rationale>The threat T.NETWORK_ATTACK is countered by O.DATA_PROTECTION_TRANSIT as this
-              provides the capability to communicate using one (or more) standard protocols as a
-              means to maintain the confidentiality of data that are transmitted between the MDM Agent
-              and other entities.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.APPLY_POLICY">
-            <rationale>The threat T.NETWORK_ATTACK is countered by O.APPLY_POLICY as this provides a
-              secure configuration of the MDM Agent to protect data that it processes.</rationale>
-          </objective-refer>
-          <objective-refer ref="OE.IT_ENTERPRISE">
-            <rationale>The threat T.NETWORK_ATTACK is countered by OE.IT_ENTERPRISE by reducing the network exposure of the device.</rationale>
-          </objective-refer>
+          <addressed-by>FTP_ITC_EXT.1/MDFCHANNEL (additional to MDF PP)</addressed-by><rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for transmission of policies.</rationale>
+          <addressed-by>FTP_TRP.1/MDFENROLL (additional to MDF PP)</addressed-by><rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for enrollment into management.</rationale>
+          <addressed-by>FTP_ITC_EXT.1/OSCHANNEL (additional to GPOS PP)</addressed-by><rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for transmission of policies.</rationale>
+          <addressed-by>FTP_TRP.1/OSENROLL (additional to GPOS PP)</addressed-by><rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for enrollment into management.</rationale>
         </threat>
-        <threat name="T.NETWORK_EAVESDROP">
+
+        
+        <threat name="T.MISUSED_DEVICE">
           <description>
-            <comment>This was added in Github and was not present in the previously published version of this Module. NIAP guidance is needed as to whether
-              it should stay or if it's unneeded because the threat it was meant to have be mitigated by TOE objectives can instead be inherited from the 
-              supported Base-PPs.</comment>
+            A malicious or careless user may operate a mobile device in such a way that it compromises the security of the device, its data, or its user.
           </description>
-          <objective-refer ref="O.DATA_PROTECTION_TRANSIT">
-            <rationale>The threat T.NETWORK_EAVESDROP is countered by O.DATA_PROTECTION_TRANSIT as
-              this provides the capability to communicate using one (or more) standard protocols as
-              a means to maintain the confidentiality of data that are transmitted between the MDM Agent
-              and other entities.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.APPLY_POLICY">
-            <rationale>The threat T.NETWORK_EAVESDROP is countered by O.APPLY_POLICY as this
-              provides a secure configuration of the MDM Agent to protect data that it
-              processes.</rationale>
-          </objective-refer>
-          <objective-refer ref="OE.IT_ENTERPRISE">
-            <rationale>
-              The threat T.NETWORK_EAVESDROP is countered by OE.IT_ENTERPRISE by reducing the network exposure of the device.  
-            </rationale>
-          </objective-refer>
+          <addressed-by>FAU_ALT_EXT.2</addressed-by><rationale>Mitigates the threat of a misused device by causing the generation of alerts based on the usage of the device.</rationale>
+          <addressed-by>FAU_GEN.1/AGENT</addressed-by><rationale>Mitigates the threat of a misused device by generating audit events regarding the use and behavior of the MDM agent.</rationale>
+          <addressed-by>FAU_SEL.1/AGENT</addressed-by><rationale>Mitigates the threat of a misused device by allowing the activity that triggers audit events for MDM agent behavior.</rationale>
+          <addressed-by>FMT_UNR_EXT.1</addressed-by><rationale>Mitigates the threat of a misused device by preventing the unenrollment of the device from management or by taking some other security-relevant action if unenrollment is performed.</rationale>
+          <addressed-by>FPT_NET_EXT.1 (implementation-dependent)</addressed-by><rationale>Mitigates the threat of a misused device by tracking when the device has lost contact with the MDM server as a basis for triggering automatic fail-safe beahvior.</rationale>
+          <addressed-by>FAU_STG_EXT.3 (implementation-dependent)</addressed-by><rationale>Mitigates the threat of a misused device by using trusted platform storage to protect against destruction of evidence related to misuse.</rationale>
         </threat>
-        <threat name="T.PHYSICAL_ACCESS">
+        
+        <threat name="T.UNAUTHORIZED_POLICY_SOURCE">
           <description>
-            <comment>This was added in Github and was not present in the previously published version of this Module. NIAP guidance is needed as to whether
-              it should stay or if it's unneeded because the threat it was meant to have be mitigated by TOE objectives can instead be inherited from the 
-              supported Base-PPs.</comment>
+          A malicious user or process can send illegitimate policy data to the TOE in an attempt to cause it to enter an insecure or unknown state.
           </description>
-          <objective-refer ref="O.ACCOUNTABILITY">
-            <rationale>The threat T.PHYSICAL_ACCESS is countered by O.ACCOUNTABILITY as this
-              provides the capability to log attempts by unauthorized personnel to access data, and
-              to log any access or changes to the device or its data during
-              the time when it is not under the control of an authorized user.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.APPLY_POLICY">
-            <rationale>The threat T.PHYSICAL_ACCESS is countered by O.APPLY_POLICY as this provides
-              a secure configuration of the MDM Agent to protect data that it processes.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.STORAGE"> 
-            <rationale>The threat T.PHYSICAL_ACCESS is countered by O.STORAGE as this provides the capability to encrypt all user and enterprise data and authentication keys to ensure the confidentiality of data that it stores.</rationale>
-          </objective-refer>
-        </threat>        
+          <addressed-by>FCS_STG_EXT.4 (additional to MDF PP)</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by preventing substitution of the valid policy source.</rationale>
+          <addressed-by>FCS_STG_EXT.1/MDMKEYS (additional to MDM PP)</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by preventing substitution of the valid policy source.</rationale>
+          <addressed-by>FIA_ENR_EXT.1</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by recording the identifier of the MDM server that it enrolled to.</rationale>
+          <addressed-by>FMT_POL_EXT.1</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by applying only policies that are digitally signed by an authorized source.</rationale>
+          <addressed-by>FMT_SMF_EXT.4</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by requiring authorization by the underlying platform to manage the TSF.</rationale>
+        </threat>
+         
       </threats>
     </sec:Threats>
     <section id="Assumptions" title="Assumptions">
@@ -463,125 +396,7 @@
     </section>
     </sec:Security_Problem_Definition>
   <sec:Security_Objectives>
-    <sec:Security_Objectives_for_the_TOE>
-      <SOs>
-        <SO name="O.ACCOUNTABILITY">
-          <description>The TOE must provide logging facilities that record
-            management actions undertaken by its administrators. </description>
-            <addressed-by>FAU_ALT_EXT.2</addressed-by>
-          <rationale>The PP-Module includes FAU_ALT_EXT.2 to support this objective by requiring the TSF to generate alerts back to an MDM Server 
-            when security-relevant events occur.</rationale>
-            <addressed-by>FAU_GEN.1/AGENT</addressed-by>
-          <rationale>The PP-Module includes FAU_GEN.1/AGENT to support this objective by defining the security-relevant events 
-            for which the TSF must generate audit records.</rationale>
-            <addressed-by>FAU_SEL.1/AGENT</addressed-by>
-          <rationale>The PP-Module includes FAU_SEL.1/AGENT to support this objective by defining how the set of audited events can be configured.</rationale>
-          <addressed-by>FAU_STG_EXT.3 (implementation-dependent)</addressed-by>
-          <rationale>The PP-Module includes FAU_STG_EXT.3 to support this objective by requiring the TSF to use 
-            platform-provided storage for any security-relevant audit data it generates.</rationale>
-        </SO>
-        <SO name="O.APPLY_POLICY">
-          <description>The TOE must facilitate configuration and enforcement of
-            enterprise security policies on devices via interaction between the OS and
-            the MDM Server. This includes the initial enrollment of the device
-            into management, through its entire lifecycle, including policy updates and its possible
-            unenrollment from management services. </description>
-          <addressed-by>FIA_ENR_EXT.2</addressed-by>
-          <rationale>The PP-Module includes FIA_ENR_EXT.2 to support this objective by requiring the TSF to identify the 
-            MDM Server so that the authenticity of policy updates can be determined.</rationale>
-          <addressed-by>FMT_POL_EXT.2</addressed-by>
-          <rationale>The PP-Module includes FMT_POL_EXT.2 to support this objective by requiring the TSF to only accept 
-            policy data that can prove its authenticity with a digital certificate.</rationale>
-          <addressed-by>FMT_SMF_EXT.4</addressed-by>
-          <rationale>The PP-Module includes FMT_SMF_EXT.4 to support this objective by defining 
-            the management functions the TSF must implement to support its own configuration.</rationale>
-          <addressed-by>FMT_UNR_EXT.1</addressed-by>
-          <rationale>The PP-Module includes FMT_UNR_EXT.1 to support this objective by preventing 
-            a user-directed unenrollment operation that would allow for MDM policies to be ignored.</rationale>
-          <addressed-by>FPT_NET_EXT.1 (implementation-dependent)</addressed-by>
-          <rationale>The PP-Module includes FPT_NET_EXT.1 to support this objective by requiring the TSF to detect when a
-            sustained communications outage with the MDM Server has occurred to indicate that the TSF may be deprived of updated policy data
-            in cases where unreachability thresholds are supported.</rationale>
-        </SO>
-        <SO name="O.DATA_PROTECTION_TRANSIT">
-          <description>Data exchanged between the MDM Server and the MDM Agent must be protected from being monitored, accessed, or altered. </description>
-          <addressed-by>FCS_DTLSC_EXT.1 (from TLS Package)</addressed-by>
-          <rationale>The PP-Module includes FCS_DTLSC_EXT.1 from the TLS package by reference to support this objective because 
-            DTLS is one of the protocols the PP-Module allows to protect data in transit.</rationale>
-          <addressed-by>FCS_DTLSS_EXT.1 (from TLS Package)</addressed-by>
-          <rationale>The PP-Module includes FCS_DTLSS_EXT.1 from the TLS package by reference to support this objective because 
-            DTLS is one of the protocols the PP-Module allows to protect data in transit.</rationale>
-          <addressed-by>FCS_TLS_EXT.1 (from TLS Package)</addressed-by>
-          <rationale>The PP-Module includes FCS_TLS_EXT.1 from the TLS package by reference to support this objective because 
-            it is mandatory to claim when the TLS Package applies so that the TSF’s usage of TLS is clearly defined.</rationale>
-          <addressed-by>FCS_TLSC_EXT.1 (from TLS Package)</addressed-by>
-          <rationale>The PP-Module includes FCS_TLSC_EXT.1 from the TLS package by reference to support this objective because 
-            TLS is one of the protocols the PP-Module allows to protect data in transit.</rationale>
-          <addressed-by>FCS_TLSC_EXT.2 (from TLS Package)</addressed-by>
-          <rationale>The PP-Module includes FCS_TLSC_EXT.2 from the TLS package by reference to support this objective because 
-            it requires TLS to be mutually-authenticated if claimed.</rationale>
-          <addressed-by>FCS_TLSS_EXT.1 (from TLS Package)</addressed-by>
-          <rationale>The PP-Module includes FCS_TLSS_EXT.1 from the TLS package by reference to support this objective because 
-            TLS is one of the protocols the PP-Module allows to protect data in transit.</rationale>
-          <addressed-by>FCS_TLSS_EXT.2 (from TLS Package)</addressed-by>
-          <rationale>The PP-Module includes FCS_TLSS_EXT.2 from the TLS package by reference to support this objective because 
-            it requires TLS to be mutually-authenticated if claimed.</rationale>
-          <addressed-by>FIA_X509_EXT.1(2) (if MDM is Base-PP)</addressed-by>
-          <rationale>This SFR is selection-based in the MDM PP but is required when the TOE includes this PP-Module because it is triggered by the MDM Agent 
-            being part of the TOE. This SFR supports the objective by authentication requirements for the trusted channel the TSF must use to secure connectivity between the 
-            MDM Server and MDM Agent components of the distributed TOE.</rationale>
-          <addressed-by>FTP_ITC_EXT.1 (if MDM is Base-PP)</addressed-by>
-          <rationale>This SFR from the MDM PP defines the trusted channel between the MDM Server and MDM Agent portions of the TOE.</rationale>
-          <addressed-by>FTP_ITC_EXT.1/MDFCHANNEL (if MDF is Base-PP)</addressed-by>
-          <rationale>The PP-Module includes FTP_ITC_EXT.1/MDFCHANNEL to support this objective because when the TOE is a mobile device, 
-            it must have a way to ensure that MDM Server communications are protected.</rationale>
-          <addressed-by>FTP_TRP.1/MDFENROLL (if MDF is Base-PP)</addressed-by>
-          <rationale>The PP-Module includes FTP_ITC_EXT.1/MDFCHANNEL to support this objective because when the TOE is a mobile device, 
-            it must have a way to ensure that MDM Server enrollment communications are protected.</rationale>
-          <addressed-by>FPT_ITT.1(2) (if MDM is Base-PP)</addressed-by>
-          <rationale>This SFR is selection-based in the MDM PP but is required when the TOE includes this PP-Module because it is triggered by the MDM Agent 
-            being part of the TOE. This SFR supports the objective by defining the trusted channel the TSF must use to secure connectivity between the 
-            MDM Server and MDM Agent components of the distributed TOE.</rationale>
-          <addressed-by>FTP_ITC_EXT.1/OSCHANNEL (if GPOS is Base-PP)</addressed-by>
-          <rationale>The PP-Module includes FTP_ITC_EXT.1/OSCHANNEL to support this objective because when the TOE runs on a GPOS, 
-            the operating system must have a way to ensure that MDM Server communications are protected.</rationale>
-          <addressed-by>FTP_TRP.1/OSENROLL (if GPOS is Base-PP)</addressed-by>
-          <rationale>The PP-Module includes FTP_TRP.1/OSENROLL to support this objective because when the TOE is a GPOS, 
-            it must have a way to ensure that MDM Server enrollment communications are protected.</rationale>
-          <addressed-by>FPT_NET_EXT.1 (implementation-dependent)</addressed-by>
-          <rationale>The PP-Module includes FPT_NET_EXT.1 to support this objective by requiring the TSF to detect when a sustained 
-            communications outage with the MDM Server has occurred as a possible indicator of communications issues
-            in cases where unreachability thresholds are supported.</rationale>
-	  <!-- 
-          <consistency-rationale> This objective extends the Base-PP’s O.COMMS
-            objective by ensuring that the communications related to MDM Agents
-            functionality are secured in the same manner as other sensitive data transmitted to/from
-            the mobile device. </consistency-rationale>
-             -->
-        </SO>
-        <SO name="O.STORAGE">
-          <description> To address the issue of loss of confidentiality of user data in the event of
-            loss of a device (T.PHYSICAL), conformant TOEs will use
-            platform-provided key storage. The TOE is expected to protect its
-            persistent secrets and private keys. </description>
-            <addressed-by>FCS_STG_EXT.1/MDMKEYS (if MDM is Base-PP)</addressed-by>
-          <rationale>The PP-Module includes FCS_STG_EXT.1/MDMKEYS to support this objective because when the TOE is an MDM Server with MDM Agent capability, 
-            it ensures that MDM Agent key data is stored securely.</rationale>
-          <addressed-by>FCS_STG_EXT.4 (if MDF is Base-PP)</addressed-by>
-          <rationale>The PP-Module includes FCS_STG_EXT.4 to support this objective because when the TOE is a mobile device, 
-            it ensures that MDM Agent key data is stored securely.</rationale>
-          <addressed-by>FCS_STO_EXT.1 (if GPOS is Base-PP)</addressed-by>
-          <rationale>The GPOS PP defines the FCS_STO_EXT.1 requirement for protection of sensitive data, which can include user data or keys used to
-            protect user data.</rationale>
-	    <!-- 
-	    <consistency-rationale> This objective extends the Base-PP’s O.STORAGE
-            objective by ensuring that the mobile device’s data-at-rest protection mechanisms can
-            also be used to secure the MDM Agent and related data.
-          </consistency-rationale>
-          -->
-        </SO>
-      </SOs>
-    </sec:Security_Objectives_for_the_TOE>
+   
     <section id="objectivesEnvironment" title="Security Objectives for the Operational Environment">
       <SOEs>
         <SOE name="OE.DATA_PROPER_ADMIN">
@@ -1009,6 +824,7 @@
 
       <modified-sfrs>
         
+        <!--
         <section title="Identification and Authentication (FIA)" id="mdm-m-fia">
           
           <f-component cc-id="fia_x509_ext.1" iteration="CERTVAL_SEL" id="mdm-fia-x509-ext-1-2" name=" X.509 Certificate Validation">
@@ -1026,7 +842,7 @@
           </f-component>
           
         </section>
-        
+      -->  
         <section title="Protection of the TSF (FPT)" id="mdm-m-fpt">
           
           <f-component cc-id="fpt_itt.1" iteration="INTER_XFER_AGENT" id="mdm-fpt-itt-1-2" name="Internal TOE TSF Data Transfer (MDM Agent)">
@@ -1039,7 +855,7 @@
               </title>
               <note role="Application">
                 This PP-Module requires that communications between the MDM Server and MDM Agent portions of the TOE are secured in the manner specified
-                by FPT_ITT.1(2) in the MDM PP. This PP-Module does not require that this channel be established in a specific manner beyond 
+                by FPT_ITT.1/INTER_XFER_AGENT in the MDM PP. This PP-Module does not require that this channel be established in a specific manner beyond 
                 this function using one of the methods specified in the MDM PP; a registration channel over an untrusted network, a registration channel 
                 over an environmentally protected network, or registration without the use of a registration channel is permitted. Depending on the method used,
                 the appropriate MDM PP SFR claims must be made.
@@ -1062,12 +878,12 @@
             <f-element id="mdm-ftp-itc-ext-1e1">
               <title>
                 The TSF shall provide a communication channel between itself and [<h:i>an MDM Agent that is internal to the TOE</h:i>] 
-                that is logically distinct from other communication channels, as specified in [<h:i>FPT_ITT.1(2)</h:i>].
+                that is logically distinct from other communication channels, as specified in [<h:i>FPT_ITT.1/INTER_XFER_AGENT</h:i>].
               </title>
               <note role="Application">
                 This PP-Module requires the ST author to select that an MDM Agent is internal to the TOE because the TOE boundary includes both 
                 an MDM Server and MDM Agent by definition when this PP-Module is claimed. As noted above, the fact that the TOE includes both MDM Server
-                and MDM Agent components means that FPT_ITT.1(2) from the MDM PP must also be claimed, as this SFR defines the channel used for secure
+                and MDM Agent components means that FPT_ITT.1/INTER_XFER_AGENT from the MDM PP must also be claimed, as this SFR defines the channel used for secure
                 communications between these two components.
               </note>
               <aactivity>
