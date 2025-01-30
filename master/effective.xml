@@ -817,7 +817,7 @@
             <consistency-rationale>There is no modification to this SFR, but it is mandatory for a TOE that conforms to this PP-Module because it must always be claimed when an MDM includes an MDM Agent as part of the TOE.</consistency-rationale>
             <description>This PP-Module requires that communications between the MDM Server and MDM Agent portions of the TOE are secured in the manner specified by FPT_ITT.1/INTER_XFER_AGENT in the MDM PP. This PP-Module does not require that this channel be established in a specific manner beyond this function using one of the methods specified in the MDM PP; a registration channel over an untrusted network, a registration channel over an environmentally protected network, or registration without the use of a registration channel is permitted. Depending on the method used, the appropriate MDM PP SFR claims must be made.</description>
             
-          <set-status status="feat-based"/>
+          <set-status status="mandatory"/>
           </base-sfr-spec>
         </section>
         
