@@ -811,56 +811,34 @@
           
         </section>
       -->  
-        <section title="Protection of the TSF (FPT)" id="mdm-m-fpt">
+        <section title="Protection of the TSF (FPT)" id="mdm-mod-fpt">
           
-          <f-component cc-id="fpt_itt.1" iteration="INTER_XFER_AGENT" id="mdm-fpt-itt-1-2" name="Internal TOE TSF Data Transfer (MDM Agent)">
-            <consistency-rationale>There is no modification to this SFR, but it is mandatory for a TOE that conforms to this PP-Module because
-              it must always be claimed when an MDM includes an MDM Agent as part of the TOE.</consistency-rationale>
-            <f-element id="mdm-fpt-itt-1-2e1">
-              
-              <title>
-                <comment>This selection-based SFR becomes mandatory when used with this PP-Module because mutually-authenticated TLS or DTLS must be used to support communications between the MDM Agent and MDM Server.</comment>
-              </title>
-              <note role="Application">
-                This PP-Module requires that communications between the MDM Server and MDM Agent portions of the TOE are secured in the manner specified
-                by FPT_ITT.1/INTER_XFER_AGENT in the MDM PP. This PP-Module does not require that this channel be established in a specific manner beyond 
-                this function using one of the methods specified in the MDM PP; a registration channel over an untrusted network, a registration channel 
-                over an environmentally protected network, or registration without the use of a registration channel is permitted. Depending on the method used,
-                the appropriate MDM PP SFR claims must be made.
-                
-              </note>
-              <aactivity>
-                <no-tests>There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
-        
+          <base-sfr-spec id="mod-fpt-itt-1" iteration="INTER_XFER_AGENT" title="Internal TOE TSF Data Transfer (MDM Agent)" cc-id="fpt_itt.1">
+            <consistency-rationale>There is no modification to this SFR, but it is mandatory for a TOE that conforms to this PP-Module because it must always be claimed when an MDM includes an MDM Agent as part of the TOE.</consistency-rationale>
+            <description>This PP-Module requires that communications between the MDM Server and MDM Agent portions of the TOE are secured in the manner specified by FPT_ITT.1/INTER_XFER_AGENT in the MDM PP. This PP-Module does not require that this channel be established in a specific manner beyond this function using one of the methods specified in the MDM PP; a registration channel over an untrusted network, a registration channel over an environmentally protected network, or registration without the use of a registration channel is permitted. Depending on the method used, the appropriate MDM PP SFR claims must be made.</description>
+            
+          <set-status status="feat-based"/>
+          </base-sfr-spec>
         </section>
         
-        <section title="Trusted Path/Channels (FTP)" id="mdm-m-ftp">
+        <section title="Trusted Path/Channels (FPT)" id="mdm-mod-ftp">
           
-          <f-component cc-id="ftp_itc_ext.1" id="mdm-ftp-itc-ext-1" name="Trusted Channel">
+          <base-sfr-spec id="mod-ftp-itc-ext-1" title="Trusted Channel" cc-id="ftp_itc_ext.1">
             <consistency-rationale>This SFR is modified in a way that accommodates an MDM Agent, which is part of the TOE boundary
               when this PP-Module is claimed.</consistency-rationale>
-            <f-element id="mdm-ftp-itc-ext-1e1">
-              <title>
-                The TSF shall provide a communication channel between itself and [<h:i>an MDM Agent that is internal to the TOE</h:i>] 
-                that is logically distinct from other communication channels, as specified in [<h:i>FPT_ITT.1/INTER_XFER_AGENT</h:i>].
-              </title>
-              <note role="Application">
-                This PP-Module requires the ST author to select that an MDM Agent is internal to the TOE because the TOE boundary includes both 
-                an MDM Server and MDM Agent by definition when this PP-Module is claimed. As noted above, the fact that the TOE includes both MDM Server
-                and MDM Agent components means that FPT_ITT.1/INTER_XFER_AGENT from the MDM PP must also be claimed, as this SFR defines the channel used for secure
-                communications between these two components.
-              </note>
-              <aactivity>
-                <no-tests>There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed.</no-tests>
-              </aactivity>
-            </f-element>
-            <audit-event/>
-          </f-component>
-          
+            <description>This PP-Module requires the ST author to select that an MDM Agent is internal to the TOE because the TOE boundary includes both 
+              an MDM Server and MDM Agent by definition when this PP-Module is claimed. As noted above, the fact that the TOE includes both MDM Server
+              and MDM Agent components means that FPT_ITT.1/INTER_XFER_AGENT from the MDM PP must also be claimed, as this SFR defines the channel used for secure
+              communications between these two components.</description>
+            
+            <replace>
+              <xpath-specified xpath="*//cc:f-element[@id='fel-itc-ext']//cc:title">
+                <title>
+                  The TSF shall provide a communication channel between itself and [<h:i>an MDM Agent that is internal to the TOE</h:i>] that is logically distinct from other communication channels, as specified in [<h:i>FPT_ITT.1/INTER_XFER_AGENT</h:i>].
+                </title>
+              </xpath-specified>
+            </replace>
+          </base-sfr-spec>
         </section>
         
       </modified-sfrs>
@@ -998,24 +976,32 @@
       <url>https://www.niap-ccevs.org/static_html/protection-profile/469/OS%204.3%20PP/index.html</url>
    
       <modified-sfrs>
-        <sec:gpos_mod_fcs title="Cryptographic Support (FCS)">
-          <f-component name="Storage of Sensitive Data" cc-id="fcs_sto_ext.1">
+        
+        <section title="Cryptographic Support (FCS)" id="gpos-mod-fcs">
+          
+          <base-sfr-spec id="mod-fcs-sto-ext-1" title="Storage of Sensitive Data" cc-id="fcs_sto_ext.1">
             <consistency-rationale>The PP-Module does not change this SFR; it only notes that the concept of "sensitive data" may be expanded
               to include any sensitive data created or used by the portion of the TOE described by the PP-Module.</consistency-rationale>
-            <f-element>
-              <title>The OS shall implement functionality to encrypt sensitive data
-                <h:b>including any data used for MDM Agent functionality</h:b>
-                stored in non-volatile storage and provide interfaces to applications to invoke this
-                functionality.
-              </title>
-              <note role="application">There is no change to this SFR from the Base-PP beyond ensuring that it also applies to the MDM Agent portion of the TOE.</note>
-              <aactivity>
-              <no-tests>There is no change to the Base-PP EAs for this SFR when this PP-Module is claimed
-                aside from ensuring that the EAs are applied to any sensitive data that relates to the MDM Agent portion of the TOE.</no-tests>
-              </aactivity>
-            </f-element>
-          </f-component>
-        </sec:gpos_mod_fcs>
+            <description>
+              <h:p>
+              There is no change to this SFR from the Base-PP beyond ensuring that it also applies to the MDM Agent portion of the TOE.
+              </h:p>
+              The text of the requirement is replaced with:<h:br/><h:br/>
+              
+              The OS shall implement functionality to encrypt sensitive data <h:b>including any data used for MDM Agent functionality</h:b> stored in non-volatile storage and provide interfaces to applications to invoke this functionality.
+              
+            </description>
+            
+            <replace>
+              <xpath-specified xpath="*//cc:f-element[@id='fel-store-sdata']//cc:title">
+                <title>
+                  The OS shall implement functionality to encrypt sensitive data <h:b>including any data used for MDM Agent functionality</h:b> stored in non-volatile storage and provide interfaces to applications to invoke this functionality.
+                </title>
+              </xpath-specified>
+            </replace>
+          </base-sfr-spec>
+        </section>
+        
       </modified-sfrs>
       <additional-sfrs>
         
@@ -2126,7 +2112,7 @@
     </entry>      
     <entry id="bibMDF">
       <tag>MDF PP</tag>
-      <description><h:a href="https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%203.3%20PP/index.html">Protection Profile for Mobile Device Fundamentals, Version 3.3</h:a>, Version 3.3, September 12, 2022</description>
+      <description><h:a href="https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%203.3%20PP/index.html">Protection Profile for Mobile Device Fundamentals, Version 3.3</h:a>, September 12, 2022</description>
     </entry>
     <entry id="bibMDM">
       <tag>MDM PP</tag>

@@ -6,9 +6,11 @@ output/mdm-agent-release-linkable.html: Enrolment
 output/mdm-agent-release-linkable.html: FDP
 output/mdm-agent-release-linkable.html: Fi
 output/mdm-agent-release-linkable.html: GPCP
+output/mdm-agent-release-linkable.html: ITT
 output/mdm-agent-release-linkable.html: MOF
 output/mdm-agent-release-linkable.html: MTD
 output/mdm-agent-release-linkable.html: STM
+output/mdm-agent-release-linkable.html: STO
 output/mdm-agent-release-linkable.html: TUD
 output/mdm-agent-release-linkable.html: Unenrolling
 output/mdm-agent-release-linkable.html: Unenrollment
@@ -25,9 +27,11 @@ output/mdm-agent-release.html: Enrolment
 output/mdm-agent-release.html: FDP
 output/mdm-agent-release.html: Fi
 output/mdm-agent-release.html: GPCP
+output/mdm-agent-release.html: ITT
 output/mdm-agent-release.html: MOF
 output/mdm-agent-release.html: MTD
 output/mdm-agent-release.html: STM
+output/mdm-agent-release.html: STO
 output/mdm-agent-release.html: TUD
 output/mdm-agent-release.html: Unenrolling
 output/mdm-agent-release.html: Unenrollment
@@ -41,6 +45,7 @@ output/mdm-agent-release.html: unreachability
 output/mdm-agent-sd.html: AGD
 output/mdm-agent-sd.html: CEM
 output/mdm-agent-sd.html: DNs
+output/mdm-agent-sd.html: ITT
 output/mdm-agent-sd.html: Unenrollment
 output/mdm-agent-sd.html: XFER
 output/mdm-agent-sd.html: actions’
@@ -60,9 +65,11 @@ output/mdm-agent.html: Enrolment
 output/mdm-agent.html: FDP
 output/mdm-agent.html: Fi
 output/mdm-agent.html: GPCP
+output/mdm-agent.html: ITT
 output/mdm-agent.html: MOF
 output/mdm-agent.html: MTD
 output/mdm-agent.html: STM
+output/mdm-agent.html: STO
 output/mdm-agent.html: TUD
 output/mdm-agent.html: Unenrolling
 output/mdm-agent.html: Unenrollment
