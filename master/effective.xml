@@ -249,8 +249,8 @@
         <PP-cc-ref>Protection Profile for Mobile Device Management, Version 4.0</PP-cc-ref>
         <Mod-cc-ref>PP-Module for Virtual Private Network (VPN) Clients, version 2.6</Mod-cc-ref>  
         <Mod-cc-ref>PP-Module for Bluetooth, version 1.1</Mod-cc-ref>
-        <Mod-cc-ref>cPP-Module for Biometric Enrolment and Verification, version 1.1</Mod-cc-ref>  
-        <Mod-cc-ref>cPP-Module for Wireless LAN Clients, version 1.1</Mod-cc-ref>
+        <Mod-cc-ref>PP-Module for WLAN Clients, version 1.1</Mod-cc-ref>
+        <Mod-cc-ref>cPP-Module for Biometric Enrolment and Verification - for unlocking the device, version 1.1</Mod-cc-ref>        
       </cc-pp-config-with>
       <cc-pkg-claim>
         <FP-cc-ref conf="conformant">Functional Package for Transport Layer Security Version 2.1</FP-cc-ref>
@@ -297,8 +297,8 @@
           </description>
           <addressed-by>FCS_STG_EXT.4 (additional to MDF PP)</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by preventing substitution of the valid policy source.</rationale>
           <addressed-by>FCS_STG_EXT.1/MDMKEYS (additional to MDM PP)</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by preventing substitution of the valid policy source.</rationale>
-          <addressed-by>FIA_ENR_EXT.1</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by recording the identifier of the MDM server that it enrolled to.</rationale>
-          <addressed-by>FMT_POL_EXT.1</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by applying only policies that are digitally signed by an authorized source.</rationale>
+          <addressed-by>FIA_ENR_EXT.2</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by recording the identifier of the MDM server that it enrolled to.</rationale>
+          <addressed-by>FMT_POL_EXT.2</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by applying only policies that are digitally signed by an authorized source.</rationale>
           <addressed-by>FMT_SMF_EXT.4</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by requiring authorization by the underlying platform to manage the TSF.</rationale>
         </threat>
          
@@ -364,6 +364,9 @@
             being used in the enterprise network. </description>
           <objective-refer ref="OE.DATA_PROPER_ADMIN">
             <rationale>An environment that empowers only trusted administrators will satisfy the policy that the device is enrolled into management.</rationale>
+          </objective-refer>
+          <objective-refer ref="OE.IT_ENTERPRISE">
+            <rationale>The use of an enterprise IT network enables the infrastructure to facilitate device enrollment.</rationale>
           </objective-refer>
         </OSP>
         <OSP name="P.NOTIFY">
@@ -431,7 +434,10 @@
         
         <sec:mdf_mod_fcs title="Cryptographic Support (FCS)">
           <ext-comp-def fam-id="FCS_STG_EXT" title="Trusted Channel">
-            <mod-def> This family is defined in both the MDF and the MDM Base-PPs. This PP-Module augments the extended family by adding one additional component, FCS_STG_EXT.4. This new component and its impact on the extended family’s component leveling are shown below; reference the MDF or MDM PP for all other definitions for this family. </mod-def>
+            <fam-behavior> This family is defined in both the MDF and the MDM Base-PPs. This PP-Module augments the extended family by adding
+              one additional component, FCS_STG_EXT.4 as an additional SFR for MDF. This new component and its impact on the extended 
+              family’s component leveling are shown below; reference the MDF or MDM PP for all other
+              definitions for this family. </fam-behavior>
           </ext-comp-def>
           <f-component cc-id="fcs_stg_ext.4" name="Cryptographic Key Storage">
             <consistency-rationale> This SFR requires the MDM Agent to use
@@ -474,9 +480,9 @@
             <consistency-rationale> The Base-PP includes FTP_ITC_EXT.1 to define the secure protocols used for trusted channel communications. This PP-Module iterates the SFR to specify a subset of these protocols that may be used for MDM Agent communications in particular. </consistency-rationale>
             <f-element id="mut-chan-type">
               <title>The TSF shall use <selectables linebreak="yes">
-                <selectable><h:b>mutually authenticated</h:b> TLS in accordance with [<h:i><xref to="pkg-tls"/></h:i>]</selectable>
-                <selectable><h:b>mutually authenticated</h:b> DTLS in accordance [<h:i><xref to="pkg-tls"/></h:i>]</selectable>
-                <selectable>HTTPS</selectable>
+                <selectable>mutually authenticated TLS in accordance with [<h:i><xref to="pkg-tls"/></h:i>]</selectable>
+                <selectable>mutually authenticated <h:b>DTLS</h:b> in accordance with [<h:i><xref to="pkg-tls"/></h:i>]</selectable>
+                <selectable><h:b>HTTPS</h:b></selectable>
                 </selectables> and [<h:i>no other protocols</h:i>] to provide a communication channel between itself and another trusted
                 IT product that is logically distinct from other communication channels, provides
                 assured identification of its end points, protects channel data from disclosure, and
@@ -600,7 +606,7 @@
               <title>The TSF shall <h:b>use <selectables linebreak="yes">
                   <selectable id="TRP_TLS_2">TLS client as defined in the Package for Transport Layer Security</selectable>
                   <selectable id="TRP_HTTPS_2">HTTPS</selectable>
-              </selectables> </h:b>to provide a trusted communication path between itself and
+              </selectables> </h:b>to provide a <h:b>trusted</h:b> communication path between itself and
                 <h:b>an MDM Server</h:b>
                 that is logically distinct from other communication paths and
                 provides assured identification of its endpoints and protection of the communicated
@@ -703,16 +709,16 @@
       
       <con-mod ref="A.CONNECTIVITY">This assumption expects that networking services will be available for the TOE to use. 
         This is consistent with the Base-PP because the TOE is installed on a mobile device defined by the 
-        Base-PP that provides networking services through various radios.</con-mod>
+        Base-PP, which provides networking services through various radios.</con-mod>
       <con-mod ref="A.PLATFORM">This assumption expects that the TOE’s underlying platform is trustworthy. 
         This is consistent with the Base-PP by definition because a mobile device is within the TOE boundary and is evaluated against the MDF PP.</con-mod>
       <con-mod ref="A.PROPER_ADMIN">	
         This assumption expects that the TOE administrator is trusted and competent in configuring the TSF. 
-        This assumption is consistent with the A.CONFIG assumption in the Base-PP which expects the TSF to be configured correctly 
+        This assumption is consistent with the A.CONFIG assumption in the Base-PP, which expects the TSF to be configured correctly 
         regardless of the subject performing the configuration.</con-mod>
       <con-mod ref="A.PROPER_USER">	
         This assumption expects that the TOE user is not willfully negligent or hostile in using the TSF. 
-        This assumption is consistent with the A.CONFIG assumption in the Base-PP which expects the TSF 
+        This assumption is consistent with the A.CONFIG assumption in the Base-PP, which expects the TSF 
         to be configured correctly regardless of the subject performing the configuration as well as the 
         A.NOTIFY and A.PRECAUTION assumptions which define baseline expectations for the user’s level of responsibility.</con-mod>
       
@@ -1124,20 +1130,20 @@
               management. The GPOS PP already defines an iteration of this SFR for trusted administration, so this
               SFR is iterated to illustrate that this trusted path is used for a distinct function.</consistency-rationale>
             <f-element>
-              <title>The TSF shall provide a communication path between itself and <h:b>a</h:b> [<h:i>remote</h:i>] <h:b>MDM Server</h:b> that is 
+              <title>The <h:b>TSF</h:b> shall provide a communication path between itself and <h:b>a</h:b> [<h:i>remote</h:i>] <h:b>MDM Server</h:b> that is 
                 logically distinct from other communication paths
                 and provides assured identification of its endpoints and protection of the
                 communicated data from [<h:i>modification, disclosure</h:i>].
               </title>
             </f-element>
             <f-element>
-              <title>The TSF shall permit <selectables>
+              <title>The <h:b>TSF</h:b> shall permit <selectables>
                 <selectable>local users</selectable>
                 <selectable>remote users</selectable></selectables> to initiate communication via the trusted path.
               </title>
             </f-element>
             <f-element>
-              <title>The TSF shall require the use of the trusted path for [<h:i>[MDM enrollment]</h:i>]. 
+              <title>The <h:b>TSF</h:b> shall require the use of the trusted path for [<h:i>[MDM enrollment]</h:i>]. 
               </title>
               <note role="application">This requirement ensures that a trusted connection is used for initial enrollment to an MDM;
                 security of ongoing MDM Server communications after enrollment is
@@ -1503,16 +1509,16 @@
                 <selectable>TOE platform</selectable>
             </selectables> shall record within the <h:b>MDM Agent</h:b> audit data at
               least the following information: <h:ol type="a">
-                <h:li>Date and time of the event, type of event, subject identity (if relevant), the outcome 
+                <h:li>Date and time of the event, type of event, subject identity (if applicable), and the outcome 
                   (success or failure) of the event<h:b>, and additional information in 
                   <xref to="at-man-audit"/> and <selectables>
                     <selectable><xref to="at-mdf-addnl"/></selectable>
                     <selectable><xref to="at-mdm-addnl"/></selectable>
                     <selectable><xref to="at-gpos-addnl"/></selectable>
                     <selectable><xref to="at-feat-based"/></selectable>
-                    <selectable>no other tables</selectable></selectables>; </h:b>and</h:li>         
+                    <selectable>no other tables</selectable></selectables>; </h:b></h:li>         
                 <h:li>For each audit event type, based on the auditable event definitions of the functional components 
-                  included in the PP<h:b>-Module</h:b>/ST, <assignable>other audit relevant information</assignable>.</h:li>
+                  included in the PP, PP-Module, functional package or ST, <assignable>other audit relevant information</assignable>.</h:li>
               </h:ol>
             </title>
             <note role="application">All audits must contain at least the information mentioned in
@@ -1678,7 +1684,8 @@
               by the MDM Server. </title>
             <note role="application">The intent of this requirement is to cryptographically tie the
               policies to the enterprise that mandated the policy, not to protect the policies in
-              transit, as this is addressed by other SFRs (FPT_ITT.1/INTER_XFER_AGENT in the MDM PP or the Additional SFR
+              transit, as this is addressed by other SFRs (FPT_ITT.1/INTER_XFER_AGENT in the MDM
+              Base PP or the Additional SFR
               FTP_ITC_EXT.1/MDFCHANNEL or FTP_ITC_EXT.1/OSCHANNEL, depending on the claimed Base-PP). 
               This is especially critical for
               users who connect to multiple enterprises.<h:br/><h:br/> Policies must be
@@ -2017,7 +2024,7 @@
           it relies on FMT_MTD.1 to determine the administrative roles that are permitted to manipulate this data.
           <h:br/><h:br/>
           This is not applicable to the PP-Module because there is no management interface for a TOE user to interact with; instead, 
-          all management functions are initiated by an MDM Server and performed by the MDM Agent which has sufficient privileges on the 
+          all management functions are initiated by an MDM Server and performed by the MDM Agent that has sufficient privileges on the 
           underlying device to do this. 
           In this case, FIA_ENR_EXT.2 and FMT_POL_EXT.2 are sufficient to validate that the source of the policy data is 
           identified and authenticated before the policy change is accepted. 
@@ -2028,13 +2035,13 @@
       <h:tr>
         <h:td>FPT_STM.1 - Reliable Time Stamps</h:td>
       <h:td>
-        No matter which Base-PP is claimed for the TOE, the MDM Agent itself will be installed on a device. 
-        If the underlying device is part of the TOE, the dependency is satisfied by FPT_STM.1 if the MDF PP is the Base-PP, 
-        and FPT_STM.1 is implicitly satisfied per Appendix D of the GPOS PP if that is the Base-PP. 
-        If the device is not part of the TOE (i.e., because the Base-PP is the MDM PP), 
-        a reliable time source can still be assumed because all mobile devices must include some method to update time data from a cellular carrier network, 
-        and can also reasonably be assumed to include a method to update network time if it is instead connected to a network via WLAN radio 
-        (such as when in airplane mode), and any GPOS is assumed to have access to a reliable hardware clock or network time interface.
+        Regardless of whether the MDM Agent is part of an MDM Server or mobile device TOE, the MDM Agent itself will be installed on a device. 
+        If the mobile device is part of the TOE, the the MDF PP that it conforms to explicitly
+        defines FPT_STM.1, which therefore satisfies the dependency in this case. If the mobile
+        device is not part of the T?OE, a reliable time source can still be assumed because all
+        mobile devices must include some method to update time data from a cellular carrier network,
+        and can also reasonably be assumed to include a method to update network time if it is
+        instead connected to a network via WLAN radio (such as when in airplane mode).
       </h:td>
       </h:tr>
     </h:table>

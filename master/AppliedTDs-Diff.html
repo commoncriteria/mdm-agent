@@ -330,10 +330,10 @@
                         <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Bluetooth, version 1.1
                     </li>
                     <li>
-                        <abbr class="dyn-abbr"><a href="#abbr_cPP">cPP</a></abbr>-Module for Biometric Enrolment and Verification, version 1.1
+                        <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for WLAN Clients, version 1.1
                     </li>
                     <li>
-                        <abbr class="dyn-abbr"><a href="#abbr_cPP">cPP</a></abbr>-Module for Wireless LAN Clients, version 1.1
+                        <abbr class="dyn-abbr"><a href="#abbr_cPP">cPP</a></abbr>-Module for Biometric Enrolment and Verification - for unlocking the device, version 1.1
                     </li>
                 </ul>
             </dd>
@@ -472,7 +472,10 @@
                 <td rowspan="1"><a href="#P.ADMIN">P.ADMIN</a></td><td><a href="#OE.DATA_PROPER_ADMIN">OE.DATA_​PROPER_​ADMIN</a></td><td>An environment that empowers only trusted administrators will satisfy the policy that the device is configured correctly.</td>
             </tr>
             <tr class="major-row">
-                <td rowspan="1"><a href="#P.DEVICE_ENROLL">P.DEVICE_​ENROLL</a></td><td><a href="#OE.DATA_PROPER_ADMIN">OE.DATA_​PROPER_​ADMIN</a></td><td>An environment that empowers only trusted administrators will satisfy the policy that the device is enrolled into management.</td>
+                <td rowspan="2"><a href="#P.DEVICE_ENROLL">P.DEVICE_​ENROLL</a></td><td><a href="#OE.DATA_PROPER_ADMIN">OE.DATA_​PROPER_​ADMIN</a></td><td>An environment that empowers only trusted administrators will satisfy the policy that the device is enrolled into management.</td>
+            </tr>
+            <tr>
+                <td><a href="#OE.IT_ENTERPRISE">OE.IT_​ENTERPRISE</a></td><td>The use of an enterprise IT network enables the infrastructure to facilitate device enrollment.</td>
             </tr>
             <tr class="major-row">
                 <td rowspan="1"><a href="#P.NOTIFY">P.NOTIFY</a></td><td><a href="#OE.DATA_PROPER_USER">OE.DATA_​PROPER_​USER</a></td><td>An environment with trained and trusted users can be expected to adhere to this policy.</td>
@@ -574,13 +577,13 @@
                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_1"><b>mutually authenticated</b> <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> in accordance with [<i><a href="https://www.niap-ccevs.org/static_html/protection-profile/439/-439-/index.html">Functional Package for Transport Layer Security (TLS), version 2.1</a></i>]</span>
+                            <span class="selectable-content" id="_s_1">mutually authenticated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> in accordance with [<i><a href="https://www.niap-ccevs.org/static_html/protection-profile/439/-439-/index.html">Functional Package for Transport Layer Security (TLS), version 2.1</a></i>]</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_2"><b>mutually authenticated</b> <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> in accordance [<i><a href="https://www.niap-ccevs.org/static_html/protection-profile/439/-439-/index.html">Functional Package for Transport Layer Security (TLS), version 2.1</a></i>]</span>
+                            <span class="selectable-content" id="_s_2">mutually authenticated <b><abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr></b> in accordance with [<i><a href="https://www.niap-ccevs.org/static_html/protection-profile/439/-439-/index.html">Functional Package for Transport Layer Security (TLS), version 2.1</a></i>]</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_3"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span>
+                            <span class="selectable-content" id="_s_3"><b><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></b></span>
                         </li>
                     </ul>
                     ] and [<i>no other protocols</i>] to provide a communication channel between itself and another trusted IT product that is logically distinct from other communication channels, provides assured identification of its end points, protects channel data from disclosure, and detects modification of the channel data.
@@ -661,7 +664,7 @@
                                 <span class="selectable-content" id="TRP_HTTPS_2"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span>
                             </li>
                         </ul>
-                        ] </b>to provide a trusted communication path between itself and <b>an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server</b> that is logically distinct from other communication paths and provides assured identification of its endpoints and protection of the communicated data from [<i>modification, disclosure</i>]. 
+                        ] </b>to provide a <b>trusted</b> communication path between itself and <b>an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server</b> that is logically distinct from other communication paths and provides assured identification of its endpoints and protection of the communicated data from [<i>modification, disclosure</i>]. 
                 </div>
             </div>
             <div class="element">
@@ -874,7 +877,7 @@
                     <a href="#FTP_TRP.1.1/OSENROLL" class="abbr">FTP_TRP.1.1/OSENROLL</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication path between itself and <b>a</b> [<i>remote</i>] <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server</b> that is logically distinct from other communication paths and provides assured identification of its endpoints and protection of the communicated data from [<i>modification, disclosure</i>]. 
+                    The <b><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></b> shall provide a communication path between itself and <b>a</b> [<i>remote</i>] <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server</b> that is logically distinct from other communication paths and provides assured identification of its endpoints and protection of the communicated data from [<i>modification, disclosure</i>]. 
                 </div>
             </div>
             <div class="element">
@@ -882,7 +885,7 @@
                     <a href="#FTP_TRP.1.2/OSENROLL" class="abbr">FTP_TRP.1.2/OSENROLL</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [<b>selection</b>: <span class="selectable-content" id="_s_14">local users</span>, <span class="selectable-content" id="_s_15">remote users</span>] to initiate communication via the trusted path. 
+                    The <b><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></b> shall permit [<b>selection</b>: <span class="selectable-content" id="_s_14">local users</span>, <span class="selectable-content" id="_s_15">remote users</span>] to initiate communication via the trusted path. 
                 </div>
             </div>
             <div class="element">
@@ -890,7 +893,7 @@
                     <a href="#FTP_TRP.1.3/OSENROLL" class="abbr">FTP_TRP.1.3/OSENROLL</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall require the use of the trusted path for [<i>[<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> enrollment]</i>]. 
+                    The <b><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></b> shall require the use of the trusted path for [<i>[<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> enrollment]</i>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">This requirement ensures that a trusted connection is used for initial enrollment to an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>; security of ongoing <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server communications after enrollment is implemented through <a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a>. 
                             <br>
@@ -1085,10 +1088,10 @@
                     The [<b>selection</b>: <span class="selectable-content" id="_s_32"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_33"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] shall record within the <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent</b> audit data at least the following information: 
                     <ol type="a">
                         <li>
-                            Date and time of the event, type of event, subject identity (if relevant), the outcome (success or failure) of the event<b>, and additional information in <a href="#at-man-audit" class="at-man-audit-ref">Table <span class="counter">5</span></a> and [<b>selection</b>: <span class="selectable-content" id="_s_34"><a href="#at-mdf-addnl" class="at-mdf-addnl-ref">Table <span class="counter">2</span></a></span>, <span class="selectable-content" id="_s_35"><a href="#at-mdm-addnl" class="at-mdm-addnl-ref">Table <span class="counter">3</span></a></span>, <span class="selectable-content" id="_s_36"><a href="#at-gpos-addnl" class="at-gpos-addnl-ref">Table <span class="counter">4</span></a></span>, <span class="selectable-content" id="_s_37"><a href="#at-feat-based" class="at-feat-based-ref">Table <span class="counter">16</span></a></span>, <span class="selectable-content" id="_s_38">no other tables</span>]; </b>and
+                            Date and time of the event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event<b>, and additional information in <a href="#at-man-audit" class="at-man-audit-ref">Table <span class="counter">5</span></a> and [<b>selection</b>: <span class="selectable-content" id="_s_34"><a href="#at-mdf-addnl" class="at-mdf-addnl-ref">Table <span class="counter">2</span></a></span>, <span class="selectable-content" id="_s_35"><a href="#at-mdm-addnl" class="at-mdm-addnl-ref">Table <span class="counter">3</span></a></span>, <span class="selectable-content" id="_s_36"><a href="#at-gpos-addnl" class="at-gpos-addnl-ref">Table <span class="counter">4</span></a></span>, <span class="selectable-content" id="_s_37"><a href="#at-feat-based" class="at-feat-based-ref">Table <span class="counter">16</span></a></span>, <span class="selectable-content" id="_s_38">no other tables</span>]; </b>
                         </li>
                         <li>
-                            For each audit event type, based on the auditable event definitions of the functional components included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><b>-Module</b>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<b>assignment</b>: <span class="assignable-content">other audit relevant information</span>].
+                            For each audit event type, based on the auditable event definitions of the functional components included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, functional package or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<b>assignment</b>: <span class="assignable-content">other audit relevant information</span>].
                         </li>
                     </ol>
                     <div class="appnote">
@@ -1153,7 +1156,7 @@
                 <div class="reqdesc">
                     The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall only accept policies and policy updates that are digitally signed by a private key that has been authorized for policy updates by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server. 
                     <div class="appnote">
-                        <span class="note-header">Application Note: </span><span class="note">The intent of this requirement is to cryptographically tie the policies to the enterprise that mandated the policy, not to protect the policies in transit, as this is addressed by other <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> (FPT_ITT.1/INTER_XFER_AGENT in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> or the Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a> or <a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a>, depending on the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>). This is especially critical for users who connect to multiple enterprises.
+                        <span class="note-header">Application Note: </span><span class="note">The intent of this requirement is to cryptographically tie the policies to the enterprise that mandated the policy, not to protect the policies in transit, as this is addressed by other <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> (FPT_ITT.1/INTER_XFER_AGENT in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> or the Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a> or <a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a>, depending on the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>). This is especially critical for users who connect to multiple enterprises.
                             <br>
                             <br>
                              Policies must be digitally signed by the enterprise using the algorithms in FCS_COP.1/SIGN_ALG in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
@@ -1316,10 +1319,10 @@
                     <td><a href="#FCS_STG_EXT.1/MDMKEYS">FCS_STG_EXT.1/MDMKEYS</a> (additional to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>)</td><td>Mitigates the threat of an unauthorized policy source by preventing substitution of the valid policy source.</td>
                 </tr>
                 <tr>
-                    <td>FIA_ENR_EXT.1</td><td>Mitigates the threat of an unauthorized policy source by recording the identifier of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server that it enrolled to.</td>
+                    <td><a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a></td><td>Mitigates the threat of an unauthorized policy source by recording the identifier of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server that it enrolled to.</td>
                 </tr>
                 <tr>
-                    <td>FMT_POL_EXT.1</td><td>Mitigates the threat of an unauthorized policy source by applying only policies that are digitally signed by an authorized source.</td>
+                    <td><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td>Mitigates the threat of an unauthorized policy source by applying only policies that are digitally signed by an authorized source.</td>
                 </tr>
                 <tr>
                     <td><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td>Mitigates the threat of an unauthorized policy source by requiring authorization by the underlying platform to manage the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td>
@@ -1348,16 +1351,16 @@
                 <td><a href="#T.UNAUTHORIZED_POLICY_SOURCE">T.UNAUTHORIZED_POLICY_SOURCE</a></td><td>This threat exploits malicious configuration which is a mechanism by which the T.PERSISTENT_PRESENCE threat defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> can be realized.</td>
             </tr>
             <tr>
-                <td><a href="#A.CONNECTIVITY">A.CONNECTIVITY</a></td><td>This assumption expects that networking services will be available for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use. This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is installed on a mobile device defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> that provides networking services through various radios.</td>
+                <td><a href="#A.CONNECTIVITY">A.CONNECTIVITY</a></td><td>This assumption expects that networking services will be available for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to use. This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is installed on a mobile device defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, which provides networking services through various radios.</td>
             </tr>
             <tr>
                 <td><a href="#A.PLATFORM">A.PLATFORM</a></td><td>This assumption expects that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s underlying platform is trustworthy. This is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition because a mobile device is within the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary and is evaluated against the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td>
             </tr>
             <tr>
-                <td><a href="#A.PROPER_ADMIN">A.PROPER_ADMIN</a></td><td> This assumption expects that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administrator is trusted and competent in configuring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. This assumption is consistent with the A.CONFIG assumption in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> which expects the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to be configured correctly regardless of the subject performing the configuration.</td>
+                <td><a href="#A.PROPER_ADMIN">A.PROPER_ADMIN</a></td><td> This assumption expects that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administrator is trusted and competent in configuring the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. This assumption is consistent with the A.CONFIG assumption in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, which expects the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to be configured correctly regardless of the subject performing the configuration.</td>
             </tr>
             <tr>
-                <td><a href="#A.PROPER_USER">A.PROPER_USER</a></td><td> This assumption expects that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> user is not willfully negligent or hostile in using the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. This assumption is consistent with the A.CONFIG assumption in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> which expects the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to be configured correctly regardless of the subject performing the configuration as well as the A.NOTIFY and A.PRECAUTION assumptions which define baseline expectations for the user&rsquo;s level of responsibility.</td>
+                <td><a href="#A.PROPER_USER">A.PROPER_USER</a></td><td> This assumption expects that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> user is not willfully negligent or hostile in using the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. This assumption is consistent with the A.CONFIG assumption in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, which expects the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to be configured correctly regardless of the subject performing the configuration as well as the A.NOTIFY and A.PRECAUTION assumptions which define baseline expectations for the user&rsquo;s level of responsibility.</td>
             </tr>
             <tr>
                 <td><a href="#P.ACCOUNTABILITY">P.ACCOUNTABILITY</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define any OSPs so any OSPs defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> will not conflict with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> by definition.</td>
@@ -1903,7 +1906,18 @@
                 This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the FCS class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2: 
                 <h3 id="ext-comp-FCS_STG_EXT" class="indexable" data-level="4">C.2.1.1 FCS_STG_EXT Trusted Channel</h3>
                 <div style="margin-left: 1em;">
-                     This family is defined in both the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> augments the extended family by adding one additional component, <a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a>. This new component and its impact on the extended family&rsquo;s component leveling are shown below; reference the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> for all other definitions for this family. 
+                    <h4>Family Behavior</h4>
+                    <div>
+                         This family is defined in both the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> augments the extended family by adding one additional component, <a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a> as an additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr>. This new component and its impact on the extended family&rsquo;s component leveling are shown below; reference the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> for all other definitions for this family. 
+                    </div>
+                    <h4>Component Leveling</h4>
+                    <svg style="max-height: 30px;">
+                        <text x="4" fill="black" font-size="15" y="24">FCS_STG_EXT</text>
+                        <rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect>
+                        <text x="234" fill="black" font-size="15" y="24">4</text>
+                        <rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect>
+                        <line x1="152" y1="17" x2="231" y2="17" stroke="black"></line>
+                    </svg>
                     <p>
                         <a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a>, Cryptographic Key Storage, requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to define a specific location for its key storage.
                     </p>
@@ -2254,10 +2268,10 @@
                 <td>FMT_MTD.1 - Management of <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Data</td><td> FAU_SEL.1 has a dependency on FMT_MTD.1 because the configuration settings that determine what events are audited is considered to be <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> data. While FAU_SEL.1 determines the extent to which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>&rsquo;s audit function is configured, it relies on FMT_MTD.1 to determine the administrative roles that are permitted to manipulate this data. 
                     <br>
                     <br>
-                     This is not applicable to the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because there is no management interface for a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> user to interact with; instead, all management functions are initiated by an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and performed by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent which has sufficient privileges on the underlying device to do this. In this case, <a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a> and <a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a> are sufficient to validate that the source of the policy data is identified and authenticated before the policy change is accepted. It is not necessary to define a management role associated with this function because the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server does not need to assume a &lsquo;role&rsquo; on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to communicate policy data; it is sufficient for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to determine the policy is genuine. </td>
+                     This is not applicable to the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because there is no management interface for a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> user to interact with; instead, all management functions are initiated by an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and performed by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent that has sufficient privileges on the underlying device to do this. In this case, <a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a> and <a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a> are sufficient to validate that the source of the policy data is identified and authenticated before the policy change is accepted. It is not necessary to define a management role associated with this function because the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server does not need to assume a &lsquo;role&rsquo; on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to communicate policy data; it is sufficient for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to determine the policy is genuine. </td>
             </tr>
             <tr>
-                <td>FPT_STM.1 - Reliable Time Stamps</td><td> No matter which <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> is claimed for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent itself will be installed on a device. If the underlying device is part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the dependency is satisfied by FPT_STM.1 if the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, and FPT_STM.1 is implicitly satisfied per Appendix D of the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> if that is the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. If the device is not part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (i.e., because the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> is the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), a reliable time source can still be assumed because all mobile devices must include some method to update time data from a cellular carrier network, and can also reasonably be assumed to include a method to update network time if it is instead connected to a network via WLAN radio (such as when in airplane mode), and any <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> is assumed to have access to a reliable hardware clock or network time interface. </td>
+                <td>FPT_STM.1 - Reliable Time Stamps</td><td> Regardless of whether the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is part of an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server or mobile device <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent itself will be installed on a device. If the mobile device is part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that it conforms to explicitly defines FPT_STM.1, which therefore satisfies the dependency in this case. If the mobile device is not part of the T?<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>, a reliable time source can still be assumed because all mobile devices must include some method to update time data from a cellular carrier network, and can also reasonably be assumed to include a method to update network time if it is instead connected to a network via WLAN radio (such as when in airplane mode). </td>
             </tr>
         </table>
         <h1 id="appdx-use-case-templates" class="indexable" data-level="A">Appendix E - Use Case Templates</h1>
