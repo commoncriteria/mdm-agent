@@ -2053,7 +2053,7 @@
         Regardless of whether the MDM Agent is part of an MDM Server or mobile device TOE, the MDM Agent itself will be installed on a device. 
         If the mobile device is part of the TOE, the MDF PP that it conforms to explicitly
         defines FPT_STM.1, which therefore satisfies the dependency in this case. If the mobile
-        device is not part of the T?OE, a reliable time source can still be assumed because all
+        device is not part of the TOE, a reliable time source can still be assumed because all
         mobile devices must include some method to update time data from a cellular carrier network,
         and can also reasonably be assumed to include a method to update network time if it is
         instead connected to a network via WLAN radio (such as when in airplane mode).
