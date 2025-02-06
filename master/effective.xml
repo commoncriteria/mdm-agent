@@ -434,11 +434,11 @@
         
         <sec:mdf_mod_fcs title="Cryptographic Support (FCS)">
           <ext-comp-def fam-id="FCS_STG_EXT" title="Trusted Channel">
-            <fam-behavior> This family is defined in both the MDF and the MDM Base-PPs. This PP-Module augments the extended family by adding
+            <mod-def> This family is defined in both the MDF and the MDM Base-PPs. This PP-Module augments the extended family by adding
               one additional component, FCS_STG_EXT.4 as an additional SFR for MDF. This new component and its impact on the extended 
               family’s component leveling are shown below; reference the MDF or MDM PP for all other
-              definitions for this family. </fam-behavior>
-          </ext-comp-def>
+              definitions for this family.<h:br/><h:br/></mod-def> 
+          </ext-comp-def> 
           <f-component cc-id="fcs_stg_ext.4" name="Cryptographic Key Storage">
             <consistency-rationale> This SFR requires the MDM Agent to use
               functionality defined by the Base-PP in FCS_CKM_EXT.1. </consistency-rationale>
@@ -753,7 +753,7 @@
         trusted channel defined by FTP_ITC_EXT.1 in the Base-PP to transmit data
         about its own behavior to the OE.</con-mod>
       <con-mod ref="fau-gen-1-agent"> The Base-PP includes FAU_GEN.1; this PP-Module iterates the SFR to use the same audit mechanism to
-        generate audit records for the MDM Agent’s behavior. It may alternatively
+        generate audit data for the MDM Agent’s behavior. It may alternatively
         allow the TSF to generate its own audit trail, which does not impede the MDF from enforcing
         its own security functionality.</con-mod>
       <con-mod ref="fau-sel-1-agent"> The Base-PP includes FAU_SEL.1; this PP-Module iterates the SFR to use the same audit mechanism to select
@@ -941,7 +941,7 @@
       <con-mod ref="OE.WIRELESS_NETWORK">The MDM PP contains this same objective with the same purpose.</con-mod>
       <con-mod ref="fau-alt-ext-2"> This SFR provides the alerts that are received by the 
         MDM Server as per FAU_ALT_EXT.1 in the Base-PP.</con-mod>
-      <con-mod ref="fau-gen-1-agent"> This SFR requires the MDM Agent to generate audit records of its
+      <con-mod ref="fau-gen-1-agent"> This SFR requires the MDM Agent to generate audit data of its
         behavior. The mechanism by which it does this is not relevant to the MDM Server portion of
         the TOE as they reside on different platforms.</con-mod>
       <con-mod ref="fau-sel-1-agent"> The Base-PP includes FAU_SEL.1 as an optional SFR
@@ -1255,7 +1255,7 @@
         trusted channel defined by FTP_ITC_EXT.1 in the Base-PP to transmit data
         about its own behavior to the OE.</con-mod>
       <con-mod ref="fau-gen-1-agent">The Base-PP defines FAU_GEN.1; this PP-Module iterates the SFR to use the same audit mechanism to
-        generate audit records for the MDM Agent’s behavior. It may alternatively
+        generate audit data for the MDM Agent’s behavior. It may alternatively
         allow the TSF to generate its own audit trail, which does not impede the MDF from enforcing
         its own security functionality.</con-mod>
       <con-mod ref="fau-sel-1-agent">This SFR requires the TSF to have the ability to limit the auditable events it generates
@@ -1306,7 +1306,7 @@
             Base-PP. This PP-Module augments the extended family
             by adding one additional component, FAU_ALT_EXT.2. This new component and its impact on
             the extended family’s component leveling are shown below; reference the 
-              MDM PP for all other definitions for this family. </mod-def>
+            MDM PP for all other definitions for this family.<h:br/><h:br/> </mod-def>
         </ext-comp-def>
         <f-component cc-id="fau_alt_ext.2" id="fau-alt-ext-2" name="Agent Alerts">
           <consistency-rationale/>
@@ -1419,7 +1419,7 @@
               </h:ol>
             </title>
             <note role="application"> This requirement outlines the information to be included in
-              the MDM Agent’s audit records. For each claimed SFR, any corresponding auditable events must be claimed.
+              the MDM Agent’s audit data. For each claimed SFR, any corresponding auditable events must be claimed.
               The auditable events are included in different tables because SFRs depend on the claimed Base-PP or supported TOE implementation;
               the ST author selects all tables that contain an SFR that the TOE claims.<h:br/><h:br/>
               If “MDM policy updated” is selected, it must indicate that an update to the policy occurred.
@@ -1523,12 +1523,13 @@
             </title>
             <note role="application">All audits must contain at least the information mentioned in
               FAU_GEN.1.2/AGENT, but may contain more information which can be assigned. The ST author must identify which information
-              in a given audit record that is populated by the MDM Agent and 
+              in the given audit data that is populated by the MDM Agent and 
               which is populated by the MDM Agent’s platform.<h:br/><h:br/>
             </note>
             <aactivity>
               <TSS>
-                  The evaluator shall check the TSS and ensure that it provides a format for audit records. Each audit record format type must be covered, along with a brief description of each field. <h:br/><h:br/> 
+                  The evaluator shall check the TSS and ensure that it provides a format for audit
+                  data. Each audit data format type must be covered, along with a brief description of each field. <h:br/><h:br/> 
                   If "invoke platform-provided functionality" is selected, the evaluator shall examine the TSS to verify that it describes (for each supported platform) 
                   how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the MDM Agent; nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).<h:br/><h:br/> 
               </TSS>
@@ -1538,7 +1539,7 @@
               <Tests>
                   The evaluator shall use the TOE to perform the auditable
                   events defined in the Auditable Events table in FAU_GEN.1.1/AGENT and shall observe that
-                  accurate audit records are generated with contents and formatting consistent with
+                  accurate audit data are generated with contents and formatting consistent with
                   those described in the TSS. Note that this testing can be
                   accomplished in conjunction with the testing of the security mechanisms
                   directly.<h:br/><h:br/>                                 
@@ -1609,7 +1610,7 @@
             Base-PP. This PP-Module augments the extended family
             by adding one additional component, FIA_ENR_EXT.2. This new component and its impact on
             the extended family’s component leveling are shown below; reference the 
-              MDM PP for all other definitions for this family. </mod-def>
+            MDM PP for all other definitions for this family.<h:br/><h:br/> </mod-def>
         </ext-comp-def>
         <f-component cc-id="fia_enr_ext.2" id="fia-enr-ext-2" name="Agent Enrollment of Mobile Device into Management">
           <consistency-rationale/>
@@ -1664,7 +1665,7 @@
             Base-PP. This PP-Module augments the extended family
             by adding one additional component, FMT_POL_EXT.2. This new component and its impact on
             the extended family’s component leveling are shown below; reference the 
-              MDM PP for all other definitions for this family.</mod-def>
+            MDM PP for all other definitions for this family.<h:br/><h:br/></mod-def>
         </ext-comp-def>
         <f-component cc-id="fmt_pol_ext.2" id="fmt-pol-ext-2" name="Agent Trusted Policy Update">
           <consistency-rationale/>
@@ -1722,7 +1723,7 @@
               PP-Module augments the extended family by adding one additional component,
             FMT_SMF_EXT.4. This new component and its impact on the extended family’s component
             leveling are shown below; reference the MDF PP for all other definitions for this
-            family. </mod-def>
+            family.<h:br/><h:br/> </mod-def>
         </ext-comp-def>
         <f-component cc-id="fmt_smf_ext.4" id="fmt-smf-ext-4" name="Specification of Management Functions">
           <!-- Note: Changed to .4 to avoid conflict with MDM Server -->
@@ -1925,7 +1926,7 @@
             Base-PP. This PP-Module augments the extended family
             by adding one additional component, FAU_STG_EXT.3. This new component and its impact on
             the extended family’s component leveling are shown below; reference the 
-            MDM PP for all other definitions for this family.</mod-def>
+            MDM PP for all other definitions for this family.<h:br/><h:br/></mod-def>
         </ext-comp-def>
         <f-component cc-id="fau_stg_ext.3" id="fau-stg-ext-3" name="Security Audit Event Storage">
           <!-- Note: Name changed simply to avoid name collision with MDM Server -->
@@ -2036,7 +2037,7 @@
         <h:td>FPT_STM.1 - Reliable Time Stamps</h:td>
       <h:td>
         Regardless of whether the MDM Agent is part of an MDM Server or mobile device TOE, the MDM Agent itself will be installed on a device. 
-        If the mobile device is part of the TOE, the the MDF PP that it conforms to explicitly
+        If the mobile device is part of the TOE, the MDF PP that it conforms to explicitly
         defines FPT_STM.1, which therefore satisfies the dependency in this case. If the mobile
         device is not part of the T?OE, a reliable time source can still be assumed because all
         mobile devices must include some method to update time data from a cellular carrier network,
