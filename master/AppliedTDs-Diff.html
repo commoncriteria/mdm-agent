@@ -787,1062 +787,6 @@
             <span class="description"> The table of the requirement is replaced with:
                 <br>
                 <br>
-                 The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of performing the following management functions: 
-                <br>
-                <br>
-                 <b><span class="ctr" data-myid="fmt_smf" data-counter-type="ct-Table" id="fmt_smf">Table <span class="counter">4</span>: Management Functions</span></b>
-                <br>
-                <br>
-                 Status Markers:
-                <br>
-                 M - Mandatory
-                <br>
-                 O - Optional/Objective
-                <br>
-                <table class="mfs" style="width: 100%;">
-                    <tr class="header">
-                        <td>#</td><td>Management Function</td><td>Impl.</td><td>User Only</td><td>Admin</td><td>Admin Only</td>
-                    </tr>
-                    <tr id="mf-pwd">
-                        <td>1</td><td style="text-align:left"> configure password policy: 
-                            <ul>
-                                <li>Minimum password length</li>
-                                <li>Minimum password complexity</li>
-                                <li>Maximum password lifetime</li>
-                            </ul>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-screenlock">
-                        <td>2</td><td style="text-align:left"> configure session locking policy: 
-                            <ul>
-                                <li>Screen-lock enabled/disabled</li>
-                                <li>Screen lock timeout </li>
-                                <li>Number of authentication failures</li>
-                            </ul>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-vpn">
-                        <td>3</td><td style="text-align:left"> enable/disable the VPN protection: 
-                            <ul>
-                                <li>Across device</li>
-                            </ul>
-                            <div class="indent">
-                                 [<b>selection</b>: 
-                                <ul>
-                                    <li style="">
-                                        <span class="selectable-content" id="s-vpn-per-app">on a per-app basis</span>
-                                    </li>
-                                    <li style="">
-                                        <span class="selectable-content" id="s-vpn-per-appgroup">on a per-group of applications processes basis</span>
-                                    </li>
-                                    <li style="">
-                                        <span class="selectable-content" id="_s_12">no other method</span>
-                                    </li>
-                                </ul>
-                                ]
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-radios">
-                        <td>4</td><td style="text-align:left"> enable/disable [<b>assignment</b>: <span class="assignable-content" id="a-mf-radios">list of all radios</span>]</td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-audioVisual">
-                        <td>5</td><td style="text-align:left"> enable/disable [<b>assignment</b>: <span class="assignable-content" id="a-audiovisual-devs">list of audio or visual collection devices</span>]: 
-                            <ul>
-                                <li>Across device</li>
-                            </ul>
-                            <div class="indent">
-                                [<b>selection</b>: 
-                                <ul>
-                                    <li style="">
-                                        <span class="selectable-content" id="s-audiovisual-per-app">on a per-app basis</span>
-                                    </li>
-                                    <li style="">
-                                        <span class="selectable-content" id="s-audiovisual-per-appgroup">on a per-group of applications processes basis</span>
-                                    </li>
-                                    <li style="">
-                                        <span class="selectable-content" id="_s_15">no other method</span>
-                                    </li>
-                                </ul>
-                                ]
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-lockState">
-                        <td>6</td><td style="text-align:left"> transition to the locked state </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-wipe">
-                        <td>7</td><td style="text-align:left"> <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> wipe of protected data </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-appInstallRules">
-                        <td>8</td><td style="text-align:left"> configure application installation policy by 
-                            <div class="indent">
-                                [<b>selection</b>: 
-                                <ul>
-                                    <li style="">
-                                        <span class="selectable-content" id="mf-appInstallRules-restrict">restricting the sources of applications</span>
-                                    </li>
-                                    <li style="">
-                                        <span class="selectable-content" id="mf-appInstallRules-specify">specifying a set of allowed applications based on [<b>assignment</b>: <span class="assignable-content">application characteristics</span>] (an application allowlist)</span>
-                                    </li>
-                                    <li style="">
-                                        <span class="selectable-content" id="mf-appInstallRules-deny">denying installation of applications</span>
-                                    </li>
-                                </ul>
-                                ]
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-keyStorage">
-                        <td>9</td><td style="text-align:left"> import keys or secrets into the secure key storage </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-keyWipe">
-                        <td>10</td><td style="text-align:left"> destroy imported keys or secrets and [<b>selection</b>: <span class="selectable-content" id="_s_19">no other keys or secrets</span>, <span class="selectable-content" id="_s_20">[<b>assignment</b>: <span class="assignable-content">list of other categories of keys or secrets</span>]</span>] in the secure key storage </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-certImport">
-                        <td>11</td><td style="text-align:left"> import X.509v3 certificates into the Trust Anchor Database </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-certWipe">
-                        <td>12</td><td style="text-align:left"> remove imported X.509v3 certificates and [<b>selection</b>: <span class="selectable-content" id="_s_21">no other X.509v3 certificates</span>, <span class="selectable-content" id="_s_22">[<b>assignment</b>: <span class="assignable-content">list of other categories of X.509v3 certificates</span>]</span>] in the Trust Anchor Database </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-enroll">
-                        <td>13</td><td style="text-align:left"> enroll the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in management </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-appRemove">
-                        <td>14</td><td style="text-align:left"> remove applications </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-update">
-                        <td>15</td><td style="text-align:left"> update system software </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-appInstall">
-                        <td>16</td><td style="text-align:left"> install applications </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-entAppRemove">
-                        <td>17</td><td style="text-align:left"> remove Enterprise applications </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-notifications">
-                        <td>18</td><td style="text-align:left"> enable/disable display notification in the locked state of: [<b>selection</b>: 
-                            <ul>
-                                <li style="">
-                                    <span class="selectable-content" id="_s_23">email notifications</span>
-                                </li>
-                                <li style="">
-                                    <span class="selectable-content" id="_s_24">calendar appointments</span>
-                                </li>
-                                <li style="">
-                                    <span class="selectable-content" id="_s_25">contact associated with phone call notification</span>
-                                </li>
-                                <li style="">
-                                    <span class="selectable-content" id="_s_26">text message notification</span>
-                                </li>
-                                <li style="">
-                                    <span class="selectable-content" id="_s_27">[<b>assignment</b>: <span class="assignable-content">other application-based notifications</span>]</span>
-                                </li>
-                                <li style="">
-                                    <span class="selectable-content" id="_s_28">all notifications</span>
-                                </li>
-                            </ul>
-                            ] </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-dar">
-                        <td>19</td><td style="text-align:left"> enable data-at rest protection </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-rmediaDar">
-                        <td>20</td><td style="text-align:left"> enable removable media&rsquo;s data-at-rest protection </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-location">
-                        <td>21</td><td style="text-align:left"> enable/disable location services: 
-                            <ul>
-                                <li>Across device</li>
-                            </ul>
-                            <div class="indent">
-                                [<b>selection</b>: 
-                                <ul>
-                                    <li style="">
-                                        <span class="selectable-content" id="mf-location-per_app">on a per-app basis</span>
-                                    </li>
-                                    <li style="">
-                                        <span class="selectable-content" id="_s_30">on a per-group of applications processes basis</span>
-                                    </li>
-                                    <li style="">
-                                        <span class="selectable-content" id="_s_31">no other method</span>
-                                    </li>
-                                </ul>
-                                ]
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-authFactors">
-                        <td>22</td><td style="text-align:left"> enable/disable the use of [<b>selection</b>: <span class="selectable-content" id="_s_32">Biometric Authentication Factor</span>, <span class="selectable-content" id="_s_33">Hybrid Authentication Factor</span>] </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-certInvalid">
-                        <td>23</td><td style="text-align:left"> configure whether to allow or disallow establishment of [<b>assignment</b>: <span class="assignable-content">configurable trusted channel in FTP_ITC_EXT.1.1 or FDP_UPC_EXT.1.1/APPS</span>] if the peer or server certificate is deemed invalid.</td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-externalPorts">
-                        <td>24</td><td style="text-align:left"> enable/disable all data signaling over [<b>assignment</b>: <span class="assignable-content">list of externally accessible hardware ports</span>] </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-serverProtocols">
-                        <td>25</td><td style="text-align:left"> enable/disable [<b>assignment</b>: <span class="assignable-content" id="a-server">list of protocols where the device acts as a server</span>] </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-devModes">
-                        <td>26</td><td style="text-align:left"> enable/disable developer modes </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-authBypass">
-                        <td>27</td><td style="text-align:left"> enable/disable bypass of local user authentication </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-wipeEntData">
-                        <td>28</td><td style="text-align:left"> wipe Enterprise data </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-appCert">
-                        <td>29</td><td style="text-align:left"> approve [<b>selection</b>: <span class="selectable-content" id="_s_34">import</span>, <span class="selectable-content" id="_s_35">removal</span>] by applications of X.509v3 certificates in the Trust Anchor Database </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-certValidity">
-                        <td>30</td><td style="text-align:left"> configure whether to allow or disallow establishment of a trusted channel if the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> cannot establish a connection to determine the validity of a certificate</td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-cellular">
-                        <td>31</td><td style="text-align:left"> enable/disable the cellular protocols used to connect to cellular network base stations </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-auditLogs">
-                        <td>32</td><td style="text-align:left"> read audit logs kept by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-digSign">
-                        <td>33</td><td style="text-align:left"> configure [<b>selection</b>: <span class="selectable-content" id="_s_36">certificate</span>, <span class="selectable-content" id="_s_37">public-key</span>] used to validate digital signature on applications </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-sharedKeys">
-                        <td>34</td><td style="text-align:left"> approve exceptions for shared use of keys or secrets by multiple applications </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-keyWipeRules">
-                        <td>35</td><td style="text-align:left"> approve exceptions for destruction of keys or secrets by applications that did not import the key or secret </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-unlockBanner">
-                        <td>36</td><td style="text-align:left"> configure the unlock banner </td><td>
-                            <div class="tooltipped">
-                                M<span class="tooltiptext">Mandatory</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-auditItems">
-                        <td>37</td><td style="text-align:left"> configure the auditable items </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                -<span class="tooltiptext">N/A</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-integ">
-                        <td>38</td><td style="text-align:left"> retrieve <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>-software integrity verification values </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-USB">
-                        <td>39</td><td style="text-align:left"> enable/disable [<b>selection</b>: 
-                            <ul>
-                                <li style="">
-                                    <span class="selectable-content" id="s-usbstore">USB mass storage mode</span>
-                                </li>
-                                <li style="">
-                                    <span class="selectable-content" id="_s_39">USB data transfer without user authentication</span>
-                                </li>
-                                <li style="">
-                                    <span class="selectable-content" id="_s_40">USB data transfer without authentication of the connecting system</span>
-                                </li>
-                            </ul>
-                            ] </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-backup">
-                        <td>40</td><td style="text-align:left"> enable/disable backup of [<b>selection</b>: <span class="selectable-content" id="s-backup-all-apps">all applications</span>, <span class="selectable-content" id="s-backup-sel-apps">selected applications</span>, <span class="selectable-content" id="s-backup-sel-grps">selected groups of applications</span>, <span class="selectable-content" id="s-backup-cfg">configuration data</span>] to [<b>selection</b>: <span class="selectable-content" id="_s_45">locally connected system</span>, <span class="selectable-content" id="_s_46">remote system</span>] </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-hotspot">
-                        <td>41</td><td style="text-align:left"> enable/disable [<b>selection</b>: 
-                            <ul>
-                                <li style="">
-                                    <span class="selectable-content" id="_s_47">Hotspot functionality authenticated by [<b>selection</b>: <span class="selectable-content" id="_s_48">pre-shared key</span>, <span class="selectable-content" id="_s_49">passcode</span>, <span class="selectable-content" id="_s_50">no authentication</span>]</span>
-                                </li>
-                                <li style="">
-                                    <span class="selectable-content" id="s-tether">USB tethering authenticated by [<b>selection</b>: <span class="selectable-content" id="_s_52">pre-shared key</span>, <span class="selectable-content" id="_s_53">passcode</span>, <span class="selectable-content" id="_s_54">no authentication</span>] </span>
-                                </li>
-                            </ul>
-                            ] </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-dataSharing">
-                        <td>42</td><td style="text-align:left"> approve exceptions for sharing data between [<b>selection</b>: <span class="selectable-content" id="_s_55">applications</span>, <span class="selectable-content" id="_s_56">groups of applications</span>]</td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-appGroups">
-                        <td>43</td><td style="text-align:left"> place applications into application groups based on [<b>assignment</b>: <span class="assignable-content">enterprise configuration settings</span>]</td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-unenroll">
-                        <td>44</td><td style="text-align:left"> unenroll the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from management </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-alwaysOnVPN">
-                        <td>45</td><td style="text-align:left"> enable/disable the Always On VPN protection: 
-                            <ul>
-                                <li>Across device</li>
-                            </ul>
-                            <div class="indent">
-                                [<b>selection</b>: 
-                                <ul>
-                                    <li style="">
-                                        <span class="selectable-content" id="_s_57">on a per-app basis</span>
-                                    </li>
-                                    <li style="">
-                                        <span class="selectable-content" id="_s_58">on a per-group of applications processes basis</span>
-                                    </li>
-                                    <li style="">
-                                        <span class="selectable-content" id="_s_59">no other method</span>
-                                    </li>
-                                </ul>
-                                ]
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-bioRevoke">
-                        <td>46</td><td style="text-align:left"> revoke Biometric template</td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr id="mf-other">
-                        <td>47</td><td style="text-align:left"> [<b>assignment</b>: <span class="assignable-content">list of other management functions to be provided by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>]</td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td><td>
-                            <div class="tooltipped">
-                                O<span class="tooltiptext">Optional/Conditional</span>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
             </span>
         </div>
         <h3 id="addsfr-bpp-gpos" class="indexable" data-level="3">5.3.2 Additional SFRs</h3>
@@ -1850,7 +794,7 @@
         <h4 class="indexable" data-level="4" id="sec-at-gpos-addnl">5.3.2.1 Auditable Events for GPOS PP Additional SFRs</h4>
         <table class="sort_kids_" border="1">
             <caption data-sortkey="#0">
-                <span class="ctr" data-myid="at-gpos-addnl" data-counter-type="ct-Table" id="at-gpos-addnl">Table <span class="counter">5</span></span>: Auditable Events for <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>
+                <span class="ctr" data-myid="at-gpos-addnl" data-counter-type="ct-Table" id="at-gpos-addnl">Table <span class="counter">4</span></span>: Auditable Events for <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>
             </caption>
             <tr data-sortkey="#1">
                 <th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th>
@@ -1975,7 +919,7 @@
         </p>
         <table class="sort_kids_" border="1">
             <caption data-sortkey="#0">
-                <span class="ctr" data-myid="at-man-audit" data-counter-type="ct-Table" id="at-man-audit">Table <span class="counter">6</span></span>: Auditable Events for Mandatory Requirements
+                <span class="ctr" data-myid="at-man-audit" data-counter-type="ct-Table" id="at-man-audit">Table <span class="counter">5</span></span>: Auditable Events for Mandatory Requirements
             </caption>
             <tr data-sortkey="#1">
                 <th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th>
@@ -2130,7 +1074,7 @@
                             All auditable events for the [<i>not specified</i>] level of audit; and
                         </li>
                         <li>
-                            [<i><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policy updated, any modification commanded by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server, specifically defined auditable events listed in <a href="#at-man-audit" class="at-man-audit-ref">Table <span class="counter">6</span></a> and [<b>selection</b>: <span class="selectable-content" id="_s_75"><a href="#at-mdf-addnl" class="at-mdf-addnl-ref">Table <span class="counter">2</span></a></span>, <span class="selectable-content" id="_s_76"><a href="#at-mdm-addnl" class="at-mdm-addnl-ref">Table <span class="counter">3</span></a></span>, <span class="selectable-content" id="_s_77"><a href="#at-gpos-addnl" class="at-gpos-addnl-ref">Table <span class="counter">5</span></a></span>, <span class="selectable-content" id="_s_78"><a href="#at-feat-based" class="at-feat-based-ref">Table <span class="counter">17</span></a></span>, <span class="selectable-content" id="_s_79">no other tables</span>], and [<b>selection</b>: <span class="selectable-content" id="_s_80">[<b>assignment</b>: <span class="assignable-content">other events</span>]</span>, <span class="selectable-content" id="_s_81">no other events</span>]</i>].
+                            [<i><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policy updated, any modification commanded by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server, specifically defined auditable events listed in <a href="#at-man-audit" class="at-man-audit-ref">Table <span class="counter">5</span></a> and [<b>selection</b>: <span class="selectable-content" id="_s_75"><a href="#at-mdf-addnl" class="at-mdf-addnl-ref">Table <span class="counter">2</span></a></span>, <span class="selectable-content" id="_s_76"><a href="#at-mdm-addnl" class="at-mdm-addnl-ref">Table <span class="counter">3</span></a></span>, <span class="selectable-content" id="_s_77"><a href="#at-gpos-addnl" class="at-gpos-addnl-ref">Table <span class="counter">4</span></a></span>, <span class="selectable-content" id="_s_78"><a href="#at-feat-based" class="at-feat-based-ref">Table <span class="counter">16</span></a></span>, <span class="selectable-content" id="_s_79">no other tables</span>], and [<b>selection</b>: <span class="selectable-content" id="_s_80">[<b>assignment</b>: <span class="assignable-content">other events</span>]</span>, <span class="selectable-content" id="_s_81">no other events</span>]</i>].
                         </li>
                     </ol>
                     <div class="appnote">
@@ -2152,7 +1096,7 @@
                     The [<b>selection</b>: <span class="selectable-content" id="_s_82"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_83"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] shall record within the <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent</b> audit data at least the following information: 
                     <ol type="a">
                         <li>
-                            Date and time of the event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event<b>, and additional information in <a href="#at-man-audit" class="at-man-audit-ref">Table <span class="counter">6</span></a> and [<b>selection</b>: <span class="selectable-content" id="_s_84"><a href="#at-mdf-addnl" class="at-mdf-addnl-ref">Table <span class="counter">2</span></a></span>, <span class="selectable-content" id="_s_85"><a href="#at-mdm-addnl" class="at-mdm-addnl-ref">Table <span class="counter">3</span></a></span>, <span class="selectable-content" id="_s_86"><a href="#at-gpos-addnl" class="at-gpos-addnl-ref">Table <span class="counter">5</span></a></span>, <span class="selectable-content" id="_s_87"><a href="#at-feat-based" class="at-feat-based-ref">Table <span class="counter">17</span></a></span>, <span class="selectable-content" id="_s_88">no other tables</span>]; </b>
+                            Date and time of the event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event<b>, and additional information in <a href="#at-man-audit" class="at-man-audit-ref">Table <span class="counter">5</span></a> and [<b>selection</b>: <span class="selectable-content" id="_s_84"><a href="#at-mdf-addnl" class="at-mdf-addnl-ref">Table <span class="counter">2</span></a></span>, <span class="selectable-content" id="_s_85"><a href="#at-mdm-addnl" class="at-mdm-addnl-ref">Table <span class="counter">3</span></a></span>, <span class="selectable-content" id="_s_86"><a href="#at-gpos-addnl" class="at-gpos-addnl-ref">Table <span class="counter">4</span></a></span>, <span class="selectable-content" id="_s_87"><a href="#at-feat-based" class="at-feat-based-ref">Table <span class="counter">16</span></a></span>, <span class="selectable-content" id="_s_88">no other tables</span>]; </b>
                         </li>
                         <li>
                             For each audit event type, based on the auditable event definitions of the functional components included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, functional package or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<b>assignment</b>: <span class="assignable-content">other audit relevant information</span>].
@@ -2335,7 +1279,7 @@
             <br>
             <table>
                 <caption>
-                    <span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">7</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale
+                    <span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">6</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale
                 </caption>
                 <tr>
                     <th>Threat</th><th>Addressed by</th><th>Rationale</th>
@@ -2400,7 +1344,7 @@
         <h3 id="consecprob-bpp-mdf" class="indexable" data-level="3">6.1.2 Consistency of Security Problem Definition </h3>
         <table>
             <caption>
-                <span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">8</span></span>: Consistency of Security Problem Definition (<abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
+                <span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">7</span></span>: Consistency of Security Problem Definition (<abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
             </caption>
             <tr>
                 <th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th>
@@ -2443,7 +1387,7 @@
         <p>
             <table>
                 <caption>
-                    <span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">9</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (<abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
+                    <span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">8</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (<abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
                 </caption>
                 <tr>
                     <th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th>
@@ -2469,7 +1413,7 @@
          This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that are needed to support <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent functionality. This is considered to be consistent because the functionality provided by the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose. The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies new <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are used entirely to provide functionality for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. The rationale for why this does not conflict with the claims defined by the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows: 
         <table>
             <caption>
-                <span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">10</span></span>: Consistency of Requirements (<abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
+                <span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">9</span></span>: Consistency of Requirements (<abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
             </caption>
             <tr>
                 <th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th>
@@ -2550,7 +1494,7 @@
         <h3 id="consecprob-bpp-mdm" class="indexable" data-level="3">6.2.2 Consistency of Security Problem Definition </h3>
         <table>
             <caption>
-                <span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">11</span></span>: Consistency of Security Problem Definition (<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
+                <span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">10</span></span>: Consistency of Security Problem Definition (<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
             </caption>
             <tr>
                 <th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th>
@@ -2593,7 +1537,7 @@
         <p>
             <table>
                 <caption>
-                    <span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">12</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
+                    <span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">11</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
                 </caption>
                 <tr>
                     <th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th>
@@ -2619,7 +1563,7 @@
          This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that are needed to support <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent functionality. This is considered to be consistent because the functionality provided by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose. The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies new <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are used entirely to provide functionality for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. The rationale for why this does not conflict with the claims defined by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows: 
         <table>
             <caption>
-                <span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">13</span></span>: Consistency of Requirements (<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
+                <span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">12</span></span>: Consistency of Requirements (<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
             </caption>
             <tr>
                 <th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th>
@@ -2697,7 +1641,7 @@
         <h3 id="consecprob-bpp-gpos" class="indexable" data-level="3">6.3.2 Consistency of Security Problem Definition </h3>
         <table>
             <caption>
-                <span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">14</span></span>: Consistency of Security Problem Definition (<abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
+                <span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">13</span></span>: Consistency of Security Problem Definition (<abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
             </caption>
             <tr>
                 <th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th>
@@ -2740,7 +1684,7 @@
         <p>
             <table>
                 <caption>
-                    <span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">15</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (<abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
+                    <span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">14</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (<abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
                 </caption>
                 <tr>
                     <th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th>
@@ -2766,7 +1710,7 @@
          This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that are needed to support <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent functionality. This is considered to be consistent because the functionality provided by the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose. The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies new <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are used entirely to provide functionality for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. The rationale for why this does not conflict with the claims defined by the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows: 
         <table>
             <caption>
-                <span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">16</span></span>: Consistency of Requirements (<abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
+                <span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">15</span></span>: Consistency of Requirements (<abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base) 
             </caption>
             <tr>
                 <th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th>
@@ -2854,7 +1798,7 @@
         <h3 class="indexable" data-level="3" id="sib-audit-table">A.3.1 Auditable Events for Implementation-Dependent SFRs</h3>
         <table class="sort_kids_" border="1">
             <caption data-sortkey="#0">
-                <span class="ctr" data-myid="at-feat-based" data-counter-type="ct-Table" id="at-feat-based">Table <span class="counter">17</span></span>: Auditable Events for Implementation-dependent Requirements
+                <span class="ctr" data-myid="at-feat-based" data-counter-type="ct-Table" id="at-feat-based">Table <span class="counter">16</span></span>: Auditable Events for Implementation-dependent Requirements
             </caption>
             <tr data-sortkey="#1">
                 <th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th>
@@ -2930,7 +1874,7 @@
          All extended components specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are listed in this table: 
         <table class="sort_kids_">
             <caption data-sortkey="#0">
-                <b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">18</span></span>: Extended Component Definitions</b>
+                <b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">17</span></span>: Extended Component Definitions</b>
             </caption>
             <tr data-sortkey="#1">
                 <th>Functional Class</th><th>Functional Components</th>
@@ -3326,7 +2270,7 @@
             This information benefits systems engineering activities which call for inclusion of particular security controls. Evaluation against the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> provides evidence that these controls are present and have been evaluated.
         </p>
         <div class="table-caption">
-            <span class="ctr" data-myid="implicit-sfrs" data-counter-type="ct-Table" id="implicit-sfrs">Table <span class="counter">19</span>: Implicitly Satisfied Requirements</span>
+            <span class="ctr" data-myid="implicit-sfrs" data-counter-type="ct-Table" id="implicit-sfrs">Table <span class="counter">18</span>: Implicitly Satisfied Requirements</span>
         </div>
         <table>
             <tr>
@@ -3374,7 +2318,7 @@
         <h1 id="acronyms" class="indexable" data-level="A">Appendix F - Acronyms</h1>
         <table>
             <caption>
-                <span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">20</span></span>: Acronyms 
+                <span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">19</span></span>: Acronyms 
             </caption>
             <tr class="header">
                 <th>Acronym</th><th>Meaning</th>
@@ -3464,7 +2408,7 @@
         <h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix G - Bibliography</h1>
         <table>
             <caption>
-                <span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">21</span></span>: Bibliography
+                <span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">20</span></span>: Bibliography
             </caption>
             <tr class="header">
                 <th>Identifier</th><th>Title</th>

@@ -7,9 +7,7 @@ output/mdm-agent-release-linkable.html: FDP
 output/mdm-agent-release-linkable.html: Fi
 output/mdm-agent-release-linkable.html: GPCP
 output/mdm-agent-release-linkable.html: GPSO
-output/mdm-agent-release-linkable.html: Hotspot
 output/mdm-agent-release-linkable.html: ITT
-output/mdm-agent-release-linkable.html: Impl
 output/mdm-agent-release-linkable.html: MOF
 output/mdm-agent-release-linkable.html: MTD
 output/mdm-agent-release-linkable.html: STM
@@ -19,7 +17,6 @@ output/mdm-agent-release-linkable.html: Unenrolling
 output/mdm-agent-release-linkable.html: Unenrollment
 output/mdm-agent-release-linkable.html: Wi
 output/mdm-agent-release-linkable.html: XFER
-output/mdm-agent-release-linkable.html: passcode
 output/mdm-agent-release-linkable.html: preconfigured
 output/mdm-agent-release-linkable.html: unenroll
 output/mdm-agent-release-linkable.html: unenrolling
@@ -32,9 +29,7 @@ output/mdm-agent-release.html: FDP
 output/mdm-agent-release.html: Fi
 output/mdm-agent-release.html: GPCP
 output/mdm-agent-release.html: GPSO
-output/mdm-agent-release.html: Hotspot
 output/mdm-agent-release.html: ITT
-output/mdm-agent-release.html: Impl
 output/mdm-agent-release.html: MOF
 output/mdm-agent-release.html: MTD
 output/mdm-agent-release.html: STM
@@ -44,7 +39,6 @@ output/mdm-agent-release.html: Unenrolling
 output/mdm-agent-release.html: Unenrollment
 output/mdm-agent-release.html: Wi
 output/mdm-agent-release.html: XFER
-output/mdm-agent-release.html: passcode
 output/mdm-agent-release.html: role’
 output/mdm-agent-release.html: unenroll
 output/mdm-agent-release.html: unenrolling
@@ -74,9 +68,7 @@ output/mdm-agent.html: FDP
 output/mdm-agent.html: Fi
 output/mdm-agent.html: GPCP
 output/mdm-agent.html: GPSO
-output/mdm-agent.html: Hotspot
 output/mdm-agent.html: ITT
-output/mdm-agent.html: Impl
 output/mdm-agent.html: MOF
 output/mdm-agent.html: MTD
 output/mdm-agent.html: STM
@@ -88,7 +80,6 @@ output/mdm-agent.html: Wi
 output/mdm-agent.html: XFER
 output/mdm-agent.html: actions’
 output/mdm-agent.html: occurring’
-output/mdm-agent.html: passcode
 output/mdm-agent.html: preconfigured
 output/mdm-agent.html: role’
 output/mdm-agent.html: unenroll
