@@ -1,0 +1,1 @@
+/home/runner/work/mdm-agent/mdm-agent/input/mdm-agent.xml:1030:22: error: element "title" not allowed here; expected the element end-tag or text
