@@ -140,7 +140,7 @@
         TOE boundary and its OE where the TOE runs on a mobile device. A use case where the TOE runs on a GPOS
         is identical aside from the specific type of device on which it runs. As stated above, the MDM Agent may either be provided as part of the device itself (shown in
         red) or distributed as a third-party application from the developer of the MDM Server software (shown in blue).<h:br/><h:br/>
-        <figure entity="images/MDMagentoperatingenvironment.jpg" title="MDM Agent Operating Environment" id="toe"/><h:br/> 
+        <figure entity="images/MDMAgentSystem.png" title="MDM Agent Operating Environment" id="toe"/><h:br/> 
         The MDM
         Agent must closely interact with or be part of the mobile device or OS platform so that it can
         establish policies and to perform queries about device status. The mobile device and OS platform, in turn,
