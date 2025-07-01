@@ -1027,7 +1027,13 @@
             <consistency-rationale>The PP-Module changes this SFR to make additional management functions necessary when an MDM Agent is based off of the GPSO PP. This is done to match the management functions required in the MDM PP.</consistency-rationale>
             <description>
               The table of the requirement is replaced with:<h:br/><h:br/>
-              <title>The TSF shall be capable of performing the following management functions: <h:br/><h:br/>
+              
+              
+            </description>
+            
+            <replace>
+              <xpath-specified xpath="*//cc:f-element[@id='fel-store-sdata']//cc:title">
+                <title>The TSF shall be capable of performing the following management functions: <h:br/><h:br/>
               <h:b><ctr id="fmt_smf" ctr-type="Table">: Management Functions</ctr></h:b><h:br/><h:br/> 
               Status Markers:<h:br/> M - Mandatory<h:br/> O - Optional/Objective<h:br/>
               <!-- NOTE: management-function uses ctr variables crt-type=functions in the MOOO table, so that they do not 
@@ -2242,14 +2248,6 @@ The evaluator shall exercise the TSF configuration as the administrator and
                 </management-function>
               </management-function-set>
             </title>
-              
-            </description>
-            
-            <replace>
-              <xpath-specified xpath="*//cc:f-element[@id='fel-store-sdata']//cc:title">
-                <title>
-                  <!-- TODO -->
-                </title>
               </xpath-specified>
             </replace>
           </base-sfr-spec>
