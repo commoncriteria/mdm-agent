@@ -1027,8 +1027,250 @@
             <consistency-rationale>The PP-Module changes this SFR to make additional management functions necessary when an MDM Agent is based off of the GPSO PP. This is done to match the management functions required in the MDM PP.</consistency-rationale>
             <description>
               The table of the requirement is replaced with:<h:br/><h:br/>
-              
-              
+              <table class="mfs">
+                  <tr class="header">
+                      <td>#</td>
+                      <td>Management Function</td>
+                      <td>User</td>
+                      <td>Administrator</td>
+                      <td>Admin Only (When enrolled in management)</td>
+                  </tr>   
+                  <tr>
+                      <td>1</td>
+                      <td style="text-align:left">
+                                    configure password policy:
+                                      <ol type="a">
+                                      <li>minimum password length</li>
+                                      <li>minimum password complexity</li>
+                                      <li>maximum password lifetime</li>
+                                    </ol>
+                      </td>
+                      <td>Optional</span></div></td>
+                      <td><mark>Mandatory</mark></span></div></td>
+                      <td><mark>Mandatory</mark></span></div></td>
+                  </tr>
+                  <tr><td>2</td>
+                      <td style="text-align:left">
+                                    configure session
+                                    locking policy: <ol type="a">
+                                      <li>screen-lock enabled/disabled</li>
+                                      <li>screen lock timeout </li>
+                                      <li>number of authentication failures</li>
+                                    </ol>
+                      </td>
+                      <td>Optional</span></div></td>
+                      <td><mark>Mandatory</mark></span></div></td>
+                      <td><mark>Mandatory</mark></span></div></td>
+                    </tr>   
+                    <tr>
+                        <td>3</td>
+                        <td style="text-align:left">enable/disable the <a class="discovered abbr" href="#abbr_VPN" title="Virtual Private Network">VPN</a>
+                                    protection: <ol type="a">
+                                      <li>across device</li>
+                          [<b>selection</b>:
+                                        <li>on a per-app basis</li></ul>
+                                        <li>on a per-group of applications processes basis</li>
+                                        <li>no other method</li>]</ol>
+                        </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td style="text-align:left">
+                                    enable/disable
+                                      [<b>assignment</b>: <span class="assignable-content" id="assignable_27-">list of all radios</span>]</td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td style="text-align:left">
+                                    enable/disable
+                                      [<b>assignment</b>: <span class="assignable-content" id="assignable_28-">list of audio or visual collection devices</span>]: <ol type="a">
+                                      <li>across device</li></ol>
+                                    [<b>selection</b>: <ol type="a" start="2">
+                                        <li>on a per-app basis</li>
+                                        <li>on a per-group of applications processes basis</li>
+                                        <li>no other method</li>
+                                    </ol> ]</div>
+                                  </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td style="text-align:left">transition to the locked state</td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td style="text-align:left">
+                                    
+                                    <a class="discovered abbr" href="#abbr_TSF" title="TOE Security Functionality">TSF</a> wipe of protected data </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td style="text-align:left"> configure application installation policy by [<b>selection</b>: <ol type="a">
+                            <li>restricting the sources of applications</li>
+                            <li>specifying a set of allowed applications based on [<b>assignment</b>: <span class="assignable-content" id="assignable_29-">application characteristics </span>] (an application allowlist)</li>
+                            <li>denying installation of applications</li>
+
+                        </ol>
+                        ]
+                        </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td style="text-align:left">
+                                    
+                                    import keys/secrets into
+                                    the secure key storage </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td style="text-align:left">
+                                    
+                                    destroy imported
+                                    keys/secrets and [<b>selection</b>: <span class="selectable-content" id="selectable_340-">no other keys/secrets</span>, <span class="selectable-content" id="selectable_341-">[<b>assignment</b>: <span class="assignable-content" id="assignable_30-">list of other categories of
+                                        keys/secrets</span>]</span>] in the secure key storage </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td style="text-align:left">import X.509v3 certificates into the Trust Anchor Database </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td style="text-align:left">remove imported X.509v3 certificates and [<b>selection</b>: <span class="selectable-content" id="selectable_342-">no other X.509v3 certificates</span>, <span class="selectable-content" id="selectable_343-">[<b>assignment</b>: <span class="assignable-content" id="assignable_31-">list of other categories of X.509v3
+                                          certificates</span>]</span>] in the Trust Anchor Database </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td style="text-align:left">
+                                    
+                                    enroll the <a class="discovered abbr" href="#abbr_TOE" title="Target of Evaluation">TOE</a> in management </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td style="text-align:left">
+                                    
+                                    remove applications </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td style="text-align:left">
+                                    
+                                    update system software </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td style="text-align:left">
+                                    
+                                    install applications </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td style="text-align:left">
+                                    
+                                    remove Enterprise
+                                  applications </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td style="text-align:left">
+                                    
+                                    enable/disable
+                                    display notification in the locked state of: [<b>selection</b>: <ol type="a">
+                                    <li>email notifications</li>
+                                    <li>calendar appointments</li>
+                                    <li>contact associated with phone call notification</li>
+                                    <li>text message notification</li>
+                                    <li>other application-based notifications</li>
+                                    <li>all notifications</li>]
+                                  </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td style="text-align:left"> enable data-at rest protection</td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td style="text-align:left"> enable removable media's data-at-rest protection </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td style="text-align:left"> enable/disable location services: <ol type="a">
+                                      <li>across device</li></ol>
+                                    <div class="indent">[<b>selection</b>: <span class="selectable-content linebreak-sel" id="selectable_350-">b. on a per-app basis </span>
+                                        <span class="selectable-content linebreak-sel" id="selectable_351-">c. on a per-group of applications processes basis </span>
+                                        <span class="selectable-content linebreak-sel" id="selectable_352-">d. no other method </span>]</div>
+                                  </td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td style="text-align:left"> enable/disable the use of [<b>selection</b>: <span class="selectable-content" id="selectable_353-">Biometric Authentication Factor</span>, <span class="selectable-content" id="selectable_354-">Hybrid Authentication Factor</span>]</td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td style="text-align:left"> configure whether to allow/disallow establishment of a trusted channel if the peer/server certificate is deemed invalid.</td>
+                        <td>Optional</span></div></td>
+                        <td><mark>Mandatory</mark></span></div></td>
+                        <td>Optional</span></div></td>
+                    </tr>                    
+                </table>             
             </description>
             
             <replace>
