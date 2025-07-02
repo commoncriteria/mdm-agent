@@ -1012,9 +1012,10 @@
           <base-sfr-spec id="mod-fmt-smf-ext-1" title="Specification of Management Functions" cc-id="fmt_smf_ext.1">
             <consistency-rationale>The PP-Module changes this SFR to make additional management functions necessary when an MDM Agent is based off of the GPSO PP. This is done to match the management functions required in the MDM PP.</consistency-rationale>
             <description>
-              The table of the requirement is replaced with:<h:br/><h:br/>
-              
-              
+              The text of the requirement is replaced with:<h:br/><h:br/>
+
+              Functions 1 - 23 are assigned mandatory in the "Administrator" column. An additional column of "Admin Only (When enrolled in management)" is added to the table and functions 1, 2, and 8 are moved to mandatory in this column.
+                       
             </description>
             
             <replace>
