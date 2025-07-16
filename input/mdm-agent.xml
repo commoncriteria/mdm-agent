@@ -1066,7 +1066,9 @@
                 <h:td>3</h:td>
                   <h:td>enable/disable the VPN protection: <h:ol type="a">
                     <h:li>across device</h:li>
+                    </h:ol>
 					          [<h:b>selection</h:b>:
+                    <h:ol type="a" start="2">
                       <h:li>on a per-app basis</h:li></ul>
                       <h:li>on a per-group of applications processes basis</h:li>
                       <h:li>no other method</h:li>]</h:ol>
@@ -1077,9 +1079,7 @@
     </h:tr>
     <h:tr>
         <h:td>4</h:td>
-        <h:td>
-                     enable/disable
-                      [<h:b>assignment</h:b>: list of all radios]</h:td>
+        <h:td>enable/disable [<h:b>assignment</h:b>: list of all radios]</h:td>
         <h:td>O</h:td>
         <h:td>M</h:td>
         <h:td>O</h:td>
