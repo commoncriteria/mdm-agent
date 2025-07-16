@@ -1069,7 +1069,7 @@
                     </h:ol>
 					          [<h:b>selection</h:b>:
                     <h:ol type="a" start="2">
-                      <h:li>on a per-app basis</h:li></ul>
+                      <h:li>on a per-app basis</h:li>
                       <h:li>on a per-group of applications processes basis</h:li>
                       <h:li>no other method</h:li>]</h:ol>
         </h:td>
