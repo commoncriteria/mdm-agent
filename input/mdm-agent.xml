@@ -1026,9 +1026,226 @@
           <base-sfr-spec id="mod-fmt-smf-ext-1" title="Specification of Management Functions" cc-id="fmt_smf_ext.1">
             <consistency-rationale>The PP-Module changes this SFR to make additional management functions necessary when an MDM Agent is based off of the GPSO PP. This is done to match the management functions required in the MDM PP.</consistency-rationale>
             <description>
-              The text of the requirement is replaced with:<h:br/><h:br/>
+            <h:p>
+              This SFR is not reproduced in its entirety for size purposes. Functions 1 - 23 are assigned mandatory in the "Administrator" column. An additional column of "Admin Only (When Enrolled in Management)" is added to the table and functions 1, 2, and 8 are assigned mandatory in this column.
+              </h:p>
+              <h:table border="1" style="width:100%">
+              <h:tr>
+                  <h:td><h:b>#</h:b></h:td>
+                  <h:td><h:b>Management Function</h:b></h:td>
+                  <h:td><h:b>User</h:b></h:td>
+                  <h:td><h:b>Administrator</h:b></h:td>
+                  <h:td><h:b>Admin Only (When Enrolled in Management)</h:b></h:td>
+                </h:tr>
+              <h:tr>
+                <h:td>1</h:td>
+                <h:td>configure password policy:
+                                <h:ol type="a">
+                                <h:li>minimum password length</h:li>
+                                <h:li>minimum password complexity</h:li>
+                                <h:li>maximum password lifetime</h:li>
+                              </h:ol>
+                </h:td>
+                <h:td>O</h:td>
+                <h:td>M</h:td>
+                <h:td>M</h:td>
+              </h:tr>
+              <h:tr>
+                <h:td>2</h:td>
+                <h:td> configure session locking policy: <h:ol type="a">
+                      <h:li>screen-lock enabled/disabled</h:li>
+                      <h:li>screen lock timeout </h:li>
+                      <h:li>number of authentication failures</h:li>
+                    </h:ol>
+                </h:td>
+                 <h:td>O</h:td>
+                 <h:td>M</h:td>
+                 <h:td>M</h:td>
+              </h:tr>   
+              <h:tr>
+                <h:td>3</h:td>
+                  <h:td>enable/disable the VPN protection: <h:ol type="a">
+                    <h:li>across device</h:li>
+					          [<h:b>selection</h:b>:
+                      <h:li>on a per-app basis</h:li></ul>
+                      <h:li>on a per-group of applications processes basis</h:li>
+                      <h:li>no other method</h:li>]</h:ol>
+        </h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>4</h:td>
+        <h:td>
+                     enable/disable
+                      [<h:b>assignment</h:b>: list of all radios]</h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>5</h:td>
+        <h:td>
+                     enable/disable
+                      [<h:b>assignment</h:b>: list of audio or visual collection devices]: <h:ol type="a">
+                      <h:li>across device</h:li></h:ol>
+                    [<h:b>selection</h:b>: <h:ol type="a" start="2">
+                        <h:li>on a per-app basis</h:li>
+                        <h:li>on a per-group of applications processes basis</h:li>
+                        <h:li>no other method</h:li>
+                    </h:ol> ]
+                  </h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>6</h:td>
+        <h:td>transition to the locked state</h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>7</h:td>
+        <h:td> TSF wipe of protected data </h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>8</h:td>
+        <h:td> configure application installation policy by [<h:b>selection</h:b>: <h:ol type="a">
+            <h:li>restricting the sources of applications</h:li>
+            <h:li>specifying a set of allowed applications based on [<h:b>assignment</h:b>: application characteristics ] (an application allowlist)</h:li>
+            <h:li>denying installation of applications</h:li>
 
-              Functions 1 - 23 are assigned mandatory in the "Administrator" column. An additional column of "Admin Only (When enrolled in management)" is added to the table and functions 1, 2, and 8 are moved to mandatory in this column.
+        </h:ol>
+        ]
+        </h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>M</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>9</h:td>
+        <h:td>import keys/secrets into the secure key storage </h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>10</h:td>
+        <h:td>destroy imported keys/secrets and [<h:b>selection</h:b>: no other keys/secrets, [<h:b>assignment</h:b>: list of other categories of keys/secrets]] in the secure key storage</h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>11</h:td>
+        <h:td>import X.509v3 certificates into the Trust Anchor Database </h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>12</h:td>
+        <h:td>remove imported X.509v3 certificates and [<h:b>selection</h:b>: no other X.509v3 certificates, [<h:b>assignment</h:b>: list of other categories of X.509v3 certificates]] in the Trust Anchor Database </h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>13</h:td>
+        <h:td>enroll the TOE in management </h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>14</h:td>
+        <h:td>remove applications </h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>15</h:td>
+        <h:td>update system software </h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>16</h:td>
+        <h:td>install applications </h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>17</h:td>
+        <h:td>remove Enterprise applications </h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>18</h:td>
+        <h:td>enable/disable display notification in the locked state of: [<h:b>selection</h:b>: <h:ol type="a">
+                    <h:li>email notifications</h:li>
+                    <h:li>calendar appointments</h:li>
+                    <h:li>contact associated with phone call notification</h:li>
+                    <h:li>text message notification</h:li>
+                    <h:li>other application-based notifications</h:li>
+                    <h:li>all notifications</h:li>]
+                  </h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>19</h:td>
+        <h:td> enable data-at rest protection</h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>20</h:td>
+        <h:td>enable removable media's data-at-rest protection </h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>21</h:td>
+        <h:td>enable/disable location services: <h:ol type="a">
+                      <h:li>across device</h:li></h:ol>
+                    [<h:b>selection</h:b>: b. on a per-app basis 
+                        c. on a per-group of applications processes basis 
+                        d. no other method ]
+                  </h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>22</h:td>
+        <h:td>enable/disable the use of [<h:b>selection</h:b>: Biometric Authentication Factor, Hybrid Authentication Factor]</h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+    <h:tr>
+        <h:td>23</h:td>
+        <h:td>configure whether to allow/disallow establishment of a trusted channel if the peer/server certificate is deemed invalid.</h:td>
+        <h:td>O</h:td>
+        <h:td>M</h:td>
+        <h:td>O</h:td>
+    </h:tr>
+              </h:table>
                        
             </description>
             
