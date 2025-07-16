@@ -1201,9 +1201,226 @@ Operating System
               The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> shall implement functionality to encrypt sensitive data <b>including any data used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent functionality</b> stored in non-volatile storage and provide interfaces to applications to invoke this functionality.
               
             </span></div><h4 id="@id" class="indexable" data-level="4">5.3.1.2 Security Management (FMT)</h4><div class="comp" id="@id"><h4>FMT_SMF_EXT.1: Specification of Management Functions</h4><span class="description">
-              The text of the requirement is replaced with:<br/><br/>
+            <p>
+              This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is not reproduced in its entirety for size purposes. Functions 1 - 23 are assigned mandatory in the "Administrator" column. An additional column of "Admin Only (When Enrolled in Management)" is added to the table and functions 1, 2, and 8 are assigned mandatory in this column.
+              </p>
+              <table border="1" style="width:100%">
+              <tr>
+                  <td><b>#</b></td>
+                  <td><b>Management Function</b></td>
+                  <td><b>User</b></td>
+                  <td><b>Administrator</b></td>
+                  <td><b>Admin Only (When Enrolled in Management)</b></td>
+                </tr>
+              <tr>
+                <td>1</td>
+                <td>configure password policy:
+                                <ol type="a">
+                                <li>minimum password length</li>
+                                <li>minimum password complexity</li>
+                                <li>maximum password lifetime</li>
+                              </ol>
+                </td>
+                <td>O</td>
+                <td>M</td>
+                <td>M</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td> configure session locking policy: <ol type="a">
+                      <li>screen-lock enabled/disabled</li>
+                      <li>screen lock timeout </li>
+                      <li>number of authentication failures</li>
+                    </ol>
+                </td>
+                 <td>O</td>
+                 <td>M</td>
+                 <td>M</td>
+              </tr>   
+              <tr>
+                <td>3</td>
+                  <td>enable/disable the VPN protection: <ol type="a">
+                    <li>across device</li>
+                    </ol>
+					          [<b>selection</b>:
+                    <ol type="a" start="2">
+                      <li>on a per-app basis</li>
+                      <li>on a per-group of applications processes basis</li>
+                      <li>no other method</li>]</ol>
+        </td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>enable/disable [<b>assignment</b>: list of all radios]</td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>
+                     enable/disable
+                      [<b>assignment</b>: list of audio or visual collection devices]: <ol type="a">
+                      <li>across device</li></ol>
+                    [<b>selection</b>: <ol type="a" start="2">
+                        <li>on a per-app basis</li>
+                        <li>on a per-group of applications processes basis</li>
+                        <li>no other method</li>
+                    </ol> ]
+                  </td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>transition to the locked state</td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td> <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> wipe of protected data </td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td> configure application installation policy by [<b>selection</b>: <ol type="a">
+            <li>restricting the sources of applications</li>
+            <li>specifying a set of allowed applications based on [<b>assignment</b>: application characteristics ] (an application allowlist)</li>
+            <li>denying installation of applications</li>
 
-              Functions 1 - 23 are assigned mandatory in the "Administrator" column. An additional column of "Admin Only (When enrolled in management)" is added to the table and functions 1, 2, and 8 are moved to mandatory in this column.
+        </ol>
+        ]
+        </td>
+        <td>O</td>
+        <td>M</td>
+        <td>M</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>import keys/secrets into the secure key storage </td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>destroy imported keys/secrets and [<b>selection</b>: no other keys/secrets, [<b>assignment</b>: list of other categories of keys/secrets]] in the secure key storage</td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>import X.509v3 certificates into the Trust Anchor Database </td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>remove imported X.509v3 certificates and [<b>selection</b>: no other X.509v3 certificates, [<b>assignment</b>: list of other categories of X.509v3 certificates]] in the Trust Anchor Database </td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>enroll the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in management </td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>remove applications </td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>update system software </td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>install applications </td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>17</td>
+        <td>remove Enterprise applications </td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>18</td>
+        <td>enable/disable display notification in the locked state of: [<b>selection</b>: <ol type="a">
+                    <li>email notifications</li>
+                    <li>calendar appointments</li>
+                    <li>contact associated with phone call notification</li>
+                    <li>text message notification</li>
+                    <li>other application-based notifications</li>
+                    <li>all notifications</li></ol>]
+                  </td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td> enable data-at rest protection</td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>enable removable media's data-at-rest protection </td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>enable/disable location services: <ol type="a">
+                      <li>across device</li></ol>
+                    [<b>selection</b>: b. on a per-app basis 
+                        c. on a per-group of applications processes basis 
+                        d. no other method ]
+                  </td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>22</td>
+        <td>enable/disable the use of [<b>selection</b>: Biometric Authentication Factor, Hybrid Authentication Factor]</td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>23</td>
+        <td>configure whether to allow/disallow establishment of a trusted channel if the peer/server certificate is deemed invalid.</td>
+        <td>O</td>
+        <td>M</td>
+        <td>O</td>
+    </tr>
+              </table>
                        
             </span></div><h3 id="addsfr-bpp-gpos" class="indexable" data-level="3">5.3.2  Additional SFRs</h3>
       This section defines additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that must be added to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary in order to implement
