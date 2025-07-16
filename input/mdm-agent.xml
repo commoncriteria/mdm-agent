@@ -1199,7 +1199,7 @@
                     <h:li>contact associated with phone call notification</h:li>
                     <h:li>text message notification</h:li>
                     <h:li>other application-based notifications</h:li>
-                    <h:li>all notifications</h:li>]
+                    <h:li>all notifications</h:li></h:ol>]
                   </h:td>
         <h:td>O</h:td>
         <h:td>M</h:td>
