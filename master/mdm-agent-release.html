@@ -720,12 +720,17 @@ The following sections list Common Criteria and technology terms used in this do
 </table><h3 id="tech-terms" class="indexable" data-level="3">1.2.2 Technical Terms</h3><table style="width: 100%"><tr><td><div id="Administrator">Administrator</div></td><td>The person who is responsible for management activities, including setting
             the policy that is applied by the enterprise on the device.</td></tr>
 <tr><td><div id="Enrolled_State">Enrolled State</div></td><td>The state in which a device is managed by a policy from an MDM.</td></tr>
+<tr><td><div id="General_Purpose_Operating_System">General Purpose Operating System (GPOS)</div></td><td> A class of OSes designed to support a wide-variety of workloads consisting of many concurrent applications or services. Typical characteristics for OSes in this class include support for third-party applications, support for multiple users, and security separation between users and their respective resources. General Purpose Operating Systems also lack the real-time constraint that defines Real Time Operating Systems which are typically used in routers, switches, and embedded devices.</td></tr>
+<tr><td><div id="Managed_Device">Managed Device (MD)</div></td><td>A device enrolled and managed, or to be enrolled and managed, by an MDM system. This device is a mobile device evaluated under the MDF PP or a device utilizing a GPOS PP evaluated OS.</td></tr>
+<tr><td><div id="Managed_Device_User">Managed Device User</div></td><td>The person who uses and is held responsible for a managed device. Synonymous with 'local user' in the context
+              of a managed device.</td></tr>
 <tr><td><div id="Mobile_Application_Store">Mobile Application Store (MAS)</div></td><td>An MDM feature that allows for an organization to substitute a device manufacturer's
             application store for one that restricts what applications are made available to users.</td></tr>
+<tr><td><div id="Mobile_Device">Mobile Device</div></td><td>A device which is composed of a hardware platform and its system software. The device typically provides wireless
+				connectivity and may include software for functions like secure messaging, email, web, VPN connection, and VoIP (Voice over IP), for access
+				to the protected enterprise network, enterprise data and applications, and for communicating to other MDs.</td></tr>
 <tr><td><div id="Mobile_Device_Management">Mobile Device Management (MDM)</div></td><td>Products that allow enterprises to apply security policies to end user devices. This system consists of two primary
           components: the MDM Server and the MDM Agent.</td></tr>
-<tr><td><div id="Mobile_Device_User">Mobile Device User</div></td><td>The person who uses and is held responsible for a mobile device. Synonymous with 'local user' in the context
-              of a mobile device.</td></tr>
 <tr><td><div id="Operating_System">Operating System (OS)</div></td><td>
 	      Software which runs at the highest privilege level and can directly control
               hardware resources. These include mobile device and general purpose operating systems (GPOS).
@@ -741,7 +746,7 @@ The following sections list Common Criteria and technology terms used in this do
 <tr><td><div id="Unenrolled_State">Unenrolled State</div></td><td>
 		The state in which a device is not managed by an MDM system.
 	      </td></tr>
-<tr><td><div id="User">User</div></td><td>See Mobile Device User.</td></tr>
+<tr><td><div id="User">User</div></td><td>See Managed Device User.</td></tr>
 </table></div>
 
     <h2 class="indexable" data-level="2" id="targets">1.3 Compliant Targets of Evaluation</h2> 
@@ -751,10 +756,8 @@ The following sections list Common Criteria and technology terms used in this do
       to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server, from which it receives policies to enforce on the 
       device. Optionally, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent interacts with a <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server to download and install enterprise-hosted applications.
       <br/><br/> 
-      A
-      compliant <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is installed on a device as an application
-      (supplied by the developer of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server software) or is part of a mobile device or <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>
-      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, or the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. A <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+      A compliant <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is installed on a device as an application
+      (supplied by the developer of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server software) or is part of a mobile device or <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, or the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. A <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
       that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> must also claim conformance to one
       of those <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> as its <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. To mitigate the threats that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines, a compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is obligated to implement the functionality the 
       <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> requires, along with the additional functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
@@ -763,8 +766,8 @@ The following sections list Common Criteria and technology terms used in this do
       <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a native part of a mobile operating system. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> for
       this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> combined with the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the mobile
       device itself plus the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is part
-      of the mobile device’s <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent may present multiple interfaces for
-      configuring the mobile device, such as a local and remote interface. <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents
+      of the <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr>’s <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent may present multiple interfaces for
+      configuring the <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr>, such as a local and remote interface. <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents
       conforming to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> must at least offer an interface with a trusted
       channel that serves as one piece of an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> system. Conformant <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents may also offer other interfaces, and the configuration aspects of
       these additional interfaces are in scope of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
@@ -901,7 +904,7 @@ The following sections list Common Criteria and technology terms used in this do
       <dl><dt class="threat defined" id="T.INSECURE_MDM_COMMUNICATIONS">T.INSECURE_MDM_COMMUNICATIONS</dt><dd><span class="description">
             A malicious user or process may inspect network communications between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent and an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server to illicitly determine, modify, or prevent these communications in such a way that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent fails to enforce the intended policy.
           </span></dd><dt class="threat defined" id="T.MISUSED_DEVICE">T.MISUSED_DEVICE</dt><dd><span class="description">
-            A malicious or careless user may operate a mobile device in such a way that it compromises the security of the device, its data, or its user.
+            A malicious or careless user may operate a <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> in such a way that it compromises the security of the device, its data, or its user.
           </span></dd><dt class="threat defined" id="T.UNAUTHORIZED_POLICY_SOURCE">T.UNAUTHORIZED_POLICY_SOURCE</dt><dd><span class="description">
           A malicious user or process can send illegitimate policy data to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in an attempt to cause it to enter an insecure or unknown state.
           </span></dd></dl>
@@ -1716,7 +1719,7 @@ Operating System
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> This requirement captures all the configuration functionality
-              in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to configure the underlying mobile device with the
+              in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to configure the underlying <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> with the
               configuration policies sent from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. The
                 <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author selects the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> (<abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, or <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>) as the source of the management functions.<br/><br/> The
               administrator-provided management functions in the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are specified
@@ -1735,7 +1738,7 @@ Operating System
               Server. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must not claim any functionality not provided
               by the supported device. All selections and assignments performed by the
                 <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author in this requirement should match the selections and
-              assignments of the validated mobile device or <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/>
+              assignments of the validated <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/>
             </span></div></div></div>
           <div class="element"><div class="reqid" id="FMT_SMF_EXT.4.2"><a href="#FMT_SMF_EXT.4.2" class="abbr">FMT_SMF_EXT.4.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall be capable of performing the following
               functions: <ul>
@@ -1748,11 +1751,11 @@ Operating System
       Note:
     </span><span class="note"> This requirement captures all of the configuration in the
                 <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent for configuration of itself.<br/><br/> If the
-                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is part of a mobile device, enrollment is a single
+                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is part of a <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr>, enrollment is a single
               function both of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and of the device
               (<a href="#FMT_SMF_EXT.4.1">FMT_SMF_EXT.4.1</a>).<br/><br/> If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is an
-              application developed separately from a mobile device or operating system, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-              Agent performs the function “enroll in management” by registering itself to the mobile device or <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> as an administrator.
+              application developed separately from a <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+              Agent performs the function “enroll in management” by registering itself to the <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> as an administrator.
               The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent itself is enrolled in management by configuring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
               Server to which the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent answers.<br/><br/> If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
               Agent does not support unenrollment prevention, remediation actions should be applied
@@ -1909,7 +1912,7 @@ Operating System
       </h3> When this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
         <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still mobile device management. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is
         simply extended to include the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents that reside on individual
-        mobile devices and support the management functionality that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+        MDs and support the management functionality that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
         Server component implements.<h3 id="consecprob-bpp-mdm" class="indexable" data-level="3">6.2.2 
 	Consistency of Security Problem Definition
       </h3><table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">10</span></span>: Consistency of Security Problem Definition (<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
@@ -1970,7 +1973,7 @@ Operating System
         updates to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. <a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a> completes this transaction by
         requiring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to accept only signed policies and policy
         updates.</td></tr><tr><td><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to interact
-        with the underlying mobile device platform to enforce management functions that are
+        with the underlying <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> platform to enforce management functions that are
         configured by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server (FMT_SMF.1/SERVER_CONF_AGENT in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>).</td></tr><tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to define its behavior upon
         unenrollment from management. Unenrollment from management is a management function that is
         specified in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
@@ -1978,7 +1981,7 @@ Operating System
 	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Objective requirements.
 	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
-        to store generated audit data in the audit storage provided by the mobile device. This does
+        to store generated audit data in the audit storage provided by the <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr>. This does
         not impact the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> since it resides on a different platform from the
           <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. </td></tr><tr><td><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
         to maintain information about its last successful connection with the environmental 
@@ -2282,7 +2285,7 @@ Operating System
       <tr>
         <td>FPT_STM.1 - Reliable Time Stamps</td>
       <td>
-        Regardless of whether the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is part of an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server or mobile device <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent itself will be installed on a device. 
+        Regardless of whether the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is part of an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server or <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent itself will be installed on a device. 
         If the mobile device is part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that it conforms to explicitly
         defines FPT_STM.1, which therefore satisfies the dependency in this case. If the mobile
         device is not part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, a reliable time source can still be assumed because all
@@ -2324,6 +2327,7 @@ Operating System
 <tr><td><span class="term" id="abbr_GPOS"><abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr></span></td><td><span id="long_abbr_GPOS">General Purpose Operating System</span></td></tr>
 <tr><td><span class="term" id="abbr_HTTPS"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span></td><td><span id="long_abbr_HTTPS">Hypertext Transfer Protocol Secure</span></td></tr>
 <tr><td><span class="term" id="abbr_MAS"><abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr></span></td><td><span id="long_abbr_MAS">Mobile Application Store</span></td></tr>
+<tr><td><span class="term" id="abbr_MD"><abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr></span></td><td><span id="long_abbr_MD">Managed Device</span></td></tr>
 <tr><td><span class="term" id="abbr_MDF"><abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr></span></td><td><span id="long_abbr_MDF">Mobile Device Fundamentals</span></td></tr>
 <tr><td><span class="term" id="abbr_MDM"><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr></span></td><td><span id="long_abbr_MDM">Mobile Device Management</span></td></tr>
 <tr><td><span class="term" id="abbr_OE"><abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr></span></td><td><span id="long_abbr_OE">Operational Environment</span></td></tr>

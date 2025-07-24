@@ -68,14 +68,18 @@
 	    <term abbr="DN" full="Distinguished Name"/>
 	    <term abbr="DTLS" full="Datagram Transport Layer Security"/>
             <term full="Enrolled State">The state in which a device is managed by a policy from an MDM.</term>
-	    <term abbr="GPOS" full="General Purpose Operating System"/>
+	    <term abbr="GPOS" full="General Purpose Operating System"> A class of OSes designed to support a wide-variety of workloads consisting of many concurrent applications or services. Typical characteristics for OSes in this class include support for third-party applications, support for multiple users, and security separation between users and their respective resources. General Purpose Operating Systems also lack the real-time constraint that defines Real Time Operating Systems which are typically used in routers, switches, and embedded devices.</term>
 	    <term abbr="HTTPS" full="Hypertext Transfer Protocol Secure"/>
-            <term full="Mobile Application Store" abbr="MAS">An MDM feature that allows for an organization to substitute a device manufacturer's
+      <term full="Managed Device" abbr="MD">A device enrolled and managed, or to be enrolled and managed, by an MDM system. This device is a mobile device evaluated under the MDF PP or a device utilizing a GPOS PP evaluated OS.</term>
+      <term full="Mobile Application Store" abbr="MAS">An MDM feature that allows for an organization to substitute a device manufacturer's
             application store for one that restricts what applications are made available to users.</term>
-        <term full="Mobile Device Management" abbr="MDM">Products that allow enterprises to apply security policies to end user devices. This system consists of two primary
+      <term full="Mobile Device">A device which is composed of a hardware platform and its system software. The device typically provides wireless
+				connectivity and may include software for functions like secure messaging, email, web, VPN connection, and VoIP (Voice over IP), for access
+				to the protected enterprise network, enterprise data and applications, and for communicating to other MDs.</term>
+      <term full="Mobile Device Management" abbr="MDM">Products that allow enterprises to apply security policies to end user devices. This system consists of two primary
           components: the MDM Server and the MDM Agent.</term>
-            <term full="Mobile Device User">The person who uses and is held responsible for a mobile device. Synonymous with 'local user' in the context
-              of a mobile device.</term>
+      <term full="Managed Device User">The person who uses and is held responsible for a managed device. Synonymous with 'local user' in the context
+              of a managed device.</term>
 	    <term abbr="MDF" full="Mobile Device Fundamentals"/>
             <term abbr="OS" full="Operating System">
 	      Software which runs at the highest privilege level and can directly control
@@ -93,7 +97,7 @@
               <term full="Unenrolled State">
 		The state in which a device is not managed by an MDM system.
 	      </term>
-              <term full="User">See Mobile Device User.</term>
+              <term full="User">See Managed Device User.</term>
       </tech-terms>
 
     <section id="targets" title="Compliant Targets of Evaluation"> 
@@ -103,10 +107,8 @@
       to the MDM Server, from which it receives policies to enforce on the 
       device. Optionally, the MDM Agent interacts with a MAS Server to download and install enterprise-hosted applications.
       <h:br/><h:br/> 
-      A
-      compliant MDM Agent is installed on a device as an application
-      (supplied by the developer of the MDM Server software) or is part of a mobile device or GPOS
-      This PP-Module builds on the MDF PP, the MDM PP, or the GPOS PP. A TOE
+      A compliant MDM Agent is installed on a device as an application
+      (supplied by the developer of the MDM Server software) or is part of a mobile device or GPOS. This PP-Module builds on the MDF PP, the MDM PP, or the GPOS PP. A TOE
       that claims conformance to this PP-Module must also claim conformance to one
       of those PPs as its Base-PP. To mitigate the threats that this PP-Module defines, a compliant TOE is obligated to implement the functionality the 
       Base-PP requires, along with the additional functionality defined in this PP-Module.
@@ -115,8 +117,8 @@
       TOE is a native part of a mobile operating system. The TOE for
       this PP-Module combined with the MDF PP is the mobile
       device itself plus the MDM Agent. If the MDM Agent is part
-      of the mobile device’s OS, the MDM Agent may present multiple interfaces for
-      configuring the mobile device, such as a local and remote interface. MDM Agents
+      of the MD’s OS, the MDM Agent may present multiple interfaces for
+      configuring the MD, such as a local and remote interface. MDM Agents
       conforming to this PP-Module must at least offer an interface with a trusted
       channel that serves as one piece of an MDM system. Conformant MDM Agents may also offer other interfaces, and the configuration aspects of
       these additional interfaces are in scope of this PP-Module.
@@ -281,7 +283,7 @@
         
         <threat name="T.MISUSED_DEVICE">
           <description>
-            A malicious or careless user may operate a mobile device in such a way that it compromises the security of the device, its data, or its user.
+            A malicious or careless user may operate a MD in such a way that it compromises the security of the device, its data, or its user.
           </description>
           <addressed-by>FAU_ALT_EXT.2</addressed-by><rationale>Mitigates the threat of a misused device by causing the generation of alerts based on the usage of the device.</rationale>
           <addressed-by>FAU_GEN.1/AGENT</addressed-by><rationale>Mitigates the threat of a misused device by generating audit events regarding the use and behavior of the MDM agent.</rationale>
@@ -894,7 +896,7 @@
       <con-toe> When this PP-Module is used to extend the MDM
         PP, the TOE type for the overall TOE is still mobile device management. The TOE boundary is
         simply extended to include the MDM Agents that reside on individual
-        mobile devices and support the management functionality that the MDM
+        MDs and support the management functionality that the MDM
         Server component implements.</con-toe>
       <con-sec-prob/>
       <con-obj/>
@@ -957,13 +959,13 @@
         requiring the MDM Agent to accept only signed policies and policy
         updates.</con-mod>
       <con-mod ref="fmt-smf-ext-4"> This SFR requires the MDM Agent to interact
-        with the underlying mobile device platform to enforce management functions that are
+        with the underlying MD platform to enforce management functions that are
         configured by the MDM Server (FMT_SMF.1/SERVER_CONF_AGENT in the Base-PP).</con-mod>
       <con-mod ref="fmt-unr-ext-1"> This SFR requires the TSF to define its behavior upon
         unenrollment from management. Unenrollment from management is a management function that is
         specified in the Base-PP.</con-mod>
       <con-mod ref="fau-stg-ext-3"> This SFR defines the ability of the MDM Agent
-        to store generated audit data in the audit storage provided by the mobile device. This does
+        to store generated audit data in the audit storage provided by the MD. This does
         not impact the Base-PP since it resides on a different platform from the
           MDM Agent. </con-mod>
       <con-mod ref="fpt-net-ext-1"> This SFR defines the ability of the MDM Agent
@@ -2314,7 +2316,7 @@ The evaluator shall exercise the TSF configuration as the administrator and
                   </text>
 		  <app-note>
 		    For function <xref to="mf-hotspot"/>,
-              hotspot functionality refers to the condition in which the mobile device is serving as
+              hotspot functionality refers to the condition in which the MD is serving as
               an access point to other devices, not the connection of the TOE to external hotspots.
 
 		  </app-note>
@@ -3201,7 +3203,7 @@ The evaluator shall exercise the TSF configuration as the administrator and
               </h:ul>
             </title>
             <note role="application"> This requirement captures all the configuration functionality
-              in the MDM Agent to configure the underlying mobile device with the
+              in the MDM Agent to configure the underlying MD with the
               configuration policies sent from the MDM Server to the MDM Agent. The
                 ST author selects the Base-PP (MDF PP, MDM PP, or GPOS PP) as the source of the management functions.<h:br/><h:br/> The
               administrator-provided management functions in the MDF PP are specified
@@ -3220,7 +3222,7 @@ The evaluator shall exercise the TSF configuration as the administrator and
               Server. The ST author must not claim any functionality not provided
               by the supported device. All selections and assignments performed by the
                 ST author in this requirement should match the selections and
-              assignments of the validated mobile device or GPOS ST.<h:br/><h:br/>
+              assignments of the validated MDF or GPOS ST.<h:br/><h:br/>
             </note>           
           </f-element>
           <f-element>
@@ -3237,11 +3239,11 @@ The evaluator shall exercise the TSF configuration as the administrator and
               </h:ul></title>
             <note role="application"> This requirement captures all of the configuration in the
                 MDM Agent for configuration of itself.<h:br/><h:br/> If the
-                MDM Agent is part of a mobile device, enrollment is a single
+                MDM Agent is part of a MD, enrollment is a single
               function both of the MDM Agent and of the device
               (FMT_SMF_EXT.4.1).<h:br/><h:br/> If the MDM Agent is an
-              application developed separately from a mobile device or operating system, the MDM
-              Agent performs the function “enroll in management” by registering itself to the mobile device or OS as an administrator.
+              application developed separately from a MD, the MDM
+              Agent performs the function “enroll in management” by registering itself to the MD as an administrator.
               The MDM Agent itself is enrolled in management by configuring the MDM
               Server to which the MDM Agent answers.<h:br/><h:br/> If the MDM
               Agent does not support unenrollment prevention, remediation actions should be applied
@@ -3256,19 +3258,19 @@ The evaluator shall exercise the TSF configuration as the administrator and
                 activities in the Base-PP.<h:br/><h:br/>
                 
               <TSS> 
-                  The evaluator shall verify that the assigned functions are described in the TSS and that these functions are documented as supported by the platform. The evaluator shall examine the TSS to verify that any differences between management functions and policies for each supported mobile device are listed.<h:br/><h:br/>
+                  The evaluator shall verify that the assigned functions are described in the TSS and that these functions are documented as supported by the platform. The evaluator shall examine the TSS to verify that any differences between management functions and policies for each supported MD are listed.<h:br/><h:br/>
                   The evaluator shall verify that the TSS describes the methods in which the MDM Agent can be enrolled.<h:br/><h:br/> 
                   The TSS description shall make it clear whether the MDM Agent supports multiple interfaces for enrollment and configuration (for example, both remote configuration and local configuration).<h:br/><h:br/>                  
               </TSS>
               <Guidance> 
                   The evaluator shall verify the AGD guidance includes detailed instructions for configuring each function in this requirement.<h:br/><h:br/> 
-                  If the MDM Agent is a component of the MDM system (i.e., MDM Server is the Base-PP), the evaluator shall verify, by consulting documentation for the claimed mobile device platforms, that the configurable functions listed for the MDM Agent are supported by the platforms.<h:br/><h:br/> 
+                  If the MDM Agent is a component of the MDM system (i.e., MDM Server is the Base-PP), the evaluator shall verify, by consulting documentation for the claimed MD platforms, that the configurable functions listed for the MDM Agent are supported by the platforms.<h:br/><h:br/> 
                   If the MDM Agent supports multiple interfaces for configuration (for example, both remote configuration and local configuration), the operational guidance makes it clear whether some functions are restricted to certain interfaces.<h:br/><h:br/>                
               </Guidance>
               <Tests>
                 <testlist>
                     <test>In conjunction with the evaluation activities in the Base-PP, the evaluator shall attempt to configure each 
-                      administrator-provided management function and shall verify that the mobile device executes the commands and enforces the policies.</test>
+                      administrator-provided management function and shall verify that the MD executes the commands and enforces the policies.</test>
                   <test>[conditional: if "import the certificates to be used for authentication of MDM Agent communications" is selected in FMT_SMF_EXT.4.1, then] 
                     The evaluator shall configure the MDM Agent authentication certificate in accordance with the configuration guidance. 
                     The evaluator shall verify that the MDM Agent uses this certificate in performing the tests for the MDM PP SFR FPT_ITT.1/INTER_XFER_AGENT 
@@ -3277,7 +3279,7 @@ The evaluator shall exercise the TSF configuration as the administrator and
                     or the Additional SFR FTP_ITC_EXT.1/OSCHANNEL (if the GPOS PP is the Base-PP).</test>
                     <test>In conjunction with other evaluation activities, the evaluator shall attempt to enroll the MDM Agent in management with each interface identified in the TSS, and verify that the MDM Agent can manage the device and communicate with the MDM Server.</test>
                     <test>[conditional] In conjunction with the evaluation activity for FAU_ALT_EXT.2.1, the evaluator shall configure the periodicity for reachability events for several configured time periods and verify that the MDM Server receives alerts on that schedule.</test>
-                  <test>[conditional] The evaluator shall design and perform tests to demonstrate that the assigned function may be configured and that the intended behavior of the function is enacted by the mobile device.</test>
+                  <test>[conditional] The evaluator shall design and perform tests to demonstrate that the assigned function may be configured and that the intended behavior of the function is enacted by the MD.</test>
                 </testlist>
               </Tests>
             </aactivity>
@@ -3477,7 +3479,7 @@ The evaluator shall exercise the TSF configuration as the administrator and
       <h:tr>
         <h:td>FPT_STM.1 - Reliable Time Stamps</h:td>
       <h:td>
-        Regardless of whether the MDM Agent is part of an MDM Server or mobile device TOE, the MDM Agent itself will be installed on a device. 
+        Regardless of whether the MDM Agent is part of an MDM Server or MD TOE, the MDM Agent itself will be installed on a device. 
         If the mobile device is part of the TOE, the MDF PP that it conforms to explicitly
         defines FPT_STM.1, which therefore satisfies the dependency in this case. If the mobile
         device is not part of the TOE, a reliable time source can still be assumed because all

@@ -370,12 +370,17 @@ The following sections list Common Criteria and technology terms used in this do
 </table><h3 id="tech-terms" class="indexable" data-level="2">1.3.2 Technical Terms</h3><table style="width: 100%"><tr><td><div id="Administrator">Administrator</div></td><td>The person who is responsible for management activities, including setting
             the policy that is applied by the enterprise on the device.</td></tr>
 <tr><td><div id="Enrolled_State">Enrolled State</div></td><td>The state in which a device is managed by a policy from an MDM.</td></tr>
+<tr><td><div id="General_Purpose_Operating_System">General Purpose Operating System (GPOS)</div></td><td> A class of OSes designed to support a wide-variety of workloads consisting of many concurrent applications or services. Typical characteristics for OSes in this class include support for third-party applications, support for multiple users, and security separation between users and their respective resources. General Purpose Operating Systems also lack the real-time constraint that defines Real Time Operating Systems which are typically used in routers, switches, and embedded devices.</td></tr>
+<tr><td><div id="Managed_Device">Managed Device (MD)</div></td><td>A device enrolled and managed, or to be enrolled and managed, by an MDM system. This device is a mobile device evaluated under the MDF PP or a device utilizing a GPOS PP evaluated OS.</td></tr>
+<tr><td><div id="Managed_Device_User">Managed Device User</div></td><td>The person who uses and is held responsible for a managed device. Synonymous with 'local user' in the context
+              of a managed device.</td></tr>
 <tr><td><div id="Mobile_Application_Store">Mobile Application Store (MAS)</div></td><td>An MDM feature that allows for an organization to substitute a device manufacturer's
             application store for one that restricts what applications are made available to users.</td></tr>
+<tr><td><div id="Mobile_Device">Mobile Device</div></td><td>A device which is composed of a hardware platform and its system software. The device typically provides wireless
+				connectivity and may include software for functions like secure messaging, email, web, VPN connection, and VoIP (Voice over IP), for access
+				to the protected enterprise network, enterprise data and applications, and for communicating to other MDs.</td></tr>
 <tr><td><div id="Mobile_Device_Management">Mobile Device Management (MDM)</div></td><td>Products that allow enterprises to apply security policies to end user devices. This system consists of two primary
           components: the MDM Server and the MDM Agent.</td></tr>
-<tr><td><div id="Mobile_Device_User">Mobile Device User</div></td><td>The person who uses and is held responsible for a mobile device. Synonymous with 'local user' in the context
-              of a mobile device.</td></tr>
 <tr><td><div id="Operating_System">Operating System (OS)</div></td><td>
 	      Software which runs at the highest privilege level and can directly control
               hardware resources. These include mobile device and general purpose operating systems (GPOS).
@@ -391,7 +396,7 @@ The following sections list Common Criteria and technology terms used in this do
 <tr><td><div id="Unenrolled_State">Unenrolled State</div></td><td>
 		The state in which a device is not managed by an MDM system.
 	      </td></tr>
-<tr><td><div id="User">User</div></td><td>See Mobile Device User.</td></tr>
+<tr><td><div id="User">User</div></td><td>See Managed Device User.</td></tr>
 </table></div><h1 id="sfr" class="indexable" data-level="0">2 Evaluation Activities for SFRs</h1><p>The EAs presented in this section capture the actions the evaluator performs 
     to address technology specific aspects covering specific SARs (e.g. ASE_TSS.1, 
     ADV_FSP.1, AGD_OPE.1, and ATE_IND.1) – this is in addition to the CEM workunits 
@@ -743,18 +748,18 @@ The following sections list Common Criteria and technology terms used in this do
               
               
             <div class="eacategory">TSS</div><div class="ea"><div class="ea"> 
-                  The evaluator shall verify that the assigned functions are described in the TSS and that these functions are documented as supported by the platform. The evaluator shall examine the TSS to verify that any differences between management functions and policies for each supported mobile device are listed.<br/><br/>
+                  The evaluator shall verify that the assigned functions are described in the TSS and that these functions are documented as supported by the platform. The evaluator shall examine the TSS to verify that any differences between management functions and policies for each supported MD are listed.<br/><br/>
                   The evaluator shall verify that the TSS describes the methods in which the MDM Agent can be enrolled.<br/><br/> 
                   The TSS description shall make it clear whether the MDM Agent supports multiple interfaces for enrollment and configuration (for example, both remote configuration and local configuration).<br/><br/>                  
               </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> 
                   The evaluator shall verify the AGD guidance includes detailed instructions for configuring each function in this requirement.<br/><br/> 
-                  If the MDM Agent is a component of the MDM system (i.e., MDM Server is the Base-PP), the evaluator shall verify, by consulting documentation for the claimed mobile device platforms, that the configurable functions listed for the MDM Agent are supported by the platforms.<br/><br/> 
+                  If the MDM Agent is a component of the MDM system (i.e., MDM Server is the Base-PP), the evaluator shall verify, by consulting documentation for the claimed MD platforms, that the configurable functions listed for the MDM Agent are supported by the platforms.<br/><br/> 
                   If the MDM Agent supports multiple interfaces for configuration (for example, both remote configuration and local configuration), the operational guidance makes it clear whether some functions are restricted to certain interfaces.<br/><br/>                
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
                     <li class="test-"><a id="_t_43" class="defined" href="#_t_43">Test FMT_SMF_EXT.4:1</a>:
       In conjunction with the evaluation activities in the Base-PP, the evaluator shall attempt to configure each 
-                      administrator-provided management function and shall verify that the mobile device executes the commands and enforces the policies.</li>
+                      administrator-provided management function and shall verify that the MD executes the commands and enforces the policies.</li>
                   <li class="test-"><a id="_t_44" class="defined" href="#_t_44">Test FMT_SMF_EXT.4:2</a>:
       [conditional: if "import the certificates to be used for authentication of MDM Agent communications" is selected in FMT_SMF_EXT.4.1, then] 
                     The evaluator shall configure the MDM Agent authentication certificate in accordance with the configuration guidance. 
@@ -767,7 +772,7 @@ The following sections list Common Criteria and technology terms used in this do
                     <li class="test-"><a id="_t_46" class="defined" href="#_t_46">Test FMT_SMF_EXT.4:4</a>:
       [conditional] In conjunction with the evaluation activity for FAU_ALT_EXT.2.1, the evaluator shall configure the periodicity for reachability events for several configured time periods and verify that the MDM Server receives alerts on that schedule.</li>
                   <li class="test-"><a id="_t_47" class="defined" href="#_t_47">Test FMT_SMF_EXT.4:5</a>:
-      [conditional] The evaluator shall design and perform tests to demonstrate that the assigned function may be configured and that the intended behavior of the function is enacted by the mobile device.</li>
+      [conditional] The evaluator shall design and perform tests to demonstrate that the assigned function may be configured and that the intended behavior of the function is enacted by the MD.</li>
                 </ul></span>
               </div></div></span></div><div class="comp" id="FMT-UNR-EXT-1"><h4>FMT_UNR_EXT.1 User Unenrollment Prevention</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_UNR_EXT.1</div>
               
