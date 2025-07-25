@@ -82,7 +82,7 @@
             <term full="Enrolled State">The state in which a device is managed by a policy from an MDM.</term>
 	    <term abbr="GPOS" full="General Purpose Operating System"> A class of OSes designed to support a wide-variety of workloads consisting of many concurrent applications or services. Typical characteristics for OSes in this class include support for third-party applications, support for multiple users, and security separation between users and their respective resources. General Purpose Operating Systems also lack the real-time constraint that defines Real Time Operating Systems which are typically used in routers, switches, and embedded devices.</term>
 	    <term abbr="HTTPS" full="Hypertext Transfer Protocol Secure"/>
-      <term full="Managed Device" abbr="MD">A device enrolled and managed, or to be enrolled and managed, by an MDM system. This device is a mobile device evaluated under the MDF PP or a device utilizing a GPOS PP evaluated OS.</term>
+      <term full="Managed Device" abbr="MD">A device enrolled and managed, or to be enrolled and managed, by an MDM system. This device is a mobile device typically evaluated under the MDF PP or a device utilizing a GPOS typically evaluated under the GPOS PP.</term>
       <term full="Mobile Application Store" abbr="MAS">An MDM feature that allows for an organization to substitute a device manufacturer's
             application store for one that restricts what applications are made available to users.</term>
       <term full="Mobile Device">A device which is composed of a hardware platform and its system software. The device typically provides wireless
