@@ -14,7 +14,7 @@
   
   <PPReference>
     <ReferenceTable>
-      <PPVersion>1.2</PPVersion>
+      <PPVersion>2.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
       <PPPubDate>2025-01-31</PPPubDate>
       <Keywords>Mobile Device Management; MDM; MDM Agents</Keywords>
@@ -35,7 +35,7 @@
       </subject>
     </entry>
     <entry>
-      <version>1.2</version>
+      <version>2.0</version>
       <date>2025-01-31</date>
       <subject>
         Converted to CC:2022 and incorporated NIAP Technical Decisions.
@@ -63,9 +63,9 @@
     <section id="overview" title="Overview"> The scope of the MDM Agent Protection Profile Module (PP-Module) is to describe the security functionality of a Mobile Device Management (MDM) Agent 
       in terms of Common Criteria (CC) and to define functional and assurance requirements for such products. 
       This PP-Module is intended for use with the following Base-PPs: <h:ul>
-        <h:li>Protection Profile for Mobile Device Management (MDM PP), Version 4.0</h:li>
-        <h:li>Protection Profile for Mobile Device Fundamentals (MDF PP), Version 3.3</h:li>
-        <h:li>Protection Profile for General Purpose Operating Systems (GPOS PP), Version 4.3</h:li>
+        <h:li>Protection Profile for Mobile Device Management (MDM PP), Version 5.0</h:li>
+        <h:li>Protection Profile for Mobile Device Fundamentals (MDF PP), Version 4.0</h:li>
+        <h:li>Protection Profile for General Purpose Operating Systems (GPOS PP), Version 5.0</h:li>
       </h:ul>
       <h:br/> These Base-PPs are valid because an MDM Agent is
       either a third-party application manufactured by the MDM Server vendor or is a
@@ -167,7 +167,7 @@
         <usecase title="Enterprise-owned device for general-purpose enterprise use" id="usecase1">
           <description> An enterprise-owned device for general-purpose business use is commonly
             called Corporately Owned, Personally Enabled. This use case entails a significant
-            degree of enterprise control over configuration and software inventory. enterprise
+            degree of enterprise control over configuration and software inventory. Enterprise
             administrators use an MDM product to establish policies on the 
             devices prior to user issuance. Users may use internet connectivity to browse the web, 
             access corporate mail, or run enterprise applications, but this connectivity may be under
@@ -260,12 +260,12 @@
       <cc-pt3-conf>extended</cc-pt3-conf>
       <cc-pp-conf/>
       <cc-pp-config-with> 
-        <PP-cc-ref>Protection Profile for General Purpose Operating Systems, Version 4.3</PP-cc-ref>
-        <PP-cc-ref>Protection Profile for Mobile Device Fundamentals, Version 3.3</PP-cc-ref>
-        <PP-cc-ref>Protection Profile for Mobile Device Management, Version 4.0</PP-cc-ref>
-        <Mod-cc-ref>PP-Module for Virtual Private Network (VPN) Clients, version 2.6</Mod-cc-ref>  
-        <Mod-cc-ref>PP-Module for Bluetooth, version 1.1</Mod-cc-ref>
-        <Mod-cc-ref>PP-Module for WLAN Clients, version 1.1</Mod-cc-ref>
+        <PP-cc-ref>Protection Profile for General Purpose Operating Systems, Version 5.0</PP-cc-ref>
+        <PP-cc-ref>Protection Profile for Mobile Device Fundamentals, Version 4.0</PP-cc-ref>
+        <PP-cc-ref>Protection Profile for Mobile Device Management, Version 5.0</PP-cc-ref>
+        <Mod-cc-ref>PP-Module for Virtual Private Network (VPN) Clients, version 3.0</Mod-cc-ref>  
+        <Mod-cc-ref>PP-Module for Bluetooth, version 2.0</Mod-cc-ref>
+        <Mod-cc-ref>PP-Module for WLAN Clients, version 2.0</Mod-cc-ref>
         <Mod-cc-ref>cPP-Module for Biometric Enrolment and Verification - for unlocking the device, version 1.1</Mod-cc-ref>        
       </cc-pp-config-with>
       <cc-pkg-claim>
@@ -433,10 +433,11 @@
     </section>
   </sec:Security_Objectives>
   <sec:Security_Requirements title="Security Requirements">
-    <base-pp id="bpp-mdf" name="Mobile Device Fundamentals" product="Mobile Device" short="MDF" version="3.3">
+    <base-pp id="bpp-mdf" name="Mobile Device Fundamentals" product="Mobile Device" short="MDF"
+      version="4.0">
       <git>
         <url>https://github.com/commoncriteria/mobile-device</url>
-        <branch>release-3.3</branch>
+        <branch>release-4.0</branch>
       </git>
       <url>https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%203.3%20PP/index.html</url>
    
@@ -990,10 +991,11 @@
         to the MDM Agent during a period where it is not interacting with the
           MDM Server. </con-mod>
     </base-pp>
-    <base-pp id="bpp-gpos" name="General Purpose Operating System" product="Operating System" short="GPOS" version="4.3">
+    <base-pp id="bpp-gpos" name="General Purpose Operating System" product="Operating System"
+      short="GPOS" version="5.0">
       <git>
-        <url>https://github.com/commoncriteria/operatingsystem</url>
-        <branch>release-4.3</branch>
+        <url>https://github.com/commoncriteria/operatingsystem </url> 
+        <branch>release-5.0</branch>
       </git>
       <url>https://www.niap-ccevs.org/static_html/protection-profile/469/OS%204.3%20PP/index.html</url>
    
@@ -1026,7 +1028,8 @@
         <section title="Security Management (FMT)" id="gpos-mod-fmt">
           
           <base-sfr-spec id="mod-fmt-smf-ext-1" title="Specification of Management Functions" cc-id="fmt_smf_ext.1">
-            <consistency-rationale>The PP-Module changes this SFR to make additional management functions necessary when an MDM Agent is based off of the GPSO PP. This is done to match the management functions required in the MDM PP.</consistency-rationale>
+            <consistency-rationale>The PP-Module changes this SFR to make additional management
+              functions necessary when an MDM Agent is based off of the GPOS PP. This is done to match the management functions required in the MDM PP.</consistency-rationale>
             <description>
             <h:p>
               This SFR is not reproduced in its entirety for size purposes. Functions 1 - 23 are assigned mandatory in the "Administrator" column. An additional column of "Admin Only (When Enrolled in Management)" is added to the table and functions 1, 2, and 8 are assigned mandatory in this column.
@@ -3582,17 +3585,24 @@ The evaluator shall exercise the TSF configuration as the administrator and
     <entry id="bibGPOS">
       <tag>GPOS PP</tag>
       <description><h:a
-        href="https://www.niap-ccevs.org/static_html/protection-profile/469/OS%204.3%20PP/index.html">Protection Profile for General Purpose Operating Systems, Version 4.3</h:a>, September 27, 2022</description>
+        href="https://www.niap-ccevs.org/static_html/protection-profile/469/OS%204.3%20PP/index.html">Protection
+        Profile for General Purpose Operating Systems, Version 5.0</h:a>, September 27, 2022 <comment>Adjust
+          date when finalized.</comment></description>
     </entry>      
     <entry id="bibMDF">
       <tag>MDF PP</tag>
       <description><h:a
-        href="https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%203.3%20PP/index.html">Protection Profile for Mobile Device Fundamentals, Version 3.3</h:a>, September 12, 2022</description>
+        href="https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%203.3%20PP/index.html">Protection
+        Profile for Mobile Device Fundamentals, Version 4.0</h:a>, September 12, 2022 <comment>Adjust
+          date when finalized.</comment></description>
     </entry>
     <entry id="bibMDM">
       <tag>MDM PP</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/static_html/protection-profile/428/-428-/index.html">Protection Profile for Mobile Device Management, Version 4.0, April 25, 2019</h:a>
+        <h:a
+          href="https://www.niap-ccevs.org/static_html/protection-profile/428/-428-/index.html">Protection
+          Profile for Mobile Device Management, Version 5.0, April 25, 2019 <comment>Adjust
+            date when finalized.</comment></h:a>
       </description>
     </entry>
   </bibliography>
