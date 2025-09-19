@@ -1032,7 +1032,7 @@
               functions necessary when an MDM Agent is based off of the GPOS PP. This is done to match the management functions required in the MDM PP.</consistency-rationale>
             <description>
             <h:p>
-              This SFR is not reproduced in its entirety for size purposes. Functions 1 - 23 are assigned mandatory in the "Administrator" column. An additional column of "Admin Only (When Enrolled in Management)" is added to the table and functions 1, 2, and 8 are assigned mandatory in this column.
+              This SFR is not reproduced in its entirety for size purposes. Functions 1 - 21 and function 36 are assigned mandatory in the "Administrator" column. An additional column of "Admin Only (When Enrolled in Management)" is added to the table and functions 1, 2, and 8 are assigned mandatory in this column.
               </h:p>
               <h:table border="1" style="width:100%">
               <h:tr>
@@ -1237,19 +1237,13 @@
         <h:td>O</h:td>
     </h:tr>
     <h:tr>
-        <h:td>22</h:td>
-        <h:td>enable/disable the use of [<h:b>selection</h:b>: Biometric Authentication Factor, Hybrid Authentication Factor]</h:td>
+        <h:td>36</h:td>
+        <h:td>configure the access banner</h:td>
         <h:td>O</h:td>
         <h:td>M</h:td>
         <h:td>O</h:td>
     </h:tr>
-    <h:tr>
-        <h:td>23</h:td>
-        <h:td>configure whether to allow/disallow establishment of a trusted channel if the peer/server certificate is deemed invalid.</h:td>
-        <h:td>O</h:td>
-        <h:td>M</h:td>
-        <h:td>O</h:td>
-    </h:tr>
+    
               </h:table>
                        
             </description>
