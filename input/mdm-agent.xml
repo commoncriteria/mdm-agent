@@ -1540,7 +1540,7 @@ The evaluator shall exercise the TSF configuration as the administrator and
                 <management-function id="mf-wipe">
                   <text>
                     <!-- 7. -->
-                    <!-- <ctr id="wipe" pre="" ctr-type="function">.</ctr>--> TSF wipe of protected data </text>
+                    <!-- <ctr id="wipe" pre="" ctr-type="function">.</ctr>--> TSF wipe of sensitive data </text>
                   <M ref="I"/>
                   <NA ref="U"/>
                   <M ref="A"/>
