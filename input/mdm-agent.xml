@@ -2486,7 +2486,7 @@ The evaluator shall exercise the TSF configuration as the administrator and
               This PP-Module iterates the SFR to specify a subset of these protocols that may be used for MDM Agent communications in particular. </consistency-rationale>
             <f-element id="gpos-mut-chan-type">
               <title>The OS shall use 
-                <selectables>
+                <selectables linebreak="yes">
                   <selectable><h:b>mutually authenticated</h:b> TLS as conforming to <xref to="pkg-tls"/> as a [<h:i>client</h:i>]</selectable>
                   <selectable><h:b>mutually authenticated</h:b> DTLS as conforming to <xref to="pkg-tls"/> as a [<h:i>client</h:i>]</selectable>
                 </selectables>
