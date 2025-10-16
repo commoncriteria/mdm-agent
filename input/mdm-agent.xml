@@ -44,14 +44,14 @@
   </RevisionHistory>
   
   
-  <include-pkg id="pkg-tls">
+  <include-pkg id="tls">
     <git>
       <url>https://github.com/commoncriteria/tls</url>
       <branch>master</branch>
     </git>
     <url>https://www.niap-ccevs.org/static_html/protection-profile/439/-439-/index.html</url>
   </include-pkg>
-  <include-pkg id="pkg-x509">
+  <include-pkg id="X509">
     <git>
       <url>https://github.com/commoncriteria/X509</url>
       <branch>master</branch>
@@ -230,6 +230,32 @@
       </usecases>
     </section>
     
+    <section title="Package Usage">
+      This section contains selections and assignments that are required when the listed Functional Packages are claimed by this PP-Module. <h:br/>
+      Package Usage guidance defined in the TOE's relevant Base-PP applies to the usage of the packages for this module, unless explicitly stated otherwise in this section.
+      <package-usage-list>
+        <package-usage ref="tls">
+          <usage id="usage-tls-client" title="TLS or DTLS Client Functionality Required">
+            <description>
+              In order to support the objectives of FTP_ITC_EXT.1/MDFCHANNEL, the ST author shall claim support for TLS or DTLS as a client. The selection shall correspond 
+              to the protocol(s) selected in FTP_ITC_EXT.1.1/MDFCHANNEL.
+            </description>
+            <config>
+              <ref-id>dummy-ref-id</ref-id>
+            </config>
+          </usage>
+          <usage id="usage-tls-mutual-auth" title="(D)TLS Mutual Authentication Required">
+            <description>
+              The ST author shall select the option to support mutual authentication in the implementation of DTLS or TLS utilized for FTP_ITC_EXT.1/MDFCHANNEL.
+            </description>
+            <config>
+              <ref-id>dummy-ref-id</ref-id>
+            </config>
+          </usage>
+        </package-usage>
+      </package-usage-list>
+    </section>
+
     <section title="Implementation-Dependent Features" id="sec-features">
       If the TOE implements the following features, then the SFRs associated with the features must be claimed.
       <implements>
@@ -247,7 +273,6 @@
         </feature>
       </implements>
     </section>
-    
   </sec:Introduction>
  
   
@@ -497,8 +522,8 @@
             <consistency-rationale> The Base-PP includes FTP_ITC_EXT.1 to define the secure protocols used for trusted channel communications. This PP-Module iterates the SFR to specify a subset of these protocols that may be used for MDM Agent communications in particular. </consistency-rationale>
             <f-element id="mut-chan-type">
               <title>The TSF shall use <selectables linebreak="yes">
-                <selectable>mutually authenticated TLS in accordance with [<h:i><xref to="pkg-tls"/></h:i>]</selectable>
-                <selectable>mutually authenticated <h:b>DTLS</h:b> in accordance with [<h:i><xref to="pkg-tls"/></h:i>]</selectable>
+                <selectable>mutually authenticated TLS in accordance with [<h:i><xref to="tls"/></h:i>]</selectable>
+                <selectable>mutually authenticated <h:b>DTLS</h:b> in accordance with [<h:i><xref to="tls"/></h:i>]</selectable>
                 <selectable><h:b>HTTPS</h:b></selectable>
                 </selectables> and [<h:i>no other protocols</h:i>] to provide a communication channel between itself and another trusted
                 IT product that is logically distinct from other communication channels, provides
@@ -529,7 +554,7 @@
                 native part of the mobile operating system, it is expected that the MDM Agent will use the mobile device's implementation of the
                 selected protocols. HTTPS (FCS_HTTPS_EXT.1) and TLS (FCS_TLSC_EXT.1) are already
                 mandatory for an MDF ST. If "TLS" or "DTLS" is selected, the following selections from
-                <xref to="pkg-tls"/> must be made: <h:ul>
+                <xref to="tls"/> must be made: <h:ul>
                   <h:li>FCS_TLS_EXT.1: <h:ul>
                       <h:li>Either TLS or DTLS is selected depending on the selection made in
                         <xref to="mut-chan-type"/>.</h:li>
@@ -648,7 +673,7 @@
                 it is expected that the MDM Agent will use the mobile device's
                 implementation of the selected protocols. HTTPS (FCS_HTTPS_EXT.1) and TLS
                 (FCS_TLSC_EXT.1) are already mandatory for an MDF ST. If "TLS" is selected,
-                the following selections from <xref to="pkg-tls"/> must be made: <!-- TODO: What is their implementation of HTTPS evaluated against?? -->
+                the following selections from <xref to="tls"/> must be made: <!-- TODO: What is their implementation of HTTPS evaluated against?? -->
                 <!--  If "implement functionality to use HTTPS" is selected-->
                 <h:ul>
                   <h:li>FCS_TLS_EXT.1: <h:ul>
@@ -1946,8 +1971,8 @@ The evaluator shall exercise the TSF configuration as the administrator and
 		                    <!-- TODO: Should this be something like for TLS do not approve any exceptions, for HTTP this is per FCS_HTTPS_EXT.1.3?? How do I force the selection of no exceptions for all (non-HTTPS) TLS connections? -->
               Function <xref to="mf-certInvalid"/> must be included in the ST if the function is configurable on the TOE for any of the trusted channels either mandated or selected in <xref to="fel-wlan"/> or <xref to="fel-tls-app"/>. The configuration can be different depending on the specific trusted channel(s) and they must be filled in for the assignment.
 		    </app-note>
-                  <aactivity><Tests>The test of this function is performed in conjunction with FIA_X509_EXT.2.2 in <xref to="pkg-x509"/>,
-                    FCS_TLSC_EXT.1.6 in the <xref to="pkg-tls"/>. </Tests></aactivity>
+                  <aactivity><Tests>The test of this function is performed in conjunction with FIA_X509_EXT.2.2 in <xref to="X509"/>,
+                    FCS_TLSC_EXT.1.6 in the <xref to="tls"/>. </Tests></aactivity>
                 </management-function>
                 <!-- Start of the Optional to implement functions -->
                 <management-function id="mf-externalPorts">
@@ -2087,7 +2112,7 @@ The evaluator shall exercise the TSF configuration as the administrator and
                             application is not able to import the certificate. Failure of import
                             shall be tested by attempting to validate a certificate that chains to
                             the certificate whose import was attempted (as described in the
-                            evaluation activity for FIA_X509_EXT.1 as defined in <xref to="pkg-x509"/>). </h:li>
+                            evaluation activity for FIA_X509_EXT.1 as defined in <xref to="X509"/>). </h:li>
                           <h:li>The evaluator shall repeat the test, allowing the approval to
                             verify that the application is able to import the certificate and that
                             validation occurs. </h:li>
@@ -2102,7 +2127,7 @@ The evaluator shall exercise the TSF configuration as the administrator and
                             application is not able to remove the certificate. Failure of removal
                             shall be tested by attempting to validate a certificate that chains to
                             the certificate whose removal was attempted (as described in the
-                            evaluation activity for FIA_X509_EXT.1 as defined in <xref to="pkg-x509"/>). </h:li>
+                            evaluation activity for FIA_X509_EXT.1 as defined in <xref to="X509"/>). </h:li>
                         </h:ul>
                       </test>
                     </testlist> The evaluator shall repeat the test, allowing the approval to verify
@@ -2119,9 +2144,9 @@ The evaluator shall exercise the TSF configuration as the administrator and
 		  <app-note>
 		    Function <xref to="mf-certValidity"/> must be
               included in the ST if "administrator is allowed to configure certificate acceptance" is selected in
-              FIA_X509_EXT.2.2 in <xref to="pkg-x509"/>
+              FIA_X509_EXT.2.2 in <xref to="X509"/>
 		  </app-note>
-                  <aactivity><Tests>The test of this function is performed in conjunction with FIA_X509_EXT.2.2 in <xref to="pkg-x509"/>.</Tests></aactivity>
+                  <aactivity><Tests>The test of this function is performed in conjunction with FIA_X509_EXT.2.2 in <xref to="X509"/>.</Tests></aactivity>
                 </management-function>
                 <management-function id="mf-cellular">
                   <text>
@@ -2487,8 +2512,8 @@ The evaluator shall exercise the TSF configuration as the administrator and
             <f-element id="gpos-mut-chan-type">
               <title>The OS shall use 
                 <selectables linebreak="yes">
-                  <selectable><h:b>mutually authenticated</h:b> TLS as conforming to <xref to="pkg-tls"/> as a [<h:i>client</h:i>]</selectable>
-                  <selectable><h:b>mutually authenticated</h:b> DTLS as conforming to <xref to="pkg-tls"/> as a [<h:i>client</h:i>]</selectable>
+                  <selectable><h:b>mutually authenticated</h:b> TLS as conforming to <xref to="tls"/> as a [<h:i>client</h:i>]</selectable>
+                  <selectable><h:b>mutually authenticated</h:b> DTLS as conforming to <xref to="tls"/> as a [<h:i>client</h:i>]</selectable>
                 </selectables>
                 to provide a trusted communication channel between itself and authorized IT
                 entities supporting the following capabilities: [<h:i>[MDM Server communications, 
@@ -2523,7 +2548,7 @@ The evaluator shall exercise the TSF configuration as the administrator and
                 PP, and in this case it is expected that the MDM Agent will be a
                 native part of the operating system, it is expected that the MDM Agent will use the operating system's implementation of the
                 selected protocols. Depending on whether "TLS" or "DTLS" is selected, the following selections from
-                the <xref to="pkg-tls"/> must be made: <h:ul>
+                the <xref to="tls"/> must be made: <h:ul>
                   <h:li>FCS_TLS_EXT.1: <h:ul>
                       <h:li>Either TLS or DTLS is selected depending on the selection made in
                         <xref to="gpos-mut-chan-type"/>.</h:li>
