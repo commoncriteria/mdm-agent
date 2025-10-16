@@ -10,6 +10,7 @@ output/mdm-agent-release-linkable.html: ITT
 output/mdm-agent-release-linkable.html: MDs
 output/mdm-agent-release-linkable.html: MOF
 output/mdm-agent-release-linkable.html: MTD
+output/mdm-agent-release-linkable.html: SPD
 output/mdm-agent-release-linkable.html: STM
 output/mdm-agent-release-linkable.html: STO
 output/mdm-agent-release-linkable.html: TUD
@@ -32,6 +33,7 @@ output/mdm-agent-release.html: ITT
 output/mdm-agent-release.html: MDs
 output/mdm-agent-release.html: MOF
 output/mdm-agent-release.html: MTD
+output/mdm-agent-release.html: SPD
 output/mdm-agent-release.html: STM
 output/mdm-agent-release.html: STO
 output/mdm-agent-release.html: TUD
@@ -49,6 +51,7 @@ output/mdm-agent-sd.html: CEM
 output/mdm-agent-sd.html: DNs
 output/mdm-agent-sd.html: ITT
 output/mdm-agent-sd.html: MDs
+output/mdm-agent-sd.html: SPD
 output/mdm-agent-sd.html: Unenrollment
 output/mdm-agent-sd.html: XFER
 output/mdm-agent-sd.html: actions’
@@ -72,6 +75,7 @@ output/mdm-agent.html: ITT
 output/mdm-agent.html: MDs
 output/mdm-agent.html: MOF
 output/mdm-agent.html: MTD
+output/mdm-agent.html: SPD
 output/mdm-agent.html: STM
 output/mdm-agent.html: STO
 output/mdm-agent.html: TUD
