@@ -13,6 +13,7 @@ output/mdm-agent-release-linkable.html: MTD
 output/mdm-agent-release-linkable.html: SPD
 output/mdm-agent-release-linkable.html: STM
 output/mdm-agent-release-linkable.html: STO
+output/mdm-agent-release-linkable.html: TRUSTPATH
 output/mdm-agent-release-linkable.html: TUD
 output/mdm-agent-release-linkable.html: Unenrolling
 output/mdm-agent-release-linkable.html: Unenrollment
@@ -36,6 +37,7 @@ output/mdm-agent-release.html: MTD
 output/mdm-agent-release.html: SPD
 output/mdm-agent-release.html: STM
 output/mdm-agent-release.html: STO
+output/mdm-agent-release.html: TRUSTPATH
 output/mdm-agent-release.html: TUD
 output/mdm-agent-release.html: Unenrolling
 output/mdm-agent-release.html: Unenrollment
@@ -78,6 +80,7 @@ output/mdm-agent.html: MTD
 output/mdm-agent.html: SPD
 output/mdm-agent.html: STM
 output/mdm-agent.html: STO
+output/mdm-agent.html: TRUSTPATH
 output/mdm-agent.html: TUD
 output/mdm-agent.html: Unenrolling
 output/mdm-agent.html: Unenrollment
