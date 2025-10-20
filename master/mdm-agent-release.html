@@ -862,16 +862,17 @@ The following sections list Common Criteria and technology terms used in this do
       <dt><b>Functional Package for Transport Layer Security (TLS), Version 2.1</b><p></p></dt><dd><b>Required <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Iteration Names</b><p></p><span class="description">
               If the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> requirements for this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are iterated from those present for the relevant <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> requirements, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall iterate the requirements as follows: 
               <ul>
-                <li>Iterated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> requirements that support the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent communication channel <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a> shall be iterated with the suffix "MDFCHANNEL".</li>
-                <li>Iterated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> requirements that support the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> enrollment channel defined in FTP_TRP.1/TRUSTPATH shall be iterated with the suffix "TRUSTPATH".</li>
+                <li>Iterated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> requirements that support the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent communication channel as defined in <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a> or <a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a> shall be iterated with the suffix "MDMComm".</li>
+                <li>Iterated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> requirements that support the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> enrollment channel as defined in <a href="#FTP_TRP.1/MDFENROLL">FTP_TRP.1/MDFENROLL</a> or <a href="#FTP_TRP.1/OSENROLL">FTP_TRP.1/OSENROLL</a> shall be iterated with the suffix "MDMEnroll".</li>
               </ul>
             </span><p></p></dd><dd><b><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> Client Functionality Required</b><p></p><span class="description">
               This usage requirement applies to all implementations of <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> that support the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> enrollment and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> communication channels, whether these implementations are described as iterated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 
-              requirements or combined with <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> requirements. In order to support the objectives of <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a>, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall claim support for <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> as a client. The 
-              selection shall correspond with the protocol(s) selected in <a href="#FTP_ITC_EXT.1.1/MDFCHANNEL">FTP_ITC_EXT.1.1/MDFCHANNEL</a> and/or FTP_TRP.1/TRUSTPATH.
-            </span><p></p></dd><dd><b>(D)<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Mutual Authentication Required for <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> Channel</b><p></p><span class="description">
-              This usage requirement applies only to implementations of <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> that support the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> communication channel, whether these implementations are described as iterated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> requirements or 
-              combined with <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> requirements. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall select the option to support mutual authentication in the implementation of <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> utilized to satisfy the requirements of <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a>.
+              requirements or combined with <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> requirements. In order to support the objectives of these channels, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall claim support for <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> as a client. The 
+              selection shall correspond with the protocol(s) selected in any of the following SFRS: <a href="#FTP_ITC_EXT.1.1/MDFCHANNEL">FTP_ITC_EXT.1.1/MDFCHANNEL</a>, <a href="#FTP_TRP.1/MDFENROLL">FTP_TRP.1/MDFENROLL</a>, <a href="#FTP_ITC_EXT.1.1/OSCHANNEL">FTP_ITC_EXT.1.1/OSCHANNEL</a>, <a href="#FTP_TRP.1/OSENROLL">FTP_TRP.1/OSENROLL</a>.
+            </span><p></p></dd><dd><b><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> Mutual Authentication Required for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Traffic Channel</b><p></p><span class="description">
+              The communication channel for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> traffic following enrollment (as defined in <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a> and <a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a>) requires the use of mutually authenticated <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or 
+              <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> client functionality. Since the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to rely on the cryptographic protocol functionality defined in the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author shall ensure that mutual authentication 
+              is included in the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> client claims made as part of conformance to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. Depending on the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, this may already be required. 
             </span><p></p></dd>
     
 
@@ -1076,24 +1077,8 @@ Mobile Device
                 <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and in this case it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a
                 native part of the mobile operating system, it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the mobile device's implementation of the
                 selected protocols. <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> (FCS_HTTPS_EXT.1) and <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> (FCS_TLSC_EXT.1) are already
-                mandatory for an <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. If "<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>" or "<abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr>" is selected, the following selections from
-                <a href="https://www.niap-ccevs.org/static_html/protection-profile/439/-439-/index.html">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a> must be made: <ul>
-                  <li>FCS_TLS_EXT.1: <ul>
-                      <li>Either <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> is selected depending on the selection made in
-                        <a href="#FTP_ITC_EXT.1.1/MDFCHANNEL">FTP_ITC_EXT.1.1/MDFCHANNEL</a>.</li>
-                      <li>Client must be selected.</li>
-                    </ul>
-                  </li>
-                  <li>FCS_TLSC_EXT.1.1: <ul>
-                      <li>The cipher suites selected must correspond with the algorithms and
-                        hash functions allowed in FCS_COP.1 from the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</li>
-                      <li>Mutual authentication must be selected.</li>
-                    </ul>
-                  </li>
-                </ul> Protocol, RBG, certificate validation, algorithm, and similar services may
-                be met with platform provided services. <br/><br/>
+                mandatory for an <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. Protocol, RBG, certificate validation, algorithm, and similar services may
+                be met with platform provided services.
               </span></div></div></div>
             <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.2/MDFCHANNEL"><a href="#FTP_ITC_EXT.1.2/MDFCHANNEL" class="abbr">FTP_ITC_EXT.1.2/MDFCHANNEL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> <b>and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
                 Server and [<b>selection</b>: <span class="selectable-content" id="_s_4"><abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span>, <span class="selectable-content" id="_s_5">no other IT entities</span>]</b> to initiate communication via the trusted channel.<div class="appnote"><span class="note-header">Application
@@ -1116,7 +1101,9 @@ Mobile Device
           </div>
           <div class="comp" id="FTP_TRP.1/MDFENROLL"><h4>FTP_TRP.1/MDFENROLL Trusted Path (for Enrollment)</h4>
             
-            <div class="element"><div class="reqid" id="FTP_TRP.1.1/MDFENROLL"><a href="#FTP_TRP.1.1/MDFENROLL" class="abbr">FTP_TRP.1.1/MDFENROLL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="TRP_TLS_2"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client as defined in the Package for Transport Layer Security</span></li><li style=""><span class="selectable-content" id="TRP_HTTPS_2"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span></li></ul>] </b>to provide a <b>trusted</b> communication path between itself and
+            <div class="element"><div class="reqid" id="FTP_TRP.1.1/MDFENROLL"><a href="#FTP_TRP.1.1/MDFENROLL" class="abbr">FTP_TRP.1.1/MDFENROLL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="TRP_TLS_2"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client as defined in the <a href="https://www.niap-ccevs.org/static_html/protection-profile/439/-439-/index.html">Functional Package for Transport Layer Security (TLS),
+        version 
+        2.1</a></span></li><li style=""><span class="selectable-content" id="TRP_HTTPS_2"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span></li></ul>] </b>to provide a <b>trusted</b> communication path between itself and
                 <b>an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server</b>
                 that is logically distinct from other communication paths and
                 provides assured identification of its endpoints and protection of the communicated
@@ -1137,23 +1124,7 @@ Mobile Device
                   <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a native part of the mobile operating system,
                 it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the mobile device's
                 implementation of the selected protocols. <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> (FCS_HTTPS_EXT.1) and <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>
-                (FCS_TLSC_EXT.1) are already mandatory for an <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. If "<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>" is selected,
-                the following selections from <a href="https://www.niap-ccevs.org/static_html/protection-profile/439/-439-/index.html">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a> must be made: 
-                
-                <ul>
-                  <li>FCS_TLS_EXT.1: <ul>
-                      <li><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> must be selected.</li>
-                      <li>Client must be selected.</li>
-                    </ul>
-                  </li>
-                  <li>FCS_TLSC_EXT.1.1: <ul>
-                      <li>The cipher suites selected must correspond with the algorithms and
-                        hash functions allowed in FCS_COP.1 from the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</li>
-                    </ul>
-                  </li>
-                </ul>
+                (FCS_TLSC_EXT.1) are already mandatory for an <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
               </span></div></div></div>
             
             
@@ -1492,24 +1463,8 @@ Operating System
                 requirement is only for the case when the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>
                 <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and in this case it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a
                 native part of the operating system, it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the operating system's implementation of the
-                selected protocols. Depending on whether "<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>" or "<abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr>" is selected, the following selections from
-                the <a href="https://www.niap-ccevs.org/static_html/protection-profile/439/-439-/index.html">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a> must be made: <ul>
-                  <li>FCS_TLS_EXT.1: <ul>
-                      <li>Either <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> is selected depending on the selection made in
-                        <a href="#FTP_ITC_EXT.1.1/OSCHANNEL">FTP_ITC_EXT.1.1/OSCHANNEL</a>.</li>
-                      <li>Client must be selected.</li>
-                    </ul>
-                  </li>
-                  <li>FCS_TLSC_EXT.1.1: <ul>
-                      <li>The cipher suites selected must correspond with the algorithms and
-                        hash functions allowed in FCS_COP.1 from the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</li>
-                      <li>Mutual authentication must be selected.</li>
-                    </ul>
-                  </li>
-                </ul> Protocol, RBG, certificate validation, algorithm, and similar services may
-                be met with platform provided services. <br/><br/>
+                selected protocols. Protocol, RBG, certificate validation, algorithm, and similar services may
+                be met with platform provided services.
               </span></div></div></div>
             
             
