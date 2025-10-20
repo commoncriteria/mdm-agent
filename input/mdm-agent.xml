@@ -239,28 +239,29 @@
             <description>
               If the TLS requirements for this PP-Module are iterated from those present for the relevant Base-PP's TLS requirements, the ST author shall iterate the requirements as follows: 
               <h:ul>
-                <h:li>Iterated TLS requirements that support the MDM server and MDM agent communication channel FTP_ITC_EXT.1/MDFCHANNEL shall be iterated with the suffix "MDFCHANNEL".</h:li>
-                <h:li>Iterated TLS requirements that support the MDM enrollment channel defined in FTP_TRP.1/TRUSTPATH shall be iterated with the suffix "TRUSTPATH".</h:li>
+                <h:li>Iterated TLS requirements that support the MDM server and MDM agent communication channel as defined in FTP_ITC_EXT.1/MDFCHANNEL or FTP_ITC_EXT.1/OSCHANNEL shall be iterated with the suffix "MDMComm".</h:li>
+                <h:li>Iterated TLS requirements that support the MDM enrollment channel as defined in FTP_TRP.1/MDFENROLL or FTP_TRP.1/OSENROLL shall be iterated with the suffix "MDMEnroll".</h:li>
               </h:ul>
             </description>
             <config>
               <ref-id>dummy-ref-id</ref-id>
             </config>
           </usage>
-          <usage id="usage-tls-mdf-client" title="TLS or DTLS Client Functionality Required">
+          <usage id="usage-tls-client" title="TLS or DTLS Client Functionality Required">
             <description>
               This usage requirement applies to all implementations of TLS that support the MDM enrollment and MDM communication channels, whether these implementations are described as iterated TLS 
-              requirements or combined with Base-PP TLS requirements. In order to support the objectives of FTP_ITC_EXT.1/MDFCHANNEL, the ST author shall claim support for TLS or DTLS as a client. The 
-              selection shall correspond with the protocol(s) selected in FTP_ITC_EXT.1.1/MDFCHANNEL and/or FTP_TRP.1/TRUSTPATH.
+              requirements or combined with Base-PP TLS requirements. In order to support the objectives of these channels, the ST author shall claim support for TLS or DTLS as a client. The 
+              selection shall correspond with the protocol(s) selected in any of the following SFRS: FTP_ITC_EXT.1.1/MDFCHANNEL, FTP_TRP.1/MDFENROLL, FTP_ITC_EXT.1.1/OSCHANNEL, FTP_TRP.1/OSENROLL.
             </description>
             <config>
               <ref-id>dummy-ref-id</ref-id>
             </config>
           </usage>
-          <usage id="usage-tls-mdf-mutual-auth" title="(D)TLS Mutual Authentication Required for MDF Channel">
+          <usage id="usage-tls-mutual-auth" title="TLS or DTLS Mutual Authentication Required for MDM Traffic Channel">
             <description>
-              This usage requirement applies only to implementations of TLS that support the MDM communication channel, whether these implementations are described as iterated TLS requirements or 
-              combined with Base-PP TLS requirements. The ST author shall select the option to support mutual authentication in the implementation of DTLS or TLS utilized to satisfy the requirements of FTP_ITC_EXT.1/MDFCHANNEL.
+              The communication channel for MDM traffic following enrollment (as defined in FTP_ITC_EXT.1/MDFCHANNEL and FTP_ITC_EXT.1/OSCHANNEL) requires the use of mutually authenticated TLS or 
+              DTLS client functionality. Since the TOE is expected to rely on the cryptographic protocol functionality defined in the claimed Base-PP, the ST author shall ensure that mutual authentication 
+              is included in the TLS or DTLS client claims made as part of conformance to the Base-PP. Depending on the Base-PP, this may already be required. 
             </description>
             <config>
               <ref-id>dummy-ref-id</ref-id>
@@ -567,22 +568,8 @@
                 PP, and in this case it is expected that the MDM Agent will be a
                 native part of the mobile operating system, it is expected that the MDM Agent will use the mobile device's implementation of the
                 selected protocols. HTTPS (FCS_HTTPS_EXT.1) and TLS (FCS_TLSC_EXT.1) are already
-                mandatory for an MDF ST. If "TLS" or "DTLS" is selected, the following selections from
-                <xref to="tls"/> must be made: <h:ul>
-                  <h:li>FCS_TLS_EXT.1: <h:ul>
-                      <h:li>Either TLS or DTLS is selected depending on the selection made in
-                        <xref to="mut-chan-type"/>.</h:li>
-                      <h:li>Client must be selected.</h:li>
-                    </h:ul>
-                  </h:li>
-                  <h:li>FCS_TLSC_EXT.1.1: <h:ul>
-                      <h:li>The cipher suites selected must correspond with the algorithms and
-                        hash functions allowed in FCS_COP.1 from the MDF PP.</h:li>
-                      <h:li>Mutual authentication must be selected.</h:li>
-                    </h:ul>
-                  </h:li>
-                </h:ul> Protocol, RBG, certificate validation, algorithm, and similar services may
-                be met with platform provided services. <h:br/><h:br/>
+                mandatory for an MDF ST. Protocol, RBG, certificate validation, algorithm, and similar services may
+                be met with platform provided services.
               </note>
             </f-element>
             <f-element id="mut-chan-init">
@@ -660,7 +647,7 @@
               Server requirement of the same name. </consistency-rationale>
             <f-element>
               <title>The TSF shall <h:b>use <selectables linebreak="yes">
-                  <selectable id="TRP_TLS_2">TLS client as defined in the Package for Transport Layer Security</selectable>
+                  <selectable id="TRP_TLS_2">TLS client as defined in the <xref to="tls"/></selectable>
                   <selectable id="TRP_HTTPS_2">HTTPS</selectable>
               </selectables> </h:b>to provide a <h:b>trusted</h:b> communication path between itself and
                 <h:b>an MDM Server</h:b>
@@ -686,21 +673,7 @@
                   MDM Agent will be a native part of the mobile operating system,
                 it is expected that the MDM Agent will use the mobile device's
                 implementation of the selected protocols. HTTPS (FCS_HTTPS_EXT.1) and TLS
-                (FCS_TLSC_EXT.1) are already mandatory for an MDF ST. If "TLS" is selected,
-                the following selections from <xref to="tls"/> must be made: <!-- TODO: What is their implementation of HTTPS evaluated against?? -->
-                <!--  If "implement functionality to use HTTPS" is selected-->
-                <h:ul>
-                  <h:li>FCS_TLS_EXT.1: <h:ul>
-                      <h:li>TLS or DTLS must be selected.</h:li>
-                      <h:li>Client must be selected.</h:li>
-                    </h:ul>
-                  </h:li>
-                  <h:li>FCS_TLSC_EXT.1.1: <h:ul>
-                      <h:li>The cipher suites selected must correspond with the algorithms and
-                        hash functions allowed in FCS_COP.1 from the MDF PP.</h:li>
-                    </h:ul>
-                  </h:li>
-                </h:ul>
+                (FCS_TLSC_EXT.1) are already mandatory for an MDF ST.
               </note>
               <aactivity>
                 <TSS>The evaluator shall examine the TSS to determine that the
@@ -2561,22 +2534,8 @@ The evaluator shall exercise the TSF configuration as the administrator and
                 requirement is only for the case when the PP-Module builds on the GPOS
                 PP, and in this case it is expected that the MDM Agent will be a
                 native part of the operating system, it is expected that the MDM Agent will use the operating system's implementation of the
-                selected protocols. Depending on whether "TLS" or "DTLS" is selected, the following selections from
-                the <xref to="tls"/> must be made: <h:ul>
-                  <h:li>FCS_TLS_EXT.1: <h:ul>
-                      <h:li>Either TLS or DTLS is selected depending on the selection made in
-                        <xref to="gpos-mut-chan-type"/>.</h:li>
-                      <h:li>Client must be selected.</h:li>
-                    </h:ul>
-                  </h:li>
-                  <h:li>FCS_TLSC_EXT.1.1: <h:ul>
-                      <h:li>The cipher suites selected must correspond with the algorithms and
-                        hash functions allowed in FCS_COP.1 from the GPOS PP.</h:li>
-                      <h:li>Mutual authentication must be selected.</h:li>
-                    </h:ul>
-                  </h:li>
-                </h:ul> Protocol, RBG, certificate validation, algorithm, and similar services may
-                be met with platform provided services. <h:br/><h:br/>
+                selected protocols. Protocol, RBG, certificate validation, algorithm, and similar services may
+                be met with platform provided services.
               </note>
             
               <aactivity>
