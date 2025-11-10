@@ -3571,32 +3571,9 @@ The evaluator shall exercise the TSF configuration as the administrator and
   </appendix>
   
   -->
-  <bibliography>
-    <cc-entry/>
-    <entry id="bibGPOS">
-      <tag>GPOS PP</tag>
-      <description><h:a
-        href="https://www.niap-ccevs.org/static_html/protection-profile/469/OS%204.3%20PP/index.html">Protection
-        Profile for General Purpose Operating Systems, Version 5.0</h:a>, September 27, 2022 <comment>Adjust
-          date when finalized.</comment></description>
-    </entry>      
-    <entry id="bibMDF">
-      <tag>MDF PP</tag>
-      <description><h:a
-        href="https://www.niap-ccevs.org/static_html/protection-profile/468/MDF%203.3%20PP/index.html">Protection
-        Profile for Mobile Device Fundamentals, Version 4.0</h:a>, September 12, 2022 <comment>Adjust
-          date when finalized.</comment></description>
-    </entry>
-    <entry id="bibMDM">
-      <tag>MDM PP</tag>
-      <description>
-        <h:a
-          href="https://www.niap-ccevs.org/static_html/protection-profile/428/-428-/index.html">Protection
-          Profile for Mobile Device Management, Version 5.0, April 25, 2019 <comment>Adjust
-            date when finalized.</comment></h:a>
-      </description>
-    </entry>
-  </bibliography>
+  <bibliography/>
+    
+  
 
 
 </Module>
