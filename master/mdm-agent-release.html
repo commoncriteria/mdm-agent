@@ -647,7 +647,7 @@ function showTarget(id){
     </span></a><a href="#modsfr-bpp-mdm" style="text-indent:20px">5.2.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.2.1.1<span>Protection of the TSF (FPT)</span></a><a href="#@id" style="text-indent:30px">5.2.1.2<span>Trusted Path/Channels (FPT)</span></a><a href="#addsfr-bpp-mdm" style="text-indent:20px">5.2.2<span> Additional SFRs</span></a><a href="#sec-at-mdm-addnl" style="text-indent:30px">5.2.2.1<span>Auditable Events for MDM PP Additional SFRs</span></a><a href="#mdm_mod_fcs" style="text-indent:30px">5.2.2.2<span>Cryptographic Support (FCS)</span></a><a href="#secreq-bpp-gpos" style="text-indent:10px">5.3<span>
     Protection Profile for General Purpose Operating System
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-bpp-gpos" style="text-indent:20px">5.3.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.3.1.1<span>Cryptographic Support (FCS)</span></a><a href="#@id" style="text-indent:30px">5.3.1.2<span>Security Management (FMT)</span></a><a href="#addsfr-bpp-gpos" style="text-indent:20px">5.3.2<span> Additional SFRs</span></a><a href="#sec-at-gpos-addnl" style="text-indent:30px">5.3.2.1<span>Auditable Events for GPOS PP Additional SFRs</span></a><a href="#gpos_add_ftp" style="text-indent:30px">5.3.2.2<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.4<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.4.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#man_fau" style="text-indent:20px">5.4.2<span>Security Audit (FAU)</span></a><a href="#man_fia" style="text-indent:20px">5.4.3<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">5.4.4<span>Security Management (FMT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.5<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-mdf" style="text-indent:10px">6.1<span>
+    </span></a><a href="#modsfr-bpp-gpos" style="text-indent:20px">5.3.1<span> Modified SFRs </span></a><a href="#@id" style="text-indent:30px">5.3.1.1<span>Cryptographic Support (FCS)</span></a><a href="#addsfr-bpp-gpos" style="text-indent:20px">5.3.2<span> Additional SFRs</span></a><a href="#sec-at-gpos-addnl" style="text-indent:30px">5.3.2.1<span>Auditable Events for GPOS PP Additional SFRs</span></a><a href="#gpos_add_ftp" style="text-indent:30px">5.3.2.2<span>Trusted Path/Channels (FTP)</span></a><a href="#man-sfrs" style="text-indent:10px">5.4<span>TOE Security Functional Requirements</span></a><a href="#ss-audit-table" style="text-indent:20px">5.4.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#man_fau" style="text-indent:20px">5.4.2<span>Security Audit (FAU)</span></a><a href="#man_fia" style="text-indent:20px">5.4.3<span>Identification and Authentication (FIA)</span></a><a href="#man_fmt" style="text-indent:20px">5.4.4<span>Security Management (FMT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.5<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-bpp-mdf" style="text-indent:10px">6.1<span>
     Protection Profile for Mobile Device Fundamentals</span></a><a href="#contoe-bpp-mdf" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-bpp-mdf" style="text-indent:20px">6.1.2<span>
@@ -1194,222 +1194,6 @@ Operating System
               
               The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> shall implement functionality to encrypt sensitive data <b>including any data used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent functionality</b> stored in non-volatile storage and provide interfaces to applications to invoke this functionality.
               
-            </span></div><h4 id="@id" class="indexable" data-level="4">5.3.1.2 Security Management (FMT)</h4><div class="comp" id="@id"><h4>FMT_SMF_EXT.1: Specification of Management Functions</h4><span class="description">
-            <p>
-              This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is not reproduced in its entirety for size purposes. Functions 1 - 21 and function 36 are assigned mandatory in the "Administrator" column. An additional column of "Admin Only (When Enrolled in Management)" is added to the table and functions 1, 2, and 8 are assigned mandatory in this column.
-              </p>
-              <table border="1" style="width:100%">
-              <tr>
-                  <td><b>#</b></td>
-                  <td><b>Management Function</b></td>
-                  <td><b>User</b></td>
-                  <td><b>Administrator</b></td>
-                  <td><b>Admin Only (When Enrolled in Management)</b></td>
-                </tr>
-              <tr>
-                <td>1</td>
-                <td>configure password policy:
-                                <ol type="a">
-                                <li>minimum password length</li>
-                                <li>minimum password complexity</li>
-                                <li>maximum password lifetime</li>
-                              </ol>
-                </td>
-                <td>O</td>
-                <td>M</td>
-                <td>M</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td> configure session locking policy: <ol type="a">
-                      <li>screen-lock enabled/disabled</li>
-                      <li>screen lock timeout </li>
-                      <li>number of authentication failures</li>
-                    </ol>
-                </td>
-                 <td>O</td>
-                 <td>M</td>
-                 <td>M</td>
-              </tr>   
-              <tr>
-                <td>3</td>
-                  <td>enable/disable the VPN protection: <ol type="a">
-                    <li>across device</li>
-                    </ol>
-					          [<b>selection</b>:
-                    <ol type="a" start="2">
-                      <li>on a per-app basis</li>
-                      <li>on a per-group of applications processes basis</li>
-                      <li>no other method</li>]</ol>
-        </td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td>enable/disable [<b>assignment</b>: list of all radios]</td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>5</td>
-        <td>
-                     enable/disable
-                      [<b>assignment</b>: list of audio or visual collection devices]: <ol type="a">
-                      <li>across device</li></ol>
-                    [<b>selection</b>: <ol type="a" start="2">
-                        <li>on a per-app basis</li>
-                        <li>on a per-group of applications processes basis</li>
-                        <li>no other method</li>
-                    </ol> ]
-                  </td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>6</td>
-        <td>transition to the locked state</td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>7</td>
-        <td> <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> wipe of protected data </td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>8</td>
-        <td> configure application installation policy by [<b>selection</b>: <ol type="a">
-            <li>restricting the sources of applications</li>
-            <li>specifying a set of allowed applications based on [<b>assignment</b>: application characteristics ] (an application allowlist)</li>
-            <li>denying installation of applications</li>
-
-        </ol>
-        ]
-        </td>
-        <td>O</td>
-        <td>M</td>
-        <td>M</td>
-    </tr>
-    <tr>
-        <td>9</td>
-        <td>import keys/secrets into the secure key storage </td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>10</td>
-        <td>destroy imported keys/secrets and [<b>selection</b>: no other keys/secrets, [<b>assignment</b>: list of other categories of keys/secrets]] in the secure key storage</td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>11</td>
-        <td>import X.509v3 certificates into the Trust Anchor Database </td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>12</td>
-        <td>remove imported X.509v3 certificates and [<b>selection</b>: no other X.509v3 certificates, [<b>assignment</b>: list of other categories of X.509v3 certificates]] in the Trust Anchor Database </td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>13</td>
-        <td>enroll the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in management </td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>14</td>
-        <td>remove applications </td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>15</td>
-        <td>update system software </td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>16</td>
-        <td>install applications </td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>17</td>
-        <td>remove Enterprise applications </td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>18</td>
-        <td>enable/disable display notification in the locked state of: [<b>selection</b>: <ol type="a">
-                    <li>email notifications</li>
-                    <li>calendar appointments</li>
-                    <li>contact associated with phone call notification</li>
-                    <li>text message notification</li>
-                    <li>other application-based notifications</li>
-                    <li>all notifications</li></ol>]
-                  </td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>19</td>
-        <td> enable data-at rest protection</td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>20</td>
-        <td>enable removable media's data-at-rest protection </td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>21</td>
-        <td>enable/disable location services: <ol type="a">
-                      <li>across device</li></ol>
-                    [<b>selection</b>: b. on a per-app basis 
-                        c. on a per-group of applications processes basis 
-                        d. no other method ]
-                  </td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>36</td>
-        <td>configure the access banner</td>
-        <td>O</td>
-        <td>M</td>
-        <td>O</td>
-    </tr>
-    
-              </table>
-                       
             </span></div><h3 id="addsfr-bpp-gpos" class="indexable" data-level="3">5.3.2  Additional SFRs</h3>
       This section defines additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that must be added to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary in order to implement
 	  the functionality in any <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> where the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is 
@@ -1427,14 +1211,14 @@ Operating System
           <div class="comp" id="FTP_ITC_EXT.1/OSCHANNEL"><h4>FTP_ITC_EXT.1/OSCHANNEL Trusted Channel Communication</h4>
             
             <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.1/OSCHANNEL"><a href="#FTP_ITC_EXT.1.1/OSCHANNEL" class="abbr">FTP_ITC_EXT.1.1/OSCHANNEL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> shall use 
-                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_60"><b>mutually authenticated</b> <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> as conforming to <a href="https://www.niap-ccevs.org/static_html/protection-profile/439/-439-/index.html">Functional Package for Transport Layer Security (TLS),
+                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_10"><b>mutually authenticated</b> <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> as conforming to <a href="https://www.niap-ccevs.org/static_html/protection-profile/439/-439-/index.html">Functional Package for Transport Layer Security (TLS),
         version 
-        2.1</a> as a [<i>client</i>]</span></li><li style=""><span class="selectable-content" id="_s_61"><b>mutually authenticated</b> <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> as conforming to <a href="https://www.niap-ccevs.org/static_html/protection-profile/439/-439-/index.html">Functional Package for Transport Layer Security (TLS),
+        2.1</a> as a [<i>client</i>]</span></li><li style=""><span class="selectable-content" id="_s_11"><b>mutually authenticated</b> <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> as conforming to <a href="https://www.niap-ccevs.org/static_html/protection-profile/439/-439-/index.html">Functional Package for Transport Layer Security (TLS),
         version 
         2.1</a> as a [<i>client</i>]</span></li></ul>]
                 to provide a trusted communication channel between itself and authorized IT
                 entities supporting the following capabilities: [<i>[<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server communications, 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_62"><abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server communications</span>, <span class="selectable-content" id="_s_63">no other communications</span>]]</i>]
+                  [<b>selection</b>: <span class="selectable-content" id="_s_12"><abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server communications</span>, <span class="selectable-content" id="_s_13">no other communications</span>]]</i>]
                 that is logically distinct from other communication channels and provides
                 assured identification of its end points and protection of the channel data from
                 disclosure and detection of modification of the channel data.
@@ -1477,7 +1261,7 @@ Operating System
                 and provides assured identification of its endpoints and protection of the
                 communicated data from [<i>modification, disclosure</i>].
               </div></div>
-            <div class="element"><div class="reqid" id="FTP_TRP.1.2/OSENROLL"><a href="#FTP_TRP.1.2/OSENROLL" class="abbr">FTP_TRP.1.2/OSENROLL</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></b> shall permit [<b>selection</b>: <span class="selectable-content" id="_s_64">local users</span>, <span class="selectable-content" id="_s_65">remote users</span>] to initiate communication via the trusted path.
+            <div class="element"><div class="reqid" id="FTP_TRP.1.2/OSENROLL"><a href="#FTP_TRP.1.2/OSENROLL" class="abbr">FTP_TRP.1.2/OSENROLL</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></b> shall permit [<b>selection</b>: <span class="selectable-content" id="_s_14">local users</span>, <span class="selectable-content" id="_s_15">remote users</span>] to initiate communication via the trusted path.
               </div></div>
             <div class="element"><div class="reqid" id="FTP_TRP.1.3/OSENROLL"><a href="#FTP_TRP.1.3/OSENROLL" class="abbr">FTP_TRP.1.3/OSENROLL</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></b> shall require the use of the trusted path for [<i>[<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> enrollment]</i>]. 
               <div class="appnote"><span class="note-header">Application
@@ -1523,9 +1307,9 @@ Operating System
               the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server in the event of any of the following audit events: <ul>
                 <li>successful application of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policies,</li>
                 <li>
-                  [<b>selection</b>: <span class="selectable-content" id="_s_66">receiving</span>, <span class="selectable-content" id="_s_67">generating</span>] periodic reachability events, </li>
-                <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="change-in-enrollment-state">change in enrollment state</span></li><li style=""><span class="selectable-content" id="_s_69">failure to install an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_70">failure to update an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_71">[<b>assignment</b>: 
-     <span class="assignable-content">other events</span>]</span></li><li style=""><span class="selectable-content" id="_s_72">no other events</span></li></ul>].</li>
+                  [<b>selection</b>: <span class="selectable-content" id="_s_16">receiving</span>, <span class="selectable-content" id="_s_17">generating</span>] periodic reachability events, </li>
+                <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="change-in-enrollment-state">change in enrollment state</span></li><li style=""><span class="selectable-content" id="_s_19">failure to install an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_20">failure to update an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_21">[<b>assignment</b>: 
+     <span class="assignable-content">other events</span>]</span></li><li style=""><span class="selectable-content" id="_s_22">no other events</span></li></ul>].</li>
               </ul>
             <div class="appnote"><span class="note-header">Application
       Note:
@@ -1558,15 +1342,15 @@ Operating System
         </div>
         <div class="comp" id="FAU_GEN.1/AGENT"><h4>FAU_GEN.1/AGENT Audit Data Generation</h4>
           
-          <div class="element"><div class="reqid" id="FAU_GEN.1.1/AGENT"><a href="#FAU_GEN.1.1/AGENT" class="abbr">FAU_GEN.1.1/AGENT</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent</b> shall <b>[<b>selection</b>: <span class="selectable-content" id="_s_73">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_74">implement functionality</span>]</b> to generate audit data of the
+          <div class="element"><div class="reqid" id="FAU_GEN.1.1/AGENT"><a href="#FAU_GEN.1.1/AGENT" class="abbr">FAU_GEN.1.1/AGENT</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent</b> shall <b>[<b>selection</b>: <span class="selectable-content" id="_s_23">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_24">implement functionality</span>]</b> to generate audit data of the
               following auditable events: <ol type="a">
                 <li>Startup and shutdown of the <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent</b>;</li>
                 <li>All auditable events for the [<i>not specified</i>] level of audit; and</li>
                 <li>[<i><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policy updated, any modification commanded by the 
                   <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server, specifically defined auditable events listed in 
-                  <a onclick="showTarget('at-man-audit')" href="#at-man-audit" class="at-man-audit-ref">Table  <span class="counter">5</span></a> and [<b>selection</b>: <span class="selectable-content" id="_s_75"><a onclick="showTarget('at-mdf-addnl')" href="#at-mdf-addnl" class="at-mdf-addnl-ref">Table  <span class="counter">2</span></a></span>, <span class="selectable-content" id="_s_76"><a onclick="showTarget('at-mdm-addnl')" href="#at-mdm-addnl" class="at-mdm-addnl-ref">Table  <span class="counter">3</span></a></span>, <span class="selectable-content" id="_s_77"><a onclick="showTarget('at-gpos-addnl')" href="#at-gpos-addnl" class="at-gpos-addnl-ref">Table  <span class="counter">4</span></a></span>, <span class="selectable-content" id="_s_78"><a onclick="showTarget('at-feat-based')" href="#at-feat-based" class="at-feat-based-ref">Table  <span class="counter">16</span></a></span>, <span class="selectable-content" id="_s_79">no other tables</span>], 
-                  and [<b>selection</b>: <span class="selectable-content" id="_s_80">[<b>assignment</b>: 
-     <span class="assignable-content">other events</span>]</span>, <span class="selectable-content" id="_s_81">no other events</span>]</i>].</li>
+                  <a onclick="showTarget('at-man-audit')" href="#at-man-audit" class="at-man-audit-ref">Table  <span class="counter">5</span></a> and [<b>selection</b>: <span class="selectable-content" id="_s_25"><a onclick="showTarget('at-mdf-addnl')" href="#at-mdf-addnl" class="at-mdf-addnl-ref">Table  <span class="counter">2</span></a></span>, <span class="selectable-content" id="_s_26"><a onclick="showTarget('at-mdm-addnl')" href="#at-mdm-addnl" class="at-mdm-addnl-ref">Table  <span class="counter">3</span></a></span>, <span class="selectable-content" id="_s_27"><a onclick="showTarget('at-gpos-addnl')" href="#at-gpos-addnl" class="at-gpos-addnl-ref">Table  <span class="counter">4</span></a></span>, <span class="selectable-content" id="_s_28"><a onclick="showTarget('at-feat-based')" href="#at-feat-based" class="at-feat-based-ref">Table  <span class="counter">16</span></a></span>, <span class="selectable-content" id="_s_29">no other tables</span>], 
+                  and [<b>selection</b>: <span class="selectable-content" id="_s_30">[<b>assignment</b>: 
+     <span class="assignable-content">other events</span>]</span>, <span class="selectable-content" id="_s_31">no other events</span>]</i>].</li>
               </ol>
             <div class="appnote"><span class="note-header">Application
       Note:
@@ -1586,11 +1370,11 @@ Operating System
               <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>; otherwise, "none" is selected.
               
             </span></div></div></div>
-          <div class="element"><div class="reqid" id="FAU_GEN.1.2/AGENT"><a href="#FAU_GEN.1.2/AGENT" class="abbr">FAU_GEN.1.2/AGENT</a></div><div class="reqdesc">The [<b>selection</b>: <span class="selectable-content" id="_s_82"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_83"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] shall record within the <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent</b> audit data at
+          <div class="element"><div class="reqid" id="FAU_GEN.1.2/AGENT"><a href="#FAU_GEN.1.2/AGENT" class="abbr">FAU_GEN.1.2/AGENT</a></div><div class="reqdesc">The [<b>selection</b>: <span class="selectable-content" id="_s_32"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_33"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] shall record within the <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent</b> audit data at
               least the following information: <ol type="a">
                 <li>Date and time of the event, type of event, subject identity (if applicable), and the outcome 
                   (success or failure) of the event<b>, and additional information in 
-                  <a onclick="showTarget('at-man-audit')" href="#at-man-audit" class="at-man-audit-ref">Table  <span class="counter">5</span></a> and [<b>selection</b>: <span class="selectable-content" id="_s_84"><a onclick="showTarget('at-mdf-addnl')" href="#at-mdf-addnl" class="at-mdf-addnl-ref">Table  <span class="counter">2</span></a></span>, <span class="selectable-content" id="_s_85"><a onclick="showTarget('at-mdm-addnl')" href="#at-mdm-addnl" class="at-mdm-addnl-ref">Table  <span class="counter">3</span></a></span>, <span class="selectable-content" id="_s_86"><a onclick="showTarget('at-gpos-addnl')" href="#at-gpos-addnl" class="at-gpos-addnl-ref">Table  <span class="counter">4</span></a></span>, <span class="selectable-content" id="_s_87"><a onclick="showTarget('at-feat-based')" href="#at-feat-based" class="at-feat-based-ref">Table  <span class="counter">16</span></a></span>, <span class="selectable-content" id="_s_88">no other tables</span>]; </b></li>         
+                  <a onclick="showTarget('at-man-audit')" href="#at-man-audit" class="at-man-audit-ref">Table  <span class="counter">5</span></a> and [<b>selection</b>: <span class="selectable-content" id="_s_34"><a onclick="showTarget('at-mdf-addnl')" href="#at-mdf-addnl" class="at-mdf-addnl-ref">Table  <span class="counter">2</span></a></span>, <span class="selectable-content" id="_s_35"><a onclick="showTarget('at-mdm-addnl')" href="#at-mdm-addnl" class="at-mdm-addnl-ref">Table  <span class="counter">3</span></a></span>, <span class="selectable-content" id="_s_36"><a onclick="showTarget('at-gpos-addnl')" href="#at-gpos-addnl" class="at-gpos-addnl-ref">Table  <span class="counter">4</span></a></span>, <span class="selectable-content" id="_s_37"><a onclick="showTarget('at-feat-based')" href="#at-feat-based" class="at-feat-based-ref">Table  <span class="counter">16</span></a></span>, <span class="selectable-content" id="_s_38">no other tables</span>]; </b></li>         
                 <li>For each audit event type, based on the auditable event definitions of the functional components 
                   included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, functional package or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<b>assignment</b>: 
      <span class="assignable-content">other audit relevant information</span>].</li>
@@ -1606,7 +1390,7 @@ Operating System
         </div>
         <div class="comp" id="FAU_SEL.1/AGENT"><h4>FAU_SEL.1/AGENT Security Audit Event Selection</h4>
           
-          <div class="element"><div class="reqid" id="FAU_SEL.1.1/AGENT"><a href="#FAU_SEL.1.1/AGENT" class="abbr">FAU_SEL.1.1/AGENT</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>[<b>selection</b>: <span class="selectable-content" id="_s_89">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_90">implement functionality</span>]</b> to select the set of events to be audited from the set of all auditable
+          <div class="element"><div class="reqid" id="FAU_SEL.1.1/AGENT"><a href="#FAU_SEL.1.1/AGENT" class="abbr">FAU_SEL.1.1/AGENT</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>[<b>selection</b>: <span class="selectable-content" id="_s_39">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_40">implement functionality</span>]</b> to select the set of events to be audited from the set of all auditable
               events based on the following attributes: <ol type="a">
                 <li>[<i>event type</i>]</li>
                 <li>[<i>success of auditable security events, failure of auditable security events, 
@@ -1679,11 +1463,11 @@ Operating System
           
           <div class="element"><div class="reqid" id="FMT_SMF_EXT.4.1"><a href="#FMT_SMF_EXT.4.1" class="abbr">FMT_SMF_EXT.4.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall be capable of interacting with the platform
               to perform the following functions: <ul>
-                <li>[<b>selection</b>: <span class="selectable-content" id="_s_91">import the certificates to be used for authentication of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                    Agent communications</span>, <span class="selectable-content" id="_s_92">import the server public key</span>],</li>
-                <li>[<b>selection</b>: <span class="selectable-content" id="_s_93">administrator-provided management functions in <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>, <span class="selectable-content" id="_s_94">administrator-provided device management functions in <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>, <span class="selectable-content" id="_s_95">administrator-provided device management functions in <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>]</li>
-                <li>[<b>selection</b>: <span class="selectable-content" id="_s_96">[<b>assignment</b>: 
-     <span class="assignable-content">additional functions</span>]</span>, <span class="selectable-content" id="_s_97"> no additional functions</span>].</li>
+                <li>[<b>selection</b>: <span class="selectable-content" id="_s_41">import the certificates to be used for authentication of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                    Agent communications</span>, <span class="selectable-content" id="_s_42">import the server public key</span>],</li>
+                <li>[<b>selection</b>: <span class="selectable-content" id="_s_43">administrator-provided management functions in <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>, <span class="selectable-content" id="_s_44">administrator-provided device management functions in <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>, <span class="selectable-content" id="_s_45">administrator-provided device management functions in <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>]</li>
+                <li>[<b>selection</b>: <span class="selectable-content" id="_s_46">[<b>assignment</b>: 
+     <span class="assignable-content">additional functions</span>]</span>, <span class="selectable-content" id="_s_47"> no additional functions</span>].</li>
               </ul>
             <div class="appnote"><span class="note-header">Application
       Note:
@@ -1714,8 +1498,8 @@ Operating System
                 <li>enroll in management</li>
                 <li>configure whether users can unenroll from management</li>
                 <li>
-                  [<b>selection</b>: <span class="selectable-content" id="_s_98">configure periodicity of reachability events</span>, <span class="selectable-content" id="_s_99">[<b>assignment</b>: 
-     <span class="assignable-content">other management functions</span>]</span>, <span class="selectable-content" id="_s_100">no other functions</span>].</li>
+                  [<b>selection</b>: <span class="selectable-content" id="_s_48">configure periodicity of reachability events</span>, <span class="selectable-content" id="_s_49">[<b>assignment</b>: 
+     <span class="assignable-content">other management functions</span>]</span>, <span class="selectable-content" id="_s_50">no other functions</span>].</li>
               </ul><div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> This requirement captures all of the configuration in the
@@ -2012,8 +1796,7 @@ Operating System
       <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">15</span></span>: Consistency of Requirements (<abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_STO_EXT.1</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not change this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>; it only notes that the concept of "sensitive data" may be expanded
-              to include any sensitive data created or used by the portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> described by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</td></tr><tr><td>FMT_SMF_EXT.1</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> changes this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to make additional management
-              functions necessary when an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is based off of the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. This is done to match the management functions required in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes FTP_ITC_EXT.1 to define the secure protocols used for trusted channel communications. 
+              to include any sensitive data created or used by the portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> described by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> includes FTP_ITC_EXT.1 to define the secure protocols used for trusted channel communications. 
               This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to specify a subset of these protocols that may be used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent communications in particular. </td></tr><tr><td><a href="#FTP_TRP.1/OSENROLL">FTP_TRP.1/OSENROLL</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> uses the trusted channel protocols defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> in FTP_ITC_EXT.1 to facilitate a trusted path that the 
               <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can use to enroll the operating system it runs on into
               management. The <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> already defines an iteration of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for trusted administration, so this
@@ -2081,7 +1864,7 @@ Operating System
           
           
           
-          <div class="element"><div class="reqid" id="FPT_NET_EXT.1.1"><a href="#FPT_NET_EXT.1.1" class="abbr">FPT_NET_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect when a configurable [<b>selection</b>: <span class="selectable-content" id="_s_103">positive integer of missed reachability events occur</span>, <span class="selectable-content" id="_s_104">time limit is exceeded</span>] related to when the last successful connection with the server has been
+          <div class="element"><div class="reqid" id="FPT_NET_EXT.1.1"><a href="#FPT_NET_EXT.1.1" class="abbr">FPT_NET_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect when a configurable [<b>selection</b>: <span class="selectable-content" id="_s_53">positive integer of missed reachability events occur</span>, <span class="selectable-content" id="_s_54">time limit is exceeded</span>] related to when the last successful connection with the server has been
               reached. </div></div>
           
         </div>
@@ -2131,7 +1914,7 @@ Operating System
           </p><h4>Audit: FPT_NET_EXT.1</h4><p>The following actions should be auditable if FAU_GEN Security audit data generation
             is included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>:<ul>
               <li>Minimal: Reaching or exceeding unreachability threshold.</li></ul>
-          </p><h4>FPT_NET_EXT.1 Network Reachability</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FPT_STM.1 Reliable Time Stamps</td></tr></table><h4 id="ext-comp-FPT_NET_EXT.1.1">FPT_NET_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect when a configurable [<b>selection</b>: <span class="selectable-content" id="_s_103">positive integer of missed reachability events occur</span>, <span class="selectable-content" id="_s_104">time limit is exceeded</span>] related to when the last successful connection with the server has been
+          </p><h4>FPT_NET_EXT.1 Network Reachability</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FPT_STM.1 Reliable Time Stamps</td></tr></table><h4 id="ext-comp-FPT_NET_EXT.1.1">FPT_NET_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect when a configurable [<b>selection</b>: <span class="selectable-content" id="_s_53">positive integer of missed reachability events occur</span>, <span class="selectable-content" id="_s_54">time limit is exceeded</span>] related to when the last successful connection with the server has been
               reached. </div></div></span><span data-sortkey="Security Audit (FAU)"><h3 id="ext-comp-FAU" class="indexable" data-level="3">C.2.4 Security Audit (FAU)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FAU class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FAU_ALT_EXT" class="indexable" data-level="4">C.2.4.1 FAU_ALT_EXT MDM Alerts</h3><div style="margin-left: 1em;"> This family is defined in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
@@ -2155,9 +1938,9 @@ Operating System
               the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server in the event of any of the following audit events: <ul>
                 <li>successful application of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policies,</li>
                 <li>
-                  [<b>selection</b>: <span class="selectable-content" id="_s_66">receiving</span>, <span class="selectable-content" id="_s_67">generating</span>] periodic reachability events, </li>
-                <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="change-in-enrollment-state">change in enrollment state</span></li><li style=""><span class="selectable-content" id="_s_69">failure to install an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_70">failure to update an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_71">[<b>assignment</b>: 
-     <span class="assignable-content">other events</span>]</span></li><li style=""><span class="selectable-content" id="_s_72">no other events</span></li></ul>].</li>
+                  [<b>selection</b>: <span class="selectable-content" id="_s_16">receiving</span>, <span class="selectable-content" id="_s_17">generating</span>] periodic reachability events, </li>
+                <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="change-in-enrollment-state">change in enrollment state</span></li><li style=""><span class="selectable-content" id="_s_19">failure to install an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_20">failure to update an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_21">[<b>assignment</b>: 
+     <span class="assignable-content">other events</span>]</span></li><li style=""><span class="selectable-content" id="_s_22">no other events</span></li></ul>].</li>
               </ul>
             <h4 id="ext-comp-FAU_ALT_EXT.2.2">FAU_ALT_EXT.2.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall queue alerts if the trusted channel is not available.</div></div><h3 id="ext-comp-FAU_STG_EXT" class="indexable" data-level="4">C.2.4.2 FAU_STG_EXT Protected Audit Event Storage</h3><div style="margin-left: 1em;">This family is defined in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
             <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> augments the extended family
@@ -2199,19 +1982,19 @@ Operating System
             </ul>
           </p><h4>FMT_SMF_EXT.4 Specification of Management Functions</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FCS_CKM.1 Cryptographic Key Generation</td></tr></table><h4 id="ext-comp-FMT_SMF_EXT.4.1">FMT_SMF_EXT.4.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall be capable of interacting with the platform
               to perform the following functions: <ul>
-                <li>[<b>selection</b>: <span class="selectable-content" id="_s_91">import the certificates to be used for authentication of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                    Agent communications</span>, <span class="selectable-content" id="_s_92">import the server public key</span>],</li>
-                <li>[<b>selection</b>: <span class="selectable-content" id="_s_93">administrator-provided management functions in <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>, <span class="selectable-content" id="_s_94">administrator-provided device management functions in <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>, <span class="selectable-content" id="_s_95">administrator-provided device management functions in <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>]</li>
-                <li>[<b>selection</b>: <span class="selectable-content" id="_s_96">[<b>assignment</b>: 
-     <span class="assignable-content">additional functions</span>]</span>, <span class="selectable-content" id="_s_97"> no additional functions</span>].</li>
+                <li>[<b>selection</b>: <span class="selectable-content" id="_s_41">import the certificates to be used for authentication of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                    Agent communications</span>, <span class="selectable-content" id="_s_42">import the server public key</span>],</li>
+                <li>[<b>selection</b>: <span class="selectable-content" id="_s_43">administrator-provided management functions in <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>, <span class="selectable-content" id="_s_44">administrator-provided device management functions in <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>, <span class="selectable-content" id="_s_45">administrator-provided device management functions in <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span>]</li>
+                <li>[<b>selection</b>: <span class="selectable-content" id="_s_46">[<b>assignment</b>: 
+     <span class="assignable-content">additional functions</span>]</span>, <span class="selectable-content" id="_s_47"> no additional functions</span>].</li>
               </ul>
             <h4 id="ext-comp-FMT_SMF_EXT.4.2">FMT_SMF_EXT.4.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall be capable of performing the following
               functions: <ul>
                 <li>enroll in management</li>
                 <li>configure whether users can unenroll from management</li>
                 <li>
-                  [<b>selection</b>: <span class="selectable-content" id="_s_98">configure periodicity of reachability events</span>, <span class="selectable-content" id="_s_99">[<b>assignment</b>: 
-     <span class="assignable-content">other management functions</span>]</span>, <span class="selectable-content" id="_s_100">no other functions</span>].</li>
+                  [<b>selection</b>: <span class="selectable-content" id="_s_48">configure periodicity of reachability events</span>, <span class="selectable-content" id="_s_49">[<b>assignment</b>: 
+     <span class="assignable-content">other management functions</span>]</span>, <span class="selectable-content" id="_s_50">no other functions</span>].</li>
               </ul></div></div><h3 id="ext-comp-FMT_UNR_EXT" class="indexable" data-level="4">C.2.5.3 FMT_UNR_EXT Unenrollment</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div> Components in this family define requirements for <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> behavior when a user
             attempts to unenroll the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FMT_UNR_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>,
              User Unenrollment Prevention,
