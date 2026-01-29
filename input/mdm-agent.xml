@@ -1056,6 +1056,7 @@
                 <selectables linebreak="yes">
                   <selectable><h:b>mutually authenticated</h:b> TLS as conforming to <xref to="tls"/> as a [<h:i>client</h:i>]</selectable>
                   <selectable><h:b>mutually authenticated</h:b> DTLS as conforming to <xref to="tls"/> as a [<h:i>client</h:i>]</selectable>
+                  <selectable>HTTPS</selectable>
                 </selectables>
                 to provide a trusted communication channel between itself and authorized IT
                 entities supporting the following capabilities: [<h:i>[MDM Server communications, 
