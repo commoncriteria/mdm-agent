@@ -63,7 +63,7 @@
     <section id="overview" title="Overview"> The scope of the MDM Agent Protection Profile Module (PP-Module) is to describe the security functionality of a Mobile Device Management (MDM) Agent 
       in terms of Common Criteria (CC) and to define functional and assurance requirements for such products. 
       This PP-Module is intended for use with the following Base-PPs: <h:ul>
-        <h:li>Protection Profile for Mobile Device Management (MDM PP), Version 5.0</h:li>
+        <h:li>Protection Profile for Mobile Device Management (PP_MDM), Version 5.0</h:li>
         <h:li>Protection Profile for Mobile Device Fundamentals (PP_MDF), Version 4.0</h:li>
         <h:li>Protection Profile for General Purpose Operating Systems (GPOS PP), Version 5.0</h:li>
       </h:ul>
@@ -120,7 +120,7 @@
       device. Optionally, the MDM Agent interacts with a MAS Server to download and install enterprise-hosted applications.
       <h:br/><h:br/> 
       A compliant MDM Agent is installed on a device as an application
-      (supplied by the developer of the MDM Server software) or is part of a mobile device or GPOS. This PP-Module builds on PP_MDF, the MDM PP, or the GPOS PP. A TOE
+      (supplied by the developer of the MDM Server software) or is part of a mobile device or GPOS. This PP-Module builds on PP_MDF, PP_MDM, or the GPOS PP. A TOE
       that claims conformance to this PP-Module must also claim conformance to one
       of those PPs as its Base-PP. To mitigate the threats that this PP-Module defines, a compliant TOE is obligated to implement the functionality the 
       Base-PP requires, along with the additional functionality defined in this PP-Module.
@@ -135,10 +135,10 @@
       channel that serves as one piece of an MDM system. Conformant MDM Agents may also offer other interfaces, and the configuration aspects of
       these additional interfaces are in scope of this PP-Module.
       <h:br/><h:br/> 
-      This PP-Module shall build on the MDM PP if the TOE is a third-party application that is provided with
+      This PP-Module shall build on PP_MDM if the TOE is a third-party application that is provided with
       an MDM Server and installed on a device by the user after acquiring
       the device. The distributed TOE for this PP-Module
-      combined with the MDM PP is the entire MDM environment, which includes both the MDM Server and the
+      combined with PP_MDM is the entire MDM environment, which includes both the MDM Server and the
         MDM Agent. Even though the device itself is not part of the TOE, it is expected to be evaluated against the MDF or GPOS PP so that
       its baseline security capabilities can be assumed to be present. If the TOE conforms to the GPOS PP, evaluating the hardware platform against
       the Protection Profile for General Purpose Computing Platforms (GPCP PP) may also be considered so that assurance of the underlying platform hardware
@@ -276,15 +276,15 @@
       <implements>
         <feature id="has-auditing" title="Platform Auditing">
           <description>If the TOE is deployed on a mobile device or GPOS platform (i.e., the TOE does not use 
-            the MDM PP as its Base-PP), it is expected to rely on the underlying platform for secure storage of its audit records.</description>
+            PP_MDM as its Base-PP), it is expected to rely on the underlying platform for secure storage of its audit records.</description>
         </feature>
         <feature id="supports-reachability" title="Supports Network Reachability Thresholds">
           <description>An MDM Agent may support the ability to determine if it has been out of connectivity with an MDM Server for too long.
             The configuration of the number of allowed missed reachability events or time limit since last successful connection
             with the MDM Server is handled in the MDM Server's configuration policy of the MDM Agent (the first selection of
-            function 56 in FMT_SMF.1.1/SERVER_CONF_AGENT within the MDM PP). This feature applies if either the TOE claims the MDM PP as its 
+            function 56 in FMT_SMF.1.1/SERVER_CONF_AGENT within PP_MDM). This feature applies if either the TOE claims PP_MDM as its 
             Base-PP and management function 56 is claimed, or if the TOE's OE includes an MDM Server that was separately validated against
-            the MDM PP and that MDM Server's ST claims management function 56.</description>
+            PP_MDM and that MDM Server's ST claims management function 56.</description>
         </feature>
       </implements>
     </section>
@@ -351,7 +351,7 @@
           A malicious user or process can send illegitimate policy data to the TOE in an attempt to cause it to enter an insecure or unknown state.
           </description>
           <addressed-by>FCS_STG_EXT.4 (additional to PP_MDF)</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by preventing substitution of the valid policy source.</rationale>
-          <addressed-by>FCS_STG_EXT.1/MDMKEYS (additional to MDM PP)</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by preventing substitution of the valid policy source.</rationale>
+          <addressed-by>FCS_STG_EXT.1/MDMKEYS (additional to PP_MDM)</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by preventing substitution of the valid policy source.</rationale>
           <addressed-by>FIA_ENR_EXT.2</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by recording the identifier of the MDM server that it enrolled to.</rationale>
           <addressed-by>FMT_POL_EXT.2</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by applying only policies that are digitally signed by an authorized source.</rationale>
           <addressed-by>FMT_SMF_EXT.4</addressed-by><rationale>Mitigates the threat of an unauthorized policy source by requiring authorization by the underlying platform to manage the TSF.</rationale>
@@ -492,7 +492,7 @@
           <ext-comp-def fam-id="FCS_STG_EXT" title="Trusted Channel">
             <mod-def> This family is defined in both the MDF and the MDM Base-PPs. This PP-Module augments the extended family by adding
               one additional component, FCS_STG_EXT.4 as an additional SFR for MDF. This new component and its impact on the extended 
-              family’s component leveling are shown below; reference the MDF or MDM PP for all other
+              family’s component leveling are shown below; reference the MDF or PP_MDM for all other
               definitions for this family.<h:br/><h:br/></mod-def> 
           </ext-comp-def> 
           <f-component cc-id="fcs_stg_ext.4" name="Cryptographic Key Storage">
@@ -849,7 +849,7 @@
           
           <base-sfr-spec id="mod-fpt-itt-1" iteration="INTER_XFER_AGENT" title="Internal TOE TSF Data Transfer (MDM Agent)" cc-id="fpt_itt.1">
             <consistency-rationale>There is no modification to this SFR, but it is mandatory for a TOE that conforms to this PP-Module because it must always be claimed when an MDM includes an MDM Agent as part of the TOE.</consistency-rationale>
-            <description>This PP-Module requires that communications between the MDM Server and MDM Agent portions of the TOE are secured in the manner specified by FPT_ITT.1/INTER_XFER_AGENT in the MDM PP. This PP-Module does not require that this channel be established in a specific manner beyond this function using one of the methods specified in the MDM PP; a registration channel over an untrusted network, a registration channel over an environmentally protected network, or registration without the use of a registration channel is permitted. Depending on the method used, the appropriate MDM PP SFR claims must be made.</description>
+            <description>This PP-Module requires that communications between the MDM Server and MDM Agent portions of the TOE are secured in the manner specified by FPT_ITT.1/INTER_XFER_AGENT in PP_MDM. This PP-Module does not require that this channel be established in a specific manner beyond this function using one of the methods specified in PP_MDM; a registration channel over an untrusted network, a registration channel over an environmentally protected network, or registration without the use of a registration channel is permitted. Depending on the method used, the appropriate PP_MDM SFR claims must be made.</description>
             
           <set-status status="mandatory"/>
           </base-sfr-spec>
@@ -862,7 +862,7 @@
               when this PP-Module is claimed.</consistency-rationale>
             <description>This PP-Module requires the ST author to select that an MDM Agent is internal to the TOE because the TOE boundary includes both 
               an MDM Server and MDM Agent by definition when this PP-Module is claimed. As noted above, the fact that the TOE includes both MDM Server
-              and MDM Agent components means that FPT_ITT.1/INTER_XFER_AGENT from the MDM PP must also be claimed, as this SFR defines the channel used for secure
+              and MDM Agent components means that FPT_ITT.1/INTER_XFER_AGENT from PP_MDM must also be claimed, as this SFR defines the channel used for secure
               communications between these two components.</description>
             
             <replace>
@@ -879,8 +879,8 @@
       <additional-sfrs>
         
         <!-- Audit table for Additional SFRs -->
-        <section id="sec-at-mdm-addnl" title="Auditable Events for MDM PP Additional SFRs">
-          <audit-table id="at-mdm-addnl" table="tab-at-mdm-addnl" title="Auditable Events for MDM PP Additional SFRs"/>
+        <section id="sec-at-mdm-addnl" title="Auditable Events for PP_MDM Additional SFRs">
+          <audit-table id="at-mdm-addnl" table="tab-at-mdm-addnl" title="Auditable Events for PP_MDM Additional SFRs"/>
         </section>
         
         <sec:mdm_mod_fcs title="Cryptographic Support (FCS)">
@@ -959,14 +959,14 @@
       <con-mod ref="P.NOTIFY">The Base-PP defines a P.NOTIFY OSP that is identical to the one defined by the PP-Module. 
         The PP-Module just extends it to the entire TOE boundary rather than just the MDM Server.</con-mod>
     
-      <con-mod ref="OE.DATA_PROPER_ADMIN"> The MDM PP contains an objective named OE.PROPER_ADMIN with the same
+      <con-mod ref="OE.DATA_PROPER_ADMIN"> PP_MDM contains an objective named OE.PROPER_ADMIN with the same
         purpose. </con-mod>
-      <con-mod ref="OE.DATA_PROPER_USER"> The MDM PP contains an objective named OE.PROPER_USER with the same
+      <con-mod ref="OE.DATA_PROPER_USER"> PP_MDM contains an objective named OE.PROPER_USER with the same
         purpose. </con-mod>
-      <con-mod ref="OE.IT_ENTERPRISE"> The MDM PP contains this same objective with the same purpose. </con-mod>
-      <con-mod ref="OE.DEVICE_PLATFORM">The MDM PP environmental security objectives only relate to the security of the platform on which the 
+      <con-mod ref="OE.IT_ENTERPRISE"> PP_MDM contains this same objective with the same purpose. </con-mod>
+      <con-mod ref="OE.DEVICE_PLATFORM">PP_MDM environmental security objectives only relate to the security of the platform on which the 
       MDM Server portion of the TOE is running. This objective extends the scope of the trusted platform to MDM Agent devices.</con-mod>
-      <con-mod ref="OE.WIRELESS_NETWORK">The MDM PP contains this same objective with the same purpose.</con-mod>
+      <con-mod ref="OE.WIRELESS_NETWORK">PP_MDM contains this same objective with the same purpose.</con-mod>
       <con-mod ref="fau-alt-ext-2"> This SFR provides the alerts that are received by the 
         MDM Server as per FAU_ALT_EXT.1 in the Base-PP.</con-mod>
       <con-mod ref="fau-gen-1-agent"> This SFR requires the MDM Agent to generate audit data of its
@@ -1321,8 +1321,8 @@
           <mod-def> This family is defined in the MDM
             Base-PP. This PP-Module augments the extended family
             by adding one additional component, FAU_ALT_EXT.2. This new component and its impact on
-            the extended family’s component leveling are shown below; reference the 
-            MDM PP for all other definitions for this family.<h:br/><h:br/> </mod-def>
+            the extended family’s component leveling are shown below; reference 
+            PP_MDM for all other definitions for this family.<h:br/><h:br/> </mod-def>
         </ext-comp-def>
         <f-component cc-id="fau_alt_ext.2" id="fau-alt-ext-2" name="Agent Alerts">
           <consistency-rationale/>
@@ -1359,7 +1359,7 @@
                 </selectables>.</h:li>
               </h:ul>
             </title>
-            <note role="application"> The trusted channel is defined in FPT_ITT.1/INTER_XFER_AGENT of the Base-PP if the TOE claims the MDM PP,  
+            <note role="application"> The trusted channel is defined in FPT_ITT.1/INTER_XFER_AGENT of the Base-PP if the TOE claims PP_MDM,  
               FTP_ITC_EXT.1/MDFCHANNEL in this PP-Module if the TOE claims the 
               PP_MDF, and FTP_ITC_EXT.1/OSCHANNEL in this PP-Module if the TOE claims the GPOS PP. 
               “Alert” in this requirement could be as simple as an audit record or
@@ -1625,8 +1625,8 @@
           <mod-def> This family is defined in the MDM
             Base-PP. This PP-Module augments the extended family
             by adding one additional component, FIA_ENR_EXT.2. This new component and its impact on
-            the extended family’s component leveling are shown below; reference the 
-            MDM PP for all other definitions for this family.<h:br/><h:br/> </mod-def>
+            the extended family’s component leveling are shown below; reference 
+            PP_MDM for all other definitions for this family.<h:br/><h:br/> </mod-def>
         </ext-comp-def>
         <f-component cc-id="fia_enr_ext.2" id="fia-enr-ext-2" name="Agent Enrollment of Mobile Device into Management">
           <consistency-rationale/>
@@ -1647,7 +1647,7 @@
                 MDM Server. This requirement allows the specification of the information
               to be to be used to establish a network connection and the reference identifier for
               authenticating the trusted channel between the MDM Server and 
-                MDM Agent, as defined in the MDM PP.<h:br/><h:br/>
+                MDM Agent, as defined in PP_MDM.<h:br/><h:br/>
             </note>
             <aactivity>
               <TSS>The evaluator shall examine the TSS to verify that it describes
@@ -1680,8 +1680,8 @@
           <mod-def> This family is defined in the MDM
             Base-PP. This PP-Module augments the extended family
             by adding one additional component, FMT_POL_EXT.2. This new component and its impact on
-            the extended family’s component leveling are shown below; reference the 
-            MDM PP for all other definitions for this family.<h:br/><h:br/></mod-def>
+            the extended family’s component leveling are shown below; reference 
+            PP_MDM for all other definitions for this family.<h:br/><h:br/></mod-def>
         </ext-comp-def>
         <f-component cc-id="fmt_pol_ext.2" id="fmt-pol-ext-2" name="Agent Trusted Policy Update">
           <consistency-rationale/>
@@ -1707,7 +1707,7 @@
               This is especially critical for
               users who connect to multiple enterprises.<h:br/><h:br/> Policies must be
               digitally signed by the enterprise using the algorithms in
-              FCS_COP.1/SIGN_ALG in the MDM PP.<h:br/><h:br/>
+              FCS_COP.1/SIGN_ALG in PP_MDM.<h:br/><h:br/>
               The signing private key is associated with a certificate or raw public key used by the MDM Agent to verify the signature on the policy.
             </note>           
           </f-element>
@@ -1766,7 +1766,7 @@
                 <selectable>import the server public key</selectable></selectables>,</h:li>
                 <h:li><selectables>
                     <selectable>administrator-provided management functions in PP_MDF</selectable>
-                    <selectable>administrator-provided device management functions in MDM PP</selectable>
+                    <selectable>administrator-provided device management functions in PP_MDM</selectable>
                   <selectable>administrator-provided device management functions in GPOS PP</selectable>
                   </selectables></h:li>
                 <h:li><selectables>
@@ -1778,7 +1778,7 @@
             <note role="application"> This requirement captures all the configuration functionality
               in the MDM Agent to configure the underlying MD with the
               configuration policies sent from the MDM Server to the MDM Agent. The
-                ST author selects the Base-PP (PP_MDF, MDM PP, or GPOS PP) as the source of the management functions.<h:br/><h:br/> The
+                ST author selects the Base-PP (PP_MDF, PP_MDM, or GPOS PP) as the source of the management functions.<h:br/><h:br/> The
               administrator-provided management functions in PP_MDF are specified
               in the "Admin Only" column of Table 7 in PP_MDF and in FPT_TUD_EXT.1 (for version
               queries). The administrator-provided device management functions in the MDM
@@ -1846,8 +1846,8 @@
                       administrator-provided management function and shall verify that the MD executes the commands and enforces the policies.</test>
                   <test>[conditional: if "import the certificates to be used for authentication of MDM Agent communications" is selected in FMT_SMF_EXT.4.1, then] 
                     The evaluator shall configure the MDM Agent authentication certificate in accordance with the configuration guidance. 
-                    The evaluator shall verify that the MDM Agent uses this certificate in performing the tests for the MDM PP SFR FPT_ITT.1/INTER_XFER_AGENT 
-                    (if the MDM PP is the Base-PP),
+                    The evaluator shall verify that the MDM Agent uses this certificate in performing the tests for PP_MDM SFR FPT_ITT.1/INTER_XFER_AGENT 
+                    (if PP_MDM is the Base-PP),
                     the Additional SFR FTP_ITC_EXT.1/MDFCHANNEL (if PP_MDF is the Base-PP),
                     or the Additional SFR FTP_ITC_EXT.1/OSCHANNEL (if the GPOS PP is the Base-PP).</test>
                     <test>In conjunction with other evaluation activities, the evaluator shall attempt to enroll the MDM Agent in management with each interface identified in the TSS, and verify that the MDM Agent can manage the device and communicate with the MDM Server.</test>
@@ -1941,8 +1941,8 @@
           <mod-def>This family is defined in the MDM
             Base-PP. This PP-Module augments the extended family
             by adding one additional component, FAU_STG_EXT.3. This new component and its impact on
-            the extended family’s component leveling are shown below; reference the 
-            MDM PP for all other definitions for this family.<h:br/><h:br/></mod-def>
+            the extended family’s component leveling are shown below; reference 
+            PP_MDM for all other definitions for this family.<h:br/><h:br/></mod-def>
         </ext-comp-def>
         <f-component cc-id="fau_stg_ext.3" id="fau-stg-ext-3" name="Security Audit Event Storage">
           <!-- Note: Name changed simply to avoid name collision with MDM Server -->
@@ -2010,7 +2010,7 @@
                 reached.<h:br/><h:br/>
               </Guidance>
               <Tests> The evaluator shall configure the MDM Server configuration policy of the MDM Agent per
-                FMT_SMF.1.1/SERVER_CONF_AGENT, function 56 in the MDM PP. The device shall be placed in airplane mode or otherwise have its 
+                FMT_SMF.1.1/SERVER_CONF_AGENT, function 56 in PP_MDM. The device shall be placed in airplane mode or otherwise have its 
                 network capabilities disabled to prevent
                 connectivity with the MDM Server. The evaluator shall verify that after the configured
                 time, the remediation actions selected in function 56 occur.<h:br/><h:br/>
