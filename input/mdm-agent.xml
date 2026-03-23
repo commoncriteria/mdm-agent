@@ -31,7 +31,7 @@
       <version>1.1</version>
       <date>2023-12-11</date>
       <subject>
-        Added GPOS PP base and incorporated NIAP Technical Decisions.
+        Added PP_GPOS base and incorporated NIAP Technical Decisions.
       </subject>
     </entry>
     <entry>
@@ -65,7 +65,7 @@
       This PP-Module is intended for use with the following Base-PPs: <h:ul>
         <h:li>Protection Profile for Mobile Device Management (PP_MDM), Version 5.0</h:li>
         <h:li>Protection Profile for Mobile Device Fundamentals (PP_MDF), Version 4.0</h:li>
-        <h:li>Protection Profile for General Purpose Operating Systems (GPOS PP), Version 5.0</h:li>
+        <h:li>Protection Profile for General Purpose Operating Systems (PP_GPOS), Version 5.0</h:li>
       </h:ul>
       <h:br/> These Base-PPs are valid because an MDM Agent is
       either a third-party application manufactured by the MDM Server vendor or is a
@@ -82,7 +82,7 @@
             <term full="Enrolled State">The state in which a device is managed by a policy from an MDM.</term>
 	    <term abbr="GPOS" full="General Purpose Operating System"> A class of OSes designed to support a wide-variety of workloads consisting of many concurrent applications or services. Typical characteristics for OSes in this class include support for third-party applications, support for multiple users, and security separation between users and their respective resources. General Purpose Operating Systems also lack the real-time constraint that defines Real Time Operating Systems which are typically used in routers, switches, and embedded devices.</term>
 	    <term abbr="HTTPS" full="Hypertext Transfer Protocol Secure"/>
-      <term full="Managed Device" abbr="MD">A device enrolled and managed, or to be enrolled and managed, by an MDM system. This device is a mobile device typically evaluated under PP_MDF or a device utilizing a GPOS typically evaluated under the GPOS PP.</term>
+      <term full="Managed Device" abbr="MD">A device enrolled and managed, or to be enrolled and managed, by an MDM system. This device is a mobile device typically evaluated under PP_MDF or a device utilizing a GPOS typically evaluated under PP_GPOS.</term>
       <term full="Mobile Application Store" abbr="MAS">An MDM feature that allows for an organization to substitute a device manufacturer's
             application store for one that restricts what applications are made available to users.</term>
       <term full="Mobile Device">A device which is composed of a hardware platform and its system software. The device typically provides wireless
@@ -120,7 +120,7 @@
       device. Optionally, the MDM Agent interacts with a MAS Server to download and install enterprise-hosted applications.
       <h:br/><h:br/> 
       A compliant MDM Agent is installed on a device as an application
-      (supplied by the developer of the MDM Server software) or is part of a mobile device or GPOS. This PP-Module builds on PP_MDF, PP_MDM, or the GPOS PP. A TOE
+      (supplied by the developer of the MDM Server software) or is part of a mobile device or GPOS. This PP-Module builds on PP_MDF, PP_MDM, or PP_GPOS. A TOE
       that claims conformance to this PP-Module must also claim conformance to one
       of those PPs as its Base-PP. To mitigate the threats that this PP-Module defines, a compliant TOE is obligated to implement the functionality the 
       Base-PP requires, along with the additional functionality defined in this PP-Module.
@@ -139,13 +139,13 @@
       an MDM Server and installed on a device by the user after acquiring
       the device. The distributed TOE for this PP-Module
       combined with PP_MDM is the entire MDM environment, which includes both the MDM Server and the
-        MDM Agent. Even though the device itself is not part of the TOE, it is expected to be evaluated against the MDF or GPOS PP so that
-      its baseline security capabilities can be assumed to be present. If the TOE conforms to the GPOS PP, evaluating the hardware platform against
+        MDM Agent. Even though the device itself is not part of the TOE, it is expected to be evaluated against the MDF or PP_GPOS so that
+      its baseline security capabilities can be assumed to be present. If the TOE conforms to PP_GPOS, evaluating the hardware platform against
       the Protection Profile for General Purpose Computing Platforms (GPCP PP) may also be considered so that assurance of the underlying platform hardware
       can be obtained.
       <h:br/><h:br/>
-      This PP-Module shall build on the GPOS PP if the TOE is a native part of a non-mobile GPOS.
-      The TOE for this PP-Module combined with the GPOS PP is the operating system itself plus the MDM Agent. If the MDM Agent is part of 
+      This PP-Module shall build on PP_GPOS if the TOE is a native part of a non-mobile GPOS.
+      The TOE for this PP-Module combined with PP_GPOS is the operating system itself plus the MDM Agent. If the MDM Agent is part of 
       the OS, the MDM Agent may present multiple interfaces for configuring the OS, such as a local and remote interface. 
       The MDM Agent does not need to provide a dedicated management interface that is separate from the means by which administrators interact with the 
       OS as a whole. However, if it does provide any such interfaces, the configuration aspects of these additional interfaces are in scope of this PP-Module.
@@ -159,7 +159,7 @@
         The MDM
         Agent must closely interact with or be part of the mobile device or OS platform so that it can
         establish policies and to perform queries about device status. The mobile device and OS platform, in turn,
-        have their own security requirements specified in PP_MDF and GPOS PP, respectively. 
+        have their own security requirements specified in PP_MDF and PP_GPOS, respectively. 
         </section>
     </section>
     <section title="Use Cases" id="usecase"> This PP-Module defines four use cases:<h:br/><h:br/>
@@ -329,8 +329,8 @@
           </description>
           <addressed-by>FTP_ITC_EXT.1/MDFCHANNEL (additional to PP_MDF)</addressed-by><rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for transmission of policies.</rationale>
           <addressed-by>FTP_TRP.1/MDFENROLL (additional to PP_MDF)</addressed-by><rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for enrollment into management.</rationale>
-          <addressed-by>FTP_ITC_EXT.1/OSCHANNEL (additional to GPOS PP)</addressed-by><rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for transmission of policies.</rationale>
-          <addressed-by>FTP_TRP.1/OSENROLL (additional to GPOS PP)</addressed-by><rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for enrollment into management.</rationale>
+          <addressed-by>FTP_ITC_EXT.1/OSCHANNEL (additional to PP_GPOS)</addressed-by><rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for transmission of policies.</rationale>
+          <addressed-by>FTP_TRP.1/OSENROLL (additional to PP_GPOS)</addressed-by><rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for enrollment into management.</rationale>
         </threat>
 
         
@@ -1041,8 +1041,8 @@
       <additional-sfrs>
         
         <!-- Audit table for Additional SFRs -->
-        <section id="sec-at-gpos-addnl" title="Auditable Events for GPOS PP Additional SFRs">
-          <audit-table id="at-gpos-addnl" table="tab-at-gpos-addnl" title="Auditable Events for GPOS PP Additional SFRs"/>
+        <section id="sec-at-gpos-addnl" title="Auditable Events for PP_GPOS Additional SFRs">
+          <audit-table id="at-gpos-addnl" table="tab-at-gpos-addnl" title="Auditable Events for PP_GPOS Additional SFRs"/>
         </section>
         
         
@@ -1080,10 +1080,10 @@
                 Either the MDM Agent or the MDM Server is able to initiate the
                 connection.
                 <h:br/><h:br/> 
-                This requirement is iterated from the GPOS PP to indicate the protocols that the MDM Agent can use for a trusted
+                This requirement is iterated from PP_GPOS to indicate the protocols that the MDM Agent can use for a trusted
                 channel. The operating system is required to perform the mandated cryptographic
                 protocols as in the Base-PP for communication channels mandated in
-                the GPOS PP. The ST author must select one of
+                PP_GPOS. The ST author must select one of
                 TLS or DTLS in order to establish and maintain a trusted channel between the
                   MDM Agent and the MDM Server. Only TLS or DTLS are acceptable for this trusted channel.<h:br/><h:br/> 
                 Since this
@@ -1143,7 +1143,7 @@
           <f-component cc-id="ftp_trp.1" name="Trusted Path (for Enrollment)" iteration="OSENROLL">
             <consistency-rationale>This SFR uses the trusted channel protocols defined by the Base-PP in FTP_ITC_EXT.1 to facilitate a trusted path that the 
               MDM Agent can use to enroll the operating system it runs on into
-              management. The GPOS PP already defines an iteration of this SFR for trusted administration, so this
+              management. PP_GPOS already defines an iteration of this SFR for trusted administration, so this
               SFR is iterated to illustrate that this trusted path is used for a distinct function.</consistency-rationale>
             <f-element>
               <title>The <h:b>TSF</h:b> shall provide a communication path between itself and <h:b>a</h:b> [<h:i>remote</h:i>] <h:b>MDM Server</h:b> that is 
@@ -1164,7 +1164,7 @@
               <note role="application">This requirement ensures that a trusted connection is used for initial enrollment to an MDM;
                 security of ongoing MDM Server communications after enrollment is
                 implemented through FTP_ITC_EXT.1/OSCHANNEL.
-                <h:br/><h:br/> Since this requirement is only for the case when the PP-Module builds on GPOS PP, and in this case it is expected that the
+                <h:br/><h:br/> Since this requirement is only for the case when the PP-Module builds on PP_GPOS, and in this case it is expected that the
                   MDM Agent will be a native part of the operating system,
                 it is expected that the MDM Agent will use the operating system's
                 implementation of a trusted protocol defined in the Base-PP SFR FTP_ITC_EXT.1 for this trusted path.
@@ -1216,7 +1216,7 @@
           </f-component>
         </sec:gpos_add_ftp>
       </additional-sfrs>
-      <con-toe> When this PP-Module is used to extend the GPOS PP, the TOE type for
+      <con-toe> When this PP-Module is used to extend PP_GPOS, the TOE type for
         the overall TOE is still a GPOS. The TOE boundary is simply extended to include the
           MDM Agent application that runs on that GPOS platform.</con-toe>
       <con-sec-prob/>
@@ -1232,11 +1232,11 @@
         This is consistent with the Base-PP because the Base-PP includes mandatory requirements for a GPOS
         that have network connectivity as a prerequisite.</con-mod>
       <con-mod ref="A.PLATFORM">This assumption expects that the TOE’s underlying platform is sufficiently trusted. 
-        This is consistent with the Base-PP by definition because the OS is within the TOE boundary and evaluated against the GPOS PP.</con-mod>
+        This is consistent with the Base-PP by definition because the OS is within the TOE boundary and evaluated against PP_GPOS.</con-mod>
       <con-mod ref="A.PROPER_ADMIN">	
-        The GPOS PP contains this same assumption with the same purpose.</con-mod>
+        PP_GPOS contains this same assumption with the same purpose.</con-mod>
       <con-mod ref="A.PROPER_USER">	
-        The GPOS PP contains this same assumption with the same purpose.</con-mod>
+        PP_GPOS contains this same assumption with the same purpose.</con-mod>
       
       <con-mod ref="P.ACCOUNTABILITY">The Base-PP does not define any OSPs so any OSPs defined by the PP-Module 
         will not conflict with the Base-PP by definition.</con-mod>
@@ -1361,7 +1361,7 @@
             </title>
             <note role="application"> The trusted channel is defined in FPT_ITT.1/INTER_XFER_AGENT of the Base-PP if the TOE claims PP_MDM,  
               FTP_ITC_EXT.1/MDFCHANNEL in this PP-Module if the TOE claims the 
-              PP_MDF, and FTP_ITC_EXT.1/OSCHANNEL in this PP-Module if the TOE claims the GPOS PP. 
+              PP_MDF, and FTP_ITC_EXT.1/OSCHANNEL in this PP-Module if the TOE claims PP_GPOS. 
               “Alert” in this requirement could be as simple as an audit record or
               a notification. If any prior alerts exist in the queue, per FAU_ALT_EXT.2.2, those
               alerts must be sent when the trusted channel is available.<h:br/><h:br/> This
@@ -1767,7 +1767,7 @@
                 <h:li><selectables>
                     <selectable>administrator-provided management functions in PP_MDF</selectable>
                     <selectable>administrator-provided device management functions in PP_MDM</selectable>
-                  <selectable>administrator-provided device management functions in GPOS PP</selectable>
+                  <selectable>administrator-provided device management functions in PP_GPOS</selectable>
                   </selectables></h:li>
                 <h:li><selectables>
                     <selectable><assignable>additional functions</assignable></selectable>
@@ -1778,7 +1778,7 @@
             <note role="application"> This requirement captures all the configuration functionality
               in the MDM Agent to configure the underlying MD with the
               configuration policies sent from the MDM Server to the MDM Agent. The
-                ST author selects the Base-PP (PP_MDF, PP_MDM, or GPOS PP) as the source of the management functions.<h:br/><h:br/> The
+                ST author selects the Base-PP (PP_MDF, PP_MDM, or PP_GPOS) as the source of the management functions.<h:br/><h:br/> The
               administrator-provided management functions in PP_MDF are specified
               in the "Admin Only" column of Table 7 in PP_MDF and in FPT_TUD_EXT.1 (for version
               queries). The administrator-provided device management functions in the MDM
@@ -1786,7 +1786,7 @@
               of FMT_SMF.1/SERVER_CONF_AGENT in the MDM
               PP are required to correspond to the functions available on the
               platforms supported by the MDM Agent. 
-              The administrator-provided management functions in the GPOS PP are specified in FMT_SMF_EXT.1.
+              The administrator-provided management functions in PP_GPOS are specified in FMT_SMF_EXT.1.
               <h:br/><h:br/> The 
                 ST author can add more commands and configuration policies by completing
               the assignment statement; the device must support these additional commands or
@@ -1849,7 +1849,7 @@
                     The evaluator shall verify that the MDM Agent uses this certificate in performing the tests for PP_MDM SFR FPT_ITT.1/INTER_XFER_AGENT 
                     (if PP_MDM is the Base-PP),
                     the Additional SFR FTP_ITC_EXT.1/MDFCHANNEL (if PP_MDF is the Base-PP),
-                    or the Additional SFR FTP_ITC_EXT.1/OSCHANNEL (if the GPOS PP is the Base-PP).</test>
+                    or the Additional SFR FTP_ITC_EXT.1/OSCHANNEL (if PP_GPOS is the Base-PP).</test>
                     <test>In conjunction with other evaluation activities, the evaluator shall attempt to enroll the MDM Agent in management with each interface identified in the TSS, and verify that the MDM Agent can manage the device and communicate with the MDM Server.</test>
                     <test>[conditional] In conjunction with the evaluation activity for FAU_ALT_EXT.2.1, the evaluator shall configure the periodicity for reachability events for several configured time periods and verify that the MDM Server receives alerts on that schedule.</test>
                   <test>[conditional] The evaluator shall design and perform tests to demonstrate that the assigned function may be configured and that the intended behavior of the function is enacted by the MD.</test>
@@ -1891,7 +1891,7 @@
               the MDM Server.<h:br/><h:br/> For those configurations where
               unenrollment is allowed, for example a BYOD usage, PP_MDF describes remediation
               actions performed upon unenrollment, such as wiping enterprise data, in
-              FMT_SMF_EXT.2.1. The GPOS PP does not explicitly describe the case of unenrollment but 
+              FMT_SMF_EXT.2.1. PP_GPOS does not explicitly describe the case of unenrollment but 
               a GPOS has interfaces that an MDM Agent can invoke to perform 
               the desired unenrollment functionality. The MDM Agent is limited to those actions
               supported by the device on which the MDM Agent is operating. <h:br/><h:br/>
