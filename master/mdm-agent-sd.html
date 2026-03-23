@@ -286,7 +286,7 @@
       National Information Assurance Partnership (NIAP)
       </p><p><b style="page-break-before:always;">Document history:</b><table><tr class="header"><th>Version</th><th>Date</th><th style="align:left;">Comment</th></tr><tr><td>1.0</td><td>2019-03-01</td><td> Initial publication as
         PP-Module. </td></tr><tr><td>1.1</td><td>2023-12-11</td><td>
-        Added GPOS PP base and incorporated NIAP Technical Decisions.
+        Added PP_GPOS base and incorporated NIAP Technical Decisions.
       </td></tr><tr><td>2.0</td><td>2025-01-31</td><td>
         Converted to CC:2022 and incorporated NIAP Technical Decisions.
       </td></tr></table></p><p><b>General Purpose:</b><br/>
@@ -377,7 +377,7 @@ The following sections list Common Criteria and technology terms used in this do
             the policy that is applied by the enterprise on the device.</td></tr>
 <tr><td><div id="Enrolled_State">Enrolled State</div></td><td>The state in which a device is managed by a policy from an MDM.</td></tr>
 <tr><td><div id="General_Purpose_Operating_System">General Purpose Operating System (GPOS)</div></td><td> A class of OSes designed to support a wide-variety of workloads consisting of many concurrent applications or services. Typical characteristics for OSes in this class include support for third-party applications, support for multiple users, and security separation between users and their respective resources. General Purpose Operating Systems also lack the real-time constraint that defines Real Time Operating Systems which are typically used in routers, switches, and embedded devices.</td></tr>
-<tr><td><div id="Managed_Device">Managed Device (MD)</div></td><td>A device enrolled and managed, or to be enrolled and managed, by an MDM system. This device is a mobile device typically evaluated under PP_MDF or a device utilizing a GPOS typically evaluated under the GPOS PP.</td></tr>
+<tr><td><div id="Managed_Device">Managed Device (MD)</div></td><td>A device enrolled and managed, or to be enrolled and managed, by an MDM system. This device is a mobile device typically evaluated under PP_MDF or a device utilizing a GPOS typically evaluated under PP_GPOS.</td></tr>
 <tr><td><div id="Managed_Device_User">Managed Device User</div></td><td>The person who uses and is held responsible for a managed device. Synonymous with 'local user' in the context
               of a managed device.</td></tr>
 <tr><td><div id="Mobile_Application_Store">Mobile Application Store (MAS)</div></td><td>An MDM feature that allows for an organization to substitute a device manufacturer's
@@ -772,7 +772,7 @@ The following sections list Common Criteria and technology terms used in this do
                     The evaluator shall verify that the MDM Agent uses this certificate in performing the tests for PP_MDM SFR FPT_ITT.1/INTER_XFER_AGENT 
                     (if PP_MDM is the Base-PP),
                     the Additional SFR FTP_ITC_EXT.1/MDFCHANNEL (if PP_MDF is the Base-PP),
-                    or the Additional SFR FTP_ITC_EXT.1/OSCHANNEL (if the GPOS PP is the Base-PP).</li>
+                    or the Additional SFR FTP_ITC_EXT.1/OSCHANNEL (if PP_GPOS is the Base-PP).</li>
                     <li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FMT_SMF_EXT.4:3</a>:
       In conjunction with other evaluation activities, the evaluator shall attempt to enroll the MDM Agent in management with each interface identified in the TSS, and verify that the MDM Agent can manage the device and communicate with the MDM Server.</li>
                     <li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FMT_SMF_EXT.4:4</a>:
