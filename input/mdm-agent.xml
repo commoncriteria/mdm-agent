@@ -1633,8 +1633,9 @@
           <comp-lev> requires the TSF to record specific information about the MDM
             Server (i.e., the entity that is enrolling it) during the enrollment process.</comp-lev>
           <management>There are no management functions foreseen.</management>
-          <audit>The following actions should be auditable if FAU_GEN Security audit data generation
-            is included in the PP/ST:<h:ul>
+          <audit>The following actions should be auditable if FAU_GEN Security audit data generation is included
+            in the PP, PP-Module, functional package or ST:
+            <h:ul>
               <h:li>Minimal: Completion of enrollment process.</h:li>
             </h:ul>
           </audit>
@@ -1688,8 +1689,9 @@
           <comp-lev> requires the TSF to verify the validity of the source of a policy before
             applying it.</comp-lev>
           <management>There are no management functions foreseen.</management>
-          <audit>The following actions should be auditable if FAU_GEN Security audit data generation
-            is included in the PP/ST:<h:ul>
+          <audit>The following actions should be auditable if FAU_GEN Security audit data generation is included
+            in the PP, PP-Module, functional package or ST:
+            <h:ul>
               <h:li>Minimal: Failure to validate policy.</h:li>
             </h:ul>
           </audit>
@@ -1751,8 +1753,9 @@
               <h:li>Configuration of management functions behavior.</h:li>
             </h:ul>
           </management>
-          <audit>The following actions should be auditable if FAU_GEN Security audit data generation
-            is included in the PP/ST:<h:ul>
+          <audit>The following actions should be auditable if FAU_GEN Security audit data generation is included
+            in the PP, PP-Module, functional package or ST:
+            <h:ul>
               <h:li>Minimal: Successful and failed execution of management functions.</h:li>
             </h:ul>
           </audit>
@@ -1871,8 +1874,9 @@
           <comp-lev> requires the TSF either to prevent unenrollment entirely or to take some
             corrective action in the event that an unenrollment is initiated.</comp-lev>
           <management>There are no management functions foreseen.</management>
-          <audit>The following actions should be auditable if FAU_GEN Security audit data generation
-            is included in the PP/ST:<h:ul>
+          <audit>The following actions should be auditable if FAU_GEN Security audit data generation is included
+            in the PP, PP-Module, functional package or ST:
+            <h:ul>
               <h:li>Minimal: Unenrollment from MDM.</h:li>
             </h:ul>
           </audit>
@@ -1985,8 +1989,9 @@
             <h:ul>
               <h:li>Configuration of unreachability threshold.</h:li></h:ul>
           </management>
-          <audit>The following actions should be auditable if FAU_GEN Security audit data generation
-            is included in the PP/ST:<h:ul>
+          <audit>The following actions should be auditable if FAU_GEN Security audit data generation is included
+            in the PP, PP-Module, functional package or ST:
+            <h:ul>
               <h:li>Minimal: Reaching or exceeding unreachability threshold.</h:li></h:ul>
           </audit>
           <dependencies>FPT_STM.1 Reliable Time Stamps</dependencies>
