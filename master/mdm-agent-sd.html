@@ -386,7 +386,7 @@ The following sections list Common Criteria and technology terms used in this do
 				connectivity and may include software for functions like secure messaging, email, web, VPN connection, and VoIP (Voice over IP), for access
 				to the protected enterprise network, enterprise data and applications, and for communicating to other MDs.</td></tr>
 <tr><td><div id="Mobile_Device_Management">Mobile Device Management (MDM)</div></td><td>Products that allow enterprises to apply security policies to end user devices. This system consists of two primary
-          components: the MDM Server and the MDM Agent.</td></tr>
+          components: the MDM server and the MDM agent.</td></tr>
 <tr><td><div id="Operating_System">Operating System (OS)</div></td><td>
 	      Software which runs at the highest privilege level and can directly control
               hardware resources. These include mobile device and general purpose operating systems (GPOS).
@@ -448,7 +448,7 @@ The following sections list Common Criteria and technology terms used in this do
                   the ST. For each of these items, the evaluator shall confirm that
                   the TSS lists for what purpose it is used, and, for each
                   platform listed as supported in the ST, how it is stored. The
-                  evaluator shall verify that the MDM Agent calls a platform-provided API to store
+                  evaluator shall verify that the MDM agent calls a platform-provided API to store
                   persistent secrets and private keys. 
                   </p>
                 </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
@@ -461,14 +461,14 @@ The following sections list Common Criteria and technology terms used in this do
                 
                 
               <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to determine that the
-                  methods of communication between the MDM Agent and MDM Server (and MAS Server, if claimed) are indicated, along with how those
+                  methods of communication between the MDM agent and MDM server (and MAS server, if claimed) are indicated, along with how those
                   communications are protected. The evaluator shall also confirm that all protocols
                   listed in the TSS in support of remote TOE
                   administration are consistent with those specified in the requirement, and are
                   included in the requirements in the ST.<br/><br/>
                 </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> The evaluator shall confirm that the operational guidance contains
-                  instructions for configuring the communication channel between the MDM Agent and
-                  the MDM Server and conditionally, the MAS Server for each supported
+                  instructions for configuring the communication channel between the MDM agent and
+                  the MDM server and conditionally, the MAS server for each supported
                   method.<br/><br/>
                 </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">For each supported identifier type (excluding Distinguished Names [DNs], the evaluator shall
                   repeat the following tests:<br/><br/>
@@ -478,12 +478,12 @@ The following sections list Common Criteria and technology terms used in this do
                       the course of the evaluation, connections are set up as described in the operational guidance, and that communication is successful.
                     </li>
                     <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FTP_ITC_EXT.1/MDFCHANNEL:2</a>:
-      The evaluator shall ensure, for each method of communication between the MDM Server (and MAS Server, if claimed),
+      The evaluator shall ensure, for each method of communication between the MDM server (and MAS server, if claimed),
                       the channel data is not sent in plaintext.
                     </li>
                     <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FTP_ITC_EXT.1/MDFCHANNEL:3</a>:
       The evaluator shall ensure, for each communication channel with the MDM
-                      Server (and MAS Server, if claimed), that a protocol analyzer identifies the traffic as the protocol under
+                      server (and MAS server, if claimed), that a protocol analyzer identifies the traffic as the protocol under
                       testing.
                     </li>
                   </ul></span> 
@@ -547,7 +547,7 @@ The following sections list Common Criteria and technology terms used in this do
                   the ST. For each of these items, the evaluator shall confirm that
                   the TSS lists for what purpose it is used, and, for each
                   platform listed as supported in the ST, how it is stored. The
-                  evaluator shall verify that the MDM Agent calls a platform-provided API to store
+                  evaluator shall verify that the MDM agent calls a platform-provided API to store
                   persistent secrets and private keys.</p>
                 </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
                   <p>There are no guidance EAs for this component.</p>
@@ -575,30 +575,30 @@ The following sections list Common Criteria and technology terms used in this do
                 
                 
               <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to determine that the
-                  methods of communication between the MDM Agent and MDM Server (and MAS Server, if claimed) are indicated, along with how those
+                  methods of communication between the MDM agent and MDM server (and MAS server, if claimed) are indicated, along with how those
                   communications are protected. The evaluator shall also confirm that all protocols
                   listed in the TSS in support of remote TOE
                   administration are consistent with those specified in the requirement, and are
                   included in the requirements in the ST.<br/><br/>
                 </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> The evaluator shall confirm that the operational guidance contains
-                  instructions for configuring the communication channel between the MDM Agent and
-                  the MDM Server and conditionally, the MAS Server for each supported
+                  instructions for configuring the communication channel between the MDM agent and
+                  the MDM server and conditionally, the MAS server for each supported
                   method.<br/><br/>
                 </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">For each supported identifier type (excluding DNs), the evaluator shall
                   repeat the following tests:<br/><br/>
                   <span class="testlist-"><ul>
                     <li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FTP_ITC_EXT.1/OSCHANNEL:1</a>:
       The evaluator shall ensure that communications using each specified (in
-                      the operational guidance) communication method between the MDM Agent and MDM Server (and MAS Server, if claimed) is tested during
+                      the operational guidance) communication method between the MDM agent and MDM server (and MAS server, if claimed) is tested during
                       the course of the evaluation, connections are set up as described in the operational guidance, and that communication is successful.
                     </li>
                     <li class="test-"><a id="_t_8" class="defined" href="#_t_8">Test FTP_ITC_EXT.1/OSCHANNEL:2</a>:
-      The evaluator shall ensure, for each method of communication between the MDM Agent and MDM Server (and MAS Server, if claimed),
+      The evaluator shall ensure, for each method of communication between the MDM agent and MDM server (and MAS server, if claimed),
                       the channel data is not sent in plaintext.
                     </li>
                     <li class="test-"><a id="_t_9" class="defined" href="#_t_9">Test FTP_ITC_EXT.1/OSCHANNEL:3</a>:
-      The evaluator shall ensure, for each communication channel between the MDM Agent and MDM Server
-                      (and MAS Server, if claimed), that a protocol analyzer identifies the traffic as the protocol under
+      The evaluator shall ensure, for each communication channel between the MDM agent and MDM server
+                      (and MAS server, if claimed), that a protocol analyzer identifies the traffic as the protocol under
                       testing.
                     </li>
                   </ul></span> 
@@ -645,20 +645,20 @@ The following sections list Common Criteria and technology terms used in this do
             <div class="eacategory">TSS</div><div class="ea"><div class="ea">                  
                   The evaluator shall examine the TSS and verify that it describes how the alerts are implemented.<br/><br/> 
                   The evaluator shall examine the TSS and verify that it describes how the candidate policy updates are obtained and the actions that take place for successful (policy update installed) and unsuccessful (policy update not installed) cases. The software components that are performing the processing must also be identified in the TSS and verified by the evaluator.<br/><br/> 
-                  The evaluator shall also ensure that the TSS describes how reachability events are implemented, and if configurable, are selected in FMT_SMF_EXT.4.2. The evaluator shall verify that this description clearly indicates whether the MDM Agent or MDM Server initiates reachability events.<br/><br/> 
+                  The evaluator shall also ensure that the TSS describes how reachability events are implemented, and if configurable, are selected in FMT_SMF_EXT.4.2. The evaluator shall verify that this description clearly indicates whether the MDM agent or MDM server initiates reachability events.<br/><br/> 
                   The evaluator shall ensure that the TSS describes under what circumstances, if any, the alert may not be generated (e.g., the device is powered off or disconnected from the trusted channel), how alerts are queued, and the maximum amount of storage for queued messages.<br/><br/>
               </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
                 <p>There are no guidance EAs for this component.</p>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                   <span class="testlist-"><ul>
                       <li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FAU_ALT_EXT.2:1</a>:
-      The evaluator shall perform a policy update from the test environment MDM Server. The evaluator shall verify the MDM Agent accepts the update, makes the configured changes, and reports the success of the policy update back to the MDM Server.</li>
+      The evaluator shall perform a policy update from the test environment MDM server. The evaluator shall verify the MDM agent accepts the update, makes the configured changes, and reports the success of the policy update back to the MDM server.</li>
                       <li class="test-"><a id="_t_14" class="defined" href="#_t_14">Test FAU_ALT_EXT.2:2</a>:
-      The evaluator shall perform each of the actions listed in FAU_ALT_EXT.2.1 and verify that the alert does in fact reach the MDM Server.</li>
+      The evaluator shall perform each of the actions listed in FAU_ALT_EXT.2.1 and verify that the alert does in fact reach the MDM server.</li>
                       <li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FAU_ALT_EXT.2:3</a>:
-      The evaluator shall configure the MDM Agent to perform a network reachability test, both with and without such connectivity and ensure that results reflect each.</li>
+      The evaluator shall configure the MDM agent to perform a network reachability test, both with and without such connectivity and ensure that results reflect each.</li>
                       <li class="test-"><a id="_t_16" class="defined" href="#_t_16">Test FAU_ALT_EXT.2:4</a>:
-      The evaluator shall remove network connectivity from the MDM Agent and generate an alert or event as defined in FAU_ALT_EXT.2.1. The evaluator shall restore network connectivity to the MDM Agent and verify that the alert generated while the TOE was disconnected is sent by the MDM Agent upon re-establishment of the connectivity.</li>
+      The evaluator shall remove network connectivity from the MDM agent and generate an alert or event as defined in FAU_ALT_EXT.2.1. The evaluator shall restore network connectivity to the MDM agent and verify that the alert generated while the TOE was disconnected is sent by the MDM agent upon re-establishment of the connectivity.</li>
                   </ul></span>
               </div></div></span></div><div class="comp" id="FAU-GEN-1-AGENT"><h4>FAU_GEN.1/AGENT Audit Data Generation</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_GEN.1/AGENT</div>
               
@@ -668,7 +668,7 @@ The following sections list Common Criteria and technology terms used in this do
                   The evaluator shall check the TSS and ensure that it provides a format for audit
                   data. Each audit data format type must be covered, along with a brief description of each field. <br/><br/> 
                   If "invoke platform-provided functionality" is selected, the evaluator shall examine the TSS to verify that it describes (for each supported platform) 
-                  how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the MDM Agent; nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).<br/><br/> 
+                  how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the MDM agent; nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).<br/><br/> 
               </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
                 <p>There are no guidance EAs for this component.</p>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
@@ -686,7 +686,7 @@ The following sections list Common Criteria and technology terms used in this do
                 examine the TSS to verify that it
                 describes (for each supported platform) how this functionality is invoked. It should
                 be noted that this may be through a mechanism that is not implemented by the MDM
-                Agent; nonetheless, that mechanism will be identified in the TSS
+                agent; nonetheless, that mechanism will be identified in the TSS
                 as part of this evaluation activity.<br/><br/>
               </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to determine that it
                 contains instructions on how to define the set of auditable events as well as
@@ -717,37 +717,35 @@ The following sections list Common Criteria and technology terms used in this do
               
             <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to verify that it describes
                 which types of reference identifiers are acceptable and how the identifier is
-                specified (e.g. preconfigured in the MDM Agent, by the user, by
-                the MDM Server, in a policy).<br/><br/>
+                specified (e.g. preconfigured in the MDM agent, by the user, by
+                the MDM server, in a policy).<br/><br/>
               </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it
-                describes how to configure the reference identifier of the MDM
-                Server’s certificate and, if different than the reference identifier, the Domain
-                Name or IP address (for connectivity) of the MDM
-                Server.<br/><br/>
+                describes how to configure the reference identifier of the MDM server’s certificate and, if different than the reference identifier, the Domain
+                Name or IP address (for connectivity) of the MDM server.<br/><br/>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall follow the operational guidance to establish the reference
-                identifier of the MDM Server on the MDM Agent
+                identifier of the MDM server on the MDM agent
                 and in conjunction with other evaluation activities verify that the 
-                  MDM Agent can connect to the MDM Server and validate
-                the MDM Server’s certificate.<br/><br/>
+                  MDM agent can connect to the MDM server and validate
+                the MDM server’s certificate.<br/><br/>
               </div></div></span></div><h2 class="indexable" data-level="2" id="man_fmt">2.4.3 Class FMT: Security Management</h2><div class="comp" id="FMT-POL-EXT-2"><h4>FMT_POL_EXT.2 Agent Trusted Policy Update</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_POL_EXT.2</div>
                 
               
               
             <div class="eacategory">TSS</div><div class="ea"><div class="ea">
-                The evaluator shall ensure that the TSS describes how the candidate policies are obtained by the MDM Agent, the processing associated with verifying the digital signature of the policy updates, and the actions that take place for successful (signature was verified) and unsuccessful (signature could not be verified) cases. The software components that are performing the processing must also be identified in the TSS and verified by the evaluator.<br/><br/>
+                The evaluator shall ensure that the TSS describes how the candidate policies are obtained by the MDM agent, the processing associated with verifying the digital signature of the policy updates, and the actions that take place for successful (signature was verified) and unsuccessful (signature could not be verified) cases. The software components that are performing the processing must also be identified in the TSS and verified by the evaluator.<br/><br/>
                 </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
                 <p>There are no guidance EAs for this component.</p>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> 
                   This evaluation activity is performed in conjunction with the evaluation activity for FIA_X509_EXT.1 and FIA_X509_EXT.2 as defined in the Base PPs.<br/><br/>
                   <span class="testlist-"><ul>
                       <li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FMT_POL_EXT.2:1</a>:
-      The evaluator shall perform a policy update from an available configuration interface (such as through a test MDM Server). The evaluator shall verify the update is signed and is provided to the MDM Agent. The evaluator shall verify the MDM Agent accepts the digitally signed policy.</li>
+      The evaluator shall perform a policy update from an available configuration interface (such as through a test MDM server). The evaluator shall verify the update is signed and is provided to the MDM agent. The evaluator shall verify the MDM agent accepts the digitally signed policy.</li>
                       <li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FMT_POL_EXT.2:2</a>:
-      The evaluator shall perform a policy update from an available configuration interface (such as through a test MDM Server). The evaluator shall provide an unsigned and an incorrectly signed policy to the MDM Agent. The evaluator shall verify the MDM Agent does not accept the digitally signed policy.</li>
+      The evaluator shall perform a policy update from an available configuration interface (such as through a test MDM server). The evaluator shall provide an unsigned and an incorrectly signed policy to the MDM agent. The evaluator shall verify the MDM agent does not accept the digitally signed policy.</li>
                   </ul></span>            
               </div></div></span></div><div class="comp" id="FMT-SMF-EXT-4"><h4>FMT_SMF_EXT.4 Specification of Management Functions</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF_EXT.4</div>
                 
-                This assurance activity may be performed in conjunction with other assurance
+                This assurance activity may be performed in conjunction with other evaluation
                 activities in the Base PP.<br/><br/>
                 
               
@@ -755,28 +753,28 @@ The following sections list Common Criteria and technology terms used in this do
               
             <div class="eacategory">TSS</div><div class="ea"><div class="ea"> 
                   The evaluator shall verify that the assigned functions are described in the TSS and that these functions are documented as supported by the platform. The evaluator shall examine the TSS to verify that any differences between management functions and policies for each supported MD are listed.<br/><br/>
-                  The evaluator shall verify that the TSS describes the methods in which the MDM Agent can be enrolled.<br/><br/> 
-                  The TSS description shall make it clear whether the MDM Agent supports multiple interfaces for enrollment and configuration (for example, both remote configuration and local configuration).<br/><br/>                  
+                  The evaluator shall verify that the TSS describes the methods in which the MDM agent can be enrolled.<br/><br/> 
+                  The TSS description shall make it clear whether the MDM agent supports multiple interfaces for enrollment and configuration (for example, both remote configuration and local configuration).<br/><br/>                  
               </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> 
                   The evaluator shall verify the AGD guidance includes detailed instructions for configuring each function in this requirement.<br/><br/> 
-                  If the MDM Agent is a component of the MDM system (i.e., MDM Server is the Base PP), the evaluator shall verify, by consulting documentation for the claimed MD platforms, that the configurable functions listed for the MDM Agent are supported by the platforms.<br/><br/> 
-                  If the MDM Agent supports multiple interfaces for configuration (for example, both remote configuration and local configuration), the operational guidance makes it clear whether some functions are restricted to certain interfaces.<br/><br/>                
+                  If the MDM agent is a component of the MDM system (i.e., PP_MDM is the Base PP), the evaluator shall verify, by consulting documentation for the claimed MD platforms, that the configurable functions listed for the MDM agent are supported by the platforms.<br/><br/> 
+                  If the MDM agent supports multiple interfaces for configuration (for example, both remote configuration and local configuration), the operational guidance makes it clear whether some functions are restricted to certain interfaces.<br/><br/>                
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
                     <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FMT_SMF_EXT.4:1</a>:
       In conjunction with the evaluation activities in the Base PP, the evaluator shall attempt to configure each 
                       administrator-provided management function and shall verify that the MD executes the commands and enforces the policies.</li>
                   <li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FMT_SMF_EXT.4:2</a>:
-      [conditional: if "import the certificates to be used for authentication of MDM Agent communications" is selected in FMT_SMF_EXT.4.1, then] 
-                    The evaluator shall configure the MDM Agent authentication certificate in accordance with the configuration guidance. 
-                    The evaluator shall verify that the MDM Agent uses this certificate in performing the tests for PP_MDM SFR FPT_ITT.1/INTRA_XFER_AGENT 
+      [conditional: if "import the certificates to be used for authentication of MDM agent communications" is selected in FMT_SMF_EXT.4.1, then] 
+                    The evaluator shall configure the MDM agent authentication certificate in accordance with the configuration guidance. 
+                    The evaluator shall verify that the MDM agent uses this certificate in performing the tests for PP_MDM SFR FPT_ITT.1/INTRA_XFER_AGENT 
                     (if PP_MDM is the Base PP),
                     the Additional SFR FTP_ITC_EXT.1/MDFCHANNEL (if PP_MDF is the Base PP),
                     or the Additional SFR FTP_ITC_EXT.1/OSCHANNEL (if PP_GPOS is the Base PP).</li>
                     <li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FMT_SMF_EXT.4:3</a>:
-      In conjunction with other evaluation activities, the evaluator shall attempt to enroll the MDM Agent in management with each interface identified in the TSS, and verify that the MDM Agent can manage the device and communicate with the MDM Server.</li>
+      In conjunction with other evaluation activities, the evaluator shall attempt to enroll the MDM agent in management with each interface identified in the TSS, and verify that the MDM agent can manage the device and communicate with the MDM server.</li>
                     <li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FMT_SMF_EXT.4:4</a>:
-      [conditional] In conjunction with the evaluation activity for FAU_ALT_EXT.2.1, the evaluator shall configure the periodicity for reachability events for several configured time periods and verify that the MDM Server receives alerts on that schedule.</li>
+      [conditional] In conjunction with the evaluation activity for FAU_ALT_EXT.2.1, the evaluator shall configure the periodicity for reachability events for several configured time periods and verify that the MDM server receives alerts on that schedule.</li>
                   <li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FMT_SMF_EXT.4:5</a>:
       [conditional] The evaluator shall design and perform tests to demonstrate that the assigned function may be configured and that the intended behavior of the function is enacted by the MD.</li>
                 </ul></span>
@@ -790,14 +788,14 @@ The following sections list Common Criteria and technology terms used in this do
               </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> The evaluator shall ensure that the administrative guidance instructs
                 administrators on configuring the unenrollment prevention in each available
                 configuration interface. If any configuration allows users to unenroll, the guidance
-                also describes the actions that unenroll the MDM Agent.<br/><br/>
+                also describes the actions that unenroll the MDM agent.<br/><br/>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
                   <li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FMT_UNR_EXT.1:1</a>:
-      If ‘prevent the unenrollment from occurring’ is selected, the evaluator shall configure the MDM Agent according to the administrative guidance for each available configuration interface, attempt to unenroll the device, and verify that the attempt fails.
+      If ‘prevent the unenrollment from occurring’ is selected, the evaluator shall configure the MDM agent according to the administrative guidance for each available configuration interface, attempt to unenroll the device, and verify that the attempt fails.
                   </li>
                   <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FMT_UNR_EXT.1:2</a>:
-      If ‘apply remediation actions’ is selected, if any configuration allows the user to unenroll, the evaluator shall configure the MDM Agent to allow user unenrollment, attempt to unenroll, and verify that the remediation actions are applied.
+      If ‘apply remediation actions’ is selected, if any configuration allows the user to unenroll, the evaluator shall configure the MDM agent to allow user unenrollment, attempt to unenroll, and verify that the remediation actions are applied.
                   </li>
                 </ul></span>
               </div></div></span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.5 Evaluation Activities for Optional SFRs</h2>The PP-Module does not define any optional requirements.<h2 class="indexable" data-level="1" id="sel-sfrs">2.6 Evaluation Activities for Selection-Based SFRs</h2>The PP-Module does not define any selection-based requirements.<h2 class="indexable" data-level="1" id="obj-sfrs">2.7 Evaluation Activities for Objective SFRs</h2>The PP-Module does not define any objective requirements.<h2 class="indexable" data-level="1" id="impl-sfrs-">2.8 Evaluation Activities for Implementation-dependent SFRs</h2><h2 class="indexable" data-level="2" id="ib_fau">2.8.1 Class FAU: Security Audit</h2><div class="comp" id="FAU-STG-EXT-3"><h4>FAU_STG_EXT.3 Security Audit Event Storage</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_STG_EXT.3</div>
@@ -806,7 +804,7 @@ The following sections list Common Criteria and technology terms used in this do
               
             <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify that the TSS description of the
                 audit records indicates how the records are stored. The evaluator shall verify that
-                the MDM Agent calls a platform-provided API to store audit records.<br/><br/>
+                the MDM agent calls a platform-provided API to store audit records.<br/><br/>
               </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
                 <p>There are no guidance EAs for this component.</p>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
@@ -816,8 +814,8 @@ The following sections list Common Criteria and technology terms used in this do
               
               
             <div class="eacategory">TSS</div><div class="ea"><div class="ea"> The evaluator shall verify that the TSS contains a description
-                of how the MDM Agent determines how long it has been since the last successful
-                connection with the MDM Server (i.e., total number of missed reachability events or
+                of how the MDM agent determines how long it has been since the last successful
+                connection with the MDM server (i.e., total number of missed reachability events or
                 time). If "positive integer of missed reachability events occur" is selected, the evaluator
                 shall verify that the TSS contains a description of how often the
                 reachability events are sent.<br/><br/>
@@ -825,10 +823,10 @@ The following sections list Common Criteria and technology terms used in this do
                 administrator, if needed, how to configure the TOE to detect when
                 the time since the last successful connection with the server has been
                 reached.<br/><br/>
-              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> The evaluator shall configure the MDM Server configuration policy of the MDM Agent per
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> The evaluator shall configure the MDM server configuration policy of the MDM agent per
                 FMT_SMF.1.1/SERVER_CONF_AGENT, function 56 in PP_MDM. The device shall be placed in airplane mode or otherwise have its 
                 network capabilities disabled to prevent
-                connectivity with the MDM Server. The evaluator shall verify that after the configured
+                connectivity with the MDM server. The evaluator shall verify that after the configured
                 time, the remediation actions selected in function 56 occur.<br/><br/>
               </div></div></span></div><h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><p>The PP-Module does not define any SARs beyond those defined within the
     

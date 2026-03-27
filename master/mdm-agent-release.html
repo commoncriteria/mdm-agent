@@ -679,15 +679,15 @@ function showTarget(id){
     </span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-dependent Requirements
     </span></a><a href="#sib-audit-table" style="text-indent:20px">A.3.1<span>Auditable Events for Implementation-Dependent SFRs</span></a><a href="#ib_fau" style="text-indent:20px">A.3.2<span>Class FAU: Security Audit</span></a><a href="#ib_fpt" style="text-indent:20px">A.3.3<span>Class FPT: Protection of the TSF</span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements
     </span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-" style="text-indent:20px">C.2.1<span>Class FAU: Security Audit</span></a><a href="#ext-comp-FAU_ALT_EXT" style="text-indent:30px">C.2.1.1<span>FAU_ALT_EXT MDM Alerts</span></a><a href="#ext-comp-FAU_STG_EXT" style="text-indent:30px">C.2.1.2<span>FAU_STG_EXT Protected Audit Event Storage</span></a><a href="#ext-comp-" style="text-indent:20px">C.2.2<span>Class FCS: Cryptographic Suport</span></a><a href="#ext-comp-FCS_STG_EXT" style="text-indent:30px">C.2.2.1<span>FCS_STG_EXT Cryptographic Key Storage</span></a><a href="#ext-comp-" style="text-indent:20px">C.2.3<span>Class FIA: Identification and Authentication</span></a><a href="#ext-comp-FIA_ENR_EXT" style="text-indent:30px">C.2.3.1<span>FIA_ENR_EXT Enrollment</span></a><a href="#ext-comp-" style="text-indent:20px">C.2.4<span>Class FMT: Security Management</span></a><a href="#ext-comp-FMT_POL_EXT" style="text-indent:30px">C.2.4.1<span>FMT_POL_EXT Trusted Policy Update</span></a><a href="#ext-comp-FMT_SMF_EXT" style="text-indent:30px">C.2.4.2<span>FMT_SMF_EXT Specification of Management Functions</span></a><a href="#ext-comp-FMT_UNR_EXT" style="text-indent:30px">C.2.4.3<span>FMT_UNR_EXT Unenrollment</span></a><a href="#ext-comp-" style="text-indent:20px">C.2.5<span>Class FPT: Protection of the TSF</span></a><a href="#ext-comp-FPT_NET_EXT" style="text-indent:30px">C.2.5.1<span>FPT_NET_EXT Network Reachability</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#appdx-use-case-templates" style="text-indent:0px">Appendix E - <span>Use Case Templates</span></a><a href="#appendix-usecase1" style="text-indent:10px">E.1<span>Enterprise-owned device for general-purpose enterprise use</span></a><a href="#appendix-usecase2" style="text-indent:10px">E.2<span>Enterprise-owned device for specialized, high-security use</span></a><a href="#appendix-usecase3" style="text-indent:10px">E.3<span>Personally owned device for personal and enterprise use</span></a><a href="#appendix-usecase4" style="text-indent:10px">E.4<span>Personally owned device for personal and limited enterprise use</span></a><a href="#acronyms" style="text-indent:0px">Appendix F - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix G - <span>Bibliography</span></a></div><h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
-    <h2 class="indexable" data-level="2" id="overview">1.1 Overview</h2> The scope of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent Protection Profile Module (<abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>) is to describe the security functionality of a Mobile Device Management (<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>) Agent 
+    <h2 class="indexable" data-level="2" id="overview">1.1 Overview</h2> The scope of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent Protection Profile Module (<abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>) is to describe the security functionality of a mobile device management (<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>) agent 
       in terms of Common Criteria (<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>) and to define functional and assurance requirements for such products. 
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is intended for use with the following Base <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr>: <ul>
         <li>Protection Profile for Mobile Device Management (PP_MDM), Version 5.0</li>
         <li>Protection Profile for Mobile Device Fundamentals (PP_MDF), Version 4.0</li>
         <li>Protection Profile for General Purpose Operating Systems (PP_GPOS), Version 5.0</li>
       </ul>
-      <br/> These Base <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> are valid because an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is
-      either a third-party application manufactured by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server vendor or is a
+      <br/> These Base <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> are valid because an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent is
+      either a third-party application manufactured by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server vendor or is a
       native application deployed on a mobile device or <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>. 
 
       <div class="no-link"><h2 id="glossary" class="indexable" data-level="2">1.2 Terms</h2>
@@ -736,7 +736,7 @@ The following sections list Common Criteria and technology terms used in this do
 				connectivity and may include software for functions like secure messaging, email, web, VPN connection, and VoIP (Voice over IP), for access
 				to the protected enterprise network, enterprise data and applications, and for communicating to other MDs.</td></tr>
 <tr><td><div id="Mobile_Device_Management">Mobile Device Management (MDM)</div></td><td>Products that allow enterprises to apply security policies to end user devices. This system consists of two primary
-          components: the MDM Server and the MDM Agent.</td></tr>
+          components: the MDM server and the MDM agent.</td></tr>
 <tr><td><div id="Operating_System">Operating System (OS)</div></td><td>
 	      Software which runs at the highest privilege level and can directly control
               hardware resources. These include mobile device and general purpose operating systems (GPOS).
@@ -757,13 +757,13 @@ The following sections list Common Criteria and technology terms used in this do
 
     <h2 class="indexable" data-level="2" id="targets">1.3 Compliant Targets of Evaluation</h2> 
       The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> system
-      consists of two primary components: the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server software and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> specifically addresses the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent, 
+      consists of two primary components: the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server software and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> specifically addresses the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent, 
       which establishes a secure connection back
-      to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server, from which it receives policies to enforce on the 
-      device. Optionally, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent interacts with a <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server to download and install enterprise-hosted applications.
+      to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server, from which it receives policies to enforce on the 
+      device. Optionally, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent interacts with a <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> server to download and install enterprise-hosted applications.
       <br/><br/> 
-      A compliant <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is installed on a device as an application
-      (supplied by the developer of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server software) or is part of a mobile device or <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on PP_MDF, PP_MDM, or PP_GPOS. A <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
+      A compliant <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent is installed on a device as an application
+      (supplied by the developer of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server software) or is part of a mobile device or <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on PP_MDF, PP_MDM, or PP_GPOS. A <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
       that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> must also claim conformance to one
       of those <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> as its Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. To mitigate the threats that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines, a compliant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is obligated to implement the functionality the 
       Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> requires, along with the additional functionality defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
@@ -771,36 +771,35 @@ The following sections list Common Criteria and technology terms used in this do
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> shall build on PP_MDF if the 
       <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a native part of a mobile operating system. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> for
       this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> combined with PP_MDF is the mobile
-      device itself plus the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is part
-      of the <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr>’s <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent may present multiple interfaces for
-      configuring the <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr>, such as a local and remote interface. <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents
+      device itself plus the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent. If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent is part
+      of the <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr>’s <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent may present multiple interfaces for
+      configuring the <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr>, such as a local and remote interface. <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agents
       conforming to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> must at least offer an interface with a trusted
-      channel that serves as one piece of an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> system. Conformant <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents may also offer other interfaces, and the configuration aspects of
+      channel that serves as one piece of an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> system. Conformant <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agents may also offer other interfaces, and the configuration aspects of
       these additional interfaces are in scope of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
       <br/><br/> 
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> shall build on PP_MDM if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a third-party application that is provided with
-      an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and installed on a device by the user after acquiring
+      an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server and installed on a device by the user after acquiring
       the device. The distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> for this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
-      combined with PP_MDM is the entire <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> environment, which includes both the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and the
-        <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. Even though the device itself is not part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, it is expected to be evaluated against the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> or PP_GPOS so that
+      combined with PP_MDM is the entire <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> environment, which includes both the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server and the
+        <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent. Even though the device itself is not part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, it is expected to be evaluated against the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> or PP_GPOS so that
       its baseline security capabilities can be assumed to be present. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> conforms to PP_GPOS, evaluating the hardware platform against
       the Protection Profile for General Purpose Computing Platforms (GPCP <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>) may also be considered so that assurance of the underlying platform hardware
       can be obtained.
       <br/><br/>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> shall build on PP_GPOS if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a native part of a non-mobile <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>.
-      The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> for this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> combined with PP_GPOS is the operating system itself plus the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is part of 
-      the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent may present multiple interfaces for configuring the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, such as a local and remote interface. 
-      The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent does not need to provide a dedicated management interface that is separate from the means by which administrators interact with the 
+      The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> for this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> combined with PP_GPOS is the operating system itself plus the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent. If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent is part of 
+      the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent may present multiple interfaces for configuring the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, such as a local and remote interface. 
+      The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent does not need to provide a dedicated management interface that is separate from the means by which administrators interact with the 
       <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> as a whole. However, if it does provide any such interfaces, the configuration aspects of these additional interfaces are in scope of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
       
       <h3 class="indexable" data-level="3" id="TOEboundary">1.3.1 TOE Boundary</h3> Figure 1 shows a high-level example of the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
         <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary and its <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> runs on a mobile device. A use case where the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> runs on a <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>
-        is identical aside from the specific type of device on which it runs. As stated above, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent may either be provided as part of the device itself (shown in
-        red) or distributed as a third-party application from the developer of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server software (shown in blue).<br/><br/>
+        is identical aside from the specific type of device on which it runs. As stated above, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent may either be provided as part of the device itself (shown in
+        red) or distributed as a third-party application from the developer of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server software (shown in blue).<br/><br/>
         <div class="figure" id="figure-toe"><img id="toe" src="images/MDMAgentSystem.png" width="" height=""></img><br/><span class="ctr" data-myid="toe" data-counter-type="ct-figure">Figure <span class="counter">1</span></span>:
       <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent Operating Environment</div><br/> 
-        The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-        Agent must closely interact with or be part of the mobile device or <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> platform so that it can
+        The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent must closely interact with or be part of the mobile device or <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> platform so that it can
         establish policies and to perform queries about device status. The mobile device and <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> platform, in turn,
         have their own security requirements specified in PP_MDF and PP_GPOS, respectively. 
         
@@ -875,12 +874,12 @@ The following sections list Common Criteria and technology terms used in this do
       <h3 class="indexable" data-level="3" id="has-auditing">1.6.1 Platform Auditing</h3><span class="description">If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is deployed on a mobile device or <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> platform (i.e., the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> does not use 
             PP_MDM as its Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>), it is expected to rely on the underlying platform for secure storage of its audit records.</span><br/><p>
 	  If this feature is implemented by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the following requirements must be claimed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>:
-            <ul><li><b><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></b></li></ul></p><h3 class="indexable" data-level="3" id="supports-reachability">1.6.2 Supports Network Reachability Thresholds</h3><span class="description">An <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent may support the ability to determine if it has been out of connectivity with an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server for too long.
+            <ul><li><b><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></b></li></ul></p><h3 class="indexable" data-level="3" id="supports-reachability">1.6.2 Supports Network Reachability Thresholds</h3><span class="description">An <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent may support the ability to determine if it has been out of connectivity with an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server for too long.
             The configuration of the number of allowed missed reachability events or time limit since last successful connection
-            with the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server is handled in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server's configuration policy of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent (the first selection of
+            with the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server is handled in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server's configuration policy of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent (the first selection of
             function 56 in FMT_SMF.1.1/SERVER_CONF_AGENT within PP_MDM). This feature applies if either the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> claims PP_MDM as its 
-            Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and management function 56 is claimed, or if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> includes an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server that was separately validated against
-            PP_MDM and that <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server's <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> claims management function 56.</span><br/><p>
+            Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and management function 56 is claimed, or if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> includes an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server that was separately validated against
+            PP_MDM and that <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server's <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> claims management function 56.</span><br/><p>
 	  If this feature is implemented by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the following requirements must be claimed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>:
             <ul><li><b><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a></b></li></ul></p>
     
@@ -918,7 +917,7 @@ The following sections list Common Criteria and technology terms used in this do
     
     
   <h1 class="indexable" data-level="1" id="Security_Problem_Definition">3 Security Problem Definition</h1>
-    <h2 class="indexable" data-level="2" id="Threats">3.1 Threats</h2> The following threats are specific to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents, and represents an addition to those identified in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr>. 
+    <h2 class="indexable" data-level="2" id="Threats">3.1 Threats</h2> The following threats are specific to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agents, and represents an addition to those identified in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr>. 
       
       <dl><dt class="threat defined" id="T.INSECURE_MDM_COMMUNICATIONS">T.INSECURE_MDM_COMMUNICATIONS</dt><dd><span class="description">
             A malicious user or process may inspect network communications between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent and an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server to illicitly determine, modify, or prevent these communications in such a way that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent fails to enforce the intended policy.
@@ -934,9 +933,9 @@ If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is placed in an
 provide all of its security functionality.</p>
       <dl><dt class="assumption defined" id="A.CONNECTIVITY">A.CONNECTIVITY</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> relies on network connectivity to carry out its
             management activities. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will robustly handle instances when
-            connectivity is unavailable or unreliable. </span></dd><dt class="assumption defined" id="A.PLATFORM">A.PLATFORM</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent relies upon platform and hardware functionality
+            connectivity is unavailable or unreliable. </span></dd><dt class="assumption defined" id="A.PLATFORM">A.PLATFORM</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent relies upon platform and hardware functionality
             that can be assumed to provide policy enforcement, cryptographic services, 
-            data protection, trusted updates, and software integrity verification of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. </span></dd><dt class="assumption defined" id="A.PROPER_ADMIN">A.PROPER_ADMIN</dt><dd><span class="description">One or more competent, trusted personnel who are not careless, willfully
+            data protection, trusted updates, and software integrity verification of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent. </span></dd><dt class="assumption defined" id="A.PROPER_ADMIN">A.PROPER_ADMIN</dt><dd><span class="description">One or more competent, trusted personnel who are not careless, willfully
             negligent, or hostile, are assigned and authorized as the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
             administrators, and do so using and abiding by guidance documentation. </span></dd><dt class="assumption defined" id="A.PROPER_USER">A.PROPER_USER</dt><dd><span class="description">Users are not willfully negligent or hostile, and use the
             device within compliance of a reasonable enterprise security policy. </span></dd></dl>
@@ -955,13 +954,13 @@ The security objectives for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a>
 This section defines the security objectives that are to be addressed by the IT domain or by non-technical or procedural means.
 The assumptions identified in Section 3 are incorporated as security objectives for the environment.</p>
       <dl><dt class="SOE defined" id="OE.DATA_PROPER_ADMIN">OE.DATA_PROPER_ADMIN</dt><dd><span class="description"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administrators are trusted to follow and apply all administrator guidance
-            in a trusted manner. </span></dd><dt class="SOE defined" id="OE.DATA_PROPER_USER">OE.DATA_PROPER_USER</dt><dd><span class="description">Device users are trained to securely use the device running the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and
+            in a trusted manner. </span></dd><dt class="SOE defined" id="OE.DATA_PROPER_USER">OE.DATA_PROPER_USER</dt><dd><span class="description">Device users are trained to securely use the device running the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent and
             apply all guidance in a trusted manner. </span></dd><dt class="SOE defined" id="OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</dt><dd><span class="description">The enterprise IT infrastructure provides security for a network that is
             available to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and the device on which it runs that prevents unauthorized
-            access. </span></dd><dt class="SOE defined" id="OE.DEVICE_PLATFORM">OE.DEVICE_PLATFORM</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent relies upon the trusted platform
+            access. </span></dd><dt class="SOE defined" id="OE.DEVICE_PLATFORM">OE.DEVICE_PLATFORM</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent relies upon the trusted platform
             and hardware to provide policy enforcement as well as cryptographic services and data
             protection. The platform also provides trusted updates and software integrity
-            verification of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. </span></dd><dt class="SOE defined" id="OE.WIRELESS_NETWORK">OE.WIRELESS_NETWORK</dt><dd><span class="description">A wireless network will be available to devices running the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. </span></dd></dl>
+            verification of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent. </span></dd><dt class="SOE defined" id="OE.WIRELESS_NETWORK">OE.WIRELESS_NETWORK</dt><dd><span class="description">A wireless network will be available to devices running the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent. </span></dd></dl>
     
     <h2 id="rationale" class="indexable,h2" data-level="2">4.2 Security Objectives Rationale</h2>   
 		This section describes how the assumptions and organizational 
@@ -1026,7 +1025,7 @@ Mobile Device
             
             
             
-            <div class="element"><div class="reqid" id="FCS_STG_EXT.4.1"><a href="#FCS_STG_EXT.4.1" class="abbr">FCS_STG_EXT.4.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall use the platform provided key storage for
+            <div class="element"><div class="reqid" id="FCS_STG_EXT.4.1"><a href="#FCS_STG_EXT.4.1" class="abbr">FCS_STG_EXT.4.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall use the platform provided key storage for
                 all persistent secret and private keys.<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">This requirement ensures that persistent secrets
@@ -1048,46 +1047,46 @@ Mobile Device
                 detects modification of the channel data.<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> The intent of this requirement is to protect the
-                communications channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent, post
+                communications channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent, post
                 enrollment. <a href="#FTP_TRP.1/MDFENROLL">FTP_TRP.1/MDFENROLL</a> is to protect the communications
-                channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent during enrollment.
+                channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent during enrollment.
                 <br/><br/> This requirement is to ensure that the transmission of any audit
                 logs, mobile device information data (software version, hardware model, and
                 application versions), and configuration data collected by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                Agent and sent from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                Server, when commanded, or at configurable intervals, is properly protected. This
-                trusted channel also protects any commands and policies sent by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. 
-                Either the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent or the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server is able to initiate the
+                agent and sent from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                server, when commanded, or at configurable intervals, is properly protected. This
+                trusted channel also protects any commands and policies sent by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent. 
+                Either the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent or the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server is able to initiate the
                 connection.
                 <br/><br/> 
-                This requirement is iterated from PP_MDF to indicate the protocols that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can use for a trusted
+                This requirement is iterated from PP_MDF to indicate the protocols that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent can use for a trusted
                 channel. The mobile device is required to perform the mandated cryptographic
                 protocols as in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> for communication channels mandated in
                 PP_MDF. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must select one of
                 <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr>, or <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> in order to establish and maintain a trusted channel between the
-                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server. Only <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr>,
+                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server. Only <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr>,
                 or <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> are acceptable for this trusted channel.<br/><br/> Since this
                 requirement is only for the case when the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr>
-                <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and in this case it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a
-                native part of the mobile operating system, it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the mobile device's implementation of the
+                <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and in this case it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent will be a
+                native part of the mobile operating system, it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent will use the mobile device's implementation of the
                 selected protocols. <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> (FCS_HTTPS_EXT.1) and <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> (FCS_TLSC_EXT.1) are already
                 mandatory for an <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. Protocol, RBG, certificate validation, algorithm, and similar services may
                 be met with platform provided services.
               </span></div></div></div>
             <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.2/MDFCHANNEL"><a href="#FTP_ITC_EXT.1.2/MDFCHANNEL" class="abbr">FTP_ITC_EXT.1.2/MDFCHANNEL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> <b>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                Server, and [<b>selection</b>: <span class="selectable-content" id="_s_4"><abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span>, <span class="selectable-content" id="_s_5">no other IT entities</span>]</b> to initiate communication via the trusted channel.<div class="appnote"><span class="note-header">Application
+                server, and [<b>selection</b>: <span class="selectable-content" id="_s_4"><abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> server</span>, <span class="selectable-content" id="_s_5">no other IT entities</span>]</b> to initiate communication via the trusted channel.<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> For all other use cases, the mobile device initiates the
-                communication; however, for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                Server may also initiate communication.</span></div></div></div>
+                communication; however, for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agents, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                server may also initiate communication.</span></div></div></div>
             <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.3/MDFCHANNEL"><a href="#FTP_ITC_EXT.1.3/MDFCHANNEL" class="abbr">FTP_ITC_EXT.1.3/MDFCHANNEL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall initiate communication via the trusted channel for <b>all
-                communication between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and [<b>selection</b>: <span class="selectable-content" id="_s_6">all communication between the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                    Agent</span>, <span class="selectable-content" id="_s_7">no other communication</span>]</b>.
+                communication between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server and [<b>selection</b>: <span class="selectable-content" id="_s_6">all communication between the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> server and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                    agent</span>, <span class="selectable-content" id="_s_7">no other communication</span>]</b>.
               <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> This element is iterated from PP_MDF;
                 it is expected that the mobile device will initiate the trusted channel between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                Agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server for administrative communication and may initiate other
+                agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server for administrative communication and may initiate other
                 trusted channels to other trusted IT entities for other uses.</span></div></div></div>
             
             
@@ -1098,7 +1097,7 @@ Mobile Device
             <div class="element"><div class="reqid" id="FTP_TRP.1.1/MDFENROLL"><a href="#FTP_TRP.1.1/MDFENROLL" class="abbr">FTP_TRP.1.1/MDFENROLL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="TRP_TLS_2"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client as defined in the <a href="https://www.niap-ccevs.org/static_html/protection-profile/439/-439-/index.html">Functional Package for Transport Layer Security (TLS),
         version 
         2.1</a>,</span></li><li style=""><span class="selectable-content" id="TRP_HTTPS_2"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span></li></ul>] </b>to provide a <b>trusted</b> communication path between itself and
-                <b>an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server</b>
+                <b>an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server</b>
                 that is logically distinct from other communication paths and
                 provides assured identification of its endpoints and protection of the communicated
                 data from 
@@ -1109,14 +1108,14 @@ Mobile Device
               <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">This requirement ensures that a trusted connection is used for initial enrollment to an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>;
-                security of ongoing <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server communications after enrollment is
+                security of ongoing <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server communications after enrollment is
                 implemented through <a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a>.
                 <br/><br/> The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author chooses the mechanism or
                 mechanisms supported by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The data passed in this trusted
                 communication channel are encrypted as defined by the protocol selected.
                 <br/><br/> Since this requirement is only for the case when the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on PP_MDF, and in this case it is expected that the
-                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a native part of the mobile operating system,
-                it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the mobile device's
+                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent will be a native part of the mobile operating system,
+                it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent will use the mobile device's
                 implementation of the selected protocols. <abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> (FCS_HTTPS_EXT.1) and <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>
                 (FCS_TLSC_EXT.1) are already mandatory for an <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
               </span></div></div></div>
@@ -1138,9 +1137,9 @@ Mobile Device
     <h3 id="modsfr-bpp-mdm" class="indexable" data-level="3">5.2.1  Modified SFRs </h3>
 		The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 
-		<h4 id="@id" class="indexable" data-level="4">5.2.1.1 Class FPT: Protection of the TSF</h4><div class="comp" id="@id"><h4>FPT_ITT.1/INTRA_XFER_AGENT: Internal TOE TSF Data Transfer (MDM Agent)</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires that communications between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent portions of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> are secured in the manner specified by FPT_ITT.1/INTRA_XFER_AGENT in PP_MDM. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not require that this channel be established in a specific manner beyond this function using one of the methods specified in PP_MDM; a registration channel over an untrusted network, a registration channel over an environmentally protected network, or registration without the use of a registration channel is permitted. Depending on the method used, the appropriate PP_MDM <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> claims must be made.</span></div><h4 id="@id" class="indexable" data-level="4">5.2.1.2 Class FTP: Trusted Path/Channels</h4><div class="comp" id="@id"><h4>FTP_ITC_EXT.1: Trusted Channel</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to select that an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is internal to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary includes both 
-              an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent by definition when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed. As noted above, the fact that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> includes both <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server
-              and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent components means that FPT_ITT.1/INTRA_XFER_AGENT from PP_MDM must also be claimed, as this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the channel used for secure
+		<h4 id="@id" class="indexable" data-level="4">5.2.1.1 Class FPT: Protection of the TSF</h4><div class="comp" id="@id"><h4>FPT_ITT.1/INTRA_XFER_AGENT: Internal TOE TSF Data Transfer (MDM Agent)</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires that communications between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent portions of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> are secured in the manner specified by FPT_ITT.1/INTRA_XFER_AGENT in PP_MDM. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not require that this channel be established in a specific manner beyond this function using one of the methods specified in PP_MDM; a registration channel over an untrusted network, a registration channel over an environmentally protected network, or registration without the use of a registration channel is permitted. Depending on the method used, the appropriate PP_MDM <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> claims must be made.</span></div><h4 id="@id" class="indexable" data-level="4">5.2.1.2 Class FTP: Trusted Path/Channels</h4><div class="comp" id="@id"><h4>FTP_ITC_EXT.1: Trusted Channel</h4><span class="description">This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to select that an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent is internal to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary includes both 
+              an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent by definition when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed. As noted above, the fact that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> includes both <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server
+              and <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent components means that FPT_ITT.1/INTRA_XFER_AGENT from PP_MDM must also be claimed, as this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the channel used for secure
               communications between these two components.</span></div><h3 id="addsfr-bpp-mdm" class="indexable" data-level="3">5.2.2  Additional SFRs</h3>
       This section defines additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that must be added to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary in order to implement
 	  the functionality in any <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> where the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is 
@@ -1156,7 +1155,7 @@ Mobile Device
           <div class="comp" id="FCS_STG_EXT.1/MDMKEYS"><h4>FCS_STG_EXT.1/MDMKEYS Cryptographic Key Storage</h4>
             
             
-            <div class="element"><div class="reqid" id="FCS_STG_EXT.1.1/MDMKEYS"><a href="#FCS_STG_EXT.1.1/MDMKEYS" class="abbr">FCS_STG_EXT.1.1/MDMKEYS</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent portion of the</b> <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<i>platform-provided key storage</i>] for all persistent
+            <div class="element"><div class="reqid" id="FCS_STG_EXT.1.1/MDMKEYS"><a href="#FCS_STG_EXT.1.1/MDMKEYS" class="abbr">FCS_STG_EXT.1.1/MDMKEYS</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent portion of the</b> <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall use [<i>platform-provided key storage</i>] for all persistent
                 secret and private keys.<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> This requirement ensures that persistent secrets
@@ -1182,11 +1181,11 @@ Operating System
 
 		<h4 id="@id" class="indexable" data-level="4">5.3.1.1 Class FCS: Cryptographic Suport</h4><div class="comp" id="@id"><h4>FCS_STO_EXT.1: Storage of Sensitive Data</h4><span class="description">
               <p>
-              There is no change to this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> from the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> beyond ensuring that it also applies to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+              There is no change to this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> from the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> beyond ensuring that it also applies to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
               </p>
               The text of the requirement is replaced with:<br/><br/>
               
-             FCS_STO_EXT.1.1 The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> shall implement functionality to encrypt sensitive data <b>including any data used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent functionality</b> stored in non-volatile storage and provide interfaces to applications to invoke this functionality.
+             FCS_STO_EXT.1.1 The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> shall implement functionality to encrypt sensitive data <b>including any data used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent functionality</b> stored in non-volatile storage and provide interfaces to applications to invoke this functionality.
               
             </span></div><h3 id="addsfr-bpp-gpos" class="indexable" data-level="3">5.3.2  Additional SFRs</h3>
       This section defines additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that must be added to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary in order to implement
@@ -1211,36 +1210,36 @@ Operating System
         version 
         2.1</a> as a [<i>client</i>],</span></li><li style=""><span class="selectable-content" id="_s_12"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span></li></ul>]
                 to provide a trusted communication channel between itself and authorized IT
-                entities supporting the following capabilities: [<i>[<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server communications, 
-                  [<b>selection</b>: <span class="selectable-content" id="_s_13"><abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server communications</span>, <span class="selectable-content" id="_s_14">no other communications</span>]]</i>]
+                entities supporting the following capabilities: [<i>[<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server communications, 
+                  [<b>selection</b>: <span class="selectable-content" id="_s_13"><abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> server communications</span>, <span class="selectable-content" id="_s_14">no other communications</span>]]</i>]
                 that is logically distinct from other communication channels and provides
                 assured identification of its end points and protection of the channel data from
                 disclosure and detection of modification of the channel data.
               <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> The intent of this requirement is to protect the
-                communications channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and Agent, post
+                communications channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server and agent, post
                 enrollment. <a href="#FTP_TRP.1/OSENROLL">FTP_TRP.1/OSENROLL</a> is to protect the communications
-                channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and Agent during enrollment.
+                channel between <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server and agent during enrollment.
                 <br/><br/> 
                 This requirement is to ensure that the transmission of any audit
                 logs, system data (hardware, software, or application), and configuration data collected by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                Agent and sent from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                Server, when commanded, or at configurable intervals, is properly protected. This
-                trusted channel also protects any commands and policies sent by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. 
-                Either the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent or the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server is able to initiate the
+                agent and sent from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                server, when commanded, or at configurable intervals, is properly protected. This
+                trusted channel also protects any commands and policies sent by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent. 
+                Either the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent or the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server is able to initiate the
                 connection.
                 <br/><br/> 
-                This requirement is iterated from PP_GPOS to indicate the protocols that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can use for a trusted
+                This requirement is iterated from PP_GPOS to indicate the protocols that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent can use for a trusted
                 channel. The operating system is required to perform the mandated cryptographic
                 protocols as in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> for communication channels mandated in
                 PP_GPOS. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must select one of
                 <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> in order to establish and maintain a trusted channel between the
-                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server. Only <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> are acceptable for this trusted channel.<br/><br/> 
+                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server. Only <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr> are acceptable for this trusted channel.<br/><br/> 
                 Since this
                 requirement is only for the case when the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>
-                <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and in this case it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a
-                native part of the operating system, it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the operating system's implementation of the
+                <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, and in this case it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent will be a
+                native part of the operating system, it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent will use the operating system's implementation of the
                 selected protocols. Protocol, RBG, certificate validation, algorithm, and similar services may
                 be met with platform provided services.
               </span></div></div></div>
@@ -1250,7 +1249,7 @@ Operating System
           </div>
           <div class="comp" id="FTP_TRP.1/OSENROLL"><h4>FTP_TRP.1/OSENROLL Trusted Path (for Enrollment)</h4>
             
-            <div class="element"><div class="reqid" id="FTP_TRP.1.1/OSENROLL"><a href="#FTP_TRP.1.1/OSENROLL" class="abbr">FTP_TRP.1.1/OSENROLL</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></b> shall provide a communication path between itself and <b>a</b> [<i>remote</i>] <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server</b> that is 
+            <div class="element"><div class="reqid" id="FTP_TRP.1.1/OSENROLL"><a href="#FTP_TRP.1.1/OSENROLL" class="abbr">FTP_TRP.1.1/OSENROLL</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></b> shall provide a communication path between itself and <b>a</b> [<i>remote</i>] <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server</b> that is 
                 logically distinct from other communication paths
                 and provides assured identification of its endpoints and protection of the
                 communicated data from [<i>modification, disclosure</i>].
@@ -1261,11 +1260,11 @@ Operating System
               <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">This requirement ensures that a trusted connection is used for initial enrollment to an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>;
-                security of ongoing <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server communications after enrollment is
+                security of ongoing <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server communications after enrollment is
                 implemented through <a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a>.
                 <br/><br/> Since this requirement is only for the case when the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> builds on PP_GPOS, and in this case it is expected that the
-                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will be a native part of the operating system,
-                it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the operating system's
+                  <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent will be a native part of the operating system,
+                it is expected that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent will use the operating system's
                 implementation of a trusted protocol defined in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> FTP_ITC_EXT.1 for this trusted path.
               </span></div></div></div>
             
@@ -1286,7 +1285,7 @@ Operating System
           if the incorporating <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_cPP">cPP</a></abbr>, or <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> supports audit event reporting through FAU_GEN.1,
           and if all other criteria in the incorporating <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are met.
         </p>
-        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-man-audit" data-counter-type="ct-Table" id="at-man-audit">Table <span class="counter">5</span></span>: Auditable Events for Mandatory Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FAU_ALT_EXT.2"><td rowspan="2"><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_ALT_EXT.2#"><td></td></tr><tr data-sortkey="FAU_ALT_EXT.2.7"><td>Success or failure of sending alert.</td><td>No additional information.</td></tr><tr data-sortkey="FAU_GEN.1/AGENT"><td rowspan="2"><a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_GEN.1/AGENT#"><td></td></tr><tr data-sortkey="FAU_GEN.1/AGENT.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FAU_SEL.1/AGENT"><td rowspan="2"><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_SEL.1/AGENT#"><td></td></tr><tr data-sortkey="FAU_SEL.1/AGENT.2"><td>All modifications to the audit configuration that occur while the audit collection functions are operating.</td><td>No additional information.</td></tr><tr data-sortkey="FIA_ENR_EXT.2"><td rowspan="2"><a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_ENR_EXT.2#"><td></td></tr><tr data-sortkey="FIA_ENR_EXT.2.6"><td>Enrollment in management.</td><td>Reference identifier of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.</td></tr><tr data-sortkey="FMT_POL_EXT.2"><td rowspan="2"><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_POL_EXT.2#"><td></td></tr><tr data-sortkey="FMT_POL_EXT.2.7"><td>Failure of policy validation.</td><td>Reason for failure of validation.</td></tr><tr data-sortkey="FMT_SMF_EXT.4"><td rowspan="2"><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_SMF_EXT.4#"><td></td></tr><tr data-sortkey="FMT_SMF_EXT.4.7"><td>Outcome (success or failure) of function.</td><td>No additional information.</td></tr><tr data-sortkey="FMT_UNR_EXT.1"><td rowspan="2"><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_UNR_EXT.1#"><td></td></tr><tr data-sortkey="FMT_UNR_EXT.1.6"><td><b>[selection: </b><i>Attempt to unenroll, None</i><b>]</b></td><td>No additional information</td></tr></table>
+        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-man-audit" data-counter-type="ct-Table" id="at-man-audit">Table <span class="counter">5</span></span>: Auditable Events for Mandatory Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FAU_ALT_EXT.2"><td rowspan="2"><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_ALT_EXT.2#"><td></td></tr><tr data-sortkey="FAU_ALT_EXT.2.7"><td>Success or failure of sending alert.</td><td>No additional information.</td></tr><tr data-sortkey="FAU_GEN.1/AGENT"><td rowspan="2"><a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_GEN.1/AGENT#"><td></td></tr><tr data-sortkey="FAU_GEN.1/AGENT.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FAU_SEL.1/AGENT"><td rowspan="2"><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_SEL.1/AGENT#"><td></td></tr><tr data-sortkey="FAU_SEL.1/AGENT.2"><td>All modifications to the audit configuration that occur while the audit collection functions are operating.</td><td>No additional information.</td></tr><tr data-sortkey="FIA_ENR_EXT.2"><td rowspan="2"><a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_ENR_EXT.2#"><td></td></tr><tr data-sortkey="FIA_ENR_EXT.2.6"><td>Enrollment in management.</td><td>Reference identifier of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server.</td></tr><tr data-sortkey="FMT_POL_EXT.2"><td rowspan="2"><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_POL_EXT.2#"><td></td></tr><tr data-sortkey="FMT_POL_EXT.2.7"><td>Failure of policy validation.</td><td>Reason for failure of validation.</td></tr><tr data-sortkey="FMT_SMF_EXT.4"><td rowspan="2"><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_SMF_EXT.4#"><td></td></tr><tr data-sortkey="FMT_SMF_EXT.4.7"><td>Outcome (success or failure) of function.</td><td>No additional information.</td></tr><tr data-sortkey="FMT_UNR_EXT.1"><td rowspan="2"><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_UNR_EXT.1#"><td></td></tr><tr data-sortkey="FMT_UNR_EXT.1.6"><td><b>[selection: </b><i>Attempt to unenroll, None</i><b>]</b></td><td>No additional information</td></tr></table>
       
       
       <h3 id="man_fau" class="indexable" data-level="3">5.4.2 Class FAU: Security Audit</h3>
@@ -1297,12 +1296,12 @@ Operating System
           
           
           
-          <div class="element"><div class="reqid" id="FAU_ALT_EXT.2.1"><a href="#FAU_ALT_EXT.2.1" class="abbr">FAU_ALT_EXT.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall provide an alert via the trusted channel to
-              the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server in the event of any of the following audit events: <ul>
+          <div class="element"><div class="reqid" id="FAU_ALT_EXT.2.1"><a href="#FAU_ALT_EXT.2.1" class="abbr">FAU_ALT_EXT.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall provide an alert via the trusted channel to
+              the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server in the event of any of the following audit events: <ul>
                 <li>successful application of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policies,</li>
                 <li>
                   [<b>selection</b>: <span class="selectable-content" id="_s_17">receiving</span>, <span class="selectable-content" id="_s_18">generating</span>] periodic reachability events, </li>
-                <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="change-in-enrollment-state">change in enrollment state</span></li><li style=""><span class="selectable-content" id="_s_20">failure to install an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_21">failure to update an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_22">[<b>assignment</b>: 
+                <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="change-in-enrollment-state">change in enrollment state</span></li><li style=""><span class="selectable-content" id="_s_20">failure to install an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> server</span></li><li style=""><span class="selectable-content" id="_s_21">failure to update an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> server</span></li><li style=""><span class="selectable-content" id="_s_22">[<b>assignment</b>: 
      <span class="assignable-content">other events</span>]</span></li><li style=""><span class="selectable-content" id="_s_23">no other events</span></li></ul>].</li>
               </ul>
             <div class="appnote"><span class="note-header">Application
@@ -1313,22 +1312,22 @@ Operating System
               “Alert” in this requirement could be as simple as an audit record or
               a notification. If any prior alerts exist in the queue, per <a href="#FAU_ALT_EXT.2.2">FAU_ALT_EXT.2.2</a>, those
               alerts must be sent when the trusted channel is available.<br/><br/> This
-              requirement is to ensure that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent must notify the 
-                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server whenever one of the events listed above occurs. Lack of
+              requirement is to ensure that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent must notify the 
+                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server whenever one of the events listed above occurs. Lack of
               receipt of a successful policy installation indicates the failure of the policy
               installation.<br/><br/> The periodic reachability events ensure that either
-              the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent responds to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server polls to
-              determine device network reachability, or the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can be
-              configured to regularly notify the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server that it is reachable. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>
+              the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent responds to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server polls to
+              determine device network reachability, or the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent can be
+              configured to regularly notify the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server that it is reachable. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>
               author must select “receiving” in the first case and “generating” in the second.
-              The corresponding requirement for the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server is FAU_NET_EXT.1 in
+              The corresponding requirement for the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server is FAU_NET_EXT.1 in
               the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
               <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.<br/><br/> The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must either
               assign further events or select the “no other events” option. Note that alerts may
-              take time to reach the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server, or not arrive, due to poor
+              take time to reach the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server, or not arrive, due to poor
               connectivity. <br/><br/>
             </span></div></div></div>
-          <div class="element"><div class="reqid" id="FAU_ALT_EXT.2.2"><a href="#FAU_ALT_EXT.2.2" class="abbr">FAU_ALT_EXT.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall queue alerts if the trusted channel is not available.<div class="appnote"><span class="note-header">Application
+          <div class="element"><div class="reqid" id="FAU_ALT_EXT.2.2"><a href="#FAU_ALT_EXT.2.2" class="abbr">FAU_ALT_EXT.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall queue alerts if the trusted channel is not available.<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">If the trusted channel is not available, alerts must be queued. When the trusted channel becomes available, the queued alerts must be sent.<br/><br/>
             </span></div></div></div>
@@ -1348,14 +1347,14 @@ Operating System
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> This requirement outlines the information to be included in
-              the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent’s audit data. For each claimed <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, any corresponding auditable events must be claimed.
+              the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent’s audit data. For each claimed <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, any corresponding auditable events must be claimed.
               The auditable events are included in different tables because <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> depend on the claimed Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> or supported <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implementation;
               the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author selects all tables that contain an <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> claims.<br/><br/>
               If “<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policy updated” is selected, it must indicate that an update to the policy occurred.
               The event record need not contain the differences between the prior policy
               and the new policy; optionally, the specific changes to policy that were included in
               that update may be detailed. All updates to policy should trigger this alert.
-              Modifications commanded by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server are those commands listed
+              Modifications commanded by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server are those commands listed
               in FMT_SMF.1.1.<br/><br/> The selection for the <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a> auditable event
               in the Auditable Events table corresponds to the selection in <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>. If “apply
               remediation actions” is selected in <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>, then the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>
@@ -1363,7 +1362,7 @@ Operating System
               <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>; otherwise, "none" is selected.
               
             </span></div></div></div>
-          <div class="element"><div class="reqid" id="FAU_GEN.1.2/AGENT"><a href="#FAU_GEN.1.2/AGENT" class="abbr">FAU_GEN.1.2/AGENT</a></div><div class="reqdesc">The [<b>selection</b>: <span class="selectable-content" id="_s_31"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_32"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] shall record within the <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent</b> audit data at
+          <div class="element"><div class="reqid" id="FAU_GEN.1.2/AGENT"><a href="#FAU_GEN.1.2/AGENT" class="abbr">FAU_GEN.1.2/AGENT</a></div><div class="reqdesc">The [<b>selection</b>: <span class="selectable-content" id="_s_31"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_32"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform</span>] shall record within the <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent</b> audit data at
               least the following information: <ul>
                 <li>Date and time of the event</li>
                 <li>Type of event</li>
@@ -1379,8 +1378,8 @@ Operating System
       Note:
     </span><span class="note">All audits must contain at least the information mentioned in
               <a href="#FAU_GEN.1.2/AGENT">FAU_GEN.1.2/AGENT</a>, but may contain more information which can be assigned. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must identify which information
-              in the given audit data that is populated by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and 
-              which is populated by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent’s platform.<br/><br/>
+              in the given audit data that is populated by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent and 
+              which is populated by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent’s platform.<br/><br/>
             </span></div></div></div>
           
         </div>
@@ -1397,7 +1396,7 @@ Operating System
     </span><span class="note">The intent of this requirement is to identify all criteria that
               can be selected to trigger an audit event. For the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author, the
               assignment is used to list any additional criteria that may be used but are not captured by the selection. This selection may be
-              configured by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.<br/><br/>
+              configured by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server.<br/><br/>
             </span></div></div></div>
           
         </div>
@@ -1410,15 +1409,15 @@ Operating System
           
           
           
-          <div class="element"><div class="reqid" id="FIA_ENR_EXT.2.1"><a href="#FIA_ENR_EXT.2.1" class="abbr">FIA_ENR_EXT.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall record the reference identifier of the
-                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server during the enrollment process. <div class="appnote"><span class="note-header">Application
+          <div class="element"><div class="reqid" id="FIA_ENR_EXT.2.1"><a href="#FIA_ENR_EXT.2.1" class="abbr">FIA_ENR_EXT.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall record the reference identifier of the
+                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server during the enrollment process. <div class="appnote"><span class="note-header">Application
       Note:
-    </span><span class="note">The reference identifier of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server
+    </span><span class="note">The reference identifier of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server
               may be the Distinguished Name, Domain Name, or the IP address of the 
-                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server. This requirement allows the specification of the information
+                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server. This requirement allows the specification of the information
               to be to be used to establish a network connection and the reference identifier for
-              authenticating the trusted channel between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and 
-                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent, as defined in PP_MDM.<br/><br/>
+              authenticating the trusted channel between the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server and 
+                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent, as defined in PP_MDM.<br/><br/>
             </span></div></div></div>
           
         </div>
@@ -1431,9 +1430,9 @@ Operating System
           
           
           
-          <div class="element"><div class="reqid" id="FMT_POL_EXT.2.1"><a href="#FMT_POL_EXT.2.1" class="abbr">FMT_POL_EXT.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall only accept policies and policy updates
+          <div class="element"><div class="reqid" id="FMT_POL_EXT.2.1"><a href="#FMT_POL_EXT.2.1" class="abbr">FMT_POL_EXT.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall only accept policies and policy updates
               that are digitally signed by a private key that has been authorized for policy updates
-              by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server. <div class="appnote"><span class="note-header">Application
+              by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server. <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">The intent of this requirement is to cryptographically tie the
               policies to the enterprise that mandated the policy, not to protect the policies in
@@ -1444,9 +1443,9 @@ Operating System
               users who connect to multiple enterprises.<br/><br/> Policies must be
               digitally signed by the enterprise using the algorithms in
               FCS_COP.1/SIGN_ALG in PP_MDM.<br/><br/>
-              The signing private key is associated with a certificate or raw public key used by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to verify the signature on the policy.
+              The signing private key is associated with a certificate or raw public key used by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to verify the signature on the policy.
             </span></div></div></div>
-          <div class="element"><div class="reqid" id="FMT_POL_EXT.2.2"><a href="#FMT_POL_EXT.2.2" class="abbr">FMT_POL_EXT.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall not install policies if the signature check fails.</div></div>
+          <div class="element"><div class="reqid" id="FMT_POL_EXT.2.2"><a href="#FMT_POL_EXT.2.2" class="abbr">FMT_POL_EXT.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall not install policies if the signature check fails.</div></div>
           
         </div>
         
@@ -1457,10 +1456,10 @@ Operating System
           
           
           
-          <div class="element"><div class="reqid" id="FMT_SMF_EXT.4.1"><a href="#FMT_SMF_EXT.4.1" class="abbr">FMT_SMF_EXT.4.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall be capable of interacting with the platform
+          <div class="element"><div class="reqid" id="FMT_SMF_EXT.4.1"><a href="#FMT_SMF_EXT.4.1" class="abbr">FMT_SMF_EXT.4.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall be capable of interacting with the platform
               to perform the following functions: <ul>
                 <li>[<b>selection</b>: <span class="selectable-content" id="_s_40">import the certificates to be used for authentication of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                    Agent communications</span>, <span class="selectable-content" id="_s_41">import the server public key</span>],</li>
+                    agent communications</span>, <span class="selectable-content" id="_s_41">import the server public key</span>],</li>
                 <li>[<b>selection</b>: <span class="selectable-content" id="_s_42">administrator-provided management functions in PP_MDF</span>, <span class="selectable-content" id="_s_43">administrator-provided device management functions in PP_MDM</span>, <span class="selectable-content" id="_s_44">administrator-provided device management functions in PP_GPOS</span>]</li>
                 <li>[<b>selection</b>: <span class="selectable-content" id="_s_45">[<b>assignment</b>: 
      <span class="assignable-content">additional functions</span>]</span>, <span class="selectable-content" id="_s_46"> no additional functions</span>].</li>
@@ -1468,8 +1467,8 @@ Operating System
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> This requirement captures all the configuration functionality
-              in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to configure the underlying <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> with the
-              configuration policies sent from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. The
+              in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to configure the underlying <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> with the
+              configuration policies sent from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent. The
                 <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author selects the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> (PP_MDF, PP_MDM, or PP_GPOS) as the source of the management functions.<br/><br/> The
               administrator-provided management functions in PP_MDF are specified
               in the "Admin Only" column of Table 7 in PP_MDF and in FPT_TUD_EXT.1 (for version
@@ -1477,19 +1476,18 @@ Operating System
               <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are specified in FMT_SMF.1/SERVER_CONF_AGENT; the functions in the selection
               of FMT_SMF.1/SERVER_CONF_AGENT in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
               <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are required to correspond to the functions available on the
-              platforms supported by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. 
+              platforms supported by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent. 
               The administrator-provided management functions in PP_GPOS are specified in FMT_SMF_EXT.1.
               <br/><br/> The 
                 <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author can add more commands and configuration policies by completing
               the assignment statement; the device must support these additional commands or
-              configuration policies.<br/><br/> The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent must configure the platform based
-              on the commands and configuration policies received from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-              Server. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must not claim any functionality not provided
+              configuration policies.<br/><br/> The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent must configure the platform based
+              on the commands and configuration policies received from the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must not claim any functionality not provided
               by the supported device. All selections and assignments performed by the
                 <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author in this requirement should match the selections and
               assignments of the validated <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/>
             </span></div></div></div>
-          <div class="element"><div class="reqid" id="FMT_SMF_EXT.4.2"><a href="#FMT_SMF_EXT.4.2" class="abbr">FMT_SMF_EXT.4.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall be capable of performing the following
+          <div class="element"><div class="reqid" id="FMT_SMF_EXT.4.2"><a href="#FMT_SMF_EXT.4.2" class="abbr">FMT_SMF_EXT.4.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall be capable of performing the following
               functions: <ul>
                 <li>enroll in management</li>
                 <li>configure whether users can unenroll from management</li>
@@ -1499,16 +1497,15 @@ Operating System
               </ul><div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> This requirement captures all of the configuration in the
-                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent for configuration of itself.<br/><br/> If the
-                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is part of a <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr>, enrollment is a single
-              function both of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent and of the device
-              (<a href="#FMT_SMF_EXT.4.1">FMT_SMF_EXT.4.1</a>).<br/><br/> If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is an
+                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent for configuration of itself.<br/><br/> If the
+                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent is part of a <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr>, enrollment is a single
+              function both of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent and of the device
+              (<a href="#FMT_SMF_EXT.4.1">FMT_SMF_EXT.4.1</a>).<br/><br/> If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent is an
               application developed separately from a <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-              Agent performs the function “enroll in management” by registering itself to the <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> as an administrator.
-              The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent itself is enrolled in management by configuring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-              Server to which the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent answers.<br/><br/> If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-              Agent does not support unenrollment prevention, remediation actions should be applied
-              upon unenrollment (per <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>).<br/><br/> If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent generates
+              agent performs the function “enroll in management” by registering itself to the <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> as an administrator.
+              The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent itself is enrolled in management by configuring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server to which the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent answers.<br/><br/> If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+              agent does not support unenrollment prevention, remediation actions should be applied
+              upon unenrollment (per <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>).<br/><br/> If the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent generates
               periodic reachability events in <a href="#FAU_ALT_EXT.2.1">FAU_ALT_EXT.2.1</a> and the periodicity of these events is
               configurable, “configure periodicity of reachability events” must be
               selected.<br/><br/>
@@ -1522,20 +1519,20 @@ Operating System
           
           
           
-          <div class="element"><div class="reqid" id="FMT_UNR_EXT.1.1"><a href="#FMT_UNR_EXT.1.1" class="abbr">FMT_UNR_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall provide a mechanism to enforce the
+          <div class="element"><div class="reqid" id="FMT_UNR_EXT.1.1"><a href="#FMT_UNR_EXT.1.1" class="abbr">FMT_UNR_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall provide a mechanism to enforce the
               following behavior upon an attempt to unenroll the device from management: [<b>selection</b>: <span class="selectable-content" id="prevent-unenrollment">prevent the unenrollment from occurring</span>, <span class="selectable-content" id="apply-remediation">apply remediation actions</span>].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">Unenrolling is the action of transitioning from the enrolled
               state to the unenrolled state. If preventing the user from unenrolling is
               configurable, administrators configure whether users are allowed to unenroll through
-              the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.<br/><br/> For those configurations where
+              the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server.<br/><br/> For those configurations where
               unenrollment is allowed, for example a <abbr class="dyn-abbr"><a href="#abbr_BYOD">BYOD</a></abbr> usage, PP_MDF describes remediation
               actions performed upon unenrollment, such as wiping enterprise data, in
               FMT_SMF_EXT.2.1. PP_GPOS does not explicitly describe the case of unenrollment but 
-              a <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> has interfaces that an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can invoke to perform 
-              the desired unenrollment functionality. The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is limited to those actions
-              supported by the device on which the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is operating. <br/><br/>
+              a <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> has interfaces that an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent can invoke to perform 
+              the desired unenrollment functionality. The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent is limited to those actions
+              supported by the device on which the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent is operating. <br/><br/>
             </span></div></div></div>
           
         </div>
@@ -1561,7 +1558,7 @@ Operating System
 	Consistency of TOE Type
       </h3> When this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend PP_MDF, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for
         the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a mobile device. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include the
-          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent application that runs on the mobile device.<h3 id="consecprob-bpp-mdf" class="indexable" data-level="3">6.1.2 
+          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent application that runs on the mobile device.<h3 id="consecprob-bpp-mdf" class="indexable" data-level="3">6.1.2 
 	Consistency of Security Problem Definition
       </h3><table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">7</span></span>: Consistency of Security Problem Definition (<abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th></tr><tr><td><a href="#T.INSECURE_MDM_COMMUNICATIONS">T.INSECURE_MDM_COMMUNICATIONS</a></td><td>This threat exploits network connectivity, consistent with T.NETWORK_EAVESDROP and T.NETWORK_ATTACK threats defined in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
@@ -1585,14 +1582,14 @@ Operating System
 		</h3><p><table><caption><span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">8</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (<abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#OE.DATA_PROPER_ADMIN">OE.DATA_PROPER_ADMIN</a></td><td> This objective extends the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>’s
         <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.CONFIG objective by expecting that <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administrators act appropriately when installing
-        or configuring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent.</td></tr><tr><td><a href="#OE.DATA_PROPER_USER">OE.DATA_PROPER_USER</a></td><td> This objective extends the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>’s
+        or configuring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent.</td></tr><tr><td><a href="#OE.DATA_PROPER_USER">OE.DATA_PROPER_USER</a></td><td> This objective extends the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>’s
         <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.NOTIFY and <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PRECAUTION objectives by setting reasonable expectations for user security
         behavior.</td></tr><tr><td><a href="#OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</a></td><td> This objective helps mitigate the T.NETWORK_EAVESDROP and T.NETWORK_ATTACK
         threats defined by the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by reducing the network exposure of the
         mobile device. This does not conflict with the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> because the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not set specific expectations for the level of security that the
         enterprise provides. However, all use cases from the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> set expectations
         that the mobile device is used for some enterprise purposes so it is reasonable to expect
-        the enterprise have security controls in place to protect these functions. </td></tr><tr><td><a href="#OE.DEVICE_PLATFORM">OE.DEVICE_PLATFORM</a></td><td> This objective is suitable because the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can reasonably expect the device it has been deployed on to be
+        the enterprise have security controls in place to protect these functions. </td></tr><tr><td><a href="#OE.DEVICE_PLATFORM">OE.DEVICE_PLATFORM</a></td><td> This objective is suitable because the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent can reasonably expect the device it has been deployed on to be
         secure.</td></tr><tr><td><a href="#OE.WIRELESS_NETWORK">OE.WIRELESS_NETWORK</a></td><td> This objective is suitable because while the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not define any availability metrics for wireless
         communications, the mobile device will always provide the ability to access a wireless
         network.</td></tr></table></p><h3 id="conreq-bpp-mdf" class="indexable" data-level="3">6.1.4 
@@ -1615,41 +1612,41 @@ Operating System
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
 			This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify any requirements when the
 			<abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the base.
-		  </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to use
-              functionality defined by the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in FCS_CKM_EXT.1. </td></tr><tr><td><a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a></td><td> The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> includes FTP_ITC_EXT.1 to define the secure protocols used for trusted channel communications. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to specify a subset of these protocols that may be used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent communications in particular. </td></tr><tr><td><a href="#FTP_TRP.1/MDFENROLL">FTP_TRP.1/MDFENROLL</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> uses the trusted channel protocols defined by the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in FTP_ITC_EXT.1 to facilitate a trusted path that the 
-              <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can use to enroll the mobile device it runs on into
+		  </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to use
+              functionality defined by the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in FCS_CKM_EXT.1. </td></tr><tr><td><a href="#FTP_ITC_EXT.1/MDFCHANNEL">FTP_ITC_EXT.1/MDFCHANNEL</a></td><td> The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> includes FTP_ITC_EXT.1 to define the secure protocols used for trusted channel communications. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to specify a subset of these protocols that may be used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent communications in particular. </td></tr><tr><td><a href="#FTP_TRP.1/MDFENROLL">FTP_TRP.1/MDFENROLL</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> uses the trusted channel protocols defined by the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in FTP_ITC_EXT.1 to facilitate a trusted path that the 
+              <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent can use to enroll the mobile device it runs on into
               management. Even though the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not define FTP_TRP.1, the
               requirement was given an iteration label for consistency with the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-              Server requirement of the same name. </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to use a
+              server requirement of the same name. </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to use a
         trusted channel defined by FTP_ITC_EXT.1 in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to transmit data
         about its own behavior to the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.</td></tr><tr><td><a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a></td><td> The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> includes FAU_GEN.1; this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to use the same audit mechanism to
-        generate audit data for the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent’s behavior. It may alternatively
+        generate audit data for the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent’s behavior. It may alternatively
         allow the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to generate its own audit trail, which does not impede the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> from enforcing
         its own security functionality.</td></tr><tr><td><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td> The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> includes FAU_SEL.1; this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to use the same audit mechanism to select
-        the auditable events to be generated by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. Note that the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not mandate this requirement so it is possible that only the
-          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may implement it. In this case, the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>
-        provides a selection for the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to implement its own mechanism to
-        perform this function rather than a platform-provided one.</td></tr><tr><td><a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to record data
+        the auditable events to be generated by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent. Note that the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not mandate this requirement so it is possible that only the
+          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may implement it. In this case, the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>
+        provides a selection for the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to implement its own mechanism to
+        perform this function rather than a platform-provided one.</td></tr><tr><td><a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to record data
         that it receives from the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>. It does not need to use any functionality
         defined in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to do this, and doing this does not prevent the
-        enforcement of any security requirements from the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. </td></tr><tr><td><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to use a
+        enforcement of any security requirements from the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. </td></tr><tr><td><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to use a
         digital signature algorithm to validate data that it receives from the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>. 
-        To do this, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the functionality defined
-        by the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in FCS_COP.1/SIGN.</td></tr><tr><td><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+        To do this, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent will use the functionality defined
+        by the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in FCS_COP.1/SIGN.</td></tr><tr><td><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent
         to interact with the mobile device to execute the management functions defined by
         FMT_MOF_EXT.1 in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> specifically
         indicates in FMT_MOF_EXT.1.2 that some management functions may be performed via
-        <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>.</td></tr><tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the functions performed by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent when unenrolled from an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>. The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines 
+        <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>.</td></tr><tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the functions performed by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent when unenrolled from an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>. The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines 
         unenrollment actions in FMT_SMF_EXT.2, and goes on to note
-        that these actions may be performed “perhaps via an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent,” so this is
+        that these actions may be performed “perhaps via an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent,” so this is
         expected behavior. </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements.
 	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Objective requirements.
-	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent
         to store generated audit data in the audit storage provided by the mobile device. The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines the capability for 
-        audit storage in FAU_STG.2.</td></tr><tr><td><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
-        to maintain information about its last successful connection with the environmental <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server 
+        audit storage in FAU_STG.2.</td></tr><tr><td><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent
+        to maintain information about its last successful connection with the environmental <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server 
         (i.e., the last successful invocation of the trusted channel for
         that interface, as defined in FTP_ITC_EXT.1 of the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>). It does not
         need to use any functionality defined in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to do this, and doing
@@ -1660,9 +1657,9 @@ Operating System
 	Consistency of TOE Type
       </h3> When this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
         <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still mobile device management. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is
-        simply extended to include the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents that reside on individual
+        simply extended to include the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agents that reside on individual
         MDs and support the management functionality that the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-        Server component implements.<h3 id="consecprob-bpp-mdm" class="indexable" data-level="3">6.2.2 
+        server component implements.<h3 id="consecprob-bpp-mdm" class="indexable" data-level="3">6.2.2 
 	Consistency of Security Problem Definition
       </h3><table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">10</span></span>: Consistency of Security Problem Definition (<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th></tr><tr><td><a href="#T.INSECURE_MDM_COMMUNICATIONS">T.INSECURE_MDM_COMMUNICATIONS</a></td><td>This threat exploits network connectivity, consistent with T.NETWORK_EAVESDROP and T.NETWORK_ATTACK threats defined in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
@@ -1676,20 +1673,20 @@ Operating System
         specialized network appliance. The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not make any assumptions about the environmental functionality that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> relies on, 
         so there is nothing in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> that would contradict it.</td></tr><tr><td><a href="#A.PROPER_ADMIN">A.PROPER_ADMIN</a></td><td>	
         The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines an <a href="#A.PROPER_ADMIN">A.PROPER_ADMIN</a> assumption that is identical to the one defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
-        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.</td></tr><tr><td><a href="#A.PROPER_USER">A.PROPER_USER</a></td><td>	
+        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server.</td></tr><tr><td><a href="#A.PROPER_USER">A.PROPER_USER</a></td><td>	
         The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines an <a href="#A.PROPER_USER">A.PROPER_USER</a> assumption that is identical to the one defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
-        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.</td></tr><tr><td><a href="#P.ACCOUNTABILITY">P.ACCOUNTABILITY</a></td><td>The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines a <a href="#P.ACCOUNTABILITY">P.ACCOUNTABILITY</a> OSP that is identical to the one defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
-        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.</td></tr><tr><td><a href="#P.ADMIN">P.ADMIN</a></td><td>The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines a <a href="#P.ADMIN">P.ADMIN</a> OSP that is identical to the one defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
-        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.</td></tr><tr><td><a href="#P.DEVICE_ENROLL">P.DEVICE_ENROLL</a></td><td>	
+        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server.</td></tr><tr><td><a href="#P.ACCOUNTABILITY">P.ACCOUNTABILITY</a></td><td>The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines a <a href="#P.ACCOUNTABILITY">P.ACCOUNTABILITY</a> OSP that is identical to the one defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
+        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server.</td></tr><tr><td><a href="#P.ADMIN">P.ADMIN</a></td><td>The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines a <a href="#P.ADMIN">P.ADMIN</a> OSP that is identical to the one defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
+        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server.</td></tr><tr><td><a href="#P.DEVICE_ENROLL">P.DEVICE_ENROLL</a></td><td>	
         The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines a <a href="#P.DEVICE_ENROLL">P.DEVICE_ENROLL</a> OSP that is identical to the one defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
-        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.</td></tr><tr><td><a href="#P.NOTIFY">P.NOTIFY</a></td><td>The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines a <a href="#P.NOTIFY">P.NOTIFY</a> OSP that is identical to the one defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
-        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server.</td></tr></table><h3 id="conobj-bpp-mdm" class="indexable" data-level="3">6.2.3 
+        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server.</td></tr><tr><td><a href="#P.NOTIFY">P.NOTIFY</a></td><td>The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines a <a href="#P.NOTIFY">P.NOTIFY</a> OSP that is identical to the one defined by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. 
+        The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> just extends it to the entire <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary rather than just the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server.</td></tr></table><h3 id="conobj-bpp-mdm" class="indexable" data-level="3">6.2.3 
 			Consistency of OE Objectives
 		</h3><p><table><caption><span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">11</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#OE.DATA_PROPER_ADMIN">OE.DATA_PROPER_ADMIN</a></td><td> PP_MDM contains an objective named <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_ADMIN with the same
         purpose. </td></tr><tr><td><a href="#OE.DATA_PROPER_USER">OE.DATA_PROPER_USER</a></td><td> PP_MDM contains an objective named <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_USER with the same
         purpose. </td></tr><tr><td><a href="#OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</a></td><td> PP_MDM contains this same objective with the same purpose. </td></tr><tr><td><a href="#OE.DEVICE_PLATFORM">OE.DEVICE_PLATFORM</a></td><td>PP_MDM environmental security objectives only relate to the security of the platform on which the 
-      <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is running. This objective extends the scope of the trusted platform to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent devices.</td></tr><tr><td><a href="#OE.WIRELESS_NETWORK">OE.WIRELESS_NETWORK</a></td><td>PP_MDM contains this same objective with the same purpose.</td></tr></table></p><h3 id="conreq-bpp-mdm" class="indexable" data-level="3">6.2.4 
+      <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is running. This objective extends the scope of the trusted platform to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent devices.</td></tr><tr><td><a href="#OE.WIRELESS_NETWORK">OE.WIRELESS_NETWORK</a></td><td>PP_MDM contains this same objective with the same purpose.</td></tr></table></p><h3 id="conreq-bpp-mdm" class="indexable" data-level="3">6.2.4 
 	Consistency of Requirements
       </h3>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
@@ -1706,46 +1703,46 @@ Operating System
       defined by the
       <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are as follows:
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">12</span></span>: Consistency of Requirements (<abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FPT_ITT.1/INTRA_XFER_AGENT</td><td>There is no modification to this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, but it is mandatory for a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because it must always be claimed when an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> includes an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent as part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td></tr><tr><td>FTP_ITC_EXT.1</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified in a way that accommodates an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent, which is part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary
+		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FPT_ITT.1/INTRA_XFER_AGENT</td><td>There is no modification to this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>, but it is mandatory for a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that conforms to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because it must always be claimed when an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> includes an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent as part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td></tr><tr><td>FTP_ITC_EXT.1</td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is modified in a way that accommodates an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent, which is part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary
               when this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is claimed.</td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FCS_STG_EXT.1/MDMKEYS">FCS_STG_EXT.1/MDMKEYS</a></td><td> The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to define a
               method of key storage. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates it to specify the use
-              of platform key storage for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents. </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> provides the alerts that are received by the 
-        <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server as per FAU_ALT_EXT.1 in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr><tr><td><a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to generate audit data of its
-        behavior. The mechanism by which it does this is not relevant to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server portion of
+              of platform key storage for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agents. </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> provides the alerts that are received by the 
+        <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server as per FAU_ALT_EXT.1 in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr><tr><td><a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to generate audit data of its
+        behavior. The mechanism by which it does this is not relevant to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server portion of
         the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> as they reside on different platforms.</td></tr><tr><td><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td> The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> includes FAU_SEL.1 as an optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>
         to limit the audit events that are generated by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>
-        adds another iteration that requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to include this
-        capability by default.</td></tr><tr><td><a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> provides information during <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent enrollment that is
-        required by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server to meet the FIA_ENR_EXT.1 requirement defined
+        adds another iteration that requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to include this
+        capability by default.</td></tr><tr><td><a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> provides information during <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent enrollment that is
+        required by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server to meet the FIA_ENR_EXT.1 requirement defined
         by the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr><tr><td><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td> The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> includes an <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> (FMT_POL_EXT.1) that
-        requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server to provide digitally signed policies and policy
-        updates to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. <a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a> completes this transaction by
-        requiring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to accept only signed policies and policy
-        updates.</td></tr><tr><td><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to interact
+        requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server to provide digitally signed policies and policy
+        updates to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent. <a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a> completes this transaction by
+        requiring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to accept only signed policies and policy
+        updates.</td></tr><tr><td><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to interact
         with the underlying <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> platform to enforce management functions that are
-        configured by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server (FMT_SMF.1/SERVER_CONF_AGENT in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>).</td></tr><tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to define its behavior upon
+        configured by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server (FMT_SMF.1/SERVER_CONF_AGENT in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>).</td></tr><tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to define its behavior upon
         unenrollment from management. Unenrollment from management is a management function that is
         specified in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements.
 	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Objective requirements.
-	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent
         to store generated audit data in the audit storage provided by the <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr>. This does
         not impact the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> since it resides on a different platform from the
-          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent. </td></tr><tr><td><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent. </td></tr><tr><td><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent
         to maintain information about its last successful connection with the environmental 
-          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server (i.e., the last successful invocation of the trusted channel for
+          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server (i.e., the last successful invocation of the trusted channel for
         that interface, as defined in FPT_ITT.1/INTRA_XFER_AGENT of the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>). It does not
         otherwise impact the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> since it describes behavior that occurs local
-        to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent during a period where it is not interacting with the
-          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server. </td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+        to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent during a period where it is not interacting with the
+          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server. </td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Selection-based requirements.
 	    </td></tr></tr></table><h2 id="conrat-bpp-gpos" class="indexable" data-level="2">6.3 
     Protection Profile for General Purpose Operating System</h2><h3 id="contoe-bpp-gpos" class="indexable" data-level="3">6.3.1 
 	Consistency of TOE Type
       </h3> When this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend PP_GPOS, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for
         the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include the
-          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent application that runs on that <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> platform.<h3 id="consecprob-bpp-gpos" class="indexable" data-level="3">6.3.2 
+          <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent application that runs on that <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> platform.<h3 id="consecprob-bpp-gpos" class="indexable" data-level="3">6.3.2 
 	Consistency of Security Problem Definition
       </h3><table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">13</span></span>: Consistency of Security Problem Definition (<abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th></tr><tr><td><a href="#T.INSECURE_MDM_COMMUNICATIONS">T.INSECURE_MDM_COMMUNICATIONS</a></td><td>This threat exploits network connectivity, consistent with T.NETWORK_EAVESDROP and T.NETWORK_ATTACK threats defined in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
@@ -1764,7 +1761,7 @@ Operating System
 		</h3><p><table><caption><span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">14</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (<abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#OE.DATA_PROPER_ADMIN">OE.DATA_PROPER_ADMIN</a></td><td>This objective extends the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>’s
         <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_ADMIN objective by expecting that <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administrators act appropriately when installing
-        or configuring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent.</td></tr><tr><td><a href="#OE.DATA_PROPER_USER">OE.DATA_PROPER_USER</a></td><td> This objective extends the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>’s
+        or configuring the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent.</td></tr><tr><td><a href="#OE.DATA_PROPER_USER">OE.DATA_PROPER_USER</a></td><td> This objective extends the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>’s
         <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PROPER_USER objective by setting reasonable expectations for user security
         behavior.</td></tr><tr><td><a href="#OE.IT_ENTERPRISE">OE.IT_ENTERPRISE</a></td><td> This objective helps mitigate the T.NETWORK_EAVESDROP and T.NETWORK_ATTACK
         threats defined by the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> by reducing the network exposure of the
@@ -1772,7 +1769,7 @@ Operating System
         enterprise provides. However, all use cases from the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> set expectations
         that the operating system is used for some enterprise purposes so it is reasonable to expect
         the enterprise have security controls in place to protect these functions. </td></tr><tr><td><a href="#OE.DEVICE_PLATFORM">OE.DEVICE_PLATFORM</a></td><td>This extends the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.PLATFORM objective from the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to cover that the underlying platform of the
-        <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is trusted.</td></tr><tr><td><a href="#OE.WIRELESS_NETWORK">OE.WIRELESS_NETWORK</a></td><td> This objective is suitable because while the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not define any availability metrics for wireless
+        <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent is trusted.</td></tr><tr><td><a href="#OE.WIRELESS_NETWORK">OE.WIRELESS_NETWORK</a></td><td> This objective is suitable because while the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not define any availability metrics for wireless
         communications, it can be extended by a <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for WLAN client capabilities, so support for wireless communications is a reasonable
         expectation for a <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr>.</td></tr></table></p><h3 id="conreq-bpp-gpos" class="indexable" data-level="3">6.3.4 
 	Consistency of Requirements
@@ -1793,34 +1790,34 @@ Operating System
       <table><caption><span class="ctr" data-myid="t-con-reqs" data-counter-type="ct-Table" id="t-con-reqs">Table <span class="counter">15</span></span>: Consistency of Requirements (<abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Requirement</th><th>Consistency Rationale</th></tr><tr><th colspan="2"> Modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td>FCS_STO_EXT.1</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not change this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>; it only notes that the concept of "sensitive data" may be expanded
               to include any sensitive data created or used by the portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> described by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td><a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a></td><td> The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> includes FTP_ITC_EXT.1 to define the secure protocols used for trusted channel communications. 
-              This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to specify a subset of these protocols that may be used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent communications in particular. </td></tr><tr><td><a href="#FTP_TRP.1/OSENROLL">FTP_TRP.1/OSENROLL</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> uses the trusted channel protocols defined by the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in FTP_ITC_EXT.1 to facilitate a trusted path that the 
-              <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent can use to enroll the operating system it runs on into
+              This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to specify a subset of these protocols that may be used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent communications in particular. </td></tr><tr><td><a href="#FTP_TRP.1/OSENROLL">FTP_TRP.1/OSENROLL</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> uses the trusted channel protocols defined by the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in FTP_ITC_EXT.1 to facilitate a trusted path that the 
+              <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent can use to enroll the operating system it runs on into
               management. PP_GPOS already defines an iteration of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for trusted administration, so this
-              <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is iterated to illustrate that this trusted path is used for a distinct function.</td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to use a
+              <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is iterated to illustrate that this trusted path is used for a distinct function.</td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to use a
         trusted channel defined by FTP_ITC_EXT.1 in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to transmit data
         about its own behavior to the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.</td></tr><tr><td><a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a></td><td>The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines FAU_GEN.1; this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> iterates the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> to use the same audit mechanism to
-        generate audit data for the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent’s behavior. It may alternatively
+        generate audit data for the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent’s behavior. It may alternatively
         allow the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to generate its own audit trail, which does not impede the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> from enforcing
         its own security functionality.</td></tr><tr><td><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to have the ability to limit the auditable events it generates
-        for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent functionality. Since this applies exclusively to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent functionality, it does not conflict with the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> events
-        which must always be audited.</td></tr><tr><td><a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to record data
+        for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent functionality. Since this applies exclusively to <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent functionality, it does not conflict with the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> events
+        which must always be audited.</td></tr><tr><td><a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to record data
         that it receives from the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>. It does not need to use any functionality
         defined in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to do this, and doing this does not prevent the
-        enforcement of any security requirements from the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. </td></tr><tr><td><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent to use a
+        enforcement of any security requirements from the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. </td></tr><tr><td><a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent to use a
         digital signature algorithm to validate data that it receives from the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>. 
-        To do this, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent will use the functionality defined
-        by the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in FCS_COP.1/SIGN.</td></tr><tr><td><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+        To do this, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent will use the functionality defined
+        by the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> in FCS_COP.1/SIGN.</td></tr><tr><td><a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent
         to interact with the underlying operating system to execute the management functions defined by
-        FMT_MOF_EXT.1 in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not preclude administration being performed in this manner.</td></tr><tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the functions performed by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent when unenrolled from an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>. The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>
+        FMT_MOF_EXT.1 in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not preclude administration being performed in this manner.</td></tr><tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the functions performed by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent when unenrolled from an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>. The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>
         defines FMT_SMF_EXT.1 which allows for assigned management functions to be specified. This can include unenrollment behavior as defined 
         by <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>. </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements.
 	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Objective requirements.
-	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
+	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent
         to store generated audit data in platform-provided audit storage. The Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines the capability for 
-        audit storage in FDP_ACF_EXT.1.</td></tr><tr><td><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent
-        to maintain information about its last successful connection with the environmental <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server 
+        audit storage in FDP_ACF_EXT.1.</td></tr><tr><td><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent
+        to maintain information about its last successful connection with the environmental <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server 
         (i.e., the last successful invocation of the trusted channel for
         that interface, as defined in FTP_ITC_EXT.1 of the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>). It does not
         need to use any functionality defined in the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> to do this, and doing
@@ -1834,7 +1831,7 @@ Operating System
     </h2>
       
       <h3 class="indexable" data-level="3" id="sib-audit-table">A.3.1 Auditable Events for Implementation-Dependent SFRs</h3>
-        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-feat-based" data-counter-type="ct-Table" id="at-feat-based">Table <span class="counter">16</span></span>: Auditable Events for Implementation-dependent Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FAU_STG_EXT.3"><td rowspan="2"><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_STG_EXT.3#"><td></td></tr><tr data-sortkey="FAU_STG_EXT.3.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FPT_NET_EXT.1"><td rowspan="2"><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPT_NET_EXT.1#"><td></td></tr><tr data-sortkey="FPT_NET_EXT.1.7"><td><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server connection reaching or exceeding unavailability threshold.</td><td>No additional information.</td></tr></table>
+        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-feat-based" data-counter-type="ct-Table" id="at-feat-based">Table <span class="counter">16</span></span>: Auditable Events for Implementation-dependent Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FAU_STG_EXT.3"><td rowspan="2"><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_STG_EXT.3#"><td></td></tr><tr data-sortkey="FAU_STG_EXT.3.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FPT_NET_EXT.1"><td rowspan="2"><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPT_NET_EXT.1#"><td></td></tr><tr data-sortkey="FPT_NET_EXT.1.7"><td><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server connection reaching or exceeding unavailability threshold.</td><td>No additional information.</td></tr></table>
       
       
       <h3 id="ib_fau" class="indexable" data-level="3">A.3.2 Class FAU: Security Audit</h3>
@@ -1847,7 +1844,7 @@ Operating System
           
           
           
-          <div class="element"><div class="reqid" id="FAU_STG_EXT.3.1"><a href="#FAU_STG_EXT.3.1" class="abbr">FAU_STG_EXT.3.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall store <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> audit records in the platform-provided audit storage. </div></div>
+          <div class="element"><div class="reqid" id="FAU_STG_EXT.3.1"><a href="#FAU_STG_EXT.3.1" class="abbr">FAU_STG_EXT.3.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall store <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> audit records in the platform-provided audit storage. </div></div>
           
         </div>
       
@@ -1883,8 +1880,8 @@ Operating System
             the extended family’s component leveling are shown below; reference 
             PP_MDM for all other definitions for this family.<br/><br/> <p><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a>,
              Agent Alerts,
-             requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to define when and how an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent generates
-            alerts and transmits them to an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server based on its
+             requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to define when and how an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent generates
+            alerts and transmits them to an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server based on its
             activity.</p><h4>Management: FAU_ALT_EXT.2</h4><p>The following actions could be considered for the management functions in FMT: <ul>
               <li>Ability to configure the specific events that result in generation of
                 alerts.</li>
@@ -1894,22 +1891,22 @@ Operating System
               <li>Minimal: Success or failure of sending alert. </li>
             </ul>
           </p><h4>FAU_ALT_EXT.2 Agent Alerts</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td> FAU_ALT_EXT.1 Server Alerts<br/> [FPT_ITT.1 Basic Internal <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Data
-            Transfer Protection; or<br/> FTP_ITC.1 Inter-TSF Trusted Channel] </td></tr></table><h4 id="ext-comp-FAU_ALT_EXT.2.1">FAU_ALT_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall provide an alert via the trusted channel to
-              the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server in the event of any of the following audit events: <ul>
+            Transfer Protection; or<br/> FTP_ITC.1 Inter-TSF Trusted Channel] </td></tr></table><h4 id="ext-comp-FAU_ALT_EXT.2.1">FAU_ALT_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall provide an alert via the trusted channel to
+              the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server in the event of any of the following audit events: <ul>
                 <li>successful application of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policies,</li>
                 <li>
                   [<b>selection</b>: <span class="selectable-content" id="_s_17">receiving</span>, <span class="selectable-content" id="_s_18">generating</span>] periodic reachability events, </li>
-                <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="change-in-enrollment-state">change in enrollment state</span></li><li style=""><span class="selectable-content" id="_s_20">failure to install an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_21">failure to update an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span></li><li style=""><span class="selectable-content" id="_s_22">[<b>assignment</b>: 
+                <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="change-in-enrollment-state">change in enrollment state</span></li><li style=""><span class="selectable-content" id="_s_20">failure to install an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> server</span></li><li style=""><span class="selectable-content" id="_s_21">failure to update an application from the <abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> server</span></li><li style=""><span class="selectable-content" id="_s_22">[<b>assignment</b>: 
      <span class="assignable-content">other events</span>]</span></li><li style=""><span class="selectable-content" id="_s_23">no other events</span></li></ul>].</li>
               </ul>
-            <h4 id="ext-comp-FAU_ALT_EXT.2.2">FAU_ALT_EXT.2.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall queue alerts if the trusted channel is not available.</div></div><h3 id="ext-comp-FAU_STG_EXT" class="indexable" data-level="4">C.2.1.2 FAU_STG_EXT Protected Audit Event Storage</h3><div style="margin-left: 1em;">This family is defined in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+            <h4 id="ext-comp-FAU_ALT_EXT.2.2">FAU_ALT_EXT.2.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall queue alerts if the trusted channel is not available.</div></div><h3 id="ext-comp-FAU_STG_EXT" class="indexable" data-level="4">C.2.1.2 FAU_STG_EXT Protected Audit Event Storage</h3><div style="margin-left: 1em;">This family is defined in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
             Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> augments the extended family
             by adding one additional component, <a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a>. This new component and its impact on
             the extended family’s component leveling are shown below; reference 
             PP_MDM for all other definitions for this family.<br/><br/><p><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a>,
              Security Audit Event Storage,
               requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to identify a location for audit record storage and the events
-            that are stored at this location.</p><h4>Management: FAU_STG_EXT.3</h4><p>There are no management functions foreseen.</p><h4>Audit: FAU_STG_EXT.3</h4><p>There are no auditable events foreseen.</p><h4>FAU_STG_EXT.3 Security Audit Event Storage</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FAU_GEN.1 Audit Data Generation</td></tr></table><h4 id="ext-comp-FAU_STG_EXT.3.1">FAU_STG_EXT.3.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall store <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> audit records in the platform-provided audit storage. </div></div></span><span data-sortkey="Class FCS: Cryptographic Suport"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.2 Class FCS: Cryptographic Suport</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+            that are stored at this location.</p><h4>Management: FAU_STG_EXT.3</h4><p>There are no management functions foreseen.</p><h4>Audit: FAU_STG_EXT.3</h4><p>There are no auditable events foreseen.</p><h4>FAU_STG_EXT.3 Security Audit Event Storage</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FAU_GEN.1 Audit Data Generation</td></tr></table><h4 id="ext-comp-FAU_STG_EXT.3.1">FAU_STG_EXT.3.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall store <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> audit records in the platform-provided audit storage. </div></div></span><span data-sortkey="Class FCS: Cryptographic Suport"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.2 Class FCS: Cryptographic Suport</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	  class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FCS_STG_EXT" class="indexable" data-level="4">C.2.2.1 FCS_STG_EXT Cryptographic Key Storage</h3><div style="margin-left: 1em;"> This family is defined in both the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Base <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> augments the extended family by adding
               one additional component, <a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a> as an additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr>. This new component and its impact on the extended 
@@ -1917,7 +1914,7 @@ Operating System
               definitions for this family.<br/><br/><p><a href="#FCS_STG_EXT.4">FCS_STG_EXT.4</a>,
              Cryptographic Key Storage,
               requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to define a specific location for its key
-              storage.</p><h4>Management: FCS_STG_EXT.4</h4><p>There are no management functions foreseen.</p><h4>Audit: FCS_STG_EXT.4</h4><p>There are no auditable events foreseen.</p><h4>FCS_STG_EXT.4 Cryptographic Key Storage</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FCS_CKM.1 Cryptographic Key Generation</td></tr></table><h4 id="ext-comp-FCS_STG_EXT.4.1">FCS_STG_EXT.4.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall use the platform provided key storage for
+              storage.</p><h4>Management: FCS_STG_EXT.4</h4><p>There are no management functions foreseen.</p><h4>Audit: FCS_STG_EXT.4</h4><p>There are no auditable events foreseen.</p><h4>FCS_STG_EXT.4 Cryptographic Key Storage</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FCS_CKM.1 Cryptographic Key Generation</td></tr></table><h4 id="ext-comp-FCS_STG_EXT.4.1">FCS_STG_EXT.4.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall use the platform provided key storage for
                 all persistent secret and private keys.</div></div></span><span data-sortkey="Class FIA: Identification and Authentication"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.3 Class FIA: Identification and Authentication</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	  class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FIA_ENR_EXT" class="indexable" data-level="4">C.2.3.1 FIA_ENR_EXT Enrollment</h3><div style="margin-left: 1em;"> This family is defined in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
@@ -1926,14 +1923,13 @@ Operating System
             the extended family’s component leveling are shown below; reference 
             PP_MDM for all other definitions for this family.<br/><br/> <p><a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a>,
              Agent Enrollment of Mobile Device into Management,
-              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to record specific information about the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-            Server (i.e., the entity that is enrolling it) during the enrollment process.</p><h4>Management: FIA_ENR_EXT.2</h4><p>There are no management functions foreseen.</p><h4>Audit: FIA_ENR_EXT.2</h4><p>The following actions should be auditable if FAU_GEN Security audit data generation is included
+              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to record specific information about the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server (i.e., the entity that is enrolling it) during the enrollment process.</p><h4>Management: FIA_ENR_EXT.2</h4><p>There are no management functions foreseen.</p><h4>Audit: FIA_ENR_EXT.2</h4><p>The following actions should be auditable if FAU_GEN Security audit data generation is included
             in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, functional package or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>:
             <ul>
               <li>Minimal: Completion of enrollment process.</li>
             </ul>
-          </p><h4>FIA_ENR_EXT.2 Agent Enrollment of Mobile Device into Management</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FIA_ENR_EXT.1 Enrollment of Mobile Device into Management</td></tr></table><h4 id="ext-comp-FIA_ENR_EXT.2.1">FIA_ENR_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall record the reference identifier of the
-                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server during the enrollment process. </div></div></span><span data-sortkey="Class FMT: Security Management"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.4 Class FMT: Security Management</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+          </p><h4>FIA_ENR_EXT.2 Agent Enrollment of Mobile Device into Management</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FIA_ENR_EXT.1 Enrollment of Mobile Device into Management</td></tr></table><h4 id="ext-comp-FIA_ENR_EXT.2.1">FIA_ENR_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall record the reference identifier of the
+                <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server during the enrollment process. </div></div></span><span data-sortkey="Class FMT: Security Management"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.4 Class FMT: Security Management</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	  class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FMT_POL_EXT" class="indexable" data-level="4">C.2.4.1 FMT_POL_EXT Trusted Policy Update</h3><div style="margin-left: 1em;"> This family is defined in the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
             Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> augments the extended family
@@ -1948,9 +1944,9 @@ Operating System
               <li>Minimal: Failure to validate policy.</li>
             </ul>
           </p><h4>FMT_POL_EXT.2 Agent Trusted Policy Update</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FCS_COP.1 Cryptographic Operation<br/> FMT_POL_EXT.1 Trusted Policy
-            Update </td></tr></table><h4 id="ext-comp-FMT_POL_EXT.2.1">FMT_POL_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall only accept policies and policy updates
+            Update </td></tr></table><h4 id="ext-comp-FMT_POL_EXT.2.1">FMT_POL_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall only accept policies and policy updates
               that are digitally signed by a private key that has been authorized for policy updates
-              by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server. <h4 id="ext-comp-FMT_POL_EXT.2.2">FMT_POL_EXT.2.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall not install policies if the signature check fails.</div></div><h3 id="ext-comp-FMT_SMF_EXT" class="indexable" data-level="4">C.2.4.2 FMT_SMF_EXT Specification of Management Functions</h3><div style="margin-left: 1em;"> This family is defined in the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. This 
+              by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server. <h4 id="ext-comp-FMT_POL_EXT.2.2">FMT_POL_EXT.2.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall not install policies if the signature check fails.</div></div><h3 id="ext-comp-FMT_SMF_EXT" class="indexable" data-level="4">C.2.4.2 FMT_SMF_EXT Specification of Management Functions</h3><div style="margin-left: 1em;"> This family is defined in the <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. This 
               <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> augments the extended family by adding one additional component,
             <a href="#FMT_SMF_EXT.4">FMT_SMF_EXT.4</a>. This new component and its impact on the extended family’s component
             leveling are shown below; reference PP_MDF for all other definitions for this
@@ -1966,15 +1962,15 @@ Operating System
             <ul>
               <li>Minimal: Successful and failed execution of management functions.</li>
             </ul>
-          </p><h4>FMT_SMF_EXT.4 Specification of Management Functions</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FCS_CKM.1 Cryptographic Key Generation</td></tr></table><h4 id="ext-comp-FMT_SMF_EXT.4.1">FMT_SMF_EXT.4.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall be capable of interacting with the platform
+          </p><h4>FMT_SMF_EXT.4 Specification of Management Functions</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FCS_CKM.1 Cryptographic Key Generation</td></tr></table><h4 id="ext-comp-FMT_SMF_EXT.4.1">FMT_SMF_EXT.4.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall be capable of interacting with the platform
               to perform the following functions: <ul>
                 <li>[<b>selection</b>: <span class="selectable-content" id="_s_40">import the certificates to be used for authentication of <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                    Agent communications</span>, <span class="selectable-content" id="_s_41">import the server public key</span>],</li>
+                    agent communications</span>, <span class="selectable-content" id="_s_41">import the server public key</span>],</li>
                 <li>[<b>selection</b>: <span class="selectable-content" id="_s_42">administrator-provided management functions in PP_MDF</span>, <span class="selectable-content" id="_s_43">administrator-provided device management functions in PP_MDM</span>, <span class="selectable-content" id="_s_44">administrator-provided device management functions in PP_GPOS</span>]</li>
                 <li>[<b>selection</b>: <span class="selectable-content" id="_s_45">[<b>assignment</b>: 
      <span class="assignable-content">additional functions</span>]</span>, <span class="selectable-content" id="_s_46"> no additional functions</span>].</li>
               </ul>
-            <h4 id="ext-comp-FMT_SMF_EXT.4.2">FMT_SMF_EXT.4.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall be capable of performing the following
+            <h4 id="ext-comp-FMT_SMF_EXT.4.2">FMT_SMF_EXT.4.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall be capable of performing the following
               functions: <ul>
                 <li>enroll in management</li>
                 <li>configure whether users can unenroll from management</li>
@@ -1991,7 +1987,7 @@ Operating System
               <li>Minimal: Unenrollment from <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>.</li>
             </ul>
           </p><h4>FMT_UNR_EXT.1 User Unenrollment Prevention</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td> [FIA_ENR_EXT.1 Enrollment of Mobile Device into Management; or<br/>
-            FMT_MOF_EXT.1 Management of Functions Behavior] </td></tr></table><h4 id="ext-comp-FMT_UNR_EXT.1.1">FMT_UNR_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent shall provide a mechanism to enforce the
+            FMT_MOF_EXT.1 Management of Functions Behavior] </td></tr></table><h4 id="ext-comp-FMT_UNR_EXT.1.1">FMT_UNR_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent shall provide a mechanism to enforce the
               following behavior upon an attempt to unenroll the device from management: [<b>selection</b>: <span class="selectable-content" id="prevent-unenrollment">prevent the unenrollment from occurring</span>, <span class="selectable-content" id="apply-remediation">apply remediation actions</span>].
             </div></div></span><span data-sortkey="Class FPT: Protection of the TSF"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.5 Class FPT: Protection of the TSF</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	  class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
@@ -2028,18 +2024,18 @@ Operating System
           it relies on FMT_MTD.1 to determine the administrative roles that are permitted to manipulate this data.
           <br/><br/>
           This is not applicable to the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> because there is no management interface for a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> user to interact with; instead, 
-          all management functions are initiated by an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server and performed by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent that has sufficient privileges on the 
+          all management functions are initiated by an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server and performed by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent that has sufficient privileges on the 
           underlying device to do this. 
           In this case, <a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a> and <a href="#FMT_POL_EXT.2">FMT_POL_EXT.2</a> are sufficient to validate that the source of the policy data is 
           identified and authenticated before the policy change is accepted. 
-          It is not necessary to define a management role associated with this function because the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server does not need to assume a ‘role’ on the 
+          It is not necessary to define a management role associated with this function because the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server does not need to assume a ‘role’ on the 
           <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to communicate policy data; it is sufficient for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to determine the policy is genuine.
         </td>
       </tr>
       <tr>
         <td>FPT_STM.1 - Reliable Time Stamps</td>
       <td>
-        Regardless of whether the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent is part of an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server or <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent itself will be installed on a device. 
+        Regardless of whether the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent is part of an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server or <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent itself will be installed on a device. 
         If the mobile device is part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, PP_MDF that it conforms to explicitly
         defines FPT_STM.1, which therefore satisfies the dependency in this case. If the mobile
         device is not part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, a reliable time source can still be assumed because all
