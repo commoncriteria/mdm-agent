@@ -1051,8 +1051,8 @@ Mobile Device
                 selected protocols<a id="period_199" href="#period_199">. </a><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> (FCS_HTTPS_EXT.1) and <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> (FCS_TLSC_EXT.1) are already
                 mandatory for an <abbr class="dyn-abbr"><a href="#abbr_MDF">MDF</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_200" href="#period_200">. </a>Protocol, RBG, certificate validation, algorithm, and similar services may
                 be met with platform provided services<a id="period_201" href="#period_201">. </a>              </span></div></div></div>
-            <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.2/MDFCHANNEL"><a href="#FTP_ITC_EXT.1.2/MDFCHANNEL" class="abbr">FTP_ITC_EXT.1.2/MDFCHANNEL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> <b>and the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
-                Server and [<b>selection</b>: <span class="selectable-content" id="_s_4"><abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span>, <span class="selectable-content" id="_s_5">no other IT entities</span>]</b> to initiate communication via the trusted channel<a id="period_202" href="#period_202">. </a><div class="appnote"><span class="note-header">Application
+            <div class="element"><div class="reqid" id="FTP_ITC_EXT.1.2/MDFCHANNEL"><a href="#FTP_ITC_EXT.1.2/MDFCHANNEL" class="abbr">FTP_ITC_EXT.1.2/MDFCHANNEL</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> <b>, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                Server, and [<b>selection</b>: <span class="selectable-content" id="_s_4"><abbr class="dyn-abbr"><a href="#abbr_MAS">MAS</a></abbr> Server</span>, <span class="selectable-content" id="_s_5">no other IT entities</span>]</b> to initiate communication via the trusted channel<a id="period_202" href="#period_202">. </a><div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> For all other use cases, the mobile device initiates the
                 communication; however, for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agents, the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
@@ -1228,7 +1228,7 @@ Operating System
               There is no change to this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> from the Base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> beyond ensuring that it also applies to the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent portion of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_247" href="#period_247">. </a>              </p>
               The text of the requirement is replaced with:<br><br>
               
-              The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> shall implement functionality to encrypt sensitive data <b>including any data used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent functionality</b> stored in non-volatile storage and provide interfaces to applications to invoke this functionality<a id="period_248" href="#period_248">. </a>              
+             FCS_STO_EXT.1.1 The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> shall implement functionality to encrypt sensitive data <b>including any data used for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent functionality</b> stored in non-volatile storage and provide interfaces to applications to invoke this functionality<a id="period_248" href="#period_248">. </a>              
             </span></div><h3 id="addsfr-bpp-gpos" class="indexable" data-level="3">5.3.2  Additional SFRs</h3>
       This section defines additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that must be added to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary in order to implement
 	  the functionality in any <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> where the <abbr class="dyn-abbr"><a href="#abbr_GPOS">GPOS</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is 
@@ -1449,9 +1449,9 @@ Operating System
               </div></div></div></div></div>
         <div class="comp" id="FAU_GEN.1/AGENT"><h4>FAU_GEN.1/AGENT Audit Data Generation</h4>
           
-          <div class="element"><div class="reqid" id="FAU_GEN.1.1/AGENT"><a href="#FAU_GEN.1.1/AGENT" class="abbr">FAU_GEN.1.1/AGENT</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent</b> shall <b>[<b>selection</b>: <span class="selectable-content" id="_s_24">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_25">implement functionality</span>]</b> to generate audit data of the
+          <div class="element"><div class="reqid" id="FAU_GEN.1.1/AGENT"><a href="#FAU_GEN.1.1/AGENT" class="abbr">FAU_GEN.1.1/AGENT</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>[<b>selection</b>: <span class="selectable-content" id="_s_24">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_25">implement functionality</span>]</b> to generate audit data of the
               following auditable events: <ol type="a">
-                <li>Startup and shutdown of the <b><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Agent</b>;</li>
+                <li>Startup and shutdown of the audit functions;</li>
                 <li>All auditable events for the [<i>not specified</i>] level of audit; and</li>
                 <li>[<i><abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> policy updated, any modification commanded by the 
                   <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> Server, specifically defined auditable events listed in 
