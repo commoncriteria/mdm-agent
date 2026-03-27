@@ -561,8 +561,8 @@
               </note>
             </f-element>
             <f-element id="mut-chan-init">
-              <title>The TSF shall permit the TSF <h:b>and the MDM
-                Server and <selectables>
+              <title>The TSF shall permit the TSF <h:b>, the MDM
+                Server, and <selectables>
                   <selectable>MAS Server</selectable>
                   <selectable>no other IT entities</selectable>
                 </selectables></h:b> to initiate communication via the trusted channel.</title>
@@ -1012,7 +1012,7 @@
               </h:p>
               The text of the requirement is replaced with:<h:br/><h:br/>
               
-              The OS shall implement functionality to encrypt sensitive data <h:b>including any data used for MDM Agent functionality</h:b> stored in non-volatile storage and provide interfaces to applications to invoke this functionality.
+             FCS_STO_EXT.1.1 The OS shall implement functionality to encrypt sensitive data <h:b>including any data used for MDM Agent functionality</h:b> stored in non-volatile storage and provide interfaces to applications to invoke this functionality.
               
             </description>
             
@@ -1402,12 +1402,12 @@
         <f-component cc-id="fau_gen.1" id="fau-gen-1-agent" name="Audit Data Generation" iteration="AGENT">
           <consistency-rationale/>
           <f-element>
-            <title>The <h:b>MDM Agent</h:b> shall <h:b><selectables>
+            <title>The TSF shall <h:b><selectables>
                 <selectable>invoke platform-provided functionality</selectable>
                 <selectable>implement functionality</selectable>
             </selectables></h:b> to generate audit data of the
               following auditable events: <h:ol type="a">
-                <h:li>Startup and shutdown of the <h:b>MDM Agent</h:b>;</h:li>
+                <h:li>Startup and shutdown of the audit functions;</h:li>
                 <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit; and</h:li>
                 <h:li>[<h:i>MDM policy updated, any modification commanded by the 
                   MDM Server, specifically defined auditable events listed in 
