@@ -235,18 +235,7 @@
       Package Usage guidance defined in the TOE's relevant Base PP applies to the usage of the packages for this module, unless explicitly stated otherwise in this section.
       <package-usage-list>
         <package-usage ref="tls">
-          <usage id="usage-tls-iterations" title="Required TLS Iteration Names">
-            <description>
-              If the TLS requirements for this PP-Module are iterated from those present for the relevant Base PP's TLS requirements, the ST author shall iterate the requirements as follows: 
-              <h:ul>
-                <h:li>Iterated TLS requirements that support the MDM server and MDM agent communication channel as defined in FTP_ITC_EXT.1/MDFCHANNEL or FTP_ITC_EXT.1/OSCHANNEL shall be iterated with the suffix "MDMComm".</h:li>
-                <h:li>Iterated TLS requirements that support the MDM enrollment channel as defined in FTP_TRP.1/MDFENROLL or FTP_TRP.1/OSENROLL shall be iterated with the suffix "MDMEnroll".</h:li>
-              </h:ul>
-            </description>
-            <config>
-              <ref-id>dummy-ref-id</ref-id>
-            </config>
-          </usage>
+        
           <usage id="usage-tls-client" title="TLS or DTLS Client Functionality Required">
             <description>
               This usage requirement applies to all implementations of TLS that support the MDM enrollment and MDM communication channels, whether these implementations are described as iterated TLS 
@@ -306,7 +295,7 @@
         <Mod-cc-ref>PP-Module for Virtual Private Network (VPN) Clients, version 3.0</Mod-cc-ref>  
         <Mod-cc-ref>PP-Module for Bluetooth, version 2.0</Mod-cc-ref>
         <Mod-cc-ref>PP-Module for WLAN Clients, version 2.0</Mod-cc-ref>
-        <Mod-cc-ref>cPP-Module for Biometric Enrolment and Verification - for unlocking the device, version 1.1</Mod-cc-ref>        
+        <Mod-cc-ref>cPP-Module for Biometric Enrolment and Verification, version 2.0</Mod-cc-ref>        
       </cc-pp-config-with>
       <cc-pkg-claim>
         <FP-cc-ref conf="conformant">Functional Package for Transport Layer Security Version 2.1</FP-cc-ref>
