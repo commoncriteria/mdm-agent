@@ -1,3 +1,4 @@
+* https://commoncriteria.github.io/mdm-agent/xml-builder-review/Master-Diff.html[Master-Diff.html]
 * https://commoncriteria.github.io/mdm-agent/xml-builder-review/diff-master.html[diff-master.html]
 * https://commoncriteria.github.io/mdm-agent/xml-builder-review/mdm-agent-release-linkable.html[mdm-agent-release-linkable.html]
 * https://commoncriteria.github.io/mdm-agent/xml-builder-review/mdm-agent-release.html[mdm-agent-release.html]
