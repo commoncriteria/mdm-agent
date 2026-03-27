@@ -1409,13 +1409,13 @@
               following auditable events: <h:ol type="a">
                 <h:li>Startup and shutdown of the audit functions;</h:li>
                 <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li>
-                [<h:i><h:li>[MDM policy updated </h:li>
+                [<h:i><h:li>MDM policy updated </h:li>
                   <h:li>Any modification commanded by the MDM server</h:li> 
                    <h:li>Specifically defined auditable events listed in <xref to="at-man-audit"/></h:li>
                   <h:li><selectables linebreak="yes">
-                       <selectable>Auditable events defined in <xref to="at-mdf-addnl"/> for Additional SFRs when PP_MDF is the TOE's Base PP</selectable>
-                    <selectable>Auditable events defined in <xref to="at-mdm-addnl"/> for Additional SFRs when PP_MDM is the TOE's Base PP</selectable>
-                    <selectable>Auditable events defined in <xref to="at-gpos-addnl"/>  for Additional SFRs when PP_GPOS is the TOE's Base PP</selectable>
+                       <selectable>Auditable events defined in <xref to="at-mdf-addnl"/> for Additional SFRs when PP_MDF is the TOE's Base PP,</selectable>
+                    <selectable>Auditable events defined in <xref to="at-mdm-addnl"/> for Additional SFRs when PP_MDM is the TOE's Base PP,</selectable>
+                    <selectable>Auditable events defined in <xref to="at-gpos-addnl"/>  for Additional SFRs when PP_GPOS is the TOE's Base PP,</selectable>
                        <selectable>Auditable events defined in <xref to="at-feat-based"/> for Implementation-Dependent SFRs,</selectable>
                     <selectable>no other events</selectable></selectables></h:li></h:i>].
               </h:ol>
@@ -1515,13 +1515,13 @@
                 <h:li>Type of event</h:li>
                 <h:li>Subject identity (if applicable)</h:li>
                 <h:li>The outcome (success or failure) of the event</h:li> 
-                <h:li>Additional information in <xref to="at-man-audit"/></h:li>
+                <h:li><h:b>Additional information in <xref to="at-man-audit"/></h:b></h:li>
                   <h:li><h:b><selectables linebreak="yes">
-                    <selectable>Additional information defined in <xref to="at-mdf-addnl"/> for Additional SFRs when PP_MDF is the TOE's Base PP</selectable>
-                    <selectable>Additional information defined in <xref to="at-mdm-addnl"/> for Additional SFRs when PP_MDM the TOE's Base PP</selectable>
-                    <selectable>Additional information defined in <xref to="at-gpos-addnl"/> for Additional SFRs when PP_GPOS is the TOE's Base PP}</selectable>
-                    <selectable>Additional information defined in <xref to="at-feat-based"/> for Implementation-Dependent SFRs</selectable>
-                    <selectable>No other additional information</selectable></selectables>; </h:b></h:li>         
+                    <selectable>Additional information defined in <xref to="at-mdf-addnl"/> for Additional SFRs when PP_MDF is the TOE's Base PP,</selectable>
+                    <selectable>Additional information defined in <xref to="at-mdm-addnl"/> for Additional SFRs when PP_MDM the TOE's Base PP,</selectable>
+                    <selectable>Additional information defined in <xref to="at-gpos-addnl"/> for Additional SFRs when PP_GPOS is the TOE's Base PP,</selectable>
+                    <selectable>Additional information defined in <xref to="at-feat-based"/> for Implementation-Dependent SFRs,</selectable>
+                    <selectable>No other additional information</selectable></selectables></h:b></h:li>         
                 <h:li>For each audit event type, based on the auditable event definitions of the functional components 
                   included in the PP, PP-Module, functional package or ST, <assignable>other audit relevant information</assignable>.</h:li>
               </h:ul>
