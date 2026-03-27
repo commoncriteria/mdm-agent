@@ -6,11 +6,10 @@ output/mdm-agent-release-linkable.html: FCS
 output/mdm-agent-release-linkable.html: FDP
 output/mdm-agent-release-linkable.html: Fi
 output/mdm-agent-release-linkable.html: GPCP
+output/mdm-agent-release-linkable.html: INTRA
 output/mdm-agent-release-linkable.html: ITT
 output/mdm-agent-release-linkable.html: MDFCHANNEL
 output/mdm-agent-release-linkable.html: MDFENROLL
-output/mdm-agent-release-linkable.html: MDMComm
-output/mdm-agent-release-linkable.html: MDMEnroll
 output/mdm-agent-release-linkable.html: MDs
 output/mdm-agent-release-linkable.html: MOF
 output/mdm-agent-release-linkable.html: MTD
@@ -19,6 +18,7 @@ output/mdm-agent-release-linkable.html: OSENROLL
 output/mdm-agent-release-linkable.html: SPD
 output/mdm-agent-release-linkable.html: STM
 output/mdm-agent-release-linkable.html: STO
+output/mdm-agent-release-linkable.html: Suport
 output/mdm-agent-release-linkable.html: TRP
 output/mdm-agent-release-linkable.html: TUD
 output/mdm-agent-release-linkable.html: Unenrolling
@@ -29,6 +29,7 @@ output/mdm-agent-release-linkable.html: preconfigured
 output/mdm-agent-release-linkable.html: unenroll
 output/mdm-agent-release-linkable.html: unenrolling
 output/mdm-agent-release-linkable.html: unenrollment
+output/mdm-agent-release-linkable.html: unreachability
 output/mdm-agent-release.html: CEM
 output/mdm-agent-release.html: CONFIG
 output/mdm-agent-release.html: Enrolment
@@ -36,11 +37,10 @@ output/mdm-agent-release.html: FCS
 output/mdm-agent-release.html: FDP
 output/mdm-agent-release.html: Fi
 output/mdm-agent-release.html: GPCP
+output/mdm-agent-release.html: INTRA
 output/mdm-agent-release.html: ITT
 output/mdm-agent-release.html: MDFCHANNEL
 output/mdm-agent-release.html: MDFENROLL
-output/mdm-agent-release.html: MDMComm
-output/mdm-agent-release.html: MDMEnroll
 output/mdm-agent-release.html: MDs
 output/mdm-agent-release.html: MOF
 output/mdm-agent-release.html: MTD
@@ -49,6 +49,7 @@ output/mdm-agent-release.html: OSENROLL
 output/mdm-agent-release.html: SPD
 output/mdm-agent-release.html: STM
 output/mdm-agent-release.html: STO
+output/mdm-agent-release.html: Suport
 output/mdm-agent-release.html: TRP
 output/mdm-agent-release.html: TUD
 output/mdm-agent-release.html: Unenrolling
@@ -59,8 +60,10 @@ output/mdm-agent-release.html: role’
 output/mdm-agent-release.html: unenroll
 output/mdm-agent-release.html: unenrolling
 output/mdm-agent-release.html: unenrollment
+output/mdm-agent-release.html: unreachability
 output/mdm-agent-sd.html: AGD
 output/mdm-agent-sd.html: CEM
+output/mdm-agent-sd.html: INTRA
 output/mdm-agent-sd.html: ITT
 output/mdm-agent-sd.html: MDFCHANNEL
 output/mdm-agent-sd.html: MDs
@@ -85,11 +88,10 @@ output/mdm-agent.html: FCS
 output/mdm-agent.html: FDP
 output/mdm-agent.html: Fi
 output/mdm-agent.html: GPCP
+output/mdm-agent.html: INTRA
 output/mdm-agent.html: ITT
 output/mdm-agent.html: MDFCHANNEL
 output/mdm-agent.html: MDFENROLL
-output/mdm-agent.html: MDMComm
-output/mdm-agent.html: MDMEnroll
 output/mdm-agent.html: MDs
 output/mdm-agent.html: MOF
 output/mdm-agent.html: MTD
@@ -98,6 +100,7 @@ output/mdm-agent.html: OSENROLL
 output/mdm-agent.html: SPD
 output/mdm-agent.html: STM
 output/mdm-agent.html: STO
+output/mdm-agent.html: Suport
 output/mdm-agent.html: TRP
 output/mdm-agent.html: TUD
 output/mdm-agent.html: Unenrolling
@@ -111,3 +114,4 @@ output/mdm-agent.html: role’
 output/mdm-agent.html: unenroll
 output/mdm-agent.html: unenrolling
 output/mdm-agent.html: unenrollment
+output/mdm-agent.html: unreachability
