@@ -6,6 +6,7 @@ output/mdm-agent-release-linkable.html: Enrolment
 output/mdm-agent-release-linkable.html: FDP
 output/mdm-agent-release-linkable.html: Fi
 output/mdm-agent-release-linkable.html: GPCP
+output/mdm-agent-release-linkable.html: INTRA
 output/mdm-agent-release-linkable.html: ITT
 output/mdm-agent-release-linkable.html: MDMComm
 output/mdm-agent-release-linkable.html: MDMEnroll
@@ -31,6 +32,7 @@ output/mdm-agent-release.html: Enrolment
 output/mdm-agent-release.html: FDP
 output/mdm-agent-release.html: Fi
 output/mdm-agent-release.html: GPCP
+output/mdm-agent-release.html: INTRA
 output/mdm-agent-release.html: ITT
 output/mdm-agent-release.html: MDMComm
 output/mdm-agent-release.html: MDMEnroll
@@ -53,6 +55,7 @@ output/mdm-agent-release.html: unreachability
 output/mdm-agent-sd.html: AGD
 output/mdm-agent-sd.html: CEM
 output/mdm-agent-sd.html: DNs
+output/mdm-agent-sd.html: INTRA
 output/mdm-agent-sd.html: ITT
 output/mdm-agent-sd.html: MDs
 output/mdm-agent-sd.html: SPD
@@ -75,6 +78,7 @@ output/mdm-agent.html: Enrolment
 output/mdm-agent.html: FDP
 output/mdm-agent.html: Fi
 output/mdm-agent.html: GPCP
+output/mdm-agent.html: INTRA
 output/mdm-agent.html: ITT
 output/mdm-agent.html: MDMComm
 output/mdm-agent.html: MDMEnroll
