@@ -488,7 +488,7 @@
           <audit-table id="at-mdf-addnl" table="tab-at-mdf-addnl" title="Auditable Events for PP_MDF Additional SFRs"/>
         </section>
         
-        <sec:mdf_mod_fcs title="Cryptographic Support (FCS)">
+        <sec:mdf_mod_fcs title="Class FCS: Cryptographic Suport">
           <ext-comp-def fam-id="FCS_STG_EXT" title="Cryptographic Key Storage">
             <mod-def> This family is defined in both the MDF and the MDM Base PPs. This PP-Module augments the extended family by adding
               one additional component, FCS_STG_EXT.4 as an additional SFR for MDF. This new component and its impact on the extended 
@@ -531,7 +531,7 @@
             <audit-event table="tab-at-mdf-addnl"/>
           </f-component>
         </sec:mdf_mod_fcs>
-        <sec:mdf_mod_ftp title="Trusted Path/Channels (FPT)">
+        <sec:mdf_mod_ftp title="Class FTP: Trusted Path/Channels">
           <f-component cc-id="ftp_itc_ext.1" name="Trusted Channel Communication" iteration="MDFCHANNEL">
             <consistency-rationale> The Base PP includes FTP_ITC_EXT.1 to define the secure protocols used for trusted channel communications. This PP-Module iterates the SFR to specify a subset of these protocols that may be used for MDM Agent communications in particular. </consistency-rationale>
             <f-element id="mut-chan-type">
@@ -827,7 +827,7 @@
       <modified-sfrs>
         
         <!--
-        <section title="Identification and Authentication (FIA)" id="mdm-m-fia">
+        <section title="Class FIA: Identification and Authentication" id="mdm-m-fia">
           
           <f-component cc-id="fia_x509_ext.1" iteration="CERTVAL_SEL" id="mdm-fia-x509-ext-1-2" name=" X.509 Certificate Validation">
             <consistency-rationale>There is no modification to this SFR, but it is mandatory for a TOE that conforms to this PP-Module because
@@ -845,7 +845,7 @@
           
         </section>
       -->  
-        <section title="Protection of the TSF (FPT)" id="mdm-mod-fpt">
+        <section title="Class FPT: Protection of the TSF" id="mdm-mod-fpt">
           
           <base-sfr-spec id="mod-fpt-itt-1" iteration="INTRA_XFER_AGENT" title="Internal TOE TSF Data Transfer (MDM Agent)" cc-id="fpt_itt.1">
             <consistency-rationale>There is no modification to this SFR, but it is mandatory for a TOE that conforms to this PP-Module because it must always be claimed when an MDM includes an MDM Agent as part of the TOE.</consistency-rationale>
@@ -855,7 +855,7 @@
           </base-sfr-spec>
         </section>
         
-        <section title="Trusted Path/Channels (FPT)" id="mdm-mod-ftp">
+        <section title="Class FTP: Trusted Path/Channels" id="mdm-mod-ftp">
           
           <base-sfr-spec id="mod-ftp-itc-ext-1" title="Trusted Channel" cc-id="ftp_itc_ext.1">
             <consistency-rationale>This SFR is modified in a way that accommodates an MDM Agent, which is part of the TOE boundary
@@ -883,7 +883,7 @@
           <audit-table id="at-mdm-addnl" table="tab-at-mdm-addnl" title="Auditable Events for PP_MDM Additional SFRs"/>
         </section>
         
-        <sec:mdm_mod_fcs title="Cryptographic Support (FCS)">
+        <sec:mdm_mod_fcs title="Class FCS: Cryptographic Suport">
           <f-component cc-id="fcs_stg_ext.1" name="Cryptographic Key Storage" iteration="MDMKEYS">
             <!-- Removed notnew=y from f-component -->
             <consistency-rationale> The Base PP requires the TOE to define a
@@ -1012,7 +1012,7 @@
    
       <modified-sfrs>
         
-        <section title="Cryptographic Support (FCS)" id="gpos-mod-fcs">
+        <section title="Class FCS: Cryptographic Suport" id="gpos-mod-fcs">
           
           <base-sfr-spec id="mod-fcs-sto-ext-1" title="Storage of Sensitive Data" cc-id="fcs_sto_ext.1">
             <consistency-rationale>The PP-Module does not change this SFR; it only notes that the concept of "sensitive data" may be expanded
@@ -1316,7 +1316,7 @@
         </audit-table>
       </sec:ss-audit-table>
       
-      <sec:man_fau title="Security Audit (FAU)">
+      <sec:man_fau title="Class FAU: Security Audit">
         <ext-comp-def fam-id="FAU_ALT_EXT" title="MDM Alerts">
           <mod-def> This family is defined in the MDM
             Base PP. This PP-Module augments the extended family
@@ -1620,7 +1620,7 @@
           </audit-event>
         </f-component>
       </sec:man_fau>
-      <sec:man_fia title="Identification and Authentication (FIA)">
+      <sec:man_fia title="Class FIA: Identification and Authentication">
         <ext-comp-def title="Enrollment" fam-id="FIA_ENR_EXT">
           <mod-def> This family is defined in the MDM
             Base PP. This PP-Module augments the extended family
@@ -1676,7 +1676,7 @@
           </audit-event>
         </f-component>
       </sec:man_fia>
-      <sec:man_fmt title="Security Management (FMT)">
+      <sec:man_fmt title="Class FMT: Security Management">
         <ext-comp-def title="Trusted Policy Update" fam-id="FMT_POL_EXT">
           <mod-def> This family is defined in the MDM
             Base PP. This PP-Module augments the extended family
@@ -1940,7 +1940,7 @@
         </audit-table>
       </section>
       
-      <sec:ib_fau title="Security Audit (FAU)">
+      <sec:ib_fau title="Class FAU: Security Audit">
         <ext-comp-def title="Protected Audit Event Storage" fam-id="FAU_STG_EXT">
           <mod-def>This family is defined in the MDM
             Base PP. This PP-Module augments the extended family
@@ -1975,7 +1975,7 @@
           <audit-event table="feat-based"/>
         </f-component>
       </sec:ib_fau>
-      <sec:ib_fpt title="Protection of the TSF (FPT)">
+      <sec:ib_fpt title="Class FPT: Protection of the TSF">
         <ext-comp-def title="Network Reachability" fam-id="FPT_NET_EXT">
           <fam-behavior> Components in this family define requirements for tracking the availability
             of network components. </fam-behavior>
