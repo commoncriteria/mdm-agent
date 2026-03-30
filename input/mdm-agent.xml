@@ -58,6 +58,7 @@
     </git>
     <url><![CDATA[https://www.niap-ccevs.org/protectionprofiles/511]]></url>
   </include-pkg>
+ 
   
   <sec:Introduction>
     <section id="overview" title="Overview"> The scope of the MDM Agent Protection Profile Module (PP-Module) is to describe the security functionality of a mobile device management (MDM) agent 
@@ -1252,8 +1253,8 @@
       <con-mod ref="OE.DEVICE_PLATFORM">This extends the OE.PLATFORM objective from the Base PP to cover that the underlying platform of the
         MDM agent is trusted.</con-mod>
       <con-mod ref="OE.WIRELESS_NETWORK"> This objective is suitable because while the Base PP does not define any availability metrics for wireless
-        communications, it can be extended by a PP-Module for WLAN client capabilities, so support for wireless communications is a reasonable
-        expectation for a GPOS.</con-mod>
+        communications, a PP-Module for WLAN client capabilities exists and can be used with PP_GPOS, so support for wireless communications is a reasonable
+        expectation for a conformant TOE.</con-mod>
         
       <con-mod ref="fau-alt-ext-2"> This SFR requires the MDM agent to use a
         trusted channel defined by FTP_ITC_EXT.1 in the Base PP to transmit data
