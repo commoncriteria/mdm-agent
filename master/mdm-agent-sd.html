@@ -736,7 +736,7 @@ The following sections list Common Criteria and technology terms used in this do
                 </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
                 <p>There are no guidance EAs for this component.</p>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> 
-                  This evaluation activity is performed in conjunction with the evaluation activity for FIA_X509_EXT.1 and FIA_X509_EXT.2 as defined in the Base PPs.<br/><br/>
+                  This evaluation activity is performed in conjunction with the evaluation activity for FIA_X509_EXT.1 and FIA_X509_EXT.2 as defined in the base PPs.<br/><br/>
                   <span class="testlist-"><ul>
                       <li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FMT_POL_EXT.2:1</a>:
       The evaluator shall perform a policy update from an available configuration interface (such as through a test MDM server). The evaluator shall verify the update is signed and is provided to the MDM agent. The evaluator shall verify the MDM agent accepts the digitally signed policy.</li>
@@ -746,7 +746,7 @@ The following sections list Common Criteria and technology terms used in this do
               </div></div></span></div><div class="comp" id="FMT-SMF-EXT-4"><h4>FMT_SMF_EXT.4 Specification of Management Functions</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF_EXT.4</div>
                 
                 This assurance activity may be performed in conjunction with other evaluation
-                activities in the Base PP.<br/><br/>
+                activities in the base PP.<br/><br/>
                 
               
               
@@ -757,20 +757,20 @@ The following sections list Common Criteria and technology terms used in this do
                   The TSS description shall make it clear whether the MDM agent supports multiple interfaces for enrollment and configuration (for example, both remote configuration and local configuration).<br/><br/>                  
               </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> 
                   The evaluator shall verify the AGD guidance includes detailed instructions for configuring each function in this requirement.<br/><br/> 
-                  If the MDM agent is a component of the MDM system (i.e., PP_MDM is the Base PP), the evaluator shall verify, by consulting documentation for the claimed MD platforms, that the configurable functions listed for the MDM agent are supported by the platforms.<br/><br/> 
+                  If the MDM agent is a component of the MDM system (i.e., PP_MDM is the base PP), the evaluator shall verify, by consulting documentation for the claimed MD platforms, that the configurable functions listed for the MDM agent are supported by the platforms.<br/><br/> 
                   If the MDM agent supports multiple interfaces for configuration (for example, both remote configuration and local configuration), the operational guidance makes it clear whether some functions are restricted to certain interfaces.<br/><br/>                
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
                     <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FMT_SMF_EXT.4:1</a>:
-      In conjunction with the evaluation activities in the Base PP, the evaluator shall attempt to configure each 
+      In conjunction with the evaluation activities in the base PP, the evaluator shall attempt to configure each 
                       administrator-provided management function and shall verify that the MD executes the commands and enforces the policies.</li>
                   <li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FMT_SMF_EXT.4:2</a>:
       [conditional: if "import the certificates to be used for authentication of MDM agent communications" is selected in FMT_SMF_EXT.4.1, then] 
                     The evaluator shall configure the MDM agent authentication certificate in accordance with the configuration guidance. 
                     The evaluator shall verify that the MDM agent uses this certificate in performing the tests for PP_MDM SFR FPT_ITT.1/INTRA_XFER_AGENT 
-                    (if PP_MDM is the Base PP),
-                    the Additional SFR FTP_ITC_EXT.1/MDFCHANNEL (if PP_MDF is the Base PP),
-                    or the Additional SFR FTP_ITC_EXT.1/OSCHANNEL (if PP_GPOS is the Base PP).</li>
+                    (if PP_MDM is the base PP),
+                    the Additional SFR FTP_ITC_EXT.1/MDFCHANNEL (if PP_MDF is the base PP),
+                    or the Additional SFR FTP_ITC_EXT.1/OSCHANNEL (if PP_GPOS is the base PP).</li>
                     <li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FMT_SMF_EXT.4:3</a>:
       In conjunction with other evaluation activities, the evaluator shall attempt to enroll the MDM agent in management with each interface identified in the TSS, and verify that the MDM agent can manage the device and communicate with the MDM server.</li>
                     <li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FMT_SMF_EXT.4:4</a>:
