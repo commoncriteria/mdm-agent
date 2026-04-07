@@ -1712,7 +1712,7 @@
                   This evaluation activity is performed in conjunction with the evaluation activity for FIA_X509_EXT.1 and FIA_X509_EXT.2 as defined in the base PPs.<h:br/><h:br/>
                   <testlist>
                       <test>The evaluator shall perform a policy update from an available configuration interface (such as through a test MDM server). The evaluator shall verify the update is signed and is provided to the MDM agent. The evaluator shall verify the MDM agent accepts the digitally signed policy.</test>
-                      <test>The evaluator shall perform a policy update from an available configuration interface (such as through a test MDM server). The evaluator shall provide an unsigned and an incorrectly signed policy to the MDM agent. The evaluator shall verify the MDM agent does not accept the digitally signed policy.</test>
+                      <test>The evaluator shall perform a policy update from an available configuration interface (such as through a test MDM server). The evaluator shall provide an unsigned and an incorrectly signed policy to the MDM agent. The evaluator shall verify the MDM agent does not accept the unsigned and incorrectly signed policies.</test>
                   </testlist>            
               </Tests>
             </aactivity>
