@@ -141,9 +141,7 @@
       the device. The distributed TOE for this PP-Module
       combined with PP_MDM is the entire MDM environment, which includes both the MDM server and the
         MDM agent. Even though the device itself is not part of the TOE, it is expected to be evaluated against the MDF or PP_GPOS so that
-      its baseline security capabilities can be assumed to be present. If the TOE conforms to PP_GPOS, evaluating the hardware platform against
-      the Protection Profile for General Purpose Computing Platforms (GPCP PP) may also be considered so that assurance of the underlying platform hardware
-      can be obtained.
+      its baseline security capabilities can be assumed to be present.
       <h:br/><h:br/>
       This PP-Module shall build on PP_GPOS if the TOE is a native part of a non-mobile GPOS.
       The TOE for this PP-Module combined with PP_GPOS is the operating system itself plus the MDM agent. If the MDM agent is part of 
