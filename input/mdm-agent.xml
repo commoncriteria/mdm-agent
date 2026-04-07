@@ -548,10 +548,7 @@
                 This requirement is iterated from PP_MDF to indicate the protocols that the MDM agent can use for a trusted
                 channel. The mobile device is required to perform the mandated cryptographic
                 protocols as in the base PP for communication channels mandated in
-                PP_MDF. The ST author must select one of
-                TLS, DTLS, or HTTPS in order to establish and maintain a trusted channel between the
-                  MDM agent and the MDM server. Only TLS, DTLS,
-                or HTTPS are acceptable for this trusted channel.<h:br/><h:br/> Since this
+                PP_MDF.<h:br/><h:br/> Since this
                 requirement is only for the case when the PP-Module builds on the MDF
                 PP, and in this case it is expected that the MDM agent will be a
                 native part of the mobile operating system, it is expected that the MDM agent will use the mobile device's implementation of the
@@ -1072,9 +1069,7 @@
                 This requirement is iterated from PP_GPOS to indicate the protocols that the MDM agent can use for a trusted
                 channel. The operating system is required to perform the mandated cryptographic
                 protocols as in the base PP for communication channels mandated in
-                PP_GPOS. The ST author must select one of
-                TLS or DTLS in order to establish and maintain a trusted channel between the
-                  MDM agent and the MDM server. Only TLS or DTLS are acceptable for this trusted channel.<h:br/><h:br/> 
+                PP_GPOS.<h:br/><h:br/> 
                 Since this
                 requirement is only for the case when the PP-Module builds on the GPOS
                 PP, and in this case it is expected that the MDM agent will be a
