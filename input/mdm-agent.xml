@@ -1905,7 +1905,11 @@
       </sec:man_fmt>
     </man-sfrs>
     <opt-sfrs>
-    <f-component cc-id="fau_sel.1" id="fau-sel-1-agent" name="Security Audit Event Selection" iteration="AGENT">
+      <section id="sec-opt-audit-table" title="Auditable Events for Optional SFRs">
+        <audit-table id="at-optional" table="optional"/>
+      </section>
+      <section title="Class FAU: Security Audit" id="ss-opt-fau">
+        <f-component cc-id="fau_sel.1" id="fau-sel-1-agent" name="Security Audit Event Selection" iteration="AGENT">
           <consistency-rationale/>
           <f-element>
             <title>The TSF shall <h:b><selectables>
@@ -1944,22 +1948,23 @@
                     attribute (or those that are always recorded, as identified in the
                     administrative guidance) to be recorded.
                   </test>
-                  <test>[conditional]: If the TSF supports specification of more complex audit
+                    <test>[conditional]: If the TSF supports specification of more complex audit
                     pre-selection criteria (e.g., multiple attributes, logical expressions using
                     attributes) then the evaluator shall devise tests showing that this capability
                     is correctly implemented. The evaluator shall also, in the test plan, provide a
                     short narrative justifying the set of tests as representative and sufficient to
                     exercise the capability.
-                  </test>
-                </testlist>
-              </Tests>
-            </aactivity>
-          </f-element>
-          <audit-event>
-            <audit-event-descr>All modifications to the audit configuration that occur while the audit collection functions are operating.</audit-event-descr>
-            <audit-event-info>No additional information.</audit-event-info>
-          </audit-event>
-        </f-component>
+                   </test>
+                  </testlist>
+                </Tests>
+              </aactivity>
+            </f-element>
+            <audit-event>
+              <audit-event-descr>All modifications to the audit configuration that occur while the audit collection functions are operating.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+          </f-component>
+        </section>
       </opt-sfrs>
     <sel-sfrs/>
     <obj-sfrs/>
