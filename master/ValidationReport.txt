@@ -1,1 +1,0 @@
-/home/runner/work/mdm-agent/mdm-agent/input/mdm-agent.xml:1908:113: error: element "f-component" not allowed here; expected the element end-tag, element "section" or an element from another namespace
