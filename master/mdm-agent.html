@@ -1873,8 +1873,9 @@ Operating System
 <tr><td><a href="#FTP_TRP.1/MDFENROLL">FTP_TRP.1/MDFENROLL</a> (additional to PP_MDF)</td><td>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server for enrollment into management.</td></tr>
 <tr><td><a href="#FTP_ITC_EXT.1/OSCHANNEL">FTP_ITC_EXT.1/OSCHANNEL</a> (additional to PP_GPOS)</td><td>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server for transmission of policies.</td></tr>
 <tr><td><a href="#FTP_TRP.1/OSENROLL">FTP_TRP.1/OSENROLL</a> (additional to PP_GPOS)</td><td>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server for enrollment into management.</td></tr>
-<tr class="major-row"><td rowspan="5"><a href="#T.MISUSED_DEVICE">T.MISUSED_​DEVICE</a></td><td><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td>Mitigates the threat of a misused device by causing the generation of alerts based on the usage of the device.</td></tr>
+<tr class="major-row"><td rowspan="6"><a href="#T.MISUSED_DEVICE">T.MISUSED_​DEVICE</a></td><td><a href="#FAU_ALT_EXT.2">FAU_ALT_EXT.2</a></td><td>Mitigates the threat of a misused device by causing the generation of alerts based on the usage of the device.</td></tr>
 <tr><td><a href="#FAU_GEN.1/AGENT">FAU_GEN.1/AGENT</a></td><td>Mitigates the threat of a misused device by generating audit events regarding the use and behavior of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent.</td></tr>
+<tr><td><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a> (optional)</td><td>Mitigates the threat of a misused device by allowing the activity that triggers audit events for <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent behavior.</td></tr>
 <tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td>Mitigates the threat of a misused device by preventing the unenrollment of the device from management or by taking some other security-relevant action if unenrollment is performed.</td></tr>
 <tr><td><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a> (implementation-dependent)</td><td>Mitigates the threat of a misused device by tracking when the device has lost contact with the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server as a basis for triggering automatic fail-safe behavior.</td></tr>
 <tr><td><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a> (implementation-dependent)</td><td>Mitigates the threat of a misused device by using trusted platform storage to protect against destruction of evidence related to misuse.</td></tr>
@@ -1965,9 +1966,7 @@ Operating System
         <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>.</td></tr><tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the functions performed by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent when unenrolled from an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>. The base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines 
         unenrollment actions in FMT_SMF_EXT.2, and goes on to note
         that these actions may be performed “perhaps via an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent,” so this is
-        expected behavior. </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements.
-	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+        expected behavior. </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td></td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Objective requirements.
 	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent
         to store generated audit data in the audit storage provided by the mobile device. The base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines the capability for 
@@ -2045,9 +2044,7 @@ Operating System
         with the underlying <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr> platform to enforce management functions that are
         configured by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server (FMT_SMF.1/SERVER_CONF_AGENT in the base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>).</td></tr><tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to define its behavior upon
         unenrollment from management. Unenrollment from management is a management function that is
-        specified in the base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements.
-	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+        specified in the base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td></td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Objective requirements.
 	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent
         to store generated audit data in the audit storage provided by the <abbr class="dyn-abbr"><a href="#abbr_MD">MD</a></abbr>. This does
@@ -2131,9 +2128,7 @@ Operating System
         to interact with the underlying operating system to execute the management functions defined by
         FMT_MOF_EXT.1 in the base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. The base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not preclude administration being performed in this manner.</td></tr><tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the functions performed by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent when unenrolled from an <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>. The base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>
         defines FMT_SMF_EXT.1 which allows for assigned management functions to be specified. This can include unenrollment behavior as defined 
-        by <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>. </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
-	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements.
-	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+        by <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>. </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></td><td></td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Objective requirements.
 	    </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_STG_EXT.3">FAU_STG_EXT.3</a></td><td> This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the ability of the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> agent
         to store generated audit data in platform-provided audit storage. The base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines the capability for 
@@ -2145,8 +2140,58 @@ Operating System
         this does not prevent the enforcement of any security requirements from the base <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.</td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Selection-based requirements.
 	    </td></tr></tr></table><h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A -  Optional SFRs</h1><h2 id="opt-sfrs" class="indexable" data-level="2">A.1 Strictly Optional Requirements
-    </h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any 
-       Strictly Optional        <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr>.</p><h2 id="obj-sfrs" class="indexable" data-level="2">A.2 Objective Requirements
+    </h2>
+    <div class="comp" id="FAU_SEL.1/AGENT"><h4>FAU_SEL.1/AGENT Security Audit Event Selection</h4>
+          
+          <div class="element"><div class="reqid" id="FAU_SEL.1.1/AGENT"><a href="#FAU_SEL.1.1/AGENT" class="abbr">FAU_SEL.1.1/AGENT</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall <b>[<b>selection</b>: <span class="selectable-content" id="_s_52">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_53">implement functionality</span>]</b> to select the set of events to be audited from the set of all auditable
+              events based on the following attributes: <ol type="a">
+                <li>[<i>event type</i>]</li>
+                <li>[<i>success of auditable security events, failure of auditable security events, 
+                  [<b>assignment</b>: 
+     <span class="assignable-content">other attributes</span>]</i>].</li>
+              </ol><div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">The intent of this requirement is to identify all criteria that
+              can be selected to trigger an audit event. For the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author, the
+              assignment is used to list any additional criteria that may be used but are not captured by the selection. This selection may be
+              configured by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr> server.<br/><br/>
+            </span></div></div></div>
+          
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FAU_SEL.1/AGENT">FAU_SEL.1/AGENT</a></div>
+              
+              
+              
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">If "invoke platform-provided functionality" is selected, the evaluator shall
+                examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it
+                describes (for each supported platform) how this functionality is invoked. It should
+                be noted that this may be through a mechanism that is not implemented by the <abbr class="dyn-abbr"><a href="#abbr_MDM">MDM</a></abbr>
+                agent; nonetheless, that mechanism will be identified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
+                as part of this evaluation activity.<br/><br/>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to determine that it
+                contains instructions on how to define the set of auditable events as well as
+                explains the syntax for multi-value selection (if applicable). The evaluator shall
+                also verify that the operational guidance shall identify those audit records that
+                are always recorded, regardless of the selection criteria currently being
+                enforced.<br/><br/>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                <span class="testlist-"><ul>
+                  <li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FAU_SEL.1/AGENT:1</a>:
+      For each attribute listed in the requirement, the evaluator shall devise a
+                    test to show that selecting the attribute causes only audit events with that
+                    attribute (or those that are always recorded, as identified in the
+                    administrative guidance) to be recorded.
+                  </li>
+                  <li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FAU_SEL.1/AGENT:2</a>:
+      [conditional]: If the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> supports specification of more complex audit
+                    pre-selection criteria (e.g., multiple attributes, logical expressions using
+                    attributes) then the evaluator shall devise tests showing that this capability
+                    is correctly implemented. The evaluator shall also, in the test plan, provide a
+                    short narrative justifying the set of tests as representative and sufficient to
+                    exercise the capability.
+                  </li>
+                </ul></span>
+              </div></div></div></div></div>
+      <h2 id="obj-sfrs" class="indexable" data-level="2">A.2 Objective Requirements
     </h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any 
        Objective       <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.</p><h2 id="impl-dep-sfrs" class="indexable" data-level="2">A.3 Implementation-dependent Requirements
     </h2>
@@ -2195,7 +2240,7 @@ Operating System
           
           
           
-          <div class="element"><div class="reqid" id="FPT_NET_EXT.1.1"><a href="#FPT_NET_EXT.1.1" class="abbr">FPT_NET_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect when a configurable [<b>selection</b>: <span class="selectable-content" id="_s_52">positive integer of missed reachability events occur</span>, <span class="selectable-content" id="_s_53">time limit is exceeded</span>] related to when the last successful connection with the server has been
+          <div class="element"><div class="reqid" id="FPT_NET_EXT.1.1"><a href="#FPT_NET_EXT.1.1" class="abbr">FPT_NET_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect when a configurable [<b>selection</b>: <span class="selectable-content" id="_s_54">positive integer of missed reachability events occur</span>, <span class="selectable-content" id="_s_55">time limit is exceeded</span>] related to when the last successful connection with the server has been
               reached. </div></div>
           
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FPT_NET_EXT.1">FPT_NET_EXT.1</a></div>
@@ -2359,7 +2404,7 @@ Operating System
             in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, functional package or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>:
             <ul>
               <li>Minimal: Reaching or exceeding unreachability threshold.</li></ul>
-          </p><h4>FPT_NET_EXT.1 Network Reachability</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FPT_STM.1 Reliable Time Stamps</td></tr></table><h4 id="ext-comp-FPT_NET_EXT.1.1">FPT_NET_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect when a configurable [<b>selection</b>: <span class="selectable-content" id="_s_52">positive integer of missed reachability events occur</span>, <span class="selectable-content" id="_s_53">time limit is exceeded</span>] related to when the last successful connection with the server has been
+          </p><h4>FPT_NET_EXT.1 Network Reachability</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FPT_STM.1 Reliable Time Stamps</td></tr></table><h4 id="ext-comp-FPT_NET_EXT.1.1">FPT_NET_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall detect when a configurable [<b>selection</b>: <span class="selectable-content" id="_s_54">positive integer of missed reachability events occur</span>, <span class="selectable-content" id="_s_55">time limit is exceeded</span>] related to when the last successful connection with the server has been
               reached. </div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
 			successfully evaluated against this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. These requirements are not featured
 			explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. They are not included as 
