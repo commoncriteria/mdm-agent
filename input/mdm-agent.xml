@@ -236,8 +236,7 @@
         
           <usage id="usage-tls-client" title="TLS or DTLS Client Functionality Required">
             <description>
-              This usage requirement applies to all implementations of TLS that support the MDM enrollment and MDM communication channels, whether these implementations are described as iterated TLS 
-              requirements or combined with base PP TLS requirements. In order to support the objectives of these channels, the ST author shall claim support for TLS or DTLS as a client. The 
+              This usage requirement applies to all implementations of TLS that support the MDM enrollment and MDM communication channels. In order to support the objectives of these channels, the ST author shall claim support for TLS or DTLS as a client. The 
               selection shall correspond with the protocol(s) selected in any of the following SFRS: FTP_ITC_EXT.1.1/MDFCHANNEL, FTP_TRP.1/MDFENROLL, FTP_ITC_EXT.1.1/OSCHANNEL, FTP_TRP.1/OSENROLL.
             </description>
             <config>
