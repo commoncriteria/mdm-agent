@@ -1033,7 +1033,7 @@
         
         
         
-        <sec:gpos_add_ftp title="Trusted Path/Channels (FTP)">
+        <sec:gpos_add_ftp title="Class FTP: Trusted Path/Channels">
           <f-component cc-id="ftp_itc_ext.1" name="Trusted Channel Communication" iteration="OSCHANNEL">
             <consistency-rationale> The base PP includes FTP_ITC_EXT.1 to define the secure protocols used for trusted channel communications. 
               This PP-Module iterates the SFR to specify a subset of these protocols that may be used for MDM agent communications in particular. </consistency-rationale>
