@@ -327,8 +327,8 @@
           </description>
           <addressed-by>FAU_ALT_EXT.2</addressed-by><rationale>Mitigates the threat of a misused device by causing the generation of alerts based on the usage of the device.</rationale>
           <addressed-by>FAU_GEN.1/AGENT</addressed-by><rationale>Mitigates the threat of a misused device by generating audit events regarding the use and behavior of the MDM agent.</rationale>
-          <addressed-by>FAU_SEL.1/AGENT (optional)</addressed-by><rationale>Mitigates the threat of a misused device by allowing the activity that triggers audit events for MDM agent behavior.</rationale>
           <addressed-by>FMT_UNR_EXT.1</addressed-by><rationale>Mitigates the threat of a misused device by preventing the unenrollment of the device from management or by taking some other security-relevant action if unenrollment is performed.</rationale>
+          <addressed-by>FAU_SEL.1/AGENT (optional)</addressed-by><rationale>Mitigates the threat of a misused device by allowing the activity that triggers audit events for MDM agent behavior.</rationale>
           <addressed-by>FPT_NET_EXT.1 (implementation-dependent)</addressed-by><rationale>Mitigates the threat of a misused device by tracking when the device has lost contact with the MDM server as a basis for triggering automatic fail-safe behavior.</rationale>
           <addressed-by>FAU_STG_EXT.3 (implementation-dependent)</addressed-by><rationale>Mitigates the threat of a misused device by using trusted platform storage to protect against destruction of evidence related to misuse.</rationale>
         </threat>
