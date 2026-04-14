@@ -36,13 +36,10 @@
     </entry>
     <entry>
       <version>2.0</version>
-      <date>2025-01-31</date>
+      <date>2026-04-14</date>
       <subject>
-        <ul>
-          <li>Converted to CC:2022 and incorporated NIAP Technical Decisions.</li>
-          <li>Moved FAU_SEL.1/AGENT to optional.</li>
-        </ul>
-        
+        Converted to CC:2022 and incorporated NIAP Technical Decisions.<h:br/>
+        Moved FAU_SEL.1/AGENT to optional.        
       </subject>
     </entry>
   </RevisionHistory>
