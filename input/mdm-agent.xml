@@ -540,6 +540,14 @@
       <url>https://github.com/commoncriteria/mdm</url>
       <!-- 5.2.1 Modified SFRs -->
       <modified-sfrs>
+        <section title="Class FPT: Protection of the TSF" id="mdm-mod-fpt">
+          <!-- FPT_ITT.1/INTRA_XFER_AGENT Internal TOE TSF Data Transfer (MDM Agent) -->
+          <base-sfr-spec cc-id="fpt_itt.1" id="mod-fpt-itt-1" title="Internal TOE TSF Data Transfer (MDM Agent)" iteration="INTRA_XFER_AGENT">
+            <consistency-rationale>There is no modification to this SFR, but it is mandatory for a TOE that conforms to this PP-Module because it must always be claimed when an MDM includes an MDM agent as part of the TOE.</consistency-rationale>
+            <description>This PP-Module requires that communications between the MDM server and MDM agent portions of the TOE are secured in the manner specified by FPT_ITT.1/INTRA_XFER_AGENT in PP_MDM. This PP-Module does not require that this channel be established in a specific manner beyond this function using one of the methods specified in PP_MDM; a registration channel over an untrusted network, a registration channel over an environmentally protected network, or registration without the use of a registration channel is permitted. Depending on the method used, the appropriate PP_MDM SFR claims must be made.</description>
+            <set-status status="mandatory"/>
+          </base-sfr-spec>
+        </section>
         <section title="Class FTP: Trusted Path/Channels" id="mdm-mod-ftp">
           <!-- FTP_ITC_EXT.1 Trusted Channel -->
           <base-sfr-spec cc-id="ftp_itc_ext.1" id="mod-ftp-itc-ext-1" title="Trusted Channel">
@@ -556,27 +564,26 @@
                     The TSF shall provide a communication channel between itself and [<h:i>an MDM agent that is internal to the TOE</h:i>] that is logically distinct from other communication channels, as specified in [<h:i>FPT_ITT.1/INTRA_XFER_AGENT</h:i>].
                   </title>
                   <ext-comp-def-title>
-                    <title>The TSF shall provide a communication channel between itself and <selectables linebreak="yes"><selectable id="ITC_AgentInTOE">an MDM agent that is internal to the TOE </selectable> <selectable id="ITC_AgentOutTOE">an MDM agent that is external to the TOE </selectable> <selectable id="ITC_DISTRIBUTED_TOE">other components comprising the distributed TOE </selectable> </selectables> that is logically distinct from other communication channels, as specified in <assignable>inter-TSF trusted channel or internal TOE TSF data transfer type </assignable></title>
+                    <title>
+                      The TSF shall provide a communication channel between itself and
+                      <selectables linebreak="yes">
+                        <selectable id="ITC_AgentInTOE">an MDM agent that is internal to the TOE</selectable>
+                        <selectable id="ITC_AgentOutTOE">an MDM agent that is external to the TOE</selectable>
+                        <selectable>a subordinate MDM server</selectable>
+                        <selectable id="ITC_SUBORDINATE_MDM">a primary MDM server</selectable>
+                        <selectable id="ITC_DISTRIBUTED_TOE">other components comprising the distributed TOE</selectable>
+                      </selectables>
+                      that is logically distinct from other communication channels.
+                    </title>
                   </ext-comp-def-title>
-                  <note role="application">
-                    This SFR describes the communication channels between the MDM server and an agent that may or may not be in the TOE, and optionally separate
-              components comprising a distributed TOE, to determine which selection-based SFRs will need to be included in the ST.
-                    <h:br/>
-                    <h:br/>
-                    If the TOE includes an MDM agent, then the communication channel between the agent and TSF is internal to the TOE and thus "an MDM agent that is
-              internal to the TOE" must be selected in the first selection. Additionally FPT_ITT.1/INTER_XFER_AGENT must be selected in the second selection and
-              FPT_ITT.1/INTER_XFER_AGENT must be included in the ST.
-                    <h:br/>
-                    <h:br/>
-                    If the TOE interoperates with an evaluated MDM agent built into a MD (i.e., the TOE does not include an MDM agent), the communication channel 
-              between the agent and TSF is external to the TOE and thus "an MDM agent that is external to the TOE" must be selected in the first selection.
-              Additionally FTP_ITC.1/INTER_TSF_XFER_AGENT must be selected in the second selection and FTP_ITC.1/INTER_TSF_XFER_AGENT must be included in the ST.
-                    <h:br/>
-                    <h:br/>
-                    If "other components comprising the distributed TOE" is selected in the first selection then FPT_ITT.1/INTER_XFER must be selected in the second
-              selection. FPT_ITT.1/INTER_XFER must be included in the ST for all internal channels used to transfer TSF data between TOE components other than an 
-              MDM agent.
-                  </note>
+                  <note role="application">This SFR describes the communication channels between the MDM server and an agent that may or may not be inside the TOE boundary, and optionally separate
+              components comprising a distributed TOE, to determine which selection-based SFRs will need to be included in the ST.</note>
+                  <aactivity>
+                    <TSS>The evaluator shall ensure that the TSS contains whether the MDM server communication channel is internal or external to the TOE.</TSS>
+                    <Guidance/>
+                    <Tests>This testing can be completed in conjunction with the testing for
+                FPT_ITT.1/INTRA_XFER / FPT_ITT.1/INTRA_XFER_AGENT, FTP_ITC.1/OE_XFER_AGENT, or FTP_ITC.1/OE_XFER_IT.</Tests>
+                  </aactivity>
                 </f-element>
               </xpath-specified>
             </replace>
