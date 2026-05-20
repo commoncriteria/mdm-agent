@@ -99,7 +99,7 @@
       <term full="Mobile Device Fundamentals" abbr="MDF"/>
       <term full="Transport Layer Security" abbr="TLS"/>
     </tech-terms>
-    <section title="Compliant Targets of Evaluation" id="targets">
+    <section id="targets" title="Compliant Targets of Evaluation">
       The MDM system
       consists of two primary components: the MDM server software and the MDM agent. This PP-Module specifically addresses the MDM agent, 
       which establishes a secure connection back
@@ -138,7 +138,7 @@
       the OS, the MDM agent may present multiple interfaces for configuring the OS, such as a local and remote interface. 
       The MDM agent does not need to provide a dedicated management interface that is separate from the means by which administrators interact with the 
       OS as a whole. However, if it does provide any such interfaces, the configuration aspects of these additional interfaces are in scope of this PP-Module.
-      <sec:TOE_Boundary>
+      <section title="TOE Boundary" id="TOEboundary">
         Figure 1 shows a high-level example of the PP-Module
         TOE boundary and its OE where the TOE runs on a mobile device. A use case where the TOE runs on a GPOS
         is identical aside from the specific type of device on which it runs. As stated above, the MDM agent may either be provided as part of the device itself (shown in
@@ -150,7 +150,7 @@
         The MDM agent must closely interact with or be part of the mobile device or OS platform so that it can
         establish policies and to perform queries about device status. The mobile device and OS platform, in turn,
         have their own security requirements specified in PP_MDF and PP_GPOS, respectively.
-      </sec:TOE_Boundary>
+      </section>
     </section>
     <sec:Use_Cases>
       This PP-Module defines four use cases:
@@ -702,6 +702,17 @@
 	    author, and minimally includes credentials and keys.  The interface for invoking the
 	    functionality could take a variety of forms: it could consist of an API,
 	    or simply well-documented conventions for accessing credentials stored as files.</note>
+                  <aactivity>
+                    <TSS>The evaluator shall check the TSS to ensure that it lists all persistent
+              sensitive data for which the OS provides a storage capability.  For each of these
+              items, the evaluator shall confirm that the TSS lists for what purpose it can be used,
+              and how it is stored.
+	      The evaluator shall confirm that cryptographic operations used to protect the data occur as
+	      specified in FCS_COP.1/SKC.</TSS>
+                    <Guidance>The evaluator shall consult the developer documentation to verify that instructions
+		exists on applications should securely store credentials.</Guidance>
+                    <Tests/>
+                  </aactivity>
                 </f-element>
               </xpath-specified>
             </replace>
@@ -884,8 +895,11 @@
               <Tests>
                 <testlist>
                   <test>The evaluator shall perform a policy update from the test environment MDM server. The evaluator shall verify the MDM agent accepts the update, makes the configured changes, and reports the success of the policy update back to the MDM server.</test>
+                  <h:br/>
                   <test>The evaluator shall perform each of the actions listed in FAU_ALT_EXT.2.1 and verify that the alert does in fact reach the MDM server.</test>
+                  <h:br/>
                   <test>The evaluator shall configure the MDM agent to perform a network reachability test, both with and without such connectivity and ensure that results reflect each.</test>
+                  <h:br/>
                   <test>The evaluator shall remove network connectivity from the MDM agent and generate an alert or event as defined in FAU_ALT_EXT.2.1. The evaluator shall restore network connectivity to the MDM agent and verify that the alert generated while the TOE was disconnected is sent by the MDM agent upon re-establishment of the connectivity.</test>
                 </testlist>
               </Tests>
@@ -1146,6 +1160,7 @@
                 <h:br/>
                 <testlist>
                   <test>The evaluator shall perform a policy update from an available configuration interface (such as through a test MDM server). The evaluator shall verify the update is signed and is provided to the MDM agent. The evaluator shall verify the MDM agent accepts the digitally signed policy.</test>
+                  <h:br/>
                   <test>The evaluator shall perform a policy update from an available configuration interface (such as through a test MDM server). The evaluator shall provide an unsigned and an incorrectly signed policy to the MDM agent. The evaluator shall verify the MDM agent does not accept the unsigned and incorrectly signed policies.</test>
                 </testlist>
               </Tests>
@@ -1287,9 +1302,13 @@
               <Tests>
                 <testlist>
                   <test>In conjunction with the evaluation activities in the base PP, the evaluator shall attempt to configure each administrator-provided management function and shall verify that the MD executes the commands and enforces the policies.</test>
+                  <h:br/>
                   <test>[conditional: if "import the certificates to be used for authentication of MDM agent communications" is selected in FMT_SMF_EXT.4.1, then] The evaluator shall configure the MDM agent authentication certificate in accordance with the configuration guidance. The evaluator shall verify that the MDM agent uses this certificate in performing the tests for PP_MDM SFR FPT_ITT.1/INTRA_XFER_AGENT (if PP_MDM is the base PP), the Additional SFR FTP_ITC_EXT.1/MDFCHANNEL (if PP_MDF is the base PP), or the Additional SFR FTP_ITC_EXT.1/OSCHANNEL (if PP_GPOS is the base PP).</test>
+                  <h:br/>
                   <test>In conjunction with other evaluation activities, the evaluator shall attempt to enroll the MDM agent in management with each interface identified in the TSS, and verify that the MDM agent can manage the device and communicate with the MDM server.</test>
+                  <h:br/>
                   <test>[conditional] In conjunction with the evaluation activity for FAU_ALT_EXT.2.1, the evaluator shall configure the periodicity for reachability events for several configured time periods and verify that the MDM server receives alerts on that schedule.</test>
+                  <h:br/>
                   <test>[conditional] The evaluator shall design and perform tests to demonstrate that the assigned function may be configured and that the intended behavior of the function is enacted by the MD.</test>
                 </testlist>
               </Tests>
@@ -1363,6 +1382,7 @@
               <Tests>
                 <testlist>
                   <test>If ‘prevent the unenrollment from occurring’ is selected, the evaluator shall configure the MDM agent according to the administrative guidance for each available configuration interface, attempt to unenroll the device, and verify that the attempt fails.</test>
+                  <h:br/>
                   <test>If ‘apply remediation actions’ is selected, if any configuration allows the user to unenroll, the evaluator shall configure the MDM agent to allow user unenrollment, attempt to unenroll, and verify that the remediation actions are applied.</test>
                 </testlist>
               </Tests>
@@ -1370,7 +1390,7 @@
           </f-element>
           <audit-event table="mandatory">
             <audit-event-descr>
-              <selectables>
+              <selectables onlyone="yes">
                 <selectable>Attempt to unenroll</selectable>
                 <selectable>None</selectable>
               </selectables>
@@ -1438,6 +1458,7 @@
               <Tests>
                 <testlist>
                   <test>For each attribute listed in the requirement, the evaluator shall devise a test to show that selecting the attribute causes only audit events with that attribute (or those that are always recorded, as identified in the administrative guidance) to be recorded.</test>
+                  <h:br/>
                   <test>[conditional]: If the TSF supports specification of more complex audit pre-selection criteria (e.g., multiple attributes, logical expressions using attributes) then the evaluator shall devise tests showing that this capability is correctly implemented. The evaluator shall also, in the test plan, provide a short narrative justifying the set of tests as representative and sufficient to exercise the capability.</test>
                 </testlist>
               </Tests>
