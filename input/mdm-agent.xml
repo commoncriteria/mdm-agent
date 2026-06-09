@@ -287,6 +287,7 @@
     </CClaimsInfo>
   </sec:Conformance_Claims>
   <!-- 3.0 Security Problem Definition-->
+  <!-- 4.0 Security Objectives -->
   <sec:Security_Problem_Definition>
     <!-- 3.1 Threats -->
     <sec:Threats>
@@ -401,7 +402,7 @@
       </OSPs>
     </section>
   </sec:Security_Problem_Definition>
-  <!-- 4.0 Security Objectives -->
+  <!-- 5.0 Security Requirements -->
   <sec:Security_Objectives>
     <!-- 4.1 Security Objectives for the TOE -->
     <!-- 4.2 Security Objctives for the Operational Environment -->
@@ -434,7 +435,6 @@
     <!-- 4.3 Security Objectives Rationale -->
     <sec:Security_Objectives_Rationale/>
   </sec:Security_Objectives>
-  <!-- 5.0 Security Requirements -->
   <sec:Security_Requirements title="Security Requirements">
     <!-- 5.1 MDF PP Security Functional Requirements Direction -->
     <base-pp id="bpp-mdf" name="Mobile Device Fundamentals" product="Mobile Device" short="MDF" version="4.0">
