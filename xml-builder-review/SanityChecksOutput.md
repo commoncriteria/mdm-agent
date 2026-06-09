@@ -2,8 +2,12 @@
 	  /Module[1]""/sec:Introduction[1]""/section[3]"This sect"/package-usage-list[1]""/package-usage[1]""/usage[1]""/config[1]""/ref-id[1]"dummy-ref"
 * Error: Detected dangling ref-id to 'dummy-ref-id'.
 	  /Module[1]""/sec:Introduction[1]""/section[3]"This sect"/package-usage-list[1]""/package-usage[1]""/usage[2]""/config[1]""/ref-id[1]"dummy-ref"
- Failed to find a reference to at-man-audit.
- Failed to find a reference to at-man-audit.
+ Failed to find a reference to at-mdf-addnl.
+ Failed to find a reference to at-mdm-addnl.
+ Failed to find a reference to at-gpos-addnl.
+ Failed to find a reference to at-mdf-addnl.
+ Failed to find a reference to at-mdm-addnl.
+ Failed to find a reference to at-gpos-addnl.
 * Warning: Since FAU_ALT_EXT.2.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
 * Warning: Since FMT_SMF_EXT.4.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
