@@ -1,3 +1,6 @@
+* Error: Detected multiple elements with an id of 'ss-audit-table'.
+* Error: Detected multiple elements with an id of 'ss-audit-table'.
+* Error: Detected multiple elements with an id of 'ss-audit-table'.
 * Error: Detected dangling ref-id to 'dummy-ref-id'.
 	  /Module[1]""/sec:Introduction[1]""/section[3]"This sect"/package-usage-list[1]""/package-usage[1]""/usage[1]""/config[1]""/ref-id[1]"dummy-ref"
 * Error: Detected dangling ref-id to 'dummy-ref-id'.
