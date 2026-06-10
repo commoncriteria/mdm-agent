@@ -1292,7 +1292,7 @@
       
       
       <!-- Audit table for mandatory requirements  -->
-      <sec:ss-audit-table title="Auditable Events for Mandatory SFRs">
+      <section id="ss-audit-table" title="Auditable Events for Mandatory SFRs">
         <h:p>
           The auditable events specified in this PP-Module are included in an ST 
           if the incorporating PP, cPP, or PP-Module supports audit event reporting through FAU_GEN.1,
@@ -1301,7 +1301,7 @@
         <audit-table id="at-man-audit" table="mandatory">
           <h:div class="table-caption"><ctr ctr-type="Table" id="atref-mandatory">: Auditable Events for Mandatory SFRs</ctr></h:div>
         </audit-table>
-      </sec:ss-audit-table>
+      </section>
       
       <sec:man_fau title="Class FAU: Security Audit">
         <ext-comp-def fam-id="FAU_ALT_EXT" title="MDM Alerts">
