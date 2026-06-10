@@ -799,7 +799,7 @@
     </base-pp>
     <!-- 5.4 TOE Security Functional Requirements -->
     <man-sfrs>
-      <sec:ss-audit-table title="Auditable Events for Mandatory SFRs">
+      <section title="Auditable Events for Mandatory SFRs" id="ss-audit-table">
         <h:p>The auditable events specified in this PP-Module are included in an ST 
           if the incorporating PP, cPP, or PP-Module supports audit event reporting through FAU_GEN.1,
           and if all other criteria in the incorporating PP or PP-Module are met.</h:p>
@@ -808,7 +808,7 @@
             <ctr ctr-type="Table" id="atref-mandatory">: Auditable Events for Mandatory SFRs</ctr>
           </h:div>
         </audit-table>
-      </sec:ss-audit-table>
+      </section>
       <!-- 5.4.1 Class FAU: Security Audit -->
       <section title="Class FAU: Security Audit" id="man_fau">
         <ext-comp-def title="MDM Alerts" fam-id="FAU_ALT_EXT">
@@ -1412,7 +1412,7 @@
     </man-sfrs>
     <mod-sars/>
     <opt-sfrs>
-      <section id="sec-opt-audit-table" title="Auditable Events for Optional SFRs">
+      <section id="ss-audit-table" title="Auditable Events for Optional SFRs">
         <audit-table id="at-optional" table="optional"/>
       </section>
       <!-- 5.4.4 Class FAU: Security Audit -->
@@ -1484,7 +1484,7 @@
     <sel-sfrs/>
     <obj-sfrs/>
     <impl-dep-sfrs>
-      <section id="sib-audit-table" title="Auditable Events for Implementation-Dependent SFRs">
+      <section id="ss-audit-table" title="Auditable Events for Implementation-Dependent SFRs">
         <audit-table id="at-feat-based" table="feat-based">
           <h:br/>
           <h:b>
