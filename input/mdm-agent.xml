@@ -446,7 +446,267 @@
       <!-- 5.1.1 Modified SFRs -->
       <modified-sfrs/>
       <!-- 5.1.2 Additional SFRs -->
-      <additional-sfrs/>
+      <additional-sfrs>
+        <section id="sec-at-mdf-addnl" title="Auditable Events for PP_MDF Additional SFRs">
+          <audit-table id="at-mdf-addnl" table="tab-at-mdf-addnl" title="Auditable Events for PP_MDF Additional SFRs"></audit-table>
+        </section>
+        <section title="Class FCS: Cryptographic Suport" id="mdf_mod_fcs">
+          <ext-comp-def title="Cryptographic Key Storage" fam-id="FCS_STG_EXT">
+            <fam-behavior/>
+          </ext-comp-def>
+          <!-- FCS_STG_EXT.4 Cryptographic Key Storage -->
+          <f-component cc-id="fcs_stg_ext.4" id="fcs-stg-ext-4" name="Cryptographic Key Storage">
+            <consistency-rationale>This SFR requires the MDM agent to use
+              functionality defined by the base PP in FCS_CKM_EXT.1.</consistency-rationale>
+            <comp-lev>requires the TSF to define a specific location for its key
+              storage.</comp-lev>
+            <management>There are no management functions foreseen.</management>
+            <audit>There are no auditable events foreseen.</audit>
+            <dependencies>FCS_CKM.1 Cryptographic Key Generation</dependencies>
+            <f-element id="fcs_stg_ext-4-1">
+              <title>The MDM agent shall use the platform provided key storage for
+                all persistent secret and private keys.</title>
+              <note role="application">This requirement ensures that persistent secrets
+                (credentials, secret keys, authentication tokens) and private keys are stored securely when not in use by
+                the mobile platform.</note>
+              <aactivity>
+                <TSS>
+                  <h:p>The evaluator shall verify that the TSS lists each persistent
+                  secret (credential, secret keys, authentication tokens) and private keys needed to meet the requirements in
+                  the ST. For each of these items, the evaluator shall confirm that
+                  the TSS lists for what purpose it is used, and, for each
+                  platform listed as supported in the ST, how it is stored. The
+                  evaluator shall verify that the MDM agent calls a platform-provided API to store
+                  persistent secrets and private keys.</h:p>
+                </TSS>
+                <Guidance>
+                  <h:p>There are no guidance EAs for this component.</h:p>
+                </Guidance>
+                <Tests>There are no test EAs for this component.</Tests>
+              </aactivity>
+            </f-element>
+            <audit-event table="tab-at-mdf-addnl"/>
+          </f-component>
+        </section>
+        <section title="Class FTP: Trusted Path/Channels" id="mdf_mod_ftp">
+          <!-- FTP_ITC_EXT.1/MDFCHANNEL Trusted Channel Communication -->
+          <f-component cc-id="ftp_itc_ext.1" id="ftp-itc-ext-1-mdfchannel" name="Trusted Channel Communication" iteration="MDFCHANNEL">
+            <consistency-rationale> The base PP includes FTP_ITC_EXT.1 to define the secure protocols used for trusted channel communications. This PP-Module iterates the SFR to specify a subset of these protocols that may be used for MDM agent communications in particular. </consistency-rationale>
+            <f-element id="mut-chan-type">
+              <title>
+                The TSF shall use
+                <selectables linebreak="yes">
+                  <selectable id="ftp_itc_ext.1.1_MDFCHANNEL_1">mutually authenticated TLS in accordance with [<h:i><xref to="tls"/></h:i>],</selectable>
+                  <selectable id="ftp_itc_ext.1.1_MDFCHANNEL_2">mutually authenticated <h:b>DTLS</h:b> in accordance with [<h:i><xref to="tls"/></h:i>],</selectable>
+                  <selectable id="ftp_itc_ext.1.1_MDFCHANNEL_3"><h:b>HTTPS</h:b>,</selectable>
+                </selectables>
+                and [<h:i>no other protocols</h:i>] to provide a communication channel between itself and another trusted
+                IT product that is logically distinct from other communication channels, provides
+                assured identification of its end points, protects channel data from disclosure, and
+                detects modification of the channel data.
+              </title>
+              <note role="application">
+                The intent of this requirement is to protect the
+                communications channel between MDM server and MDM agent, post
+                enrollment. FTP_TRP.1/MDFENROLL is to protect the communications
+                channel between MDM server and MDM agent during enrollment.
+                <h:br/>
+                <h:br/>
+                This requirement is to ensure that the transmission of any audit
+                logs, mobile device information data (software version, hardware model, and
+                application versions), and configuration data collected by the MDM
+                agent and sent from the MDM agent to the MDM
+                server, when commanded, or at configurable intervals, is properly protected. This
+                trusted channel also protects any commands and policies sent by the MDM server to the MDM agent. 
+                Either the MDM agent or the MDM server is able to initiate the
+                connection.
+                <h:br/>
+                <h:br/>
+                This requirement is iterated from PP_MDF to indicate the protocols that the MDM agent can use for a trusted
+                channel. The mobile device is required to perform the mandated cryptographic
+                protocols as in the base PP for communication channels mandated in
+                PP_MDF.
+                <h:br/>
+                <h:br/>
+                Since this
+                requirement is only for the case when the PP-Module builds on the MDF
+                PP, and in this case it is expected that the MDM agent will be a
+                native part of the mobile operating system, it is expected that the MDM agent will use the mobile device's implementation of the
+                selected protocols. HTTPS (FCS_HTTPS_EXT.1) and TLS (FCS_TLSC_EXT.1) are already
+                mandatory for an MDF ST. Protocol, RBG, certificate validation, algorithm, and similar services may
+                be met with platform provided services.
+              </note>
+            </f-element>
+            <f-element id="mut-chan-init">
+              <title>The TSF shall permit the TSF <h:b>, the MDM
+                server, and  <selectables><selectable id="ftp_itc_ext.1.2_MDFCHANNEL_1">MAS server</selectable><selectable id="ftp_itc_ext.1.2_MDFCHANNEL_2">no other IT entities</selectable></selectables></h:b> to initiate communication via the trusted channel.</title>
+              <note role="application">For all other use cases, the mobile device initiates the
+                communication; however, for MDM agents, the MDM
+                server may also initiate communication.</note>
+            </f-element>
+            <f-element id="mut-chan-all-none">
+              <title>
+                The TSF shall initiate communication via the trusted channel for
+                <h:b>
+                  all
+                communication between the MDM agent and the MDM server and
+                  <selectables>
+                    <selectable id="ftp_itc_ext.1.3_MDFCHANNEL_1">all communication between the MAS server and the MDM agent</selectable>
+                    <selectable id="ftp_itc_ext.1.3_MDFCHANNEL_2">no other communication</selectable>
+                  </selectables></h:b>.
+              </title>
+              <note role="application">This element is iterated from PP_MDF;
+                it is expected that the mobile device will initiate the trusted channel between the MDM
+                agent and the MDM server for administrative communication and may initiate other
+                trusted channels to other trusted IT entities for other uses.</note>
+              <aactivity>
+                <TSS>
+                  The evaluator shall examine the TSS to determine that the
+                  methods of communication between the MDM agent and MDM server (and MAS server, if claimed) are indicated, along with how those
+                  communications are protected. The evaluator shall also confirm that all protocols
+                  listed in the TSS in support of remote TOE
+                  administration are consistent with those specified in the requirement, and are
+                  included in the requirements in the ST.
+                  <h:br/>
+                  <h:br/>
+                </TSS>
+                <Guidance>
+                  The evaluator shall confirm that the operational guidance contains
+                  instructions for configuring the communication channel between the MDM agent and
+                  the MDM server and conditionally, the MAS server for each supported
+                  method.
+                  <h:br/>
+                  <h:br/>
+                </Guidance>
+                <Tests>
+                  For each supported identifier type (excluding Distinguished Names [DNs], the evaluator shall
+                  repeat the following tests:
+                  <h:br/>
+                  <h:br/>
+                  <testlist>
+                    <test>The evaluator shall ensure that communications using each method that is specified in the operational guidance is tested during the course of the evaluation, connections are set up as described in the operational guidance, and that communication is successful.</test>
+                    <h:br/>
+                    <test>The evaluator shall ensure, for each method of communication between the MDM server (and MAS server, if claimed), the channel data is not sent in plaintext.</test>
+                    <h:br/>
+                    <test>The evaluator shall ensure, for each communication channel with the MDM server (and MAS server, if claimed), that a protocol analyzer identifies the traffic as the protocol under testing.</test>
+                  </testlist>
+                  <h:br/>
+                  Further evaluation activities are associated with the specific protocols.
+                  <h:br/>
+                  <h:br/>
+                </Tests>
+              </aactivity>
+            </f-element>
+            <audit-event table="tab-at-mdf-addnl">
+              <audit-event-descr>Initiation of the trusted channel.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+            <audit-event table="tab-at-mdf-addnl">
+              <audit-event-descr>Termination of the trusted channel.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+            <audit-event table="tab-at-mdf-addnl">
+              <audit-event-descr>Failure of the trusted channel functions.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+          </f-component>
+          <!-- FTP_TRP.1/MDFENROLL Trusted Path (for Enrollment) -->
+          <f-component cc-id="ftp_trp.1" id="ftp-trp-1-mdfenroll" name="Trusted Path (for Enrollment)" iteration="MDFENROLL">
+            <consistency-rationale>This SFR uses the trusted channel protocols defined by the base PP in FTP_ITC_EXT.1 to facilitate a trusted path that the 
+              MDM agent can use to enroll the mobile device it runs on into
+              management. Even though the base PP does not define FTP_TRP.1, the
+              requirement was given an iteration label for consistency with the MDM
+              server requirement of the same name.</consistency-rationale>
+            <f-element id="ftp_trp-1-1_MDFENROLL">
+              <title>
+                The TSF shall
+                <h:b>use  <selectables linebreak="yes"><selectable id="TRP_TLS_2">TLS client as defined in the <xref to="tls"/>,</selectable><selectable id="TRP_HTTPS_2">HTTPS</selectable></selectables></h:b>
+                to provide a
+                <h:b>trusted</h:b>
+                communication path between itself and
+                <h:b>an MDM server</h:b>
+                that is logically distinct from other communication paths and
+                provides assured identification of its endpoints and protection of the communicated
+                data from 
+                [<h:i>modification, disclosure</h:i>].
+              </title>
+            </f-element>
+            <f-element id="ftp_trp-1-2_MDFENROLL">
+              <title>
+                The TSF shall permit [<h:i>local users</h:i>] to initiate communication via the trusted path.
+              </title>
+            </f-element>
+            <f-element id="ftp_trp-1-3_MDFENROLL">
+              <title>
+                The TSF shall require the use of the trusted path for [<h:i>[MDM enrollment]</h:i>].
+              </title>
+              <note role="application">
+                This requirement ensures that a trusted connection is used for initial enrollment to an MDM;
+                security of ongoing MDM server communications after enrollment is
+                implemented through FTP_ITC_EXT.1/MDFCHANNEL.
+                <h:br/>
+                <h:br/>
+                The ST author chooses the mechanism or
+                mechanisms supported by the TOE. The data passed in this trusted
+                communication channel are encrypted as defined by the protocol selected.
+                <h:br/>
+                <h:br/>
+                Since this requirement is only for the case when the PP-Module builds on PP_MDF, and in this case it is expected that the
+                  MDM agent will be a native part of the mobile operating system,
+                it is expected that the MDM agent will use the mobile device's
+                implementation of the selected protocols. HTTPS (FCS_HTTPS_EXT.1) and TLS
+                (FCS_TLSC_EXT.1) are already mandatory for an MDF ST.
+              </note>
+              <aactivity>
+                <TSS>
+                  The evaluator shall examine the TSS to determine that the
+                  methods of remote enrollment are indicated, along with how those communications
+                  are protected. The evaluator shall also confirm that all protocols listed in the
+                    TSS in support of enrollment are consistent with those
+                  specified in the requirement, and are included in the requirements in the ST.
+                  <h:br/>
+                  <h:br/>
+                </TSS>
+                <Guidance>
+                  The evaluator shall confirm that the operational guidance contains
+                  instructions for establishing the enrollment sessions for each supported
+                  method.
+                  <h:br/>
+                  <h:br/>
+                </Guidance>
+                <Tests>
+                  For each enrollment method that the ST claims:
+                  <h:br/>
+                  <h:br/>
+                  <testlist>
+                    <test>The evaluator shall ensure that communications using each specified (in the operational guidance) enrollment method is tested during the course of the evaluation, setting up the connections as described in the operational guidance, and ensuring that communication is successful.</test>
+                    <h:br/>
+                    <test>For each method of enrollment supported, the evaluator shall follow the operational guidance to ensure that there is no available interface that can be used by a remote user to establish enrollment sessions without invoking the trusted path.</test>
+                    <h:br/>
+                    <test>The evaluator shall ensure, for each method of enrollment, the channel data is not sent in plaintext.</test>
+                  </testlist>
+                  <h:br/>
+                  Further evaluation activities are associated with the specific protocols.
+                  <h:br/>
+                  <h:br/>
+                </Tests>
+              </aactivity>
+            </f-element>
+            <audit-event table="tab-at-mdf-addnl">
+              <audit-event-descr>Initiation of the trusted path.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+            <audit-event table="tab-at-mdf-addnl">
+              <audit-event-descr>Termination of the trusted path.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+            <audit-event table="tab-at-mdf-addnl">
+              <audit-event-descr>Failure of the trusted path functions.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+          </f-component>
+        </section>
+      </additional-sfrs>
       <con-toe>When this PP-Module is used to extend PP_MDF, the TOE type for
         the overall TOE is still a mobile device. The TOE boundary is simply extended to include the
           MDM agent application that runs on the mobile device.</con-toe>
@@ -591,7 +851,50 @@
         </section>
       </modified-sfrs>
       <!-- 5.2.2 Additional SFRs -->
-      <additional-sfrs/>
+      <additional-sfrs>
+        <section id="sec-at-mdm-addnl" title="Auditable Events for PP_MDM Additional SFRs">
+          <audit-table id="at-mdm-addnl" table="tab-at-mdm-addnl" title="Auditable Events for PP_MDM Additional SFRs"></audit-table>
+        </section>
+        <section title="Class FCS: Cryptographic Suport" id="mdm_mod_fcs">
+          <!-- FCS_STG_EXT.1/MDMKEYS Cryptographic Key Storage -->
+          <f-component cc-id="fcs_stg_ext.1" id="fcs-stg-ext-1-mdmkeys" name="Cryptographic Key Storage" iteration="MDMKEYS">
+            <consistency-rationale>The base PP requires the TOE to define a
+              method of key storage. This PP-Module iterates it to specify the use
+              of platform key storage for MDM agents.</consistency-rationale>
+            <f-element id="fcs_stg_ext-1-1_MDMKEYS">
+              <title>
+                The
+                <h:b>MDM agent portion of the</h:b>
+                TSF shall use [<h:i>platform-provided key storage</h:i>] for all persistent
+                secret and private keys.
+              </title>
+              <note role="application">
+                This requirement ensures that persistent secrets
+                (credentials, secret keys) and private keys are stored securely when not in use by
+                the mobile platform.
+                <h:br/>
+                <h:br/>
+              </note>
+              <aactivity>
+                <TSS>
+                  <h:p>The evaluator shall verify that the TSS lists each persistent
+                  secret (credential, secret key) and private key needed to meet the requirements in
+                  the ST. For each of these items, the evaluator shall confirm that
+                  the TSS lists for what purpose it is used, and, for each
+                  platform listed as supported in the ST, how it is stored. The
+                  evaluator shall verify that the MDM agent calls a platform-provided API to store
+                  persistent secrets and private keys.</h:p>
+                </TSS>
+                <Guidance>
+                  <h:p>There are no guidance EAs for this component.</h:p>
+                </Guidance>
+                <Tests>There are no test EAs for this component.</Tests>
+              </aactivity>
+            </f-element>
+            <audit-event table="tab-at-mdm-addnl"/>
+          </f-component>
+        </section>
+      </additional-sfrs>
       <con-toe>When this PP-Module is used to extend the MDM
         PP, the TOE type for the overall TOE is still mobile device management. The TOE boundary is
         simply extended to include the MDM agents that reside on individual
@@ -720,7 +1023,213 @@
         </section>
       </modified-sfrs>
       <!-- 5.3.2 Additional SFRs -->
-      <additional-sfrs/>
+      <additional-sfrs>
+        <section id="sec-at-gpos-addnl" title="Auditable Events for PP_GPOS Additional SFRs">
+          <audit-table id="at-gpos-addnl" table="tab-at-gpos-addnl" title="Auditable Events for PP_GPOS Additional SFRs"></audit-table>
+        </section>
+        <section title="Class FTP: Trusted Path/Channels" id="gpos_add_ftp">
+          <!-- FTP_ITC_EXT.1/OSCHANNEL Trusted Channel Communication -->
+          <f-component cc-id="ftp_itc_ext.1" id="ftp-itc-ext-1-oschannel" name="Trusted Channel Communication" iteration="OSCHANNEL">
+            <consistency-rationale>The base PP includes FTP_ITC_EXT.1 to define the secure protocols used for trusted channel communications. 
+              This PP-Module iterates the SFR to specify a subset of these protocols that may be used for MDM agent communications in particular.</consistency-rationale>
+            <f-element id="gpos-mut-chan-type">
+              <title>
+                The OS shall use
+                <selectables linebreak="yes">
+                  <selectable id="ftp_itc_ext.1.1_OSCHANNEL_1"><h:b>mutually authenticated</h:b> TLS as conforming to <xref to="tls"/> as a [<h:i>client</h:i>],</selectable>
+                  <selectable id="ftp_itc_ext.1.1_OSCHANNEL_2"><h:b>mutually authenticated</h:b> DTLS as conforming to <xref to="tls"/> as a [<h:i>client</h:i>],</selectable>
+                  <selectable id="ftp_itc_ext.1.1_OSCHANNEL_3">HTTPS</selectable>
+                </selectables>
+                to provide a trusted communication channel between itself and authorized IT
+                entities supporting the following capabilities: [<h:i>[MDM server communications,
+                  <selectables>
+                    <selectable id="ftp_itc_ext.1.1_OSCHANNEL_4">MAS server communications</selectable>
+                    <selectable id="ftp_itc_ext.1.1_OSCHANNEL_5">no other communications</selectable>
+                  </selectables>]
+                </h:i>]
+                that is logically distinct from other communication channels and provides
+                assured identification of its end points and protection of the channel data from
+                disclosure and detection of modification of the channel data.
+              </title>
+              <note role="application">
+                The intent of this requirement is to protect the
+                communications channel between MDM server and agent, post
+                enrollment. FTP_TRP.1/OSENROLL is to protect the communications
+                channel between MDM server and agent during enrollment.
+                <h:br/>
+                <h:br/>
+                This requirement is to ensure that the transmission of any audit
+                logs, system data (hardware, software, or application), and configuration data collected by the MDM
+                agent and sent from the MDM agent to the MDM
+                server, when commanded, or at configurable intervals, is properly protected. This
+                trusted channel also protects any commands and policies sent by the MDM server to the MDM agent. 
+                Either the MDM agent or the MDM server is able to initiate the
+                connection.
+                <h:br/>
+                <h:br/>
+                This requirement is iterated from PP_GPOS to indicate the protocols that the MDM agent can use for a trusted
+                channel. The operating system is required to perform the mandated cryptographic
+                protocols as in the base PP for communication channels mandated in
+                PP_GPOS.
+                <h:br/>
+                <h:br/>
+                Since this
+                requirement is only for the case when the PP-Module builds on the GPOS
+                PP, and in this case it is expected that the MDM agent will be a
+                native part of the operating system, it is expected that the MDM agent will use the operating system's implementation of the
+                selected protocols. Protocol, RBG, certificate validation, algorithm, and similar services may
+                be met with platform provided services.
+              </note>
+              <aactivity>
+                <TSS>
+                  The evaluator shall examine the TSS to determine that the
+                  methods of communication between the MDM agent and MDM server (and MAS server, if claimed) are indicated, along with how those
+                  communications are protected. The evaluator shall also confirm that all protocols
+                  listed in the TSS in support of remote TOE
+                  administration are consistent with those specified in the requirement, and are
+                  included in the requirements in the ST.
+                  <h:br/>
+                  <h:br/>
+                </TSS>
+                <Guidance>
+                  The evaluator shall confirm that the operational guidance contains
+                  instructions for configuring the communication channel between the MDM agent and
+                  the MDM server and conditionally, the MAS server for each supported
+                  method.
+                  <h:br/>
+                  <h:br/>
+                </Guidance>
+                <Tests>
+                  For each supported identifier type (excluding DNs), the evaluator shall
+                  repeat the following tests:
+                  <h:br/>
+                  <h:br/>
+                  <testlist>
+                    <test>The evaluator shall ensure that communications using each specified (in the operational guidance) communication method between the MDM agent and MDM server (and MAS server, if claimed) is tested during the course of the evaluation, connections are set up as described in the operational guidance, and that communication is successful.</test>
+                    <h:br/>
+                    <test>The evaluator shall ensure, for each method of communication between the MDM agent and MDM server (and MAS server, if claimed), the channel data is not sent in plaintext.</test>
+                    <h:br/>
+                    <test>The evaluator shall ensure, for each communication channel between the MDM agent and MDM server (and MAS server, if claimed), that a protocol analyzer identifies the traffic as the protocol under testing.</test>
+                  </testlist>
+                  <h:br/>
+                  Further evaluation activities are associated with the specific protocols.
+                  <h:br/>
+                  <h:br/>
+                </Tests>
+              </aactivity>
+            </f-element>
+            <audit-event table="tab-at-gpos-addnl">
+              <audit-event-descr>Initiation of the trusted channel.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+            <audit-event table="tab-at-gpos-addnl">
+              <audit-event-descr>Termination of the trusted channel.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+            <audit-event table="tab-at-gpos-addnl">
+              <audit-event-descr>Failure of the trusted channel functions.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+          </f-component>
+          <!-- FTP_TRP.1/OSENROLL Trusted Path (for Enrollment) -->
+          <f-component cc-id="ftp_trp.1" id="ftp-trp-1-osenroll" name="Trusted Path (for Enrollment)" iteration="OSENROLL">
+            <consistency-rationale>This SFR uses the trusted channel protocols defined by the base PP in FTP_ITC_EXT.1 to facilitate a trusted path that the 
+              MDM agent can use to enroll the operating system it runs on into
+              management. PP_GPOS already defines an iteration of this SFR for trusted administration, so this
+              SFR is iterated to illustrate that this trusted path is used for a distinct function.</consistency-rationale>
+            <f-element id="ftp_trp-1-1_OSENROLL">
+              <title>
+                The
+                <h:b>TSF</h:b>
+                shall provide a communication path between itself and
+                <h:b>a</h:b>
+                [<h:i>remote</h:i>]
+                <h:b>MDM server</h:b>
+                that is 
+                logically distinct from other communication paths
+                and provides assured identification of its endpoints and protection of the
+                communicated data from [<h:i>modification, disclosure</h:i>].
+              </title>
+            </f-element>
+            <f-element id="ftp_trp-1-2_OSENROLL">
+              <title>
+                The
+                <h:b>TSF</h:b>
+                shall permit
+                <selectables>
+                  <selectable id="ftp_trp.1.2_OSENROLL_1">local users</selectable>
+                  <selectable id="ftp_trp.1.2_OSENROLL_2">remote users</selectable>
+                </selectables>
+                to initiate communication via the trusted path.
+              </title>
+            </f-element>
+            <f-element id="ftp_trp-1-3_OSENROLL">
+              <title>
+                The
+                <h:b>TSF</h:b>
+                shall require the use of the trusted path for [<h:i>[MDM enrollment]</h:i>].
+              </title>
+              <note role="application">
+                This requirement ensures that a trusted connection is used for initial enrollment to an MDM;
+                security of ongoing MDM server communications after enrollment is
+                implemented through FTP_ITC_EXT.1/OSCHANNEL.
+                <h:br/>
+                <h:br/>
+                Since this requirement is only for the case when the PP-Module builds on PP_GPOS, and in this case it is expected that the
+                  MDM agent will be a native part of the operating system,
+                it is expected that the MDM agent will use the operating system's
+                implementation of a trusted protocol defined in the base PP SFR FTP_ITC_EXT.1 for this trusted path.
+              </note>
+              <aactivity>
+                <TSS>
+                  The evaluator shall examine the TSS to determine that the
+                  methods of remote enrollment are indicated, along with how those communications
+                  are protected. The evaluator shall also confirm that all protocols listed in the
+                    TSS in support of enrollment are consistent with those
+                  specified in the requirement, and are included in the requirements in the ST.
+                  <h:br/>
+                  <h:br/>
+                </TSS>
+                <Guidance>
+                  The evaluator shall confirm that the operational guidance contains
+                  instructions for establishing the enrollment sessions for each supported
+                  method.
+                  <h:br/>
+                  <h:br/>
+                </Guidance>
+                <Tests>
+                  For each enrollment method that the ST claims:
+                  <h:br/>
+                  <h:br/>
+                  <testlist>
+                    <test>The evaluator shall ensure that communications using each specified (in the operational guidance) enrollment method is tested during the course of the evaluation, connections are set up as described in the operational guidance, and that communication is successful.</test>
+                    <h:br/>
+                    <test>For each method of enrollment supported, the evaluator shall follow the operational guidance to ensure that there is no available interface that can be used by a remote user to establish enrollment sessions without invoking the trusted path.</test>
+                    <h:br/>
+                    <test>The evaluator shall ensure, for each method of enrollment, the channel data is not sent in plaintext.</test>
+                  </testlist>
+                  <h:br/>
+                  Further evaluation activities are associated with the specific protocols.
+                  <h:br/>
+                  <h:br/>
+                </Tests>
+              </aactivity>
+            </f-element>
+            <audit-event table="tab-at-gpos-addnl">
+              <audit-event-descr>Initiation of the trusted path.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+            <audit-event table="tab-at-gpos-addnl">
+              <audit-event-descr>Termination of the trusted path.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+            <audit-event table="tab-at-gpos-addnl">
+              <audit-event-descr>Failure of the trusted path functions.</audit-event-descr>
+              <audit-event-info>No additional information.</audit-event-info>
+            </audit-event>
+          </f-component>
+        </section>
+      </additional-sfrs>
       <con-toe>When this PP-Module is used to extend PP_GPOS, the TOE type for
         the overall TOE is still a GPOS. The TOE boundary is simply extended to include the
           MDM agent application that runs on that GPOS platform.</con-toe>
