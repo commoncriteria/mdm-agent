@@ -40,11 +40,11 @@ image::https://raw.githubusercontent.com/commoncriteria/mdm-agent/gh-pages/Relea
 
 Draft Versions
 
-* https://commoncriteria.github.io/mdm-agent/master/mdm-agent-release.html[Master branch] (html)
-* https://commoncriteria.github.io/pp/mdm-agent/master/mdm-agent-release.pdf[Master branch] (pdf)
+* https://commoncriteria.github.io/mdm-agent/master/mdm-agent.html[Master branch] (html)
+* https://commoncriteria.github.io/pp/mdm-agent/master/mdm-agent.pdf[Master branch] (pdf)
 
-* https://commoncriteria.github.io/mdm-agent/Release-1.0/mdm-agent-release.html[Release-1.0 branch] (html)
-* https://commoncriteria.github.io/pp/mdm-agent/Release-1.0/mdm-agent-release.pdf[Release-1.0 branch] (pdf)
+* https://commoncriteria.github.io/mdm-agent/Release-1.0/mdm-agent.html[Release-1.0 branch] (html)
+* https://commoncriteria.github.io/pp/mdm-agent/Release-1.0/mdm-agent.pdf[Release-1.0 branch] (pdf)
 
 === License
 
