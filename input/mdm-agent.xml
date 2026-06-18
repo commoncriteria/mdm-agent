@@ -297,14 +297,6 @@
         <threat name="T.INSECURE_MDM_COMMUNICATIONS">
           <description>A malicious user or process may inspect network communications between the MDM agent and an MDM server to illicitly determine, modify, or prevent these communications in such a way that the MDM agent fails to enforce the intended policy.</description>
           <!-- New mapping to build updated threat mapping table. -->
-          <addressed-by>FTP_ITC_EXT.1/MDFCHANNEL (additional to PP_MDF)</addressed-by>
-          <rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for transmission of policies.</rationale>
-          <addressed-by>FTP_ITC_EXT.1/OSCHANNEL (additional to PP_GPOS)</addressed-by>
-          <rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for transmission of policies.</rationale>
-          <addressed-by>FTP_TRP.1/MDFENROLL (additional to PP_MDF)</addressed-by>
-          <rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for enrollment into management.</rationale>
-          <addressed-by>FTP_TRP.1/OSENROLL (additional to PP_GPOS)</addressed-by>
-          <rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for enrollment into management.</rationale>
         </threat>
         <threat name="T.MISUSED_DEVICE">
           <description>A malicious or careless user may operate a MD in such a way that it compromises the security of the device, its data, or its user.</description>
@@ -325,10 +317,6 @@
         <threat name="T.UNAUTHORIZED_POLICY_SOURCE">
           <description>A malicious user or process can send illegitimate policy data to the TOE in an attempt to cause it to enter an insecure or unknown state.</description>
           <!-- New mapping to build updated threat mapping table. -->
-          <addressed-by>FCS_STG_EXT.1/MDMKEYS (additional to PP_MDM)</addressed-by>
-          <rationale>Mitigates the threat of an unauthorized policy source by preventing substitution of the valid policy source.</rationale>
-          <addressed-by>FCS_STG_EXT.4 (additional to PP_MDF)</addressed-by>
-          <rationale>Mitigates the threat of an unauthorized policy source by preventing substitution of the valid policy source.</rationale>
           <addressed-by>FIA_ENR_EXT.2</addressed-by>
           <rationale>Mitigates the threat of an unauthorized policy source by recording the identifier of the MDM server that it enrolled to.</rationale>
           <addressed-by>FMT_POL_EXT.2</addressed-by>
@@ -465,7 +453,7 @@
         </section>
         <section title="Class FCS: Cryptographic Suport" id="mdf_mod_fcs">
           <ext-comp-def title="Cryptographic Key Storage" fam-id="FCS_STG_EXT">
-            <fam-behavior/>
+            <mod-def>This family is defined in both the MDF and the MDM base PPs. This PP-Module augments the extended family by adding one additional component, FCS_STG_EXT.4 as an additional SFR for MDF. This new component and its impact on the extended family’s component leveling are shown below; reference the MDF or PP_MDM for all other definitions for this family.</mod-def>
           </ext-comp-def>
           <!-- FCS_STG_EXT.4 Cryptographic Key Storage -->
           <f-component cc-id="fcs_stg_ext.4" id="fcs-stg-ext-4" name="Cryptographic Key Storage">
@@ -1330,7 +1318,7 @@
       <!-- 5.4.1 Class FAU: Security Audit -->
       <section title="Class FAU: Security Audit" id="man_fau">
         <ext-comp-def title="MDM Alerts" fam-id="FAU_ALT_EXT">
-          <fam-behavior/>
+          <mod-def>This family is defined in the MDM base PP. This PP-Module augments the extended family by adding one additional component, FAU_ALT_EXT.2. This new component and its impact on the extended family’s component leveling are shown below; reference PP_MDM for all other definitions for this family.</mod-def>
         </ext-comp-def>
         <!-- FAU_ALT_EXT.2 Agent Alerts -->
         <f-component cc-id="fau_alt_ext.2" id="fau-alt-ext-2" name="Agent Alerts">
@@ -1562,7 +1550,7 @@
       <!-- 5.4.2 Class FIA: Identification and Authentication -->
       <section title="Class FIA: Identification and Authentication" id="man_fia">
         <ext-comp-def title="Enrollment" fam-id="FIA_ENR_EXT">
-          <fam-behavior/>
+          <mod-def>This family is defined in the MDM base PP. This PP-Module augments the extended family by adding one additional component, FIA_ENR_EXT.2. This new component and its impact on the extended family’s component leveling are shown below; reference PP_MDM for all other definitions for this family.</mod-def>
         </ext-comp-def>
         <!-- FIA_ENR_EXT.2 Agent Enrollment of Mobile Device into Management -->
         <f-component cc-id="fia_enr_ext.2" id="fia-enr-ext-2" name="Agent Enrollment of Mobile Device into Management">
@@ -1626,10 +1614,10 @@
       <!-- 5.4.3 Class FMT: Security Management -->
       <section title="Class FMT: Security Management" id="man_fmt">
         <ext-comp-def title="Trusted Policy Update" fam-id="FMT_POL_EXT">
-          <fam-behavior/>
+          <mod-def>This family is defined in the MDM base PP. This PP-Module augments the extended family by adding one additional component, FMT_POL_EXT.2. This new component and its impact on the extended family’s component leveling are shown below; reference PP_MDM for all other definitions for this family.</mod-def>
         </ext-comp-def>
         <ext-comp-def title="Specification of Management Functions" fam-id="FMT_SMF_EXT">
-          <fam-behavior/>
+          <mod-def>This family is defined in the MDF base PP. This PP-Module augments the extended family by adding one additional component, FMT_SMF_EXT.4. This new component and its impact on the extended family’s component leveling are shown below; reference PP_MDF for all other definitions for this family.</mod-def>
         </ext-comp-def>
         <ext-comp-def title="Unenrollment" fam-id="FMT_UNR_EXT">
           <fam-behavior>Components in this family define requirements for TSF behavior when a user attempts to unenroll the TOE from an MDM.</fam-behavior>
@@ -2008,7 +1996,7 @@
       <!-- 5.4.5 Class FAU: Security Audit -->
       <section title="Class FAU: Security Audit" id="ib_fau">
         <ext-comp-def title="Protected Audit Event Storage" fam-id="FAU_STG_EXT">
-          <fam-behavior/>
+          <mod-def>This family is defined in the MDM base PP. This PP-Module augments the extended family by adding one additional component, FAU_STG_EXT.3. This new component and its impact on the extended family’s component leveling are shown below; reference PP_MDM for all other definitions for this family.</mod-def>
         </ext-comp-def>
         <!-- FAU_STG_EXT.3 Security Audit Event Storage -->
         <f-component cc-id="fau_stg_ext.3" id="fau-stg-ext-3" name="Security Audit Event Storage">
