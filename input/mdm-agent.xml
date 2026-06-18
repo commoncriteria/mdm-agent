@@ -297,6 +297,14 @@
         <threat name="T.INSECURE_MDM_COMMUNICATIONS">
           <description>A malicious user or process may inspect network communications between the MDM agent and an MDM server to illicitly determine, modify, or prevent these communications in such a way that the MDM agent fails to enforce the intended policy.</description>
           <!-- New mapping to build updated threat mapping table. -->
+          <addressed-by>FTP_ITC_EXT.1/MDFCHANNEL (additional to PP_MDF)</addressed-by>
+          <rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for transmission of policies.</rationale>
+          <addressed-by>FTP_ITC_EXT.1/OSCHANNEL (additional to PP_GPOS)</addressed-by>
+          <rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for transmission of policies.</rationale>
+          <addressed-by>FTP_TRP.1/MDFENROLL (additional to PP_MDF)</addressed-by>
+          <rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for enrollment into management.</rationale>
+          <addressed-by>FTP_TRP.1/OSENROLL (additional to PP_GPOS)</addressed-by>
+          <rationale>Mitigates the threat of insecure communications by defining the use of a trusted channel to communicate with an MDM server for enrollment into management.</rationale>
         </threat>
         <threat name="T.MISUSED_DEVICE">
           <description>A malicious or careless user may operate a MD in such a way that it compromises the security of the device, its data, or its user.</description>
@@ -317,6 +325,10 @@
         <threat name="T.UNAUTHORIZED_POLICY_SOURCE">
           <description>A malicious user or process can send illegitimate policy data to the TOE in an attempt to cause it to enter an insecure or unknown state.</description>
           <!-- New mapping to build updated threat mapping table. -->
+          <addressed-by>FCS_STG_EXT.1/MDMKEYS (additional to PP_MDM)</addressed-by>
+          <rationale>Mitigates the threat of an unauthorized policy source by preventing substitution of the valid policy source.</rationale>
+          <addressed-by>FCS_STG_EXT.4 (additional to PP_MDF)</addressed-by>
+          <rationale>Mitigates the threat of an unauthorized policy source by preventing substitution of the valid policy source.</rationale>
           <addressed-by>FIA_ENR_EXT.2</addressed-by>
           <rationale>Mitigates the threat of an unauthorized policy source by recording the identifier of the MDM server that it enrolled to.</rationale>
           <addressed-by>FMT_POL_EXT.2</addressed-by>
