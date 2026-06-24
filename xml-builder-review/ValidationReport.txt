@@ -1,0 +1,6 @@
+/home/runner/work/mdm-agent/mdm-agent/input/mdm-agent.xml:457:22: error: element "mod-def" not allowed here; expected the element end-tag
+/home/runner/work/mdm-agent/mdm-agent/input/mdm-agent.xml:1330:20: error: element "mod-def" not allowed here; expected the element end-tag
+/home/runner/work/mdm-agent/mdm-agent/input/mdm-agent.xml:1571:20: error: element "mod-def" not allowed here; expected the element end-tag
+/home/runner/work/mdm-agent/mdm-agent/input/mdm-agent.xml:1644:20: error: element "mod-def" not allowed here; expected the element end-tag
+/home/runner/work/mdm-agent/mdm-agent/input/mdm-agent.xml:1656:20: error: element "mod-def" not allowed here; expected the element end-tag
+/home/runner/work/mdm-agent/mdm-agent/input/mdm-agent.xml:2045:20: error: element "mod-def" not allowed here; expected the element end-tag
